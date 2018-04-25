@@ -482,4 +482,4 @@ Now you can add and remove dogs from your favorites list.
 **Whew! Chapter 4 is complete!**
 
 # Final result
-![](images/petshop_chapter4.jpg)
+![](./images/petshop_chapter4.jpg)

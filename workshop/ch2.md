@@ -373,4 +373,4 @@ Now we have to pass a `dog` prop to our `Dog` component. It will be done with th
 **You should now have a super card layout of dogs! Chapter 2 is completed!**
 
 # Final result
-![](images/petshop_chapter2.png)
+![](./images/petshop_chapter2.jpg)

@@ -422,4 +422,4 @@ Now the cart is clearing right after the form is submitted.
 **Congratulations, you've finished the project!**
 		
 # Final result
-![](images/petshop_chapter5.jpg)
+![]()

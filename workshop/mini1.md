@@ -13,13 +13,13 @@
 
 Open the [NativeScript Playground](http://play.nativescript.org) and take a look around. On your first visit, you'll see several 'coach marks' showing where key functionality is kept.
 
-![coach marks in the playground](images/playground1.png) 
+![coach marks in the playground](./images/playground1.png) 
 
 Click 'Play Now' to open the main editor. You'll see a QR code appear - scan that with the NativeScript Play app. This allows your phone to refresh automatically as you code. Now you're ready to scaffold a NativeScript-Vue app!
 
 By default, the first playground app is created using Angular. Click 'new' at the top and choose 'NS-Vue' as a template. You'll get another QR code, so scan that one. You'll see your phone refresh and a basic app appear:
 
-![base app](images/playground2.png#phone)
+![base app](./images/playground2.png)
 
 ## Add some Styles
 
@@ -27,7 +27,7 @@ Now we're going to style the app's interface and build its UI. It's going to hav
 
 We're going to add an image to a new `/images` folder for the app's background. Click the '+' button in the top panel and create a new folder called images. Download the file below to your local computer. Click the '+' button again and then 'upload resources' to browse and add this file (`bg.jpg`) in that folder. Make sure to save your file. 
 
-![background](images/bg.jpg)
+![background](./images/bg.jpg)
 
 Next, open the app.css file in the app root. Overwrite the file with these styles:
 
@@ -72,7 +72,7 @@ Next, add a StackLayout to replace the current scrollview. Under the ActionBar, 
 
 ```
 <StackLayout class="card">
-        <Button class="btn" @tap="getADog">Find Me A Dog!</button>
+    <Button class="btn" @tap="getADog">Find Me A Dog!</button>
           
 </StackLayout>
 ```
@@ -111,7 +111,7 @@ Finally, create a space for the image to populate. Under the Button tag, add thi
 Note, if at any time your app stops refreshing on your device, try rescanning the QR code by pressing the "Preview" button. Watch for errors in the console of the Playground.
 :::
 
-## Make the call
+## Make the Call
 
 The last thing we have to do is add a method to call the Dog CEO API so we can populate our card with data when we press the button. We're going to query this API for random data.
 
@@ -172,6 +172,6 @@ new Vue({
 
 The final app looks like this:
 
-![final app](images/playground3.png#phone)
+![final app](./images/playground3.png)
 
 It's really interesting to build Vue.js apps for mobile devices in the NativeScript playground. Now that you know how, what else can you build?

@@ -132,4 +132,4 @@ this.dogs.forEach(dog => {
 **Now we initially see empty dog portraits and then images are loaded from the API. Progress!**
 
 # Final result
-![](images/petshop_chapter3.jpg)
+![](./images/petshop_chapter3.jpg)

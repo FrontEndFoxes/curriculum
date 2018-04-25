@@ -362,5 +362,5 @@ Test your application by clicking the button. Looks nice, right?
 **Congratulations! You've just finished Chapter 1!**
 
 # Final result
-![](images/petshop_chapter1_1.png)
+![](./images/petshop_chapter1_1.jpg)
 

@@ -15,12 +15,12 @@ module.exports = {
         ],
         sidebar: [
           '/workshop/',
-          ['/workshop/ch1', 'Chapter 1: Introducing the My Pet Shop Web Site'],
-          ['/workshop/ch2', 'Chapter 2: Build a Pet Gallery'],
-          ['/workshop/ch3', 'Chapter 3: Connect your Project to an API'],
-          ['/workshop/ch4', 'Chapter 4: Create a Dog Adoption Experience'],
-          ['/workshop/ch5', 'Chapter 5: Complete the Adoption Experience with a Form'],
-          ['/workshop/mini1', 'Mini Workshop 1: Build a Mobile App to Choose a Pet']
+          ['/workshop/ch1', '🐶 Chapter 1: Introducing the My Pet Shop Web Site'],
+          ['/workshop/ch2', '🐶 Chapter 2: Build a Pet Gallery'],
+          ['/workshop/ch3', '🐶 Chapter 3: Connect your Project to an API'],
+          ['/workshop/ch4', '🐶 Chapter 4: Create a Dog Adoption Experience'],
+          ['/workshop/ch5', '🐶 Chapter 5: Complete the Adoption Experience with a Form'],
+          ['/workshop/mini1', '🐾 Mini Workshop 1: Build a Mobile App to Choose a Pet']
         ]
       },
     title: 'Vue Vixens Workshops',
