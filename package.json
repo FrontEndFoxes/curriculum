@@ -1,5 +1,0 @@
-{
-    "scripts": {
-      "docs:build": "vuepress build docs"
-    }
-  }
