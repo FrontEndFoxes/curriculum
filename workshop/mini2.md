@@ -158,58 +158,337 @@ Then, overwrite the current template in `App.vue` with this markup:
 </template>
 ```
 
-Wow, that made a big change! Suddenly, you have a storefront! Unfortunately, the dog view i
+Wow, that made a big change! Suddenly, you have a storefront!
 
-## 4. Add some data
+::: tip 💡
+Note the use of `<v-app>` - this is a requirement of Vuetify and is a sure sign you'll have a Vuetify-themed app. We're also using a bunch of Vuetify layout elements like `v-container` and UI components like `v-card` and `v-btn`
+:::
 
-...
+## Add some data
 
-> Add the whole code snippet, if you can, at the end of your tutorial
-
-The entire code of your app.js file should look like this:
+At this point, we need to start populating our UI with some data. First thing we want to do is to display a dog image inside our `v-card`. Let's add some static link just to test how it's look like. We should change the `src` property to `v-card-media`:
 
 ```
-const Vue = require("nativescript-vue");
-const http = require("http");
+<v-card-media
+   height="400px"
+   src="https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg"></v-card-media>
+              
+```
 
-new Vue({
+How cute! 🐶
+
+But the idea is to make this link dynamic. So it's time to create your first Vue variable. First, you have to add `data()` to your Vue component. This function  should return an object of our Vue variables. Let's create one in the `<script>` block. Overwrite the current `<script>` block:
+
+```
+<script>
+export default {
   data() {
     return {
-      dogImage: {}
-    }
-  },
-  template: `
-    <Page class="page">
-      <ActionBar title="So. Many. Dogs!" class="action-bar" />
-      <StackLayout class="card">
-        <Button class="btn" @tap="getADog">Find Me A Dog!</button>
-           <StackLayout class="placeholder">
-            <Image :src="dogImage.message" />
-          </StackLayout>
-        </StackLayout>
-    </Page>
-  `,
-  methods: {
-    getADog() {
-      http.request({ url: "https://dog.ceo/api/breeds/image/random", method: "GET" }).then((response) => {
-        this.dogImage = JSON.parse(response.content)
-        console.log(this.dogImage.message)
-      }, (e) => {
-        alert("error")
-      });
-    }
-
+      currentDogLink: ""
+    };
   }
-}).$start();
+};
+</script>
 ```
 
-> Add a screenshot of the final result
+::: tip 💡
+At this point you can remove the HelloWorld.vue component from the `views` folder as we won't need it.
+:::
 
-The final app looks like this:
+Now you have a variable called `currentDogLink` and its default value is an empty string. We will use this variable for providing a link to current dog into `v-card-media`. Let's change the template respectively. First, we will set the `currentDogLink` value:
 
-![final app](images/playground3.png#phone)
+```
+data() {
+  return {
+    currentDogLink: "https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg"
+  };
+}
+```
 
-## Conclusion and challenge
+Now we have to change a template too to make `src` property _dynamic_. To do this we need a `v-bind` directive or its shortcut `:`.
+    
+```
+<v-card-media
+   height="400px"
+   :src="currentDogLink"></v-card-media>
+              
+```
+    
+::: tip 💡
+The `v-bind` directive dynamically binds one or more attributes, or a component prop to an expression. That little `:` makes all the difference!
+:::
+
+Great! Now it's time to load some dogs from API!
+
+## Add Axios
+
+To perform API calls we will need a library called [axios](https://github.com/axios/axios). It's a promise-based HTTP client that works both in the browser and in a node.js environment.
+
+::: tip 💡
+Originally, Vue supported its own way of making API calls using .ajax; but this resource was deprecated as Axios's standalone library worked very well for this purpose, removing the need for an integrated solution. Read more about this decision [here](https://medium.com/the-vue-point/retiring-vue-resource-871a82880af4).
+:::
+
+First, add Axios's library to your project dependencies. To do so in Code Sandbox, click on `File Editor` tab -> `Dependencies` -> `Add Dependency` and search for `axios`
+
+Import axios into the component where we will perform our API call - `App.vue`. In that component's script block, add this line:
+	
+```
+import axios from "axios";
+```
+
+All our calls will use the same base URL with different endpoints. Right under the import for axios, add the base URL to Axios' options:
+
+```
+axios.defaults.baseURL = "https://dog.ceo/api";
+```
+
+At this point your script part of `App.vue` should look like this
+
+```
+<script>
+import axios from "axios";
+axios.defaults.baseURL = "https://dog.ceo/api";
+export default {
+  data() {
+    return {
+      currentDogLink:
+        "https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg"
+    };
+  }
+};
+</script>
+```
+	
+Now we are ready to load the image from the API.
+
+## Call the API
+
+Let's perform our first API call. To do so, we will create a `loadNewDog` _method_ inside our component.
+
+::: tip 💡
+`methods` property is a list of functions that hang off of an object — typically the Vue instance itself or a Vue component.
+:::
+
+Let's add it right after the `data` one
+
+```
+data() {
+  return {
+    currentDogLink:
+      "https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg"
+  };
+},
+methods: {
+ loadNewDog() {}
+}
+```
+
+For now this method does literally nothing but we want it to load new dog (yay, naming!) from the API. First we have to check which endpoint we have to use. Looking at the API's [documentation](https://dog.ceo/dog-api/) we can find out that we need to append `/breeds/image/random` to the base API call.
+
+To perform a GET request Axios uses the `axios.get` method. The result will be a JavaScript promise, so we have to provide success and failure callbacks to it. For now, let's simply print the query result to console. Edit `loadNewDog(){}` method by placing this snippet between the curly brackets:
+
+```
+axios
+  .get("/breeds/image/random")
+  .then(response => {
+    console.log(response);
+  })
+  .catch(error => {
+    console.log(error);
+  });
+```
+
+We want a new image to replace the old one right when the component is created, so let's add a `created()` hook right after `methods`:
+	
+```
+created() {}
+```
+::: tip 💡
+Note: Make sure to add a comma after the methods object and then add the created() hook!
+:::
+ 
+::: tip 💡
+This is our app's first livecycle hook! These are very useful when you want fine control over when to run blocks of code. Read more [here](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks)
+:::
+
+Inside the created hook we will call our method.
+
+```
+created() {
+  this.loadNewDog();
+}
+```
+Now after clicking refresh button in the browser window. You should see an object in your console. Drill into it by clicking its left-hand arrow. We are interested in its `data` field. You can see we have a status `success` and a message with an image URL 
+
+## Use the API
+
+Let's replace our `currentDogLink` with the loaded one. At this point we can remove the static value from it
+
+```
+data() {
+  return {
+    currentDogLink: ""
+  };
+},
+```
+Inside the `loadNewDog` method instead of printing result to the console we will assign `response.data.message` (which is actually the image URL) to `currentDogLink` property
+
+```
+loadNewDog() {
+  axios
+    .get("/breeds/image/random")
+    .then(response => {
+      this.currentDogLink = response.data.message;
+    })
+    .catch(error => {
+      console.log(error);
+    });
+}
+```
+Now every time you refresh the page, you will have a shiny new dog image! 🎉
+
+We also want to call the same method every time when 'Next' button is clicked. Let's a click handler to this button. We can use `v-on` directive or its shortcut `@`
+
+```
+<v-btn icon @click="loadNewDog">
+  <v-icon>forward</v-icon>
+</v-btn>
+```
+Now we can load new images simply clicking on the 'Next' button.
+
+## Build the Favorites
+We want to let user add dogs images to favorites and show the gallery of these images right below our current dog view. To store the links we need one more data property - an array called `favoriteDogs`. Let's add it right after `currentDogLink` and make it empty by default
+
+```
+data() {
+  return {
+    currentDogLink: "",
+    favoriteDogs: []
+  };
+},
+```
+
+To display the favorite dogs we should make a changes to our template. Let's add the following code snippet right after the closing `</v-card>` tag
+
+```
+<v-container grid-list-md fluid>
+  <v-layout wrap>
+    <v-flex xs6 sm4 md2>
+      <v-card class="dog-card">
+        <v-card-media
+          height="150px"></v-card-media>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn icon>
+            <v-icon>delete</v-icon>
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-flex>
+  </v-layout>
+</v-container>
+```
+
+You can see the empty cart with a 'Delete' button right after the current dog view. Now we need to find a way to show `favoriteDogs` items inside of these cards (yes, right now it's empty, but there will be a lot of dogs here!)
+
+To render a list of items based on an array Vue has a `v-for` directive, which will iterate through this array and render each item. Let's add this directive to our `v-flex` element:
+
+```
+<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="index">
+```
+Here `pet` is the reference to the _current array element_ and `index` is the _index of this element_ inside the array.
+     
+To properly loop and append, you need to provide a unique key attribute for each item. In our case, the `index` will be the key.
+
+You can see now our empty card disappeared. It's fine! We have an empty `favoriteDogs` array so it's simply nothing to render right now. So it's time to like some dogs!
+
+One thing left to do is to bind `pet` (which will be the image link) to the `src` property of the `v-card-media` component
+
+```
+<v-card-media
+  height="150px"
+  :src="pet"></v-card-media>
+```
+
+## Adding dogs to Favorites
+
+We will create a new method called `addToFavorites`. It will add the value of `currentDogLink` to the `favoriteDogs` array (JavaScript has a method `push` for this purpose). Let's place this method after the `loadNewDog` one *(don't miss the comma!)*
+
+```
+addToFavorites() {
+  this.favoriteDogs.push(this.currentDogLink);
+}
+```
+And of course we need to bind it to the 'Like' button:
+
+```
+<v-btn icon @click="addToFavorites">
+  <v-icon>favorite</v-icon>
+</v-btn>
+```
+Now try to click on the 'Like' button! You can see how our gallery is filling with the dogs images 🖼️
+
+There is one issue: now we can add one image a few times. To prevent this we should check if the `currentDogLink` is already inside the `favoriteDogs` array and if it's true, we will disable the 'Like' button. Instead of placing this complex logic inside the template, we will create a _computed_ property.
+::: tip 💡
+Computed properties can be used to do quick calculations of properties that are displayed in the view. These calculations will be cached and will only update when their dependencies are changed. 
+:::
+
+Let's add the `computed` right after the `created()` hook and create a property named `isAlreadyInFavorites` in it.
+
+```
+  computed: {
+    isAlreadyInFavorites() {}
+  }
+```
+Any computed property should be a function returning the result of calculations. Let's check the index of `currentDogLink` inside the `favoriteDogs` array. If it is greater than -1 (in other words if the array contains such an element), the function will return `true`, otherwise it will return `false`:
+
+```
+computed: {
+	isAlreadyInFavorites() {
+	  return this.favoriteDogs.indexOf(this.currentDogLink) > -1;
+	}
+}
+```
+Now we can add dynamic `disabled` attribute to the 'Like' button and set it equal to `isAlreadyInFavorites`.
+
+```
+<v-btn icon @click="addToFavorites" :disabled="isAlreadyInFavorites">
+  <v-icon>favorite</v-icon>
+</v-btn>
+```
+Try to add the dog to favorites. Now you can see 'Like' icon is greyed-out and you cannot click it one more time.
+
+## Removing dogs from Favorites
+What if you stopped like one of the dogs images? You will need a way to remove it from the `favoriteDogs` array. We need one more method for this, let's add it after the `addToFavorites` one
+
+```
+removeFromFavorites() {}
+```
+Of course we should specify somehow what dog we want to remove from the array. Fortunately, we have the `index` parameter. Let's pass it to our method and remove the element with the given index from the `favoriteDogs` array:
+
+```
+removeFromFavorites(index) {
+  this.favoriteDogs.splice(index, 1);
+}
+```
+::: tip 💡
+Here the splice() method changes the contents of an array by removing existing elements. The first argument is the index of the element we want to start with and the second argument is the number of elements we want to remove.
+:::
+
+Now we have to bind this new method to 'Delete' button with a click handler:
+
+```
+<v-btn icon @click="removeFromFavorites(index)">
+	<v-icon>delete</v-icon>
+</v-btn>
+```
+::: tip 💡
+Don't forget to pass `index` to the remove method! When we don't pass any parameters, we can simply skip the brackets like we did for `addToFavorites` method
+:::
+
+Try to add and remove some dogs from favorites. IT WORKS!
+
+**🎊Congratulations, you've finished the project!🎊**
 
 ## Author
 

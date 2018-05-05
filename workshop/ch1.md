@@ -229,16 +229,6 @@ Vue.use(Vuetify);
 
 This ensures that Vuetify's themes and components will be available throughout the Vue app.
 
-We also have to add Material icons and Vuetify stylesheets into the `head` part of `index.html` file
-(insert them right after the `<title>` tag)
-
-```
-<link rel="stylesheet" href="https://unpkg.com/vuetify@1.0.9/dist/vuetify.min.css">
-<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-```
-
-These stylesheets are needed to display Vuetify components in a proper way.
-
 Then, overwrite the current template in `App.vue` with this markup:
 
 ```
