@@ -158,7 +158,7 @@ Then, overwrite the current template in `App.vue` with this markup:
 </template>
 ```
 
-Wow, that made a big change! Suddenly, you have a storefront!
+Wow, that made a big change!
 
 ::: tip 💡
 Note the use of `<v-app>` - this is a requirement of Vuetify and is a sure sign you'll have a Vuetify-themed app. We're also using a bunch of Vuetify layout elements like `v-container` and UI components like `v-card` and `v-btn`
@@ -177,7 +177,7 @@ At this point, we need to start populating our UI with some data. First thing we
 
 How cute! 🐶
 
-But the idea is to make this link dynamic. So it's time to create your first Vue variable. First, you have to add `data()` to your Vue component. This function  should return an object of our Vue variables. Let's create one in the `<script>` block. Overwrite the current `<script>` block:
+But the idea is to make this link dynamic so it's time to create your first Vue variable. First, you have to add `data()` to your Vue component. This function  should return an object of our Vue variables. Let's create one in the `<script>` block. Overwrite the current `<script>` block:
 
 ```
 <script>
@@ -222,7 +222,7 @@ Great! Now it's time to load some dogs from API!
 
 ## Add Axios
 
-To perform API calls we will need a library called [axios](https://github.com/axios/axios). It's a promise-based HTTP client that works both in the browser and in a node.js environment.
+To perform API calls we will need a library called [Axios](https://github.com/axios/axios). It's a promise-based HTTP client that works both in the browser and in a node.js environment.
 
 ::: tip 💡
 Originally, Vue supported its own way of making API calls using .ajax; but this resource was deprecated as Axios's standalone library worked very well for this purpose, removing the need for an integrated solution. Read more about this decision [here](https://medium.com/the-vue-point/retiring-vue-resource-871a82880af4).
@@ -389,7 +389,7 @@ To display the favorite dogs we should make a changes to our template. Let's add
 </v-container>
 ```
 
-You can see the empty cart with a 'Delete' button right after the current dog view. Now we need to find a way to show `favoriteDogs` items inside of these cards (yes, right now it's empty, but there will be a lot of dogs here!)
+You can see the empty card with a 'Delete' button right after the current dog view. Now we need to find a way to show `favoriteDogs` items inside of these cards (yes, right now it's empty, but there will be a lot of dogs here!)
 
 To render a list of items based on an array Vue has a `v-for` directive, which will iterate through this array and render each item. Let's add this directive to our `v-flex` element:
 
@@ -397,10 +397,14 @@ To render a list of items based on an array Vue has a `v-for` directive, which w
 <v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="index">
 ```
 Here `pet` is the reference to the _current array element_ and `index` is the _index of this element_ inside the array.
+
+::: tip 💡
+Remember, we chose this name inside the directive; if we had written `v-for="(dog, number) in favoriteDogs"` each item will be called `dog` and its index will be called `number`). 
+:::
      
 To properly loop and append, you need to provide a unique key attribute for each item. In our case, the `index` will be the key.
 
-You can see now our empty card disappeared. It's fine! We have an empty `favoriteDogs` array so it's simply nothing to render right now. So it's time to like some dogs!
+You can see now our empty card disappeared. It's fine! We have an empty `favoriteDogs` array so it's simply nothing to render right now.
 
 One thing left to do is to bind `pet` (which will be the image link) to the `src` property of the `v-card-media` component
 
@@ -410,9 +414,11 @@ One thing left to do is to bind `pet` (which will be the image link) to the `src
   :src="pet"></v-card-media>
 ```
 
+Now it's time to like some dogs 💖🐶!
+
 ## Adding dogs to Favorites
 
-We will create a new method called `addToFavorites`. It will add the value of `currentDogLink` to the `favoriteDogs` array (JavaScript has a method `push` for this purpose). Let's place this method after the `loadNewDog` one *(don't miss the comma!)*
+We will create a new method called `addToFavorites`. It will add the value of `currentDogLink` to the `favoriteDogs` array (JavaScript has a `push` array method for this purpose). Let's place it after the `loadNewDog` one *(don't miss the comma!)*
 
 ```
 addToFavorites() {
@@ -493,9 +499,4 @@ Try to add and remove some dogs from favorites. IT WORKS!
 ## Author
 
 Made with ❤️ by Natalia Tepluhina
-
-
-
-
-
 
