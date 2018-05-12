@@ -1,9 +1,9 @@
 # Mini Workshop 2: 🖥️ Build A Simple Pet Fetching Web App
 
-| **Project&nbsp;Goal**| What we're going to build                                                                                                                                   |
+| **Project&nbsp;Goal**| Get started with Vue.js basics and simple API calls                                                                                                                                  |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **What&nbsp;you’ll&nbsp;learn**| Description of the learning goal                                                                                             |
-| **Tools&nbsp;you’ll need** | (edit this if necessary) A modern browser like Chrome. Access to the [Codesandbox](https://codesandbox.io) - consider creating an account in the Codesandbox to keep the versions of your work intact. |
+| **What&nbsp;you’ll&nbsp;learn**| Setting up your Vue app, components basics, performing simple REST API calls using Axios                                                                                             |
+| **Tools&nbsp;you’ll need** | A modern browser like Chrome. Access to the [Codesandbox](https://codesandbox.io) - consider creating an account in the Codesandbox to keep the versions of your work intact. |
 | **Time needed to complete** | 1 hour
 | **Just want to try the app?** | [Code Sandbox link](https://codesandbox.io/s/q3kk74yp1w)
 
