@@ -630,6 +630,62 @@ So when `Dog` component emits the `remove` event (i.e. on 'Delete' button click)
 **🎊You've finished the Bonus chapter 1!🎊**
 
 ## Bonus 2: Add animations
+Now let's make our aplication more appealing with adding some animation effects to it.
+
+::: tip 💡
+Vue provides a `transition` wrapper component, allowing you to add entering/leaving transitions for any element or component in the following contexts:
+
+- Conditional rendering (using `v-if`)
+- Conditional display (using `v-show`)
+- Dynamic components
+- Component root nodes
+:::
+
+Let's try to animate the image of the current dog. First, we need to add `v-if` directive to it to provide the proper context for the future transition
+
+```
+<v-card-media
+	v-if="currentDogLink"
+	height="400px"
+	:src="currentDogLink"></v-card-media>
+```
+But now `currentDogLink` will always return `true`! Let's set it to the empty string every time we're clicking 'Next' button, so before next image is loaded, `currentDogLink` will return `false`
+
+```
+loadNewDog() {
+  this.currentDogLink = "";
+  axios.get("/breeds/image/random").then(response => {
+    this.currentDogLink = response.data.message;
+  });
+},
+```
+Now you can observe this ugly effect: image disappears every time when clicking 'Next'. We will fix it with the fade animation effect. Let's wrap `v-card-media` in `<transition>` tag and provide it with a name attribute `fade`.
+
+```
+<transition name="fade">
+	<v-card-media v-if="currentDogLink" height="400px"
+	:src="currentDogLink"></v-card-media>
+</transition>
+```
+
+This will give us a bunch of CSS classes starting from `fade-`. It will be  `enter`/`leave` which is the position that the animation starts with on the first frame, `enter-active`/`leave-active` while the animation is running - this is the one you’d place the animation properties themselves on, and `enter-to`/`leave-to`, which specifies where the element should be on the last frame.
+
+Now that we have our hooks, we can create the transition using them
+
+```
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s ease;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+```
+
+The `.fade-enter-active` and `.fade-leave-active` classes will be where we apply the actual transition. It's not something Vue-specific - just a normal CSS. `ease` property specifies a transition effect with a slow start, then fast, then end slowly.
+
+Now you can see dog picture has a nice fade effect!
 
 
 
