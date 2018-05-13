@@ -1,4 +1,4 @@
-# Supplement (number): 📱 A mobile mini-workshop (or 🖥️ A web mini-workshop)
+# Mini Workshop (number): 📱 A mobile mini-workshop (or 🖥️ A web mini-workshop)
 
 | **Project Goal**            | What we're going to build                                                                                                                                   |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
