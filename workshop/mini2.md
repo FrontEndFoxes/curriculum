@@ -512,7 +512,7 @@ Open this file and add `<template></template>` and `<script></script>` tags. Now
 	
 </script>
 ```
-Now copy the Copy the whole `v-card` component with `class="dog-card"` from `App.vue` and paste it inside the template tag. You can delete it from `App.vue`.
+Now copy the whole `v-card` component with `class="dog-card"` from `App.vue` and paste it inside the template tag. You can delete it from `App.vue`.
 
 We should pass pass the certain dog image link somehow. To do so, Vue uses `props`.
 
@@ -563,7 +563,7 @@ In our template in `Dog.vue` we should replace `pet` with `dog`, because we don'
   </v-card>
 </template>
 ```
-Now let's move back to our `Pets.vue` component and make some changes. First of all we should import our newly created `Dog` component in to `Pets.vue`. Add this string after the `Dogs` import statement:
+Now let's move back to our `App.vue` component and make some changes. First of all we should import our newly created `Dog` component into `App.vue`. Add this string before the `export default` statement:
 
 ```
 import Dog from "./components/Dog";
