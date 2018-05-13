@@ -496,6 +496,143 @@ Try to add and remove some dogs from favorites. IT WORKS!
 
 **🎊Congratulations, you've finished the project!🎊**
 
+## Bonus 1: Creating a Dog component
+At this point we want to abstract a single grid dog card into a separate component to learn how parent and child components communicate.
+
+We have a `components` folder but for now it's empty. Let's create a new file here and name it `Dog.vue`.
+
+Open this file and add `<template></template>` and `<script></script>` tags. Now our file looks this way:
+	
+```
+<template>
+	
+</template>
+	
+<script>
+	
+</script>
+```
+Now copy the Copy the whole `v-card` component with `class="dog-card"` from `App.vue` and paste it inside the template tag. You can delete it from `App.vue`.
+
+We should pass pass the certain dog image link somehow. To do so, Vue uses `props`.
+
+::: tip 💡
+Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a _prop_erty on that component instance. In our case the `Dog` component will have a `dog` property, passed from its parent `App` component.
+:::
+
+Let's add a `props` option to our component. First, we need to create an export statement inside our `script` tag (so later we will be able to import our `Dog` component inside the `App` one). Add this code block to `Dog.vue`:
+
+```
+<script>
+   export default {
+  
+   }
+</script>
+```
+	
+Now we can add `props` option to this object and a prop `dog`:
+
+```
+<script>
+	export default {
+	  props: {
+	    dog: {
+	      type: String
+	    }
+	  }
+	};
+</script>
+```
+	
+Here we are also specifying the type of our dog - it will be a string containing link to the dog image.
+
+In our template in `Dog.vue` we should replace `pet` with `dog`, because we don't have any `pet`s inside the `Dog` component, only a passed `dog` property. Now our template should look the following way:
+	
+```
+<template>
+  <v-card class="dog-card">
+    <v-card-media
+      height="150px"
+      :src="dog"></v-card-media>
+    <v-card-actions>
+      <v-spacer></v-spacer>
+      <v-btn icon @click="removeFromFavorites(index)">
+        <v-icon>delete</v-icon>
+      </v-btn>
+    </v-card-actions>
+  </v-card>
+</template>
+```
+Now let's move back to our `Pets.vue` component and make some changes. First of all we should import our newly created `Dog` component in to `Pets.vue`. Add this string after the `Dogs` import statement:
+
+```
+import Dog from "./components/Dog";
+```
+
+Now we have to 'explain' to the `App` component that it has a child component inside it. Vue uses a `components` option for this. Let's add a component option above the `data()` one:
+	
+```
+export default {
+  components: {
+    appDog: Dog
+  },
+  data() {
+    return {
+      currentDogLink: "",
+      favoriteDogs: []
+    };
+  },
+```
+
+::: tip 💡
+For each property in the components object, the key will be the name of the custom element, while the value will contain the options object for the component
+:::
+
+::: tip 💡
+For the component name you can either use a camel-case (`appDog`) or kebab-case (`'app-dog'`). Keep in mind that a camel-case name will be 'translated' to kebab-case in HTML tag names. So we will use the HTML custom tag `<app-dog>` and it will render a `Dog` component
+:::
+
+In `App.vue`, place our custom tag in the space where you deleted the card earlier:
+
+```
+<v-flex xs6 sm4 md2
+  v-for="(pet, index) in favoriteDogs"
+  :key="index">
+  <app-dog></app-dog>
+</v-flex>
+```
+We have to pass a `dog` prop to our `Dog` component. It will be done with the familiar `v-bind` directive (remember, you can use its `:` shortcut). Edit the code you just added to `Pets.vue`:
+	
+```
+<v-flex xs6 sm4 md2
+  v-for="(pet, index) in favoriteDogs"
+  :key="index">
+  <app-dog></app-dog>
+</v-flex>
+```
+Now if you try to add dog to Favorites you will see the dogs in the grid again! But we have one issue: deleting dog will cause a bunch of errors in console. The reason is we don't have `removeFromFavorites` method inside the `Dog.vue` and it knows nothing about `index` as well.
+
+Instead of using the method, we will add _event emitter_ to the button inside the Dog component.
+
+```
+<v-btn icon @click="$emit('remove')">
+```
+By using `$emit`, we are sending the message to our parent component (in this case it's `App.vue`) like 'Hi, something is happening here! Please read this message and react to it'.
+
+Now let's open `App.vue` and add a _listener_ to our emitted event by overwriting the current `<app-dog>` tag with this snippet:
+
+```
+<app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
+```
+	
+So when `Dog` component emits the `remove` event (i.e. on 'Delete' button click), its parent `App` component will call `removeFromFavorites` method (which removes the certain dog from favorites array).
+
+**🎊You've finished the Bonus chapter 1!🎊**
+
+## Bonus 2: Add animations
+
+
+
 ## Author
 
 Made with ❤️ by Natalia Tepluhina
