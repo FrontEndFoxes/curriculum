@@ -687,6 +687,61 @@ The `.fade-enter-active` and `.fade-leave-active` classes will be where we apply
 
 Now you can see dog picture has a nice fade effect!
 
+Let's also add some effects to our favorite dogs grid. To animate the list rendered with `v-for` Vue uses the `transition-group` tag
+
+::: tip 💡
+Unlike `<transition>`, `transition-group` renders an actual element: a `<span>` by default. You can change the element that’s rendered with the tag attribute.
+Elements inside are *always* required to have a unique key attribute
+:::
+
+Replace the `<v-layout>` component with `v-transition-group` and provide it with a proper tag attribute and class:
+
+```
+<transition-group 
+	name="slide"
+	tag="v-layout"
+	class="wrap">
+	<v-flex xs6 sm4 md2
+	  v-for="(pet, index) in favoriteDogs"
+	  :key="pet">
+	  <app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
+	</v-flex>
+</transition-group>
+```
+
+`transition-group` will render as a `v-layout` component now. Class `wrap` is needed to wrap grid elements to the next row (it replaces the `wrap` attribute of `v-layout`). We also gave our new transition a name `slide`.
+
+Now we can use CSS classes to describe slide transition:
+
+```
+.slide-enter-active {
+  transition: all 0.3s ease;
+}
+.slide-enter,
+.slide-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+```
+
+Great! We have a nice animation on adding new dog to the grid. But there are no effects on delete. There is a `-move` class, which is added when items are changing positions. Like the other classes, its prefix will match the value of a provided `name` attribute (`slide` in our case). So we need to add some more styles:
+
+```
+.slide-fade-leave-active {
+  position: absolute;
+}
+
+.slide-fade-move {
+  transition: transform 0.5s;
+}
+```
+::: tip 💡
+Notice the `position: absolute` on items that are leaving! It's done to remove them from the natural flow, triggering the move transition on the rest of the items.
+:::
+
+Now our list has nice move animation after deleting its element!
+
+**🎊You've finished the Bonus chapter 2!🎊**
 
 
 ## Author
