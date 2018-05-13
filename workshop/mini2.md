@@ -494,9 +494,9 @@ Don't forget to pass `index` to the remove method! When we don't pass any parame
 
 Try to add and remove some dogs from favorites. IT WORKS!
 
-**🎊Congratulations, you've finished the project!🎊**
+**🎊Congratulations, you've finished the base project!🎊**
 
-## Bonus 1: Creating a Dog component
+## Supplement 1: Creating a Dog component
 At this point we want to abstract a single grid dog card into a separate component to learn how parent and child components communicate.
 
 We have a `components` folder but for now it's empty. Let's create a new file here and name it `Dog.vue`.
@@ -627,10 +627,10 @@ Now let's open `App.vue` and add a _listener_ to our emitted event by overwritin
 	
 So when `Dog` component emits the `remove` event (i.e. on 'Delete' button click), its parent `App` component will call `removeFromFavorites` method (which removes the certain dog from favorites array).
 
-**🎊You've finished the Bonus chapter 1!🎊**
+**🎊You've finished Supplement 1!🎊**
 
-## Bonus 2: Add animations
-Now let's make our aplication more appealing with adding some animation effects to it.
+## Supplement 2: Add animations
+Now let's make our application more appealing by adding some animation effects to it.
 
 ::: tip 💡
 Vue provides a `transition` wrapper component, allowing you to add entering/leaving transitions for any element or component in the following contexts:
@@ -741,7 +741,7 @@ Notice the `position: absolute` on items that are leaving! It's done to remove t
 
 Now our list has nice move animation after deleting its element!
 
-**🎊You've finished the Bonus chapter 2!🎊**
+**🎊You've finished Supplement 2!🎊**
 
 
 ## Author
