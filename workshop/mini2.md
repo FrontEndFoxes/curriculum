@@ -1,9 +1,9 @@
 # Mini Workshop 2: 🖥️ Build A Simple Pet Fetching Web App
 
-| **Project&nbsp;Goal**| What we're going to build                                                                                                                                   |
+| **Project&nbsp;Goal**| Get started with Vue.js basics and simple API calls                                                                                                                                  |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **What&nbsp;you’ll&nbsp;learn**| Description of the learning goal                                                                                             |
-| **Tools&nbsp;you’ll need** | (edit this if necessary) A modern browser like Chrome. Access to the [Codesandbox](https://codesandbox.io) - consider creating an account in the Codesandbox to keep the versions of your work intact. |
+| **What&nbsp;you’ll&nbsp;learn**| Setting up your Vue app, components basics, performing simple REST API calls using Axios                                                                                             |
+| **Tools&nbsp;you’ll need** | A modern browser like Chrome. Access to the [Codesandbox](https://codesandbox.io) - consider creating an account in the Codesandbox to keep the versions of your work intact. |
 | **Time needed to complete** | 1 hour
 | **Just want to try the app?** | [Code Sandbox link](https://codesandbox.io/s/q3kk74yp1w)
 
@@ -495,6 +495,254 @@ Don't forget to pass `index` to the remove method! When we don't pass any parame
 Try to add and remove some dogs from favorites. IT WORKS!
 
 **🎊Congratulations, you've finished the project!🎊**
+
+## Bonus 1: Creating a Dog component
+At this point we want to abstract a single grid dog card into a separate component to learn how parent and child components communicate.
+
+We have a `components` folder but for now it's empty. Let's create a new file here and name it `Dog.vue`.
+
+Open this file and add `<template></template>` and `<script></script>` tags. Now our file looks this way:
+	
+```
+<template>
+	
+</template>
+	
+<script>
+	
+</script>
+```
+Now copy the whole `v-card` component with `class="dog-card"` from `App.vue` and paste it inside the template tag. You can delete it from `App.vue`.
+
+We should pass pass the certain dog image link somehow. To do so, Vue uses `props`.
+
+::: tip 💡
+Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a _prop_erty on that component instance. In our case the `Dog` component will have a `dog` property, passed from its parent `App` component.
+:::
+
+Let's add a `props` option to our component. First, we need to create an export statement inside our `script` tag (so later we will be able to import our `Dog` component inside the `App` one). Add this code block to `Dog.vue`:
+
+```
+<script>
+   export default {
+  
+   }
+</script>
+```
+	
+Now we can add `props` option to this object and a prop `dog`:
+
+```
+<script>
+	export default {
+	  props: {
+	    dog: {
+	      type: String
+	    }
+	  }
+	};
+</script>
+```
+	
+Here we are also specifying the type of our dog - it will be a string containing link to the dog image.
+
+In our template in `Dog.vue` we should replace `pet` with `dog`, because we don't have any `pet`s inside the `Dog` component, only a passed `dog` property. Now our template should look the following way:
+	
+```
+<template>
+  <v-card class="dog-card">
+    <v-card-media
+      height="150px"
+      :src="dog"></v-card-media>
+    <v-card-actions>
+      <v-spacer></v-spacer>
+      <v-btn icon @click="removeFromFavorites(index)">
+        <v-icon>delete</v-icon>
+      </v-btn>
+    </v-card-actions>
+  </v-card>
+</template>
+```
+Now let's move back to our `App.vue` component and make some changes. First of all we should import our newly created `Dog` component into `App.vue`. Add this string before the `export default` statement:
+
+```
+import Dog from "./components/Dog";
+```
+
+Now we have to 'explain' to the `App` component that it has a child component inside it. Vue uses a `components` option for this. Let's add a component option above the `data()` one:
+	
+```
+export default {
+  components: {
+    appDog: Dog
+  },
+  data() {
+    return {
+      currentDogLink: "",
+      favoriteDogs: []
+    };
+  },
+```
+
+::: tip 💡
+For each property in the components object, the key will be the name of the custom element, while the value will contain the options object for the component
+:::
+
+::: tip 💡
+For the component name you can either use a camel-case (`appDog`) or kebab-case (`'app-dog'`). Keep in mind that a camel-case name will be 'translated' to kebab-case in HTML tag names. So we will use the HTML custom tag `<app-dog>` and it will render a `Dog` component
+:::
+
+In `App.vue`, place our custom tag in the space where you deleted the card earlier:
+
+```
+<v-flex xs6 sm4 md2
+  v-for="(pet, index) in favoriteDogs"
+  :key="index">
+  <app-dog></app-dog>
+</v-flex>
+```
+We have to pass a `dog` prop to our `Dog` component. It will be done with the familiar `v-bind` directive (remember, you can use its `:` shortcut). Edit the code you just added to `Pets.vue`:
+	
+```
+<v-flex xs6 sm4 md2
+  v-for="(pet, index) in favoriteDogs"
+  :key="index">
+  <app-dog></app-dog>
+</v-flex>
+```
+Now if you try to add dog to Favorites you will see the dogs in the grid again! But we have one issue: deleting dog will cause a bunch of errors in console. The reason is we don't have `removeFromFavorites` method inside the `Dog.vue` and it knows nothing about `index` as well.
+
+Instead of using the method, we will add _event emitter_ to the button inside the Dog component.
+
+```
+<v-btn icon @click="$emit('remove')">
+```
+By using `$emit`, we are sending the message to our parent component (in this case it's `App.vue`) like 'Hi, something is happening here! Please read this message and react to it'.
+
+Now let's open `App.vue` and add a _listener_ to our emitted event by overwriting the current `<app-dog>` tag with this snippet:
+
+```
+<app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
+```
+	
+So when `Dog` component emits the `remove` event (i.e. on 'Delete' button click), its parent `App` component will call `removeFromFavorites` method (which removes the certain dog from favorites array).
+
+**🎊You've finished the Bonus chapter 1!🎊**
+
+## Bonus 2: Add animations
+Now let's make our aplication more appealing with adding some animation effects to it.
+
+::: tip 💡
+Vue provides a `transition` wrapper component, allowing you to add entering/leaving transitions for any element or component in the following contexts:
+
+- Conditional rendering (using `v-if`)
+- Conditional display (using `v-show`)
+- Dynamic components
+- Component root nodes
+:::
+
+Let's try to animate the image of the current dog. First, we need to add `v-if` directive to it to provide the proper context for the future transition
+
+```
+<v-card-media
+	v-if="currentDogLink"
+	height="400px"
+	:src="currentDogLink"></v-card-media>
+```
+But now `currentDogLink` will always return `true`! Let's set it to the empty string every time we're clicking 'Next' button, so before next image is loaded, `currentDogLink` will return `false`
+
+```
+loadNewDog() {
+  this.currentDogLink = "";
+  axios.get("/breeds/image/random").then(response => {
+    this.currentDogLink = response.data.message;
+  });
+},
+```
+Now you can observe this ugly effect: image disappears every time when clicking 'Next'. We will fix it with the fade animation effect. Let's wrap `v-card-media` in `<transition>` tag and provide it with a name attribute `fade`.
+
+```
+<transition name="fade">
+	<v-card-media v-if="currentDogLink" height="400px"
+	:src="currentDogLink"></v-card-media>
+</transition>
+```
+
+This will give us a bunch of CSS classes starting from `fade-`. It will be  `enter`/`leave` which is the position that the animation starts with on the first frame, `enter-active`/`leave-active` while the animation is running - this is the one you’d place the animation properties themselves on, and `enter-to`/`leave-to`, which specifies where the element should be on the last frame.
+
+Now that we have our hooks, we can create the transition using them
+
+```
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s ease;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+```
+
+The `.fade-enter-active` and `.fade-leave-active` classes will be where we apply the actual transition. It's not something Vue-specific - just a normal CSS. `ease` property specifies a transition effect with a slow start, then fast, then end slowly.
+
+Now you can see dog picture has a nice fade effect!
+
+Let's also add some effects to our favorite dogs grid. To animate the list rendered with `v-for` Vue uses the `transition-group` tag
+
+::: tip 💡
+Unlike `<transition>`, `transition-group` renders an actual element: a `<span>` by default. You can change the element that’s rendered with the tag attribute.
+Elements inside are *always* required to have a unique key attribute
+:::
+
+Replace the `<v-layout>` component with `v-transition-group` and provide it with a proper tag attribute and class:
+
+```
+<transition-group 
+	name="slide"
+	tag="v-layout"
+	class="wrap">
+	<v-flex xs6 sm4 md2
+	  v-for="(pet, index) in favoriteDogs"
+	  :key="pet">
+	  <app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
+	</v-flex>
+</transition-group>
+```
+
+`transition-group` will render as a `v-layout` component now. Class `wrap` is needed to wrap grid elements to the next row (it replaces the `wrap` attribute of `v-layout`). We also gave our new transition a name `slide`.
+
+Now we can use CSS classes to describe slide transition:
+
+```
+.slide-enter-active {
+  transition: all 0.3s ease;
+}
+.slide-enter,
+.slide-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+```
+
+Great! We have a nice animation on adding new dog to the grid. But there are no effects on delete. There is a `-move` class, which is added when items are changing positions. Like the other classes, its prefix will match the value of a provided `name` attribute (`slide` in our case). So we need to add some more styles:
+
+```
+.slide-fade-leave-active {
+  position: absolute;
+}
+
+.slide-fade-move {
+  transition: transform 0.5s;
+}
+```
+::: tip 💡
+Notice the `position: absolute` on items that are leaving! It's done to remove them from the natural flow, triggering the move transition on the rest of the items.
+:::
+
+Now our list has nice move animation after deleting its element!
+
+**🎊You've finished the Bonus chapter 2!🎊**
+
 
 ## Author
 
