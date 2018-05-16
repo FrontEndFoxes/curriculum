@@ -13,11 +13,11 @@
 
 We'll start from scratch in [Code Sandbox](http://codesandbox.io). Create a Code Sandbox account and scaffold a starter Vue.js template by clicking [here](https://codesandbox.io/s/vue).
 
-We're going to build a an application to load random dog images and storing them to favorites:
+We're going to build a an application to load random dog images and store them to favorites:
 
 ![](./images/mini2_1.png)
 
-Take a look at the code that was scaffolded by Code Sandbox for a basic Vue.js app. The first file you'll see is open by default: `main.js`. This is the main starting point of a Vue.js app. Note that in this file you import Vue from its npm package: `import Vue from "vue";`. Code Sandbox imports all the needed dependencies from npm to build the app; you can always check out the root `package.json` to find out which dependencies are needed.
+Take a look at the code that was scaffolded by Code Sandbox for a basic Vue.js app. The file `main.js` is open by default. This is the main starting point of a Vue.js app. Note that in this file you import Vue from its npm package: `import Vue from "vue";`. Code Sandbox imports all the needed dependencies from npm to build the app. You can always check out the root `package.json` to find out which dependencies are needed.
 
 `main.js` also initializes the app as a new Vue.js app and sets the div into which the app code will be injected. It also names the main component and sets the template's name:
 
@@ -54,7 +54,7 @@ h1 {
 .dogs-layout {
   width: 100%;
   background: #fff center repeat;
-  background-image: url("http://images.all-free-download.com/images/graphiclarge/pets_background_dogs_bone_icons_decoration_repeating_style_6828678.jpg");
+  background-image: url("https://github.com/VueVixens/projects/blob/master/petshop/images/bg3.jpg?raw=true");
 }
 
 .dogs-overlay {
@@ -79,12 +79,12 @@ h1 {
 </style>
 ```
 ::: tip 💡
-Notice we don't use `<scoped>` as part of the style block. The 'scoped' keyword ensures that your styles will remain valid only for the current SFC, and we're going to make these styles universal.
+Notice we don't use `<scoped>` as part of the style block. The 'scoped' keyword ensures that your styles will remain valid only for the current SFC, but we're going to make these styles universal.
 :::
 
-This style block uses path to external image hosted on Github, rather than relative path. This is because Code Sandbox doesn't host images; normally you'll just add an image on a relative path such as `/images/myImage.png`.
+This style block uses a path to an external image hosted on Github, rather than to a relative path. This is because Code Sandbox doesn't host images easily; normally you'll just add an image on a relative path such as `/images/myImage.png`.
 
-Adding the style sheet didn't do much to our template except breake existing styles. Let's fix the template!
+Adding the style sheet didn't do much to our template except break the existing styles. Let's fix the template!
 
 ## Install Vuetify
 
@@ -101,7 +101,7 @@ Check whether the dependency is installed by opening `package.json` and checking
 ```
 "dependencies": {
     "vue": "^2.5.2",
-    "vuetify": "1.0.17"
+    "vuetify": "1.0.18"
   },
 ```
 
@@ -158,15 +158,15 @@ Then, overwrite the current template in `App.vue` with this markup:
 </template>
 ```
 
-Wow, that made a big change!
+Your app should refresh (if it doesn't, use the manual refresh button in the app preview address bar). Wow, that made a big change!
 
 ::: tip 💡
-Note the use of `<v-app>` - this is a requirement of Vuetify and is a sure sign you'll have a Vuetify-themed app. We're also using a bunch of Vuetify layout elements like `v-container` and UI components like `v-card` and `v-btn`
+Note the use of `<v-app>` in this template markup - this is a requirement of Vuetify and is a sure sign you'll have a Vuetify-themed app. We're also using a bunch of Vuetify layout elements like `v-container` and UI components like `v-card` and `v-btn`
 :::
 
 ## Add some data
 
-At this point, we need to start populating our UI with some data. First thing we want to do is to display a dog image inside our `v-card`. Let's add some static link just to test how it's look like. We should change the `src` property to `v-card-media`:
+At this point, we need to start populating our UI with some data. First thing we want to do is to display a dog image inside our `v-card`. Let's add a static link just to test how it looks. In `App.vue`'s template, change the `src` property of `v-card-media`:
 
 ```
 <v-card-media
@@ -177,7 +177,7 @@ At this point, we need to start populating our UI with some data. First thing we
 
 How cute! 🐶
 
-But the idea is to make this link dynamic so it's time to create your first Vue variable. First, you have to add `data()` to your Vue component. This function  should return an object of our Vue variables. Let's create one in the `<script>` block. Overwrite the current `<script>` block:
+But the idea is to make this link dynamic, so it's time to create your first Vue variable. First, you have to add `data()` to your Vue component. This function  should return an object of our Vue variables. Let's create one in the `<script>` block. Overwrite the current `<script>` block:
 
 ```
 <script>
@@ -192,10 +192,10 @@ export default {
 ```
 
 ::: tip 💡
-At this point you can remove the HelloWorld.vue component from the `views` folder as we won't need it.
+At this point you can remove the `HelloWorld.vue` file from the `components` folder as we won't need it.
 :::
 
-Now you have a variable called `currentDogLink` and its default value is an empty string. We will use this variable for providing a link to current dog into `v-card-media`. Let's change the template respectively. First, we will set the `currentDogLink` value:
+Now you have a variable called `currentDogLink` and its default value is an empty string. We will use this variable to provide a link to a current dog in `v-card-media`. First, we will set the `currentDogLink` value:
 
 ```
 data() {
@@ -205,7 +205,7 @@ data() {
 }
 ```
 
-Now we have to change a template too to make `src` property _dynamic_. To do this we need a `v-bind` directive or its shortcut `:`.
+Now we have to change the template to make the `src` property _dynamic_, so it can use the value of the variable we just populated above. To do this we need a `v-bind` directive or its shortcut, `:`. Again in `App.vue`, edit the `<v-card-media>` tag:
     
 ```
 <v-card-media
@@ -218,7 +218,7 @@ Now we have to change a template too to make `src` property _dynamic_. To do thi
 The `v-bind` directive dynamically binds one or more attributes, or a component prop to an expression. That little `:` makes all the difference!
 :::
 
-Great! Now it's time to load some dogs from API!
+Great! Now it's time to load some dogs from an API!
 
 ## Add Axios
 
@@ -230,13 +230,13 @@ Originally, Vue supported its own way of making API calls using .ajax; but this 
 
 First, add Axios's library to your project dependencies. To do so in Code Sandbox, click on `File Editor` tab -> `Dependencies` -> `Add Dependency` and search for `axios`
 
-Import axios into the component where we will perform our API call - `App.vue`. In that component's script block, add this line:
+Import Axios into the component where we will perform our API call - `App.vue`. In that component's script block, add this line:
 	
 ```
 import axios from "axios";
 ```
 
-All our calls will use the same base URL with different endpoints. Right under the import for axios, add the base URL to Axios' options:
+All our calls will use the same base URL with different endpoints. Right under the import for Axios, add the base URL to Axios' options:
 
 ```
 axios.defaults.baseURL = "https://dog.ceo/api";
@@ -259,17 +259,17 @@ export default {
 </script>
 ```
 	
-Now we are ready to load the image from the API.
+Now we are ready to load an image from the API.
 
 ## Call the API
 
 Let's perform our first API call. To do so, we will create a `loadNewDog` _method_ inside our component.
 
 ::: tip 💡
-`methods` property is a list of functions that hang off of an object — typically the Vue instance itself or a Vue component.
+The `methods` property is a list of functions that hang off of an object — typically the Vue instance itself or a Vue component.
 :::
 
-Let's add it right after the `data` one
+Let's add it right after the `data` function:
 
 ```
 data() {
@@ -283,9 +283,9 @@ methods: {
 }
 ```
 
-For now this method does literally nothing but we want it to load new dog (yay, naming!) from the API. First we have to check which endpoint we have to use. Looking at the API's [documentation](https://dog.ceo/dog-api/) we can find out that we need to append `/breeds/image/random` to the base API call.
+For now this method does nothing but we want it to load a new dog from the API. First we have to check which endpoint we have to use. Looking at the API's [documentation](https://dog.ceo/dog-api/) we can find out that we need to append `/breeds/image/random` to the base API call.
 
-To perform a GET request Axios uses the `axios.get` method. The result will be a JavaScript promise, so we have to provide success and failure callbacks to it. For now, let's simply print the query result to console. Edit `loadNewDog(){}` method by placing this snippet between the curly brackets:
+To perform a GET request Axios uses the `axios.get` method. The result will be a JavaScript promise, so we have to provide success and failure callbacks to manage its lifecycle. For now, let's simply print the query result to console. Edit the `loadNewDog(){}` method by placing this snippet between the curly brackets:
 
 ```
 axios
@@ -318,7 +318,7 @@ created() {
   this.loadNewDog();
 }
 ```
-Now after clicking refresh button in the browser window. You should see an object in your console. Drill into it by clicking its left-hand arrow. We are interested in its `data` field. You can see we have a status `success` and a message with an image URL 
+Now after clicking the refresh button in the browser window. You should see an object in your console. Drill into it by clicking its left-hand arrow. We are interested in its `data` field. You can see we have a status `success` and a message with an image URL 
 
 ## Use the API
 
@@ -347,7 +347,7 @@ loadNewDog() {
 ```
 Now every time you refresh the page, you will have a shiny new dog image! 🎉
 
-We also want to call the same method every time when 'Next' button is clicked. Let's a click handler to this button. We can use `v-on` directive or its shortcut `@`
+We also want to call the same method when the 'Next' button is clicked. Let's add a click handler to this button. We can use the `v-on` directive or its shortcut `@`. In the template, edit the "forward" icon `v-btn`:
 
 ```
 <v-btn icon @click="loadNewDog">
@@ -357,7 +357,8 @@ We also want to call the same method every time when 'Next' button is clicked. L
 Now we can load new images simply clicking on the 'Next' button.
 
 ## Build the Favorites
-We want to let user add dogs images to favorites and show the gallery of these images right below our current dog view. To store the links we need one more data property - an array called `favoriteDogs`. Let's add it right after `currentDogLink` and make it empty by default
+
+We want to let a user add dog images to a personal list of their favorites and show the gallery of these images right below our current dog view. To store the links we need one more data property - an array called `favoriteDogs`. Let's add it right after `currentDogLink` and make it empty by default:
 
 ```
 data() {
@@ -389,9 +390,9 @@ To display the favorite dogs we should make a changes to our template. Let's add
 </v-container>
 ```
 
-You can see the empty card with a 'Delete' button right after the current dog view. Now we need to find a way to show `favoriteDogs` items inside of these cards (yes, right now it's empty, but there will be a lot of dogs here!)
+You can see an empty card with a 'Delete' button right after the current dog view. Now we need to find a way to show `favoriteDogs` items inside of these cards (yes, right now it's empty, but there will be a lot of dogs here!)
 
-To render a list of items based on an array Vue has a `v-for` directive, which will iterate through this array and render each item. Let's add this directive to our `v-flex` element:
+To render a list of items based on an array Vue has a `v-for` directive, which will iterate through this array and render each item. Let's add this directive to our `v-flex` element in the array of favorite cards:
 
 ```
 <v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="index">
@@ -402,11 +403,11 @@ Here `pet` is the reference to the _current array element_ and `index` is the _i
 Remember, we chose this name inside the directive; if we had written `v-for="(dog, number) in favoriteDogs"` each item will be called `dog` and its index will be called `number`). 
 :::
      
-To properly loop and append, you need to provide a unique key attribute for each item. In our case, the `index` will be the key.
+To properly loop over your array of favorite dogs and append another one, you need to provide a unique key attribute for each item. In our case, the `index` will be the key.
 
-You can see now our empty card disappeared. It's fine! We have an empty `favoriteDogs` array so it's simply nothing to render right now.
+You can see that our empty card disappeared. It's fine! We have an empty `favoriteDogs` array so there's simply nothing to render right now.
 
-One thing left to do is to bind `pet` (which will be the image link) to the `src` property of the `v-card-media` component
+One thing left to do is to bind `pet` (which will be the image link) to the `src` property of the `v-card-media` component:
 
 ```
 <v-card-media
@@ -432,14 +433,15 @@ And of course we need to bind it to the 'Like' button:
   <v-icon>favorite</v-icon>
 </v-btn>
 ```
-Now try to click on the 'Like' button! You can see how our gallery is filling with the dogs images 🖼️
+Now try to click on the 'favorite' button! You can see how our gallery is filling with the dogs' images 🖼️
 
-There is one issue: now we can add one image a few times. To prevent this we should check if the `currentDogLink` is already inside the `favoriteDogs` array and if it's true, we will disable the 'Like' button. Instead of placing this complex logic inside the template, we will create a _computed_ property.
+There is one issue: now we can add one image a few times. To prevent this we should check if the `currentDogLink` is already inside the `favoriteDogs` array and if it's true, we will disable the 'favorite' button. Instead of placing this complex logic inside the template, we will create a _computed_ property.
+
 ::: tip 💡
 Computed properties can be used to do quick calculations of properties that are displayed in the view. These calculations will be cached and will only update when their dependencies are changed. 
 :::
 
-Let's add the `computed` right after the `created()` hook and create a property named `isAlreadyInFavorites` in it.
+Let's add `computed` right after the `created()` hook and create a property named `isAlreadyInFavorites` in it.
 
 ```
   computed: {
@@ -462,10 +464,10 @@ Now we can add dynamic `disabled` attribute to the 'Like' button and set it equa
   <v-icon>favorite</v-icon>
 </v-btn>
 ```
-Try to add the dog to favorites. Now you can see 'Like' icon is greyed-out and you cannot click it one more time.
+Try to add the dog to favorites. Now you can see 'favorite' icon is greyed-out and you cannot click it one more time.
 
 ## Removing dogs from Favorites
-What if you stopped like one of the dogs images? You will need a way to remove it from the `favoriteDogs` array. We need one more method for this, let's add it after the `addToFavorites` one
+What if you stopped liking one of the dogs' images? In this unlikely event, you will need a way to remove it from the `favoriteDogs` array. We need one more method for this, so let's add it after the `addToFavorites` (add a comma after `addToFavorites` closing bracket):
 
 ```
 removeFromFavorites() {}
@@ -496,7 +498,8 @@ Try to add and remove some dogs from favorites. IT WORKS!
 
 **🎊Congratulations, you've finished the base project!🎊**
 
-## Supplement 1: Creating a Dog component
+## Supplement 1: Creating a Dog Component
+
 At this point we want to abstract a single grid dog card into a separate component to learn how parent and child components communicate.
 
 We have a `components` folder but for now it's empty. Let's create a new file here and name it `Dog.vue`.
@@ -512,9 +515,9 @@ Open this file and add `<template></template>` and `<script></script>` tags. Now
 	
 </script>
 ```
-Now copy the whole `v-card` component with `class="dog-card"` from `App.vue` and paste it inside the template tag. You can delete it from `App.vue`.
+Now copy the whole `v-card` component that contains the favorite dogs (it's near the bottom) from `App.vue` and paste it inside the template tag. You can delete it from `App.vue`.
 
-We should pass pass the certain dog image link somehow. To do so, Vue uses `props`.
+We now need a way to pass the dog image we want to view from the parent to the child. To do so, Vue uses `props`.
 
 ::: tip 💡
 Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a _prop_erty on that component instance. In our case the `Dog` component will have a `dog` property, passed from its parent `App` component.
@@ -597,35 +600,29 @@ In `App.vue`, place our custom tag in the space where you deleted the card earli
 ```
 <v-flex xs6 sm4 md2
   v-for="(pet, index) in favoriteDogs"
-  :key="index">
+  :key="pet">
   <app-dog></app-dog>
 </v-flex>
 ```
-We have to pass a `dog` prop to our `Dog` component. It will be done with the familiar `v-bind` directive (remember, you can use its `:` shortcut). Edit the code you just added to `Pets.vue`:
+We have to pass a `dog` prop to our `Dog` component. It will be done with the familiar `v-bind` directive (remember, you can use its `:` shortcut). Edit the code you just added to `App.vue`:
 	
 ```
 <v-flex xs6 sm4 md2
   v-for="(pet, index) in favoriteDogs"
-  :key="index">
-  <app-dog></app-dog>
+  :key="pet">
+  <app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
 </v-flex>
 ```
-Now if you try to add dog to Favorites you will see the dogs in the grid again! But we have one issue: deleting dog will cause a bunch of errors in console. The reason is we don't have `removeFromFavorites` method inside the `Dog.vue` and it knows nothing about `index` as well.
+Now if you try to add dog to Favorites you will see the dogs in the grid again! But we have one issue: deleting a dog will cause a bunch of errors in console. The reason is we don't have a `removeFromFavorites` method inside the `Dog.vue` and it knows nothing about `index` as well.
 
-Instead of using the method, we will add _event emitter_ to the button inside the Dog component.
+Instead of using the method, we will replace it with an _event emitter_ to the `delete` button inside the Dog component.
 
 ```
 <v-btn icon @click="$emit('remove')">
 ```
-By using `$emit`, we are sending the message to our parent component (in this case it's `App.vue`) like 'Hi, something is happening here! Please read this message and react to it'.
-
-Now let's open `App.vue` and add a _listener_ to our emitted event by overwriting the current `<app-dog>` tag with this snippet:
-
-```
-<app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
-```
+By using `$emit`, we are sending a message to our parent component (in this case it's `App.vue`) - something like, 'Hi, something is happening here! Please read this message and react to it'.
 	
-So when `Dog` component emits the `remove` event (i.e. on 'Delete' button click), its parent `App` component will call `removeFromFavorites` method (which removes the certain dog from favorites array).
+Now when the `Dog` component emits the `remove` event (i.e. on 'Delete' button click), its parent `App` component will call `removeFromFavorites` method (which removes a certain dog from its favorites array).
 
 **🎊You've finished Supplement 1!🎊**
 
@@ -641,7 +638,7 @@ Vue provides a `transition` wrapper component, allowing you to add entering/leav
 - Component root nodes
 :::
 
-Let's try to animate the image of the current dog. First, we need to add `v-if` directive to it to provide the proper context for the future transition
+Let's try to animate the image of the current dog. First, we need to add `v-if` directive to it to provide the proper context for the future transition. In `App.vue`, edit the main dog's media card:
 
 ```
 <v-card-media
@@ -649,7 +646,8 @@ Let's try to animate the image of the current dog. First, we need to add `v-if` 
 	height="400px"
 	:src="currentDogLink"></v-card-media>
 ```
-But now `currentDogLink` will always return `true`! Let's set it to the empty string every time we're clicking 'Next' button, so before next image is loaded, `currentDogLink` will return `false`
+
+But now `currentDogLink` will always return `true`! Let's set it to the empty string every time we're clicking the 'Next' button, so before the next image is loaded, `currentDogLink` will return `false`:
 
 ```
 loadNewDog() {
@@ -659,7 +657,7 @@ loadNewDog() {
   });
 },
 ```
-Now you can observe this ugly effect: image disappears every time when clicking 'Next'. We will fix it with the fade animation effect. Let's wrap `v-card-media` in `<transition>` tag and provide it with a name attribute `fade`.
+Now you can observe this ugly effect: the image disappears every time the user clicks 'Next'. We will fix it with the fade animation effect. Let's wrap the `v-card-media` in a `<transition>` tag and provide it with a name attribute `fade`.
 
 ```
 <transition name="fade">
@@ -668,9 +666,9 @@ Now you can observe this ugly effect: image disappears every time when clicking 
 </transition>
 ```
 
-This will give us a bunch of CSS classes starting from `fade-`. It will be  `enter`/`leave` which is the position that the animation starts with on the first frame, `enter-active`/`leave-active` while the animation is running - this is the one you’d place the animation properties themselves on, and `enter-to`/`leave-to`, which specifies where the element should be on the last frame.
+This will give us a bunch of CSS classes starting from `fade-`. There will be  `enter`/`leave` which is the position that the animation starts with on the first frame, `enter-active`/`leave-active` while the animation is running - this is the one you’d place the animation properties themselves on, and `enter-to`/`leave-to`, which specifies where the element should be on the last frame.
 
-Now that we have our hooks, we can create the transition using them
+Now that we have our hooks, we can create the transition using them. Edit the CSS in `App.vue` by adding the following classes:
 
 ```
 .fade-enter-active,
@@ -683,18 +681,18 @@ Now that we have our hooks, we can create the transition using them
 }
 ```
 
-The `.fade-enter-active` and `.fade-leave-active` classes will be where we apply the actual transition. It's not something Vue-specific - just a normal CSS. `ease` property specifies a transition effect with a slow start, then fast, then end slowly.
+The `.fade-enter-active` and `.fade-leave-active` classes will be where we apply the actual transition. This isn't anything Vue-specific - just normal CSS. The `ease` property specifies a transition effect with a slow start, then fast, then ending slowly.
 
-Now you can see dog picture has a nice fade effect!
+Now you can see that the dog picture has a nice fade effect when you click 'next'!
 
-Let's also add some effects to our favorite dogs grid. To animate the list rendered with `v-for` Vue uses the `transition-group` tag
+Let's also add some effects to our favorite dogs grid. To animate the list rendered with `v-for`, Vue uses the `transition-group` tag.
 
 ::: tip 💡
 Unlike `<transition>`, `transition-group` renders an actual element: a `<span>` by default. You can change the element that’s rendered with the tag attribute.
 Elements inside are *always* required to have a unique key attribute
 :::
 
-Replace the `<v-layout>` component with `v-transition-group` and provide it with a proper tag attribute and class:
+In `App.vue`, replace the `<v-layout>` component surrounding the `<app-dog>` nested component with `v-transition-group` and provide it with a proper tag attribute and class:
 
 ```
 <transition-group 
@@ -709,9 +707,9 @@ Replace the `<v-layout>` component with `v-transition-group` and provide it with
 </transition-group>
 ```
 
-`transition-group` will render as a `v-layout` component now. Class `wrap` is needed to wrap grid elements to the next row (it replaces the `wrap` attribute of `v-layout`). We also gave our new transition a name `slide`.
+`transition-group` will render as a `v-layout` component now. The class `wrap` is needed to wrap grid elements to the next row (it replaces the `wrap` attribute of `v-layout`). We also gave our new transition a name `slide`.
 
-Now we can use CSS classes to describe slide transition:
+Now we can use CSS classes to describe the slide transition - add these classes to the CSS in `App.vue`:
 
 ```
 .slide-enter-active {
@@ -724,7 +722,7 @@ Now we can use CSS classes to describe slide transition:
 }
 ```
 
-Great! We have a nice animation on adding new dog to the grid. But there are no effects on delete. There is a `-move` class, which is added when items are changing positions. Like the other classes, its prefix will match the value of a provided `name` attribute (`slide` in our case). So we need to add some more styles:
+Great! We have a nice animation when we add a new dog to the grid. But there are no effects on delete. There is a `-move` class, which is added when items are changing positions. Like the other classes, its prefix will match the value of a provided `name` attribute (`slide` in our case). So we need to add some more styles:
 
 ```
 .slide-fade-leave-active {
@@ -739,7 +737,7 @@ Great! We have a nice animation on adding new dog to the grid. But there are no 
 Notice the `position: absolute` on items that are leaving! It's done to remove them from the natural flow, triggering the move transition on the rest of the items.
 :::
 
-Now our list has nice move animation after deleting its element!
+Now our list has a nice move animation after deleting its element!
 
 **🎊You've finished Supplement 2!🎊**
 
