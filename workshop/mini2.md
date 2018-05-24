@@ -388,7 +388,7 @@ You can see an empty card with a 'Delete' button right after the current dog vie
 To render a list of items based on an array Vue has a `v-for` directive, which will iterate through this array and render each item. Let's add this directive to our `v-flex` element in the array of favorite cards:
 
 ```
-<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="index">
+<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
 ```
 Here `pet` is the reference to the _current array element_ and `index` is the _index of this element_ inside the array.
 
@@ -396,7 +396,7 @@ Here `pet` is the reference to the _current array element_ and `index` is the _i
 Remember, we chose this name inside the directive; if we had written `v-for="(dog, number) in favoriteDogs"` each item will be called `dog` and its index will be called `number`). 
 :::
      
-To properly loop over your array of favorite dogs and append another one, you need to provide a unique key attribute for each item. In our case, the `index` will be the key.
+To properly loop over your array of favorite dogs and append another one, you need to provide a unique key attribute for each item. In our case, the `pet` itself will be the key.
 
 You can see that our empty card disappeared. It's fine! We have an empty `favoriteDogs` array so there's simply nothing to render right now.
 
