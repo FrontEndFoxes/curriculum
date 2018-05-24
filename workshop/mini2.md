@@ -276,7 +276,7 @@ methods: {
 }
 ```
 
-For now this method does nothing but we want it to load a new dog from the API. First we have to check which endpoint we have to use. Looking at the API's [documentation](https://dog.ceo/dog-api/) we can find out that we need to append `/breeds/image/random` to the base API call.
+For now this method does nothing but we want it to load a new dog from the API. First we have to check which endpoint we have to use. Looking at the API's [documentation](https://dog.ceo/dog-api/) we can find out that we need to use `https://dog.ceo/api/breeds/image/random` as our endpoint. It will provide a random dog image.
 
 To perform a GET request Axios uses the `axios.get` method. The result will be a JavaScript promise, so we have to provide success and failure callbacks to manage its lifecycle. For now, let's simply print the query result to console. Edit the `loadNewDog(){}` method by placing this snippet between the curly brackets:
 
