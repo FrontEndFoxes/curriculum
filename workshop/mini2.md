@@ -236,18 +236,11 @@ Import Axios into the component where we will perform our API call - `App.vue`. 
 import axios from "axios";
 ```
 
-All our calls will use the same base URL with different endpoints. Right under the import for Axios, add the base URL to Axios' options:
-
-```
-axios.defaults.baseURL = "https://dog.ceo/api";
-```
-
 At this point your script part of `App.vue` should look like this
 
 ```
 <script>
 import axios from "axios";
-axios.defaults.baseURL = "https://dog.ceo/api";
 export default {
   data() {
     return {
@@ -289,7 +282,7 @@ To perform a GET request Axios uses the `axios.get` method. The result will be a
 
 ```
 axios
-  .get("/breeds/image/random")
+  .get("https://dog.ceo/api/breeds/image/random")
   .then(response => {
     console.log(response);
   })
@@ -336,7 +329,7 @@ Inside the `loadNewDog` method instead of printing result to the console we will
 ```
 loadNewDog() {
   axios
-    .get("/breeds/image/random")
+    .get("https://dog.ceo/api/breeds/image/random")
     .then(response => {
       this.currentDogLink = response.data.message;
     })
@@ -652,7 +645,7 @@ But now `currentDogLink` will always return `true`! Let's set it to the empty st
 ```
 loadNewDog() {
   this.currentDogLink = "";
-  axios.get("/breeds/image/random").then(response => {
+  axios.get("https://dog.ceo/api/breeds/image/random").then(response => {
     this.currentDogLink = response.data.message;
   });
 },
