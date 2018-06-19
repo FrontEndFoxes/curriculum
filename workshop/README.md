@@ -49,7 +49,7 @@ The goal of the program is to familiarize women and those who identify as such w
 - Chapter 5: Complete the Experience with a Form
   - Create a functional form to adopt a dog
 - Chapter 6: Mobilize me 
-  - Now that you’ve adopted a dog, display his/her stats in a Vue.js-powered mobile app and use the Social Share plugin to tell your friends about him/her. This app will be built in the NativeScript Playground
+  - Create 'Tindogs', an app to sort through a deck of dog images. This app will be built in the NativeScript Playground
 
 - - -
 
