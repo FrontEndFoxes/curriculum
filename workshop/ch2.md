@@ -94,7 +94,7 @@ const routes = [
 ];
 ```
 
-- Now we have to create a `VueRouter` instance and pass our routes object to it. Add this line above the `const routes` object you just pasted in:
+- Now we have to create a `VueRouter` instance and pass our routes object to it. Add this line below the `const routes` object you just pasted in:
     
 ```
 const router = new VueRouter({ routes });
