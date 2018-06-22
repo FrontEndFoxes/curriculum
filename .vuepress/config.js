@@ -2,6 +2,7 @@ module.exports = {
   base: '/docs/',
     themeConfig: {
       repo: 'vuevixens/docs',
+        editLinks: true,
         // custom text for edit link. Defaults to "Edit this page"
         editLinkText: 'Help us improve this page!',
         nav: [
