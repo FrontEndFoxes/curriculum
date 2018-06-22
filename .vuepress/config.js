@@ -2,12 +2,6 @@ module.exports = {
   base: '/docs/',
     themeConfig: {
       repo: 'vuevixens/docs',
-        // if your docs are not at the root of the repo
-        docsDir: 'workshop',
-        // optional, defaults to master
-        docsBranch: 'master',
-        // defaults to true, set to false to disable
-        editLinks: true,
         // custom text for edit link. Defaults to "Edit this page"
         editLinkText: 'Help us improve this page!',
         nav: [
@@ -28,4 +22,4 @@ module.exports = {
       },
     title: 'Vue Vixens Workshops',
     description: 'Workshops to teach web and mobile development with Vue.js to beginners'
-  }
+  };
