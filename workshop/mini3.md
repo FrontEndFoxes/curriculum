@@ -464,4 +464,4 @@ Now, if you Photon is connected to wifi with the correct code flashed to it, you
 
 ![rainbows unicorns](./images/rainbows_unicorns.gif)
 
-It's really interesting to build Vue.js apps for mobile devices in the NativeScript playground. Now that you know how, what else can you build?
+It's really interesting to build Vue.js apps for mobile devices in the NativeScript playground. Now that you know how, what else can you build? Could you extend this app to create different lighting modes?
