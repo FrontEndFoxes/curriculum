@@ -18,7 +18,8 @@ module.exports = {
           ['/workshop/ch5', '🐶 Chapter 5: Complete the Adoption Experience with a Form'],
           ['/workshop/ch6', '🐶 Chapter 6: My First Mobile App: Tindogs'],
           ['/workshop/mini1', '🐾 Mini Workshop 1: Build a Mobile App to Choose a Pet'],
-          ['/workshop/mini2', '🐾 Mini Workshop 2: Build A Web App to Fetch & Like Pets']
+          ['/workshop/mini2', '🐾 Mini Workshop 2: Build A Web App to Fetch & Like Pets'],
+          ['/workshop/mini3', '🌈 Mini Workshop 3: Build A Rainbow/Unicorn App that Lights up a Photon!']
         ]
       },
     title: 'Vue Vixens Workshops',
