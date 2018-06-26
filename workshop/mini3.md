@@ -204,8 +204,7 @@ Open the [NativeScript Playground](http://play.nativescript.org) and take a look
 
 Click 'Play Now' to open the main editor. You'll see a QR code appear - scan that with the NativeScript Play app. This allows your phone to refresh automatically as you code. Now you're ready to scaffold a NativeScript-Vue app!
 
-![playground](./images/playground
-1.png) 
+![playground](./images/playground1.png) 
 
 By default, the first playground app is created using Angular. Click 'new' at the top and choose 'NS-Vue' as a template. You'll get another QR code, so scan that one. You'll see your phone refresh and a basic app appear:
 
@@ -283,7 +282,9 @@ We also need to add an image to this project, which will appear when the Unicorn
 
 Click on the small `+` next to the word `Explorer` and add a folder titled `images`. Save the file below to your local, and then upload it as a `.jpg` file, using the `Upload resources` utility in the dropdown.
 
-Make sure to save your file!
+::: tip
+Make sure to rename your file `unicorn.jpg` and save it after uploading it.
+:::
 
 ![A beautiful unicorn!](./images/unicorn.jpg)
 
@@ -327,7 +328,8 @@ The finished template block now looks like this:
         <StackLayout>
         <SegmentedBar color="blueviolet" 
               selectedBackgroundColor="blueviolet" class="bar" 
-              :items="segmentedBarItems" v-model="selectedBarIndex"  
+              :items="segmentedBarItems" v-model="selectedBarIndex"
+              @selectedIndexChange="onSelectedIndexChange($event)"  
                 />
           <StackLayout height="100%" :class="mode"></StackLayout>
         </StackLayout>
