@@ -45,7 +45,11 @@ RGB.control(true);
 RGB.color(RGB_COLOR_WHITE);
 RGB.control(false);
 ```
-This code uses the Particle API to grab control of the central RGB LED, change its color, then relinquish control. 
+This code uses the Particle API to grab control of the central RGB LED, change its color, then relinquish control.
+
+This new file is considered to be an 'app' in Particle Build. You need to give it a name in the left panel before you can flash code to it.
+
+![build](./images/particle_build2.png)
 
 Save your change by clicking the folder icon in the left navigation strip of Particle Build. Above that, click the circled checkmark to 'verify' the code. This basically tests your code to ensure that it can compile. Finally, ensuring that your Photon is starred, click the lightning icon at the top to flash this code to your device. The Photon should update, and then the central LED should turn white. It will stay white because we put the code in the loop function.
 
