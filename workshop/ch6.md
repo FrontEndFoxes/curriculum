@@ -5,7 +5,7 @@
 | **What&nbsp;you’ll&nbsp;learn**       | How to build native mobile cross-platform apps with Vue and NativeScript including managing layouts and plugins                                                                                             |
 | **Tools&nbsp;you’ll&nbsp;need**       | A modern browser like Chrome.<br><br>Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact.<br><br>A mobile phone (iOS or Android) with the NativeScript Playground and Preview apps installed.<br><br>The two NativeScript companion apps for the playground are the NativeScript Viewer and NativeScript Playground.<br><br>On Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) and [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview).<br><br>On iOS: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) and [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702)
 | **Time needed to complete** | 1 hour   
-| **Just want to try the app?** | [Open this link in the Playground App](https://https://play.nativescript.org/?template=play-vue&id=f8WlCD&v=6)                                                                                                                        
+| **Just want to try the app?** | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=f8WlCD&v=6)                                                                                                                        
 
 ## Instructions
 
