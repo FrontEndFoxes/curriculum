@@ -1,0 +1,16 @@
+{
+  "name": "workshops",
+  "version": "1.0.0",
+  "description": "Vue Vixens Workshops",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:build": "vuepress build"
+  },
+  "keywords": [],
+  "author": "VueVixens",
+  "license": "MIT",
+  "dependencies": {
+    "vuepress": "^0.8.4"
+  }
+}
