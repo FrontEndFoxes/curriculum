@@ -22,7 +22,7 @@ Take a look at the code that was scaffolded by Code Sandbox for a basic Vue.js a
 
 `main.js` also initializes the app as a new Vue.js app and sets the div into which the app code will be injected. It also names the main component and sets the template's name:
 
-```
+```js
 new Vue({
   el: "#app",
   components: { App },
@@ -42,7 +42,7 @@ We're going to rip this sample app apart and recreate it! Let's get started.
 
 Let's start in `App.vue`, since we don't have to make any changes to `main.js`. Add the following style block at the bottom of the file, replacing the current `<style scoped>` block:
 
-```
+```scss
 	<style lang="scss">
 	@import url("https://fonts.googleapis.com/css?family=Roboto");
 	
@@ -212,7 +212,7 @@ Install it by clicking the 'Add Dependency' button in the Dependency dropdown ar
 
 Check whether the dependency is installed by opening `package.json` and checking the "dependencies" object. It should look like this:
 
-```
+```json
 "dependencies": {
     "vue": "^2.5.2",
     "vuetify": "1.0.17"
@@ -221,7 +221,7 @@ Check whether the dependency is installed by opening `package.json` and checking
 
 Next, initialize Vuetify by opening `main.js` and adding these lines under the second `import`:
 
-```
+```js
 import Vuetify from "vuetify";
 
 Vue.use(Vuetify);
@@ -231,7 +231,7 @@ This ensures that Vuetify's themes and components will be available throughout t
 
 Then, overwrite the current template in `App.vue` with this markup:
 
-```
+```html
 <template>
   <v-app>
     <main>
@@ -295,12 +295,12 @@ Note the use of `<v-app>` - this is a requirement of Vuetify and is a sure sign 
 Now we're going to actually use that Vuetify theme by creating a switch. Pressing this switch will trigger a theme switch, so you'll use the 'orange' theme you saw in the styles.
 
 - You might see the `orange-green` class in stylesheet. Let's add it to the `<main>` element and observe how all the colors & background are changed:
-    ```
+    ```html
     <main class="orange-green">
     ```
 - Now let's try to change the class using Vue class bindings. Replace that simple class in `<main>` with a dynamic class binding: 
 
-```
+```html
 <main :class="{'orange-green': false}">
 ```
 
@@ -308,7 +308,7 @@ Try to change `false` to `true` and vice versa. You can see how class is applied
 
 - Get excited! It's time to create your first Vue variable. First, you have to add `data()` to your Vue component. This function  should return an object of our Vue variables. Let's create one in the `<script>` block. Overwrite the current `<script>` block:
 
-```
+```js
 <script>
 export default {
   name: "App",
@@ -329,7 +329,7 @@ So, now you have a variable called `themeSwitched` and its default value is `fal
 
 - In the `<main>` tag, replace `false` in the class binding with our newly created variable:
    
-```
+```html
 <main :class="{'orange-green': themeSwitched}">
 ```
 
@@ -337,7 +337,7 @@ So, now you have a variable called `themeSwitched` and its default value is `fal
 
 - Now we only need a switch to change a theme. First we will create a button (we're using Vuetify so it will be a Vuetify button component). Let's place it in the `header` right after the `h1` tag:
     
-```
+```html
 <header class="app-header dark-brown">
     <h1>My Pet Store</h1>
     <v-btn>Switch theme</v-btn>
@@ -346,7 +346,7 @@ So, now you have a variable called `themeSwitched` and its default value is `fal
 
 - Now add a click event handler to our button. We can use `v-on` directive or its shortcut `@`. This handler will change `themeSwitched` value to its opposite value, toggling the color-changing class.
     
-    ```
+    ```html
     <v-btn @click="themeSwitched = !themeSwitched">Switch theme</v-btn>
     ```
     
