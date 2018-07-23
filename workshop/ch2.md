@@ -21,13 +21,13 @@ To create our SPA with Vue, we need to use the [vue-router](https://github.com/v
 
 Open `main.js` file and import vue-router:
     
-```
+```js
 import VueRouter from 'vue-router';
 ```
 
 Now we need to use the plugin with `Vue.use()` global method:
     
-```
+```js
 Vue.use(VueRouter);
 ```
 ::: tip 💡
@@ -48,7 +48,7 @@ Let's create a separate component for all the elements contained in `<div class=
 
 Now, let's create a `Pets.vue` page. In `src/views`, like you did for the Home.vue page, create a `Pets.vue` file. Add a layout that will use the Vuetify card styling:
 
-```
+```html
 <template>
   <v-container grid-list-md fluid>
     <v-layout wrap>
@@ -80,14 +80,14 @@ Great, now we have separate components for our home and pets pages! You'll notic
 
 - Let's go back to `main.js`. First, let's import our new components under the list of imports at the top:
     
-```
+```js
 import Home from "./views/Home";
 import Pets from "./views/Pets";
 ```
 
 - Now we can create routes. Each route is an object specifying a path and a component which will be rendered in this path. Let's add two routes: one is for our homepage and one for pets. Add this code under the `Vue.use...` lines:
 
-```
+```js
 const routes = [
   { path: "/", component: Home },
   { path: "/pets", component: Pets }
@@ -96,13 +96,13 @@ const routes = [
 
 - Now we have to create a `VueRouter` instance and pass our routes object to it. Add this line below the `const routes` object you just pasted in:
     
-```
+```js
 const router = new VueRouter({ routes });
 ```
 
 - Finally, we need to add the router to our Vue instance. To do this, just add a reference to `router` right after the `template: "<App/>",` string:
     
-```
+```js
 new Vue({
    el: "#app",
    components: { App },
@@ -121,7 +121,7 @@ To make our navigation easier we will create a simple navigation bar using Vueti
 	
 The toolbar component in Vuetify is called `v-toolbar`. Let's add it right below the `h1` tag in our header:
 
-```
+```html
 <v-toolbar>
     <v-toolbar-items>
         <v-btn to="/" flat>Home</v-btn>
@@ -138,7 +138,7 @@ Ok, fine, but there are no pets, so let's add some!
 
 We're going to add some dummy data in a new folder called `data`. Create that folder in `src` and add a blank file called `dogs.js`. Paste in the following json object:
 
-```
+```js
 export const Dogs = [
   {
     name: "Max",
@@ -187,7 +187,7 @@ It exports one `const`, `Dogs`, containing all the data we need.
 
 - Let's import this data into our pets component. Go to the `Pets.vue` file and add the following script block under the `<template>` block. This tag imports the Dogs data:    
 
-```
+```js
 <script>
   import { Dogs } from "../data/dogs";
 </script>
@@ -195,7 +195,7 @@ It exports one `const`, `Dogs`, containing all the data we need.
 
 Now we have to add this data to our component data property. Edit the `<script>` tag:
 
-```
+```js
 <script>
   import { Dogs } from "../data/dogs";
   export default {
@@ -214,7 +214,7 @@ This script ensures that the array `dogs` is a part of `Pets` component's state 
 
 Now we want to make a list of dogs. The easiest way to do this is to loop over an array and append data to a list. Our `dogs` are an array, so it's ready to be appended. To render a list of items based on an array Vue has a `v-for` directive, which will iterate through this array and render each item. Let's add this directive to our `v-flex` element in `Pets.vue`:
 
-```
+```html
 <v-flex xs12 sm4 md3 v-for="pet in dogs" :key="pet.breed">
 ```
      
@@ -232,13 +232,13 @@ Checking the `dogs.js` file we can see each dog has 3 properties: name, breed an
 
 But if we simply replace `src` value with `pet.img`...
     
-```
+```html
 <v-card-media src="pet.img" height="170px">
 ```
     
 We will have no pictures. Why? Because we're trying to pass a static value, some file called `pet.img` and there is no such file in this data. To bind attributes dynamically we need a `v-bind` directive or its shortcut `:`.
     
-```
+```html
 <v-card-media :src="pet.img" height="170px">
 ```
     
@@ -250,13 +250,13 @@ Now it works!
 
 Now we have to display the dog's name. For text, Vue uses _"mustache" syntax_ - double curly braces like these: `{{ }}`. The mustache tag will be replaced with the value of the binded property. Edit the `<h3>` tag to use curly braces and place the dog's name:
     
-```
+```html
 <h3>{{pet.name}}</h3>
 ```
 
 The only thing left is the dog's breed. Let's add one more `<p></p>` tag right below the name and display breed there:
 
-```
+```html
 <p>{{pet.breed}}</p>
 ```
 Everything works nicely but our template is getting a little bulky. We can refactor and trim it down. Let's create a `Dog` component and pass the current pet to it with a prop.
@@ -271,7 +271,7 @@ Create a new folder inside the `src` and name it `components`.
 
 Inside the components folder we will create a new file and name it `Dog.vue`. Open this file and add `<template></template>` and `<script></script>` tags. Now our file looks this way:
 	
-```
+```html
 <template>
 	
 </template>
@@ -285,7 +285,7 @@ Copy the whole `v-card` component from `Pets.vue` and paste it inside the templa
 
 As mentioned above, we will have a `dog` property in our `Dog` component. Let's add a `props` option to our component. First, we need to create an export statement inside our `script` tag (so later we will be able to import our `Dog` component inside the `Pets` one). Add this `<script>` block to `Dog.vue`:
 
-```
+```js
 <script>
    export default {
   
@@ -295,7 +295,7 @@ As mentioned above, we will have a `dog` property in our `Dog` component. Let's 
 	
 Now we can add `props` option to this object and a prop `dog`:
 
-```
+```js
 <script>
 	export default {
 	  props: {
@@ -311,7 +311,7 @@ Here we are also specifying the type of our dog - it will be a JavaScript object
 
 In our template in `Dog.vue` we should replace `pet` with `dog`, because we don't have any `pet`s inside the `Dog` component, only a passed `dog` property. Now our template should look the following way:
 	
-```
+```html
 <template>
 	<v-card color="grey lighten-2">
 	  <v-card-media :src="dog.img" height="170px">
@@ -328,19 +328,20 @@ In our template in `Dog.vue` we should replace `pet` with `dog`, because we don'
 
 Now let's move back to our `Pets.vue` component and make some changes. First of all we should import our newly created `Dog` component in to `Pets.vue`. Add this string after the `Dogs` import statement:
 
-```
+```js
 import Dog from "../components/Dog.vue";
 ```
 
 Now we have to 'explain' to the `Pets` component that it has a child component inside it. Vue uses a `components` option for this. Let's add a component option above the `data()` one:
 	
-```
+```js
 export default {
 	  components: {
 	    appDog: Dog
 	  },
 	  data() {
 	    return {
+	      
 	      dogs: Dogs
 	    };
 	  }
@@ -357,14 +358,14 @@ For the component name you can either use a camel-case (`appDog`) or kebab-case 
 
 In `Pets.vue`, place our custom tag in the space where you deleted the card earlier:
 
-```
+```html
 <v-flex xs12 sm4 md3 v-for="pet in dogs" :key="pet.breed">
    <app-dog></app-dog>
 </v-flex>
 ```
 Now we have to pass a `dog` prop to our `Dog` component. It will be done with the familiar `v-bind` directive (remember, you can use its `:` shortcut). Edit the code you just added to `Pets.vue`:
 	
-```
+```html
 <v-flex xs12 sm4 md3 v-for="pet in dogs" :key="pet.breed">
   <app-dog :dog="pet"></app-dog>
 </v-flex>
