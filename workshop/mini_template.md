@@ -4,8 +4,8 @@
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **What you’ll learn**       | Description of the learning goal                                                                                             |
 | **Tools you’ll need**       | (edit this if necessary) A modern browser like Chrome. Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact. A mobile phone (iOS or Android) with the NativeScript Playground and Viewer apps installed |
-| **Time needed to complete** | 20 minutes  
-| **Just want to try the app?** | [Playground link](https://play.nativescript.org/) or [Code Sandbox link](https://codesandbox.io)                                                                          
+| **Time needed to complete** | 20 minutes
+| **Just want to try the app?** | [Playground link](https://play.nativescript.org/) or [Code Sandbox link](https://codesandbox.io)
 
 # Instructions
 
@@ -23,11 +23,12 @@ Use this markup for tips
 
 ...
 
-```
+```css
 Page {
   background-image: url("~/images/bg.jpg");
 }
 ```
+
 ## 3. Fix the UI
 
 ...
@@ -40,7 +41,7 @@ Add the whole code snippet, if you can, at the end of your tutorial
 
 The entire code of your app.js file should look like this:
 
-```
+```js
 const Vue = require("nativescript-vue");
 const http = require("http");
 
@@ -75,7 +76,7 @@ new Vue({
 }).$start();
 ```
 
-Add a screenshot of the final result 
+Add a screenshot of the final result
 
 The final app looks like this:
 
@@ -92,4 +93,4 @@ Made with ❤️ by your name
 
 
 
-                                                            
+

@@ -4,7 +4,7 @@
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **What&nbsp;you’ll&nbsp;learn**       | Using static data, you'll build a card interface to show many adoptable dogs                                                                                             |
 | **Tools&nbsp;you’ll&nbsp;need**       | A modern browser like Chrome. If using Chrome, download Chrome DevTools for Vue.js. An account in CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/VueVixens/projects/tree/master/chapter-1-end). Instructions on how to do this are in [Appendix 1](appendix_1.md) |
-| **Time needed to complete** | 1 hour                                                                                                                                                                                  
+| **Time needed to complete** | 1 hour
 ## Instructions
 
 If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/master/chapter-1-end) into Code Sandbox after logging in.
@@ -20,23 +20,24 @@ To create our SPA with Vue, we need to use the [vue-router](https://github.com/v
 ## The Router
 
 Open `main.js` file and import vue-router:
-    
+
 ```js
 import VueRouter from 'vue-router';
 ```
 
 Now we need to use the plugin with `Vue.use()` global method:
-    
+
 ```js
 Vue.use(VueRouter);
 ```
+
 ::: tip 💡
 Stop and think about our app's architecture. In our application, the header and footer will be present on each page and the content between them will change. To accomplish this, the component matched by the route will be rendered inside a `<router-view>` tag. We need to move away from having all our app's parts in App.vue, so we need to do some refactoring.
 :::
 
 ## Create the Home Page
 
-Let's create a separate component for all the elements contained in `<div class="wrapper">`. 
+Let's create a separate component for all the elements contained in `<div class="wrapper">`.
 
 - Go to the `views` folder in `src` (create it if it doesn't exist) and create a file called `Home.vue`.
 
@@ -79,7 +80,7 @@ p {
 Great, now we have separate components for our home and pets pages! You'll notice however that the content doesn't yet show up in the app. We have to make routes for these pages.
 
 - Let's go back to `main.js`. First, let's import our new components under the list of imports at the top:
-    
+
 ```js
 import Home from "./views/Home";
 import Pets from "./views/Pets";
@@ -95,13 +96,13 @@ const routes = [
 ```
 
 - Now we have to create a `VueRouter` instance and pass our routes object to it. Add this line below the `const routes` object you just pasted in:
-    
+
 ```js
 const router = new VueRouter({ routes });
 ```
 
 - Finally, we need to add the router to our Vue instance. To do this, just add a reference to `router` right after the `template: "<App/>",` string:
-    
+
 ```js
 new Vue({
    el: "#app",
@@ -118,7 +119,7 @@ Test your progress. Add `/pets` at the end of the URL string in the address bar.
 ## Add Navigation
 
 To make our navigation easier we will create a simple navigation bar using Vuetify, which we already implemented in Chapter 1.
-	
+
 The toolbar component in Vuetify is called `v-toolbar`. Let's add it right below the `h1` tag in our header:
 
 ```html
@@ -132,7 +133,7 @@ The toolbar component in Vuetify is called `v-toolbar`. Let's add it right below
 
 You can see two buttons in this toolbar. Each of them has a `to` attribute: it's a router-link to a certain route. Now we can easily switch between pages - give it a try by clicking the buttons.
 
-Ok, fine, but there are no pets, so let's add some! 
+Ok, fine, but there are no pets, so let's add some!
 
 ## Build up some data
 
@@ -185,7 +186,7 @@ export const Dogs = [
 
 It exports one `const`, `Dogs`, containing all the data we need.
 
-- Let's import this data into our pets component. Go to the `Pets.vue` file and add the following script block under the `<template>` block. This tag imports the Dogs data:    
+- Let's import this data into our pets component. Go to the `Pets.vue` file and add the following script block under the `<template>` block. This tag imports the Dogs data:
 
 ```js
 <script>
@@ -217,31 +218,31 @@ Now we want to make a list of dogs. The easiest way to do this is to loop over a
 ```html
 <v-flex xs12 sm4 md3 v-for="pet in dogs" :key="pet.breed">
 ```
-     
+
 To properly loop and append, you need to provide a unique key attribute for each item. In our case, the dog's breed will be the key.
-     
+
 You can see now we have eight `v-card`s with the same text and image. Let's fix that!
 
 Inside the `v-for` directive our _current_ dog will be called a `pet`.
 
 ::: tip 💡
-Remember, we chose this name inside the directive; if we had written `v-for="dog in dogs"` each item will be called `dog`). 
+Remember, we chose this name inside the directive; if we had written `v-for="dog in dogs"` each item will be called `dog`).
 :::
 
-Checking the `dogs.js` file we can see each dog has 3 properties: name, breed and img. Let's display the image inside the `v-card-media` component. 
+Checking the `dogs.js` file we can see each dog has 3 properties: name, breed and img. Let's display the image inside the `v-card-media` component.
 
 But if we simply replace `src` value with `pet.img`...
-    
+
 ```html
 <v-card-media src="pet.img" height="170px">
 ```
-    
+
 We will have no pictures. Why? Because we're trying to pass a static value, some file called `pet.img` and there is no such file in this data. To bind attributes dynamically we need a `v-bind` directive or its shortcut `:`.
-    
+
 ```html
 <v-card-media :src="pet.img" height="170px">
 ```
-    
+
 ::: tip 💡
 The `v-bind` directive dynamically binds one or more attributes, or a component prop to an expression. That little `:` makes all the difference!
 :::
@@ -249,7 +250,7 @@ The `v-bind` directive dynamically binds one or more attributes, or a component 
 Now it works!
 
 Now we have to display the dog's name. For text, Vue uses _"mustache" syntax_ - double curly braces like these: `{{ }}`. The mustache tag will be replaced with the value of the binded property. Edit the `<h3>` tag to use curly braces and place the dog's name:
-    
+
 ```html
 <h3>{{pet.name}}</h3>
 ```
@@ -270,14 +271,14 @@ Props are custom attributes you can register on a component. When a value is pas
 Create a new folder inside the `src` and name it `components`.
 
 Inside the components folder we will create a new file and name it `Dog.vue`. Open this file and add `<template></template>` and `<script></script>` tags. Now our file looks this way:
-	
+
 ```html
 <template>
-	
+
 </template>
-	
+
 <script>
-	
+
 </script>
 ```
 
@@ -288,11 +289,11 @@ As mentioned above, we will have a `dog` property in our `Dog` component. Let's 
 ```js
 <script>
    export default {
-  
+
    }
 </script>
 ```
-	
+
 Now we can add `props` option to this object and a prop `dog`:
 
 ```js
@@ -306,11 +307,11 @@ Now we can add `props` option to this object and a prop `dog`:
 	};
 </script>
 ```
-	
+
 Here we are also specifying the type of our dog - it will be a JavaScript object.
 
 In our template in `Dog.vue` we should replace `pet` with `dog`, because we don't have any `pet`s inside the `Dog` component, only a passed `dog` property. Now our template should look the following way:
-	
+
 ```html
 <template>
 	<v-card color="grey lighten-2">
@@ -333,7 +334,7 @@ import Dog from "../components/Dog.vue";
 ```
 
 Now we have to 'explain' to the `Pets` component that it has a child component inside it. Vue uses a `components` option for this. Let's add a component option above the `data()` one:
-	
+
 ```js
 export default {
 	  components: {
@@ -341,7 +342,7 @@ export default {
 	  },
 	  data() {
 	    return {
-	      
+
 	      dogs: Dogs
 	    };
 	  }
@@ -363,15 +364,16 @@ In `Pets.vue`, place our custom tag in the space where you deleted the card earl
    <app-dog></app-dog>
 </v-flex>
 ```
+
 Now we have to pass a `dog` prop to our `Dog` component. It will be done with the familiar `v-bind` directive (remember, you can use its `:` shortcut). Edit the code you just added to `Pets.vue`:
-	
+
 ```html
 <v-flex xs12 sm4 md3 v-for="pet in dogs" :key="pet.breed">
   <app-dog :dog="pet"></app-dog>
 </v-flex>
 ```
-	
+
 **You should now have a super card layout of dogs! Chapter 2 is completed!**
 
 # Final result
-![](./images/petshop_chapter2.jpg)
+![final result chapter 2](./images/petshop_chapter2.jpg)
