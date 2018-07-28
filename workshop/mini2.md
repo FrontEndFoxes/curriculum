@@ -116,14 +116,22 @@ Vue.use(Vuetify);
 
 This ensures that Vuetify's themes and components will be available throughout the Vue app.
 
-We also have to add Material icons and Vuetify stylesheets into the `head` part of `index.html` file (insert them right after the `<title>` tag)
+Next, we need to add Vuetify styles. We will import them in our `main.js` too:
 
-```html
-<link rel="stylesheet" href="https://unpkg.com/vuetify@1.0.9/dist/vuetify.min.css">
-<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+```js
+import Vuetify from "vuetify";
+import "vuetify/dist/vuetify.min.css";
+
+Vue.use(Vuetify);
 ```
 
-These stylesheets are needed to display Vuetify components in a proper way.
+This stylesheet is needed to display Vuetify components in a proper way.
+
+We also have to add Material icons into the `head` part of `index.html` file (insert them right after the `<title>` tag) 
+
+```
+<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+```
 
 Let's also change the page title to `Dog Lover`. To do so, we have to change the content of the `title` tag:
 
