@@ -4,8 +4,8 @@
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **What you’ll learn**       | How to build a mobile app with NativeScript and Vue.js, how to make external API calls and have data display in the app.                                                                                             |
 | **Tools you’ll need**       | A modern browser like Chrome. Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact. A mobile phone (iOS or Android) with the NativeScript Playground and Viewer apps installed |
-| **Time needed to complete** | 20 minutes  
-| **Just want to try the app?** | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=5ev7Vz&v=2)                                                                          
+| **Time needed to complete** | 20 minutes
+| **Just want to try the app?** | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=5ev7Vz&v=2)
 
 # Instructions
 
@@ -13,7 +13,7 @@
 
 Open the [NativeScript Playground](http://play.nativescript.org) and take a look around. On your first visit, you'll see several 'coach marks' showing where key functionality is kept.
 
-![coach marks in the playground](./images/playground1.png) 
+![coach marks in the playground](./images/playground1.png)
 
 Click 'Play Now' to open the main editor. You'll see a QR code appear - scan that with the NativeScript Play app. This allows your phone to refresh automatically as you code. Now you're ready to scaffold a NativeScript-Vue app!
 
@@ -23,15 +23,15 @@ By default, the first playground app is created using Angular. Click 'new' at th
 
 ## Add some Styles
 
-Now we're going to style the app's interface and build its UI. It's going to have an ActionBar, a card, and a button.  
+Now we're going to style the app's interface and build its UI. It's going to have an ActionBar, a card, and a button.
 
-We're going to add an image to a new `/images` folder for the app's background. Click the '+' button in the top panel and create a new folder called images. Download the file below to your local computer. Click the '+' button again and then 'upload resources' to browse and add this file (`bg.jpg`) in that folder. Make sure to save your file. 
+We're going to add an image to a new `/images` folder for the app's background. Click the '+' button in the top panel and create a new folder called images. Download the file below to your local computer. Click the '+' button again and then 'upload resources' to browse and add this file (`bg.jpg`) in that folder. Make sure to save your file.
 
 ![background](./images/bg.jpg)
 
 Next, open the app.css file in the app root. Overwrite the file with these styles:
 
-```
+```css
 Page {
     background-image: url("~/images/bg.jpg");
 }
@@ -70,14 +70,14 @@ Let's fix the ActionBar: In app.js, take a look at the template block. Add a tit
 
 Next, add a StackLayout to replace the current scrollview. Under the ActionBar, and above the closing `</Page>` tag, add a layout with a button:
 
-```
+```html
 <StackLayout class="card">
     <Button class="btn" @tap="getADog">Find Me A Dog!</button>
-          
+
 </StackLayout>
 ```
 
-Now, you should see a nice looking green card with a darker green button. 
+Now, you should see a nice looking green card with a darker green button.
 
 ::: tip 💡
 NativeScript layouts differ from the html you write on the web. You're using NativeScript XML markup, which translates to native UI like GridLayouts and StackLayouts.
@@ -91,7 +91,7 @@ At this point, we need to start populating our UI with some data. To make extern
 
 Then, under the `new Vue({` open tag, and above the template, add a `data` placeholder for a dog image that will be populated shortly by data from the Dog CEO API.
 
-```
+```js
 data() {
     return {
       dogImage: {}
@@ -101,7 +101,7 @@ data() {
 
 Finally, create a space for the image to populate. Under the Button tag, add this block:
 
-```
+```html
  <StackLayout class="placeholder">
       <Image :src="dogImage.message" />
  </StackLayout>
@@ -117,7 +117,7 @@ The last thing we have to do is add a method to call the Dog CEO API so we can p
 
 Add this block under the final comma of the `template` block:
 
-```
+```js
 methods: {
     getADog() {
       http.request({ url: "https://dog.ceo/api/breeds/image/random", method: "GET" }).then((response) => {
@@ -135,7 +135,7 @@ Try pressing the button and seeing if dogs appear. Cute, right? Check the consol
 
 The entire code of your app.js file should look like this:
 
-```
+```js
 const Vue = require("nativescript-vue");
 const http = require("http");
 

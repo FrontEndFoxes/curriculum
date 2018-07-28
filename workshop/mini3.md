@@ -4,16 +4,16 @@
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **What you’ll learn**       | How to build a mobile app with NativeScript and Vue.js, how to setup and configure a Particle Photon, and how to connect the two so the app controls the device.                                                                                             |
 | **Tools you’ll need**       | Access to Wifi<br><br>A modern browser like Chrome.<br><br>Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact. A mobile phone (iOS or Android) with the NativeScript Playground and Preview apps installed.<br><br>The two NativeScript companion apps for the playground (NativeScript Viewer and NativeScript Playground. On Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) and [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview). On iOS: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) and [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702)<br><br>A [Particle Photon device](https://store.particle.io/collections/photon).|
-| **Time needed to complete** | 60 minutes  
-| **Just want to try the app?** | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=E9hBGf&v=19)                                                                      
+| **Time needed to complete** | 60 minutes
+| **Just want to try the app?** | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=E9hBGf&v=19)
 
 # Instructions
 
 ## Set Up Your Photon
 
-### 1. Connect the Photon to WiFi: 
+### 1. Connect the Photon to WiFi:
 
-Unbox the kit that comes with this workshop or use your own device, and plug the mini-USB cord into the Photon and to a USB port on your computer. Visit the Photon [setup](https://setup.particle.io/) page to set up your device. Click 'Setup a Photon' and 'next' to begin. If you have all the requirements on the next page, click 'next'. Download the local file that is generated to your computer. Open the photonsetup.html file in a browser. 
+Unbox the kit that comes with this workshop or use your own device, and plug the mini-USB cord into the Photon and to a USB port on your computer. Visit the Photon [setup](https://setup.particle.io/) page to set up your device. Click 'Setup a Photon' and 'next' to begin. If you have all the requirements on the next page, click 'next'. Download the local file that is generated to your computer. Open the photonsetup.html file in a browser.
 
 Follow the steps listed to connect to the Photon's wifi network. When it connects, it should 'breathe cyan' (the blue light in the center should pulse gently on and off).
 
@@ -25,9 +25,9 @@ Create an account [here](https://login.particle.io/login) and then go to [Partic
 
 Let's take a look at Particle Build. This is a browser-based IDE that allows you to 'flash', or publish, code from the browser to the Photon device selected on the left.
 
-![Particle Build](./images/particle_build.png) 
+![Particle Build](./images/particle_build.png)
 
-Currently, there is nothing in this new file except a setup() and loop() function. Let's start adding code to this file. 
+Currently, there is nothing in this new file except a setup() and loop() function. Let's start adding code to this file.
 
 ::: tip 💡
 Photons are basically wifi-connected Arduinos, so if you have experience in Arduino development, this code will look familiar. Arduino 'sketches', or firmware that is written to a hardware device, are commonly written in C or C++. We're going to write a bit of C++ to control the central LED light on the device, avoiding any soldering or extra wiring. The Particle kit, however, comes with a few extras, so feel free to explore them more!
@@ -39,12 +39,13 @@ Right now, your Photon is lit up in the center LED, and is 'breathing cyan' or p
 
 Inside the loop() function's curly brackets, paste the following code:
 
-```
+```js
 RGB.control(true);
 //change its color
 RGB.color(RGB_COLOR_WHITE);
 RGB.control(false);
 ```
+
 This code uses the Particle API to grab control of the central RGB LED, change its color, then relinquish control.
 
 This new file is considered to be an 'app' in Particle Build. You need to give it a name in the left panel before you can flash code to it.
@@ -59,7 +60,7 @@ Tinker a little bit with this snippet. Can you turn the LED red?
 
 In our mobile app, we're going to create three 'modes' of LED lights - 'Rainbow Mode' where the LED will flash a rainbow series, 'Unicorn Mode' where the LED flashes alternating blue and white, and a 'stop' mode where the LED stays white.
 
-You might have guessed, we're going to put these routines in the loop() function. 
+You might have guessed, we're going to put these routines in the loop() function.
 
 Add a variable at the top of this file, listing the initial light style to be 0:
 
@@ -67,7 +68,7 @@ Add a variable at the top of this file, listing the initial light style to be 0:
 
 Then, in the loop() function, overwrite the snippet you just added with the following code:
 
-```
+```js
 if(style == 0){
         RGB.control(true);
         //change its color
@@ -122,20 +123,19 @@ We just added a Particle function called `launchMode` that will be available fro
 
 Add that function under the close of the loop() function:
 
-```
+```js
 int launchMode(String mode) {
     style = 0;
-    
+
     if(mode=="rainbow"){
         style = 1;
     }else if(mode=="unicorn"){
         style = 2;
     }
-    
 }
 ```
 
-Now, our mobile app can call the `launchMode` Particle Function which will call the internal `launchMode` function, passing in a string telling which mode we want to use to dictate the LED flash style. 
+Now, our mobile app can call the `launchMode` Particle Function which will call the internal `launchMode` function, passing in a string telling which mode we want to use to dictate the LED flash style.
 
 Go ahead and save, verify, then flash this code to your device. The LED should return to white.
 
@@ -143,7 +143,7 @@ Go ahead and save, verify, then flash this code to your device. The LED should r
 
 The final code looks like this:
 
-```
+```js
 int style = 0;
 
 void setup(){
@@ -190,13 +190,13 @@ void loop(){
 
 int launchMode(String mode) {
     style = 0;
-    
-    if(mode=="rainbow"){
+
+    if (mode=="rainbow") {
         style = 1;
-    }else if(mode=="unicorn"){
+    } else if (mode=="unicorn") {
         style = 2;
     }
-    
+
 }
 ```
 
@@ -208,7 +208,7 @@ Open the [NativeScript Playground](http://play.nativescript.org) and take a look
 
 Click 'Play Now' to open the main editor. You'll see a QR code appear - scan that with the NativeScript Play app. This allows your phone to refresh automatically as you code. Now you're ready to scaffold a NativeScript-Vue app!
 
-![playground](./images/playground1.png) 
+![playground](./images/playground1.png)
 
 By default, the first playground app is created using Angular. Click 'new' at the top and choose 'NS-Vue' as a template. You'll get another QR code, so scan that one. You'll see your phone refresh and a basic app appear:
 
@@ -224,21 +224,20 @@ NativeScript layouts differ from the html you write on the web. You're using Nat
 
 Delete everything between the template's `<Page>` tags and add the following:
 
-```
-<ActionBar class="action-bar" title="Awesome Photons!"/>      
-        
+```html
+<ActionBar class="action-bar" title="Awesome Photons!"/>
         <StackLayout>
-        <SegmentedBar color="blueviolet" 
-              selectedBackgroundColor="blueviolet" class="bar" 
-              :items="segmentedBarItems" v-model="selectedBarIndex"  
-                />
-          <StackLayout height="100%" :class="mode"></StackLayout>
+          <SegmentedBar color="blueviolet"
+                selectedBackgroundColor="blueviolet" class="bar"
+                :items="segmentedBarItems" v-model="selectedBarIndex"
+                  />
+            <StackLayout height="100%" :class="mode"></StackLayout>
         </StackLayout>
 ```
 
 The SegmentedBar does not yet appear as the binded values `:items` and the `v-model` have not yet been set. Above the template block, add a `data` block to build the SegmentedBar, set its default SelectedBarIndex, and create a placeholder value for `mode`. The latter will be used to change the UI when the Bar is tapped:
 
-```
+```js
 data() {
     return {
       segmentedBarItems: function () {
@@ -256,15 +255,16 @@ data() {
     };
   },
 ```
+
 Now, you should be able to see the SegmentedBar appear, with a little more padding. The ActionBar is improved as well!
 
 ## Add some CSS
 
-NativeScript supports a subset of regular CSS and SASS to style UIs. 
+NativeScript supports a subset of regular CSS and SASS to style UIs.
 
 In `app.css`, overwrite the two styles in this file by default with the following;
 
-```
+```css
 .action-bar {
     color: white;
     background-color: blueviolet;
@@ -294,11 +294,11 @@ Make sure to rename your file `unicorn.jpg` and save it after uploading it.
 
 ## Create A Method (1)
 
-We want the UI to change, depending on whether we tap `Rainbows`, `Unicorns`, or `Stop!`. 
+We want the UI to change, depending on whether we tap `Rainbows`, `Unicorns`, or `Stop!`.
 
 Create a `methods` block after the last comma of the `template` block to manage the behavior of the SegmentedBar:
 
-```
+```js
 methods: {
     onSelectedIndexChange(args) {
       let segmentedBarIndex = args.object.selectedIndex;
@@ -320,20 +320,20 @@ methods: {
 
 Then, edit the `<SegmentedBar>` itself to watch for this method; append @selectedIndexChange to the `<SegmentedBar>` markup:
 
-```
-@selectedIndexChange="onSelectedIndexChange($event)" 
+```html
+@selectedIndexChange="onSelectedIndexChange($event)"
 ```
 The finished template block now looks like this:
 
-```
+```html
 <Page class="page">
-      <ActionBar class="action-bar" title="Awesome Photons!"/>      
-        
+      <ActionBar class="action-bar" title="Awesome Photons!"/>
+
         <StackLayout>
-        <SegmentedBar color="blueviolet" 
-              selectedBackgroundColor="blueviolet" class="bar" 
+        <SegmentedBar color="blueviolet"
+              selectedBackgroundColor="blueviolet" class="bar"
               :items="segmentedBarItems" v-model="selectedBarIndex"
-              @selectedIndexChange="onSelectedIndexChange($event)"  
+              @selectedIndexChange="onSelectedIndexChange($event)"
                 />
           <StackLayout height="100%" :class="mode"></StackLayout>
         </StackLayout>
@@ -344,11 +344,11 @@ Now, when you tap the SegmentedBar, the UI should change.
 
 ## Connect Your Photon
 
-Now it's finally time to make the Photon light up when you tap the SegmentedBar. 
+Now it's finally time to make the Photon light up when you tap the SegmentedBar.
 
-At the top of the file, set some `const` values. 
+At the top of the file, set some `const` values.
 
-```
+```js
 const http = require("http");
 const baseUrl = 'https://api.particle.io/v1/devices/xxxxx';
 const token = 'yyyyy';
@@ -357,7 +357,7 @@ const endpoint = 'launchMode';
 
 Let's walk through these. First, we need to make an http call to Particle's REST API, so we need the `http` module.
 
-Next, you need to tell the REST API which device to call and send it a token. You need to change two values here. Go back to Particle's Build IDE and click on the third icon from the bottom (it looks like a target). Your device ID is here: 
+Next, you need to tell the REST API which device to call and send it a token. You need to change two values here. Go back to Particle's Build IDE and click on the third icon from the bottom (it looks like a target). Your device ID is here:
 
 ![Particle IDE](./images/particle1.png)
 
@@ -373,7 +373,7 @@ The last value you added is the name of the endpoint you're going to call - reme
 
 Adding a comma after the closing bracket of the `onSelectedIndexChange` call, append a method to call the REST API and make your Photon change color:
 
-```
+```js
 launchMode(mode) {
       http.request({
         url: `${baseUrl}/${endpoint}?access_token=${token}`,
@@ -389,13 +389,14 @@ launchMode(mode) {
       });
     }
 ```
+
 Here, we're making an http request to our baseUrl at the endpoint we set up as a Particle function, passing through a string to tell the function which color sequence to flash.
 
-The final thing we need to do is actually call `launchMode` when the SegmentedBar is tapped. Go ahead and uncomment the `//this.launchMode(this.mode)` code in the `onSelectedIndexChange` method. 
+The final thing we need to do is actually call `launchMode` when the SegmentedBar is tapped. Go ahead and uncomment the `//this.launchMode(this.mode)` code in the `onSelectedIndexChange` method.
 
 The entire app code looks like this:
 
-```
+```js
 const Vue = require("nativescript-vue");
 const http = require("http");
 const baseUrl = 'https://api.particle.io/v1/devices/my-device';
@@ -421,16 +422,16 @@ new Vue({
   },
   template: `
     <Page>
-      <ActionBar class="action-bar" title="Awesome Photons!"/>      
-        
+      <ActionBar class="action-bar" title="Awesome Photons!"/>
+
         <StackLayout>
-        <SegmentedBar color="blueviolet" 
-              selectedBackgroundColor="blueviolet" class="bar" 
-              :items="segmentedBarItems" v-model="selectedBarIndex"  
+        <SegmentedBar color="blueviolet"
+              selectedBackgroundColor="blueviolet" class="bar"
+              :items="segmentedBarItems" v-model="selectedBarIndex"
               @selectedIndexChange="onSelectedIndexChange($event)"  />
           <StackLayout height="100%" :class="mode"></StackLayout>
         </StackLayout>
-    </Page> 
+    </Page>
   `,
   methods: {
     onSelectedIndexChange(args) {
