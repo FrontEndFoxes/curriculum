@@ -4,13 +4,8 @@
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **What you’ll learn**       | How to build a mobile app with NativeScript and Vue.js, how to setup and configure a Particle Photon, and how to connect the two so the app controls the device.                                                                                             |
 | **Tools you’ll need**       | Access to Wifi<br><br>A modern browser like Chrome.<br><br>Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact. A mobile phone (iOS or Android) with the NativeScript Playground and Preview apps installed.<br><br>The two NativeScript companion apps for the playground (NativeScript Viewer and NativeScript Playground. On Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) and [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview). On iOS: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) and [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702)<br><br>A [Particle Photon device](https://store.particle.io/collections/photon).|
-<<<<<<< HEAD
 | **Time needed to complete** | 60 minutes  
-| **Just want to try the app?** | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=E9hBGf&v=21)                                                                      
-=======
-| **Time needed to complete** | 60 minutes
-| **Just want to try the app?** | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=E9hBGf&v=19)
->>>>>>> origin/master
+| **Just want to try the app?** | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=E9hBGf&v=21)          
 
 # Instructions
 
@@ -65,15 +60,7 @@ Tinker a little bit with this snippet. Can you turn the LED red?
 
 In our mobile app, we're going to create three 'modes' of LED lights - 'Rainbow Mode' where the LED will flash a rainbow series, 'Unicorn Mode' where the LED flashes alternating blue and white, and a 'stop' mode where the LED stays white.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 You might have guessed that we're going to put these routines in the loop() function. 
-=======
-You might have guessed, we're going to put these routines in the loop() function.
->>>>>>> origin/master
-=======
-You might have guessed, we're going to put these routines in the loop() function.
->>>>>>> origin/master
 
 Add a variable at the top of this file, listing the initial light style to be 0:
 
@@ -237,21 +224,6 @@ NativeScript layouts differ from the html you write on the web. You're using Nat
 
 Open `app/components/HelloWorld.vue` and delete everything between the template's `<Page>` tags and add the following:
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-```
-<ActionBar class="action-bar" title="Awesome Photons!"/>      
-        
-    <StackLayout>
-        <SegmentedBar color="blueviolet" 
-              selectedBackgroundColor="blueviolet" class="bar" 
-              :items="segmentedBarItems" v-model="selectedBarIndex"  
-                />
-          <StackLayout height="100%" :class="mode"></StackLayout>
-    </StackLayout>
-=======
-=======
->>>>>>> origin/master
 ```html
 <ActionBar class="action-bar" title="Awesome Photons!"/>
         <StackLayout>
@@ -261,7 +233,6 @@ Open `app/components/HelloWorld.vue` and delete everything between the template'
                   />
             <StackLayout height="100%" :class="mode"></StackLayout>
         </StackLayout>
->>>>>>> origin/master
 ```
 
 The SegmentedBar does not yet appear as the binded values `:items` and the `v-model` have not yet been set. Find the data block (under the template block) and add values for a SegmentedBar. Also set its default SelectedBarIndex and create a placeholder value for `mode`. The latter will be used to change the UI when the Bar is tapped:
@@ -284,26 +255,12 @@ data() {
     };
   },
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 Now, you should be able to see the SegmentedBar appear!
 
 ## Add some CSS
 
 NativeScript supports a subset of regular CSS and SASS to style UIs. Let's leverage that to improve our UI.
-=======
-=======
->>>>>>> origin/master
-
-Now, you should be able to see the SegmentedBar appear, with a little more padding. The ActionBar is improved as well!
-
-## Add some CSS
-
-NativeScript supports a subset of regular CSS and SASS to style UIs.
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 
 Under the `<script>` tags, you'll find a `<style>` tag. Overwrite the two styles in this block with the following;
 
@@ -389,15 +346,7 @@ Now, when you tap the SegmentedBar, the UI should change.
 
 Now it's finally time to make the Photon light up when you tap the SegmentedBar.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-At the top of the `<script>` block, set some `const` values. 
-=======
 At the top of the file, set some `const` values.
->>>>>>> origin/master
-=======
-At the top of the file, set some `const` values.
->>>>>>> origin/master
 
 ```js
 const http = require("http");
@@ -447,30 +396,8 @@ The final thing we need to do is actually call `launchMode` when the SegmentedBa
 
 The entire HelloWorld.vue file looks like this:
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-```
-<template>
-	<Page>
-      <ActionBar class="action-bar" title="Awesome Photons!"/>      
-        
-      <StackLayout>
-        <SegmentedBar color="blueviolet" 
-              selectedBackgroundColor="blueviolet" class="bar" 
-              :items="segmentedBarItems" v-model="selectedBarIndex"  
-              @selectedIndexChange="onSelectedIndexChange($event)"  />
-          <StackLayout height="100%" :class="mode"></StackLayout>
-      </StackLayout>
-	</Page>
-</template>
-    
-<script>
-=======
-=======
->>>>>>> origin/master
+
 ```js
-const Vue = require("nativescript-vue");
->>>>>>> origin/master
 const http = require("http");
 const baseUrl = 'https://api.particle.io/v1/devices/my-device';
 const token = 'my-token';
@@ -492,10 +419,6 @@ data() {
       mode: ''
     };
   },
-<<<<<<< HEAD
-  
-methods: {
-=======
   template: `
     <Page>
       <ActionBar class="action-bar" title="Awesome Photons!"/>
@@ -510,7 +433,6 @@ methods: {
     </Page>
   `,
   methods: {
->>>>>>> origin/master
     onSelectedIndexChange(args) {
       let segmentedBarIndex = args.object.selectedIndex;
       if (segmentedBarIndex == 0) {
