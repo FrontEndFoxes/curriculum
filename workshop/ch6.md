@@ -4,8 +4,8 @@
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **What&nbsp;you’ll&nbsp;learn**       | How to build native mobile cross-platform apps with Vue and NativeScript including managing layouts and plugins                                                                                             |
 | **Tools&nbsp;you’ll&nbsp;need**       | A modern browser like Chrome.<br><br>Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact.<br><br>A mobile phone (iOS or Android) with the NativeScript Playground and Preview apps installed.<br><br>The two NativeScript companion apps for the playground are the NativeScript Viewer and NativeScript Playground.<br><br>On Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) and [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview).<br><br>On iOS: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) and [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702)
-| **Time needed to complete** | 1 hour   
-| **Just want to try the app?** | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=f8WlCD&v=6)                                                                                                                        
+| **Time needed to complete** | 1 hour
+| **Just want to try the app?** | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=f8WlCD&v=6)
 
 ## Instructions
 
@@ -15,7 +15,7 @@ In this chapter, we're going to move from building a web app to create a pet ado
 
 We're going to work in the NativeScript Playground to build this app. Open the [NativeScript Playground](http://play.nativescript.org) and take a look around. On your first visit, you'll see several 'coach marks' showing where key functionality is kept.
 
-![coach marks in the playground](./images/playground1.png) 
+![coach marks in the playground](./images/playground1.png)
 
 Click 'Play Now' to open the main editor. You'll see a QR code appear - scan that with the NativeScript Play app. This allows your phone to refresh automatically as you code. Now you're ready to scaffold a NativeScript-Vue app!
 
@@ -25,11 +25,11 @@ By default, the first playground app is created using Angular. Click 'new' at th
 
 ## Add some Styles
 
-Now we're going to style the app's interface and build its UI. It's going to have an ActionBar, a title, two hidden buttons, and a stack of cards. Depending on whether you swipe right or left, those buttons will briefly appear and disappear.  
+Now we're going to style the app's interface and build its UI. It's going to have an ActionBar, a title, two hidden buttons, and a stack of cards. Depending on whether you swipe right or left, those buttons will briefly appear and disappear.
 
 Open the app.css file in the app root. Overwrite the file with these styles:
 
-```
+```css
 @import 'nativescript-theme-core/css/core.light.css';
 
 .card{
@@ -77,7 +77,7 @@ For the moment, the styling hasn't done much other than colorize the ActionBar. 
 
 ## Add a Plugin to Create a Card Layout
 
-We're going to use a NativeScript Plugin to create a layout of stackable cards created from images fetched from the Dog CEO API. 
+We're going to use a NativeScript Plugin to create a layout of stackable cards created from images fetched from the Dog CEO API.
 
 ::: tip 💡
 Find all kinds of cool verified and community-built plugins in the [NativeScript Marketplace](http://market.nativescript.org), along with code samples and templates.
@@ -89,10 +89,11 @@ Import a plugin into the playground by clicking on the small `+` button next to 
 
 Next, we need to import the plugin so we can use it. In the `app.js` file, under the first line where `Vue` is imported, import the plugin:
 
-```
+```js
 Vue.registerElement('SwipeLayout', () => require("./nativescript-swipe-layout").SwipeLayout);
 Vue.config.silent = false;
 ```
+
 ::: tip 💡
 It's useful for debugging purposes to set `Vue.config.silent` to `false`, and watch for errors in the Device Logs panel at the bottom of the Playground interface.
 :::
@@ -103,7 +104,7 @@ Let's query the Dog CEO API again to get 15 random images of dogs for the users 
 
 Add this block directly under `new Vue({`:
 
-```
+```js
 data() {
     return {
       dogArray: [],
@@ -119,7 +120,7 @@ Now we can get ready to call the API. First, import the `http` module at the top
 
 Then, create a `methods` block. After the final comma of `the data() {...},` block, add a call to the API:
 
-```
+```js
 methods: {
     getMultiDogs() {
       http.request({
@@ -143,14 +144,15 @@ Take a look at this API call. We are asking the API for 15 random images, to ens
 
 Next, call this `getMultiDogs` method when the app is created. Add this block just above the `template:`:
 
-```
+```js
 created() {
     this.getMultiDogs();
   },
 ```
-Finally, display the images in the UI. Replace the `<ScrollView...` tags with this markup: 
 
-```
+Finally, display the images in the UI. Replace the `<ScrollView...` tags with this markup:
+
+```html
 <StackLayout>
    <GridLayout rows="*" columns="*">
       <SwipeLayout v-for="dog in dogs" :key="dog.id" row="0" col="0" :animationState="swipeLayoutAnimated">
@@ -159,6 +161,7 @@ Finally, display the images in the UI. Replace the `<ScrollView...` tags with th
     </GridLayout>
  </StackLayout>
 ```
+
 ::: tip 💡
 The biggest difference between developing for web and mobile is the layouts. NativeScript layouts are designed to handle native mobile layouting, and don't have the type of DOM-building techniques familiar to web developers. Learn more about NativeScript layouting [here](https://www.nslayouts.com/)
 :::
@@ -167,11 +170,11 @@ By this time, you should see a dog appearing in a card, but the card isn't swipa
 
 ## Make the Cards Swipable
 
-We need to add a few methods to manage the user's gestures, swiping right and left. 
+We need to add a few methods to manage the user's gestures, swiping right and left.
 
 First, add two new methods in the methods block:
 
-```
+```js
 next() {
    this.dogs.pop();
 },
@@ -179,7 +182,7 @@ swipeRightCallback(e) {
    this.next();
 },
 swipeLeftCallback(e) {
-   this.next();     
+   this.next();
 }
 ```
 
@@ -194,11 +197,11 @@ To this:
 
 `<SwipeLayout v-for="dog in dogs" :key="dog.id" row="0" col="0" :animationState="swipeLayoutAnimated" @swipeLeft="swipeLeftCallback($event)" @swipeRight="swipeRightCallback($event)">`.
 
-For the moment, this edit will add a callback for left and right swiping gestures, and removing elements from the dogs array as the user disposes of the card. The cards should swipe left and right by now. 
+For the moment, this edit will add a callback for left and right swiping gestures, and removing elements from the dogs array as the user disposes of the card. The cards should swipe left and right by now.
 
 What happens, though, when you swipe more than fifteen times? We can add a call to the `next()` method to call the API again for a new set of data, once the old is discarded. Edit `next()`:
 
-```
+```js
 next() {
    this.dogs.pop();
    console.log(this.dogs.length)
@@ -208,6 +211,7 @@ next() {
    }
 },
 ```
+
 Try to swipe left and right. What happens when you get up to swipe number 15? Watch the Device Log to verify the length of your array.
 
 ## Add Some Animated Buttons
@@ -222,13 +226,13 @@ First, require the Animation module at the top:
 
 Then, add a section at the top of the UI, under the opening `<StackLayout` tag:
 
-```
-<AbsoluteLayout>          
+```html
+<AbsoluteLayout>
      <GridLayout style="z-index:1" columns="*,*" width="100%" paddingTop="20">
          <Label ref="no" col="0" text="🤔" class="btn no"/>
          <Label ref="yes" col="1" text="😍" class="btn yes"/>
       </GridLayout>
-    <Label class="h1" width="100%" text="Fetch a new friend!"/>              
+    <Label class="h1" width="100%" text="Fetch a new friend!"/>
 </AbsoluteLayout>
 ```
 
@@ -236,7 +240,7 @@ This markup presents a nice mix of layouts: AbsoluteLayout fixes the invisible b
 
 Finally, replace the callback code with the following two methods. Note the use of the animation module to change the opacity of each button quickly from invisible to visible:
 
-```
+```js
 swipeRightCallback(e) {
       this.$refs.yes.nativeView.animate({ opacity: 1 })
         .then(() => {
@@ -263,10 +267,10 @@ Note the use of `$refs`, a reference to the element that needs to be animated wi
 
 Now, try swiping! You should see a red and green briefly appearing as you swipe.
 
-One final tweak is to change the ActionBar title! Give your app a name. 
-	
+One final tweak is to change the ActionBar title! Give your app a name.
+
 **🎊Congratulations, you've finished your mobile app!🎊**
-		
+
 # Final result
 
 ![base app](./images/tindogs.png)
