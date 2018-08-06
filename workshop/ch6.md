@@ -127,11 +127,11 @@ methods: {
         url: "https://dog.ceo/api/breeds/image/random/15", method: "GET"
       }).then((response) => {
         this.dogArray = JSON.parse(response.content)
-        for (i = 0; i < 15; i++) {
+        for (let i = 0; i < 15; i++) {
           this.dogs.push(this.dogArray.message[i])
         }
         console.log(JSON.stringify(this.dogs))
-      }, (e) => {
+      }).catch( (e) => {
         alert("error")
       });
     }
