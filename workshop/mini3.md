@@ -4,7 +4,7 @@
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **What you’ll learn**       | How to build a mobile app with NativeScript and Vue.js, how to setup and configure a Particle Photon, and how to connect the two so the app controls the device.                                                                                             |
 | **Tools you’ll need**       | Access to Wifi<br><br>A modern browser like Chrome.<br><br>Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact. A mobile phone (iOS or Android) with the NativeScript Playground and Preview apps installed.<br><br>The two NativeScript companion apps for the playground (NativeScript Viewer and NativeScript Playground. On Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) and [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview). On iOS: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) and [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702)<br><br>A [Particle Photon device](https://store.particle.io/collections/photon).|
-| **Time needed to complete** | 60 minutes  
+| **Time needed to complete** | 1 hour  
 | **Just want to try the app?** | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=E9hBGf&v=21)          
 
 # Instructions
@@ -13,11 +13,43 @@
 
 ### 1. Connect the Photon to WiFi:
 
-Unbox the kit that comes with this workshop or use your own device, and plug the mini-USB cord into the Photon and to a USB port on your computer. Visit the Photon [setup](https://setup.particle.io/) page to set up your device. Click 'Setup a Photon' and 'next' to begin. If you have all the requirements on the next page, click 'next'. Download the local file that is generated to your computer. Open the photonsetup.html file in a browser.
+Unbox the kit that comes with this workshop or use your own device, and plug the mini-USB cord into the Photon and to a USB port on your computer so it will have power. 
 
-Follow the steps listed to connect to the Photon's wifi network. When it connects, it should 'breathe cyan' (the blue light in the center should pulse gently on and off).
+- Visit the Photon setup page to set up your device. You will be prompted to login; go ahead and create a Particle account. 
 
-Next, click 'name your device' and give it a name. Next, you can create an account on for Particle Build, the Photon's special IDE where you keep its code.
+- Click 'Setup a Photon' and 'next' to begin. If you have all the requirements on the next page, click 'next'. Download the local file that is generated to your computer. Open the photonsetup.html file in a browser.
+
+- Identify your Photon by looking at the back of the Photon's box. You'll find a sticker on the right that lists the device's id. The last six characters of that number match the wifi address that appears on your computer. 
+
+![box](./images/box.jpg)
+
+- Follow the steps listed to connect to the Photon's wifi network. When it connects, it should 'breathe cyan' (the blue light in the center should pulse gently on and off).
+
+![wifi](./images/wifi.png)
+
+Complete the setup of the device by giving it a name. Now, you can start using your device with Particle Build, the Photon's special IDE where you keep its code.
+
+::: troubleshooting 💡 
+Sometimes students have trouble finding their Photon on Particle Buid. If you don't see it in the IDE, add it manually.
+
+- If the device is not already blinking blue, hold down the setup button on the Photon until the main status LED blinks dark blue. This takes about 3 seconds.
+
+![setup button](./images/setup_button.jpg)
+
+- Connect to your Photon's wifi following the steps above, and then open a web browser and navigate to: [http://192.168.0.1/device-id](http://192.168.0.1/device-id). On that page, you'll see an id like this:
+
+```
+{"id":"30003F000347363339343638","c":"1"}
+```
+
+- Make a note of that id, you'll use it later.
+
+- Navigate to [Particle Build](https://build.particle.io) and click 'Add New Device'. 
+
+![Particle Build](./images/device_id.png)
+
+- Input the Device ID that you notated earlier in the box. Your device should now be ready to use in the IDE.
+:::
 
 ### 2. Create a Particle Account and Learn About Particle Build
 
