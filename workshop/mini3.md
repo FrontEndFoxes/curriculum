@@ -30,7 +30,7 @@ Unbox the kit that comes with this workshop or use your own device, and plug the
 Complete the setup of the device by giving it a name. Now, you can start using your device with Particle Build, the Photon's special IDE where you keep its code.
 
 ::: tip 💡 
-Sometimes students have trouble finding their Photon on Particle Buid. If you don't see it in the IDE, add it manually.
+Sometimes students have trouble finding their Photon on Particle Build. If you don't see it in the IDE, add it manually.
 
 - If the device is not already blinking blue, hold down the setup button on the Photon until the main status LED blinks dark blue. This takes about 3 seconds.
 
