@@ -13,11 +13,11 @@
 
 ### 1. Connect the Photon to WiFi:
 
-Unbox the kit that comes with this workshop or use your own device, and plug the mini-USB cord into the Photon and to a USB port on your computer so it will have power. 
+Unbox the kit that comes with this workshop or use your own device, and plug the mini-USB cord into the Photon and to a USB port on your computer or to any USB-capable charger so the device will have power. 
 
-- Visit the Photon setup page to set up your device. You will be prompted to login; go ahead and create a Particle account. 
+- Visit the [Photon setup page](https://setup.particle.io/) to set up your device. You will be prompted to login; go ahead and create a Particle account. 
 
-- Click 'Setup a Photon' and 'next' to begin. If you have all the requirements on the next page, click 'next'. Download the local file that is generated to your computer. Open the photonsetup.html file in a browser.
+- After you have created your account, you will be redirected to set up the device. Click 'Setup a Photon' and 'next' to begin. If you have all the requirements on the next page, click 'next'. Download the local file that is generated to your computer. Open the `photonsetup.html` file in a browser.
 
 - Identify your Photon by looking at the back of the Photon's box. You'll find a sticker on the right that lists the device's id. The last six characters of that number match the wifi address that appears on your computer. 
 
@@ -27,7 +27,7 @@ Unbox the kit that comes with this workshop or use your own device, and plug the
 
 ![wifi](./images/wifi.png)
 
-Complete the setup of the device by giving it a name. Now, you can start using your device with Particle Build, the Photon's special IDE where you keep its code.
+Complete the setup of the device by giving it a name. Now, you can start using your device with [Particle Build](http://build.particle.io), the Photon's special IDE where you keep its code.
 
 ::: tip 💡 
 Sometimes students have trouble finding their Photon on Particle Build. If you don't see it in the IDE, add it manually.
@@ -51,9 +51,9 @@ Sometimes students have trouble finding their Photon on Particle Build. If you d
 - Input the Device ID that you notated earlier in the box. Your device should now be ready to use in the IDE.
 :::
 
-### 2. Create a Particle Account and Learn About Particle Build
+### 2. Learn About Particle Build
 
-Create an account [here](https://login.particle.io/login) and then go to [Particle Build](https://build.particle.io/build/new). Click on the third icon from the bottom to see your device listed. Make sure that it is starred - you are going to flash code to this device over wifi.
+Since you already created an account for your Photon and should be logged in ([if not, login here](https://login.particle.io/login)) now you can go to [Particle Build](https://build.particle.io/build/new). Click on the third icon from the bottom on the left bar to see your device listed. Make sure that it is starred (click its star, if not) - you are going to flash code to this device over wifi.
 
 Let's take a look at Particle Build. This is a browser-based IDE that allows you to 'flash', or publish, code from the browser to the Photon device selected on the left.
 
@@ -62,14 +62,14 @@ Let's take a look at Particle Build. This is a browser-based IDE that allows you
 Currently, there is nothing in this new file except a setup() and loop() function. Let's start adding code to this file.
 
 ::: tip 💡
-Photons are basically wifi-connected Arduinos, so if you have experience in Arduino development, this code will look familiar. Arduino 'sketches', or firmware that is written to a hardware device, are commonly written in C or C++. We're going to write a bit of C++ to control the central LED light on the device, avoiding any soldering or extra wiring. The Particle kit, however, comes with a few extras, so feel free to explore them more!
+Photons are basically wifi-connected Arduinos, so if you have experience in Arduino development, this code will look familiar. Arduino 'sketches', or firmware that is written to a hardware device, are commonly written in C or C++. We're going to write a bit of C++ code to control the central LED light on the device, avoiding any soldering or extra wiring. The Particle kit, however, comes with a few extras, so feel free to explore them more later on!
 :::
 
-Right now, your Photon is lit up in the center LED, and is 'breathing cyan' or pulsing a kind of greenish blue color, if everything is going well. Let's flash some code to it to turn the central light white.
+Right now, your Photon is lit up in the center LED, and should be 'breathing cyan' or pulsing a kind of greenish blue color, if everything is going well. Let's flash some code to it to turn the central light white.
 
 ### 3. Flash Some Code
 
-Inside the loop() function's curly brackets, paste the following code:
+To the right of the Build IDE, you'll see a black window with some lines of code. Inside the loop() function's curly brackets, paste the following code:
 
 ```js
 RGB.control(true);
@@ -80,11 +80,11 @@ RGB.control(false);
 
 This code uses the Particle API to grab control of the central RGB LED, change its color, then relinquish control.
 
-This new file is considered to be an 'app' in Particle Build. You need to give it a name in the left panel before you can flash code to it.
+This new file is considered to be an 'app' in Particle Build. You need to give it a name in the left panel before you can flash your app code to your starred device.
 
 ![build](./images/particle_build2.png)
 
-Save your change by clicking the folder icon in the left navigation strip of Particle Build. Above that, click the circled checkmark to 'verify' the code. This basically tests your code to ensure that it can compile. Finally, ensuring that your Photon is starred, click the lightning icon at the top to flash this code to your device. The Photon should update, and then the central LED should turn white. It will stay white because we put the code in the loop function.
+Save your change by clicking the folder icon in the left navigation strip of Particle Build. Above that, click the circled checkmark to 'verify' the code. This basically tests your code to ensure that it can compile. Finally, ensuring that your Photon is starred, click the lightning icon at the top to flash this code to your device. The Photon should update, flashing a few colors for a few seconds, and then the central LED should turn white. It will stay white because we put the code in the loop function.
 
 Tinker a little bit with this snippet. Can you turn the LED red?
 
@@ -167,7 +167,7 @@ int launchMode(String mode) {
 }
 ```
 
-Now, our mobile app can call the `launchMode` Particle Function which will call the internal `launchMode` function, passing in a string telling which mode we want to use to dictate the LED flash style.
+Now, our mobile app can call the `launchMode` Particle Function which will call the internal `launchMode` function, passing in a string indicating which mode we want to use to control the LED flash style.
 
 Go ahead and save, verify, then flash this code to your device. The LED should return to white.
 
@@ -234,7 +234,7 @@ int launchMode(String mode) {
 
 ## Scaffold your app
 
-Now we are going to build an app with NativeScript, using JavaScript to create a native mobile app.
+Now we are going to build an app with NativeScript, using JavaScript to create a native mobile app. This app will communicate with the Photon via the code you just flashed.
 
 Open the [NativeScript Playground](http://play.nativescript.org) and take a look around. On your first visit, you'll see several 'coach marks' showing where key functionality is kept.
 
