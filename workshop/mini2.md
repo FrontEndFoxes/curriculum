@@ -149,7 +149,7 @@ Then, overwrite the current template in `App.vue` with this markup:
           <div class="dogs-overlay">
             <h1 class="display-2 text-xs-center">Choose your favorite dogs</h1>
             <v-card class="dog-card">
-              <v-card-media height="400px"></v-card-media>
+              <v-img height="400px"></v-img>
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn icon>
@@ -175,12 +175,12 @@ Note the use of `<v-app>` in this template markup - this is a requirement of Vue
 
 ## Add some data
 
-At this point, we need to start populating our UI with some data. First thing we want to do is to display a dog image inside our `v-card`. Let's add a static link just to test how it looks. In `App.vue`'s template, change the `src` property of `v-card-media`:
+At this point, we need to start populating our UI with some data. First thing we want to do is to display a dog image inside our `v-card`. Let's add a static link just to test how it looks. In `App.vue`'s template, change the `src` property of `v-img`:
 
 ```html
-<v-card-media
+<v-img
    height="400px"
-   src="https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg"></v-card-media>
+   src="https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg"></v-img>
 
 ```
 
@@ -204,7 +204,7 @@ export default {
 At this point you can remove the `HelloWorld.vue` file from the `components` folder as we won't need it.
 :::
 
-Now you have a variable called `currentDogLink` and its default value is an empty string. We will use this variable to provide a link to a current dog in `v-card-media`. First, we will set the `currentDogLink` value:
+Now you have a variable called `currentDogLink` and its default value is an empty string. We will use this variable to provide a link to a current dog in `v-img`. First, we will set the `currentDogLink` value:
 
 ```js
 data() {
@@ -214,12 +214,12 @@ data() {
 }
 ```
 
-Now we have to change the template to make the `src` property _dynamic_, so it can use the value of the variable we just populated above. To do this we need a `v-bind` directive or its shortcut, `:`. Again in `App.vue`, edit the `<v-card-media>` tag:
+Now we have to change the template to make the `src` property _dynamic_, so it can use the value of the variable we just populated above. To do this we need a `v-bind` directive or its shortcut, `:`. Again in `App.vue`, edit the `<v-img>` tag:
 
 ```html
-<v-card-media
+<v-img
    height="400px"
-   :src="currentDogLink"></v-card-media>
+   :src="currentDogLink"></v-img>
 
 ```
 
@@ -383,8 +383,8 @@ To display the favorite dogs we should make a changes to our template. Let's add
   <v-layout wrap>
     <v-flex xs6 sm4 md2>
       <v-card class="dog-card">
-        <v-card-media
-          height="150px"></v-card-media>
+        <v-img
+          height="150px"></v-img>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn icon>
@@ -415,12 +415,12 @@ To properly loop over your array of favorite dogs and append another one, you ne
 
 You can see that our empty card disappeared. It's fine! We have an empty `favoriteDogs` array so there's simply nothing to render right now.
 
-One thing left to do is to bind `pet` (which will be the image link) to the `src` property of the `v-card-media` component:
+One thing left to do is to bind `pet` (which will be the image link) to the `src` property of the `v-img` component:
 
 ```html
-<v-card-media
+<v-img
   height="150px"
-  :src="pet"></v-card-media>
+  :src="pet"></v-img>
 ```
 
 Now it's time to like some dogs 💖🐶!
@@ -572,9 +572,9 @@ In our template in `Dog.vue` we should replace `pet` with `dog`, because we don'
 ```html
 <template>
   <v-card class="dog-card">
-    <v-card-media
+    <v-img
       height="150px"
-      :src="dog"></v-card-media>
+      :src="dog"></v-img>
     <v-card-actions>
       <v-spacer></v-spacer>
       <v-btn icon @click="removeFromFavorites(index)">
@@ -665,10 +665,10 @@ Vue provides a `transition` wrapper component, allowing you to add entering/leav
 Let's try to animate the image of the current dog. First, we need to add `v-if` directive to it to provide the proper context for the future transition. In `App.vue`, edit the main dog's media card:
 
 ```html
-<v-card-media
+<v-img
   v-if="currentDogLink"
   height="400px"
-  :src="currentDogLink"></v-card-media>
+  :src="currentDogLink"></v-img>
 ```
 
 But now `currentDogLink` will always return `true`! Let's set it to the empty string every time we're clicking the 'Next' button, so before the next image is loaded, `currentDogLink` will return `false`:
@@ -682,12 +682,12 @@ loadNewDog() {
 },
 ```
 
-Now you can observe this ugly effect: the image disappears every time the user clicks 'Next'. We will fix it with the fade animation effect. Let's wrap the `v-card-media` in a `<transition>` tag and provide it with a name attribute `fade`.
+Now you can observe this ugly effect: the image disappears every time the user clicks 'Next'. We will fix it with the fade animation effect. Let's wrap the `v-img` in a `<transition>` tag and provide it with a name attribute `fade`.
 
 ```html
 <transition name="fade">
-  <v-card-media v-if="currentDogLink" height="400px"
-  :src="currentDogLink"></v-card-media>
+  <v-img v-if="currentDogLink" height="400px"
+  :src="currentDogLink"></v-img>
 </transition>
 ```
 
