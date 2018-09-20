@@ -66,7 +66,7 @@ As your app refreshes, you'll see that the UI shows some promise, but looks a li
 
 ## Fix the UI
 
-Let's fix the ActionBar: In `app/components/HelloWorld.js`, delete everything between the `<Page>` tags. Add a title to ActionBar, something like this: `<ActionBar title="So. Many. Dogs!" class="action-bar" />`.
+Let's fix the ActionBar: In `app/components/HelloWorld.vue`, delete everything between the `<Page>` tags. Add a title to ActionBar, something like this: `<ActionBar title="So. Many. Dogs!" class="action-bar" />`.
 
 Next, add a StackLayout to replace the current scrollview. Under the ActionBar, and above the closing `</Page>` tag, add a layout with a button:
 
@@ -136,30 +136,21 @@ Try pressing the button and seeing if dogs appear. Cute, right? Check the consol
 The entire code of your HelloWorld.vue file should look like this:
 
 ```js
-const Vue = require("nativescript-vue");
-const http = require("http");
-
-new Vue({
-  data() {
-    return {
-      dogImage: {}
-    }
-  },
-  template: `
-    <Page class="page">
-      <ActionBar title="So. Many. Dogs!" class="action-bar" />
-      <StackLayout class="card">
-        <Button class="btn" @tap="getADog">Find Me A Dog!</button>
-           <StackLayout class="placeholder">
-            <Image :src="dogImage.message" />
-          </StackLayout>
-        </StackLayout>
-    </Page>
+<template>
+	<Page class="page">
+		<ActionBar title="So. Many. Dogs!" class="action-bar" />
+		<StackLayout class="card">
+			<Button class="btn" @tap="getADog">Find Me A Dog!</button>
+			<StackLayout class="placeholder">
+				<Image :src="dogImage.message" />
+			</StackLayout>
+		</StackLayout>
+	</Page>
 </template>
 
 <script>
 
-  const http = require("http");
+const http = require("http");
 
   export default {
 
@@ -168,7 +159,6 @@ new Vue({
       dogImage: {}
     }
   },
-
   methods: {
     getADog() {
       http.request({ url: "https://dog.ceo/api/breeds/image/random", method: "GET" }).then((response) => {
@@ -180,6 +170,7 @@ new Vue({
     }
   }
 }
+
 </script>
 ```
 
