@@ -23,9 +23,9 @@ Take a look at the code that was scaffolded by Code Sandbox for a basic Vue.js a
 
 ```js
 new Vue({
-	el: '#app',
-	components: { App },
-	template: '<App/>',
+  el: '#app',
+  components: { App },
+  template: '<App/>',
 });
 ```
 
@@ -89,7 +89,7 @@ Adding the style sheet didn't do much to our template except break the existing 
 
 ## Install Vuetify
 
-Before we edit the template, we're going to install Vuetify. Vuetify is a cool library that gives a Material Design styling to your Vue apps. In this chapter, we're only going to use it to create a switch, but we'll use it more in future chapters.
+Before we edit the template, we're going to install Vuetify. Vuetify is a cool library that gives a Material Design styling to your Vue apps.
 
 ::: tip 💡
 Vuetify is a semantic component framework for Vue. It aims to provide clean, semantic and reusable components for building your application. You can find full documentation for it [here](https://vuetifyjs.com/en/getting-started/quick-start)
@@ -289,13 +289,13 @@ To perform a GET request Axios uses the `axios.get` method. The result will be a
 
 ```js
 axios
-	.get('https://dog.ceo/api/breeds/image/random')
-	.then(response => {
-		console.log(response);
-	})
-	.catch(error => {
-		console.log(error);
-	});
+  .get('https://dog.ceo/api/breeds/image/random')
+  .then(response => {
+    console.log(response);
+  })
+  .catch(error => {
+    console.log(error);
+  });
 ```
 
 We want a new image to replace the old one right when the component is created, so let's add a `created()` hook right after `methods`:
@@ -649,10 +649,10 @@ Now let's make our application more appealing by adding some animation effects t
 ::: tip 💡
 Vue provides a `transition` wrapper component, allowing you to add entering/leaving transitions for any element or component in the following contexts:
 
--   Conditional rendering (using `v-if`)
--   Conditional display (using `v-show`)
--   Dynamic components
--   Component root nodes
+- Conditional rendering (using `v-if`)
+- Conditional display (using `v-show`)
+- Dynamic components
+- Component root nodes
 
 :::
 
@@ -692,11 +692,11 @@ Now that we have our hooks, we can create the transition using them. Edit the CS
 ```css
 .fade-enter-active,
 .fade-leave-active {
-	transition: opacity 1s ease;
+  transition: opacity 1s ease;
 }
 .fade-enter,
 .fade-leave-to {
-	opacity: 0;
+  opacity: 0;
 }
 ```
 
@@ -732,12 +732,12 @@ Now we can use CSS classes to describe the slide transition - add these classes 
 
 ```css
 .slide-enter-active {
-	transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .slide-enter,
 .slide-leave-to {
-	transform: translateX(10px);
-	opacity: 0;
+  transform: translateX(10px);
+  opacity: 0;
 }
 ```
 
@@ -745,11 +745,11 @@ Great! We have a nice animation when we add a new dog to the grid. But there are
 
 ```css
 .slide-fade-leave-active {
-	position: absolute;
+  position: absolute;
 }
 
 .slide-fade-move {
-	transition: transform 0.5s;
+  transition: transform 0.5s;
 }
 ```
 
