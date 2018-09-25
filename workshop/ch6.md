@@ -1,11 +1,11 @@
 # 📋 Chapter 6: Build a Tinder-Style Mobile App: Tindogs!
 
-| **Project&nbsp;Goal** | Build a card-swipe style mobile app with NativeScript and Vue                                                                                                                                   |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **What&nbsp;you’ll&nbsp;learn**       | How to build native mobile cross-platform apps with Vue and NativeScript including managing layouts and plugins                                                                                             |
-| **Tools&nbsp;you’ll&nbsp;need**       | A modern browser like Chrome.<br><br>Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact.<br><br>A mobile phone (iOS or Android) with the NativeScript Playground and Preview apps installed.<br><br>The two NativeScript companion apps for the playground are the NativeScript Viewer and NativeScript Playground.<br><br>On Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) and [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview).<br><br>On iOS: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) and [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702)
-| **Time needed to complete** | 1 hour
-| **Just want to try the app?** | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=f8WlCD&v=10)
+| **Project&nbsp;Goal**           | Build a card-swipe style mobile app with NativeScript and Vue                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **What&nbsp;you’ll&nbsp;learn** | How to build native mobile cross-platform apps with Vue and NativeScript including managing layouts and plugins                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome.<br><br>Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact.<br><br>A mobile phone (iOS or Android) with the NativeScript Playground and Preview apps installed.<br><br>The two NativeScript companion apps for the playground are the NativeScript Viewer and NativeScript Playground.<br><br>On Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) and [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview).<br><br>On iOS: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) and [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702) |
+| **Time needed to complete**     | 1 hour                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Just want to try the app?**   | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=f8WlCD&v=10)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 ## Instructions
 
@@ -32,42 +32,42 @@ Open the app.css file in the app root. Overwrite the file with these styles:
 ```css
 @import 'nativescript-theme-core/css/core.light.css';
 
-.card{
-    margin: 10;
-    z-index: 0;
-    border-radius: 5;
+.card {
+	margin: 10;
+	z-index: 0;
+	border-radius: 5;
 }
 
 .action-bar {
-    background-color: white;
-    color: red;
+	background-color: white;
+	color: red;
 }
 
 .btn {
-    z-index: 1;
-    padding: 5;
-    border-width: 5;
-    border-radius: 5;
-    background-color: white;
-    text-align: center;
-    font-size: 40px;
-    opacity: 0;
+	z-index: 1;
+	padding: 5;
+	border-width: 5;
+	border-radius: 5;
+	background-color: white;
+	text-align: center;
+	font-size: 40px;
+	opacity: 0;
 }
 
-.h1{
-    text-align: center;
-    padding-top: 40;
+.h1 {
+	text-align: center;
+	padding-top: 40;
 }
-.yes{
-    color: green;
-    border-color: green;
-    transform: rotate(15deg);
+.yes {
+	color: green;
+	border-color: green;
+	transform: rotate(15deg);
 }
 
-.no{
-    color: red;
-    border-color: red;
-    transform: rotate(-15deg);
+.no {
+	color: red;
+	border-color: red;
+	transform: rotate(-15deg);
 }
 ```
 
@@ -90,7 +90,7 @@ Import a plugin into the playground by clicking on the small `+` button next to 
 Next, we need to import the plugin so we can use it. In the `app.js` file, under the first line where `Vue` is imported, import the plugin:
 
 ```js
-Vue.registerElement('SwipeLayout', () => require("./nativescript-swipe-layout").SwipeLayout);
+Vue.registerElement('SwipeLayout', () => require('./nativescript-swipe-layout').SwipeLayout);
 Vue.config.silent = false;
 ```
 
@@ -100,9 +100,9 @@ It's useful for debugging purposes to set `Vue.config.silent` to `false`, and wa
 
 ## Add some Data
 
-Let's query the Dog CEO API again to get 15 random images of dogs for the users to swipe. First, add a `data` object as a placeholder for our data arrays and to keep the `swipeLayoutAnimated` value `ON_EVENTS`. This latter value will force the user to only be able to swipe left or right (and not up or down) - because the plugin allows the developer to specify that the layout will only respond to swipe gestures that have a callback.
+Let's query the Dog CEO API again to get 15 random images of dogs for the users to swipe. Open the `HelloWorld.vue` file and add a `data` object as a placeholder for our data arrays and to keep the `swipeLayoutAnimated` value `ON_EVENTS`. This latter value will force the user to only be able to swipe left or right (and not up or down) - because the plugin allows the developer to specify that the layout will only respond to swipe gestures that have a callback.
 
-Add this block directly under `new Vue({`:
+Replace the current data block:
 
 ```js
 data() {
@@ -114,7 +114,9 @@ data() {
   },
 ```
 
-Now we can get ready to call the API. First, import the `http` module at the top of `app.js`:
+> Note, if you find code in the `<script>` area of your file is unformatted, try typing `cmd-Z` a few times to reformat the code.
+
+Now we can get ready to call the API. First, import the `http` module right under the `<script>` tag:
 
 `const http = require("http");`
 
@@ -137,12 +139,11 @@ methods: {
     }
    //handle the swipes here
   },
-
 ```
 
 Take a look at this API call. We are asking the API for 15 random images, to ensure that we don't load up too many cards at once which would slow the app. We parse the response into an array, and then loop over it, creating an array of dog image urls. You should see them printed out in the Device Logs.
 
-Next, call this `getMultiDogs` method when the app is created. Add this block just above the `template:`:
+Next, call this `getMultiDogs` method when the app is created. Add this block right after the last comma in the `methods` block:
 
 ```js
 created() {
@@ -150,7 +151,7 @@ created() {
   },
 ```
 
-Finally, display the images in the UI. Replace the `<ScrollView...` tags with this markup:
+Finally, display the images in the UI. Replace the `<ScrollView...` tags in the `template` block with this markup:
 
 ```html
 <StackLayout>
@@ -172,7 +173,7 @@ By this time, you should see a dog appearing in a card, but the card isn't swipa
 
 We need to add a few methods to manage the user's gestures, swiping right and left.
 
-First, add two new methods in the methods block:
+First, add two new methods in the methods block, adding a comma after the closing bracket of the `getMultiDogs` method:
 
 ```js
 next() {
@@ -190,14 +191,13 @@ Then, edit the `<SwipeLayout` markup so that the callback is invoked on swipe:
 
 Change this line:
 
-`<SwipeLayout v-for="dog in dogs" :key="dog.id" row="0" col="0" :animationState="swipeLayoutAnimated">
-`
+`<SwipeLayout v-for="dog in dogs" :key="dog.id" row="0" col="0" :animationState="swipeLayoutAnimated">`
 
 To this:
 
 `<SwipeLayout v-for="dog in dogs" :key="dog.id" row="0" col="0" :animationState="swipeLayoutAnimated" @swipeLeft="swipeLeftCallback($event)" @swipeRight="swipeRightCallback($event)">`.
 
-For the moment, this edit will add a callback for left and right swiping gestures, and removing elements from the dogs array as the user disposes of the card. The cards should swipe left and right by now.
+For the moment, this edit will add a callback for left and right swiping gestures, removing elements from the dogs array as the user disposes of the card. The cards should swipe left and right by now.
 
 What happens, though, when you swipe more than fifteen times? We can add a call to the `next()` method to call the API again for a new set of data, once the old is discarded. Edit `next()`:
 
@@ -220,7 +220,7 @@ Your app now loads 15 dogs, allows you to swipe left and right, and loads 15 mor
 
 Let's experiment with some NativeScript animations to make a red button flash on left swipe, and a green button on right swipe.
 
-First, require the Animation module at the top:
+First, require the Animation module at the top, under the `<script>` tag:
 
 `const Animation = require('ui/animation');`
 
@@ -265,7 +265,7 @@ swipeRightCallback(e) {
 Note the use of `$refs`, a reference to the element that needs to be animated within the nativeView. Identify which element is referenced by looking for its `ref` in the markup: `ref="no"`. Refs function like a div's 'id' in web development.
 :::
 
-Now, try swiping! You should see a red and green briefly appearing as you swipe.
+Now, try swiping! You should see a red and green label briefly appearing as you swipe.
 
 One final tweak is to change the ActionBar title! Give your app a name.
 
