@@ -33,7 +33,7 @@ Vue.use(VueRouter);
 ```
 
 ::: tip 💡
-Stop and think about our app's architecture. In our application, the header and footer will be present on each page and the content between them will change. To accomplish this, the component matched by the route will be rendered inside a `<router-view>` tag. We need to move away from having all our app's parts in App.vue, so we need to do some refactoring.
+Stop and think about our app's architecture. In our application, the header and footer will be present on each page and the content between them will change. To accomplish this, the component matched by the route will be rendered inside a `<router-view>` tag. We need to move away from having all our app's parts in App.vue, so we'll need to do some refactoring - We'll come back to this after we add the routes.
 :::
 
 ## Create the Home Page
