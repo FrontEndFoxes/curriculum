@@ -329,7 +329,7 @@ In our template in `Dog.vue` we should replace `pet` with `dog`, because we don'
 </template>
 ```
 
-You should also replace your `<v-img>` tag with `<v-card-media>`, so that our cards can adopt the right styles for the `v-card` Vuetify component. The final template should look like this:
+You should also replace your `<v-img>` tag with `<v-card-media>`, so that our cards can adopt the right styles for the `v-card` Vuetify component. You can read more about the 4 card components [here](https://vuetifyjs.com/en/components/cards). The final template should look like this:
 
 ```html
 <template>
