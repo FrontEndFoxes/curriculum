@@ -121,7 +121,6 @@ new Vue({
 <footer class="app-footer dark-brown"> <!-- this is the start of your footer in `App.vue` -->
 ```
 
-
 Test your progress. Add `/pets` at the end of the URL string in the address bar. Now you can see the Pets component instead of Home!
 
 ## Add Navigation
