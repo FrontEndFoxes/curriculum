@@ -115,6 +115,13 @@ new Vue({
 
 - Now open App.vue. Replace the whole `<div class="wrapper">` chunk that you ripped out with a `<router-view></router-view>` tag, sandwiching it right between the header and footer. Your store just came back to life!
 
+```html
+</header> <!-- this is the end of your header in `App.vue` -->
+	<router-view></router-view>
+<footer class="app-footer dark-brown"> <!-- this is the start of your footer in `App.vue` -->
+```
+
+
 Test your progress. Add `/pets` at the end of the URL string in the address bar. Now you can see the Pets component instead of Home!
 
 ## Add Navigation
@@ -313,6 +320,23 @@ In our template in `Dog.vue` we should replace `pet` with `dog`, because we don'
 	<v-card color="grey lighten-2">
 	  <v-img :src="dog.img" height="170px">
 	  </v-img>
+	    <v-card-title>
+	      <div>
+	        <h3>{{dog.name}}</h3>
+	        <p class="breed">{{dog.breed}}</p>
+	      </div>
+	    </v-card-title>
+	</v-card>
+</template>
+```
+
+You should also replace your `<v-img>` tag with `<v-card-media>`, so that our cards can adopt the right styles for the `v-card` Vuetify component. The final template should look like this:
+
+```html
+<template>
+	<v-card color="grey lighten-2">
+	  <v-card-media :src="dog.img" height="170px">
+	  </v-card-media>
 	    <v-card-title>
 	      <div>
 	        <h3>{{dog.name}}</h3>
