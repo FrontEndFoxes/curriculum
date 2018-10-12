@@ -1,10 +1,10 @@
 # 📋 Chapter 1: Introducing the My Pet Shop Web App
 
-| **Project Goal**            | Get started with Vue.js by creating a static Pet Shop web app                                                                                                                                   |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **What you’ll learn**       | Setting up your Vue app, CSS Grid, Styling in Vue, code structure in preparation for moving forward.                                                                                             |
+| **Project Goal**            | Get started with Vue.js by creating a static Pet Shop web app                                                     |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **What you’ll learn**       | Setting up your Vue app, CSS Grid, Styling in Vue, code structure in preparation for moving forward.              |
 | **Tools you’ll need**       | A modern browser like Chrome. If using Chrome, download Chrome DevTools for Vue.js. An account in CodeSandbox.io. |
-| **Time needed to complete** | 1/2 hour                                                                                                                                                                                         |
+| **Time needed to complete** | 1/2 hour                                                                                                          |
 
 ## Instructions
 
@@ -24,9 +24,9 @@ Take a look at the code that was scaffolded by Code Sandbox for a basic Vue.js a
 
 ```js
 new Vue({
-  el: "#app",
+  el: '#app',
   components: { App },
-  template: "<App/>"
+  template: '<App/>',
 });
 ```
 
@@ -222,12 +222,19 @@ Check whether the dependency is installed by opening `package.json` and checking
 Next, initialize Vuetify by opening `main.js` and adding these lines under the second `import`:
 
 ```js
-import Vuetify from "vuetify";
+import Vuetify from 'vuetify';
+import 'vuetify/dist/vuetify.min.css';
 
 Vue.use(Vuetify);
 ```
 
-This ensures that Vuetify's themes and components will be available throughout the Vue app.
+This ensures that Vuetify's themes and components will be available throughout the Vue app and Vuetify css styles are included as well.
+
+In order to have nice icons in our application, we also need to add Material icons to our `index.html` file. Please add this string inside your `<head></head>` tag:
+
+```html
+<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+```
 
 Then, overwrite the current template in `App.vue` with this markup:
 
@@ -295,9 +302,9 @@ Note the use of `<v-app>` - this is a requirement of Vuetify and is a sure sign 
 Now we're going to actually use that Vuetify theme by creating a switch. Pressing this switch will trigger a theme switch, so you'll use the 'orange' theme you saw in the styles.
 
 - You might see the `orange-green` class in stylesheet. Let's add it to the `<main>` element and observe how all the colors & background are changed:
-    ```html
-    <main class="orange-green">
-    ```
+  ```html
+  <main class="orange-green">
+  ```
 - Now let's try to change the class using Vue class bindings. Replace that simple class in `<main>` with a dynamic class binding:
 
 ```html
@@ -306,7 +313,7 @@ Now we're going to actually use that Vuetify theme by creating a switch. Pressin
 
 Try to change `false` to `true` and vice versa. You can see how class is applied in Chrome dev tools and how the page color theme is changing.
 
-- Get excited! It's time to create your first Vue variable. First, you have to add `data()` to your Vue component. This function  should return an object of our Vue variables. Let's create one in the `<script>` block. Overwrite the current `<script>` block:
+- Get excited! It's time to create your first Vue variable. First, you have to add `data()` to your Vue component. This function should return an object of our Vue variables. Let's create one in the `<script>` block. Overwrite the current `<script>` block:
 
 ```js
 <script>
@@ -346,21 +353,14 @@ So, now you have a variable called `themeSwitched` and its default value is `fal
 
 - Now add a click event handler to our button. We can use `v-on` directive or its shortcut `@`. This handler will change `themeSwitched` value to its opposite value, toggling the color-changing class.
 
-    ```html
-    <v-btn @click="themeSwitched = !themeSwitched">Switch theme</v-btn>
-    ```
-
-You might have noticed that the button looks a little small. To fix this, add Vuetify style sheets in `index.html`:
-
-```html
-<link rel="stylesheet" href="https://unpkg.com/vuetify@1.0.9/dist/vuetify.min.css">
-<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-```
+  ```html
+  <v-btn @click="themeSwitched = !themeSwitched">Switch theme</v-btn>
+  ```
 
 Test your application by clicking the button. Looks nice, right?
 
 **Congratulations! You've just finished Chapter 1!**
 
 # Final result
-![final result chapter 1](./images/petshop_chapter1_1.jpg)
 
+![final result chapter 1](./images/petshop_chapter1_1.jpg)
