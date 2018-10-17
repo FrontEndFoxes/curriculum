@@ -329,7 +329,7 @@ export default {
 ```
 
 ::: tip 💡
-At this point you can remove the HelloWorld.vue component from the `views` folder as we won't need it.
+At this point you can remove the HelloWorld.vue component from the `components` folder as we won't need it.
 :::
 
 So, now you have a variable called `themeSwitched` and its default value is `false`.
