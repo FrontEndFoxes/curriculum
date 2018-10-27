@@ -72,7 +72,7 @@ Next, add a StackLayout to replace the current scrollview. Under the ActionBar, 
 
 ```html
 <StackLayout class="card">
-    <Button class="btn" @tap="getADog">Find Me A Dog!</button>
+    <Button class="btn" @tap="getADog">Find Me A Dog!</Button>
 
 </StackLayout>
 ```
@@ -140,7 +140,7 @@ The entire code of your HelloWorld.vue file should look like this:
 	<Page class="page">
 		<ActionBar title="So. Many. Dogs!" class="action-bar" />
 		<StackLayout class="card">
-			<Button class="btn" @tap="getADog">Find Me A Dog!</button>
+			<Button class="btn" @tap="getADog">Find Me A Dog!</Button>
 			<StackLayout class="placeholder">
 				<Image :src="dogImage.message" />
 			</StackLayout>
