@@ -13,11 +13,11 @@
 
 Open the [NativeScript Playground](http://play.nativescript.org) and take a look around. On your first visit, you'll see several 'coach marks' showing where key functionality is kept.
 
-![coach marks in the playground](./images/playground1.png)
+![coach marks in the playground with NS + Vue.js selected](./images/playground1.png)
 
-Click 'Play Now' to open the main editor. You'll see a QR code appear - scan that with the NativeScript Play app. This allows your phone to refresh automatically as you code. Now you're ready to scaffold a NativeScript-Vue app!
+Here is the main editor with a few files provided for an app. By default, the first playground app is created using Angular. Click 'new' at the top and choose the 'NS + Vue.js' template. Now you're ready to scaffold a NativeScript-Vue app! 
 
-By default, the first playground app is created using Angular. Click 'new' at the top and choose 'NS-Vue' as a template. You'll get another QR code, so scan that one. You'll see your phone refresh and a basic app appear:
+When you click either `QR Code` or `Preview` a QR code will appear - scan that with the NativeScript Playground app on your phone.  This allows your phone to refresh automatically as you code.  You'll see your phone refresh and a basic app appear:
 
 ![base app](./images/playground2.png)
 
