@@ -55,7 +55,7 @@ new Vue({
     <Page class="page">
       <ActionBar title="So. Many. Dogs!" class="action-bar" />
       <StackLayout class="card">
-        <Button class="btn" @tap="getADog">Find Me A Dog!</button>
+        <Button class="btn" @tap="getADog">Find Me A Dog!</Button>
            <StackLayout class="placeholder">
             <Image :src="dogImage.message" />
           </StackLayout>
