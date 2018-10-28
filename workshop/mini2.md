@@ -66,9 +66,9 @@ As your app refreshes, you'll see that the UI shows some promise, but looks a li
 
 ## Fix the UI
 
-Let's fix the ActionBar: In `app/components/HelloWorld.vue`, delete everything between the `<Page>` tags. Add a title to ActionBar, something like this: `<ActionBar title="So. Many. Dogs!" class="action-bar" />`.
+Let's fix the ActionBar: In `app/components/HelloWorld.vue`, delete everything between the `<Page>` tags except the ActionBar. Add a title to the ActionBar, something like this: `<ActionBar title="So. Many. Dogs!" class="action-bar" />`.
 
-Next, add a StackLayout to replace the current scrollview. Under the ActionBar, and above the closing `</Page>` tag, add a layout with a button:
+Next, add a StackLayout to replace the ScrollView that used to be there. Under the ActionBar, and above the closing `</Page>` tag, add a layout with a button:
 
 ```html
 <StackLayout class="card">
