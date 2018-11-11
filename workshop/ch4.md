@@ -440,7 +440,7 @@ In the `store.js` add the `removeFromFavorites` mutation to `mutations` object:
 ```js
 removeFromFavorites(state, payload) {
     state.favorites.splice(state.favorites.indexOf(payload), 1);
-  }
+}
 ```
 
 ::: tip 💡
