@@ -277,7 +277,7 @@ We will wrap the whole list content in the wrapper div and show it only when we 
 What is happening here? First, the application will check if the `favorites` array has a _length_ (i.e. if there are some items inside this array; an empty array has a length equal to 0). If the length is 0, the application will display `Your favorites list is empty` text and will ignore the `v-else` block. If the array is not empty, the application will jump to the `v-else` block and render it.
 :::
 
-Let's also display the number of selected dogs above the tag icon in the toolbar. Move to the `App.vue` and add a computed property for `favorites` (similar to the `Favorites` component one) we added earlier. You can place this under the `name` property:
+Let's also display the number of selected dogs above the tag icon in the toolbar. Move to the `App.vue` and add a computed property for `favorites` (similar to the `Favorites` component one we added earlier). You can place this under the `name` property:
 
 ```js
 computed: {
@@ -304,7 +304,7 @@ The `v-model` directive here will define the visibility of the badge. So, if the
 
 ## Add and Remove Dogs
 
-We also need to build a way to add dogs to this favorites list and, sadly, to remove them from it. In other words, we have to _change our state_. The only way to actually change state in a Vuex store is by committing a _mutation_. Vuex mutations are very similar to events: each mutation has a string **type** and a **handler**. The handler function is where we perform actual state modifications and it will receive the state as the first argument. Let's create our first mutation. Inside the `store.js` clear the state `favorites` array and after the `state` property, add `mutations`:
+We also need to build a way to add dogs to this favorites list and, sadly, to remove thems from it. In other words, we have to _change our state_. The only way to actually change state in a Vuex store is by committing a _mutation_. Vuex mutations are very similar to events: each mutation has a string **type** and a **handler**. The handler function is where we perform actual state modifications and it will receive the state as the first argument. Let's create our first mutation. Inside the `store.js` clear the state `favorites` array and after the `state` property, add `mutations`:
 
 ```js
 export default new Vuex.Store({
@@ -338,14 +338,14 @@ You cannot directly call a mutation handler. To invoke it, you need to call stor
 :::
 
 ::: tip 💡
-Usually in Vuex mutations are committed with _actions_. Actions are similar to mutations but they can contain asyncronous operations (like API calls).
+Usually in Vuex mutations are committed with _actions_. Actions are similar to mutations but they can contain asynchronous operations (like API calls).
 :::
 
 Let's register an action to commit our `addToFavorites` mutation. Add the `actions` property to the store object and `addToFavorites` action to this property:
 
 ```js
 export default new Vuex.Store({
-		state: {
+	 state: {
 	   favorites: []
 	 },
 	 mutations: {
@@ -362,7 +362,7 @@ export default new Vuex.Store({
 ```
 
 ::: tip 💡
-Action handlers receive a context object which exposes the same set of methods/properties on the store instance, so you can call `context.commit` to commit a mutation. We are using ES6 [argument destructuring](https://github.com/lukehoban/es6features#destructuring) to use the `commit` method of `context`
+Action handlers receive a context object which exposes the same set of methods/properties on the store instance, so you can call `context.commit` to commit a mutation. We are using ES6 [argument destructuring](https://github.com/lukehoban/es6features#destructuring) to use the `commit` method of `context`.
 :::
 
 ::: tip 💡
@@ -399,7 +399,7 @@ We will use the second solution. First import the `mapActions` helper in `Pets.v
 import { mapActions } from "vuex";
 ```
 
-Then, add it to the component by creating a `methods` block, using the [ES6 spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+Then, add it to the component by creating a `methods` block, using the [ES6 spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax):
 
 ```js
 methods: {
