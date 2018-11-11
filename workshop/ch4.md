@@ -423,13 +423,13 @@ For now we can add any dog multiple times but we don't have five Maxes! Let's ch
 
 ```js
 addToFavorites(state, payload) {
-    if (state.favorites.indexOf(payload) <= -1) {
+    if (!state.favorites.includes(payload)) {
        state.favorites.push(payload);
      }
 },
 ```
 
-Here we're checking the index of `payload` inside the `state.favorites` array. If the index is lower or equal to -1 (in other words if the array does not contain such an element), we will add this item to the favorites list.
+Here we're first checking if the `payload` element is included in `state.favorites`. We are adding the element only if it's not already in the array.
 
 ## Remove from List
 
