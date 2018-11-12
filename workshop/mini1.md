@@ -744,11 +744,11 @@ Now we can use CSS classes to describe the slide transition - add these classes 
 Great! We have a nice animation when we add a new dog to the grid. But there are no effects on delete. There is a `-move` class, which is added when items are changing positions. Like the other classes, its prefix will match the value of a provided `name` attribute (`slide` in our case). So we need to add some more styles:
 
 ```css
-.slide-fade-leave-active {
+.slide-leave-active {
   position: absolute;
 }
 
-.slide-fade-move {
+.slide-move {
   transition: transform 0.5s;
 }
 ```
