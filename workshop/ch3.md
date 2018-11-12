@@ -71,7 +71,7 @@ In the browser view in Code Sandbox, switch to the Pets tab. You should see an o
 
 ## Use the API 1 - Replace Some of the Static Data
 
-Let's replace our Husky image with this new one. First, we should find a Husky in our dogs array with an `Array.find` method. It will check the `dogs` array items that we are already loading into the component from the `data/dogs.js` data file one by one to find the first item matching provided criteria. In our case the criteria is a `breed` equal to `husky`. Replace the `console.log()` inside the `then` callback in the Axios call we just implemented witt this string:
+Let's replace our Husky image with this new one. First, we should find a Husky in our dogs array with an `Array.find` method. It will check the `dogs` array items that we are already loading into the component from the `data/dogs.js` data file one by one to find the first item matching provided criteria. In our case the criteria is a `breed` equal to `husky`. Replace the `console.log()` inside the `then` callback in the Axios call we just implemented with this string:
 
 ```js
 const husky = this.dogs.find(dog => dog.breed === 'husky');
