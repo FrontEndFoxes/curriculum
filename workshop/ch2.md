@@ -241,7 +241,7 @@ But if we simply replace `src` value with `pet.img`...
 We will have no pictures. Why? Because we're trying to pass a static value, some file called `pet.img` and there is no such file in this data. To bind attributes dynamically we need a `v-bind` directive or its shortcut `:`.
 
 ```html
-<v-img :src="pet.img" height="170px">
+<v-img :src="pet.img" height="170px"> </v-img>
 ```
 
 ::: tip 💡
