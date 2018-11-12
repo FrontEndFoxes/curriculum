@@ -190,7 +190,9 @@ It exports one `const`, `Dogs`, containing all the data we need.
 - Let's import this data into our pets component. Go to the `Pets.vue` file and add the following script block under the `<template>` block. This tag imports the Dogs data:
 
 ```js
-<script>import {Dogs} from "../data/dogs";</script>
+<script>
+import {Dogs} from "../data/dogs";
+</script>
 ```
 
 Now we have to add this data to our component data property. Edit the `<script>` tag:
