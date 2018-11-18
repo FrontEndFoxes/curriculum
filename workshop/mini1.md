@@ -97,12 +97,12 @@ Vuetify is a semantic component framework for Vue. It aims to provide clean, sem
 
 Install it by clicking the 'Add Dependency' button in the Dependency dropdown area on the left in Code Sandbox. Search for 'Vuetify' and install it.
 
-Check whether the dependency is installed by opening `package.json` and checking the "dependencies" object. It should look like this:
+Check whether the dependency is installed by opening `package.json` and checking the "dependencies" object. It should look like this (the version might be higher):
 
 ```json
 "dependencies": {
     "vue": "^2.5.2",
-    "vuetify": "1.0.18"
+    "vuetify": "^1.3.8"
 },
 ```
 
