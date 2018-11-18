@@ -449,7 +449,7 @@ Here the splice() method changes the contents of an array by removing existing e
 
 So first we're finding the index of the `payload` item inside the `state.favorites` array and removing the one item starting from this index (i.e. we will remove only the `payload` item itself).
 
-Add the action to commit the `removeFomFavorites` mutation:
+Add the action to commit the `removeFromFavorites` mutation:
 
 ```js
 removeFromFavorites({ commit }, payload) {
