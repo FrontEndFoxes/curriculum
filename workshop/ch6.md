@@ -128,7 +128,7 @@ methods: {
       http.request({
         url: "https://dog.ceo/api/breeds/image/random/15", method: "GET"
       }).then((response) => {
-        this.dogArray = JSON.parse(response.content)
+        this.dogArray = JSON.parse(response.content);
         for (let i = 0; i < 15; i++) {
           this.dogs.push(this.dogArray.message[i])
         }
