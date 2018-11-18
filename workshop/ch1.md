@@ -305,7 +305,7 @@ Now we're going to actually use that Vuetify theme by creating a switch. Pressin
   ```html
   <main class="orange-green">
   ```
-- Now let's try to change the class using Vue class bindings. Replace that simple class in `<main>` with a dynamic class binding:
+- Now let's try to change the class using Vue class bindings. We can use v-bind directive or its shortcut :. Replace that simple class in `<main>` with a dynamic class binding:
 
 ```html
 <main :class="{'orange-green': false}">
