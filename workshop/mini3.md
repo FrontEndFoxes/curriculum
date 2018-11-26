@@ -1,11 +1,11 @@
 # Mini Workshop 3: 🌈🦄⚡️📱 Build a Rainbow/Unicorn Mobile App that Lights Up a Particle Photon Device
 
-| **Project Goal**            | Build a NativeScript-Vue mobile app to make a Photon's built-in LED flash different colors based on user selection.                                                                                                                                   |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **What you’ll learn**       | How to build a mobile app with NativeScript and Vue.js, how to setup and configure a Particle Photon, and how to connect the two so the app controls the device.                                                                                             |
-| **Tools you’ll need**       | Access to Wifi<br><br>A modern browser like Chrome.<br><br>Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact. A mobile phone (iOS or Android) with the NativeScript Playground and Preview apps installed.<br><br>The two NativeScript companion apps for the playground (NativeScript Viewer and NativeScript Playground. On Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) and [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview). On iOS: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) and [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702)<br><br>A [Particle Photon device](https://store.particle.io/collections/photon).|
-| **Time needed to complete** | 1 hour  
-| **Just want to try the app?** | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=E9hBGf&v=21)          
+| **Project Goal**              | Build a NativeScript-Vue mobile app to make a Photon's built-in LED flash different colors based on user selection.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **What you’ll learn**         | How to build a mobile app with NativeScript and Vue.js, how to setup and configure a Particle Photon, and how to connect the two so the app controls the device.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| **Tools you’ll need**         | Access to Wifi<br><br>A modern browser like Chrome.<br><br>Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact. A mobile phone (iOS or Android) with the NativeScript Playground and Preview apps installed.<br><br>The two NativeScript companion apps for the playground (NativeScript Viewer and NativeScript Playground. On Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) and [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview). On iOS: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) and [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702)<br><br>A [Particle Photon device](https://store.particle.io/collections/photon). |
+| **Time needed to complete**   | 1 hour                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Just want to try the app?** | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=E9hBGf&v=21)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
 # Instructions
 
@@ -13,43 +13,43 @@
 
 ### 1. Connect the Photon to WiFi:
 
-Unbox the kit that comes with this workshop or use your own device, and plug the mini-USB cord into the Photon and to a USB port on your computer or to any USB-capable charger so the device will have power. 
+Unbox the kit that comes with this workshop or use your own device, and plug the mini-USB cord into the Photon and to a USB port on your computer or to any USB-capable charger so the device will have power.
 
-- Visit the [Photon setup page](https://setup.particle.io/) to set up your device. You will be prompted to login; go ahead and create a Particle account. 
+-   Visit the [Photon setup page](https://setup.particle.io/) to set up your device. You will be prompted to login; go ahead and create a Particle account.
 
-- After you have created your account, you will be redirected to set up the device. Click 'Setup a Photon' and 'next' to begin. If you have all the requirements on the next page, click 'next'. Download the local file that is generated to your computer. Open the `photonsetup.html` file in a browser.
+-   After you have created your account, you will be redirected to set up the device. Click 'Setup a Photon' and 'next' to begin. If you have all the requirements on the next page, click 'next'. Download the local file that is generated to your computer. Open the `photonsetup.html` file in a browser.
 
-- Identify your Photon by looking at the back of the Photon's box. You'll find a sticker on the right that lists the device's id. The last six characters of that number match the wifi address that appears on your computer. 
+-   Identify your Photon by looking at the back of the Photon's box. You'll find a sticker on the right that lists the device's id. The last six characters of that number match the wifi address that appears on your computer.
 
 ![box](./images/box.jpg)
 
-- Follow the steps listed to connect to the Photon's wifi network. When it connects, it should 'breathe cyan' (the blue light in the center should pulse gently on and off).
+-   Follow the steps listed to connect to the Photon's wifi network. When it connects, it should 'breathe cyan' (the blue light in the center should pulse gently on and off).
 
 ![wifi](./images/wifi.png)
 
 Complete the setup of the device by giving it a name. Now, you can start using your device with [Particle Build](http://build.particle.io), the Photon's special IDE where you keep its code.
 
-::: tip 💡 
+::: tip 💡
 Sometimes students have trouble finding their Photon on Particle Build. If you don't see it in the IDE, add it manually.
 
-- If the device is not already blinking blue, hold down the setup button on the Photon until the main status LED blinks dark blue. This takes about 3 seconds.
+-   If the device is not already blinking blue, hold down the setup button on the Photon until the main status LED blinks dark blue. This takes about 3 seconds.
 
 ![setup button](./images/setup_button.jpg)
 
-- Connect to your Photon's wifi following the steps above, and then open a web browser and navigate to: [http://192.168.0.1/device-id](http://192.168.0.1/device-id). On that page, you'll see an id like this:
+-   Connect to your Photon's wifi following the steps above, and then open a web browser and navigate to: [http://192.168.0.1/device-id](http://192.168.0.1/device-id). On that page, you'll see an id like this:
 
 ```
 {"id":"30003F000347363339343638","c":"1"}
 ```
 
-- Make a note of that id, you'll use it later.
+-   Make a note of that id, you'll use it later.
 
-- Navigate to [Particle Build](https://build.particle.io) and click 'Add New Device'. 
+-   Navigate to [Particle Build](https://build.particle.io) and click 'Add New Device'.
 
 ![Particle Build](./images/device_id.png)
 
-- Input the Device ID that you notated earlier in the box. Your device should now be ready to use in the IDE.
-:::
+-   Input the Device ID that you notated earlier in the box. Your device should now be ready to use in the IDE.
+    :::
 
 ### 2. Learn About Particle Build
 
@@ -92,7 +92,7 @@ Tinker a little bit with this snippet. Can you turn the LED red?
 
 In our mobile app, we're going to create three 'modes' of LED lights - 'Rainbow Mode' where the LED will flash a rainbow series, 'Unicorn Mode' where the LED flashes alternating blue and white, and a 'stop' mode where the LED stays white.
 
-You might have guessed that we're going to put these routines in the loop() function. 
+You might have guessed that we're going to put these routines in the loop() function.
 
 Add a variable at the top of this file, listing the initial light style to be 0:
 
@@ -101,42 +101,40 @@ Add a variable at the top of this file, listing the initial light style to be 0:
 Then, in the loop() function, overwrite the snippet you just added with the following code:
 
 ```js
-if(style == 0){
-        RGB.control(true);
-        //change its color
-        RGB.color(RGB_COLOR_WHITE);
-        RGB.control(false);
-    }
-    else if (style == 1){
-        RGB.control(true);
-        //change its color
-        RGB.color(RGB_COLOR_RED);
-        //delay a second
-        delay(500);
-        RGB.color(RGB_COLOR_ORANGE);
-        delay(500);
-        RGB.color(RGB_COLOR_YELLOW);
-        delay(500);
-        RGB.color(RGB_COLOR_GREEN);
-        delay(500);
-        RGB.color(RGB_COLOR_BLUE);
-        delay(500);
-        RGB.color(RGB_COLOR_MAGENTA);
-        delay(500);
-        // resume normal operation
-        RGB.control(false);
-    }
-    else if (style == 2){
-        RGB.control(true);
-        //change its color
-        RGB.color(RGB_COLOR_WHITE);
-        //delay a second
-        delay(500);
-        RGB.color(RGB_COLOR_MAGENTA);
-        delay(500);
-        // resume normal operation
-        RGB.control(false);
-    }
+if (style == 0) {
+	RGB.control(true);
+	//change its color
+	RGB.color(RGB_COLOR_WHITE);
+	RGB.control(false);
+} else if (style == 1) {
+	RGB.control(true);
+	//change its color
+	RGB.color(RGB_COLOR_RED);
+	//delay a second
+	delay(500);
+	RGB.color(RGB_COLOR_ORANGE);
+	delay(500);
+	RGB.color(RGB_COLOR_YELLOW);
+	delay(500);
+	RGB.color(RGB_COLOR_GREEN);
+	delay(500);
+	RGB.color(RGB_COLOR_BLUE);
+	delay(500);
+	RGB.color(RGB_COLOR_MAGENTA);
+	delay(500);
+	// resume normal operation
+	RGB.control(false);
+} else if (style == 2) {
+	RGB.control(true);
+	//change its color
+	RGB.color(RGB_COLOR_WHITE);
+	//delay a second
+	delay(500);
+	RGB.color(RGB_COLOR_MAGENTA);
+	delay(500);
+	// resume normal operation
+	RGB.control(false);
+}
 ```
 
 Verify this code and flash it to your device. Nothing seems to have changed - and that's because you have your style set to 0, which is still white. Change the integer value to 1, flash it to device, and see what happens. Do you see a rainbow?
@@ -298,19 +296,19 @@ Under the `<script>` tags, you'll find a `<style>` tag. Overwrite the two styles
 
 ```css
 .action-bar {
-    color: white;
-    background-color: blueviolet;
+	color: white;
+	background-color: blueviolet;
 }
-.bar{
-    margin: 20;
+.bar {
+	margin: 20;
 }
 .rainbow {
-    background: linear-gradient(to bottom, red, orange, yellow, green, blue, purple);
+	background: linear-gradient(to bottom, red, orange, yellow, green, blue, purple);
 }
-.unicorn{
-    background-image: url("~/images/unicorn.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.unicorn {
+	background-image: url('~/images/unicorn.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 ```
 
@@ -355,6 +353,7 @@ Then, edit the `<SegmentedBar>` itself to watch for this method: append @selecte
 ```html
 @selectedIndexChange="onSelectedIndexChange($event)"
 ```
+
 The finished template block now looks like this:
 
 ```html
@@ -381,7 +380,7 @@ Now it's finally time to make the Photon light up when you tap the SegmentedBar.
 At the top of the file, set some `const` values.
 
 ```js
-const http = require("http");
+const http = require('http');
 const baseUrl = 'https://api.particle.io/v1/devices/xxxxx';
 const token = 'yyyyy';
 const endpoint = 'launchMode';
@@ -427,7 +426,6 @@ Here, we're making an http request to our baseUrl at the endpoint we set up as a
 The final thing we need to do is actually call `launchMode` when the SegmentedBar is tapped. Go ahead and uncomment the `//this.launchMode(this.mode)` code in the `onSelectedIndexChange` method.
 
 The entire HelloWorld.vue file looks like this:
-
 
 ```js
 const http = require("http");
@@ -523,3 +521,7 @@ Now, if you Photon is connected to wifi with the correct code flashed to it, you
 ![rainbows unicorns](./images/rainbows_unicorns.gif)
 
 It's really interesting to build Vue.js apps for mobile devices in the NativeScript playground. Now that you know how, what else can you build? Could you extend this app to create different lighting modes?
+
+## Author
+
+Made with ❤️ by Jen Looper

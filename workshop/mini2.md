@@ -70,11 +70,10 @@ Let's fix the ActionBar: In `app/components/HelloWorld.vue`, delete everything b
 
 Next, add a StackLayout to replace the ScrollView that used to be there. Under the ActionBar, and above the closing `</Page>` tag, add a layout with a button:
 
-```html
-<StackLayout class="card">
-    <Button class="btn" @tap="getADog">Find Me A Dog!</Button>
-
-</StackLayout>
+```xml
+    <StackLayout class="card">
+        <Button class="btn" @tap="getADog">Find Me A Dog!</Button>
+    </StackLayout>
 ```
 
 Now, you should see a nice looking green card with a darker green button.
@@ -101,7 +100,7 @@ data() {
 
 Finally, create a space for the image to populate. Under the Button tag and above the last closing `</StackLayout> tag, add this block:
 
-```html
+```xml
  <StackLayout class="placeholder">
       <Image :src="dogImage.message" />
  </StackLayout>
@@ -184,20 +183,29 @@ It's really interesting to build Vue.js apps for mobile devices in the NativeScr
 
 ## Supplement 1: Adding a Cat to the App
 
-Suppose you want to also be able to load cute cat photos with your dog photos.  This will require another API request.  The cat API requires a key, request that [here](https://thecatapi.com/).  They will email your new api key to you.
+Suppose you want to also be able to load cute cat photos with your dog photos. This will require another API request. The cat API requires a key which you can request at [the CatAPI](https://thecatapi.com/). They will email your new api key to you. Make a note of it when you receive the key via email.
 
-Update the Action Bar to indicate we have more than dogs on the app.
+## Edit the UI
+
+Update the ActionBar to indicate we have more than dogs on the app.
 
 `<ActionBar title="So. Many. Cute. Pets!" class="action-bar" />`
 
-Update the placeholder size in the `app.css` file:
+Update the placeholder size in the `app.css` file so that we can fit more than one placeholder on the page:
 
+```js
     .placeholder {
-	height: 30%;
+        height: 30%;
     }
+```
 
-Next, add a method called `getACat`.  It will look like the `getADog` method.  But the Cat API requires an api key, so after we pass the url and the method, we will pass a limit of 1 and a header with the key.  After making the request, then `getACat` will update a variable called `catImage` and log the `catImage.url` that is returned by the request.
+## Call Some Cats
 
+Next, add a method called `getACat`. It will look like the `getADog` method. But the Cat API requires an api key, so after we pass the url and the method, we will pass a limit of 1 and a header with the key. After making the request, the `getACat` method will update a variable called `catImage` and log the `catImage.url` that is returned by the request.
+
+Add this method above the `getADog` method, adding your own API key for the Cat API:
+
+```js
         methods: {
             getACat() {
                 http.request({
@@ -221,26 +229,35 @@ Next, add a method called `getACat`.  It will look like the `getADog` method.  B
             ...
             }
         }
+```
 
- In the `data()` part of the script, we returned the `dogImage`, and now we need to return the `catImage`.
+Now you need to update the image that will be added to the placeholder.
 
+In the `data()` part of the script, we returned the `dogImage`, and now we need to return the `catImage`. Add `catImage` above `dogImage` in the data block:
+
+```js
     data() {
-            return {
+        return {
                 catImage: {},
                 dogImage: {}
             };
         },
+```
 
 ::: tip 💡
-Note the comma that we used to separate the two methods (`getADog` and `getACat`) and the two return variables (`dogImage` and `catImage`).
+Don't forget the comma that we use to separate the two methods (`getADog` and `getACat`) and the two return variables (`dogImage` and `catImage`).
 :::
 
-Finally, we need the button to load the cat and the `StackLayout` placeholder to hold it.  Place this in between `<StackLayout class="card">` and `</StackLayout>` at the same level as the button and placeholder for the `dogImage`.
+## Edit the UI
 
+Finally, we need to add a button to load the cat within a `StackLayout` placeholder. Place this in between `<StackLayout class="card">` and `</StackLayout>` at the same level as the button and placeholder for the `dogImage`:
+
+```xml
     <Button class="btn" @tap="getACat">Find Me A Cat!</Button>
     <StackLayout class="placeholder">
         <Image :src="catImage.url" />
     </StackLayout>
+```
 
 Click the `Preview` button in the NativeScript Playground and you will see the new `Find Me A Cat!` button and when you click it, you should see a very cute cat!
 
@@ -249,8 +266,13 @@ It should look like this:
 ![Image of the Pets App with a Cute Dog and Cute Cat Photo loaded](./images/mini2_2.png)
 
 ::: tip 💡
-If you are having any trouble loading the images from the cat api, you can get more information in the `Device Logs` at the bottom of the Playground screen.  To do this, you need to set `Config.silent = false` in `app.js`  By default you should see the lines below with them both commented out.  Uncomment the second line to get more verbose output.
+If you are having any trouble loading the images from the cat api, you can get more information in the `Device Logs` at the bottom of the Playground screen. To do this, you need to set `Config.silent = false` in `app.js`. By default, in `app.js` you should see the lines below commented out. Uncomment the second line to get more verbose output.
 
     // Uncommment the following to see NativeScript-Vue output logs
     Vue.config.silent = false;
-::
+
+:::
+
+## Author
+
+Made with ❤️ by Jen Looper and Emily Stamey

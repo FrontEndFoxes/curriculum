@@ -143,7 +143,7 @@ methods: {
 
 Take a look at this API call. We are asking the API for 15 random images, to ensure that we don't load up too many cards at once which would slow the app. We parse the response into an array, and then loop over it, creating an array of dog image urls. You should see them printed out in the Device Logs.
 
-Next, call this `getMultiDogs` method when the app is created. Add this block right after the last comma in the `methods` block:
+Next, call this `getMultiDogs` method when the app is created. Add this block right after the last comma in the `methods: {},` block:
 
 ```js
 created() {
@@ -151,16 +151,20 @@ created() {
   },
 ```
 
+::: tip 💡
+Careful, it's tempting to enclose this `created()` lifecycle hook inside the `methods`, but it actually must reside outside the methods block.
+:::
+
 Finally, display the images in the UI. Replace the `<ScrollView...` tags in the `template` block with this markup:
 
 ```html
 <StackLayout>
-   <GridLayout rows="*" columns="*">
-      <SwipeLayout v-for="dog in dogs" :key="dog.id" row="0" col="0" :animationState="swipeLayoutAnimated">
-          <Image class="card" :src="dog" stretch="aspectFill"></Image>
-       </SwipeLayout>
-    </GridLayout>
- </StackLayout>
+	<GridLayout rows="*" columns="*">
+		<SwipeLayout v-for="dog in dogs" :key="dog.id" row="0" col="0" :animationState="swipeLayoutAnimated">
+			<image class="card" :src="dog" stretch="aspectFill"></image>
+		</SwipeLayout>
+	</GridLayout>
+</StackLayout>
 ```
 
 ::: tip 💡
