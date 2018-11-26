@@ -179,3 +179,78 @@ The final app looks like this:
 ![final app](./images/playground3.png)
 
 It's really interesting to build Vue.js apps for mobile devices in the NativeScript playground. Now that you know how, what else can you build?
+
+**🎊Congratulations, you've finished the base project!🎊**
+
+## Supplement 1: Adding a Cat to the App
+
+Suppose you want to also be able to load cute cat photos with your dog photos.  This will require another API request.  The cat API requires a key, request that [here](https://thecatapi.com/).  They will email your new api key to you.
+
+Update the Action Bar to indicate we have more than dogs on the app.
+
+`<ActionBar title="So. Many. Cute. Pets!" class="action-bar" />`
+
+Update the placeholder size in the `app.css` file:
+
+    .placeholder {
+	height: 30%;
+    }
+
+Next, add a method called `getACat`.  It will look like the `getADog` method.  But the Cat API requires an api key, so after we pass the url and the method, we will pass a limit of 1 and a header with the key.  After making the request, then `getACat` will update a variable called `catImage` and log the `catImage.url` that is returned by the request.
+
+        methods: {
+            getACat() {
+                http.request({
+                    url: "https://api.thecatapi.com/v1/images/search",
+                    method: "GET",
+                    limit: 1,
+                    header: {
+                        key: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+                    }
+                }).then(
+                    response => {
+                        this.catImage = JSON.parse(response.content)[0];
+                        console.log(this.catImage.url);
+                    },
+                    e => {
+                        alert("error");
+                    }
+                );
+            },
+            getADog() {
+            ...
+            }
+        }
+
+ In the `data()` part of the script, we returned the `dogImage`, and now we need to return the `catImage`.
+
+    data() {
+            return {
+                catImage: {},
+                dogImage: {}
+            };
+        },
+
+::: tip 💡
+Note the comma that we used to separate the two methods (`getADog` and `getACat`) and the two return variables (`dogImage` and `catImage`).
+:::
+
+Finally, we need the button to load the cat and the `StackLayout` placeholder to hold it.  Place this in between `<StackLayout class="card">` and `</StackLayout>` at the same level as the button and placeholder for the `dogImage`.
+
+    <Button class="btn" @tap="getACat">Find Me A Cat!</Button>
+    <StackLayout class="placeholder">
+        <Image :src="catImage.url" />
+    </StackLayout>
+
+Click the `Preview` button in the NativeScript Playground and you will see the new `Find Me A Cat!` button and when you click it, you should see a very cute cat!
+
+It should look like this:
+
+![Image of the Pets App with a Cute Dog and Cute Cat Photo loaded](./images/mini2_2.png)
+
+::: tip 💡
+If you are having any trouble loading the images from the cat api, you can get more information in the `Device Logs` at the bottom of the Playground screen.  To do this, you need to set `Config.silent = false` in `app.js`  By default you should see the lines below with them both commented out.  Uncomment the second line to get more verbose output.
+
+    // Uncommment the following to see NativeScript-Vue output logs
+    Vue.config.silent = false;
+::
