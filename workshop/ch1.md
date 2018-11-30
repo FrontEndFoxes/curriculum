@@ -40,7 +40,7 @@ We're going to rip this sample app apart and recreate it! Let's get started.
 
 ## Build the Styles
 
-Let's start in `App.vue`, since we don't have to make any changes to `main.js`. Add the following style block at the bottom of the file, replacing the current `<style scoped>` block:
+Let's start in `App.vue`, since we don't have to make any changes to `main.js`. Add the following style block at the bottom of the file, replacing the current `<style>` block:
 
 ```scss
 	<style lang="scss">
