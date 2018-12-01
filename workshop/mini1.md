@@ -13,7 +13,7 @@
 
 We'll start from scratch in [Code Sandbox](http://codesandbox.io). Create a Code Sandbox account and scaffold a starter Vue.js template by clicking [here](https://codesandbox.io/s/vue).
 
-We're going to build a an application to load random dog images and store them to favorites:
+We're going to build an application to load random dog images and store them to favorites:
 
 ![random dog app](./images/mini2_1.png)
 
@@ -83,9 +83,9 @@ h1 {
 Notice we don't use `<scoped>` as part of the style block. The 'scoped' keyword ensures that your styles will remain valid only for the current SFC, but we're going to make these styles universal.
 :::
 
-This style block uses a path to an external image hosted on Github, rather than to a relative path. This is because Code Sandbox doesn't host images easily; normally you'll just add an image on a relative path such as `/images/myImage.png`.
+This style block uses a path to an external image hosted on Github, rather than to a relative path. This is because Code Sandbox doesn't host images easily; normally you'd just add an image on a relative path such as `/images/myImage.png`.
 
-Adding the style sheet didn't do much to our template except break the existing styles. Let's fix the template!
+Adding the stylesheet didn't do much to our template except break the existing styles. Let's fix the template!
 
 ## Install Vuetify
 
@@ -243,7 +243,7 @@ Import Axios into the component where we will perform our API call - `App.vue`. 
 import axios from 'axios';
 ```
 
-At this point your script part of `App.vue` should look like this
+At this point your script part of `App.vue` should look like this:
 
 ```js
 <script>
@@ -309,7 +309,7 @@ Note: Make sure to add a comma after the methods object and then add the created
 :::
 
 ::: tip 💡
-This is our app's first livecycle hook! These are very useful when you want fine control over when to run blocks of code. Read more [here](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks)
+This is our app's first lifecycle hook! These are very useful when you want fine control over when to run blocks of code. Read more [here](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks)
 :::
 
 Inside the created hook we will call our method.
@@ -320,11 +320,11 @@ created() {
 }
 ```
 
-Now after clicking the refresh button in the browser window. You should see an object in your console. Drill into it by clicking its left-hand arrow. We are interested in its `data` field. You can see we have a status `success` and a message with an image URL
+Now after clicking the refresh button in the browser window. You should see an object in your console. Drill into it by clicking its left-hand arrow. We are interested in its `data` field. You can see we have a status `success` and a message with an image URL.
 
 ## Use the API
 
-Let's replace our `currentDogLink` with the loaded one. At this point we can remove the static value from it
+Let's replace our `currentDogLink` with the loaded one. At this point we can remove the static value from it:
 
 ```js
 data() {
@@ -334,7 +334,7 @@ data() {
 },
 ```
 
-Inside the `loadNewDog` method instead of printing result to the console we will assign `response.data.message` (which is actually the image URL) to `currentDogLink` property
+Inside the `loadNewDog` method instead of printing result to the console we will assign `response.data.message` (which is actually the image URL) to `currentDogLink` property:
 
 ```js
 loadNewDog() {
@@ -359,7 +359,7 @@ We also want to call the same method when the 'Next' button is clicked. Let's ad
 </v-btn>
 ```
 
-Now we can load new images simply clicking on the 'Next' button.
+Now we can load new images simply by clicking on the 'Next' button.
 
 ## Build the Favorites
 
@@ -374,7 +374,7 @@ data() {
 },
 ```
 
-To display the favorite dogs we should make a changes to our template. Let's add the following code snippet right after the closing `</v-card>` tag
+To display the favorite dogs we should make changes to our template. Let's add the following code snippet right after the closing `</v-card>` tag
 
 ```html
 <v-container grid-list-md fluid>
@@ -506,7 +506,7 @@ Now we have to bind this new method to 'Delete' button with a click handler:
 ```
 
 ::: tip 💡
-Don't forget to pass `index` to the remove method! When we don't pass any parameters, we can simply skip the brackets like we did for `addToFavorites` method
+Don't forget to pass `index` to the remove method! When we don't pass any parameters, we can simply skip the brackets like we did for `addToFavorites` method.
 :::
 
 Try to add and remove some dogs from favorites. IT WORKS!
