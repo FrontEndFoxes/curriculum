@@ -120,8 +120,8 @@ Add a `methods` section under the final comma of the `data` block:
 methods: {
     getADog() {
       http.request({ url: "https://dog.ceo/api/breeds/image/random", method: "GET" }).then((response) => {
-        this.dogImage = JSON.parse(response.content)
-        console.log(this.dogImage.message)
+        this.dogImage = JSON.parse(response.content);
+        console.log(this.dogImage.message);
       }, (e) => {
         alert("error")
       });
