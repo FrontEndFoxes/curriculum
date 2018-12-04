@@ -51,7 +51,7 @@ Note: Make sure to add a comma after the data object and then add the created() 
 :::
 
 ::: tip 💡
-This is our app's first livecycle hook! These are very useful when you want fine control over when to run blocks of code. Read more [here](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks)
+This is our app's first lifecycle hook! These are very useful when you want fine control over when to run blocks of code. Read more [here](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks)
 :::
 
 Inside the created hook we will add our first query to the API. To perform a GET request Axios uses the `axios.get` method. The result will be a JavaScript promise, so we have to provide success and failure callbacks to it. For now, let's simply print the query result to console. Edit `created(){}` by placing this snippet between the curly brackets:
