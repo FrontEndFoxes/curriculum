@@ -46,8 +46,8 @@ Let's add a link to our list inside the navbar. Later we will also show the sele
 
 ```html
 <v-spacer></v-spacer>
-   <router-link to="/favorites">
-   <v-icon large>loyalty</v-icon>
+<router-link to="/favorites">
+	<v-icon large>loyalty</v-icon>
 </router-link>
 ```
 
