@@ -304,7 +304,7 @@ The `v-model` directive here will define the visibility of the badge. So, if the
 
 ## Add and Remove Dogs
 
-We also need to build a way to add dogs to this favorites list and, sadly, to remove thems from it. In other words, we have to _change our state_. The only way to actually change state in a Vuex store is by committing a _mutation_. Vuex mutations are very similar to events: each mutation has a string **type** and a **handler**. The handler function is where we perform actual state modifications and it will receive the state as the first argument. Let's create our first mutation. Inside the `store.js` clear the state `favorites` array and after the `state` property, add `mutations`:
+We also need to build a way to add dogs to this favorites list and, sadly, to remove them from it. In other words, we have to _change our state_. The only way to actually change state in a Vuex store is by committing a _mutation_. Vuex mutations are very similar to events: each mutation has a string **type** and a **handler**. The handler function is where we perform actual state modifications and it will receive the state as the first argument. Let's create our first mutation. Inside the `store.js` clear the state `favorites` array and after the `state` property, add `mutations`:
 
 ```js
 export default new Vuex.Store({
@@ -415,7 +415,7 @@ Let's call this method on the `app-dog` `addToFavorites` event. Edit the `<app-d
 <app-dog :dog="pet" @addToFavorites="addToFavorites"></app-dog>
 ```
 
-Try to click on `Add to Favorites` buttons. You can see how the icon badge number increases and you can open the favorites list by click on this icon and check how many dogs we have there.
+Try to click on `Add to Favorites` buttons. You can see how the icon badge number increases, open the favorites list by clicking on this icon and check how many dogs we have there.
 
 ## Enhance the Logic
 
