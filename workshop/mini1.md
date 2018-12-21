@@ -406,7 +406,7 @@ To render a list of items based on an array Vue has a `v-for` directive, which w
 Here `pet` is the reference to the _current array element_ and `index` is the _index of this element_ inside the array.
 
 ::: tip 💡
-Remember, we chose this name inside the directive; if we had written `v-for="(dog, number) in favoriteDogs"` each item will be called `dog` and its index will be called `number`).
+Remember, we chose this name inside the directive; if we had written `v-for="(dog, number) in favoriteDogs"` each item would be called `dog` and its index would be called `number`).
 :::
 
 To properly loop over your array of favorite dogs and append another one, you need to provide a unique key attribute for each item. In our case, the `pet` itself will be the key.
@@ -467,7 +467,7 @@ computed: {
 }
 ```
 
-Now we can add dynamic `disabled` attribute to the 'Like' button and set it equal to `isAlreadyInFavorites`.
+Now we can add a dynamic `disabled` attribute to the 'Like' button and set it equal to `isAlreadyInFavorites`.
 
 ```html
 <v-btn icon @click="addToFavorites" :disabled="isAlreadyInFavorites">
@@ -506,7 +506,7 @@ Now we have to bind this new method to 'Delete' button with a click handler:
 ```
 
 ::: tip 💡
-Don't forget to pass `index` to the remove method! When we don't pass any parameters, we can simply skip the brackets like we did for `addToFavorites` method.
+Don't forget to pass `index` to the remove method! When we don't pass any parameters, we can simply skip the brackets as we did for the `addToFavorites` method.
 :::
 
 Try to add and remove some dogs from favorites. IT WORKS!
@@ -545,7 +545,7 @@ Let's add a `props` option to our component. First, we need to create an export 
 <script>export default {}</script>
 ```
 
-Now we can add `props` option to this object and a prop `dog`:
+Now we can add a `props` option to this object and a prop `dog`:
 
 ```js
 <script>
@@ -559,7 +559,7 @@ Now we can add `props` option to this object and a prop `dog`:
 </script>
 ```
 
-Here we are also specifying the type of our dog - it will be a string containing link to the dog image.
+Here we are also specifying the type of our dog - it will be a string the dog image URL.
 
 In our template in `Dog.vue` we should replace `pet` with `dog`, because we don't have any `pet`s inside the `Dog` component, only a passed `dog` property. Now our template should look the following way:
 
@@ -628,7 +628,7 @@ We have to pass a `dog` prop to our `Dog` component. It will be done with the fa
 </v-flex>
 ```
 
-Now if you try to add dog to Favorites you will see the dogs in the grid again! But we have one issue: deleting a dog will cause a bunch of errors in console. The reason is we don't have a `removeFromFavorites` method inside the `Dog.vue` and it knows nothing about `index` as well.
+Now if you try to add a dog to Favorites you will see the dogs in the grid again! But we have one issue: deleting a dog will cause a bunch of errors in console. The reason is we don't have a `removeFromFavorites` method inside the `Dog.vue` and it knows nothing about `index` as well.
 
 Instead of using the method, we will replace it with an _event emitter_ to the `delete` button inside the Dog component.
 
