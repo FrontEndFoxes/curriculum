@@ -336,7 +336,7 @@ nameRules: [
 
 What is happening here? `!name` will return `true` if the name is empty and `false` if it has non-empty value. Then we perform the second negation, reverting value one more time. The double negation is a pretty common method to check if string is non-empty.
 
-Add `nameRules` to the `rules` prop of the `name` field and make this field `required` (it will add a nice little asterisk to the field label):
+Add `nameRules` to the `rules` prop of the `name` field and make this field `required`:
 
 ```html
 <v-text-field
