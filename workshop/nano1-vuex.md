@@ -3,7 +3,7 @@
 | **Project Goal**            | What we're going to build                                                                                                                                   |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **What you’ll learn**       | *Vuex* is a state management library made for Vue, in this nano you will learn the basic concepts, and how to use it on a Vue application.
-| **Tools you’ll need**       | A modern browser like Chrome. Access to [CodeSandbox](https://codesandbox.io). [Vue Developer tools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en) extension for Chrome.
+| **Tools you’ll need**       | A modern browser like Chrome/Firefox. Access to [CodeSandbox](https://codesandbox.io). [Vue Developer tools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en) extension for Chrome, or [Vue Developer tools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/) from Firefox.
 | **Time needed to complete** | 10-30 minutes
 
 
@@ -39,8 +39,8 @@ There are three important files at play:
 
 ## 2. Step 1 - Installing Vuex
 
-Since we are using codepen, the only thing we need to install Vuex is to add it to our list of 
-dependencies, so go to the `Dependencies` button on the bottom left of your screen and add it to
+Since we are using CodeSandbox, the only thing we need to install Vuex is to add it to our list of 
+dependencies, so go to the `Dependencies` tab on the bottom left of your screen and add it to
 our project.
 
 ::: tip 💡
@@ -107,6 +107,10 @@ new Vue({
 }); 
 ```
 
+::: tip 💡
+Instead of `store: store` we are using just `store`. This is the ES6 shorthand!
+:::
+
 ## 3. Step 2 - Fetching our remote data
 
 In this nano we will pretend as if we were fetching data from some remote API, and receiving the contents of `data.json` into our application.
@@ -133,7 +137,9 @@ Vuex has three different state management types of methods.
 In this case, we are using an **action** via *dispatch* to add a game to our store.
 
 ::: tip 💡
-*Why am I not mutating the data with a commit?* It is a best practice to only commit from within actions.  
+*Why am I not mutating the data with a commit?* It is considered a good practice, but it is not mandatory.
+You can commit directly from your components, but this way tends to be more maintainable since you can rest assured
+that all your mutations are only being used within your store :)
 :::
 
 Let's write our action and mutation to store our newly fetched data.
@@ -235,7 +241,7 @@ We find the game that we want to delete by its title, and we commit a new mutati
 which will allow us to modify the whole array on one go.
 
 ::: tip 💡
-Notice that we are using ES6 object destructuring in the first param. This way instead of having to pass
+Notice that we are using [ES6 object destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring) in the first param. This way instead of having to pass
 `context` and doing `context.commit` and `context.state` we can call them directly. 
 :::
 
@@ -263,7 +269,7 @@ You can check out the complete code here if you need it:
 This only scratches the surface of Vuex, and an ideal scenario would be to use it on a multi-component
 app where the state needs to be shared.
 
-Try adding a new component Form.vue in which you add new games to your library using what you have learned!
+Try adding a new component `Form.vue` in which you add new games to your library using what you have learned!
 
 ## Badge
 
