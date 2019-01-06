@@ -118,7 +118,7 @@ Our button is aligned to the left side, so let's also add a `text-align: center`
 }
 ```
 
-For now, the `Submit` button doesn't do anything. We will add a method which will take all the form fields' values and print them to the console. To achieve this we have to create a property for each field in the component `data` and bind this properties to corresponding fields with a `v-model` directive.
+For now, the `Submit` button doesn't do anything. We will add a method which will take all the form fields' values and print them to the console. To achieve this we have to create a property for each field in the component `data` and bind these properties to corresponding fields with a `v-model` directive.
 
 ::: tip 💡
 The `v-model` directive creates two-way data bindings on form input and textarea elements. It automatically picks the correct way to update the element based on the input type.
