@@ -1,25 +1,25 @@
-# Mini Workshop (number): 📱 A mobile mini-workshop (or 🖥️ A web mini-workshop)
+# Nano Activity (number): Title of Activity
 
 | **Project Goal**            | What we're going to build                                                                                                                                   |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **What you’ll learn**       | Description of the learning goal                                                                                             |
 | **Tools you’ll need**       | (edit this if necessary) A modern browser like Chrome. Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact. A mobile phone (iOS or Android) with the NativeScript Playground and Viewer apps installed |
-| **Time needed to complete** | 20 minutes
-| **Just want to try the app?** | [Playground link](https://play.nativescript.org/) or [Code Sandbox link](https://codesandbox.io)
+| **Time needed to complete** | 10 minutes
 
-# Instructions
 
-Add a list of the steps needed to take to build the app. Below are some example steps
+# We're going to create (edit this)
+
+Give a description of the activity and what the student will learn in the end
 
 ::: tip 💡
-Use this markup for tips
+Use this format for tips
 :::
 
-## 1. Scaffold your app
+## 1. Get Started
 
 ...
 
-## 2. Add some Styles
+## 2. Step 1
 
 ...
 
@@ -29,11 +29,15 @@ Page {
 }
 ```
 
-## 3. Fix the UI
+## 3. Step 2
 
 ...
 
-## 4. Add some data
+## 4. Step 3
+
+...
+
+## 5. Final Result
 
 ...
 
@@ -80,17 +84,16 @@ Add a screenshot of the final result
 
 The final app looks like this:
 
-![final app](./images/playground3.png)
+(your screenshot here)
 
 ## Conclusion and challenge
+
+Add a challenge at the end so the student can go home and continue working
+
+## Badge
+
+Add the badge image here, available for download
 
 ## Author
 
 Made with ❤️ by your name
-
-
-
-
-
-
-

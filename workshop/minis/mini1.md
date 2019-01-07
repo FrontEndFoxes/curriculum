@@ -1,4 +1,4 @@
-# Mini Workshop 1: 🖥️ Build A Simple Pet Fetching Web App
+# 🖥️ Mini Workshop 1:  Build A Simple Pet Fetching Web App
 
 | **Project&nbsp;Goal**           | Get started with Vue.js basics and simple API calls                                                                                                                           |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
