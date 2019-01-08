@@ -1,4 +1,4 @@
-# Appendix 1: 🤷 Lost? Confused? Starting fresh?
+# 🤷 Appendix 1: Lost? Confused? Starting fresh?
 
 Don't worry! At the beginning of each chapter, you are given a link to start fresh with a new sandbox. Below are instructions on how to create a new sandbox with this Github repo link.
 
