@@ -9,7 +9,7 @@
 
 # We're going to create a random cat picture viewer
 
-You will be creating a simple Vue app that will make HTTP calls through **Axios** to a remote _API_ to get cat images.
+You will be creating a simple Vue app that will make HTTP calls through [**Axios**](https://github.com/axios/axios) to a remote _API_ to get cat images.
 
 ::: tip 💡
 API means _Application Programming Interface_, in **very** simple terms - it's a bunch of URLs to where we can make requests to either get or send data!
@@ -17,7 +17,7 @@ API means _Application Programming Interface_, in **very** simple terms - it's a
 
 ## 1. Get Started
 
-Head over to [CodeSandbox](https://codesandbox.io) and create a new **Vue** template.
+Head over to [CodeSandbox](https://codesandbox.io) and [create a new **Vue** template](https://codesandbox.io/s/vue).
 
 The sandbox will set up a new Vue application where we can write our code, and it will be automatically compiled and rendered on the right hand window.
 
@@ -134,9 +134,9 @@ Go ahead and click on the button on the right hand screen and open up the **Cons
 
 You will see an output that is very similar to this:
 
-![consoleoutput](./images/nano-axios-consoleoutput.png)
+![consoleoutput](./images/axios-consoleoutput.png)
 
-This is logging the `reponse` parameter in our `then` block. We are getting back a JS _Object_ with a bunch of data about the HTTP call we just made, like the `status`, `headers`, etc.
+This is logging the `response` parameter in our `then` block. We are getting back a JS _Object_ with a bunch of data about the HTTP call we just made, like the `status`, `headers`, etc.
 
 Inside this object we also get a `data` array which holds the actual response that our API gave us. In this case, its another _Object_ that holds the information for our cat picture!
 
@@ -187,7 +187,7 @@ Finally, let's create an image on our markup to show our result:
 <template>
   <div id="app">
     <button @click="fetchNewCat">New Cat</button> 
-    <img :src="catImage" alt="" />
+    <img :src="catImage" alt="Cat Image" />
   </div>
 </template>
 ```
