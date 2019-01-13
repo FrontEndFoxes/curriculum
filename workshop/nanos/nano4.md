@@ -2,7 +2,7 @@
 
 | **Project Goal**            | Learn about computed properties by building a simple app|
 | --------------------------- | -------------------------------------------------------------------------------------- |
-| **What you’ll learn**       | You will learn how computed propertis work              |
+| **What you’ll learn**       | You will learn how computed properties work and how to use them.             |
 | **Tools you’ll need**       | A modern browser like Chrome/Firefox. Access to [CodeSandbox](https://codesandbox.io). |
 | **Time needed to complete** | 10 minutes                                                                             |
 
@@ -34,7 +34,7 @@ export default {
 </script>
 ```
 
-The reason you're doing this is so that you have a clean slate without all the boilerplate stuff Codesandbox adds.
+The reason you're doing this is so that you have a clean slate without all the boilerplate code Codesandbox adds.
 
 ## Setting up a label
 
@@ -49,7 +49,7 @@ Right now it won't work, because `today` is a property that hasn't been defined 
 
 Computed properties are `functions` that can calculate a value and return data that will be used in our template. In our case, we will use them to create a `Date` object, and return it's string representation only.
 
-This type of behavior would be cumbersome to maintain if placed inside line blocks on our template, and may even be impossible if the logic is too complex.
+This type of logic would be cumbersome to maintain if placed inside line blocks on our template, and may even be impossible if the logic is too complex due to the templating engine limitations.
 
 Rule of thumb is, whenever you need to `calculate` a value, or change a value in any way - use computed properties.
 
