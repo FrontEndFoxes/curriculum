@@ -53,7 +53,7 @@ The goal of the program is to familiarize women and those who identify as such w
 
 ### Thank You to Our Contributors!
 
-| [<img alt="NataliaTepluhina" src="https://avatars0.githubusercontent.com/u/18719025?v=4&s=117" width="117">](https://github.com/NataliaTepluhina) | [<img alt="jlooper" src="https://avatars2.githubusercontent.com/u/1450004?v=4&s=117" width="117">](https://github.com/jlooper) | [<img alt="immarina" src="https://avatars2.githubusercontent.com/u/14843771?v=4&s=117" width="117">](https://github.com/jlooper)
-| :--: |:--: |:--:
-[Natalia Tepluhina](https://github.com/NataliaTepluhina)                                              |[Jen Looper](https://github.com/jlooper)|[Marina Mosti](https://github.com/immarina)
+| [<img alt="NataliaTepluhina" src="https://avatars0.githubusercontent.com/u/18719025?v=4&s=117" width="117">](https://github.com/NataliaTepluhina) | [<img alt="jlooper" src="https://avatars2.githubusercontent.com/u/1450004?v=4&s=117" width="117">](https://github.com/jlooper) | [<img alt="immarina" src="https://avatars2.githubusercontent.com/u/14843771?v=4&s=117" width="117">](https://github.com/immarina) | [<img alt="immarina" src="https://avatars2.githubusercontent.com/u/17781315?v=4&s=117" width="117">](https://github.com/lauragift21)
+| :--: |:--: |:--: |:--:
+[Natalia Tepluhina](https://github.com/NataliaTepluhina)                                              |[Jen Looper](https://github.com/jlooper)|[Marina Mosti](https://github.com/immarina)|[Egwuenu Gift](https://github.com/lauragift21)
 

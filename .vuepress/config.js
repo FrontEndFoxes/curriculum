@@ -32,7 +32,7 @@ module.exports = {
 			},
 			{
 				title: '👩‍🎓 Nano Activities',
-				children: ['/workshop/nanos/nano1', '/workshop/nanos/nano2'],
+				children: ['/workshop/nanos/nano1', '/workshop/nanos/nano2', '/workshop/nanos/nano3'],
 			},
 		],
 	},
