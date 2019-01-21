@@ -1,4 +1,4 @@
-# ⏰ Nano Activity 4: Create a Computed Property to Display A Date
+# ⏰ Nano Activity 4: Create a Computed Property to Display A Date (intermediate)
 
 | **Project Goal**            | Learn about computed properties by building a simple app that calculates the days since your birthday |
 | --------------------------- | ----------------------------------------------------------------------------------------------------- |
