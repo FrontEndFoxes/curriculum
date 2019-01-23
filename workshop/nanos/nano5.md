@@ -16,6 +16,8 @@ Our first step is to scaffold our nuxt app, for this we will be using the [`crea
 
 ::: tip 💡
 We will be using `npm` and `npx` commands in this nano, if you don't already have Node and NPM installed in your computer, head over to (https://nodejs.org)[https://nodejs.org]and download and intall the package first.
+
+If you have a preference for `yarn` or would like to try it out, head to [https://yarnpkg.com](https://yarnpkg.com/en/) for installation instructions.
 :::
 
 Fire up your terminal of choice, and run the following command:
@@ -67,7 +69,7 @@ The pages folder is one of the most important folders in a *Nuxt* app since it h
 
 If you open it on your text editor, you will see that inside there is an `index.vue` file with some basic HTML/CSS content inside of it. Let's go ahead and run the project.
 
-Open up your terminal and `cd nuxt-nano` into your app's folder. Once you're inside, go ahead and `npm run dev` to start up the compile process and start _serving_ the content into your browser.
+Open up your terminal and `cd nuxt-nano` into your app's folder. Once you're inside, go ahead and `npm run dev` or `yarn dev` to start up the compile process and start _serving_ the content into your browser.
 
 The terminal will show you in what url/port it's going to serve your app. Usually it'll be [http://localhost:3000]. Go ahead and open the URL in your browser.
 
