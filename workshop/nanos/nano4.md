@@ -6,7 +6,7 @@
 | **Tools you’ll need**       | A modern browser like Chrome/Firefox. Access to [CodeSandbox](https://codesandbox.io).                |
 | **Time needed to complete** | 10 minutes                                                                                            |
 
-# Create a simple computed property
+# Create a Simple Computed Property
 
 Today you will create a very simple application that calculates the number of days since your birthday. You'll also learn about how computed properties work and how you can use them in your own projects.
 

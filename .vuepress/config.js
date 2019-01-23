@@ -37,6 +37,7 @@ module.exports = {
 					'/workshop/nanos/nano2',
 					'/workshop/nanos/nano3',
 					'/workshop/nanos/nano4',
+					'/workshop/nanos/nano5',
 				],
 			},
 		],
