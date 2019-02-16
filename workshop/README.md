@@ -1,9 +1,9 @@
 # About Vue Vixens Workshops
 
-Vue Vixens is an initiative created by Jen Looper, a Senior Developer Advocate at [Progress](http://www.progress.com). Vue Vixens' mission is to create workshops to teach Vue.js in a cool and fun way to 'foxy people who identify as women'. It is based on the successful model pioneered by Shmuela Jacobs for the Angular community, [http://www.ng-girls.org](ng-girls.org). Ng-Girls was in turn inspired by the Rails Bridge and Django Girls initiatives.
+Vue Vixens is an initiative created by Jen Looper, a Senior Developer Advocate at [Progress](http://www.progress.com). Vue Vixens' mission is to create workshops to teach Vue.js in a cool and fun way to 'foxy people who identify as women'. It is based on the successful model pioneered by Shmuela Jacobs for the Angular community, [ng-girls.org](http://www.ng-girls.org). Ng-Girls was in turn inspired by the Rails Bridge and Django Girls initiatives.
 
 ::: tip Not just workshops!
-We do more than full day workshops! We also can help with your conference's diversity offerings - just contact us at [info@vuevixens.org](mailto:info@vuevixens.org). We also have chapters worldwide; find us at [http://vuevixens.org](VueVixens.org).
+We do more than full day workshops! We also can help with your conference's diversity offerings - just contact us at [info@vuevixens.org](mailto:info@vuevixens.org). We also have chapters worldwide; find us at [VueVixens.org](https://vuevixens.org).
 :::
 
 These workshops are designed to help people get better acquainted with both Vue.js for both web and mobile development. 3/4 of a standard workshop day is spent on the web, and 1/4 on mobile. Below is an interview with Jen and Evan You, creator of Vue, and Igor Randjelovic, creator of NativeScript-Vue, giving the background and history of the projects.
@@ -24,7 +24,7 @@ All the online codelabs are designed to be completed in groups in a self-study m
 
 **Where can I register for a skulk?**
 
-Workshop attendees and mentors can register for events at [http://www.vuevixens.org](vuevixens.org). Keep an eye on our Twitter feed @vuevixens for announcements of upcoming events. Vue Vixens workshops are free, but depend on budget from conferences and meetups to provide lunch, breakfast, or snacks, and a space with wifi.
+Workshop attendees and mentors can register for events at [vuevixens.org](https://www.vuevixens.org). Keep an eye on our Twitter feed @vuevixens for announcements of upcoming events. Vue Vixens workshops are free, but depend on budget from conferences and meetups to provide lunch, breakfast, or snacks, and a space with wifi.
 
 **I'm a guy. Can I participate?**
 
