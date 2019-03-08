@@ -178,13 +178,13 @@ Inside `Favorites.vue` add the script tag under the template tags with the `expo
 
 ```js
 <script>
-		export default {
-		  computed: {
-		    favorites() {
-     		  return this.$store.state.favorites;
-    		}
-		  }
-		};
+	export default {
+		computed: {
+			favorites() {
+				return this.$store.state.favorites;
+			}
+		}
+	};
 </script>
 ```
 
