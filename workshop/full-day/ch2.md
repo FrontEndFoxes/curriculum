@@ -106,11 +106,9 @@ const router = new VueRouter({ routes });
 
 ```js
 new Vue({
-  el: '#app',
-  components: { App },
-  template: '<App/>',
   router,
-});
+  render: h => h(App)
+}).$mount("#app");
 ```
 
 - Now open App.vue. Replace the whole `<div class="wrapper">` chunk that you ripped out with a `<router-view></router-view>` tag, sandwiching it right between the header and footer. Your store just came back to life!
