@@ -208,7 +208,7 @@ What happens, though, when you swipe more than fifteen times? We can add a call 
 ```js
 next() {
    this.dogs.pop();
-   console.log(this.dogs.length)
+   console.log(this.dogs.length);
    if (this.dogs.length == 0) {
       alert("Loading some more!")
         this.getMultiDogs();
