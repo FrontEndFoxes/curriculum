@@ -1,27 +1,26 @@
 {
-    "name": "Vue Vixens Workshops",
-    "version": "1.0.0",
-    "description": "Vue Vixens Workshops",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/vuevixens/docs.git"
-    },
-    "keywords": [
-        "Vue Vixens",
-        "workshops",
-        "Vue.js"
-    ],
-    "author": "Jen Looper, Natalia Tepluhina",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/vuevixens/docs/issues"
-    },
-    "homepage": "https://github.com/vuevixens/docs/#readme",
-    
-    "dependencies": {
-        "vuepress": "^0.14.10"
-    },
-    "scripts": {
-        "docs:build": "vuepress build"
-    }
+	"name": "vue-vixens-workshops",
+	"version": "1.0.0",
+	"description": "Vue Vixens Workshops",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vuevixens/docs.git"
+	},
+	"keywords": [
+		"Vue Vixens",
+		"workshops",
+		"Vue.js"
+	],
+	"author": "Jen Looper, Natalia Tepluhina",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/vuevixens/docs/issues"
+	},
+	"homepage": "https://github.com/vuevixens/docs/#readme",
+	"dependencies": {
+		"vuepress": "^0.14.10"
+	},
+	"scripts": {
+		"docs:build": "vuepress build"
+	}
 }
