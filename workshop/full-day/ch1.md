@@ -24,10 +24,8 @@ Take a look at the code that was scaffolded by Code Sandbox for a basic Vue.js a
 
 ```js
 new Vue({
-  el: '#app',
-  components: { App },
-  template: '<App/>',
-});
+  render: h => h(App)
+}).$mount("#app");
 ```
 
 Open up `App.vue`. In this file, the 'home' component is built. It contains the three main parts of a Vue.js Single File Component (SFC): a template, a script block, and a style block.

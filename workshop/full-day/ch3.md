@@ -94,7 +94,7 @@ Let's try to load a random image for each dog in our `dogs` array. The first thi
 The `map()` method creates a new array with the results of calling a provided function on every element in the calling array.
 :::
 
-Overwrite the code in the `Created()`...`.then` by creating this linksArray constant:
+Overwrite the code in the `created()`...`.then` by creating this linksArray constant:
 
 ```js
 const linksArray = this.dogs.map(
@@ -123,7 +123,7 @@ What's going on here? The forEach() method executes a provided function once for
 
 Now we have new images each time our `Pets` component is created (you can see the images change on page refresh or simply by switching the tabs from `pets` to `home` and back). The dogs' names and breeds are still being drawn from static data, but the images are coming from the API, matched with the static dog's breed.
 
-The only remaining problem is that we can still see old images for a short moment when we enter the pets tab. Let's clear the dogs images before we perform a query. Add this string as the first one inside the `created()` hook:
+The only remaining problem is that we can still see old images for a short moment when we enter the pets tab. Let's clear the dogs images before we perform a query. Add this code as the first one inside the `created()` hook:
 
 ```js
 this.dogs.forEach(dog => {
