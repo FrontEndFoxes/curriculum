@@ -1,5 +1,5 @@
 module.exports = {
-	base: '/docs/',
+	base: '/',
 	head: [['link', { rel: 'icon', href: '/favicon.png' }]],
 	title: 'Vue Vixens Workshops',
 	description: 'Workshops to teach web and mobile development with Vue.js to beginners',
