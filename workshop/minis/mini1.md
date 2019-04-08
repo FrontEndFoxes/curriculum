@@ -1,4 +1,4 @@
-# 🖥️ Mini Workshop 1:  Build A Simple Pet Fetching Web App
+# 🖥️ Mini Workshop 1: Build A Simple Pet Fetching Web App
 
 | **Project&nbsp;Goal**           | Get started with Vue.js basics and simple API calls                                                                                                                           |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -19,14 +19,12 @@ We're going to build an application to load random dog images and store them to 
 
 Take a look at the code that was scaffolded by Code Sandbox for a basic Vue.js app. The file `main.js` is open by default. This is the main starting point of a Vue.js app. Note that in this file you import Vue from its npm package: `import Vue from "vue";`. Code Sandbox imports all the needed dependencies from npm to build the app. You can always check out the root `package.json` to find out which dependencies are needed.
 
-`main.js` also initializes the app as a new Vue.js app and sets the div into which the app code will be injected. It also names the main component and sets the template's name:
+`main.js` also initializes the app as a new Vue.js app and sets the div into which the app code will be injected.
 
 ```js
 new Vue({
-  el: '#app',
-  components: { App },
-  template: '<App/>',
-});
+  render: h => h(App),
+}).$mount('#app');
 ```
 
 Open up `App.vue`. In this file, the 'home' component is built. It contains the three main parts of a Vue.js Single File Component (SFC): a template, a script block, and a style block.
@@ -102,7 +100,7 @@ Check whether the dependency is installed by opening `package.json` and checking
 ```json
 "dependencies": {
     "vue": "^2.5.2",
-    "vuetify": "^1.3.8"
+    "vuetify": "^1.5.9"
 },
 ```
 
@@ -144,25 +142,25 @@ Then, overwrite the current template in `App.vue` with this markup:
 ```html
 <template>
   <v-app>
-      <v-content class="dogs-layout">
-        <v-container fill-height>
-          <div class="dogs-overlay">
-            <h1 class="display-2 text-xs-center">Choose your favorite dogs</h1>
-            <v-card class="dog-card">
-              <v-img height="400px"></v-img>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn icon>
-                  <v-icon>favorite</v-icon>
-                </v-btn>
-                <v-btn icon>
-                  <v-icon>forward</v-icon>
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </div>
-        </v-container>
-      </v-content>
+    <v-content class="dogs-layout">
+      <v-container fill-height>
+        <div class="dogs-overlay">
+          <h1 class="display-2 text-xs-center">Choose your favorite dogs</h1>
+          <v-card class="dog-card">
+            <v-img height="400px"></v-img>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn icon>
+                <v-icon>favorite</v-icon>
+              </v-btn>
+              <v-btn icon>
+                <v-icon>forward</v-icon>
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </div>
+      </v-container>
+    </v-content>
   </v-app>
 </template>
 ```
@@ -179,8 +177,9 @@ At this point, we need to start populating our UI with some data. First thing we
 
 ```html
 <v-img
-   height="400px"
-   src="https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg"></v-img>
+  height="400px"
+  src="https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg"
+></v-img>
 ```
 
 How cute! 🐶
@@ -216,9 +215,7 @@ data() {
 Now we have to change the template to make the `src` property _dynamic_, so it can use the value of the variable we just populated above. To do this we need a `v-bind` directive or its shortcut, `:`. Again in `App.vue`, edit the `<v-img>` tag:
 
 ```html
-<v-img
-   height="400px"
-   :src="currentDogLink"></v-img>
+<v-img height="400px" :src="currentDogLink"></v-img>
 ```
 
 ::: tip 💡
@@ -381,8 +378,7 @@ To display the favorite dogs we should make changes to our template. Let's add t
   <v-layout wrap>
     <v-flex xs6 sm4 md2>
       <v-card class="dog-card">
-        <v-img
-          height="150px"></v-img>
+        <v-img height="150px"></v-img>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn icon>
@@ -400,7 +396,7 @@ You can see an empty card with a 'Delete' button right after the current dog vie
 To render a list of items based on an array Vue has a `v-for` directive, which will iterate through this array and render each item. Let's add this directive to our `v-flex` element in the array of favorite cards:
 
 ```html
-<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
+<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet"></v-flex>
 ```
 
 Here `pet` is the reference to the _current array element_ and `index` is the _index of this element_ inside the array.
@@ -416,9 +412,7 @@ You can see that our empty card disappeared. It's fine! We have an empty `favori
 One thing left to do is to bind `pet` (which will be the image link) to the `src` property of the `v-img` component:
 
 ```html
-<v-img
-  height="150px"
-  :src="pet"></v-img>
+<v-img height="150px" :src="pet"></v-img>
 ```
 
 Now it's time to like some dogs 💖🐶!
@@ -501,7 +495,7 @@ Now we have to bind this new method to 'Delete' button with a click handler:
 
 ```html
 <v-btn icon @click="removeFromFavorites(index)">
-	<v-icon>delete</v-icon>
+  <v-icon>delete</v-icon>
 </v-btn>
 ```
 
@@ -522,13 +516,9 @@ We have a `components` folder but for now it's empty. Let's create a new file he
 Open this file and add `<template></template>` and `<script></script>` tags. Now our file looks this way:
 
 ```html
-<template>
+<template> </template>
 
-</template>
-
-<script>
-
-</script>
+<script></script>
 ```
 
 Now copy the whole `v-card` component that contains the favorite dogs (it's near the bottom) from `App.vue` and paste it inside the template tag. You can delete it from `App.vue`.
@@ -566,9 +556,7 @@ In our template in `Dog.vue` we should replace `pet` with `dog`, because we don'
 ```html
 <template>
   <v-card class="dog-card">
-    <v-img
-      height="150px"
-      :src="dog"></v-img>
+    <v-img height="150px" :src="dog"></v-img>
     <v-card-actions>
       <v-spacer></v-spacer>
       <v-btn icon @click="removeFromFavorites(index)">
@@ -611,9 +599,7 @@ For the component name you can either use a camel-case (`appDog`) or kebab-case 
 In `App.vue`, place our custom tag in the space where you deleted the card earlier:
 
 ```html
-<v-flex xs6 sm4 md2
-  v-for="(pet, index) in favoriteDogs"
-  :key="pet">
+<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
   <app-dog></app-dog>
 </v-flex>
 ```
@@ -621,9 +607,7 @@ In `App.vue`, place our custom tag in the space where you deleted the card earli
 We have to pass a `dog` prop to our `Dog` component. It will be done with the familiar `v-bind` directive (remember, you can use its `:` shortcut). Edit the code you just added to `App.vue`:
 
 ```html
-<v-flex xs6 sm4 md2
-  v-for="(pet, index) in favoriteDogs"
-  :key="pet">
+<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
   <app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
 </v-flex>
 ```
@@ -633,7 +617,7 @@ Now if you try to add a dog to Favorites you will see the dogs in the grid again
 Instead of using the method, we will replace it with an _event emitter_ to the `delete` button inside the Dog component.
 
 ```html
-<v-btn icon @click="$emit('remove')">
+<v-btn icon @click="$emit('remove')"></v-btn>
 ```
 
 By using `$emit`, we are sending a message to our parent component (in this case it's `App.vue`) - something like, 'Hi, something is happening here! Please read this message and react to it'.
@@ -659,10 +643,7 @@ Vue provides a `transition` wrapper component, allowing you to add entering/leav
 Let's try to animate the image of the current dog. First, we need to add `v-if` directive to it to provide the proper context for the future transition. In `App.vue`, edit the main dog's media card:
 
 ```html
-<v-img
-  v-if="currentDogLink"
-  height="400px"
-  :src="currentDogLink"></v-img>
+<v-img v-if="currentDogLink" height="400px" :src="currentDogLink"></v-img>
 ```
 
 But now `currentDogLink` will always return `true`! Let's set it to the empty string every time we're clicking the 'Next' button, so before the next image is loaded, `currentDogLink` will return `false`:
@@ -680,8 +661,7 @@ Now you can observe this ugly effect: the image disappears every time the user c
 
 ```html
 <transition name="fade">
-  <v-img v-if="currentDogLink" height="400px"
-  :src="currentDogLink"></v-img>
+  <v-img v-if="currentDogLink" height="400px" :src="currentDogLink"></v-img>
 </transition>
 ```
 
@@ -714,13 +694,8 @@ Elements inside are _always_ required to have a unique key attribute
 In `App.vue`, replace the `<v-layout>` component surrounding the `<app-dog>` nested component with `v-transition-group` and provide it with a proper tag attribute and class:
 
 ```html
-<transition-group
-  name="slide"
-  tag="v-layout"
-  class="wrap">
-  <v-flex xs6 sm4 md2
-    v-for="(pet, index) in favoriteDogs"
-    :key="pet">
+<transition-group name="slide" tag="v-layout" class="wrap">
+  <v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
     <app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
   </v-flex>
 </transition-group>
