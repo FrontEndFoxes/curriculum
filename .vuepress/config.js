@@ -28,7 +28,11 @@ module.exports = {
 			},
 			{
 				title: '🐾 Mini Workshops',
-				children: ['/workshop/minis/mini1', '/workshop/minis/mini2', '/workshop/minis/mini3'],
+				children: [
+					'/workshop/minis/mini1',
+					'/workshop/minis/mini2',
+					'/workshop/minis/mini3'
+				],
 			},
 			{
 				title: '👩‍🎓 Nano Activities',
@@ -39,6 +43,13 @@ module.exports = {
 					'/workshop/nanos/nano4',
 					'/workshop/nanos/nano5',
 					'/workshop/nanos/nano6',
+				],
+			},
+			{
+				title: '🙅 Build your own website',
+				children: [
+					'/workshop/website/website1',
+					'/workshop/website/website2',
 				],
 			},
 		],
