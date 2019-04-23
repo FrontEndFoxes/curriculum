@@ -70,11 +70,11 @@ You have here our sketchs for the website that we want to create. Feel free to c
 
 **Home**
 
-![Your sketch image 1](./images/5.jpg)
+![Your sketch image 1](./images/5.png)
 
 **Blog / Post / Project**
 
-![Your sketch image 2](./images/6.jpg)
+![Your sketch image 2](./images/6.png)
 
 ## Wireframe
 
