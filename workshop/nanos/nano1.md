@@ -157,7 +157,7 @@ mutations: {
 
 actions: {
   addGame(context, game) {
-    if (typeof game !== Object && game !== null) return;
+    if (typeof game !== 'object' && game !== null) return;
     context.commit("addGame", game);
   }
 }

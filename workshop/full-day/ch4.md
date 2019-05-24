@@ -150,12 +150,10 @@ Then add the `store` to the Vue instance properties in `main.js`:
 
 ```js
 new Vue({
-	el: "#app",
-	components: { App },
-	template: "<App/>",
-	router,
-	store
-});
+  router,
+  store,
+  render: h => h(App)
+}).$mount("#app");
 ```
 
 Now all the components in the application will have access to our state via `this.$store.state` placed inside any component's computed property. Let's try to access it from the `Favorites` component.
@@ -178,13 +176,13 @@ Inside `Favorites.vue` add the script tag under the template tags with the `expo
 
 ```js
 <script>
-		export default {
-		  computed: {
-		    favorites() {
-     		  return this.$store.state.favorites;
-    		}
-		  }
-		};
+	export default {
+		computed: {
+			favorites() {
+				return this.$store.state.favorites;
+			}
+		}
+	};
 </script>
 ```
 

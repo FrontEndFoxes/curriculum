@@ -228,7 +228,7 @@ Vue.use(Vuetify);
 
 This ensures that Vuetify's themes and components will be available throughout the Vue app and Vuetify css styles are included as well.
 
-In order to have nice icons in our application, we also need to add Material icons to our `index.html` file. Please add this string inside your `<head></head>` tag:
+In order to have nice icons in our application, we also need to add Material icons to our `index.html` file. Please open `public/index.html` and add this string inside your `<head></head>` tag:
 
 ```html
 <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
