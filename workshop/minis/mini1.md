@@ -127,8 +127,8 @@ This stylesheet is needed to display Vuetify components in a proper way.
 
 We also have to add Material icons into the `head` part of `index.html` file (insert them right after the `<title>` tag)
 
-```
-<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+```html
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
 ```
 
 Let's also change the page title to `Dog Lover`. To do so, we have to change the content of the `title` tag:
