@@ -153,7 +153,7 @@ data() {
 	    email: "",
 	    phone: ""
 	};
-	}
+}
 ```
 As you can see, all of them are empty strings.
 
