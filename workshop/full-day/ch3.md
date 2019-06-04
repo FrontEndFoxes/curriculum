@@ -8,7 +8,7 @@
 
 ## Instructions
 
-If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/master/chapter-1-end) into Code Sandbox after logging in.
+If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/master/chapter-1-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields.
 
 So far, we have placed images of dogs onto our screens via some static JSON data that we imported into a component. That's great for demo purposes, but in real life, you're almost always going to build web apps that consume real data that's coming from either your own data sources, or externally, from somewhere on the internet. Let's learn how to consume third-party data.
 

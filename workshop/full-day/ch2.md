@@ -8,7 +8,7 @@
 
 ## Instructions
 
-If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/master/chapter-1-end) into Code Sandbox after logging in.
+If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/master/chapter-1-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields.
 
 At this point, we have only a home page, but we want to add one more page to contain pet cards. Let's create a single-page application with a navigation bar listing "home" and "pets". Clicking on the "pets" page will bring us to the new page we're creating now.
 
