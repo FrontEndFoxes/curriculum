@@ -8,7 +8,7 @@
 
 ## Instructions
 
-If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/master/chapter-4-end) into Code Sandbox after logging in.
+If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/master/chapter-4-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields.
 
 In this chapter, we will create a form to fill after you finish selecting dogs. First of all, we should create a new component to contain this form and add a form route to our router settings.
 

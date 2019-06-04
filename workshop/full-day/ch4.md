@@ -8,7 +8,7 @@
 
 ## Instructions
 
-If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/master/chapter-3-end) into Code Sandbox after logging in.
+If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/master/chapter-3-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields.
 
 In this chapter, we will build a 'loyalty list' - like a shopping cart but for adoptions - to show the list of dogs that we particularly like and would like to adopt. To get started, create a new, blank file in the `views` folder and name it `Favorites.vue`.
 
