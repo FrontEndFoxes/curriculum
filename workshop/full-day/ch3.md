@@ -40,10 +40,13 @@ Now we are ready to make our first API call.
 
 Let's replace the first static image with the random Husky picture from the Dog CEO API. First we have to check which endpoint we have to use. Looking at the API's [documentation](https://dog.ceo/dog-api/) we can find out that we need to append `/breed/husky/images/random` to the base API call (the `api` part is already in our base URL).
 
-We want a new image to replace the old one right when the component is created, so let's add a `created()` hook right after `data`:
+We want a new image to replace the old one right when the component is created, so let's add a `created()` hook after the `data()` property:
 
 ```js
-created() {}
+...
+data() {...},
+created() {},
+...
 ```
 
 ::: tip 💡

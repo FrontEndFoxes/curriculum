@@ -102,7 +102,7 @@ const routes = [
 const router = new VueRouter({ routes });
 ```
 
-- Finally, we need to add the router to our Vue instance. To do this, just add a reference to `router` right after the `template: "<App/>",` string:
+- Finally, we need to add the router to our Vue instance. To do this, just add a reference to `router` inside of the `new Vue` configuration object:
 
 ```js
 new Vue({
