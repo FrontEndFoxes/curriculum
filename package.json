@@ -18,9 +18,10 @@
 	},
 	"homepage": "https://github.com/vuevixens/docs/#readme",
 	"dependencies": {
-		"vuepress": "^0.14.10"
+		"vuepress": "^1.0.0-rc.1"
 	},
 	"scripts": {
-		"docs:build": "vuepress build"
+		"docs:build": "vuepress build",
+		"dev": "vuepress dev"
 	}
 }
