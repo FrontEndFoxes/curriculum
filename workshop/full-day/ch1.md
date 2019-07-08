@@ -6,6 +6,10 @@
 | **Tools you’ll need**       | A modern browser like Chrome. If using Chrome, download Chrome DevTools for Vue.js. An account in CodeSandbox.io. |
 | **Time needed to complete** | 1/2 hour                                                                                                          |
 
+## What You'll Build
+
+![sketchnote](../images/ch1.png)
+
 ## Instructions
 
 Since this is the very first Vue.js web project we're going to make, we'll start from scratch in [Code Sandbox](http://codesandbox.io). Create a Code Sandbox account and scaffold a starter Vue.js template by clicking [here](https://codesandbox.io/s/vue).
@@ -24,8 +28,8 @@ Take a look at the code that was scaffolded by Code Sandbox for a basic Vue.js a
 
 ```js
 new Vue({
-  render: h => h(App)
-}).$mount("#app");
+	render: h => h(App),
+}).$mount('#app');
 ```
 
 Open up `App.vue`. In this file, the 'home' component is built. It contains the three main parts of a Vue.js Single File Component (SFC): a template, a script block, and a style block.
@@ -192,9 +196,9 @@ Notice we don't use `<scoped>` as part of the style block. The 'scoped' keyword 
 
 This style block includes a few surprising things:
 
-- It uses paths to external images hosted on Github, rather than relative paths. This is because Code Sandbox doesn't host images; normally you'll just add an image on a relative path such as `/images/myImage.png`.
-- There is some funny 'grid' stuff going on. This style sheet and the template we will build make use of CSS Grid, a new way of making flexible, responsive 'masonry' layouts like this one with stacked 'blocks' of content. Learn more about CSS Grid [here](https://css-tricks.com/snippets/css/complete-guide-grid/).
-- There are two style sheets! Or at least two style patterns. One has a green theme, the other is orange. We'll make use of this soon.
+-   It uses paths to external images hosted on Github, rather than relative paths. This is because Code Sandbox doesn't host images; normally you'll just add an image on a relative path such as `/images/myImage.png`.
+-   There is some funny 'grid' stuff going on. This style sheet and the template we will build make use of CSS Grid, a new way of making flexible, responsive 'masonry' layouts like this one with stacked 'blocks' of content. Learn more about CSS Grid [here](https://css-tricks.com/snippets/css/complete-guide-grid/).
+-   There are two style sheets! Or at least two style patterns. One has a green theme, the other is orange. We'll make use of this soon.
 
 Adding the style sheet didn't do much to our template except make the `<li>` group look strange. Let's fix the template!
 
@@ -231,63 +235,71 @@ This ensures that Vuetify's themes and components will be available throughout t
 In order to have nice icons in our application, we also need to add Material icons to our `index.html` file. Please open `public/index.html` and add this string inside your `<head></head>` tag:
 
 ```html
-<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet" />
 ```
 
 Then, overwrite the current template in `App.vue` with this markup:
 
 ```html
 <template>
-  <v-app>
-    <main>
-      <div class="app-container">
-        <header class="app-header dark-brown">
-          <h1>My Pet Store</h1>
-        </header>
-        <div class="wrapper">
-          <div class="panel tall-panel light-mint">
-              <h2>Pet Products</h2>
-              <p>Premium Puppy Chow</p>
-              <p>Kibble, sale in bulk, $20/lb</p>
-              <img src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/food.png"/>
-          </div>
-          <div class="panel bisque">
-              <h2>Donate</h2>
-          </div>
-          <div class="panel tall-panel light-brown">
-              <h2>Adoptable Pets</h2>
-              <p>Fisher, Chihuahua, age 3</p>
-              <img src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/chihuahua.jpg"/>
-          </div>
+	<v-app>
+		<main>
+			<div class="app-container">
+				<header class="app-header dark-brown">
+					<h1>My Pet Store</h1>
+				</header>
+				<div class="wrapper">
+					<div class="panel tall-panel light-mint">
+						<h2>Pet Products</h2>
+						<p>Premium Puppy Chow</p>
+						<p>Kibble, sale in bulk, $20/lb</p>
+						<img
+							src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/food.png"
+						/>
+					</div>
+					<div class="panel bisque">
+						<h2>Donate</h2>
+					</div>
+					<div class="panel tall-panel light-brown">
+						<h2>Adoptable Pets</h2>
+						<p>Fisher, Chihuahua, age 3</p>
+						<img
+							src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/chihuahua.jpg"
+						/>
+					</div>
 
-          <div class="panel bisque">
-              <h2>Contact Us</h2>
-          </div>
-          <div class="panel tall-panel dark-mint">
-              <h2>Pet of the Month</h2>
-              <p>Meet Stanley, A young French Bulldog</p>
-              <img src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/bulldog.jpg"/>
-          </div>
-          <div class="panel tall-panel light-mint">
-              <h2>Success Stories</h2>
-              <p>Bennie found his forever home!</p>
-              <img src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/collie.jpg"/>
-          </div>
+					<div class="panel bisque">
+						<h2>Contact Us</h2>
+					</div>
+					<div class="panel tall-panel dark-mint">
+						<h2>Pet of the Month</h2>
+						<p>Meet Stanley, A young French Bulldog</p>
+						<img
+							src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/bulldog.jpg"
+						/>
+					</div>
+					<div class="panel tall-panel light-mint">
+						<h2>Success Stories</h2>
+						<p>Bennie found his forever home!</p>
+						<img
+							src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/collie.jpg"
+						/>
+					</div>
 
-          <div class="panel bisque">
-              <h2>Special Events</h2>
-          </div>
+					<div class="panel bisque">
+						<h2>Special Events</h2>
+					</div>
 
-          <div class="panel bisque">
-              <h2>Learn About Pet Ownership</h2>
-          </div>
-        </div>
-        <footer class="app-footer dark-brown">
-          <p>123 Main Street | Smithfield, RI 90987 | 345-456-5678</p>
-        </footer>
-      </div>
-    </main>
-  </v-app>
+					<div class="panel bisque">
+						<h2>Learn About Pet Ownership</h2>
+					</div>
+				</div>
+				<footer class="app-footer dark-brown">
+					<p>123 Main Street | Smithfield, RI 90987 | 345-456-5678</p>
+				</footer>
+			</div>
+		</main>
+	</v-app>
 </template>
 ```
 
@@ -299,19 +311,19 @@ Note the use of `<v-app>` - this is a requirement of Vuetify and is a sure sign 
 
 Now we're going to actually use that Vuetify theme by creating a switch. Pressing this switch will trigger a theme switch, so you'll use the 'orange' theme you saw in the styles.
 
-- You might see the `orange-green` class in stylesheet. Let's add it to the `<main>` element and observe how all the colors & background are changed:
-  ```html
-  <main class="orange-green">
-  ```
-- Now let's try to change the class using Vue class bindings. We can use `v-bind` directive or its shortcut `:`. Replace that simple class in `<main>` with a dynamic class binding:
+-   You might see the `orange-green` class in stylesheet. Let's add it to the `<main>` element and observe how all the colors & background are changed:
+    ```html
+    <main class="orange-green"></main>
+    ```
+-   Now let's try to change the class using Vue class bindings. We can use `v-bind` directive or its shortcut `:`. Replace that simple class in `<main>` with a dynamic class binding:
 
 ```html
-<main :class="{'orange-green': false}">
+<main :class="{'orange-green': false}"></main>
 ```
 
 Try to change `false` to `true` and vice versa. You can see how class is applied in Chrome dev tools and how the page color theme is changing.
 
-- Get excited! It's time to create your first Vue variable. First, you have to add `data()` to your Vue component. This function should return an object of our Vue variables. Let's create one in the `<script>` block. Overwrite the current `<script>` block:
+-   Get excited! It's time to create your first Vue variable. First, you have to add `data()` to your Vue component. This function should return an object of our Vue variables. Let's create one in the `<script>` block. Overwrite the current `<script>` block:
 
 ```js
 <script>
@@ -332,28 +344,28 @@ At this point you can remove the HelloWorld.vue component from the `components` 
 
 So, now you have a variable called `themeSwitched` and its default value is `false`.
 
-- In the `<main>` tag, replace `false` in the class binding with our newly created variable:
+-   In the `<main>` tag, replace `false` in the class binding with our newly created variable:
 
 ```html
-<main :class="{'orange-green': themeSwitched}">
+<main :class="{'orange-green': themeSwitched}"></main>
 ```
 
-- Change `themeSwitched` value inside `data` from `false` to `true`. Again, you can see the color change effect.
+-   Change `themeSwitched` value inside `data` from `false` to `true`. Again, you can see the color change effect.
 
-- Now we only need a switch to change a theme. First we will create a button (we're using Vuetify so it will be a Vuetify button component). Let's place it in the `header` right after the `h1` tag:
+-   Now we only need a switch to change a theme. First we will create a button (we're using Vuetify so it will be a Vuetify button component). Let's place it in the `header` right after the `h1` tag:
 
 ```html
 <header class="app-header dark-brown">
-    <h1>My Pet Store</h1>
-    <v-btn>Switch theme</v-btn>
+	<h1>My Pet Store</h1>
+	<v-btn>Switch theme</v-btn>
 </header>
 ```
 
-- Now add a click event handler to our button. We can use `v-on` directive or its shortcut `@`. This handler will change `themeSwitched` value to its opposite value, toggling the color-changing class.
+-   Now add a click event handler to our button. We can use `v-on` directive or its shortcut `@`. This handler will change `themeSwitched` value to its opposite value, toggling the color-changing class.
 
-  ```html
-  <v-btn @click="themeSwitched = !themeSwitched">Switch theme</v-btn>
-  ```
+    ```html
+    <v-btn @click="themeSwitched = !themeSwitched">Switch theme</v-btn>
+    ```
 
 Test your application by clicking the button. Looks nice, right?
 

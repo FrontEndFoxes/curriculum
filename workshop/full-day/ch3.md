@@ -1,10 +1,14 @@
 # 📋 Chapter 3: Connect your Project to an API
 
-| **Project&nbsp;Goal** | Learn how API calls work and how to implement them in your web app                                                                                                                                  |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **What&nbsp;you’ll&nbsp;learn**       | Using the [DogCEO API](https://dog.ceo/dog-api/) you will load dog images dynamically, instead of using dummy data                                                                                             |
-| **Tools&nbsp;you’ll&nbsp;need**       | A modern browser like Chrome. If using Chrome, download Chrome DevTools for Vue.js. An account in CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/VueVixens/projects/tree/master/chapter-2-end). Instructions on how to do this are in [Appendix 1](appendix_1.md) |
-| **Time needed to complete** | 1 hour
+| **Project&nbsp;Goal**           | Learn how API calls work and how to implement them in your web app                                                                                                                                                                                                                                                       |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **What&nbsp;you’ll&nbsp;learn** | Using the [DogCEO API](https://dog.ceo/dog-api/) you will load dog images dynamically, instead of using dummy data                                                                                                                                                                                                       |
+| **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome. If using Chrome, download Chrome DevTools for Vue.js. An account in CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/VueVixens/projects/tree/master/chapter-2-end). Instructions on how to do this are in [Appendix 1](appendix_1.md) |
+| **Time needed to complete**     | 1 hour                                                                                                                                                                                                                                                                                                                   |
+
+## What You'll Build
+
+![sketchnote](../images/ch3.png)
 
 ## Instructions
 
@@ -25,13 +29,13 @@ First, add Axios's library to your project dependencies. To do so in Code Sandbo
 Import axios into the component where we will perform our API call - `views/Pets.vue`. In that component's script block (right after `<script>`), add this line:
 
 ```js
-import axios from "axios";
+import axios from 'axios';
 ```
 
 All our calls will use the same base URL with different endpoints. Right under the import for axios, add the base URL to Axios' options in `views/Pets.vue`:
 
 ```js
-axios.defaults.baseURL = "https://dog.ceo/api";
+axios.defaults.baseURL = 'https://dog.ceo/api';
 ```
 
 Now we are ready to make our first API call.
@@ -191,4 +195,5 @@ created() {
 **Now we initially see empty dog portraits and then images are loaded from the API. Progress!**
 
 # Final result
+
 ![chapter 3 result](./images/petshop_chapter3.jpg)

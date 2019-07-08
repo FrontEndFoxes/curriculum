@@ -1,4 +1,4 @@
-# 📋 Chapter 6: Build a Tinder-Style Mobile App: Tindogs!
+# 📱Mini Workshop 4: Build a Tinder-Style Mobile App: Tindogs!
 
 | **Project&nbsp;Goal**           | Build a card-swipe style mobile app with NativeScript and Vue                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -6,6 +6,10 @@
 | **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome.<br><br>Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact.<br><br>A mobile phone (iOS or Android) with the NativeScript Playground and Preview apps installed.<br><br>The two NativeScript companion apps for the playground are the NativeScript Viewer and NativeScript Playground.<br><br>On Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) and [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview).<br><br>On iOS: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) and [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702) |
 | **Time needed to complete**     | 1 hour                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | **Just want to try the app?**   | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=zyoLbV&v=3)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+
+## What You'll Build
+
+![sketchnote](../images/mini_4.png)
 
 ## Instructions
 
@@ -232,11 +236,11 @@ Then, add a section at the top of the UI, under the opening `<StackLayout` tag:
 
 ```html
 <AbsoluteLayout>
-     <GridLayout style="z-index:1" columns="*,*" width="100%" paddingTop="20">
-         <Label ref="no" col="0" text="🤔" class="btn no"/>
-         <Label ref="yes" col="1" text="😍" class="btn yes"/>
-      </GridLayout>
-    <Label class="h1" width="100%" text="Fetch a new friend!"/>
+	<GridLayout style="z-index:1" columns="*,*" width="100%" paddingTop="20">
+		<label ref="no" col="0" text="🤔" class="btn no" />
+		<label ref="yes" col="1" text="😍" class="btn yes" />
+	</GridLayout>
+	<label class="h1" width="100%" text="Fetch a new friend!" />
 </AbsoluteLayout>
 ```
 

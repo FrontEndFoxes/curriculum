@@ -13,7 +13,7 @@ module.exports = {
 			lang: 'de-DE',
 			title: 'Vue Vixens Workshops',
 			description: 'Anfänger-Workshops für Web-Entwicklung mit Vue.js',
-		}
+		},
 	},
 	themeConfig: {
 		repo: 'vuevixens/docs',
@@ -38,13 +38,17 @@ module.exports = {
 							'/workshop/full-day/ch3',
 							'/workshop/full-day/ch4',
 							'/workshop/full-day/ch5',
-							'/workshop/full-day/ch6',
 							'/workshop/full-day/appendix_1',
 						],
 					},
 					{
 						title: '🐾 Mini Workshops',
-						children: ['/workshop/minis/mini1', '/workshop/minis/mini2', '/workshop/minis/mini3'],
+						children: [
+							'/workshop/minis/mini1',
+							'/workshop/minis/mini2',
+							'/workshop/minis/mini3',
+							'/workshop/minis/mini4',
+						],
 					},
 					{
 						title: '👩‍🎓 Nano Activities',
@@ -74,11 +78,11 @@ module.exports = {
 							'/de/workshop/full-day/appendix_1',
 						],
 					},
-				]
+				],
 			},
 		},
 	},
 	markdown: {
-    lineNumbers: true
-  }
+		lineNumbers: true,
+	},
 };
