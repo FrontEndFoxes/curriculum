@@ -8,7 +8,7 @@
 
 ## What You'll Build
 
-![sketchnote](../images/ch5.png)
+![sketchnote](./images/ch5.png)
 
 ## Instructions
 
