@@ -9,7 +9,7 @@
 
 ## What You'll Build
 
-![sketchnote](../images/mini_4.png)
+![sketchnote](./images/mini_4.png)
 
 ## Instructions
 
