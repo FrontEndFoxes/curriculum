@@ -48,6 +48,10 @@ module.exports = {
 							'/workshop/minis/mini2',
 							'/workshop/minis/mini3',
 							'/workshop/minis/mini4',
+							[
+								'https://nsvue-workshop.netlify.com',
+								'🔮 Mini Workshop 5: Build a complete mobile app - TarotMoji',
+							],
 						],
 					},
 					{
