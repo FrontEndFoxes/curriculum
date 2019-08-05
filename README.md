@@ -20,6 +20,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/marina-mosti"><img src="https://avatars0.githubusercontent.com/u/14843771?v=4" width="100px;" alt="Marina Mosti"/><br /><sub><b>Marina Mosti</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=marina-mosti" title="Documentation">📖</a></td>
     <td align="center"><a href="https://www.giftegwuenu.com"><img src="https://avatars3.githubusercontent.com/u/17781315?v=4" width="100px;" alt="Egwuenu Gift"/><br /><sub><b>Egwuenu Gift</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=lauragift21" title="Documentation">📖</a></td>
     <td align="center"><a href="https://twitter.com/vicbergquist"><img src="https://avatars0.githubusercontent.com/u/25737281?v=4" width="100px;" alt="Victoria Bergquist"/><br /><sub><b>Victoria Bergquist</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=vicbergquist" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/willi84"><img src="https://avatars0.githubusercontent.com/u/6207308?v=4" width="100px;" alt="Robert Willemelis"/><br /><sub><b>Robert Willemelis</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=willi84" title="Documentation">📖</a></td>
   </tr>
 </table>
 
