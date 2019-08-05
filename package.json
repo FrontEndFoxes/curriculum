@@ -11,7 +11,7 @@
 		"workshops",
 		"Vue.js"
 	],
-	"author": "Jen Looper, Natalia Tepluhina",
+	"author": "Vue Vixens, Inc.",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/vuevixens/docs/issues"
@@ -23,5 +23,8 @@
 	"scripts": {
 		"docs:build": "vuepress build",
 		"dev": "vuepress dev"
+	},
+	"devDependencies": {
+		"all-contributors-cli": "^6.8.1"
 	}
 }
