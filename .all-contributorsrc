@@ -171,6 +171,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "tonjohn",
+      "name": "Burton",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7477471?v=4",
+      "profile": "http://tonjohn.com/",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
