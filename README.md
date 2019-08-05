@@ -43,6 +43,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://www.forsure.dev"><img src="https://avatars3.githubusercontent.com/u/7371571?v=4" width="100px;" alt="Rik de Groot"/><br /><sub><b>Rik de Groot</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=hwdegroot" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://codepen.io/gmoraleslondono"><img src="https://avatars2.githubusercontent.com/u/20589565?v=4" width="100px;" alt="Gloria Morales"/><br /><sub><b>Gloria Morales</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=gmoraleslondono" title="Documentation">📖</a></td>
   </tr>
 </table>
 
