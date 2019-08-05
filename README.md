@@ -29,6 +29,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/elstamey"><img src="https://avatars3.githubusercontent.com/u/4660760?v=4" width="100px;" alt="elstamey"/><br /><sub><b>elstamey</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=elstamey" title="Documentation">📖</a></td>
     <td align="center"><a href="https://twitter.com/StanimiraVlaeva"><img src="https://avatars2.githubusercontent.com/u/7893485?v=4" width="100px;" alt="Stanimira Vlaeva"/><br /><sub><b>Stanimira Vlaeva</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=sis0k0" title="Documentation">📖</a></td>
     <td align="center"><a href="http://iamsaravieira.com"><img src="https://avatars0.githubusercontent.com/u/1051509?v=4" width="100px;" alt="Sara Vieira"/><br /><sub><b>Sara Vieira</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=SaraVieira" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://www.JenniferBland.com"><img src="https://avatars1.githubusercontent.com/u/10262857?v=4" width="100px;" alt="Jennifer Bland"/><br /><sub><b>Jennifer Bland</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=ratracegrad" title="Documentation">📖</a></td>
   </tr>
 </table>
 
