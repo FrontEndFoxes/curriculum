@@ -23,6 +23,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/willi84"><img src="https://avatars0.githubusercontent.com/u/6207308?v=4" width="100px;" alt="Robert Willemelis"/><br /><sub><b>Robert Willemelis</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=willi84" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/marydavis"><img src="https://avatars2.githubusercontent.com/u/176437?v=4" width="100px;" alt="Mary"/><br /><sub><b>Mary</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=marydavis" title="Documentation">📖</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="http://johnpapa.net"><img src="https://avatars2.githubusercontent.com/u/1202528?v=4" width="100px;" alt="John Papa"/><br /><sub><b>John Papa</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=johnpapa" title="Documentation">📖</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
