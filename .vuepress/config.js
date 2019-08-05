@@ -22,7 +22,7 @@ module.exports = {
 		editLinkText: 'Help us improve this page!',
 		nav: [
 			{ text: 'Home', link: '/' },
-			{ text: 'Team', link: 'http://www.vuevixens.org' },
+			{ text: 'Team', link: '/workshop/TEAM' },
 			{ text: 'Code of Conduct', link: '/workshop/CODE_OF_CONDUCT' },
 		],
 		locales: {
