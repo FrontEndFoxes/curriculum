@@ -39,6 +39,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/tsvetie"><img src="https://avatars0.githubusercontent.com/u/8738876?v=4" width="100px;" alt="Tsvetelina Ivanova"/><br /><sub><b>Tsvetelina Ivanova</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=tsvetie" title="Documentation">📖</a></td>
     <td align="center"><a href="http://tonjohn.com/"><img src="https://avatars1.githubusercontent.com/u/7477471?v=4" width="100px;" alt="Burton"/><br /><sub><b>Burton</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=tonjohn" title="Documentation">📖</a></td>
     <td align="center"><a href="http://radhika.dev"><img src="https://avatars2.githubusercontent.com/u/3877076?v=4" width="100px;" alt="Radhika Morabia"/><br /><sub><b>Radhika Morabia</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=rmorabia" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://altodev.net"><img src="https://avatars3.githubusercontent.com/u/38117965?v=4" width="100px;" alt="novellac"/><br /><sub><b>novellac</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=novellac" title="Documentation">📖</a></td>
   </tr>
 </table>
 
