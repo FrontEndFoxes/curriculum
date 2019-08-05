@@ -63,6 +63,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "marydavis",
+      "name": "Mary",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/176437?v=4",
+      "profile": "https://github.com/marydavis",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
