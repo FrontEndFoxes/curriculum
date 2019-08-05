@@ -144,6 +144,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "vivensio",
+      "name": "Vivek Patel",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/11770676?v=4",
+      "profile": "http://vivens.io",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
