@@ -48,6 +48,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://codepen.io/diemoritat/"><img src="https://avatars3.githubusercontent.com/u/1895474?v=4" width="100px;" alt="Nayara Alves"/><br /><sub><b>Nayara Alves</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=diemoritat" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/alphacentauri82"><img src="https://avatars2.githubusercontent.com/u/25756676?v=4" width="100px;" alt="Super Diana"/><br /><sub><b>Super Diana</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=alphacentauri82" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Vannsl"><img src="https://avatars3.githubusercontent.com/u/5849721?v=4" width="100px;" alt="Vanessa Böhner"/><br /><sub><b>Vanessa Böhner</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=Vannsl" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/Arienlys"><img src="https://avatars1.githubusercontent.com/u/48921432?v=4" width="100px;" alt="arienlys"/><br /><sub><b>arienlys</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=Arienlys" title="Documentation">📖</a></td>
   </tr>
 </table>
 
