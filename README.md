@@ -36,6 +36,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/MattKomorcec"><img src="https://avatars2.githubusercontent.com/u/7004823?v=4" width="100px;" alt="Matija Komorcec"/><br /><sub><b>Matija Komorcec</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=MattKomorcec" title="Documentation">📖</a></td>
     <td align="center"><a href="http://vivens.io"><img src="https://avatars1.githubusercontent.com/u/11770676?v=4" width="100px;" alt="Vivek Patel"/><br /><sub><b>Vivek Patel</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=vivensio" title="Documentation">📖</a></td>
     <td align="center"><a href="https://tzmanics.com"><img src="https://avatars1.githubusercontent.com/u/3611928?v=4" width="100px;" alt="Tara Z. Manicsic"/><br /><sub><b>Tara Z. Manicsic</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=tzmanics" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/tsvetie"><img src="https://avatars0.githubusercontent.com/u/8738876?v=4" width="100px;" alt="Tsvetelina Ivanova"/><br /><sub><b>Tsvetelina Ivanova</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=tsvetie" title="Documentation">📖</a></td>
   </tr>
 </table>
 
