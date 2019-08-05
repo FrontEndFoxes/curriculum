@@ -198,6 +198,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "hwdegroot",
+      "name": "Rik de Groot",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7371571?v=4",
+      "profile": "https://www.forsure.dev",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7

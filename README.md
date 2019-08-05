@@ -41,6 +41,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://radhika.dev"><img src="https://avatars2.githubusercontent.com/u/3877076?v=4" width="100px;" alt="Radhika Morabia"/><br /><sub><b>Radhika Morabia</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=rmorabia" title="Documentation">📖</a></td>
     <td align="center"><a href="http://altodev.net"><img src="https://avatars3.githubusercontent.com/u/38117965?v=4" width="100px;" alt="novellac"/><br /><sub><b>novellac</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=novellac" title="Documentation">📖</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://www.forsure.dev"><img src="https://avatars3.githubusercontent.com/u/7371571?v=4" width="100px;" alt="Rik de Groot"/><br /><sub><b>Rik de Groot</b></sub></a><br /><a href="https://github.com/Vue Vixens, Inc./Vue Vixens Workshops/commits?author=hwdegroot" title="Documentation">📖</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
