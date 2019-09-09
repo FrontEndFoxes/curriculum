@@ -93,14 +93,22 @@ Before we edit the template, we're going to install Vuetify. Vuetify is a cool l
 Vuetify is a semantic component framework for Vue. It aims to provide clean, semantic and reusable components for building your application. You can find full documentation for it [here](https://vuetifyjs.com/en/getting-started/quick-start)
 :::
 
-Install it by clicking the 'Add Dependency' button in the Dependency dropdown area on the left in Code Sandbox. Search for 'Vuetify' and install it.
+Install it by clicking the 'Add Dependency' button in the Dependency dropdown area on the left in Code Sandbox. Search for 'Vuetify'.
 
-Check whether the dependency is installed by opening `package.json` and checking the "dependencies" object. It should look like this (the version might be higher):
+::: warning
+For this workshop we will use the Vuetify version 1.5.18. Please be sure to select the correct version from versions dropdown
+
+![Vuetify version](./images/vuetify-version.png)
+:::
+
+Then click on the library in the list to install it.
+
+Check whether the dependency is installed by opening `package.json` and checking the "dependencies" object. It should look like this:
 
 ```json
 "dependencies": {
     "vue": "^2.5.2",
-    "vuetify": "^1.5.9"
+    "vuetify": "^1.5.18"
 },
 ```
 
@@ -128,7 +136,10 @@ This stylesheet is needed to display Vuetify components in a proper way.
 We also have to add Material icons into the `head` part of `index.html` file (insert them right after the `<title>` tag)
 
 ```html
-<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
+  rel="stylesheet"
+/>
 ```
 
 Let's also change the page title to `Dog Lover`. To do so, we have to change the content of the `title` tag:
