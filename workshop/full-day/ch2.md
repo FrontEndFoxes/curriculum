@@ -119,7 +119,7 @@ Test your progress. Add `/pets` at the end of the URL string in the address bar.
 
 To make our navigation easier we will create a simple navigation bar using Vuetify, which we already implemented in Chapter 1.
 
-The toolbar component in Vuetify is called `v-toolbar`. Let's add it right below the `h1` tag in our header:
+The toolbar component in Vuetify is called `v-toolbar`. Let's add it in `/App.vue` right below the `h1` tag in our header:
 
 ```html
 <v-toolbar>
