@@ -118,7 +118,7 @@ Teste deinen Code. Füge `/pets` an das Ende der URL, jetzt kannst du die Hausti
 
 Um das Wechseln zwischen den beiden Seiten einfacher zu machen, bauen wir eine Navigation ein. Dafür werden wir Vuetify nutzen, was wir bereits in Kapitel 1 hinzugefügt haben.
 
-Die Toolbar-Kompnente von Vuetify heißt `v-toolbar`. Kopiere sie direkt unter den `h1`-Tag in den Header:
+Die Toolbar-Kompnente von Vuetify heißt `v-toolbar`. Kopiere sie in der `./App.vue` direkt unter den `h1`-Tag in den Header:
 
 ```html
 <v-toolbar>
@@ -237,7 +237,7 @@ Wenn wir `src` nur mit dem Attriubut `pet.img` ersetzen...
 ... werden noch keine Bilder angezeigt. Warum? Weil wir so einen statischen Wert einsetzen, die App erwartet eine Datei mit dem Namen `pet.img`. Diese Datei gibt es allerdings nicht. Um den Wert von `pet.img` dynamisch in das `src`-Attribut zu setzen, müssen wir die `v-bind`-Direktive (oder den Shortcut `:`) nutzen.
 
 ```html
-<v-img :src="pet.img" height="170px"> </v-img>
+<v-img :src="pet.img" height="170px"></v-img>
 ```
 
 ::: tip 💡
