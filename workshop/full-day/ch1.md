@@ -207,7 +207,7 @@ Adding the style sheet didn't do much to our template except make the `<li>` gro
 Before we edit the template, we're going to install Vuetify. Vuetify is a cool library that gives a Material Design styling to your Vue apps. In this chapter, we're only going to use it to create a switch, but we'll use it more in future chapters.
 
 ::: tip 💡
-Vuetify is a semantic component framework for Vue. It aims to provide clean, semantic and reusable components for building your application. You can find full documentation for it [here](https://vuetifyjs.com/en/getting-started/quick-start)
+Vuetify is a semantic component framework for Vue. It aims to provide clean, semantic and reusable components for building your application. You can find the default installation guide and documentation for it [here](https://vuetifyjs.com/en/getting-started/quick-start#default-installation).
 :::
 
 Install it by clicking the 'Add Dependency' button in the Dependency dropdown area on the left in Code Sandbox (maybe you have to scroll!). Search for 'Vuetify' and install it.
