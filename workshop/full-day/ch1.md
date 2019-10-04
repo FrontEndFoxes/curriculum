@@ -217,7 +217,7 @@ Check whether the dependency is installed by opening `package.json` and checking
 ```json
 "dependencies": {
 	"vue": "^2.5.22",
-	"vuetify": "2.0.18"
+	"vuetify": "^2.0.19"
 },
 ```
 
