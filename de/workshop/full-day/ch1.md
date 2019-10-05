@@ -234,7 +234,6 @@ Vue.use(Vuetify);
 export default new Vuetify();
 ```
 
-From this initializer file, you will be able to import Vuetify's themes, components, and CSS with just two mentions in your `main.js` file.
 In dieser neu erstellten Datei wirst du Vuetify Themes, Komponenten und CSS importieren können und musst in deinem `main.js` nur 2 Zeilen dafür einfügen.
 
 Öffne deine `main.js` Datei und füge diesen Code auf der 3. Zeile hinzu:
@@ -253,9 +252,8 @@ new Vue({
   render: h => h(App)
 }).$mount("#app");
 ```
-Since this initializes the Vue instance in your app, you will need to add `vuetify` here to pass along all the design goods from your Vuetify plugin file. 
 
-Füge hier nach `new Vue({` eine neue Zeile ein und setze hier die vorhin importierte Variable `vuetify` ein, direkt vor der `render` Funktion. Dein Codeblock um Vue zu initialisieren sollte nun so aussehen:
+Füge hier nach `new Vue({` eine neue Zeile ein und setze hier die vorhin importierte Variable `vuetify` ein, direkt vor der `render` Funktion. Du musst die `vuetify` Variable hier importieren, damit all die Designs von deiner Vuetify Plugin Datei hier importiert werden. Dein Codeblock um Vue zu initialisieren sollte nun so aussehen:
 ```js
 new Vue({
   vuetify,
