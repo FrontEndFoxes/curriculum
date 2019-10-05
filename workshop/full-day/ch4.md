@@ -79,7 +79,7 @@ We need a name for this list. Vuetify is using a `v-subheader` component for thi
 </div>
 ```
 
-Now let's add a list element with mock data: a dog image, its name and a delete icon. We will need a `v-list-tile` component for the list item; `v-list-tile-avatar` for the dog image; `v-list-tile-content` for its name and `v-list-tile-action` plus `v-icon` for the delete button.
+Now let's add a list element with mock data: a dog image, its name and a delete icon. We will need a `v-list-item` component for the list item; `v-list-item-avatar` for the dog image; `v-list-item-content` for its name and `v-list-item-action` plus `v-icon` for the delete button.
 
 ::: tip 💡
 Learn more about lists in the [Vuetify list component docs](https://vuetifyjs.com/en/components/lists).
@@ -91,15 +91,15 @@ Now our template is:
 <div>
 	<v-list>
 		<v-subheader>My Favorites</v-subheader>
-		<v-list-tile avatar @click="{}">
-			<v-list-tile-avatar>
+		<v-list-item @click="{}">
+			<v-list-item-avatar>
 				<img src="https://dog.ceo/api/img/husky/n02110185_1469.jpg" />
-			</v-list-tile-avatar>
-			<v-list-tile-content>Fluffy</v-list-tile-content>
-			<v-list-tile-action>
+			</v-list-item-avatar>
+			<v-list-item-content>Fluffy</v-list-item-content>
+			<v-list-item-action>
 				<v-icon>delete</v-icon>
-			</v-list-tile-action>
-		</v-list-tile>
+			</v-list-item-action>
+		</v-list-item>
 	</v-list>
 </div>
 ```
@@ -219,15 +219,15 @@ Inside the `Favorites.vue` component we will iterate through the `favorites` arr
 <div>
 	<v-list>
 		<v-subheader>My Favorites</v-subheader>
-		<v-list-tile avatar v-for="(dog, index) in favorites" :key="index" @click="{}">
-			<v-list-tile-avatar>
+		<v-list-item v-for="(dog, index) in favorites" :key="index" @click="{}">
+			<v-list-item-avatar>
 				<img :src="dog.img" />
-			</v-list-tile-avatar>
-			<v-list-tile-content>{{dog.name}}</v-list-tile-content>
-			<v-list-tile-action>
+			</v-list-item-avatar>
+			<v-list-item-content>{{dog.name}}</v-list-item-content>
+			<v-list-item-action>
 				<v-icon>delete</v-icon>
-			</v-list-tile-action>
-		</v-list-tile>
+			</v-list-item-action>
+		</v-list-item>
 	</v-list>
 </div>
 ```
