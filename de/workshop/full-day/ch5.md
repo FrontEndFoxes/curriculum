@@ -3,7 +3,7 @@
 | **Ziel** | Implementiere ein Formular, um einen Hund zu adoptieren                                                                                                                                   |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Was du lernen wirst**       | Formulare in einer Vue-App erstellen und validieren                                                                                             |
-| **Was du dafür benötigst**       | Einen modernern Browser, z.B. Google Chrome. Wenn du Chrome verwendest, installiere die Chrome DevTools für Vue.js. Ein Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von [hier](https://github.com/VueVixens/projects/tree/master/chapter-4-end) importieren. Wie das geht, steht im [Anhang 1](appendix_1.md) |
+| **Was du dafür benötigst**       | Einen modernen Browser, z.B. Google Chrome. Ein Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von [hier](https://github.com/VueVixens/projects/tree/master/chapter-4-end) importieren. Wie das geht, steht im [Anhang 1](appendix_1.md) |
 | **Dauer** | 1 Stunde
 
 ## Anleitung
