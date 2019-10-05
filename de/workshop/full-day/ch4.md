@@ -8,7 +8,7 @@
 
 ## Anleitung
 
-Falls du das Projekt von vorn beginnen musst, clone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-1-end) in Code Sandbox nachdem du dich eingeloggt hast.
+Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-1-end) in Code Sandbox nachdem du dich eingeloggt hast.
 
 In diesem Kapitel bauen wir eine Merkliste für Hunde, die wir mögen und vielleicht adoptieren möchten.
 Zuerst benötigen wir eine neue, leere Datei im `views`-Ordner namens `Favorites.vue`.
@@ -26,7 +26,7 @@ Schreibe in den `template`-Tag ein `<div></div>`-Tag und darin den Text 'My Favo
 </template>
 ```
 
-Jetzt müssen wir diese neue Komponente mit dem Router verknüpfen. 
+Jetzt müssen wir diese neue Komponente mit dem Router verknüpfen.
 
 Gehe in die `main.js`-Datei und füge einen weiteren Import nach `Home` und `Pets` hinzu:
 
@@ -42,7 +42,7 @@ Füge danach die neue Route den `routes` hinzu:
 
 Navigiere im Browser zu der `favorites`-Seite. (Hänge dazu `/favorites` an die URL der Startseite.) Du solltest den Text 'My Favorites' zwischen dem Header und Footer sehen.
 
-Lass uns einen Link zu der Liste der Navigation hinzufügen. Später zeigen wir dort noch die Anzahl der markierten Hunde an. Aber zunächt reicht ein einfaches Icon mit einem Link aus. Gehe dazu in die `App.vue`-Datei und kopiere folgenden Code in die `v-toolbar`-Komponente direkt nach dem schließendem Taf der `v-toolbar-items`:
+Lass uns einen Link zu der Liste der Navigation hinzufügen. Später zeigen wir dort noch die Anzahl der markierten Hunde an. Aber zunächst reicht ein einfaches Icon mit einem Link aus. Gehe dazu in die `App.vue`-Datei und kopiere folgenden Code in die `v-toolbar`-Komponente direkt nach dem schließendem Tag der `v-toolbar-items`:
 
 ```html
 <v-spacer></v-spacer>
@@ -103,7 +103,7 @@ So sieht das Template jetzt aus:
 
 ## Den Zustand der Liste mit Vuex verwalten
 
-Jetzt siehst du, wie das Template im Browser aussieht. Es ist Zeit die Testdaten durch echte Daten zu ersetzen. Das Problem: Wie können wir ausgewählte Hunde von der `Pets`-Komponente der unabhängigen `Favorites`-Komponente übergeben? Wir können keine props nutzen, da die beiden Komponenten keine Eltern-Kind-Beziehung haben... für solche Fälle brauchen wir _Zustandsmanagement_. Die Bibliothek dafür heißt in Vue: `Vuex`.
+Jetzt siehst du, wie das Template im Browser aussieht. Es ist Zeit, die Testdaten durch echte Daten zu ersetzen. Das Problem: Wie können wir ausgewählte Hunde von der `Pets`-Komponente der unabhängigen `Favorites`-Komponente übergeben? Wir können keine props nutzen, da die beiden Komponenten keine Eltern-Kind-Beziehung haben... für solche Fälle brauchen wir _Zustandsmanagement_. Die Bibliothek dafür heißt in Vue: `Vuex`.
 
 ::: tip 💡
 Vuex ist eine Bibliothek, um Zustandsmanagement in einer Vue.js-Anwendung zu ermöglichen. Es dient als zentraler Speicher für alle Komponenten einer Anwendung und beinhaltet verschiedene Regeln, um den Zustand des Speichers nur über bestimmte Funktionen zu verändern.
@@ -123,7 +123,7 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 ```
 
-Jetzt erseugen wir den Speicher:
+Jetzt erzeugen wir den Speicher:
 
 ```js
 export default new Vuex.Store({
@@ -365,7 +365,7 @@ Aktions-Funktionen erhalten ein Kontext-Objekt, welches die gleichen Methoden un
 :::
 
 ::: tip 💡
-`payload` enthält hier de gleichen Daten, die wir von der Komponente an die Mutation übergeben wollen, um den `state` zu ändern.
+`payload` enthält hier die gleichen Daten, die wir von der Komponente an die Mutation übergeben wollen, um den `state` zu ändern.
 :::
 
 ## Die UI bauen
@@ -389,7 +389,7 @@ In der `Pets.vue` fügen wir einen _listener_ (=Zuhörer) ein, der auf das Signa
 Bisher macht dieser Listener noch nichts. Aber wir wollen für dieses Event eine Aktion ausführen. Dafür müssen wir die Aktionen mit unserer Komponente verbinden.
 
 ::: tip 💡
-Du kannst Aktionen aus Komponenten heraus anstoßen indem du `this.$store.dispatch('xxx')` aufrufst oder den `mapActions`-Hilfsfunktion nutzt. Dieser verknüpft eine gleichnamige Methode in der Komponente mit den `store.dispatch`-Aufrufen.
+Du kannst Aktionen aus Komponenten heraus anstoßen indem du `this.$store.dispatch('xxx')` aufrufst oder die `mapActions`-Hilfsfunktion nutzt. Diese verknüpft eine gleichnamige Methode in der Komponente mit den `store.dispatch`-Aufrufen.
 :::
 
 Wir werden den zweiten Weg nutzen. Importiere zuerst die `mapActions` in `Pets.vue`:
@@ -418,7 +418,7 @@ Klicke nun auf die `Add to Favorites`-Buttons. Du kannst sehen, dass die Zahl in
 
 ## Die Logik verbessern
 
-Bisher können wir jeden Hund mehrmals auf die Liste setzen. Aber wir haben ja gar nicht fünf Maxs! Um das zu verbessern, überprüfen wir erst den Payload in der Mutation in `sore.js` bevor wir den Hund der Liste hinzufügen. Der Hund wird nur hinzugefügt, wenn er nicht bereits in der Liste ist:
+Bisher können wir jeden Hund mehrmals auf die Liste setzen. Aber wir haben ja gar nicht fünf Maxs! Um das zu verbessern, überprüfen wir erst den Payload in der Mutation in `store.js` bevor wir den Hund der Liste hinzufügen. Der Hund wird nur hinzugefügt, wenn er nicht bereits in der Liste ist:
 
 ```js
 addToFavorites(state, payload) {
@@ -476,7 +476,7 @@ Und zum Schluss noch der Klick-Listener am Löschen-Icon:
 <v-icon @click="removeFromFavorites(dog)">delete</v-icon>
 ```
 
-Jetzt kanns du Hunde der Liste hinzufügen oder entfernen!
+Jetzt kannst du Hunde der Liste hinzufügen oder entfernen!
 
 **Whew! Kapitel 4 ist abgeschlossen!**
 

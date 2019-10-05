@@ -8,11 +8,11 @@
 
 ## Anleitung
 
-Falls du das Projekt von vorn beginnen musst, clone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-1-end) in Code Sandbox nachdem du dich eingeloggt hast.
+Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-1-end) in Code Sandbox nachdem du dich eingeloggt hast.
 
 Bisher haben wir Hundebilder über eine statische JSON-Datei, die wir in eine Komponente importiert haben, angezeigt. Für Demozwecke ist das sehr nützlich. In produktiven Anwendungen werden meistens Echtdaten genutzt, die entweder von internen Datenquellen oder einer API geliefert werden. Wir werden eine externe API dafür nutzen.
 
-Um eine API anzufragen, benötigen wir eine weitere Bibliothek namens [axios](https://github.com/axios/axios). Axios arbeitet mit Promises (=Versprechen) und funktioniert sowohl im Browser als auch in node.js-Umgebungen.
+Um eine API anzufragen, benötigen wir eine weitere Bibliothek namens [axios](https://github.com/axios/axios). Axios arbeitet mit Promises (=Versprechen) und funktioniert sowohl im Browser als auch in Node.js-Umgebungen.
 
 ::: tip 💡
 Zu Beginn hat Vue einen eigenen Weg für API-Aufrufe mit .ajax genutzt. Dies wurde jedoch verworfen, da die Axios-Bibliothek sehr gut funktioniert und als zusätzliches Paket geladen werden kann, sofern es gebraucht wird. Mehr Informationen zu dieser Veränderung kannst du [hier](https://medium.com/the-vue-point/retiring-vue-resource-871a82880af4) nachlesen.
@@ -28,7 +28,7 @@ Importiere Axios in der Komponenten, in der der API-Aufruf gemacht werden soll -
 import axios from "axios";
 ```
 
-Alle Aufrufe werde die gleiche Basis-URL mit verschiedenen Endpunkten nutzen. Konfiguriere direkt unter den Axios-Import die Basis-URL:
+Alle Aufrufe werde die gleiche Basis-URL mit verschiedenen Endpunkten nutzen. Konfiguriere direkt unter dem Axios-Import die Basis-URL:
 
 ```js
 axios.defaults.baseURL = "https://dog.ceo/api";
@@ -38,7 +38,7 @@ Jetzt können wir den ersten API-Aufruf machen.
 
 ## API aufrufen
 
-Wir ersetzen das erste statische Bild mit einem zufälligen Husky-Bild von der Dog CEO APU. Zuerst müssen wir den Endpunkt dafür herausfinden. Wir müssen `/breed/husky/images/random` als Endpunkt hinzufügen, das steht in der [Dokumentation](https://dog.ceo/dog-api/) der API.
+Wir ersetzen das erste statische Bild mit einem zufälligen Husky-Bild von der Dog CEO API. Zuerst müssen wir den Endpunkt dafür herausfinden. Wir müssen `/breed/husky/images/random` als Endpunkt hinzufügen, das steht in der [Dokumentation](https://dog.ceo/dog-api/) der API.
 
 Wir möchten das alte Bild durch ein neues ersetzen, wenn die Komponente geladen wird. Dafür implementieren wir einen `created()`-Anker (=hook) direkt nach `data()`.
 
@@ -103,7 +103,7 @@ const linksArray = this.dogs.map(
 
 Wir nehmen die Art von jedem Hund in der Liste und fügen sie in den Endpunkt ein. (Zuvor haben wir den gleichen Endpunkt genutzt, nur mit `husky`, statt dem wechselnden Wert der Hundeart.)
 
-Jetzt müssen wir die API für jeden Endpunkt der neuen Liste anfragen. Axios hat dafür Hilfsfunktionen namens `axios.all` und `axios.all`. Der ersten übergeben wir die Liste mit den API-Anfragen und es gibt uns eine Liste mit den Antworten von der API zurück. Diese Liste teilen wir mit `axios.spread` auf, um die neuen Bilder den Hunden zuzuweisen.
+Jetzt müssen wir die API für jeden Endpunkt der neuen Liste anfragen. Axios hat dafür Hilfsfunktionen namens `axios.all` und `axios.spread`. Der ersten übergeben wir die Liste mit den API-Anfragen und es gibt uns eine Liste mit den Antworten von der API zurück. Diese Liste teilen wir mit `axios.spread` auf, um die neuen Bilder den Hunden zuzuweisen.
 Um alle API-Anfragen der Liste abzuarbeiten, nutzen wir wieder die `map`-Methode und werden mit jedem Wert der Liste einen API-Aufruf `axios.get` machen.
 Kopiere den folgenden Code dafür unter die Definition des `linksArray`s.
 

@@ -8,7 +8,7 @@
 
 ## Anleitung
 
-Da dies dein allererstes Vue.js Webprojekt ist, werden wir mit einem ganz neuen Projekt in [Code Sandbox](http://codesandbox.io) beginnen.  
+Da dies dein allererstes Vue.js Webprojekt ist, werden wir mit einem ganz neuen Projekt in [Code Sandbox](http://codesandbox.io) beginnen.
 Erstelle dir einen Account bei Code Sandbox und erstelle ein Vue.js Startertemplate [hier](https://codesandbox.io/s/vue).
 
 Wir werden die Webseite für einen fiktiven Pet Shop bauen. Das sieht dann so aus:
@@ -19,10 +19,10 @@ Zusätzlich fügen für einen Schalter hinzu, der das Aussehen ändern kann. In 
 
 ![pet store](./images/petshop_chapter1_2.jpg)
 
-Schau dir den Quellcode an, den Code Sandbox für eine Vue.js App generiert hat. Die erste Datei, die du siehst, ist `main.js`.  
+Schau dir den Quellcode an, den Code Sandbox für eine Vue.js App generiert hat. Die erste Datei, die du siehst, ist `main.js`.
 Diese ist der Startpunkt einer Vue.js App. Hier importierst du Vue aus dem npm-Paket: `import Vue from "vue";`. Code Sandbox importiert alle notwendigen Abhängigkeiten aus npm, um die App zu erzeugen. Die Abhängigkeiten sind alle in der `package.json`aufgelistet, wenn du sie dir ansehen möchtest.
 
-`main.js` initialisiert die App als neue Vue.js App und benennt das `div`, in welches der App-Code eingesetzt wird. Hier wird auch die Hauptkompnente sowie der Name des Templates benannt.
+`main.js` initialisiert die App als neue Vue.js App und benennt das `div`, in welches der App-Code eingesetzt wird. Hier wird auch die Hauptkomponente sowie der Name des Templates benannt.
 
 ```js
 new Vue({
@@ -30,8 +30,8 @@ new Vue({
 }).$mount("#app");
 ```
 
-Öffne `App.vue`. In dieser Datei wird die `home`-Komponente gebaut. Sie beinhaltet die drei Hauptbestandteile einer Vue.js "Single File Component (SFC)": ein Template, einen Script- und einen Style-Block.  
-(Wortwörtlich übersetzt bedeutet "Single File Component" "Ein-Datei-Kompnente", d.h. alle notwendigen Bestandteile, um diese Komponente zu bauen, befinden sich in einer Datei.)
+Öffne `App.vue`. In dieser Datei wird die `home`-Komponente gebaut. Sie beinhaltet die drei Hauptbestandteile einer Vue.js "Single File Component (SFC)": ein Template, einen Script- und einen Style-Block.
+(Wortwörtlich übersetzt bedeutet "Single File Component" "Ein-Datei-Komponente", d.h. alle notwendigen Bestandteile, um diese Komponente zu bauen, befinden sich in einer Datei.)
 
 Beachte: Das erste `div` im Template-Block hat die ID 'app' - hier wird der App-Code von Vue eingesetzt. Es gibt außerdem die `<HelloWorld>`-Komponente, die unter dem Logo-Bild eingebunden wird. Dies ist ein Beispiel dafür, wie eine SFC in `App.vue` eingebunden wird.
 
@@ -190,7 +190,7 @@ Da wir in der `main.js` keine Änderungen vornehmen müssen, beginnen wir in `Ap
 ```
 
 ::: tip 💡
-Bachte, dass wir in dem Style-Block nicht `<scoped>` setzen. Das 'scoped'-Schlüsselwort hat zur Folge, dass die Styles in dem Style-Block nur für die aktuelle SFC angewendet werden. Da wir die Styles aber für die gesamte App nutzen wollen, lassen wir 'scoped' an dieser Stelle weg.  
+Bachte, dass wir in dem Style-Block nicht `<scoped>` setzen. Das 'scoped'-Schlüsselwort hat zur Folge, dass die Styles in dem Style-Block nur für die aktuelle SFC angewendet werden. Da wir die Styles aber für die gesamte App nutzen wollen, lassen wir 'scoped' an dieser Stelle weg.
 Wir haben angegeben, dass wir scss benutzen. Mehr über Scss/Sass kannst du [hier](http://www.sass-lang.com) nachlesen.
 :::
 
@@ -200,7 +200,7 @@ In diesem Style-Block finden sich einige unerwartete Anweisungen:
 - Es gibt einige Anweisungen die 'grid' benutzen. Wir werden die App mit Hilfe von CSS Grid bauen, eine moderne Art, um flexible und responsive Layout mit aufeinander folgenden "Inhaltsblöcken" wie dieses zu bauen. Mehr über CSS Grid kannst du [hier](https://css-tricks.com/snippets/css/complete-guide-grid/) nachlesen.
 - Es gibt zwei Styles!? Es gibt zwei verschiedene Styles, eines in grün und eines in orange. Das werden wir gleich benutzen.
 
-Die Styles hinzuzufügen hat unsere App nicht viel verändert. Die `<li>`-Liste sieht jetzt merkwürdig aus. Lass und das Template angehen!
+Die Styles hinzuzufügen hat unsere App nicht viel verändert. Die `<li>`-Liste sieht jetzt merkwürdig aus. Lass uns das Template angehen!
 
 ## Vuetify installieren
 
@@ -375,7 +375,7 @@ Jetzt hast du eine Variable namens `themeSwitched`(=Theme gewechselt) mit dem St
 ```
 
 - Ändere den Wert von `themeSwitched` in `data` von `false` auf `true`. Du siehst wieder wie sich die Farbe im Pet Shop ändert.
-- Jetzt brauchen wir den Schalter, um die Farbe zu wehcseln. Zuerst werden wir einen Button einbauen (da wir Vuetify nutzen, wird dies eine Vuetify Button-Komponente). Setze den Button direkt in den `header` nach dem `h1`-Tag.
+- Jetzt brauchen wir den Schalter, um die Farbe zu wechseln. Zuerst werden wir einen Button einbauen (da wir Vuetify nutzen, wird dies eine Vuetify Button-Komponente). Setze den Button direkt in den `header` nach dem `h1`-Tag.
 
 ```html
 <header class="app-header dark-brown">

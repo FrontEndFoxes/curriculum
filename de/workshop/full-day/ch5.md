@@ -2,15 +2,15 @@
 
 | **Ziel** | Implementiere ein Formular, um einen Hund zu adoptieren                                                                                                                                   |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Was du lernen wirst**       | Formulare in einer Vue-App esrtellen und validieren                                                                                             |
+| **Was du lernen wirst**       | Formulare in einer Vue-App erstellen und validieren                                                                                             |
 | **Was du dafür benötigst**       | Einen modernern Browser, z.B. Google Chrome. Wenn du Chrome verwendest, installiere die Chrome DevTools für Vue.js. Ein Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von [hier](https://github.com/VueVixens/projects/tree/master/chapter-4-end) importieren. Wie das geht, steht im [Anhang 1](appendix_1.md) |
 | **Dauer** | 1 Stunde
 
 ## Anleitung
 
-Falls du das Projekt von vorn beginnen musst, clone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-4-end) in Code Sandbox nachdem du dich eingeloggt hast.
+Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-4-end) in Code Sandbox nachdem du dich eingeloggt hast.
 
-In diesem Kapitel implementieren wir ein Formular, das man ausfüllen kann nachdem man Hunde auf die Favoriten-Liste gesetzt hat.  
+In diesem Kapitel implementieren wir ein Formular, das man ausfüllen kann nachdem man Hunde auf die Favoriten-Liste gesetzt hat.
 Zuerst müssen wir eine neue Komponente erstellen, die dieses Formular beinhaltet, und eine neue Route für dieses Formular im Router konfigurieren.
 
 ## Gerüst für die Formular-Komponente
@@ -122,7 +122,7 @@ Unser Button ist erstmal links ausgerichtet. Um ihn zu zentrieren, schreiben wir
 Der `Submit`-Button macht erstmal noch nichts. Wir werden eine Methode hinzufügen, die alle Werte der Formularfelder in der Konsole ausgibt. Dafür müssen wir eine Property für jedes Feld in den Komponenten-`data` schreiben und diese mit den Feldern über die `v-model`-Direktive verknüpfen.
 
 ::: tip 💡
-Die `v-model`-Direktiver erzeugt eine bi-direktionale Verknüüfung zwischen für Formular- und Textfeld-Elemente. Sie wählt automatisch den richtigen Weg basierend auf dem Feldtyp, um den Wert zu aktualisieren.
+Die `v-model`-Direktive erzeugt eine bi-direktionale Verknüpfung zwischen Formular- und Textfeld-Elemente. Sie wählt automatisch den richtigen Weg basierend auf dem Feldtyp, um den Wert zu aktualisieren.
 :::
 
 ## Daten-Verknüpfung
@@ -157,7 +157,7 @@ data() {
 	}
 ```
 
-Wie du siehst, sind alle zunächst leere Texte (=string).
+Wie du siehst, sind alles zunächst leere Texte (=string).
 
 Verknüpfe diese Properties mit den entsprechenden Formularfeldern im Template indem du die `v-model`-Direktive hinzufügst:
 
@@ -170,7 +170,7 @@ Verknüpfe diese Properties mit den entsprechenden Formularfeldern im Template i
 </v-form>
 ```
 
-Ändere jetzt die `name`-Property in `data` anstelle des leeren Textes(z.B. zu deinem eigenen Namen). Das Formularfeld hat sich verändert! Wenn du etwas in das Textfeld schreibst, wird die verknüpfte `data`-Property ebenfalls aktualisiert. So funktioniert bi-direktionale Verknüpfung.
+Ändere jetzt die `name`-Property in `data` anstelle des leeren Textes (z.B. zu deinem eigenen Namen). Das Formularfeld hat sich verändert! Wenn du etwas in das Textfeld schreibst, wird die verknüpfte `data`-Property ebenfalls aktualisiert. So funktioniert bi-direktionale Verknüpfung.
 
 Jetzt können wir die Eingaben aus dem Formular in der Konsole ausgeben, wenn das Formular abgeschickt wird. Dafür implementieren wir eine Methode (erstelle die `methods` direkt nach der `data`-Funktion, vergiss nicht das Komma nach der schließenden Klammer von `data`):
 
@@ -250,11 +250,11 @@ h3 {
 }
 ```
 
-## Daten von ener Bedingung abhängig anzeigen
+## Daten von einer Bedingung abhängig anzeigen
 
 Jetzt sehen wir sowohl das `div` mit unseren Informationen aus dem Formular als auch das Formular selbst. Das sieht komisch aus.
 
-Wir wollen sie abhängig von ein er Bedingung anzeigen lassen. Wir werden das `div` anzeigen, wenn `submitted` `true` ist; ansonsten wird das Formular angezeigt.
+Wir wollen sie abhängig von einer Bedingung anzeigen lassen. Wir werden das `div` anzeigen, wenn `submitted` `true` ist; ansonsten wird das Formular angezeigt.
 
 Also fügen wor ein `v-if="submitted"` dem `div` und ein `v-else` dem Formular `v-form` hinzu:
 
@@ -347,7 +347,7 @@ Füge `nameRules` zu der `rules`-Property des `name`-Feldes hinzu und markiere d
 	v-model="name"></v-text-field>
 ```
 
-Klicke jetzt in das Name-Feld und dann in ein anderes. Du sieht, wie Name Rot wird und darunter der Text `false` erscheint. (Der Submit-Button ist immer noch deaktiviert.)
+Klicke jetzt in das Name-Feld und dann in ein anderes. Du sieht, wie Name rot wird und darunter der Text `false` erscheint. (Der Submit-Button ist immer noch deaktiviert.)
 
 Fehlermeldungen können mit Hilfe des `||`-Operators in der Regel ergänzt werden. Der Wert der Validierung ist also `false OR <Fehlermeldung>`. Lass uns die Fehlermeldung für das Name-Feld verbessern:
 
@@ -390,7 +390,7 @@ Vergiss nicht `required` und die `rules`-Property an das E-Mail-Feld zu schreibe
   v-model="email"></v-text-field>
 ```
 
-Die zweite Regel für das E-Mail-Feld ist etwas komplizierter. Wir wollen überprüfen, ob die eingegebene E-Mail einem bestimmten Muster entspricht, diese Muster heißen _Reguläre Ausdrücke_ (=regular expressions / RegEx)
+Die zweite Regel für das E-Mail-Feld ist etwas komplizierter. Wir wollen überprüfen, ob die eingegebene E-Mail einem bestimmten Muster entspricht, diese Muster heißen _Reguläre Ausdrücke_ (=regular expressions / RegEx).
 
 ::: tip 💡
 Reguläre Ausdrücke sind Muster, die Strings auf bestimmte Buchstaben/Zahlen-Kombinationen überprüfen. In JavaScript sind Reguläre Ausdrücke auch Objekte.
