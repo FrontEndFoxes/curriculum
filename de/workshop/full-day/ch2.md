@@ -8,7 +8,7 @@
 
 ## Anleitung
 
-Falls du das Projekt von vorn beginnen musst, clone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-1-end) in Code Sandbox nachdem du dich eingeloggt hast.
+Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-1-end) in Code Sandbox nachdem du dich eingeloggt hast.
 
 Aktuell hat unser Pet Shop nur eine Homepage. Wir möchten eine weitere Seite hinzufügen, auf der in mehreren Kacheln Haustiere angezeigt werden können. Wir erstellen eine Single-Page Anwendung mit einer Navigation und zwei Navigationspunkten: "home" und "pets" (=Haustiere). Wenn man auf "pets" klickt, wird die neue Seite angezeigt, die wir jetzt erstellen.
 
@@ -16,7 +16,7 @@ Aktuell hat unser Pet Shop nur eine Homepage. Wir möchten eine weitere Seite hi
 "A single-page application (SPA) is a web application or web site that interacts with the user by dynamically rewriting the current page rather than loading entire new pages from a server" ([Wikipedia](https://en.wikipedia.org/wiki/Single-page_application))
 :::
 
-Um eine SPA mit Vue zu bauen, benötigen wir den [vue-router](https://github.com/vuejs/vue-router). Der vue-router ist der offizielle Router für Vue.js, die Bibliothek mit der man einfach und effizient zwischen meheren Seiten navigieren kann. Der vue-router ist genau für die Verwendung mit SPAs gebaut. SPAs haben einige spezifische Anforderungen, wie z.B. verschachtelte Routen oder Datenübertragung.  
+Um eine SPA mit Vue zu bauen, benötigen wir den [vue-router](https://github.com/vuejs/vue-router). Der vue-router ist der offizielle Router für Vue.js, die Bibliothek mit der man einfach und effizient zwischen meheren Seiten navigieren kann. Der vue-router ist genau für die Verwendung mit SPAs gebaut. SPAs haben einige spezifische Anforderungen, wie z.B. verschachtelte Routen oder Datenübertragung.
 Füge den vue-router zu den Abhängigkeiten deiner Vue-App hinzu (Klicke auf `Add Dependency` und suche nach `vue-router`).
 
 ## Der Router
@@ -33,7 +33,7 @@ Vue.use(VueRouter);
 ```
 
 ::: tip 💡
-Überlege für einen Moment, wie die App aufgebaut sein muss. Der Header und Footer sollen auf jeder Seite gleich sein. Der eigentliche Inhalt dazwischen soll sich verändern, je nach dem auf welchem Navigationspunkt man klickt.  
+Überlege für einen Moment, wie die App aufgebaut sein muss. Der Header und Footer sollen auf jeder Seite gleich sein. Der eigentliche Inhalt dazwischen soll sich verändern, je nach dem auf welchem Navigationspunkt man klickt.
 Die Komponente, die zu der Route (=dem geklickten Navigationspunkt) passt, wird in einem `<router-view>`-Tag angezeigt. Das heißt wir müssen unseren Code verändern, damit nicht mehr alles in der `App.vue` steht.
 :::
 
@@ -47,7 +47,7 @@ Wir erstellen eine separate Komponente für alle Elemente in `<div class="wrappe
 
 ## Eine Haustier-Seite erstellen
 
-Jetzt erstellen wir eine Seite für die Haustiere. Erstelle im `src/views`-Ordner eine neue Datei `Pets.vue`, genauso wie du es mit `Home.vue` gemacht hast. Kopiere Folgenden Code für das Layout der Seite. 
+Jetzt erstellen wir eine Seite für die Haustiere. Erstelle im `src/views`-Ordner eine neue Datei `Pets.vue`, genauso wie du es mit `Home.vue` gemacht hast. Kopiere folgenden Code für das Layout der Seite.
 
 ```html
 <template>
@@ -110,15 +110,15 @@ new Vue({
 }).$mount("#app");
 ```
 
-- Öffne jetzt die `App.vue`-Datei. Schreibe an die Stelle, an der vorher `<div class="wrapper">` stand, den `<router-view></router-view>`-Tag. Er sollte zwischen dem Header und Footer stehen. Und nun wird in der App auch wieder etwas angezeigt! 
+- Öffne jetzt die `App.vue`-Datei. Schreibe an die Stelle, an der vorher `<div class="wrapper">` stand, den `<router-view></router-view>`-Tag. Er sollte zwischen dem Header und Footer stehen. Und nun wird in der App auch wieder etwas angezeigt!
 
 Teste deinen Code. Füge `/pets` an das Ende der URL, jetzt kannst du die Haustier-Galerie sehen anstelle der Startseite.
 
 ## Navigation hinzufügen
 
-Um das Wechseln zwischen den beiden Seiten einfacher zu machen, bauen wir eine Navigation ein. Dafür werden wir Vuetify nutzen, was wir bereits in Kapitel 1 hinzugefügt haben.
+Um das Wechseln zwischen den beiden Seiten einfacher zu machen, bauen wir eine Navigation ein. Dafür werden wir Vuetify nutzen, das wir bereits in Kapitel 1 hinzugefügt haben.
 
-Die Toolbar-Kompnente von Vuetify heißt `v-toolbar`. Kopiere sie in der `./App.vue` direkt unter den `h1`-Tag in den Header:
+Die Toolbar-Komponente von Vuetify heißt `v-toolbar`. Kopiere sie in der `./App.vue` direkt unter den `h1`-Tag in den Header:
 
 ```html
 <v-toolbar>
@@ -246,14 +246,13 @@ Die `v-bind`-Direktive erzeugt dynamisch aus ein oder mehreren Attributen, oder 
 
 Es funktioniert!
 
-Jetzt zeigen wir den Namen des Hundes an. Für Text wird in Vue die _"mustache"-Syntax_ (=Bart) genutzt - doppelte geschweifte Klammern: `{{` `}}`. Dieser Tag wird durch den Wert der zugewiesenen Eigenschaft ersetzt. Bearbeite den `<h3>`-Tag mit dem Namen des Hundes, nutze dafür die geschweiften Klammern:
+Jetzt zeigen wir den Namen des Hundes an. Für Text wird in Vue die _"mustache"-Syntax_ (=Schnauz) genutzt - doppelte geschweifte Klammern: `{{` `}}`. Dieser Tag wird durch den Wert der zugewiesenen Eigenschaft ersetzt. Bearbeite den `<h3>`-Tag mit dem Namen des Hundes, nutze dafür die geschweiften Klammern:
 
 ```html
 <h3>{{pet.name}}</h3>
 ```
 
-Jetzt fehlt noch die Art des Hundes.
-The only thing left is the dog's breed. Let's add one more `<p></p>` tag right below the name and display breed there:
+Jetzt fehlt noch die Art des Hundes. Füge einen weiteren `<p></p>` Tag direkt unter dem Namen ein und zeige die Art des Hundes an:
 
 ```html
 <p>{{pet.breed}}</p>
@@ -261,7 +260,7 @@ The only thing left is the dog's breed. Let's add one more `<p></p>` tag right b
 Soweit funktioniert alles, wie wir es uns vorgestellt haben. Nur das Template ist inzwischen etwas unübersichtlich geworden. Wir können es überarbeiten und etwas verschlanken. Dafür erstellen wir eine `Dog`-Komponente und übergeben das aktuelle Haustier als Eigenschaft (=property).
 
 ::: tip 💡
-Eigenschaften (=properties) sind spezielle Attribute, die man einer Komponente zuweisen kann. Wenn ein Wert an ein Eigenschaftsattribut zugewiesen wird, wird dieser Wert eine Eigenschaft für diese eine Ausführung der Kompnente. In unserem Fall wird die `Dog`-Komponente eine `dog` Property haben, die sie von der Eltern-Komponente `Pets` übergeben bekommt.
+Eigenschaften (=properties) sind spezielle Attribute, die man einer Komponente zuweisen kann. Wenn ein Wert an ein Eigenschaftsattribut zugewiesen wird, wird dieser Wert eine Eigenschaft für diese eine Ausführung der Komponente. In unserem Fall wird die `Dog`-Komponente eine `dog` Property haben, die sie von der Eltern-Komponente `Pets` übergeben bekommt.
 :::
 
 ## Überarbeitung des Templates - Property!
