@@ -3,7 +3,7 @@
 | **Ziel**            | Lerne Vue.js kennen mit einer statischen Webanwendung                                                     |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | **Was du lernen wirst**       | Setup einer Vue.js App, Styling in Vue, Struktur und Aufbau des Quellcodes.              |
-| **Was du dafür benötigst**       | Einen modernern Browser, z.B. Google Chrome. Wenn du Chrome verwendest, installiere die Chrome DevTools für Vue.js. Ein Account bei CodeSandbox.io. |
+| **Was du dafür benötigst**       | Einen modernen Browser, z.B. Google Chrome. Einen Account bei CodeSandbox.io. |
 | **Dauer** | 1/2 Stunde                                                                                                          |
 
 ## Anleitung
