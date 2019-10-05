@@ -207,7 +207,7 @@ Adding the style sheet didn't do much to our template except make the `<li>` gro
 Before we edit the template, we're going to install Vuetify. Vuetify is a cool library that gives a Material Design styling to your Vue apps. In this chapter, we're only going to use it to create a switch, but we'll use it more in future chapters.
 
 ::: tip 💡
-Vuetify is a semantic component framework for Vue. It aims to provide clean, semantic and reusable components for building your application. You can find full documentation for it [here](https://vuetifyjs.com/en/getting-started/quick-start)
+Vuetify is a semantic component framework for Vue. It aims to provide clean, semantic and reusable components for building your application. You can find the default installation guide and documentation for it [here](https://vuetifyjs.com/en/getting-started/quick-start#default-installation).
 :::
 
 Install it by clicking the 'Add Dependency' button in the Dependency dropdown area on the left in Code Sandbox (maybe you have to scroll!). Search for 'Vuetify' and install it.
@@ -216,21 +216,58 @@ Check whether the dependency is installed by opening `package.json` and checking
 
 ```json
 "dependencies": {
-  "vue": "^2.5.2",
-  "vuetify": "1.2.9"
+	"vue": "^2.5.22",
+	"vuetify": "^2.0.19"
 },
 ```
 
-Next, initialize Vuetify by opening `main.js` and adding these lines under the second `import`:
+Next, create a `plugins` directory inside of your `src` directory. You'll write a Vuetify initializer file in the new `plugins` directory.
+
+Once you've created `src/plugins`, create a new file in the `plugins` directory named `vuetify.js`. Inside this new file, add this code:
 
 ```js
-import Vuetify from 'vuetify';
-import 'vuetify/dist/vuetify.min.css';
+// src/plugins/vuetify.js
 
+import Vue from "vue";
+import Vuetify from "vuetify";
+import "vuetify/dist/vuetify.min.css";
 Vue.use(Vuetify);
+
+export default new Vuetify();
+
 ```
 
-This ensures that Vuetify's themes and components will be available throughout the Vue app and Vuetify css styles are included as well.
+From this initializer file, you will be able to import Vuetify's themes, components, and CSS with just two mentions in your `main.js` file.
+
+Open your `main.js` file and add this code:
+```js
+import vuetify from "@/plugins/vuetify";
+```
+to the 3rd line of the file.
+
+You should now have 3 `import` statements at the top of your `main.js` file, that look like this:
+```js
+import Vue from 'vue';
+import App from './App';
+import vuetify from "@/plugins/vuetify";
+```
+
+Next, while still in your `main.js` file, look for this function block:
+```js
+new Vue({
+  render: h => h(App)
+}).$mount("#app");
+```
+
+Since this initializes the Vue instance in your app, you will need to add `vuetify` here to pass along all the design goods from your Vuetify plugin file. 
+
+Add the `vuetify` variable name from the `import` statement to the Vue initializer block, just before the `render` function. Your initializer block should now look like this:
+```js
+new Vue({
+  vuetify,
+  render: h => h(App)
+}).$mount("#app");
+```
 
 In order to have nice icons in our application, we also need to add Material icons to our `index.html` file. Please open `public/index.html` and add this string inside your `<head></head>` tag:
 
