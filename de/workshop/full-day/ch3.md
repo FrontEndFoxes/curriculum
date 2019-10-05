@@ -3,7 +3,7 @@
 | **Ziel** | Lerne wie API-Aufrufe funktionieren und wie sie in einer Webapp genutzt werden können.                                                                                                                                  |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Was du lernen wirst**       | Verwendung der [DogCEO API](https://dog.ceo/dog-api/) zum dynamischen Laden von Hundebildern anstelle von Dummy-Daten.                                                                                             |
-| **Was du dafür benötigst**       | Einen modernern Browser, z.B. Google Chrome. Wenn du Chrome verwendest, installiere die Chrome DevTools für Vue.js. Ein Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von [hier](https://github.com/VueVixens/projects/tree/master/chapter-2-end) importieren. Wie das geht, steht im [Anhang 1](appendix_1.md) |
+| **Was du dafür benötigst**       | Einen modernen Browser, z.B. Google Chrome. Einen Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von [hier](https://github.com/VueVixens/projects/tree/master/chapter-2-end) importieren. Wie das geht, steht im [Anhang 1](appendix_1.md) |
 | **Dauer** | 1 Stunde
 
 ## Anleitung
