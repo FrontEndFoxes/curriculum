@@ -124,8 +124,8 @@ The toolbar component in Vuetify is called `v-toolbar`. Let's add it in `/App.vu
 ```html
 <v-toolbar>
 	<v-toolbar-items>
-		<v-btn to="/" flat>Home</v-btn>
-		<v-btn to="/pets" flat>Pets</v-btn>
+		<v-btn to="/" text>Home</v-btn>
+		<v-btn to="/pets" text>Pets</v-btn>
 	</v-toolbar-items>
 </v-toolbar>
 ```
