@@ -272,7 +272,7 @@ Now the form hides after sumbission and we can see the submitted user data.
 
 ## Add Validation
 
-The form still need proper validation, but it's working! Let's add a button to the `Favorites` component leading to the form after we have selected the dogs. Go to `Favorites.vue` and add the following code right after the `</v-list-tile>` closing tag.
+The form still need proper validation, but it's working! Let's add a button to the `Favorites` component leading to the form after we have selected the dogs. Go to `Favorites.vue` and add the following code right after the `</v-list-item>` closing tag.
 
 ```html
 <v-btn to="/form">Adopt</v-btn>
