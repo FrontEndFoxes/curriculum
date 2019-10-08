@@ -24,7 +24,7 @@ In addition, we're going to create a switch that will change the look of the sho
 
 Take a look at the code that was scaffolded by Code Sandbox for a basic Vue.js app. The first file you'll see is open by default: `main.js`. This is the main starting point of a Vue.js app. Note that in this file you import Vue from its npm package: `import Vue from "vue";`. Code Sandbox imports all the needed dependencies from npm to build the app; you can always check out the root `package.json` to find out which dependencies are needed.
 
-`main.js` also initializes the app as a new Vue.js app and sets the div into which the app code will be injected. It also names the main component and sets the template's name:
+`main.js` also initializes the app as a new Vue.js app and sets the div into which the app code will be injected, the div with id `app`. It also defines which component will be used as a starting point, in this case `App`:
 
 ```js
 new Vue({
@@ -32,9 +32,9 @@ new Vue({
 }).$mount('#app');
 ```
 
-Open up `App.vue`. In this file, the 'home' component is built. It contains the three main parts of a Vue.js Single File Component (SFC): a template, a script block, and a style block.
+Open up `App.vue`. In this file, the 'home' component is built. It contains the three main parts of a Vue.js Single File Component (SFC): a `<template>` block, a `<script>` block, and a `<style>` block.
 
-Note the first div in the template block has the id of 'app' - this is the div where the app code will be injected. There's also a `<HelloWorld>` component included underneath the logo image. This is an example of an SFC being included into `App.vue`.
+Note the first div in the template block has the id `app` - this is the div where the app code will be injected. There's also a `<HelloWorld>` component included underneath the logo image. This is an example of an SFC being included into `App.vue`.
 
 Open `components/HelloWorld.vue` and you'll find the source of the list of links that appears embedded in `App.vue`. This file also includes a script block with a `msg` variable and some more styles in a `<style>` block.
 
@@ -191,7 +191,7 @@ Let's start in `App.vue`, since we don't have to make any changes to `main.js`. 
 ```
 
 ::: tip 💡
-Notice we don't use `<scoped>` as part of the style block. The 'scoped' keyword ensures that your styles will remain valid only for the current SFC, and we're going to make these styles universal. We did specify that we are using Sass, however, a method of making your css easier to manage. Learn more [here](http://www.sass-lang.com).
+Notice we don't use the attribute `scoped` in the `<style>` block. The `scoped` keyword ensures that your styles will remain valid only for the current SFC, and we're going to make these styles universal. However, we did specify that we are using Sass by adding `lang="scss"`, which is a method of making your CSS easier to manage. Learn more [here](http://www.sass-lang.com).
 :::
 
 This style block includes a few surprising things:
@@ -210,9 +210,9 @@ Before we edit the template, we're going to install Vuetify. Vuetify is a cool l
 Vuetify is a semantic component framework for Vue. It aims to provide clean, semantic and reusable components for building your application. You can find the default installation guide and documentation for it [here](https://vuetifyjs.com/en/getting-started/quick-start#default-installation).
 :::
 
-Install it by clicking the 'Add Dependency' button in the Dependency dropdown area on the left in Code Sandbox (maybe you have to scroll!). Search for 'Vuetify' and install it.
+Install it by clicking the `Add Dependency' button in the Dependency dropdown area on the left in Code Sandbox (maybe you have to scroll!). Search for 'Vuetify' and install it.
 
-Check whether the dependency is installed by opening `package.json` and checking the "dependencies" object. It should look like this:
+Check whether the dependency is installed by opening `package.json` and checking the `dependencies` object. It should look like this:
 
 ```json
 "dependencies": {
@@ -237,7 +237,9 @@ export default new Vuetify();
 
 ```
 
-From this initializer file, you will be able to import Vuetify's themes, components, and CSS with just two mentions in your `main.js` file.
+This file is an initializer file for the Vuetify plugin. What we actually do in this piece of code is importing Vue, Vuetify and Vuetify's default styling. By calling `Vue.use(Vuetify);` we let Vue know that it should use the Vuetify plugin that we are importing. With the `export default new Vuetify();` line we are exporting an instance of Vuetify.
+
+In this initializer file, you will be able to import Vuetify's themes, components, and CSS with just two mentions in your `main.js` file. With this file, the configuration of Vuetify is centralized in one file for the whole of your project.
 
 Open your `main.js` file and add this code:
 ```js
@@ -269,13 +271,13 @@ new Vue({
 }).$mount("#app");
 ```
 
-In order to have nice icons in our application, we also need to add Material icons to our `index.html` file. Please open `public/index.html` and add this string inside your `<head></head>` tag:
+In order to have nice icons in our application, we also need to add Material icons to our `index.html` file. Please open `public/index.html` and add this string at the end of your `<head></head>` tag:
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet" />
 ```
 
-Then, overwrite the current template in `App.vue` with this markup:
+Then, overwrite the current `<template>` block in `App.vue` with this markup:
 
 ```html
 <template>
@@ -348,7 +350,7 @@ Note the use of `<v-app>` - this is a requirement of Vuetify and is a sure sign 
 
 Now we're going to actually use that Vuetify theme by creating a switch. Pressing this switch will trigger a theme switch, so you'll use the 'orange' theme you saw in the styles.
 
--   You might see the `orange-green` class in stylesheet. Let's add it to the `<main>` element and observe how all the colors & background are changed:
+-   You might see the `orange-green` class in stylesheet. Let's add it to the `<main>` element in the `<template>` block of `App.vue` and observe how all the colors & background are changed:
     ```html
     <main class="orange-green"></main>
     ```
@@ -389,7 +391,7 @@ So, now you have a variable called `themeSwitched` and its default value is `fal
 
 -   Change `themeSwitched` value inside `data` from `false` to `true`. Again, you can see the color change effect.
 
--   Now we only need a switch to change a theme. First we will create a button (we're using Vuetify so it will be a Vuetify button component). Let's place it in the `header` right after the `h1` tag:
+-   Now we only need a switch to change a theme. First we will create a button. We're using Vuetify so it will be a Vuetify button component. We create a Vuetify button with the text 'Switch theme' on it with: `<v-btn>Switch theme</v-btn>`. Let's place it in the `header` right after the `h1` tag:
 
 ```html
 <header class="app-header dark-brown">
