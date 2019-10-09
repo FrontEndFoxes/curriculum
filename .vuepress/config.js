@@ -14,6 +14,11 @@ module.exports = {
 			title: 'Vue Vixens Workshops',
 			description: 'Anfänger-Workshops für Web-Entwicklung mit Vue.js',
 		},
+		'/jp/': {
+			lang: 'jp-JP',
+			title: 'Vue Vixens Workshops',
+			description: 'Vue.js ワークショップ',
+		},
 	},
 	themeConfig: {
 		repo: 'vuevixens/docs',
@@ -81,6 +86,18 @@ module.exports = {
 							'/de/workshop/full-day/ch4',
 							'/de/workshop/full-day/ch5',
 							'/de/workshop/full-day/appendix_1',
+						],
+					},
+				],
+			},
+			'/jp/': {
+				selectText: '言語',
+				label: '日本語',
+				sidebar: [
+					{
+						title: 'ワークショップ',
+						children: [
+							'/jp/workshop/minis/mini1'
 						],
 					},
 				],
