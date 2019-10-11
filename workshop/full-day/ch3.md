@@ -12,7 +12,7 @@
 
 ## Instructions
 
-If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/master/chapter-1-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields.
+If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/master/chapter-2-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields. You can also continue with the project you've created in [chapter 2](ch2.md).
 
 So far, we have placed images of dogs onto our screens via some static JSON data that we imported into a component. That's great for demo purposes, but in real life, you're almost always going to build web apps that consume real data that's coming from either your own data sources, or externally, from somewhere on the internet. Let's learn how to consume third-party data.
 
@@ -24,7 +24,7 @@ Originally, Vue supported its own way of making API calls using .ajax; but this 
 
 ## Add Axios
 
-First, add Axios's library to your project dependencies. To do so in Code Sandbox, click on `File Editor` tab -> `Dependencies` -> `Add Dependency` and search for `axios`
+First, add Axios's library to your project dependencies. To do so in Code Sandbox, click on `Explorer` tab -> `Dependencies` -> `Add Dependency` and search for `axios`. You will see that it is added into your `package.json`.
 
 Import axios into the component where we will perform our API call - `views/Pets.vue`. In that component's script block (right after `<script>`), add this line:
 
@@ -32,17 +32,17 @@ Import axios into the component where we will perform our API call - `views/Pets
 import axios from 'axios';
 ```
 
-All our calls will use the same base URL with different endpoints. Right under the import for axios, add the base URL to Axios' options in `views/Pets.vue`:
+All our calls will use the same base URL with different endpoints. Right under the imports for axios and possible others, add the base URL to Axios' options in `views/Pets.vue`:
 
 ```js
 axios.defaults.baseURL = 'https://dog.ceo/api';
 ```
 
-Now we are ready to make our first API call.
+With this line we have configured axios to always start API calls to the URL `https://dog.ceo/api`. Now we are ready to make our first API call.
 
 ## Call the API
 
-Let's replace the first static image with the random Husky picture from the Dog CEO API. First we have to check which endpoint we have to use. Looking at the API's [documentation](https://dog.ceo/dog-api/) we can find out that we need to append `/breed/husky/images/random` to the base API call (the `api` part is already in our base URL).
+Let's replace the first static image with the random Husky picture from the Dog CEO API. First we have to check which endpoint we have to use. Looking at the API's [documentation](https://dog.ceo/dog-api/) we can find out that we need to append `/breed/husky/images/random` to the base API call (the `api` part is already in our base URL as we have configured that in the assignment of `axios.defaults.baseURL`).
 
 We want a new image to replace the old one right when the component is created, so let's add a `created()` hook after the `data()` property (in `views/Pets.vue`):
 
@@ -61,7 +61,7 @@ Note: Make sure to add a comma after the data object and then add the created() 
 This is our app's first lifecycle hook! These are very useful when you want fine control over when to run blocks of code. Read more [here](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks)
 :::
 
-Inside the created hook we will add our first query to the API. To perform a GET request Axios uses the `axios.get` method. The result will be a JavaScript promise, so we have to provide success and failure callbacks to it. For now, let's simply print the query result to console. Inside `created(){}` place this highlighted axios snippet (lines 2-9):
+Inside the created hook we will add our first query to the API. To perform a GET request Axios uses the `axios.get` method. The result will be a JavaScript promise, so we have to provide success and failure callbacks to it. For now, let's simply print the query result to the console. Inside `created(){}` place this highlighted Axios snippet (lines 2-9):
 
 ```js {2-9}
 created() {
@@ -117,7 +117,7 @@ You should see the image change to a random husky image pulled from the Dog CEO 
 
 ## Use the API 2- Randomize the Images
 
-Let's try to load a random image for each dog in our `dogs` array. The first thing we need is a proper endpoint for each breed we have. We will create an array of links using the `.map` method.
+Let's try to load a random image for each dog in our `dogs` array. The first thing we need is a proper endpoint for each breed we have. Remember how we called to the endpoint `/breed/husky/images/random` for the breed `husky`? Let's create an array of links where each link is specific to a breed. We will create the array of links using the `.map` method.
 
 ::: tip 💡
 The `map()` method creates a new array with the results of calling a provided function on every element in the calling array.
@@ -143,11 +143,11 @@ created() {
   }
 ```
 
-We're taking the breed of each dog in the array and inserting it inside the endpoint string (we used the same one previously for husky, but `breed` was hard-coded to a static value there).
+We're taking the breed of each dog in the array and inserting it inside the endpoint string (we used the same one previously for the husky, but `breed` was hard-coded to a static value there).
 
 At this point, we have to perform multiple API calls using all the links we've just created in our `linksArray` constant - as many API calls exist in our static data. To help us do this, axios has helper functions called `axios.all` and `axios.spread`.
 
-We will provide an array of our requests to the first one, `axios.all`; it will return an array of responses and we should use `axios.spread` to spread this array into multiple arguments. To create an array of queries we will use a `.map` method on our `linksArray`, performing `axios.get` for each link. Add this snippet (lines 8-16) right under the linksArray snippet you added just before.
+We will provide an array of our requests to the first one, `axios.all`; it will return an array of responses and we use `axios.spread` to spread this array into multiple arguments. To create an array of queries we will use a `.map` method on our `linksArray`, performing `axios.get` for each link. Add this snippet (lines 5-12) right under the linksArray snippet you added just before.
 
 ```js {5-12}
 created() {

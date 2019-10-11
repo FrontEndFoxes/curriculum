@@ -12,7 +12,7 @@
 
 ## Instructions
 
-If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/master/chapter-4-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields.
+If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/master/chapter-4-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields. You can also continue with the project you've created in [chapter 4](ch4.md).
 
 In this chapter, we will create a form to fill after you finish selecting dogs. First of all, we should create a new component to contain this form and add a form route to our router settings.
 
@@ -42,7 +42,7 @@ Add one more option to the `routes` array:
 { path: "/form", component: Form }
 ```
 
-Let's check how our form works. Go to the `/form` route by appending `/form` to the shop's url. You should see the text 'This form works' between our header and footer.
+Let's check how our form works. Go to the `/form` route by appending `/form` to the shop's url. You should see the text 'This form works!' between our header and footer.
 
 Let's add a class to our `div` and create a styling for it.
 
@@ -171,7 +171,7 @@ Bind these properties to corresponding form inputs in the template by adding `v-
 </v-form>
 ```
 
-Now try to change the `name` property in the `data` object to your own name, rather than an empty string. Observe how the input has changed! When you're typing something in the input field, the corresponding data property will be changed too. That's how two-way data binding works.
+Now try to change the value of the `name` property in the `data` object to your own name, rather than an empty string. Observe how the input has changed! When you're typing something in the input field, the corresponding data property will be changed too. That's how two-way data binding works.
 
 Now we can print our form values to console on submission. Let's create a method for this (we will add `methods` right after `data` (don't forget to add a comma after closing `data`:
 
@@ -202,7 +202,7 @@ Try to fill the form with some test data and click `Submit`. You can see the for
 
 Console logs are great but that's definitely not the thing you want to see in your final application version. Instead of printing values to console, let's show them on the screen once the form is submitted. Of course, first we need some kind of an indicator to check if the form is already submitted or not.
 
-Let's create a new property in `data` called `submitted` and set it to `false` (because when our component is created the form shouldn't be submitted):
+Let's create a new property in `data` called `submitted` and set it to `false` (because when our component is created the form is not yet submitted):
 
 ```js
 data() {
@@ -309,7 +309,7 @@ Let's also disable our `Submit` button when form is not valid.
 Now we can start to create our validation rules.
 
 ::: tip 💡
-All input components in the `v-form` have a `rules` prop which takes an array of functions. Whenever the value of an input is changed, each function in the array will receive the new value. If a function returns false or a string, validation has failed.
+All input components in the `v-form` have a `rules` prop which takes an array of functions. Whenever the value of an input is changed, each function in the array will receive the new value. If a function returns false or a string, validation has failed. Vuetify will use these results to set the `v-model` to `true` or `false`. So by having `v-model="valid"` on our `v-form`, we will know in our `data` if the form is valid. We use this information to disable the submit button. Currently our submit button will never be disabled as we have no validation rules, thus our form is always valid.
 :::
 
 ## Validation 1: Name
@@ -332,7 +332,7 @@ data() {
 Now add the first rule. Remember, validation rules are functions which receive the value of the field and return a boolean value; `true` will mean this field has valid value and `false` means it doesn't. So, our first rule will be:
 
 ```js
-nameRules: [name => !!name];
+nameRules: [name => !!name]
 ```
 
 What is happening here? `!name` will return `true` if the name is empty and `false` if it has non-empty value. Then we perform the second negation, reverting value one more time. The double negation is a pretty common method to check if string is non-empty.
@@ -348,7 +348,7 @@ Now try to select the `Name` field and then select other one. You can see the re
 Error text can be provided via the `||` operator in the rule. So the value of this error is `false OR <error message>`. Let's provide a more meaningful error for the name field:
 
 ```js
-nameRules: [name => !!name || 'Name is required'];
+nameRules: [name => !!name || 'Name is required']
 ```
 
 Now the error message looks better!
@@ -356,7 +356,10 @@ Now the error message looks better!
 Let's add one more rule: a name cannot be shorter than 2 letters:
 
 ```js
-nameRules: [name => !!name || 'Name is required', name => name.length > 2 || 'Name must be longer than 2 characters'];
+nameRules: [
+	name => !!name || 'Name is required', 
+	name => name.length > 2 || 'Name must be longer than 2 characters'
+]
 ```
 
 Try to fill the name field with 1 character and check the error.
@@ -366,7 +369,7 @@ Try to fill the name field with 1 character and check the error.
 Now we're switching to the email field. First we will create an `emailRules` property in `data` and add the non-empty check similar to the non-empty name rule:
 
 ```js
-emailRules: [email => !!email || 'Email is required'];
+emailRules: [email => !!email || 'Email is required']
 ```
 
 Don't forget to add `required` and the `rules` property to the email field:
@@ -394,7 +397,7 @@ emailRules: [
   ],
 ```
 
-Now try to enter any random characters to the email field. You can see this new error because now this field demands a `@` character, a dot and at least 2 characters after the dot.
+Now try to enter any random characters to the email field. You can see this new error because now this field demands a `@` character, a dot and at least 2 characters after the dot. If you try to fill in your own email, you will see that the error disappears.
 
 ## Validation 3: Phone
 
@@ -404,20 +407,40 @@ Now switch to the `phone` field. Let's create a set of rules very similar to the
 phoneRules: [
 	phone => !!phone || 'Phone is required',
 	phone => phone.length >= 7 || 'Phone number should be at least 7 digits',
-];
+]
 ```
 
-But as you can guess, you can still enter letters and the phone number is not formatted at all. To fix this, we can use a really great `v-text-field` property called `mask`. It will apply a custom character mask to the input, allowing only certain types of characters, and formatting the string. We will use the mask `(###) ### - ####` (`#` characters allows any digit.
+But as you can guess, you can still enter letters and the phone number is not formatted at all. To fix this, we have to add vue-the-mask. First, scroll down in the `Explorer` tab and open the `Dependencies` dropdown. Click on `Add dependency` button and seach for `vue-the-mask`. Install the dependency. vue-the-mask will be added to your `package.json`. We now have installed vue-the-mask but we need to add it to our component as a directive.
 
-::: tip
-Learn more about masks [here](https://vuetifyjs.com/en/components/text-fields).
+First, import vue-the-mask as such in your `Form.vue`:
+
+```js
+import { mask } from 'vue-the-mask'
+```
+
+After that, add the following just before `data` in your `<script>` block:
+
+```js
+directives: {
+	mask,
+},
+```
+
+::: tip 💡
+By adding the `directives` object to our component with one element `mask`, we are in fact registering `mask` to our component. This means that we can now add `v-mask` to any element in our component. Note that Vue prepends all directives with `v-`. Thus the directive `mask` becomes `v-mask`. More information can be found [here](https://vuejs.org/v2/guide/custom-directive.html).
 :::
 
+Since `v-mask` is now a directive, we can add the following to our the `v-text-field` for our phone:
+
 ```html
-<v-text-field label="Phone" required :rules="phoneRules" mask="(###) ### - ####" v-model="phone"></v-text-field>
+v-mask="'(###) ### - ####'"
 ```
 
-Now you can enter only digits to the phone field and the value has a nice format.
+By using `'(###) ### - ####'` as the input for our mask, we limit the input of our component to digits in that specific format. This means that a phone number such as `(555) 555-1234` will be possible but we are unable to input it into another format or use non-digit characters. If your country uses a different format for phone numbers, go ahead and change the input to `v-mask`.
+
+```html
+<v-text-field label="Phone" required :rules="phoneRules" v-mask="(###) ### - ####" v-model="phone"></v-text-field>
+```
 
 ## Clear the Favorites List On Submit
 
