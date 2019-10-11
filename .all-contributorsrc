@@ -1,6 +1,6 @@
 {
-  "projectName": "Vue Vixens Workshops",
-  "projectOwner": "Vue Vixens, Inc.",
+  "projectName": "docs",
+  "projectOwner": "VueVixens",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -258,6 +258,15 @@
       "name": "arienlys",
       "avatar_url": "https://avatars1.githubusercontent.com/u/48921432?v=4",
       "profile": "https://github.com/Arienlys",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "MaxGfeller",
+      "name": "Max Gfeller",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/361435?v=4",
+      "profile": "http://twitter.com/mgfeller",
       "contributions": [
         "doc"
       ]
