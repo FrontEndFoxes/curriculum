@@ -25,6 +25,6 @@
 		"dev": "vuepress dev"
 	},
 	"devDependencies": {
-		"all-contributors-cli": "^6.8.1"
+		"all-contributors-cli": "^6.9.1"
 	}
 }
