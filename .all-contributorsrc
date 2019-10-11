@@ -261,6 +261,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "MaxGfeller",
+      "name": "Max Gfeller",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/361435?v=4",
+      "profile": "http://twitter.com/mgfeller",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
