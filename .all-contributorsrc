@@ -263,10 +263,20 @@
       ]
     },
     {
+
       "login": "LadyMashiro",
       "name": "Lady Mashiro",
       "avatar_url": "https://avatars3.githubusercontent.com/u/33541195?v=4",
       "profile": "http://ladymashiro.ch",
+      "contributions": [
+        "doc"
+      ]
+      },
+      {
+      "login": "MaxGfeller",
+      "name": "Max Gfeller",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/361435?v=4",
+      "profile": "http://twitter.com/mgfeller",
       "contributions": [
         "doc"
       ]
