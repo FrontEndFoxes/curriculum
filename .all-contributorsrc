@@ -263,7 +263,15 @@
       ]
     },
     {
-
+      "login": "ElkeBxl",
+      "name": "Elke Heymans",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/31392019?v=4",
+      "profile": "http://elkewritescode.be",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
       "login": "LadyMashiro",
       "name": "Lady Mashiro",
       "avatar_url": "https://avatars3.githubusercontent.com/u/33541195?v=4",
@@ -271,8 +279,8 @@
       "contributions": [
         "doc"
       ]
-      },
-      {
+    },
+    {
       "login": "MaxGfeller",
       "name": "Max Gfeller",
       "avatar_url": "https://avatars1.githubusercontent.com/u/361435?v=4",
