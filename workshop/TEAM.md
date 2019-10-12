@@ -51,6 +51,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://ladymashiro.ch"><img src="https://avatars3.githubusercontent.com/u/33541195?v=4" width="100px;" alt="Lady Mashiro"/><br /><sub><b>Lady Mashiro</b></sub></a><br /><a href="https://github.com/VueVixens/docs/commits?author=LadyMashiro" title="Documentation">📖</a></td>
     <td align="center"><a href="http://twitter.com/mgfeller"><img src="https://avatars1.githubusercontent.com/u/361435?v=4" width="100px;" alt="Max Gfeller"/><br /><sub><b>Max Gfeller</b></sub></a><br /><a href="https://github.com/VueVixens/docs/commits?author=MaxGfeller" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/nahokomatsui"><img src="https://avatars3.githubusercontent.com/u/12132975?v=4" width="100px;" alt="Nahoko Matsui"/><br /><sub><b>Nahoko Matsui</b></sub></a><br /><a href="https://github.com/VueVixens/docs/commits?author=nahokomatsui" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/ryamakuchi"><img src="https://avatars3.githubusercontent.com/u/35450730?v=4" width="100px;" alt="rry"/><br /><sub><b>rry</b></sub></a><br /><a href="https://github.com/VueVixens/docs/commits?author=ryamakuchi" title="Documentation">📖</a></td>
   </tr>
 </table>
 
