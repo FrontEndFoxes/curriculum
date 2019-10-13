@@ -210,7 +210,7 @@ Before we edit the template, we're going to install Vuetify. Vuetify is a cool l
 Vuetify is a semantic component framework for Vue. It aims to provide clean, semantic and reusable components for building your application. You can find the default installation guide and documentation for it [here](https://vuetifyjs.com/en/getting-started/quick-start#default-installation).
 :::
 
-Install it by clicking the `Add Dependency' button in the Dependency dropdown area on the left in Code Sandbox (maybe you have to scroll!). Search for 'Vuetify' and install it.
+Install it by clicking the `Add Dependency` button in the Dependency dropdown area on the left in Code Sandbox (maybe you have to scroll!). Search for 'Vuetify' and install it.
 
 Check whether the dependency is installed by opening `package.json` and checking the `dependencies` object. It should look like this:
 
