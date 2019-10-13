@@ -22,7 +22,7 @@ Zusätzlich fügen für einen Schalter hinzu, der das Aussehen ändern kann. In 
 Schau dir den Quellcode an, den Code Sandbox für eine Vue.js App generiert hat. Die erste Datei, die du siehst, ist `main.js`.
 Diese ist der Startpunkt einer Vue.js App. Hier importierst du Vue aus dem npm-Paket: `import Vue from "vue";`. Code Sandbox importiert alle notwendigen Abhängigkeiten aus npm, um die App zu erzeugen. Die Abhängigkeiten sind alle in der `package.json`aufgelistet, wenn du sie dir ansehen möchtest.
 
-`main.js` initialisiert die App als neue Vue.js App und benennt das `div`, in welches der App-Code eingesetzt wird. Hier wird auch die Hauptkomponente sowie der Name des Templates benannt.
+`main.js` initialisiert die App als neue Vue.js App und benennt das `div`, in welches der App-Code eingesetzt wird, das `div` mit der ID `app`. Hier wird auch definiert, welche Komponente als Startpunkt benutzt wird, in diesem Fall `App`:
 
 ```js
 new Vue({
@@ -30,10 +30,10 @@ new Vue({
 }).$mount("#app");
 ```
 
-Öffne `App.vue`. In dieser Datei wird die `home`-Komponente gebaut. Sie beinhaltet die drei Hauptbestandteile einer Vue.js "Single File Component (SFC)": ein Template, einen Script- und einen Style-Block.
+Öffne `App.vue`. In dieser Datei wird die `home`-Komponente gebaut. Sie beinhaltet die drei Hauptbestandteile einer Vue.js "Single File Component (SFC)": ein `<template>` Block, ein `<script>` Block und ein `<style>` Block.
 (Wortwörtlich übersetzt bedeutet "Single File Component" "Ein-Datei-Komponente", d.h. alle notwendigen Bestandteile, um diese Komponente zu bauen, befinden sich in einer Datei.)
 
-Beachte: Das erste `div` im Template-Block hat die ID 'app' - hier wird der App-Code von Vue eingesetzt. Es gibt außerdem die `<HelloWorld>`-Komponente, die unter dem Logo-Bild eingebunden wird. Dies ist ein Beispiel dafür, wie eine SFC in `App.vue` eingebunden wird.
+Beachte: Das erste `div` im Template-Block hat die ID `app` - hier wird der App-Code von Vue eingesetzt. Es gibt außerdem die `<HelloWorld>`-Komponente, die unter dem Logo-Bild eingebunden wird. Dies ist ein Beispiel dafür, wie eine SFC in `App.vue` eingebunden wird.
 
 Öffne `components/HelloWorld.vue`. Hier ist der Quellcode der Linkliste, die in `App.vue` angezeigt wird. In dieser Datei gibt es außerdem einen Script-Block mit einer `msg`-Variable und einige Styles in einem `<style>`-Block.
 
@@ -190,8 +190,8 @@ Da wir in der `main.js` keine Änderungen vornehmen müssen, beginnen wir in `Ap
 ```
 
 ::: tip 💡
-Bachte, dass wir in dem Style-Block nicht `<scoped>` setzen. Das 'scoped'-Schlüsselwort hat zur Folge, dass die Styles in dem Style-Block nur für die aktuelle SFC angewendet werden. Da wir die Styles aber für die gesamte App nutzen wollen, lassen wir 'scoped' an dieser Stelle weg.
-Wir haben angegeben, dass wir scss benutzen. Mehr über Scss/Sass kannst du [hier](http://www.sass-lang.com) nachlesen.
+Bachte, dass wir in dem `<style>` Block nicht das Attribut `scoped` setzen. Das `scoped`-Schlüsselwort hat zur Folge, dass die Styles in dem `<style>` Block nur für die aktuelle SFC angewendet werden. Da wir die Styles aberr für die gesamte App nutzen wollen, lassen wir 'scoped' an dieser Stelle weg.
+Wir haben allerdings angegeben, dass wir Sass benutzen, indem wir `lang="scss"` hinzugefügt haben. Es ist eine Methode, CSS einfacher zu benutzen. Mehr über Scss/Sass kannst du [hier](http://www.sass-lang.com) nachlesen.
 :::
 
 In diesem Style-Block finden sich einige unerwartete Anweisungen:
@@ -211,9 +211,9 @@ Bevor wir das Template bearbeiten, installieren wir Vuetify. Vuetify ist eine Bi
 Vuetify ist eine Komponentenbibliothek für Vue. Vuetify liefert sauber implementierte, semantische und wiederverwendbare Komponenten, um eine App zu bauen. Die Standard Anleitung und Dokumentation für Vuetify findest du [hier](https://vuetifyjs.com/en/getting-started/quick-start)
 :::
 
-Installiere Vuetify indem du auf den 'Add Dependency'-Button in dem Dependency Dropdown auf der linken Seite in Code Sandbox klickst (eventuell musst du hinunter scrollen!). Suche nach 'Vuetify' und installiere es.
+Installiere Vuetify indem du auf den `Add Dependency`-Button in dem Dependency Dropdown auf der linken Seite in Code Sandbox klickst (eventuell musst du hinunter scrollen!). Suche nach 'Vuetify' und installiere es.
 
-Überprüfe, ob die neue Abhängigkeit installiert wurde. Öffne die Datei `package.json` und suche Vuetify unter "dependencies". Es sollte so aussehen:
+Überprüfe, ob die neue Abhängigkeit installiert wurde. Öffne die Datei `package.json` und suche Vuetify unter `dependencies`. Es sollte so aussehen:
 
 ```json
 "dependencies": {
@@ -234,7 +234,9 @@ Vue.use(Vuetify);
 export default new Vuetify();
 ```
 
-In dieser neu erstellten Datei wirst du Vuetify Themes, Komponenten und CSS importieren können und musst in deinem `main.js` nur 2 Zeilen dafür einfügen.
+Diese Datei ist die Initialisierer-Datei für das Vuetify Plugin. Was in diesen Codezeilen eigentlich passiert, ist, dass wir Vue, Vuetify und das default Styling von Vuetify importieren. Dadurch, dass wir `Vue.use(Vuetify);` aufrufen, lassen wir Vue wissen, dass es das Vuetify Plugin auch benutzen soll, dass wir vorher importieten. Mit der Zeile `export default new Vuetify();` exportieren wir eine Instanz von Vuetify.
+
+In dieser Initialisierer-Datei wirst du Vuetify Themes, Komponenten und CSS importieren können und musst in deinem `main.js` nur 2 Zeilen dafür einfügen. Mithilfe dieser Datei kann die Konfiguration von Vuetify in einer Datei fü das ganze Projekt gesetzt werden.
 
 Öffne deine `main.js` Datei und füge diesen Code auf der 3. Zeile hinzu:
 ```js
@@ -263,13 +265,13 @@ new Vue({
 
 Um sicherzustellen, dass die Themes und Komponenten von Vuetify überall in der Vue-App verfügbar sind, importieren wir auch die Styles (CSS) von Vuetify.
 
-Mit den Material Icons können wir einheitliche und hübsche Icons in der Vue-App benutzen. Diese müssen wir in der `index.html` hinzufügen. Öffne die `public/index.html` und kopiere Folgendes in den `<head></head>` Tag:
+Mit den Material Icons können wir einheitliche und hübsche Icons in der Vue-App benutzen. Diese müssen wir in der `index.html` hinzufügen. Öffne die `public/index.html` und kopiere Folgendes an das Ende des `<head></head>` Tags:
 
 ```html
 <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
 ```
 
-Überschreibe das aktuelle Template in der `App.vue` mit diesem Code:
+Überschreibe den aktuellen `<template>` Block in der `App.vue` mit diesem Code:
 
 ```html
 <template>
@@ -334,7 +336,7 @@ Bachte die Verwendung von `<v-app>` -  dieser Tag wird von Vuetify benötigt, da
 
 Nun werden wir endlich Vuetify benutzen und einen Schalter einbauen. Über diese Schalter verändern wir das Aussehen unseres Shops und können zwischen dem Orangenen und Grünen Theme wechseln.
 
-- In den Styles siehst du die `orange-green` Klasse. Füge diese dem `<main>`-Element hinzu und sieh dir an, wie alle Farben und der Hintergrund verändert werden:
+- In den Styles siehst du die `orange-green` Klasse. Füge diese dem `<main>`-Element in dem `<template>` Block der `App.vue` hinzu und sieh dir an, wie alle Farben und der Hintergrund verändert werden:
   ```html
   <main class="orange-green">
   ```
@@ -375,7 +377,7 @@ Jetzt hast du eine Variable namens `themeSwitched`(=Theme gewechselt) mit dem St
 ```
 
 - Ändere den Wert von `themeSwitched` in `data` von `false` auf `true`. Du siehst wieder wie sich die Farbe im Pet Shop ändert.
-- Jetzt brauchen wir den Schalter, um die Farbe zu wechseln. Zuerst werden wir einen Button einbauen (da wir Vuetify nutzen, wird dies eine Vuetify Button-Komponente). Setze den Button direkt in den `header` nach dem `h1`-Tag.
+- Jetzt brauchen wir den Schalter, um die Farbe zu wechseln. Zuerst werden wir einen Button einbauen. Da wir Vuetify nutzen, wird dies eine Vuetify Button-Komponente. Wir erstellen einen Vuetify Button mit dem Text 'Switch theme' mit: `<v-btn>Switch theme</v-btn>`. Setze den Button direkt in den `header` nach dem `h1`-Tag.
 
 ```html
 <header class="app-header dark-brown">
