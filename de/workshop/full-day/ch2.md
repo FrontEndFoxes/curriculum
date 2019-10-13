@@ -8,16 +8,16 @@
 
 ## Anleitung
 
-Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-1-end) in Code Sandbox nachdem du dich eingeloggt hast.
+Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-1-end) in Code Sandbox, nachdem du dich eingeloggt hast. Dafür klickst du auf den Link **Import form Github** unten links auf der Hauptseite und fügst die URL des Repositories in das Feld. Du kannst ebenfalls mit dem Projekt fortfahren, dass du in [Kapitel 1](ch1.md) erstellt hast.
 
-Aktuell hat unser Pet Shop nur eine Homepage. Wir möchten eine weitere Seite hinzufügen, auf der in mehreren Kacheln Haustiere angezeigt werden können. Wir erstellen eine Single-Page Anwendung mit einer Navigation und zwei Navigationspunkten: "home" und "pets" (=Haustiere). Wenn man auf "pets" klickt, wird die neue Seite angezeigt, die wir jetzt erstellen.
+Aktuell hat unser Pet Shop nur eine Homepage. Wir möchten eine weitere Seite hinzufügen, auf der in mehreren Kacheln Haustiere angezeigt werden können. Wir erstellen eine Single-Page Anwendung mit einer Navigation und zwei Navigationspunkten: "home" und "pets" (=Haustiere). Wenn man auf "pets" klickt, wird die neue Seite angezeigt, die wir jetzt erstellen und "home" wird eine Seite öffnen, die wir in [Kapitel 1](ch1.md) erstellt haben.
 
 ::: tip 💡
 "A single-page application (SPA) is a web application or web site that interacts with the user by dynamically rewriting the current page rather than loading entire new pages from a server" ([Wikipedia](https://en.wikipedia.org/wiki/Single-page_application))
 :::
 
 Um eine SPA mit Vue zu bauen, benötigen wir den [vue-router](https://github.com/vuejs/vue-router). Der vue-router ist der offizielle Router für Vue.js, die Bibliothek mit der man einfach und effizient zwischen meheren Seiten navigieren kann. Der vue-router ist genau für die Verwendung mit SPAs gebaut. SPAs haben einige spezifische Anforderungen, wie z.B. verschachtelte Routen oder Datenübertragung.
-Füge den vue-router zu den Abhängigkeiten deiner Vue-App hinzu (Klicke auf `Add Dependency` und suche nach `vue-router`).
+Füge den vue-router zu den Abhängigkeiten deiner Vue-App hinzu (Klicke auf `Add Dependency` und suche nach `vue-router`). Du wirst sehen, dass es in dem `depencendies` Objekt in unserer `package.json` hinzugefügt wurde.
 
 ## Der Router
 
@@ -26,15 +26,26 @@ Füge den vue-router zu den Abhängigkeiten deiner Vue-App hinzu (Klicke auf `Ad
 ```js
 import VueRouter from 'vue-router';
 ```
+
+Du solltest nun diese vier Import-Zeilen hinzufügen:
+```js
+import Vue from "vue";
+import App from "./App.vue";
+import vuetify from "@/plugins/vuetify";
+import VueRouter from "vue-router";
+```
+
 Jetzt müssen wir das Plugin bei der Vue-App registrieren mit Hilfe der globalen `Vue.use()`-Methode:
 
 ```js
 Vue.use(VueRouter);
 ```
 
+Füge diese Zeile vor `new Vue(...)` hinzu, um sicherzustellen, dass jede neue Instanz von Vue, die wie erstellen, den vue-router benutzen wird. Wenn du die Zeile hinter `new Vue(...)` hinzufügen würdest, würde der vue-router in unserer Applikation nicht zur Verfügung stehen.
+
 ::: tip 💡
 Überlege für einen Moment, wie die App aufgebaut sein muss. Der Header und Footer sollen auf jeder Seite gleich sein. Der eigentliche Inhalt dazwischen soll sich verändern, je nach dem auf welchem Navigationspunkt man klickt.
-Die Komponente, die zu der Route (=dem geklickten Navigationspunkt) passt, wird in einem `<router-view>`-Tag angezeigt. Das heißt wir müssen unseren Code verändern, damit nicht mehr alles in der `App.vue` steht.
+Die Komponente, die zu der Route (=dem geklickten Navigationspunkt) passt, wird in einem `<router-view>`-Tag angezeigt. Das heißt wir müssen unseren Code verändern, damit nicht mehr alles in der `App.vue` steht. Weil der Header und Footer jederzeit sichtbar sein sollen, bleiben sie in der `App.vue`.  Der Inhalt der spezifischen Seiten wird in separate Komponten veschoben. Wir werden somit davon wegkommen, dass alle Teile unserer Applikation in die `App.vue` sind, wir werden also ein Refactoring durchführen.
 :::
 
 ## Eine Homepage erstellen
@@ -42,8 +53,12 @@ Die Komponente, die zu der Route (=dem geklickten Navigationspunkt) passt, wird 
 Wir erstellen eine separate Komponente für alle Elemente in `<div class="wrapper">`.
 
 - Gehe in den `views`-Ordner in `src`, falls dieser nicht existiert, erstelle ihn zuerst. In diesem Ordner erstelle eine Datei namens `Home.vue`.
+
 - Füge den `<template></template>`-Tag in diese Datei ein.
+
 - Öffne die `App.vue`-Datei. Kopiere das `<div class="wrapper">` und alle Elemente darin in dem `template`-Tag in `Home.vue`. Du solltest dort nun allen Code, der zwischen `<header>` und `<footer>` stand, stehen haben. Lösche diesen Teil aus `App.vue`.
+
+Du wirst sehen, dass unsere Applikation etwas leer aussieht, aber keine Sorge - wir werden die entfernten Bestandteile später wieder hinzufügen.
 
 ## Eine Haustier-Seite erstellen
 
@@ -90,8 +105,14 @@ import Pets from './views/Pets';
 
 ```js
 const routes = [
-  { path: '/', component: Home },
-  { path: '/pets', component: Pets },
+  {
+      path: '/',
+      component: Home
+  },
+  {
+      path: '/pets',
+      component: Pets
+  },
 ];
 ```
 
@@ -105,6 +126,7 @@ const router = new VueRouter({ routes });
 
 ```js
 new Vue({
+  vuetify,
   router,
   render: h => h(App)
 }).$mount("#app");
@@ -116,9 +138,9 @@ Teste deinen Code. Füge `/pets` an das Ende der URL, jetzt kannst du die Hausti
 
 ## Navigation hinzufügen
 
-Um das Wechseln zwischen den beiden Seiten einfacher zu machen, bauen wir eine Navigation ein. Dafür werden wir Vuetify nutzen, das wir bereits in Kapitel 1 hinzugefügt haben.
+Um das Wechseln zwischen den beiden Seiten einfacher zu machen, bauen wir eine Navigation ein. Dafür werden wir Vuetify nutzen, das wir bereits in [Kapitel 1](ch1.md) hinzugefügt haben.
 
-Die Toolbar-Komponente von Vuetify heißt `v-toolbar`. Kopiere sie in der `./App.vue` direkt unter den `h1`-Tag in den Header:
+Die Toolbar-Komponente von Vuetify heißt `v-toolbar`. Kopiere sie in der `App.vue` direkt unter den `h1`-Tag in den Header:
 
 ```html
 <v-toolbar>
@@ -184,15 +206,15 @@ export const Dogs = [
 
 Hier wird eine Konstante (`const`) names `Dogs` exportiert, die alle Daten beinhaltet, die wir benötigen.
 
-- Jetzt importieren wir diese Daten in die `pets`-Komponente. Öffne die `Pets.vue`-Datei und kopiere den folgenden Skript-Block unter den `<template>`-Block.
+- Jetzt importieren wir diese Daten in die `pets`-Komponente. Öffne die `Pets.vue`-Datei und kopiere den folgenden `<script>` Block unter den `<template>`-Block.
 
 ```js
 <script>
-import {Dogs} from "../data/dogs";
+import { Dogs } from "../data/dogs";
 </script>
 ```
 
-Dieser Teil importiert die Daten der Hunde. Jetzt müssen wir diese Daten der `data()`-Funktion hinzufügen. Bearbeite den `<script>`-Tag:
+Dieser Teil importiert die Daten der Hunde. Jetzt müssen wir diese Daten der `data()`-Funktion hinzufügen. Bearbeite den `<script>` Block:
 
 ```js
 <script>
@@ -207,14 +229,16 @@ Dieser Teil importiert die Daten der Hunde. Jetzt müssen wir diese Daten der `d
   </script>
 ```
 
-Dieses Skript stellt sicher, dass das `dogs`-Array ein Teil des Zustands ('state') der `Pets`-Komponente ist und im Template verwendet werden kann.
+Dieses Skript stellt sicher, dass das `dogs`-Array ein Teil des Zustands ('state') der `Pets`-Komponente ist und im Template verwendet werden kann. Als nächstes werden wir unser Template erweitern, so dass es die Daten des `dogs`-Arrays anzeigt.
 
 ## Die Daten in einer Liste ausgeben
 
-Jetzt möchten wir eine Liste von Hunden erzeugen. Der einfachste Weg, um das zu erreichen, ist, über das Array zu iterieren und die Daten an eine Liste anzuhängen. Unsere `dogs` sind ein Array (=Liste von Objekten) und damit bereit verarbeitet zu werden. Um eine Liste von Einträgen darzustellen, die in einem Array stehen, gibt es in Vue die `v-for` Direktive. Diese Direktive fügen wir dem `v-flex`-Element in `Pets.vue` hinzu:
+Jetzt möchten wir eine Liste von Hunden erzeugen. Der einfachste Weg, um das zu erreichen, ist, über das Array zu iterieren und die Daten an eine Liste anzuhängen. Unsere `dogs` sind ein Array (=Liste von Objekten) und damit bereit verarbeitet zu werden. Um eine Liste von Einträgen darzustellen, die in einem Array stehen, gibt es in Vue die `v-for` Direktive.
+
+Diese Direktive fügen wir dem `v-flex`-Element in `Pets.vue` hinzu:
 
 ```html
-<v-flex xs12 sm4 md3 v-for="pet in dogs" :key="pet.breed">
+<v-flex xs12 sm4 md3 v-for="pet in dogs" :key="pet.breed">...</v-flex>
 ```
 
 Um korrekt über das Array zu iterieren und die Daten auszugeben, muss jedes Element ein eindeutiges Schlüsselattribut (=key attribute) haben. In unserem Fall wird die Art des Hundes dieses Schlüsselattribut sein.
@@ -227,7 +251,7 @@ In der `v-for`-Direktive wird der _aktuelle_ Hund `pet` genannt.
 Wir haben diesen Namen in der Diretive zugewiesen; hätten wir geschrieben `v-for="dog in dogs"` würde das aktuelle Element `dog` heißen.
 :::
 
-In der `dog.js` kannst du sehen, dass jeder Hund drei Eigenschaften hat: Name, Art (breed) und Bild (img). Das Bild können wir mit der `v-img`-Komponente anzeigen.
+In der `dog.js` kannst du sehen, dass jeder Hund drei Eigenschaften hat: Name (`name`), Art (`breed`) und Bild (`img`). Das Bild können wir mit der `v-img`-Komponente anzeigen.
 
 Wenn wir `src` nur mit dem Attriubut `pet.img` ersetzen...
 

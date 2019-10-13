@@ -1,10 +1,10 @@
 # 📋 Kapitel 4: Eine Merkliste erstellen
 
-| **Ziel** | Programmiere eine Favoriten-Funktion, so dass du Hunde einer Merkliste hinzufügen oder entfernen kannst.                                                                                                                                   |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Was du lernen wirst**       | Zustandsmanagement in einer Vue-Anwendung mit Vuex                                                                                             |
-| **Was du dafür benötigst**       | Einen modernen Browser, z.B. Google Chrome. Ein Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von [hier](https://github.com/VueVixens/projects/tree/master/chapter-3-end) importieren. Wie das geht, steht im [Anhang 1](appendix_1.md) |
-| **Dauer** | 1 1/2 Stunden                                                                                                                                                                                     |
+| **Ziel**                   | Programmiere eine Favoriten-Funktion, so dass du Hunde einer Merkliste hinzufügen oder entfernen kannst.                                                                                                                                                                                             |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Was du lernen wirst**    | Zustandsmanagement in einer Vue-Anwendung mit Vuex                                                                                                                                                                                                                                                   |
+| **Was du dafür benötigst** | Einen modernen Browser, z.B. Google Chrome. Ein Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von [hier](https://github.com/VueVixens/projects/tree/master/chapter-3-end) importieren. Wie das geht, steht im [Anhang 1](appendix_1.md) |
+| **Dauer**                  | 1 1/2 Stunden                                                                                                                                                                                                                                                                                        |
 
 ## Anleitung
 
@@ -20,9 +20,9 @@ Schreibe in den `template`-Tag ein `<div></div>`-Tag und darin den Text 'My Favo
 
 ```html
 <template>
-	 <div>
-	   My Favorites
-	 </div>
+  <div>
+    My Favorites
+  </div>
 </template>
 ```
 
@@ -47,7 +47,7 @@ Lass uns einen Link zu der Liste der Navigation hinzufügen. Später zeigen wir 
 ```html
 <v-spacer></v-spacer>
 <router-link to="/favorites">
-	<v-icon large>loyalty</v-icon>
+  <v-icon large>loyalty</v-icon>
 </router-link>
 ```
 
@@ -61,8 +61,7 @@ Jetzt erstellen wir das Template für die `Favorites`-Komponente. Dafür nutzen 
 
 ```html
 <div>
-	<v-list>
-	</v-list>
+  <v-list> </v-list>
 </div>
 ```
 
@@ -70,13 +69,13 @@ Die Liste braucht noch einen Namen. Dafür können wir die `v-subheader`-Kompone
 
 ```html
 <div>
-	 <v-list>
-	   <v-subheader>My Favorites</v-subheader>
-	 </v-list>
+  <v-list>
+    <v-subheader>My Favorites</v-subheader>
+  </v-list>
 </div>
 ```
 
-Wir fügen zunächst ein Testelement der Liste hinzu: Ein Bild von einem Hund, seinen Namen und ein Löschen-Button. Wir brauchen dafür die `v-list-tile`-Komponente für das Listenelement; `v-list-tile-avatar` für das Bild; `v-list-tile-content`für den Namen und `v-list-tile-action` sowie `v-icon` für den Löschen-Button.
+Wir fügen zunächst ein Testelement der Liste hinzu: Ein Bild von einem Hund, seinen Namen und ein Löschen-Button. Wir brauchen dafür die `v-list-item`-Komponente für das Listenelement; `v-list-item-avatar` für das Bild; `v-list-item-content`für den Namen und `v-list-item-action` sowie `v-icon` für den Löschen-Button.
 
 ::: tip 💡
 Mehr Info zu Listen findest du in der [Vuetify list component-Dokumentation](https://vuetifyjs.com/en/components/lists).
@@ -85,20 +84,20 @@ Mehr Info zu Listen findest du in der [Vuetify list component-Dokumentation](htt
 So sieht das Template jetzt aus:
 
 ```html
-	<div>
-	  <v-list>
-	      <v-subheader>My Favorites</v-subheader>
-	      <v-list-tile avatar @click="{}">
-	        <v-list-tile-avatar>
-	          <img src="https://dog.ceo/api/img/husky/n02110185_1469.jpg">
-	        </v-list-tile-avatar>
-	        <v-list-tile-content>Fluffy</v-list-tile-content>
-	        <v-list-tile-action>
-	          <v-icon>delete</v-icon>
-	        </v-list-tile-action>
-	      </v-list-tile>
-	  </v-list>
-	</div>
+<div>
+  <v-list>
+    <v-subheader>My Favorites</v-subheader>
+    <v-list-item @click="{}">
+      <v-list-item-avatar>
+        <img src="https://dog.ceo/api/img/husky/n02110185_1469.jpg" />
+      </v-list-item-avatar>
+      <v-list-item-content>Fluffy</v-list-item-content>
+      <v-list-item-action>
+        <v-icon>delete</v-icon>
+      </v-list-item-action>
+    </v-list-item>
+  </v-list>
+</div>
 ```
 
 ## Den Zustand der Liste mit Vuex verwalten
@@ -126,9 +125,7 @@ Vue.use(Vuex);
 Jetzt erzeugen wir den Speicher:
 
 ```js
-export default new Vuex.Store({
-
-})
+export default new Vuex.Store({});
 ```
 
 Was wollen wir eigentlich in diesem Speicher sichern? Eine Liste von Favoriten, in der die markierten Hunde stehen. Dazu fügen wir eine `favorites`-Liste in das initiale Zustandsobjekt. Füge dieses zwischen die geschweiften Klammern ein:
@@ -136,9 +133,9 @@ Was wollen wir eigentlich in diesem Speicher sichern? Eine Liste von Favoriten, 
 ```js
 export default new Vuex.Store({
   state: {
-    favorites: [],
+    favorites: []
   }
-})
+});
 ```
 
 Jetzt müssen wir den Speicher unserer Vue-Instanz hinzufügen. Öffne die `main.js`-Datei und importiere den Speicher unter den anderen Imports:
@@ -146,6 +143,7 @@ Jetzt müssen wir den Speicher unserer Vue-Instanz hinzufügen. Öffne die `main
 ```js
 import store from "./store/store";
 ```
+
 Füge den `store` dann den Properties der Vue-Instanz in `main.js` hinzu:
 
 ```js
@@ -165,11 +163,7 @@ Eine "berechnete Eigenschaft" kann genutzt werden, um schnelle Berechnungen von 
 Schreibe den `script`-Tag mit der `export default`-Anweisung in die `Favorites.vue`:
 
 ```js
-<script>
-	export default {
-
-	};
-</script>
+<script>export default {};</script>
 ```
 
 ... und dann die `computed property` in den export:
@@ -220,20 +214,20 @@ In der `Favorites.vue`-Komponente iterieren wir über die `favorites`-Liste aus 
 Das `<template>` sollte nun so aussehen:
 
 ```html
-	<div>
-	  <v-list>
-	      <v-subheader>My Favorites</v-subheader>
-	      <v-list-tile avatar v-for="(dog, index) in favorites" :key="index" @click="{}">
-	        <v-list-tile-avatar>
-	          <img :src="dog.img">
-	        </v-list-tile-avatar>
-	        <v-list-tile-content>{{dog.name}}</v-list-tile-content>
-	        <v-list-tile-action>
-	          <v-icon>delete</v-icon>
-	        </v-list-tile-action>
-	      </v-list-tile>
-	  </v-list>
-	</div>
+<div>
+  <v-list>
+    <v-subheader>My Favorites</v-subheader>
+    <v-list-item v-for="(dog, index) in favorites" :key="index" @click="{}">
+      <v-list-item-avatar>
+        <img :src="dog.img" />
+      </v-list-item-avatar>
+      <v-list-item-content>{{dog.name}}</v-list-item-content>
+      <v-list-item-action>
+        <v-icon>delete</v-icon>
+      </v-list-item-action>
+    </v-list-item>
+  </v-list>
+</div>
 ```
 
 ::: tip 💡
@@ -253,23 +247,25 @@ Die `v-if`-Direktive zeigt ein Element an, wenn ihre Bedingung wahr ist. Die `v-
 Wir werden die gesamte Liste in ein umfassendes `div` schreiben und nur anzeigen, wenn in der Liste Elemente sind. Ansonsten sieht der Nutzer einen Platzhalter Text. So müssen wir das Template dafür ändern:
 
 ```html
-	<div>
-	  <v-list>
-	    <v-subheader v-if="!favorites.length">Your favorites list is empty</v-subheader>
-	    <div v-else>
-	      <v-subheader>Your favorites</v-subheader>
-	      <v-list-tile avatar v-for="dog in favorites" :key="dog.name" @click="{}">
-	        <v-list-tile-avatar>
-	          <img :src="dog.img">
-	        </v-list-tile-avatar>
-	        <v-list-tile-content>{{dog.name}}</v-list-tile-content>
-	        <v-list-tile-action>
-	          <v-icon>delete</v-icon>
-	        </v-list-tile-action>
-	      </v-list-tile>
-	    </div>
-	  </v-list>
-	</div>
+<div>
+  <v-list>
+    <v-subheader v-if="!favorites.length"
+      >Your favorites list is empty</v-subheader
+    >
+    <div v-else>
+      <v-subheader>Your favorites</v-subheader>
+      <v-list-item v-for="dog in favorites" :key="dog.name" @click="{}">
+        <v-list-item-avatar>
+          <img :src="dog.img" />
+        </v-list-item-avatar>
+        <v-list-item-content>{{dog.name}}</v-list-item-content>
+        <v-list-item-action>
+          <v-icon>delete</v-icon>
+        </v-list-item-action>
+      </v-list-item>
+    </div>
+  </v-list>
+</div>
 ```
 
 ::: tip 💡
@@ -292,7 +288,7 @@ Das Favoriten-Icon wird jetzt innerhalb der `v-badge`-Komponente von Vuetify ges
 <router-link to="/favorites">
   <v-badge color="grey lighten-1" overlap right v-model="favorites.length">
     <span slot="badge">{{favorites.length}}</span>
-      <v-icon large>loyalty</v-icon>
+    <v-icon large>loyalty</v-icon>
   </v-badge>
 </router-link>
 ```
@@ -307,27 +303,26 @@ Wir brauchen einen Weg, um Hunde zu markieren und der Favoriten-Liste hinzuzufü
 
 ```js
 export default new Vuex.Store({
-	 state: {
-	   favorites: []
-	 },
-	 mutations: {
-	 },
+  state: {
+    favorites: []
+  },
+  mutations: {}
 });
 ```
 
 In dieses Objekt schreiben wir die `addToFavorites`-Mutation:
 
 ```js
-	export default new Vuex.Store({
-	  state: {
-	    favorites: []
-	  },
-	  mutations: {
-	    addToFavorites(state, payload) {
-	      state.favorites.push(payload);
-	    },
-	  },
-	});
+export default new Vuex.Store({
+  state: {
+    favorites: []
+  },
+  mutations: {
+    addToFavorites(state, payload) {
+      state.favorites.push(payload);
+    }
+  }
+});
 ```
 
 Diese Mutation hat zwei Parameter: zuerst den State und als zweites die Daten (=data order payload), die zu unserem `state.favorites` hinzugefügt werden. Die `addFavorites`-Mutation nimmt das Element aus dem `payload` und fügt es der `state.favorites`-Liste hinzu.
@@ -344,19 +339,19 @@ Wir registeren jetzt die Aktion, um die `addToFavorites`-Mutation ausführen zu 
 
 ```js
 export default new Vuex.Store({
-	 state: {
-	   favorites: []
-	 },
-	 mutations: {
-	   addToFavorites(state, payload) {
-	     state.favorites.push(payload);
-	   },
-	 },
-	 actions: {
-	   addToFavorites({ commit }, payload) {
-	     commit("addToFavorites", payload);
-	   },
-	 }
+  state: {
+    favorites: []
+  },
+  mutations: {
+    addToFavorites(state, payload) {
+      state.favorites.push(payload);
+    }
+  },
+  actions: {
+    addToFavorites({ commit }, payload) {
+      commit("addToFavorites", payload);
+    }
+  }
 });
 ```
 
@@ -481,4 +476,5 @@ Jetzt kannst du Hunde der Liste hinzufügen oder entfernen!
 **Whew! Kapitel 4 ist abgeschlossen!**
 
 # Ergebnis
+
 ![chapter 4 final](./images/petshop_chapter4.jpg)
