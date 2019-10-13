@@ -271,7 +271,7 @@ Jetzt wird das Formular nach dem Abschicken versteckt und die zuvor eingegebenen
 
 ## Validierung hinzufügen
 
-Jetzt fehlt noch eine richtige Validierung für das Formular. Zunächst bauen wir aber erstmal einen Button ein, der zum Formular führt. Öffne die `Favorites.vue` und kopiere folgenden Code nach dem schließenden `</v-list-tile>`-Tag.
+Jetzt fehlt noch eine richtige Validierung für das Formular. Zunächst bauen wir aber erstmal einen Button ein, der zum Formular führt. Öffne die `Favorites.vue` und kopiere folgenden Code nach dem schließenden `</v-list-item>`-Tag.
 
 ```html
 <v-btn to="/form">Adopt</v-btn>
