@@ -1,10 +1,10 @@
 # 📋 Chapter 4: Create a Dog Adoption Experience
 
-| **Project&nbsp;Goal**           | Create a tagging system for the shop so that you can add and remove a dog from your 'loyalty' list                                                                                                                                                                                                                       |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **What&nbsp;you’ll&nbsp;learn** | State management in Vue application with Vuex                                                                                                                                                                                                                                                                            |
+| **Project&nbsp;Goal**           | Create a tagging system for the shop so that you can add and remove a dog from your 'loyalty' list                                                                                                                                                                 |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **What&nbsp;you’ll&nbsp;learn** | State management in Vue application with Vuex                                                                                                                                                                                                                      |
 | **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome. An account in CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/VueVixens/projects/tree/master/chapter-3-end). Instructions on how to do this are in [Appendix 1](appendix_1.md) |
-| **Time needed to complete**     | 1.5 hours                                                                                                                                                                                                                                                                                                                |
+| **Time needed to complete**     | 1.5 hours                                                                                                                                                                                                                                                          |
 
 ## What You'll Build
 
@@ -24,9 +24,9 @@ Inside `template` tags create a `<div></div>` tag and add a simple text 'My Favo
 
 ```html
 <template>
-	<div>
-		My Favorites
-	</div>
+  <div>
+    My Favorites
+  </div>
 </template>
 ```
 
@@ -35,7 +35,7 @@ Now let's connect our newly created component with the router and check if it's 
 Go to the `main.js` file. On the top, after importing `Home` and `Pets` components, add one more import statement:
 
 ```js
-import Favorites from './views/Favorites';
+import Favorites from "./views/Favorites";
 ```
 
 After that, add one more route to the `routes`:
@@ -51,7 +51,7 @@ Let's add a link to our list inside the navbar. Later we will also show the sele
 ```html
 <v-spacer></v-spacer>
 <router-link to="/favorites">
-	<v-icon large>loyalty</v-icon>
+  <v-icon large>loyalty</v-icon>
 </router-link>
 ```
 
@@ -65,7 +65,7 @@ Let's create markup for the `Favorites` component. We will use Vuetify's list co
 
 ```html
 <div>
-	<v-list> </v-list>
+  <v-list> </v-list>
 </div>
 ```
 
@@ -73,9 +73,9 @@ We need a name for this list. Vuetify is using a `v-subheader` component for thi
 
 ```html
 <div>
-	<v-list>
-		<v-subheader>My Favorites</v-subheader>
-	</v-list>
+  <v-list>
+    <v-subheader>My Favorites</v-subheader>
+  </v-list>
 </div>
 ```
 
@@ -89,18 +89,18 @@ Now our template is:
 
 ```html
 <div>
-	<v-list>
-		<v-subheader>My Favorites</v-subheader>
-		<v-list-item @click="{}">
-			<v-list-item-avatar>
-				<img src="https://images.dog.ceo/breeds/husky/n02110185_7888.jpg" />
-			</v-list-item-avatar>
-			<v-list-item-content>Fluffy</v-list-item-content>
-			<v-list-item-action>
-				<v-icon>delete</v-icon>
-			</v-list-item-action>
-		</v-list-item>
-	</v-list>
+  <v-list>
+    <v-subheader>My Favorites</v-subheader>
+    <v-list-item @click="{}">
+      <v-list-item-avatar>
+        <img src="https://images.dog.ceo/breeds/husky/n02110185_7888.jpg" />
+      </v-list-item-avatar>
+      <v-list-item-content>Fluffy</v-list-item-content>
+      <v-list-item-action>
+        <v-icon>delete</v-icon>
+      </v-list-item-action>
+    </v-list-item>
+  </v-list>
 </div>
 ```
 
@@ -119,8 +119,8 @@ Now let's create a `store` folder inside `/src`. Add a `store.js` file inside of
 Open the `store.js` and import Vuex:
 
 ```js
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from "vue";
+import Vuex from "vuex";
 
 Vue.use(Vuex);
 ```
@@ -135,27 +135,27 @@ What actually do we want to save on our application state? It's a list of favori
 
 ```js
 export default new Vuex.Store({
-	state: {
-		favorites: [],
-	},
+  state: {
+    favorites: []
+  }
 });
 ```
 
 We then have to add this store to our Vue instance. To do this, move to the `main.js` file and import it under the rest of the imports:
 
 ```js
-import store from './store/store';
+import store from "./store/store";
 ```
 
 Then add the `store` to the Vue instance properties in `main.js`:
 
 ```js
 new Vue({
-	router,
-	store,
-	vuetify,
-	render: h => h(App),
-}).$mount('#app');
+  router,
+  store,
+  vuetify,
+  render: h => h(App)
+}).$mount("#app");
 ```
 
 Now all the components in the application will have access to our state via `this.$store.state` placed inside any component's computed property. Let's try to access it from the `Favorites` component.
@@ -164,7 +164,7 @@ Now all the components in the application will have access to our state via `thi
 Computed properties can be used to do quick calculations of properties that are displayed in the view. These calculations will be cached and will only update when their dependencies are changed.
 :::
 
-Inside `Favorites.vue` add the `<script>` tag under the template tags with the `export default` statement:
+Inside `Favorites.vue` add the `<script>` block under the `<template>` block with the `export default` statement:
 
 ```js
 <script>export default {};</script>
@@ -174,13 +174,13 @@ Inside `Favorites.vue` add the `<script>` tag under the template tags with the `
 
 ```js
 <script>
-	export default {
-		computed: {
-			favorites() {
-				return this.$store.state.favorites;
-			}
-		}
-	};
+  export default {
+    computed: {
+      favorites() {
+        return this.$store.state.favorites;
+      }
+    }
+  };
 </script>
 ```
 
@@ -193,43 +193,43 @@ Let's replace our mock data with the `favorites` content.
 First let's temporarily add some content to the `state.favorites`. Copy the first three dogs from the `data/dogs.js` file and paste them to the `favorites` array in `store.js`:
 
 ```js
-	state: {
-		favorites: [
-			{
-				name: "Max",
-				breed: "husky",
-				img: "https://images.dog.ceo/breeds/husky/n02110185_1469.jpg"
-			},
-			{
-				name: "Rusty",
-				breed: "shiba",
-				img: "https://images.dog.ceo/breeds/shiba/shiba-13.jpg"
-			},
-			{
-				name: "Rocco",
-				breed: "boxer",
-				img: "https://images.dog.ceo/breeds/boxer/n02108089_14112.jpg"
-			},
-		]
-	},
+state: {
+  favorites: [
+    {
+      name: "Max",
+      breed: "husky",
+      img: "https://images.dog.ceo/breeds/husky/n02110185_1469.jpg"
+    },
+    {
+      name: "Rusty",
+      breed: "shiba",
+      img: "https://images.dog.ceo/breeds/shiba/shiba-13.jpg"
+    },
+    {
+      name: "Rocco",
+      breed: "boxer",
+      img: "https://images.dog.ceo/breeds/boxer/n02108089_14112.jpg"
+    },
+  ]
+},
 ```
 
 Inside the `Favorites.vue` component we will iterate through the `favorites` array with the now-familiar `v-for` directive. Change the `<template>` `<div>` to this markup:
 
 ```html
 <div>
-	<v-list>
-		<v-subheader>My Favorites</v-subheader>
-		<v-list-item v-for="(dog, index) in favorites" :key="index" @click="{}">
-			<v-list-item-avatar>
-				<img :src="dog.img" />
-			</v-list-item-avatar>
-			<v-list-item-content>{{dog.name}}</v-list-item-content>
-			<v-list-item-action>
-				<v-icon>delete</v-icon>
-			</v-list-item-action>
-		</v-list-item>
-	</v-list>
+  <v-list>
+    <v-subheader>My Favorites</v-subheader>
+    <v-list-item v-for="(dog, index) in favorites" :key="index" @click="{}">
+      <v-list-item-avatar>
+        <img :src="dog.img" />
+      </v-list-item-avatar>
+      <v-list-item-content>{{dog.name}}</v-list-item-content>
+      <v-list-item-action>
+        <v-icon>delete</v-icon>
+      </v-list-item-action>
+    </v-list-item>
+  </v-list>
 </div>
 ```
 
@@ -256,12 +256,14 @@ We will wrap the whole list content in the wrapper div and show it only when we 
 ```html
 <template>
   <v-list>
-    <v-subheader v-if="!favorites.length">Your favorites list is empty</v-subheader>
+    <v-subheader v-if="!favorites.length"
+      >Your favorites list is empty</v-subheader
+    >
     <div v-else>
       <v-subheader>Your favorites</v-subheader>
       <v-list-item v-for="(dog, index) in favorites" :key="index" @click="{}">
         <v-list-item-avatar>
-          <img :src="dog.img">
+          <img :src="dog.img" />
         </v-list-item-avatar>
         <v-list-item-content>{{dog.name}}</v-list-item-content>
         <v-list-item-action>
@@ -281,9 +283,9 @@ Let's also display the number of selected dogs above the tag icon in the toolbar
 
 ```js
 computed: {
-	favorites() {
-		 return this.$store.state.favorites;
-	}
+  favorites() {
+    return this.$store.state.favorites;
+  }
 },
 ```
 
@@ -291,10 +293,10 @@ Now let's wrap our favorites icon with the Vuetify `v-badge` component and show 
 
 ```html
 <router-link to="/favorites">
-	<v-badge color="grey lighten-1" overlap right v-model="favorites.length">
-		<span slot="badge">{{favorites.length}}</span>
-		<v-icon large>loyalty</v-icon>
-	</v-badge>
+  <v-badge color="grey lighten-1" overlap right v-model="favorites.length">
+    <span slot="badge">{{favorites.length}}</span>
+    <v-icon large>loyalty</v-icon>
+  </v-badge>
 </router-link>
 ```
 
@@ -308,10 +310,10 @@ We also need to build a way to add dogs to this favorites list and, sadly, to re
 
 ```js
 export default new Vuex.Store({
-	state: {
-		favorites: [],
-	},
-	mutations: {},
+  state: {
+    favorites: []
+  },
+  mutations: {}
 });
 ```
 
@@ -319,14 +321,14 @@ Inside this object create the `addToFavorites` mutation:
 
 ```js
 export default new Vuex.Store({
-	state: {
-		favorites: [],
-	},
-	mutations: {
-		addToFavorites(state, payload) {
-			state.favorites.push(payload);
-		},
-	},
+  state: {
+    favorites: []
+  },
+  mutations: {
+    addToFavorites(state, payload) {
+      state.favorites.push(payload);
+    }
+  }
 });
 ```
 
@@ -344,19 +346,19 @@ Let's register an action to commit our `addToFavorites` mutation. Add the `actio
 
 ```js
 export default new Vuex.Store({
-	state: {
-		favorites: [],
-	},
-	mutations: {
-		addToFavorites(state, payload) {
-			state.favorites.push(payload);
-		},
-	},
-	actions: {
-		addToFavorites({ commit }, payload) {
-			commit('addToFavorites', payload);
-		},
-	},
+  state: {
+    favorites: []
+  },
+  mutations: {
+    addToFavorites(state, payload) {
+      state.favorites.push(payload);
+    }
+  },
+  actions: {
+    addToFavorites({ commit }, payload) {
+      commit("addToFavorites", payload);
+    }
+  }
 });
 ```
 
@@ -399,7 +401,7 @@ You can dispatch actions in components with `this.$store.dispatch('xxx')`, or us
 We will use the second solution. First import the `mapActions` helper in `Pets.vue`:
 
 ```js
-import { mapActions } from 'vuex';
+import { mapActions } from "vuex";
 ```
 
 Then, add it to the component by creating a `methods` block, using the [ES6 spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax):
@@ -411,7 +413,7 @@ methods: {
 ```
 
 ::: tip 💡
-By calling `mapActions` with one parameter, we are defining which actions from our store we want to retrieve. For now we only have `addToFavorites` in this array but in the future we can add more actions as our store grows. You don't always need all actions from your store so by passing on this array to `mapActions` we make sure we only get what we need in thhis comoponent. More information can be found [here](https://vuex.vuejs.org/guide/actions.html#dispatching-actions-in-components).
+By calling `mapActions` with one parameter, we are defining which actions from our store we want to retrieve. For now we only have `addToFavorites` in this array but in the future we can add more actions as our store grows. You don't always need all actions from your store in one single component. So by passing on this array to `mapActions` we make sure we only get what we need in thhis component. More information can be found [here](https://vuex.vuejs.org/guide/actions.html#dispatching-actions-in-components).
 :::
 
 Now we can dispatch `addToFavorites` like a simple component method.
@@ -430,9 +432,9 @@ For now we can add any dog multiple times but we don't have five Maxes! Let's ch
 
 ```js
 addToFavorites(state, payload) {
-    if (!state.favorites.includes(payload)) {
-       state.favorites.push(payload);
-     }
+  if (!state.favorites.includes(payload)) {
+      state.favorites.push(payload);
+    }
 },
 ```
 
@@ -446,7 +448,7 @@ In the `store.js` add the `removeFromFavorites` mutation to `mutations` object:
 
 ```js
 removeFromFavorites(state, payload) {
-    state.favorites.splice(state.favorites.indexOf(payload), 1);
+  state.favorites.splice(state.favorites.indexOf(payload), 1);
 }
 ```
 
@@ -460,22 +462,22 @@ Add the action to commit the `removeFromFavorites` mutation:
 
 ```js
 removeFromFavorites({ commit }, payload) {
-     commit("removeFromFavorites", payload);
-  }
+  commit("removeFromFavorites", payload);
+}
 ```
 
 Now we need to dispatch this action when the user clicks the delete icon. Go to the `Favorites.vue` file. As you remember, first we should map actions to component methods. Import `mapActions` helper at the top of the `<script>` tag:
 
 ```js
-import { mapActions } from 'vuex';
+import { mapActions } from "vuex";
 ```
 
 and add it to the component `methods` under the `computed` block:
 
 ```js
 methods: {
-   ...mapActions(["removeFromFavorites"])
-  }
+  ...mapActions(["removeFromFavorites"])
+}
 ```
 
 And finally add the click listener to the delete icon:
@@ -488,6 +490,6 @@ Now you can add and remove dogs from your favorites list.
 
 **Whew! Chapter 4 is complete!**
 
-# Final result
+## Final result
 
 ![chapter 4 final](./images/petshop_chapter4.jpg)

@@ -8,7 +8,7 @@
 
 ## Anleitung
 
-Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-1-end) in Code Sandbox nachdem du dich eingeloggt hast.
+Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-1-end) in Code Sandbox, nachdem du dich eingeloggt hast. Dafür klickst du auf den Link **Import form Github** unten links auf der Hauptseite und fügst die URL des Repositories in das Feld. Du kannst ebenfalls mit dem Projekt fortfahren, dass du in [Kapitel 3](ch3.md) erstellt hast.
 
 In diesem Kapitel bauen wir eine Merkliste für Hunde, die wir mögen und vielleicht adoptieren möchten.
 Zuerst benötigen wir eine neue, leere Datei im `views`-Ordner namens `Favorites.vue`.
@@ -89,7 +89,7 @@ So sieht das Template jetzt aus:
     <v-subheader>My Favorites</v-subheader>
     <v-list-item @click="{}">
       <v-list-item-avatar>
-        <img src="https://dog.ceo/api/img/husky/n02110185_1469.jpg" />
+        <img src="https://images.dog.ceo/breeds/husky/n02110185_7888.jpg" />
       </v-list-item-avatar>
       <v-list-item-content>Fluffy</v-list-item-content>
       <v-list-item-action>
@@ -105,11 +105,10 @@ So sieht das Template jetzt aus:
 Jetzt siehst du, wie das Template im Browser aussieht. Es ist Zeit, die Testdaten durch echte Daten zu ersetzen. Das Problem: Wie können wir ausgewählte Hunde von der `Pets`-Komponente der unabhängigen `Favorites`-Komponente übergeben? Wir können keine props nutzen, da die beiden Komponenten keine Eltern-Kind-Beziehung haben... für solche Fälle brauchen wir _Zustandsmanagement_. Die Bibliothek dafür heißt in Vue: `Vuex`.
 
 ::: tip 💡
-Vuex ist eine Bibliothek, um Zustandsmanagement in einer Vue.js-Anwendung zu ermöglichen. Es dient als zentraler Speicher für alle Komponenten einer Anwendung und beinhaltet verschiedene Regeln, um den Zustand des Speichers nur über bestimmte Funktionen zu verändern.
-Mehr über Vues kannst du [hier](http://vuex.vuejs.org/en/) nachlesen.
+Vuex ist eine Bibliothek, um Zustandsmanagement in einer Vue.js-Anwendung zu ermöglichen. Es dient als zentraler Speicher für alle Komponenten einer Anwendung und beinhaltet verschiedene Regeln, um den Zustand des Speichers nur über bestimmte Funktionen zu verändern. Es erlaubt dir, Daten zu verwalten, die zwischen den Komponenten deiner Applikation geteilt werden können. Mehr über Vues kannst du [hier](http://vuex.vuejs.org/en/) nachlesen.
 :::
 
-Um diesen zentralen Speicher zu nutzen, müssen wir zunächst Vuex als Abhängigkeit hinzufügen. Klicke auf `Add Dependency`, suche nach `vuex` und installiere diese Bibliothek.
+Um diesen zentralen Speicher zu nutzen, müssen wir zunächst Vuex als Abhängigkeit hinzufügen. Dafür klicke in Code Sandbox auf den Reiter `Explorer` -> `Dependencies` -> `Add Dependency` und suche nach `vuex`. Wenn du es installiert hast, wirst du sehen, dass es zu deiner `package.json` hinzugefügt wurde.
 
 Erstelle jetzt einen `store`-Ordner in dem `src`-Ordner. Erstelle eine neue Datei namens `store.js` in diesem neuen Ordner. Hier werden alle Daten der Anwendung gespeichert.
 
@@ -160,7 +159,7 @@ Jetzt haben alle Komponenten der Anwendung Zugriff auf den Speicher in einer "be
 Eine "berechnete Eigenschaft" kann genutzt werden, um schnelle Berechnungen von verschiedenen Eigenschaften durchzuführen, die im Template angezeigt werden. Diese Berechnungen werden gecached (=zwischengespeichert) und nur aktualisiert, wenn sich eine ihrer Abhängigkeiten verändert.
 :::
 
-Schreibe den `script`-Tag mit der `export default`-Anweisung in die `Favorites.vue`:
+Schreibe den `<script>` Block mit der `export default`-Anweisung in die `Favorites.vue` unterhalb des `<template>` Blocks:
 
 ```js
 <script>export default {};</script>
@@ -189,29 +188,28 @@ Wir ersetzen unsere Testdaten mit dem Inhalt der `favorites`-Komponente:
 Zuerst schreiben wir ein paar Testdaten in den Speicher (wir kümmern uns später darum, dass dort echte Daten abgelegt werden). Kopiere die ersten drei Hunde aus der `data/dogs.js`-Datei in die `favorites`-Liste in `store.js`:
 
 ```js
-	state: {
-		favorites: [
-		  {
-		    name: "Max",
-		    breed: "husky",
-		    img: "https://dog.ceo/api/img/husky/n02110185_1469.jpg"
-		  },
-		  {
-		    name: "Rusty",
-		    breed: "shiba",
-		    img: "https://dog.ceo/api/img/shiba/shiba-13.jpg"
-		  },
-		  {
-		    name: "Rocco",
-		    breed: "boxer",
-		    img: "https://dog.ceo/api/img/boxer/n02108089_14112.jpg"
-		  },
-		]
-	},
+state: {
+  favorites: [
+    {
+      name: "Max",
+      breed: "husky",
+      img: "https://images.dog.ceo/breeds/husky/n02110185_1469.jpg"
+    },
+    {
+      name: "Rusty",
+      breed: "shiba",
+      img: "https://images.dog.ceo/breeds/shiba/shiba-13.jpg"
+    },
+    {
+      name: "Rocco",
+      breed: "boxer",
+      img: "https://images.dog.ceo/breeds/boxer/n02108089_14112.jpg"
+    },
+  ]
+},
 ```
 
-In der `Favorites.vue`-Komponente iterieren wir über die `favorites`-Liste aus dem Speicher mit der schon bekannten `v-for`-Direktive. Dieses Mal wollen wir den Index des Hundes kennen und fügen diesen als Key hinzu. Dafür müssen wir ein Alias für `index` in der `v-for`-Direktive hinzufügen.
-Das `<template>` sollte nun so aussehen:
+In der `Favorites.vue`-Komponente iterieren wir über die `favorites`-Liste aus dem Speicher mit der schon bekannten `v-for`-Direktive. Ändere das `<div>` des `<template>` Blocks zu folgendem Markup:
 
 ```html
 <div>
@@ -231,7 +229,11 @@ Das `<template>` sollte nun so aussehen:
 ```
 
 ::: tip 💡
-Was hat sich verändert? Das `src`-Attribut nutzt jetzt die Kurzschreibweise für die `v-bind`-Direktive. `:src`, da der Wert nun dynamisch gesetzt wird und nicht mehr statisch ist.
+Was hat sich verändert? Das `src`-Attribut nutzt jetzt die Kurzschreibweise für die `v-bind`-Direktive. `:src`, da der Wert nun dynamisch gesetzt wird und nicht mehr statisch ist. Wir haben ebenfalls sicher gestellt, dass der Name sich dynamisch zu `Fluffy` ändertn, in dem wir `dog.name` in je zwei geschweifte Klammern setzten.
+:::
+
+::: tip 💡
+Außerdem haben wir das Attribut `:key` direkt zu unserem Attribut `v-for` in das Tag `v-list-item` hinzugefügt. Wir haben dies deshalb getan, weil Vue von uns erwartet, dass wir einen Schlüsselwert benutzen, wenn wir das Attribut `v-for` einsetzen. Indem wir `(dog, index) in favorites` (die runden Klammern sind wichtig) in unser Attribut `v-for` setzten, bekommen wir als zweiten Parameter zusätzlich den jeweiligen Index der Liste pro Hund. Zum Beispiel erhalten wir für Max den Index 0, für Rusty den Index 1 und so weiter. Wir können diesen Index als Schlüsselwert (`key`) benutzen. Mehr Informationen findest du [hier](https://vuejs.org/guide/list.html#Maintaining-State).
 :::
 
 Jetzt sehen wir unsere Testdaten aus dem Speicher auf der `favorites`-Seite. Wir passen die Ansicht (=UI) jetzt noch etwas an, damit die Seite hübscher aussieht.
@@ -254,7 +256,7 @@ Wir werden die gesamte Liste in ein umfassendes `div` schreiben und nur anzeigen
     >
     <div v-else>
       <v-subheader>Your favorites</v-subheader>
-      <v-list-item v-for="dog in favorites" :key="dog.name" @click="{}">
+      <v-list-item v-for="(dog, index) in favorites" :key="index" @click="{}">
         <v-list-item-avatar>
           <img :src="dog.img" />
         </v-list-item-avatar>
@@ -276,13 +278,13 @@ Wir wollen auch die Anzahl der markierten Hunde am Favoriten-Icon in der Navigat
 
 ```js
 computed: {
-	favorites() {
-		 return this.$store.state.favorites;
-	}
+  favorites() {
+    return this.$store.state.favorites;
+  }
 },
 ```
 
-Das Favoriten-Icon wird jetzt innerhalb der `v-badge`-Komponente von Vuetify geschrieben und zeigt die Anzahl der Elemente an. Bearbeite das Template in der `App.vue`, das der `favorites`-Teil am Ende so aussieht:
+Das Favoriten-Icon wird jetzt innerhalb der `v-badge`-Komponente von Vuetify geschrieben und zeigt die Anzahl der Elemente an. Bearbeite den `<router-link>` Abschnitt im `<template>` Block in der `App.vue` so, dass der `favorites`-Teil am Ende folgendermaßen aussieht:
 
 ```html
 <router-link to="/favorites">
@@ -294,12 +296,12 @@ Das Favoriten-Icon wird jetzt innerhalb der `v-badge`-Komponente von Vuetify ges
 ```
 
 ::: tip 💡
-Die `v-model`-Direktive bestimmt an dieser Stelle, ob die Zahl angezeigt wird. Wenn die Liste leer ist, versteckt die Anwendung das Badge. Da wir aktuell drei Elemente in unseren Testdaten im Speicher haben, wird die Nummer `3` angezeigt.
+Die `v-model`-Direktive bestimmt an dieser Stelle, ob die Zahl angezeigt wird. Wenn die Liste leer ist, versteckt die Anwendung das Badge. Da wir aktuell drei Elemente in unseren Testdaten im Speicher haben, wird die Nummer `3` angezeigt. Dieses Verhalten ist durch die offizielle Vuetify Badge Komponente definiert, die Dokumentation lässt sich [hier](https://vuetifyjs.com/en/components/badges) nachlesen.
 :::
 
 ## Hunde hinzufügen und entfernen
 
-Wir brauchen einen Weg, um Hunde zu markieren und der Favoriten-Liste hinzuzufügen und (leider) auch wieder zu entfernen. Das bedeutet: Wir müssen _den Zustand im Speicher verändern_. Den Zustand im Speicher kann man mit Hilfe einer sogenannten Mutation (=mutation) verändern. Vuex Mutationen sind ähnlich zu Ereignissen (=events): Jede Mutation hat eine Beschreibung (=type) und eine Funktion (=handler). In der Handler-Funktion wird der Zustand verändert. Sie erhält als ersten Parameter den Zustand (=state). Erstellen wir unsere erste Mutation. Lösche die Testdaten aus der `favorites`-Liste in `store.js`. Füge nach dem `state` das `mutations`-Objekt ein:
+Wir brauchen einen Weg, um Hunde zu markieren und der Favoriten-Liste hinzuzufügen und (leider) auch wieder zu entfernen. Das bedeutet: Wir müssen _den Zustand im Speicher verändern_. Den Zustand im Speicher kann man mit Hilfe einer sogenannten Mutation (=mutation) verändern. Vuex Mutationen sind ähnlich zu Ereignissen (=events): Jede Mutation hat eine Beschreibung (=type) und eine Funktion (=handler). Die Beschreibung ist eine Bezeichnung dafür, was die Mutation verändern wird. Den Namen können wir selber wählen. Da wir mit der Mutation Hunde zu unseren Favoriten hinzufügen möchten, nennen wir sie `addToFavorites`. In der Handler-Funktion wird der Zustand verändert. Sie erhält als ersten Parameter den Zustand (=state). Erstellen wir unsere erste Mutation. Lösche die Testdaten aus der `favorites`-Liste in `store.js`. Füge nach dem `state` das `mutations`-Objekt ein:
 
 ```js
 export default new Vuex.Store({
@@ -328,7 +330,7 @@ export default new Vuex.Store({
 Diese Mutation hat zwei Parameter: zuerst den State und als zweites die Daten (=data order payload), die zu unserem `state.favorites` hinzugefügt werden. Die `addFavorites`-Mutation nimmt das Element aus dem `payload` und fügt es der `state.favorites`-Liste hinzu.
 
 ::: tip 💡
-Es ist nicht möglich eine Mutation direkt aufzurufen. Um eine Mutation auszuführen, musst du `store.commit` mit dem Namen der Mutation aufrufen: `store.commit('addToFavorites')`
+Es ist nicht möglich eine Mutation direkt aufzurufen. Um eine Mutation auszuführen, musst du `store.commit` mit dem Namen der Mutation aufrufen: `store.commit('addToFavorites')` und du wirst sehen, dass die zum Payload hinzugefügt wurden.
 :::
 
 ::: tip 💡
@@ -356,7 +358,7 @@ export default new Vuex.Store({
 ```
 
 ::: tip 💡
-Aktions-Funktionen erhalten ein Kontext-Objekt, welches die gleichen Methoden und Eigenschaften hat, wie der Store selbst. Du kannst `context.commit` aufrufen, um eine Mutation auszuführen. Wir nutzen hier ES6 [argument destructuring](https://github.com/lukehoban/es6features#destructuring), um die `commit`-Methode auf dem `content` auszuführen.
+Aktions-Funktionen erhalten ein Kontext-Objekt, welches die gleichen Methoden und Eigenschaften hat, wie der Store selbst. Du kannst `context.commit` aufrufen, um eine Mutation auszuführen. Wir nutzen hier ES6 [argument destructuring](https://github.com/lukehoban/es6features#destructuring), um die `commit`-Methode auf dem `content` auszuführen. Deshalb haben wir nicht `context` sondern `{ commit }` als erstes Argument. Würden die `context` als erstes Argument setzen, müssen wir stattdessen `context.commit(...)` aufrufen, um den gleichen Effekt zu erzeugen, wie wir stattdessen mit `commit(...)` erreichen.
 :::
 
 ::: tip 💡
@@ -365,7 +367,7 @@ Aktions-Funktionen erhalten ein Kontext-Objekt, welches die gleichen Methoden un
 
 ## Die UI bauen
 
-Wir rufen jetzt die neue Aktion aus der `Pets.vue`-Komponente heraus auf. Zuerst brauchen wir einen Button, um einen Hund der Favoriten-Liste hinzuzufügen. Gehe in die `Dog.vue`-Komponente und füge den Button unter `v-card-title` ein:
+Wir rufen jetzt die neue Aktion aus der `Pets.vue`-Komponente heraus auf. Zuerst brauchen wir einen Button, um einen Hund der Favoriten-Liste hinzuzufügen. Gehe in die `Dog.vue`-Komponente und füge den Button unter `v-card-title`, allerdings innerhalb des Tags `v-card`, ein:
 
 ```html
 <v-btn @click="$emit('addToFavorites', dog)">Add to Favorites</v-btn>
@@ -374,6 +376,10 @@ Wir rufen jetzt die neue Aktion aus der `Pets.vue`-Komponente heraus auf. Zuerst
 Mit `$emit` senden wir ein Signal an die Eltern-Komponente (hier `Pets.vue`), um zu signalisieren, dass etwas in ihrer Kind-Komponente passiert und die Eltern-Komponente mit der Nachricht etwas tun soll.
 
 Unsere Nachricht enthält einen zweiten Parameter: Es ist der Hund, den wir der Favoriten-Liste hinzufügen wollen.
+
+::: tip 💡
+Indem wir also `$emit('addToFavorites', dog)` aufrufen, senden wir das Ereignis (`event`) mit der Beschreibung (`type`) `addToFavorites` zusammen mit den Daten des Hundes, die der Nutzer zu seinen Favoriten hinzufügen möchte. Wir haben dementsprechend ein sog. `Custom Event` erzeugt, wie du [hier](https://vuejs.org/v2/guide/components-custom-events.html) nachlesen.
+:::
 
 In der `Pets.vue` fügen wir einen _listener_ (=Zuhörer) ein, der auf das Signal der Kind-Komponente wartet. Überschreibe den aktuellen `<app-dog>`-Tag mit folgendem Code:
 
@@ -401,7 +407,9 @@ methods: {
 },
 ```
 
-Jetzt können wir `addToFavorites` wie eine normale Komponenten-Methode aufrufen.
+::: tip 💡
+Indem wir `mapActions` mit einem Parameter aufrufen, definieren wirr, welche Aktionen von unserem Store geholt werden. Bisher haben wir in dieser Liste nur `addToFavorites`, in der Zukunft könnte diese Liste allerdings wachen. Du brauchst nicht immer alle Aktionen von deinem Store in einer einzelnen Komponente. Deswegen benennen wir alle, die wir brauchen, in der Liste von `mapActions`. Mehr Informationen findest du [hier](https://vuex.vuejs.org/guide/actions.html#dispatching-actions-in-components).
+:::
 
 Diese Methode rufen wir jetzt auf, wenn das `addToFavorites`-Signal von `app-dog` gesendet wird. Bearbeite den `<app-dog>`-Tag in `Pets.vue`:
 
@@ -417,9 +425,9 @@ Bisher können wir jeden Hund mehrmals auf die Liste setzen. Aber wir haben ja g
 
 ```js
 addToFavorites(state, payload) {
-    if (!state.favorites.includes(payload)) {
-       state.favorites.push(payload);
-     }
+  if (!state.favorites.includes(payload)) {
+    state.favorites.push(payload);
+  }
 },
 ```
 

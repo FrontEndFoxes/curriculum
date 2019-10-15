@@ -1,10 +1,10 @@
 # 📋 Chapter 5: Complete the Adoption Experience with a Form
 
-| **Project&nbsp;Goal**           | Build a form to accept dummy 'checkout' data                                                                                                                                                                                                                                                                             |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **What&nbsp;you’ll&nbsp;learn** | How to create and validate forms in a Vue application                                                                                                                                                                                                                                                                    |
+| **Project&nbsp;Goal**           | Build a form to accept dummy 'checkout' data                                                                                                                                                                                                                       |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **What&nbsp;you’ll&nbsp;learn** | How to create and validate forms in a Vue application                                                                                                                                                                                                              |
 | **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome. An account in CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/VueVixens/projects/tree/master/chapter-4-end). Instructions on how to do this are in [Appendix 1](appendix_1.md) |
-| **Time needed to complete**     | 1 hour                                                                                                                                                                                                                                                                                                                   |
+| **Time needed to complete**     | 1 hour                                                                                                                                                                                                                                                             |
 
 ## What You'll Build
 
@@ -24,16 +24,16 @@ Inside this file place a `<template></template>` tag and create a div inside it.
 
 ```html
 <template>
-	<div>
-		This form works!
-	</div>
+  <div>
+    This form works!
+  </div>
 </template>
 ```
 
 Now let's create a route for this component. Go to `main.js` and import the `Form` component:
 
 ```js
-import Form from './views/Form';
+import Form from "./views/Form";
 ```
 
 Add one more option to the `routes` array:
@@ -48,7 +48,7 @@ Let's add a class to our `div` and create a styling for it.
 
 ```html
 <div class="form-wrapper">
-	This form works!
+  This form works!
 </div>
 ```
 
@@ -56,9 +56,9 @@ Add a `<style scoped></style>` tag below the template. Inside this tag we will a
 
 ```css
 <style scoped>
-	.form-wrapper {
-		padding: 40px;
-	}
+  .form-wrapper {
+    padding: 40px;
+  }
 </style>
 ```
 
@@ -74,9 +74,9 @@ As a first step we will add an empty `v-form` inside our `form-wrapper`
 
 ```html
 <template>
-	<div class="form-wrapper">
-		<v-form> </v-form>
-	</div>
+  <div class="form-wrapper">
+    <v-form> </v-form>
+  </div>
 </template>
 ```
 
@@ -86,11 +86,11 @@ For the form inputs Vuetify uses the component called `v-text-field`. It has an 
 
 ```html
 <div class="form-wrapper">
-	<v-form>
-		<v-text-field label="Name"></v-text-field>
-		<v-text-field label="Email"></v-text-field>
-		<v-text-field label="Phone"></v-text-field>
-	</v-form>
+  <v-form>
+    <v-text-field label="Name"></v-text-field>
+    <v-text-field label="Email"></v-text-field>
+    <v-text-field label="Phone"></v-text-field>
+  </v-form>
 </div>
 ```
 
@@ -102,12 +102,12 @@ Of course we need to submit our form somehow. Let's add a submit button below th
 
 ```html
 <div class="form-wrapper">
-	<v-form>
-		<v-text-field label="Name"></v-text-field>
-		<v-text-field label="Email"></v-text-field>
-		<v-text-field label="Phone"></v-text-field>
-		<v-btn>Submit</v-btn>
-	</v-form>
+  <v-form>
+    <v-text-field label="Name"></v-text-field>
+    <v-text-field label="Email"></v-text-field>
+    <v-text-field label="Phone"></v-text-field>
+    <v-btn>Submit</v-btn>
+  </v-form>
 </div>
 ```
 
@@ -115,8 +115,8 @@ Our button is aligned to the left side, so let's also add a `text-align: center`
 
 ```css
 .form-wrapper {
-	padding: 40px;
-	text-align: center;
+  padding: 40px;
+  text-align: center;
 }
 ```
 
@@ -136,13 +136,13 @@ Let's add a `<script></script>` block above the styles, add `export default` sta
 
 ```js
 <script>
-	export default {
-	  data() {
-	    return {
+  export default {
+    data() {
+      return {
 
-	    }
-	  }
-	}
+      }
+    }
+  }
 </script>
 ```
 
@@ -150,11 +150,11 @@ Now let's add three new properties to this newly created object:
 
 ```js
 data() {
-	return {
-	    name: "",
-	    email: "",
-	    phone: ""
-	};
+  return {
+    name: "",
+    email: "",
+    phone: ""
+  };
 }
 ```
 
@@ -164,10 +164,10 @@ Bind these properties to corresponding form inputs in the template by adding `v-
 
 ```html
 <v-form>
-	<v-text-field label="Name" v-model="name"></v-text-field>
-	<v-text-field label="Email" v-model="email"></v-text-field>
-	<v-text-field label="Phone" v-model="phone"></v-text-field>
-	<v-btn>Submit</v-btn>
+  <v-text-field label="Name" v-model="name"></v-text-field>
+  <v-text-field label="Email" v-model="email"></v-text-field>
+  <v-text-field label="Phone" v-model="phone"></v-text-field>
+  <v-btn>Submit</v-btn>
 </v-form>
 ```
 
@@ -177,16 +177,16 @@ Now we can print our form values to console on submission. Let's create a method
 
 ```js
 methods: {
-	submit() {
-	    console.log(
-	        "Name:",
-	        this.name,
-	        "Email:",
-	        this.email,
-	        "Phone:",
-	        this.phone
-	    );
-	}
+  submit() {
+    console.log(
+      "Name:",
+      this.name,
+      "Email:",
+      this.email,
+      "Phone:",
+      this.phone
+    );
+  }
 }
 ```
 
@@ -206,12 +206,12 @@ Let's create a new property in `data` called `submitted` and set it to `false` (
 
 ```js
 data() {
-	return {
-	    name: "",
-	    email: "",
-	    phone: "",
-	    submitted: false
-	};
+  return {
+    name: "",
+    email: "",
+    phone: "",
+    submitted: false
+  };
 },
 ```
 
@@ -219,9 +219,9 @@ Now we need to switch `submitted` to `true` on submit event. Let's add this logi
 
 ```js
 methods: {
-	submit() {
-	   this.submitted = true;
-	}
+  submit() {
+    this.submitted = true;
+  }
 }
 ```
 
@@ -229,14 +229,14 @@ Finally, we have to create a div which will replace our form. Add this code abov
 
 ```html
 <div class="text-xs-center">
-	<h2>Thank you for you interest, we will contact you soon</h2>
-	<div class="details text-xs-left">
-		<h3 class="blue-grey--text">Customer details</h3>
-		<p><strong>Name:</strong> {{name}}</p>
-		<p><strong>Email:</strong> {{email}}</p>
-		<p><strong>Phone:</strong> {{phone}}</p>
-	</div>
-	<v-btn to="/">Go to homepage</v-btn>
+  <h2>Thank you for you interest, we will contact you soon</h2>
+  <div class="details text-xs-left">
+    <h3 class="blue-grey--text">Customer details</h3>
+    <p><strong>Name:</strong> {{name}}</p>
+    <p><strong>Email:</strong> {{email}}</p>
+    <p><strong>Phone:</strong> {{phone}}</p>
+  </div>
+  <v-btn to="/">Go to homepage</v-btn>
 </div>
 ```
 
@@ -244,10 +244,10 @@ and add some styles to our `<style>`:
 
 ```css
 .details {
-	padding-top: 30px;
+  padding-top: 30px;
 }
 h3 {
-	padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 ```
 
@@ -261,10 +261,10 @@ So we're going to add `v-if="submitted"` to the wrapper div of the form data and
 
 ```html
 <div class="text-xs-center" v-if="submitted">
-	...
+  ...
 </div>
 <v-form v-else>
-	...
+  ...
 </v-form>
 ```
 
@@ -284,13 +284,13 @@ To change the form validity we have to create a new `data` property called `vali
 
 ```js
 data() {
-	return {
-	    name: "",
-	    email: "",
-	    phone: "",
-	    submitted: false,
-	    valid: true
-	};
+  return {
+    name: "",
+    email: "",
+    phone: "",
+    submitted: false,
+    valid: true
+  };
 },
 ```
 
@@ -318,21 +318,21 @@ First we will try to deny empty values for the `name` field. Let's create a `nam
 
 ```js
 data() {
-	return {
-	    name: "",
-	    email: "",
-	    phone: "",
-	    submitted: false,
-	    valid: true,
-	    nameRules: []
-	};
+  return {
+    name: "",
+    email: "",
+    phone: "",
+    submitted: false,
+    valid: true,
+    nameRules: []
+  };
 },
 ```
 
 Now add the first rule. Remember, validation rules are functions which receive the value of the field and return a boolean value; `true` will mean this field has valid value and `false` means it doesn't. So, our first rule will be:
 
 ```js
-nameRules: [name => !!name]
+nameRules: [name => !!name];
 ```
 
 What is happening here? `!name` will return `true` if the name is empty and `false` if it has non-empty value. Then we perform the second negation, reverting value one more time. The double negation is a pretty common method to check if string is non-empty.
@@ -340,7 +340,12 @@ What is happening here? `!name` will return `true` if the name is empty and `fal
 Add `nameRules` to the `rules` prop of the `name` field and make this field `required`:
 
 ```html
-<v-text-field label="Name" required :rules="nameRules" v-model="name"></v-text-field>
+<v-text-field
+  label="Name"
+  required
+  :rules="nameRules"
+  v-model="name"
+></v-text-field>
 ```
 
 Now try to select the `Name` field and then select other one. You can see the red color and the text `false` below the field (and the `Submit` button is disabled as well).
@@ -348,7 +353,7 @@ Now try to select the `Name` field and then select other one. You can see the re
 Error text can be provided via the `||` operator in the rule. So the value of this error is `false OR <error message>`. Let's provide a more meaningful error for the name field:
 
 ```js
-nameRules: [name => !!name || 'Name is required']
+nameRules: [name => !!name || "Name is required"];
 ```
 
 Now the error message looks better!
@@ -357,9 +362,9 @@ Let's add one more rule: a name cannot be shorter than 2 letters:
 
 ```js
 nameRules: [
-	name => !!name || 'Name is required', 
-	name => name.length > 2 || 'Name must be longer than 2 characters'
-]
+  name => !!name || "Name is required",
+  name => name.length > 2 || "Name must be longer than 2 characters"
+];
 ```
 
 Try to fill the name field with 1 character and check the error.
@@ -369,13 +374,18 @@ Try to fill the name field with 1 character and check the error.
 Now we're switching to the email field. First we will create an `emailRules` property in `data` and add the non-empty check similar to the non-empty name rule:
 
 ```js
-emailRules: [email => !!email || 'Email is required']
+emailRules: [email => !!email || "Email is required"];
 ```
 
 Don't forget to add `required` and the `rules` property to the email field:
 
 ```html
-<v-text-field label="Email" required :rules="emailRules" v-model="email"></v-text-field>
+<v-text-field
+  label="Email"
+  required
+  :rules="emailRules"
+  v-model="email"
+></v-text-field>
 ```
 
 The second rule for email will be a little tricky. We will check if email matched a certain pattern called _regular expression_ or _RegEx_
@@ -405,24 +415,24 @@ Now switch to the `phone` field. Let's create a set of rules very similar to the
 
 ```js
 phoneRules: [
-	phone => !!phone || 'Phone is required',
-	phone => phone.length >= 7 || 'Phone number should be at least 7 digits',
-]
+  phone => !!phone || "Phone is required",
+  phone => phone.length >= 7 || "Phone number should be at least 7 digits"
+];
 ```
 
-But as you can guess, you can still enter letters and the phone number is not formatted at all. To fix this, we have to add vue-the-mask. First, scroll down in the `Explorer` tab and open the `Dependencies` dropdown. Click on `Add dependency` button and seach for `vue-the-mask`. Install the dependency. vue-the-mask will be added to your `package.json`. We now have installed vue-the-mask but we need to add it to our component as a directive.
+But as you can guess, you can still enter letters and the phone number is not formatted at all. To fix this, we have to add `vue-the-mask`. First, scroll down in the `Explorer` tab and open the `Dependencies` dropdown. Click on `Add dependency` button and seach for `vue-the-mask`. Install the dependency. vue-the-mask will be added to your `package.json`. We now have installed vue-the-mask but we need to add it to our component as a directive.
 
-First, import vue-the-mask as such in your `Form.vue`:
+First, import `vue-the-mask` as such in your `Form.vue`:
 
 ```js
-import { mask } from 'vue-the-mask'
+import { mask } from "vue-the-mask";
 ```
 
 After that, add the following just before `data` in your `<script>` block:
 
 ```js
 directives: {
-	mask,
+  mask,
 },
 ```
 
@@ -439,7 +449,13 @@ v-mask="'(###) ### - ####'"
 By using `'(###) ### - ####'` as the input for our mask, we limit the input of our component to digits in that specific format. This means that a phone number such as `(555) 555-1234` will be possible but we are unable to input it into another format or use non-digit characters. If your country uses a different format for phone numbers, go ahead and change the input to `v-mask`.
 
 ```html
-<v-text-field label="Phone" required :rules="phoneRules" v-mask="(###) ### - ####" v-model="phone"></v-text-field>
+<v-text-field
+  label="Phone"
+  required
+  :rules="phoneRules"
+  v-mask="(###) ### - ####"
+  v-model="phone"
+></v-text-field>
 ```
 
 ## Clear the Favorites List On Submit
@@ -448,7 +464,7 @@ The last thing we want to achieve is to clear our favorites list on submitting t
 
 ```js
 clearFavorites(state) {
-    state.favorites = [];
+  state.favorites = [];
 }
 ```
 
@@ -456,7 +472,7 @@ Add an action to commit this mutation (and add it to `actions`):
 
 ```js
 clearFavorites({ commit }) {
-    commit("clearFavorites");
+  commit("clearFavorites");
 }
 ```
 
@@ -464,8 +480,8 @@ Swich back to the `Form.vue` and let's dispatch this new action in `submit` meth
 
 ```js
 submit() {
-    this.$store.dispatch("clearFavorites");
-    this.submitted = true;
+  this.$store.dispatch("clearFavorites");
+  this.submitted = true;
 }
 ```
 
@@ -473,6 +489,6 @@ Now the favorites list is clearing right after the form is submitted.
 
 **🎊Congratulations, you've finished the web project!🎊**
 
-# Final result
+## Final result
 
 ![chapter 5 final](./images/petshop_chapter5.jpg)
