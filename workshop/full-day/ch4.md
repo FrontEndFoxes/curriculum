@@ -174,13 +174,13 @@ Inside `Favorites.vue` add the `<script>` block under the `<template>` block wit
 
 ```js
 <script>
-	export default {
-		computed: {
-			favorites() {
-				return this.$store.state.favorites;
-			}
-		}
-	};
+  export default {
+    computed: {
+      favorites() {
+        return this.$store.state.favorites;
+      }
+    }
+  };
 </script>
 ```
 
@@ -193,25 +193,25 @@ Let's replace our mock data with the `favorites` content.
 First let's temporarily add some content to the `state.favorites`. Copy the first three dogs from the `data/dogs.js` file and paste them to the `favorites` array in `store.js`:
 
 ```js
-	state: {
-		favorites: [
-			{
-				name: "Max",
-				breed: "husky",
-				img: "https://images.dog.ceo/breeds/husky/n02110185_1469.jpg"
-			},
-			{
-				name: "Rusty",
-				breed: "shiba",
-				img: "https://images.dog.ceo/breeds/shiba/shiba-13.jpg"
-			},
-			{
-				name: "Rocco",
-				breed: "boxer",
-				img: "https://images.dog.ceo/breeds/boxer/n02108089_14112.jpg"
-			},
-		]
-	},
+state: {
+  favorites: [
+    {
+      name: "Max",
+      breed: "husky",
+      img: "https://images.dog.ceo/breeds/husky/n02110185_1469.jpg"
+    },
+    {
+      name: "Rusty",
+      breed: "shiba",
+      img: "https://images.dog.ceo/breeds/shiba/shiba-13.jpg"
+    },
+    {
+      name: "Rocco",
+      breed: "boxer",
+      img: "https://images.dog.ceo/breeds/boxer/n02108089_14112.jpg"
+    },
+  ]
+},
 ```
 
 Inside the `Favorites.vue` component we will iterate through the `favorites` array with the now-familiar `v-for` directive. Change the `<template>` `<div>` to this markup:
@@ -283,9 +283,9 @@ Let's also display the number of selected dogs above the tag icon in the toolbar
 
 ```js
 computed: {
-	favorites() {
-		 return this.$store.state.favorites;
-	}
+  favorites() {
+    return this.$store.state.favorites;
+  }
 },
 ```
 
@@ -432,9 +432,9 @@ For now we can add any dog multiple times but we don't have five Maxes! Let's ch
 
 ```js
 addToFavorites(state, payload) {
-    if (!state.favorites.includes(payload)) {
-       state.favorites.push(payload);
-     }
+  if (!state.favorites.includes(payload)) {
+      state.favorites.push(payload);
+    }
 },
 ```
 
@@ -448,7 +448,7 @@ In the `store.js` add the `removeFromFavorites` mutation to `mutations` object:
 
 ```js
 removeFromFavorites(state, payload) {
-    state.favorites.splice(state.favorites.indexOf(payload), 1);
+  state.favorites.splice(state.favorites.indexOf(payload), 1);
 }
 ```
 
@@ -462,8 +462,8 @@ Add the action to commit the `removeFromFavorites` mutation:
 
 ```js
 removeFromFavorites({ commit }, payload) {
-     commit("removeFromFavorites", payload);
-  }
+  commit("removeFromFavorites", payload);
+}
 ```
 
 Now we need to dispatch this action when the user clicks the delete icon. Go to the `Favorites.vue` file. As you remember, first we should map actions to component methods. Import `mapActions` helper at the top of the `<script>` tag:
@@ -476,8 +476,8 @@ and add it to the component `methods` under the `computed` block:
 
 ```js
 methods: {
-   ...mapActions(["removeFromFavorites"])
-  }
+  ...mapActions(["removeFromFavorites"])
+}
 ```
 
 And finally add the click listener to the delete icon:
@@ -490,6 +490,6 @@ Now you can add and remove dogs from your favorites list.
 
 **Whew! Chapter 4 is complete!**
 
-# Final result
+## Final result
 
 ![chapter 4 final](./images/petshop_chapter4.jpg)
