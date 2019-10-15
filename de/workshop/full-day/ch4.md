@@ -108,7 +108,7 @@ Jetzt siehst du, wie das Template im Browser aussieht. Es ist Zeit, die Testdate
 Vuex ist eine Bibliothek, um Zustandsmanagement in einer Vue.js-Anwendung zu ermöglichen. Es dient als zentraler Speicher für alle Komponenten einer Anwendung und beinhaltet verschiedene Regeln, um den Zustand des Speichers nur über bestimmte Funktionen zu verändern. Es erlaubt dir, Daten zu verwalten, die zwischen den Komponenten deiner Applikation geteilt werden können. Mehr über Vues kannst du [hier](http://vuex.vuejs.org/en/) nachlesen.
 :::
 
-Um diesen zentralen Speicher zu nutzen, müssen wir zunächst Vuex als Abhängigkeit hinzufügen. Dafür klicke in Coe Sandbox auf den Reiter `Explorer` -> `Dependencies` -> `Add Dependency` und suche nach `vuex`. Wenn du es installiert hast, wirst du sehen, dass es zu deiner `package.json` hinzugefügt wurde.
+Um diesen zentralen Speicher zu nutzen, müssen wir zunächst Vuex als Abhängigkeit hinzufügen. Dafür klicke in Code Sandbox auf den Reiter `Explorer` -> `Dependencies` -> `Add Dependency` und suche nach `vuex`. Wenn du es installiert hast, wirst du sehen, dass es zu deiner `package.json` hinzugefügt wurde.
 
 Erstelle jetzt einen `store`-Ordner in dem `src`-Ordner. Erstelle eine neue Datei namens `store.js` in diesem neuen Ordner. Hier werden alle Daten der Anwendung gespeichert.
 

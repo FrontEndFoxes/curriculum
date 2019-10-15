@@ -20,7 +20,7 @@ Zu Beginn hat Vue einen eigenen Weg für API-Aufrufe mit .ajax genutzt. Dies wur
 
 ## Axios hinzufügen
 
-Zuerst musst du Axios den Projekt-Abhängigkeiten hinzufügen. Dafür klicke in Coe Sandbox auf den Reiter `Explorer` -> `Dependencies` -> `Add Dependency` und suche nach `axios`. Wenn du es installiert hast, wirst du sehen, dass es zu deiner `package.json` hinzugefügt wurde.
+Zuerst musst du Axios den Projekt-Abhängigkeiten hinzufügen. Dafür klicke in Code Sandbox auf den Reiter `Explorer` -> `Dependencies` -> `Add Dependency` und suche nach `axios`. Wenn du es installiert hast, wirst du sehen, dass es zu deiner `package.json` hinzugefügt wurde.
 
 Importiere Axios in der Komponenten, in der der API-Aufruf gemacht werden soll - `views/Pets.vue`. Kopiere folgende Zeile in den `<script>`-Block dieser Komponente:
 
