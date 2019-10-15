@@ -159,7 +159,7 @@ Jetzt haben alle Komponenten der Anwendung Zugriff auf den Speicher in einer "be
 Eine "berechnete Eigenschaft" kann genutzt werden, um schnelle Berechnungen von verschiedenen Eigenschaften durchzuführen, die im Template angezeigt werden. Diese Berechnungen werden gecached (=zwischengespeichert) und nur aktualisiert, wenn sich eine ihrer Abhängigkeiten verändert.
 :::
 
-Schreibe den `<script>` Block mit der `export default`-Anweisung in die `Favorites.vue`:
+Schreibe den `<script>` Block mit der `export default`-Anweisung in die `Favorites.vue` unterhalb des `<template>` Blocks:
 
 ```js
 <script>export default {};</script>

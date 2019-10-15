@@ -164,7 +164,7 @@ Now all the components in the application will have access to our state via `thi
 Computed properties can be used to do quick calculations of properties that are displayed in the view. These calculations will be cached and will only update when their dependencies are changed.
 :::
 
-Inside `Favorites.vue` add the `<script>` block under the template tags with the `export default` statement:
+Inside `Favorites.vue` add the `<script>` block under the `<template>` block with the `export default` statement:
 
 ```js
 <script>export default {};</script>
