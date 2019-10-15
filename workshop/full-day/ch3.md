@@ -194,6 +194,6 @@ created() {
 
 **Now we initially see empty dog portraits and then images are loaded from the API. Progress!**
 
-# Final result
+## Final result
 
 ![chapter 3 result](./images/petshop_chapter3.jpg)

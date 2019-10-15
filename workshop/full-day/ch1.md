@@ -1,10 +1,10 @@
 # 📋 Chapter 1: Introducing the My Pet Shop Web App
 
-| **Project Goal**            | Get started with Vue.js by creating a static Pet Shop web app                                                     |
-| --------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| **What you’ll learn**       | Setting up your Vue app, CSS Grid, Styling in Vue, code structure in preparation for moving forward.              |
-| **Tools you’ll need**       | A modern browser like Chrome. An account in CodeSandbox.io. |
-| **Time needed to complete** | 1/2 hour                                                                                                          |
+| **Project Goal**            | Get started with Vue.js by creating a static Pet Shop web app                                        |
+| --------------------------- | ---------------------------------------------------------------------------------------------------- |
+| **What you’ll learn**       | Setting up your Vue app, CSS Grid, Styling in Vue, code structure in preparation for moving forward. |
+| **Tools you’ll need**       | A modern browser like Chrome. An account in CodeSandbox.io.                                          |
+| **Time needed to complete** | 1/2 hour                                                                                             |
 
 ## What You'll Build
 
@@ -28,8 +28,8 @@ Take a look at the code that was scaffolded by Code Sandbox for a basic Vue.js a
 
 ```js
 new Vue({
-	render: h => h(App),
-}).$mount('#app');
+  render: h => h(App)
+}).$mount("#app");
 ```
 
 Open up `App.vue`. In this file, the 'home' component is built. It contains the three main parts of a Vue.js Single File Component (SFC): a `<template>` block, a `<script>` block, and a `<style>` block.
@@ -196,9 +196,9 @@ Notice we don't use the attribute `scoped` in the `<style>` block. The `scoped` 
 
 This style block includes a few surprising things:
 
--   It uses paths to external images hosted on Github, rather than relative paths. This is because Code Sandbox doesn't host images; normally you'll just add an image on a relative path such as `/images/myImage.png`.
--   There is some funny 'grid' stuff going on. This style sheet and the template we will build make use of CSS Grid, a new way of making flexible, responsive 'masonry' layouts like this one with stacked 'blocks' of content. Learn more about CSS Grid [here](https://css-tricks.com/snippets/css/complete-guide-grid/).
--   There are two style sheets! Or at least two style patterns. One has a green theme, the other is orange. We'll make use of this soon.
+- It uses paths to external images hosted on Github, rather than relative paths. This is because Code Sandbox doesn't host images; normally you'll just add an image on a relative path such as `/images/myImage.png`.
+- There is some funny 'grid' stuff going on. This style sheet and the template we will build make use of CSS Grid, a new way of making flexible, responsive 'masonry' layouts like this one with stacked 'blocks' of content. Learn more about CSS Grid [here](https://css-tricks.com/snippets/css/complete-guide-grid/).
+- There are two style sheets! Or at least two style patterns. One has a green theme, the other is orange. We'll make use of this soon.
 
 Adding the style sheet didn't do much to our template except make the `<li>` group look strange. Let's fix the template!
 
@@ -234,7 +234,6 @@ import "vuetify/dist/vuetify.min.css";
 Vue.use(Vuetify);
 
 export default new Vuetify();
-
 ```
 
 This file is an initializer file for the Vuetify plugin. What we actually do in this piece of code is importing Vue, Vuetify and Vuetify's default styling. By calling `Vue.use(Vuetify);` we let Vue know that it should use the Vuetify plugin that we are importing. With the `export default new Vuetify();` line we are exporting an instance of Vuetify.
@@ -242,28 +241,33 @@ This file is an initializer file for the Vuetify plugin. What we actually do in 
 In this initializer file, you will be able to import Vuetify's themes, components, and CSS with just two mentions in your `main.js` file. With this file, the configuration of Vuetify is centralized in one file for the whole of your project.
 
 Open your `main.js` file and add this code:
+
 ```js
 import vuetify from "@/plugins/vuetify";
 ```
+
 to the 3rd line of the file.
 
 You should now have 3 `import` statements at the top of your `main.js` file, that look like this:
+
 ```js
-import Vue from 'vue';
-import App from './App';
+import Vue from "vue";
+import App from "./App";
 import vuetify from "@/plugins/vuetify";
 ```
 
 Next, while still in your `main.js` file, look for this function block:
+
 ```js
 new Vue({
   render: h => h(App)
 }).$mount("#app");
 ```
 
-Since this initializes the Vue instance in your app, you will need to add `vuetify` here to pass along all the design goods from your Vuetify plugin file. 
+Since this initializes the Vue instance in your app, you will need to add `vuetify` here to pass along all the design goods from your Vuetify plugin file.
 
 Add the `vuetify` variable name from the `import` statement to the Vue initializer block, just before the `render` function. Your initializer block should now look like this:
+
 ```js
 new Vue({
   vuetify,
@@ -274,71 +278,74 @@ new Vue({
 In order to have nice icons in our application, we also need to add Material icons to our `index.html` file. Please open `public/index.html` and add this string at the end of your `<head></head>` tag:
 
 ```html
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet" />
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
+  rel="stylesheet"
+/>
 ```
 
 Then, overwrite the current `<template>` block in `App.vue` with this markup:
 
 ```html
 <template>
-	<v-app>
-		<main>
-			<div class="app-container">
-				<header class="app-header dark-brown">
-					<h1>My Pet Store</h1>
-				</header>
-				<div class="wrapper">
-					<div class="panel tall-panel light-mint">
-						<h2>Pet Products</h2>
-						<p>Premium Puppy Chow</p>
-						<p>Kibble, sale in bulk, $20/lb</p>
-						<img
-							src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/food.png"
-						/>
-					</div>
-					<div class="panel bisque">
-						<h2>Donate</h2>
-					</div>
-					<div class="panel tall-panel light-brown">
-						<h2>Adoptable Pets</h2>
-						<p>Fisher, Chihuahua, age 3</p>
-						<img
-							src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/chihuahua.jpg"
-						/>
-					</div>
+  <v-app>
+    <main>
+      <div class="app-container">
+        <header class="app-header dark-brown">
+          <h1>My Pet Store</h1>
+        </header>
+        <div class="wrapper">
+          <div class="panel tall-panel light-mint">
+            <h2>Pet Products</h2>
+            <p>Premium Puppy Chow</p>
+            <p>Kibble, sale in bulk, $20/lb</p>
+            <img
+              src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/food.png"
+            />
+          </div>
+          <div class="panel bisque">
+            <h2>Donate</h2>
+          </div>
+          <div class="panel tall-panel light-brown">
+            <h2>Adoptable Pets</h2>
+            <p>Fisher, Chihuahua, age 3</p>
+            <img
+              src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/chihuahua.jpg"
+            />
+          </div>
 
-					<div class="panel bisque">
-						<h2>Contact Us</h2>
-					</div>
-					<div class="panel tall-panel dark-mint">
-						<h2>Pet of the Month</h2>
-						<p>Meet Stanley, A young French Bulldog</p>
-						<img
-							src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/bulldog.jpg"
-						/>
-					</div>
-					<div class="panel tall-panel light-mint">
-						<h2>Success Stories</h2>
-						<p>Bennie found his forever home!</p>
-						<img
-							src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/collie.jpg"
-						/>
-					</div>
+          <div class="panel bisque">
+            <h2>Contact Us</h2>
+          </div>
+          <div class="panel tall-panel dark-mint">
+            <h2>Pet of the Month</h2>
+            <p>Meet Stanley, A young French Bulldog</p>
+            <img
+              src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/bulldog.jpg"
+            />
+          </div>
+          <div class="panel tall-panel light-mint">
+            <h2>Success Stories</h2>
+            <p>Bennie found his forever home!</p>
+            <img
+              src="https://raw.githubusercontent.com/VueVixens/projects/master/petshop/images/collie.jpg"
+            />
+          </div>
 
-					<div class="panel bisque">
-						<h2>Special Events</h2>
-					</div>
+          <div class="panel bisque">
+            <h2>Special Events</h2>
+          </div>
 
-					<div class="panel bisque">
-						<h2>Learn About Pet Ownership</h2>
-					</div>
-				</div>
-				<footer class="app-footer dark-brown">
-					<p>123 Main Street | Smithfield, RI 90987 | 345-456-5678</p>
-				</footer>
-			</div>
-		</main>
-	</v-app>
+          <div class="panel bisque">
+            <h2>Learn About Pet Ownership</h2>
+          </div>
+        </div>
+        <footer class="app-footer dark-brown">
+          <p>123 Main Street | Smithfield, RI 90987 | 345-456-5678</p>
+        </footer>
+      </div>
+    </main>
+  </v-app>
 </template>
 ```
 
@@ -350,11 +357,11 @@ Note the use of `<v-app>` - this is a requirement of Vuetify and is a sure sign 
 
 Now we're going to actually use that Vuetify theme by creating a switch. Pressing this switch will trigger a theme switch, so you'll use the 'orange' theme you saw in the styles.
 
--   You might see the `orange-green` class in stylesheet. Let's add it to the `<main>` element in the `<template>` block of `App.vue` and observe how all the colors & background are changed:
-    ```html
-    <main class="orange-green"></main>
-    ```
--   Now let's try to change the class using Vue class bindings. We can use `v-bind` directive or its shortcut `:`. Replace that simple class in `<main>` with a dynamic class binding:
+- You might see the `orange-green` class in stylesheet. Let's add it to the `<main>` element in the `<template>` block of `App.vue` and observe how all the colors & background are changed:
+  ```html
+  <main class="orange-green"></main>
+  ```
+- Now let's try to change the class using Vue class bindings. We can use `v-bind` directive or its shortcut `:`. Replace that simple class in `<main>` with a dynamic class binding:
 
 ```html
 <main :class="{'orange-green': false}"></main>
@@ -362,7 +369,7 @@ Now we're going to actually use that Vuetify theme by creating a switch. Pressin
 
 Try to change `false` to `true` and vice versa. You can see how class is applied in Chrome dev tools and how the page color theme is changing.
 
--   Get excited! It's time to create your first Vue variable. First, you have to add `data()` to your Vue component. This function should return an object of our Vue variables. Let's create one in the `<script>` block. Overwrite the current `<script>` block:
+- Get excited! It's time to create your first Vue variable. First, you have to add `data()` to your Vue component. This function should return an object of our Vue variables. Let's create one in the `<script>` block. Overwrite the current `<script>` block:
 
 ```js
 <script>
@@ -383,33 +390,33 @@ At this point you can remove the HelloWorld.vue component from the `components` 
 
 So, now you have a variable called `themeSwitched` and its default value is `false`.
 
--   In the `<main>` tag, replace `false` in the class binding with our newly created variable:
+- In the `<main>` tag, replace `false` in the class binding with our newly created variable:
 
 ```html
 <main :class="{'orange-green': themeSwitched}"></main>
 ```
 
--   Change `themeSwitched` value inside `data` from `false` to `true`. Again, you can see the color change effect.
+- Change `themeSwitched` value inside `data` from `false` to `true`. Again, you can see the color change effect.
 
--   Now we only need a switch to change a theme. First we will create a button. We're using Vuetify so it will be a Vuetify button component. We create a Vuetify button with the text 'Switch theme' on it with: `<v-btn>Switch theme</v-btn>`. Let's place it in the `header` right after the `h1` tag:
+- Now we only need a switch to change a theme. First we will create a button. We're using Vuetify so it will be a Vuetify button component. We create a Vuetify button with the text 'Switch theme' on it with: `<v-btn>Switch theme</v-btn>`. Let's place it in the `header` right after the `h1` tag:
 
 ```html
 <header class="app-header dark-brown">
-	<h1>My Pet Store</h1>
-	<v-btn>Switch theme</v-btn>
+  <h1>My Pet Store</h1>
+  <v-btn>Switch theme</v-btn>
 </header>
 ```
 
--   Now add a click event handler to our button. We can use `v-on` directive or its shortcut `@`. This handler will change `themeSwitched` value to its opposite value, toggling the color-changing class.
+- Now add a click event handler to our button. We can use `v-on` directive or its shortcut `@`. This handler will change `themeSwitched` value to its opposite value, toggling the color-changing class.
 
-    ```html
-    <v-btn @click="themeSwitched = !themeSwitched">Switch theme</v-btn>
-    ```
+  ```html
+  <v-btn @click="themeSwitched = !themeSwitched">Switch theme</v-btn>
+  ```
 
 Test your application by clicking the button. Looks nice, right?
 
 **Congratulations! You've just finished Chapter 1!**
 
-# Final result
+## Final result
 
 ![final result chapter 1](./images/petshop_chapter1_1.jpg)
