@@ -8,7 +8,7 @@
 
 ## Anleitung
 
-Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-1-end) in Code Sandbox nachdem du dich eingeloggt hast.
+Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-1-end) in Code Sandbox, nachdem du dich eingeloggt hast. Dafür klickst du auf den Link **Import form Github** unten links auf der Hauptseite und fügst die URL des Repositories in das Feld. Du kannst ebenfalls mit dem Projekt fortfahren, dass du in [Kapitel 3](ch3.md) erstellt hast.
 
 In diesem Kapitel bauen wir eine Merkliste für Hunde, die wir mögen und vielleicht adoptieren möchten.
 Zuerst benötigen wir eine neue, leere Datei im `views`-Ordner namens `Favorites.vue`.
@@ -89,7 +89,7 @@ So sieht das Template jetzt aus:
     <v-subheader>My Favorites</v-subheader>
     <v-list-item @click="{}">
       <v-list-item-avatar>
-        <img src="https://dog.ceo/api/img/husky/n02110185_1469.jpg" />
+        <img src="https://images.dog.ceo/breeds/husky/n02110185_7888.jpg" />
       </v-list-item-avatar>
       <v-list-item-content>Fluffy</v-list-item-content>
       <v-list-item-action>
@@ -105,11 +105,10 @@ So sieht das Template jetzt aus:
 Jetzt siehst du, wie das Template im Browser aussieht. Es ist Zeit, die Testdaten durch echte Daten zu ersetzen. Das Problem: Wie können wir ausgewählte Hunde von der `Pets`-Komponente der unabhängigen `Favorites`-Komponente übergeben? Wir können keine props nutzen, da die beiden Komponenten keine Eltern-Kind-Beziehung haben... für solche Fälle brauchen wir _Zustandsmanagement_. Die Bibliothek dafür heißt in Vue: `Vuex`.
 
 ::: tip 💡
-Vuex ist eine Bibliothek, um Zustandsmanagement in einer Vue.js-Anwendung zu ermöglichen. Es dient als zentraler Speicher für alle Komponenten einer Anwendung und beinhaltet verschiedene Regeln, um den Zustand des Speichers nur über bestimmte Funktionen zu verändern.
-Mehr über Vues kannst du [hier](http://vuex.vuejs.org/en/) nachlesen.
+Vuex ist eine Bibliothek, um Zustandsmanagement in einer Vue.js-Anwendung zu ermöglichen. Es dient als zentraler Speicher für alle Komponenten einer Anwendung und beinhaltet verschiedene Regeln, um den Zustand des Speichers nur über bestimmte Funktionen zu verändern. Es erlaubt dir, Daten zu verwalten, die zwischen den Komponenten deiner Applikation geteilt werden können. Mehr über Vues kannst du [hier](http://vuex.vuejs.org/en/) nachlesen.
 :::
 
-Um diesen zentralen Speicher zu nutzen, müssen wir zunächst Vuex als Abhängigkeit hinzufügen. Klicke auf `Add Dependency`, suche nach `vuex` und installiere diese Bibliothek.
+Um diesen zentralen Speicher zu nutzen, müssen wir zunächst Vuex als Abhängigkeit hinzufügen. Dafür klicke in Coe Sandbox auf den Reiter `Explorer` -> `Dependencies` -> `Add Dependency` und suche nach `vuex`. Wenn du es installiert hast, wirst du sehen, dass es zu deiner `package.json` hinzugefügt wurde.
 
 Erstelle jetzt einen `store`-Ordner in dem `src`-Ordner. Erstelle eine neue Datei namens `store.js` in diesem neuen Ordner. Hier werden alle Daten der Anwendung gespeichert.
 
@@ -160,7 +159,7 @@ Jetzt haben alle Komponenten der Anwendung Zugriff auf den Speicher in einer "be
 Eine "berechnete Eigenschaft" kann genutzt werden, um schnelle Berechnungen von verschiedenen Eigenschaften durchzuführen, die im Template angezeigt werden. Diese Berechnungen werden gecached (=zwischengespeichert) und nur aktualisiert, wenn sich eine ihrer Abhängigkeiten verändert.
 :::
 
-Schreibe den `script`-Tag mit der `export default`-Anweisung in die `Favorites.vue`:
+Schreibe den `<script>` Block mit der `export default`-Anweisung in die `Favorites.vue`:
 
 ```js
 <script>export default {};</script>
