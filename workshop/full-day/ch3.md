@@ -1,10 +1,10 @@
 # 📋 Chapter 3: Connect your Project to an API
 
-| **Project&nbsp;Goal**           | Learn how API calls work and how to implement them in your web app                                                                                                                                                                                                                                                       |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **What&nbsp;you’ll&nbsp;learn** | Using the [DogCEO API](https://dog.ceo/dog-api/) you will load dog images dynamically, instead of using dummy data                                                                                                                                                                                                       |
+| **Project&nbsp;Goal**           | Learn how API calls work and how to implement them in your web app                                                                                                                                                                                                 |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **What&nbsp;you’ll&nbsp;learn** | Using the [DogCEO API](https://dog.ceo/dog-api/) you will load dog images dynamically, instead of using dummy data                                                                                                                                                 |
 | **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome. An account in CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/VueVixens/projects/tree/master/chapter-2-end). Instructions on how to do this are in [Appendix 1](appendix_1.md) |
-| **Time needed to complete**     | 1 hour                                                                                                                                                                                                                                                                                                                   |
+| **Time needed to complete**     | 1 hour                                                                                                                                                                                                                                                             |
 
 ## What You'll Build
 
@@ -29,13 +29,13 @@ First, add Axios's library to your project dependencies. To do so in Code Sandbo
 Import axios into the component where we will perform our API call - `views/Pets.vue`. In that component's script block (right after `<script>`), add this line:
 
 ```js
-import axios from 'axios';
+import axios from "axios";
 ```
 
 All our calls will use the same base URL with different endpoints. Right under the imports for axios and possible others, add the base URL to Axios' options in `views/Pets.vue`:
 
 ```js
-axios.defaults.baseURL = 'https://dog.ceo/api';
+axios.defaults.baseURL = "https://dog.ceo/api";
 ```
 
 With this line we have configured axios to always start API calls to the URL `https://dog.ceo/api`. Now we are ready to make our first API call.
@@ -115,7 +115,7 @@ created() {
 
 You should see the image change to a random husky image pulled from the Dog CEO API.
 
-## Use the API 2- Randomize the Images
+## Use the API 2 - Randomize the Images
 
 Let's try to load a random image for each dog in our `dogs` array. The first thing we need is a proper endpoint for each breed we have. Remember how we called to the endpoint `/breed/husky/images/random` for the breed `husky`? Let's create an array of links where each link is specific to a breed. We will create the array of links using the `.map` method.
 
