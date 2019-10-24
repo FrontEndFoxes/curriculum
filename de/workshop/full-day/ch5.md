@@ -452,7 +452,7 @@ Im Ganzen sollte das Tag nun folgendermaßen aussehen:
   label="Phone"
   required
   :rules="phoneRules"
-  v-mask="(###) ### - ####"
+  v-mask="'(###) ### - ####'"
   v-model="phone"
 ></v-text-field>
 ```

@@ -453,7 +453,7 @@ By using `'(###) ### - ####'` as the input for our mask, we limit the input of o
   label="Phone"
   required
   :rules="phoneRules"
-  v-mask="(###) ### - ####"
+  v-mask="'(###) ### - ####'"
   v-model="phone"
 ></v-text-field>
 ```
