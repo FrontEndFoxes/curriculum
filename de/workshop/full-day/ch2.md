@@ -116,7 +116,7 @@ const routes = [
 ];
 ```
 
-- Jetzt müssen wir eine `VueRouter`-Instanz erstellen und dieser unsere Routen übergeben. Kopiere diese Zeile unter `const routes`:
+- Jetzt müssen wir eine `VueRouter`-Instanz erstellen und dieser unsere Routen übergeben. Kopiere diese Zeile unter das Objekt `const routes` (eine Zeile unter `];`):
 
 ```js
 const router = new VueRouter({ routes });
