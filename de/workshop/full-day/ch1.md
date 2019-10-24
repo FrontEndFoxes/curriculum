@@ -210,7 +210,7 @@ Bevor wir das Template bearbeiten, installieren wir Vuetify. Vuetify ist eine Bi
 Vuetify ist eine Komponentenbibliothek für Vue. Vuetify liefert sauber implementierte, semantische und wiederverwendbare Komponenten, um eine App zu bauen. Die Standard Anleitung und Dokumentation für Vuetify findest du [hier](https://vuetifyjs.com/en/getting-started/quick-start)
 :::
 
-Installiere Vuetify indem du auf den `Add Dependency`-Button in dem Dependency Dropdown auf der linken Seite in Code Sandbox klickst (falls sie geschlossen ist, öffne die Seitenleiste `Sandbox Info` und eventuell musst du hinunter scrollen!). Suche nach 'Vuetify' und installiere es.
+Installiere Vuetify, indem du auf den `Add Dependency`-Button in dem Dependency Dropdown auf der linken Seite in Code Sandbox klickst (falls sie geschlossen ist, öffne die Seitenleiste `Sandbox Info` und eventuell musst du hinunter scrollen!). Suche nach 'Vuetify' und installiere es.
 
 Überprüfe, ob die neue Abhängigkeit installiert wurde. Öffne die Datei `package.json` und suche Vuetify unter `dependencies`. Es sollte so aussehen:
 
