@@ -271,13 +271,13 @@ The `v-bind` directive dynamically binds one or more attributes, or a component 
 
 Now it works!
 
-Now we have to display the dog's name. For text, Vue uses _"mustache" syntax_ - double curly braces like these: `{{` `}}`. The mustache tag will be replaced with the value of the binded property. Edit the `<h3>` tag to use curly braces and place the dog's name:
+Now we have to display the dog's name. For text, Vue uses _"mustache" syntax_ - double curly braces like these: `{{` `}}`. The mustache tag will be replaced with the value of the binded property.  Replace the text `Looking for a dog` inside the `<h3></h3>` tag and add the dog's name by using the curly braces:
 
 ```html
 <h3>{{pet.name}}</h3>
 ```
 
-The only thing left is the dog's breed. Let's add one more `<p></p>` tag right below the name and display breed there:
+The only thing left is the dog's breed. Let's add one more `<p></p>` tag right below the line with the `<h3></h3>` tag and display breed there:
 
 ```html
 <p>{{pet.breed}}</p>

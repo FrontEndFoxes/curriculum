@@ -329,7 +329,7 @@ data() {
 Jetzt kommt die erste Regel. Denk dran, Validierungsregeln sind Funktionen, die den Wert des Feldes erhalten und einen Bool'schen Wert zurück geben; `true` bedeutet, dass das Feld einen korrekten/validen Wert beinhaltet, `false` bedeutet, dass der Wert nicht korrekt ist. Also sieht die erste Regel so aus:
 
 ```js
-nameRules: [name => !!name];
+nameRules: [name => !!name]
 ```
 
 Was passiert hier? `!name` gibt `true` zurück, wenn der Name leer ist und andernfalls `false`. Mit der zweiten Verneinung kehren wir das noch einmal um. Die doppelte Verneinung wird oft genutzt, um zu überprüfen, ob ein String nicht-leer ist.
@@ -350,7 +350,7 @@ Klicke jetzt in das Name-Feld und dann in ein anderes. Du sieht, wie Name rot wi
 Fehlermeldungen können mit Hilfe des `||`-Operators in der Regel ergänzt werden. Der Wert der Validierung ist also `false OR <Fehlermeldung>`. Lass uns die Fehlermeldung für das Name-Feld verbessern:
 
 ```js
-nameRules: [name => !!name || "Name is required"];
+nameRules: [name => !!name || "Name is required"]
 ```
 
 Jetzt sieht die Fehlermeldung doch schon besser aus!
@@ -361,7 +361,7 @@ Wir fügen eine weitere Regel hinzu: Ein Name darf nicht kürzer als zwei Buchst
 nameRules: [
   name => !!name || "Name is required",
   name => name.length > 2 || "Name must be longer than 2 characters"
-];
+]
 ```
 
 Schreibe nur einen Buchstaben in das Name-Feld, die neue Fehlermeldung sollte angezeigt werden.
@@ -371,7 +371,7 @@ Schreibe nur einen Buchstaben in das Name-Feld, die neue Fehlermeldung sollte an
 Jetzt wechseln wir zum E-Mail-Feld. Zuerst erstellen wir die `emailRules`-Property in `data` und fügen den nicht-leeren Check wie zuvor auch beim Namen hinzu:
 
 ```js
-emailRules: [email => !!email || "Email is required"];
+emailRules: [email => !!email || "Email is required"]
 ```
 
 Vergiss nicht `required` und die `rules`-Property an das E-Mail-Feld zu schreiben:
@@ -401,7 +401,7 @@ emailRules: [
   email =>
       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email) ||
       "Email must be valid"
-  ],
+]
 ```
 
 Gebe jetzt irgendwelche zufälligen Zeichen im E-Mail-Feld ein. Du siehst die Fehlermeldung; eine E-Mail muss ein `@`-Zeichen, einen Punkt und mindestens zwei Zeichen nach dem Punkt haben. Wenn du versuchst, deine eigene E-Mail-Adrresse einzufügen, wirst du sehen, dass ein Fehler angezeigt wird.
@@ -414,7 +414,7 @@ Jetzt wechseln wir zum `phone`-Feld. Wir erstellen ein ähnliches Regelset wie f
 phoneRules: [
   phone => !!phone || "Phone is required",
   phone => phone.length >= 7 || "Phone number should be at least 7 digits"
-];
+]
 ```
 
 Aber man kann immer noch Buchstaben eingeben. Und die Telefonnummer wird nicht formatiert. Um das zu erreichen, werden wir die `vue-the-mask` hinzufügen. Dafür klicke in Code Sandbox auf den Reiter `Explorer` -> `Dependencies` -> `Add Dependency` und suche nach `vue-the-mask`. Wenn du es installiert hast, wirst du sehen, dass es zu deiner `package.json` hinzugefügt wurde. Nun wurde `vue-the-mask` installiert, wir müssen es nun noch der Komponente als Direkte hinzufügen.
@@ -452,7 +452,7 @@ Im Ganzen sollte das Tag nun folgendermaßen aussehen:
   label="Phone"
   required
   :rules="phoneRules"
-  v-mask="(###) ### - ####"
+  v-mask="'(###) ### - ####'"
   v-model="phone"
 ></v-text-field>
 ```

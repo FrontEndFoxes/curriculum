@@ -258,6 +258,7 @@ Wenn wir `src` nur mit dem Attriubut `pet.img` ersetzen...
 ```html
 <v-img src="pet.img" height="170px">
 ```
+
 ... werden noch keine Bilder angezeigt. Warum? Weil wir so einen statischen Wert einsetzen, die App erwartet eine Datei mit dem Namen `pet.img`. Diese Datei gibt es allerdings nicht. Um den Wert von `pet.img` dynamisch in das `src`-Attribut zu setzen, müssen wir die `v-bind`-Direktive (oder den Shortcut `:`) nutzen.
 
 ```html
@@ -270,17 +271,18 @@ Die `v-bind`-Direktive erzeugt dynamisch aus ein oder mehreren Attributen, oder 
 
 Es funktioniert!
 
-Jetzt zeigen wir den Namen des Hundes an. Für Text wird in Vue die _"mustache"-Syntax_ (=Schnauz) genutzt - doppelte geschweifte Klammern: `{{` `}}`. Dieser Tag wird durch den Wert der zugewiesenen Eigenschaft ersetzt. Bearbeite den `<h3>`-Tag mit dem Namen des Hundes, nutze dafür die geschweiften Klammern:
+Als Nächstes möchten wir den Namen des Hundes anzeigen. Für Text wird in Vue die _"mustache"-Syntax_ (=Schnauz) genutzt - doppelte geschweifte Klammern: `{{` `}}`. Dieser Tag wird durch den Wert der zugewiesenen Eigenschaft ersetzt. Ersetze den Text `Looking for a dog` im `<h3></h3>` Tag, um den Namen des Hundes anzuzeigen:
 
 ```html
 <h3>{{pet.name}}</h3>
 ```
 
-Jetzt fehlt noch die Art des Hundes. Füge einen weiteren `<p></p>` Tag direkt unter dem Namen ein und zeige die Art des Hundes an:
+Jetzt fehlt noch die Art des Hundes. Füge einen weiteren `<p></p>` Tag unter der Zeile mit dem `<h3></h3>` Tag und zeige die Art des Hundes an:
 
 ```html
 <p>{{pet.breed}}</p>
 ```
+
 Soweit funktioniert alles, wie wir es uns vorgestellt haben. Nur das Template ist inzwischen etwas unübersichtlich geworden. Wir können es überarbeiten und etwas verschlanken. Dafür erstellen wir eine `Dog`-Komponente und übergeben das aktuelle Haustier als Eigenschaft (=property).
 
 ::: tip 💡
@@ -331,16 +333,16 @@ In dem Template von `Dog.vue` musst du `pet` mit `dog` ersetzen, weil es innerha
 
 ```html
 <template>
-	<v-card color="grey lighten-2">
-	  <v-img :src="dog.img" height="170px">
-	  </v-img>
-	    <v-card-title>
-	      <div>
-	        <h3>{{dog.name}}</h3>
-	        <p class="breed">{{dog.breed}}</p>
-	      </div>
-	    </v-card-title>
-	</v-card>
+  <v-card color="grey lighten-2">
+    <v-img :src="dog.img" height="170px">
+    </v-img>
+      <v-card-title>
+        <div>
+          <h3>{{dog.name}}</h3>
+          <p class="breed">{{dog.breed}}</p>
+        </div>
+      </v-card-title>
+  </v-card>
 </template>
 ```
 
@@ -377,7 +379,7 @@ Füge den neuen `<app-dog>`-Tag in `Pets.vue` an die Stelle ein, an der du zuvor
 
 ```html
 <v-flex xs12 sm4 md3 v-for="pet in dogs" :key="pet.breed">
-   <app-dog></app-dog>
+  <app-dog></app-dog>
 </v-flex>
 ```
 
@@ -391,6 +393,6 @@ Jetzt müssen wir der `Dog`-Komponente noch die `dog`-Eigenschaft übergeben. Da
 
 **Jetzt solltest du ein hübsches Kachel-Layout mit vielen Hunden haben! Kapitel 2 ist damit abgeschlossen!**
 
-# Ergebnis
+## Ergebnis
 
 ![final result chapter 2](./images/petshop_chapter2.jpg)
