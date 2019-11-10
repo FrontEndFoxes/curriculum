@@ -23,9 +23,9 @@ module.exports = (md) => {
   // Define our button and some styling
   const button = `
   <div style="display: flex; justify-content: flex-end;">
-  <a href="#" onclick="copyText(event, this)">
-  Copy
-  </a>
+    <a href="#" onclick="copyText(event, this)">
+      Copy
+    </a>
   </div>
   `;
 
