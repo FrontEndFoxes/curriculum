@@ -257,15 +257,15 @@ Open `app/components/HelloWorld.vue` and delete everything between the template'
 ```html
 <ActionBar class="action-bar" title="Awesome Photons!"/>
         <StackLayout>
-          <SegmentedBar color="blueviolet"
-                selectedBackgroundColor="blueviolet" class="bar"
+          <SegmentedBar color="white" backgroundColor="blueviolet"
+                selectedBackgroundColor="hotpink"  class="bar"
                 :items="segmentedBarItems" v-model="selectedBarIndex"
                   />
             <StackLayout height="100%" :class="mode"></StackLayout>
         </StackLayout>
 ```
 
-The SegmentedBar does not yet appear as the binded values `:items` and the `v-model` have not yet been set. Find the data block (under the template block) and add values for a SegmentedBar. Also set its default SelectedBarIndex and create a placeholder value for `mode`. The latter will be used to change the UI when the Bar is tapped:
+The SegmentedBar does not yet appear as the binded values `:items` and the `v-model` have not yet been set. Find the data block (under the template block, within the script block) and add values for a SegmentedBar by overwriting the `data()` method. Also set its default SelectedBarIndex and create a placeholder value for `mode`. The latter will be used to change the UI when the Bar is tapped:
 
 ```js
 data() {
@@ -309,6 +309,7 @@ Under the `<script>` tags, you'll find a `<style>` tag. Overwrite the two styles
 	background-image: url('~/images/unicorn.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center;
 }
 ```
 
@@ -326,7 +327,7 @@ Make sure to rename your file `unicorn.jpg` and save it after uploading it.
 
 We want the UI to change, depending on whether we tap `Rainbows`, `Unicorns`, or `Stop!`.
 
-Create a `methods` block after the last comma of the `data` block to manage the behavior of the SegmentedBar:
+Create a `methods` block after the last comma (add the comma if it's not yet there) of the `data` method to manage the behavior of the SegmentedBar:
 
 ```js
 methods: {
@@ -348,7 +349,11 @@ methods: {
   }
 ```
 
-Then, edit the `<SegmentedBar>` itself to watch for this method: append @selectedIndexChange to the `<SegmentedBar>` markup:
+::: tip
+Sometimes the NativeScript Playground gets scrambled if you add JavaScript via paste. To fix it, type <command><X> twice.
+:::
+
+Then, edit the `<SegmentedBar>` itself to watch for this method: append @selectedIndexChange to the `<SegmentedBar>` markup in `<template>`:
 
 ```html
 @selectedIndexChange="onSelectedIndexChange($event)"
@@ -357,18 +362,18 @@ Then, edit the `<SegmentedBar>` itself to watch for this method: append @selecte
 The finished template block now looks like this:
 
 ```html
-<Page class="page">
-      <ActionBar class="action-bar" title="Awesome Photons!"/>
-
+<template>
+    <Page>
+        <ActionBar class="action-bar" title="Awesome Photons!" />
         <StackLayout>
-        <SegmentedBar color="blueviolet"
-              selectedBackgroundColor="blueviolet" class="bar"
-              :items="segmentedBarItems" v-model="selectedBarIndex"
-              @selectedIndexChange="onSelectedIndexChange($event)"
-                />
-          <StackLayout height="100%" :class="mode"></StackLayout>
+            <SegmentedBar color="white" backgroundColor="blueviolet"
+                selectedBackgroundColor="hotpink" class="bar"
+                :items="segmentedBarItems" v-model="selectedBarIndex"
+                @selectedIndexChange="onSelectedIndexChange($event)" />
+            <StackLayout height="100%" :class="mode"></StackLayout>
         </StackLayout>
-</Page>
+    </Page>
+</template>
 ```
 
 Now, when you tap the SegmentedBar, the UI should change.
@@ -377,7 +382,7 @@ Now, when you tap the SegmentedBar, the UI should change.
 
 Now it's finally time to make the Photon light up when you tap the SegmentedBar.
 
-At the top of the file, set some `const` values.
+In the Playground, right underneath `<script>`, set some `const` values.
 
 ```js
 const http = require('http');
@@ -394,11 +399,11 @@ Next, you need to tell the REST API which device to call and send it a token. Yo
 
 Copy that value and change the `xxxxx` value in the baseUrl const to your device ID.
 
-Next, you need a token to use the REST API itself. Click the bottom 'gear' icon in Particle Build and copy the Access Token value, replacing 'yyyyy' with your token.
+Now you need a token to use the REST API itself. Click the bottom 'gear' icon in Particle Build and copy the Access Token value, replacing 'yyyyy' with your token.
 
 ![Particle IDE](./images/particle2.png)
 
-The last value you added is the name of the endpoint you're going to call - remember that Particle function you set above? This is how the mobile app is going to call it.
+The last value you added is the name of the endpoint you're going to call. Remember that Particle function you set above? This is how the mobile app is going to call it.
 
 ## Create a Method (2)
 
@@ -425,93 +430,105 @@ Here, we're making an http request to our baseUrl at the endpoint we set up as a
 
 The final thing we need to do is actually call `launchMode` when the SegmentedBar is tapped. Go ahead and uncomment the `//this.launchMode(this.mode)` code in the `onSelectedIndexChange` method.
 
-The entire HelloWorld.vue file looks like this:
+The entire HelloWorld.vue file looks like this, with your personal device's id and token input:
 
 ```js
-const http = require("http");
-const baseUrl = 'https://api.particle.io/v1/devices/my-device';
-const token = 'my-token';
-const endpoint = 'launchMode';
-
-data() {
-    return {
-      segmentedBarItems: function () {
-        var segmentedBarModule = require("ui/segmented-bar");
-        let rainbow = new segmentedBarModule.SegmentedBarItem();
-        rainbow.title = "Rainbows";
-        let unicorn = new segmentedBarModule.SegmentedBarItem();
-        unicorn.title = "Unicorns";
-        let stop = new segmentedBarModule.SegmentedBarItem();
-        stop.title = "Stop!";
-        return [rainbow, unicorn, stop];
-      }(),
-      selectedBarIndex: 2,
-      mode: ''
-    };
-  },
-  template: `
+<template>
     <Page>
-      <ActionBar class="action-bar" title="Awesome Photons!"/>
-
+        <ActionBar class="action-bar" title="Awesome Photons!" />
         <StackLayout>
-        <SegmentedBar color="blueviolet"
-              selectedBackgroundColor="blueviolet" class="bar"
-              :items="segmentedBarItems" v-model="selectedBarIndex"
-              @selectedIndexChange="onSelectedIndexChange($event)"  />
-          <StackLayout height="100%" :class="mode"></StackLayout>
+            <SegmentedBar color="white" backgroundColor="blueviolet"
+                selectedBackgroundColor="hotpink" class="bar"
+                :items="segmentedBarItems" v-model="selectedBarIndex"
+                @selectedIndexChange="onSelectedIndexChange($event)" />
+            <StackLayout height="100%" :class="mode"></StackLayout>
         </StackLayout>
     </Page>
-  `,
-  methods: {
-    onSelectedIndexChange(args) {
-      let segmentedBarIndex = args.object.selectedIndex;
-      if (segmentedBarIndex == 0) {
-        this.mode = 'rainbow'
-        this.launchMode(this.mode);
-      }
-      else if (segmentedBarIndex == 1) {
-        this.mode = 'unicorn'
-        this.launchMode(this.mode);
-      }
-      else {
-        this.mode = 'stop'
-        this.launchMode(this.mode);
-      }
-    },
-    launchMode(mode) {
-      http.request({
-        url: `${baseUrl}/${endpoint}?access_token=${token}`,
-        method: "POST",
-        headers: { 'content-type': 'application/json' },
-        content: JSON.stringify({
-          mode: mode
-        })
-      }).then((response) => {
-        console.log(JSON.stringify(response))
-      }, (e) => {
-        alert("error")
-      });
-    }
-   }
-  }
+</template>
+
+<script>
+    const http = require("http");
+    const baseUrl =
+        "https://api.particle.io/v1/devices/<your device id>";
+    const token = "<your token>";
+    const endpoint = "launchMode";
+    export default {
+        data() {
+            return {
+                segmentedBarItems: (function() {
+                    var segmentedBarModule = require(
+                        "ui/segmented-bar");
+                    let rainbow = new segmentedBarModule
+                        .SegmentedBarItem();
+                    rainbow.title = "Rainbows";
+                    let unicorn = new segmentedBarModule
+                        .SegmentedBarItem();
+                    unicorn.title = "Unicorns";
+                    let stop = new segmentedBarModule
+                        .SegmentedBarItem();
+                    stop.title = "Stop!";
+                    return [rainbow, unicorn, stop];
+                })(),
+                selectedBarIndex: 2,
+                mode: ""
+            };
+        },
+        methods: {
+            onSelectedIndexChange(args) {
+                let segmentedBarIndex = args.object.selectedIndex;
+                if (segmentedBarIndex == 0) {
+                    this.mode = "rainbow";
+                    this.launchMode(this.mode);
+                } else if (segmentedBarIndex == 1) {
+                    this.mode = "unicorn";
+                    this.launchMode(this.mode);
+                } else {
+                    this.mode = "stop";
+                    this.launchMode(this.mode);
+                }
+            },
+            launchMode(mode) {
+                http.request({
+                    url: `${baseUrl}/${endpoint}?access_token=${token}`,
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    content: JSON.stringify({
+                        mode: mode
+                    })
+                }).then(
+                    response => {
+                        console.log(JSON.stringify(response));
+                    },
+                    e => {
+                        alert("error");
+                    }
+                );
+            }
+        }
+    };
 </script>
 
 <style scoped>
-.action-bar {
-    color: white;
-    background-color: blueviolet;
-}
-.bar{
-    margin: 20;
-}
-.rainbow {
-    background: linear-gradient(to bottom, red, orange, yellow, green, blue, purple);
-}
-.unicorn{
-    background-image: url("~/images/unicorn.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+    .action-bar {
+        color: white;
+        background-color: blueviolet;
+    }
+
+    .bar {
+        margin: 20;
+    }
+
+    .rainbow {
+        background: linear-gradient(to bottom, red, orange, yellow, green, blue, purple);
+    }
+    .unicorn {
+        background-image: url('~/images/unicorn.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 </style>
 
 ```
@@ -520,8 +537,8 @@ Now, if you Photon is connected to wifi with the correct code flashed to it, you
 
 ![rainbows unicorns](./images/rainbows_unicorns.gif)
 
-It's really interesting to build Vue.js apps for mobile devices in the NativeScript playground. Now that you know how, what else can you build? Could you extend this app to create different lighting modes?
+It's really interesting to build Vue.js apps for mobile devices in the NativeScript Playground. Now that you know how, what else can you build? Could you extend this app to create different lighting modes?
 
 ## Author
 
-Made with ❤️ by Jen Looper
+Made with 📱❤️ by Jen Looper

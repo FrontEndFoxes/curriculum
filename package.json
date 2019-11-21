@@ -1,0 +1,30 @@
+{
+	"name": "vue-vixens-workshops",
+	"version": "1.0.0",
+	"description": "Vue Vixens Workshops",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vuevixens/docs.git"
+	},
+	"keywords": [
+		"Vue Vixens",
+		"workshops",
+		"Vue.js"
+	],
+	"author": "Vue Vixens Inc.",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/vuevixens/docs/issues"
+	},
+	"homepage": "https://github.com/vuevixens/docs/#readme",
+	"dependencies": {
+		"vuepress": "^1.0.3"
+	},
+	"scripts": {
+		"docs:build": "vuepress build",
+		"dev": "vuepress dev"
+	},
+	"devDependencies": {
+		"all-contributors-cli": "^6.9.1"
+	}
+}

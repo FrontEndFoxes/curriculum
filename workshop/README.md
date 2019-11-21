@@ -1,12 +1,12 @@
 # About Vue Vixens Workshops
 
-Vue Vixens is an initiative created by Jen Looper, a Senior Developer Advocate at [Progress](http://www.progress.com). Vue Vixens' mission is to create workshops to teach Vue.js in a cool and fun way to 'foxy people who identify as women'. It is based on the successful model pioneered by Shmuela Jacobs for the Angular community, [http://www.ng-girls.org](ng-girls.org). Ng-Girls was in turn inspired by the Rails Bridge and Django Girls initiatives.
+Vue Vixens is an initiative created by Jen Looper, a Cloud Developer Advocate Lead at [Microsoft](https://www.microsoft.com). Vue Vixens' mission is to create workshops to teach Vue.js in a cool and fun way to 'foxy people who identify as women'. It is based on the successful model pioneered by Shmuela Jacobs for the Angular community, [ng-girls.org](http://www.ng-girls.org). Ng-Girls was in turn inspired by the Rails Bridge and Django Girls initiatives.
 
 ::: tip Not just workshops!
-We do more than full day workshops! We also can help with your conference's diversity offerings - just contact us at [info@vuevixens.org](mailto:info@vuevixens.org). We also have chapters worldwide; find us at [http://vuevixens.org](VueVixens.org).
+We do more than full day workshops! We also can help with your conference's diversity offerings - just contact us at [info@vuevixens.org](mailto:info@vuevixens.org). We also have chapters worldwide; find us at [VueVixens.org](https://vuevixens.org).
 :::
 
-These workshops are designed to help people get better acquainted with both Vue.js for both web and mobile development. 3/4 of a standard workshop day is spent on the web, and 1/4 on mobile. Below is an interview with Jen and Evan You, creator of Vue, and Igor Randjelovic, creator of NativeScript-Vue, giving the background and history of the projects.
+These workshops are designed to help people get better acquainted with both Vue.js for both web and mobile development. Below is an interview with Jen and Evan You, creator of Vue, and Igor Randjelovic, creator of NativeScript-Vue, giving the background and history of the projects.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jFsmrudIFmI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -14,9 +14,13 @@ These workshops are designed to help people get better acquainted with both Vue.
 
 ## FAQ
 
+**What's a skulk?**
+
+A group of foxes is called a 'skulk', like a group of geese is called a 'gaggle'. When you get together with other Vixens, you're participating in a skulk! Workshops at conferences are called skulks, whereas meetups with Vue Vixens chapters are just...meetups, because they are often mixed audience. For more information on Vue Vixens chapters and meetups, check [Meetup.com](https://www.meetup.com/vuevixens/).
+
 **What's the difference between a Chapter, a 'Mini', and a 'Nano'?**
 
-These chapters are presented as two distinct types. The first six chapters comprise the full-day workshop. Other chapters are listed as 'mini-workshops' and can be done ad hoc with groups for breakfasts, lunch'n'learn sessions, or meetups. Nanos are ten to thirty-minute warm-up icebreaker coding exercises used by our Chapters.
+These chapters are presented as two distinct types. The first five chapters comprise the full-day web workshop. Other activities are listed as 'mini-workshops' and can be done ad hoc with groups for breakfasts, lunch'n'learn sessions, or 1-3 hour long meetups. Nanos are ten to thirty-minute warm-up icebreaker coding exercises used by our Chapters.
 
 **Why are the chapters broken up into parts?**
 
@@ -24,11 +28,11 @@ All the online codelabs are designed to be completed in groups in a self-study m
 
 **Where can I register for a skulk?**
 
-Workshop attendees and mentors can register for events at [http://www.vuevixens.org](vuevixens.org). Keep an eye on our Twitter feed @vuevixens for announcements of upcoming events. Vue Vixens workshops are free, but depend on budget from conferences and meetups to provide lunch, breakfast, or snacks, and a space with wifi.
+Workshop attendees and mentors can register for events at [vuevixens.org](https://www.vuevixens.org). Keep an eye on our Twitter feed [@vuevixens](http://www.twitter.com/vuevixens) for announcements of upcoming events. Vue Vixens workshops are free, but depend on budget from conferences and meetups to provide lunch, breakfast, or snacks, and a space with wifi.
 
-**I'm a guy. Can I participate?**
+**I identify as male. Can I participate?**
 
-The goal of the program is to familiarize women and those who identify as such with concepts of programming for web and mobile using Vue.js in a supportive and inclusive environment. Experienced Vue developers, however, are very welcome to join in our efforts to organize events, support our scholarship fund, mentor a skulk, and provide content. We are grateful for all kinds of help!
+The goal of the program is to familiarize women and those who identify as such with concepts of programming for web and mobile using Vue.js in a supportive and inclusive environment. Experienced Vue developers, however, are very welcome to join in our efforts to support our scholarship fund, mentor a skulk, and provide content. We are grateful for all kinds of help!
 
 ![inaugural skulk in New Orleans](./images/inaugural_skulk.jpg)
 
@@ -46,14 +50,3 @@ The goal of the program is to familiarize women and those who identify as such w
     -   Create a 'favorites list' for the shop so that you can add and remove a dog from your list
 -   Chapter 5: Complete the Experience with a Form
     -   Create a functional form to adopt a dog
--   Chapter 6: Mobilize me
-    -   Create 'Tindogs', an app to sort through a deck of dog images. This app will be built in the NativeScript Playground
-
----
-
-### Thank You to Our Contributors!
-
-| [<img alt="NataliaTepluhina" src="https://avatars0.githubusercontent.com/u/18719025?v=4&s=117" width="117">](https://github.com/NataliaTepluhina) | [<img alt="jlooper" src="https://avatars2.githubusercontent.com/u/1450004?v=4&s=117" width="117">](https://github.com/jlooper) | [<img alt="immarina" src="https://avatars2.githubusercontent.com/u/14843771?v=4&s=117" width="117">](https://github.com/jlooper)
-| :--: |:--: |:--:
-[Natalia Tepluhina](https://github.com/NataliaTepluhina)                                              |[Jen Looper](https://github.com/jlooper)|[Marina Mosti](https://github.com/immarina)
-

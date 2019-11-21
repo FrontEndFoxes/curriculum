@@ -1,6 +1,6 @@
 .DS_Store
 *.sw*
 *.log
-*.vuepress
-*.dist
+*.vuepress/dist
 .idea
+node_modules

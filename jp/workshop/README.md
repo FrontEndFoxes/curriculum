@@ -1,0 +1,3 @@
+# About Vue Vixens Workshops
+
+Vue Vixens is an initiative created by Jen Looper, a Senior Developer Advocate at [Progress](http://www.progress.com). Vue Vixens' mission is to create workshops to teach Vue.js in a cool and fun way to 'foxy people who identify as women'. It is based on the successful model pioneered by Shmuela Jacobs for the Angular community, [ng-girls.org](http://www.ng-girls.org). Ng-Girls was in turn inspired by the Rails Bridge and Django Girls initiatives.
