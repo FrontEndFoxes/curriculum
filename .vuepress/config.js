@@ -97,7 +97,8 @@ module.exports = {
 					{
 						title: 'ミニワークショップ',
 						children: [
-							'/jp/workshop/minis/mini1'
+							'/jp/workshop/minis/mini1',
+							'/jp/workshop/minis/mini2'
 						],
 					},
 				],
