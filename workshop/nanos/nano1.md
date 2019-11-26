@@ -153,7 +153,7 @@ mutations: {
   addGame(state, game) {
     state.games.push(game);
   }
-}
+},
 
 actions: {
   addGame(context, game) {
@@ -205,7 +205,7 @@ gameTitles(state) {
 }
 ```
 
-You will notice that the difference between using a getter and accesxing state directly as you did above
+You will notice that the difference between using a getter and accessing state directly as you did above
 is that here you have a chance to parse or modify your data before sending it back to the caller. In
 this case, we're extracting an array of only the game titles. Lets output this on our app.
 
