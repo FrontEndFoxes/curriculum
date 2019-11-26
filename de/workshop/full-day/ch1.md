@@ -1,10 +1,10 @@
 # 📋 Kapitel 1: Die My Pet Shop Web App
 
-| **Ziel**            | Lerne Vue.js kennen mit einer statischen Webanwendung                                                     |
-| --------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| **Was du lernen wirst**       | Setup einer Vue.js App, Styling in Vue, Struktur und Aufbau des Quellcodes.              |
-| **Was du dafür benötigst**       | Einen modernen Browser, z.B. Google Chrome. Einen Account bei CodeSandbox.io. |
-| **Dauer** | 1/2 Stunde                                                                                                          |
+| **Ziel**                   | Lerne Vue.js kennen mit einer statischen Webanwendung                         |
+| -------------------------- | ----------------------------------------------------------------------------- |
+| **Was du lernen wirst**    | Setup einer Vue.js App, Styling in Vue, Struktur und Aufbau des Quellcodes.   |
+| **Was du dafür benötigst** | Einen modernen Browser, z.B. Google Chrome. Einen Account bei CodeSandbox.io. |
+| **Dauer**                  | 1/2 Stunde                                                                    |
 
 ## Anleitung
 
@@ -206,12 +206,11 @@ Die Styles hinzuzufügen hat unsere App nicht viel verändert. Die `<li>`-Liste 
 
 Bevor wir das Template bearbeiten, installieren wir Vuetify. Vuetify ist eine Bibliothek, die unsere Vue Apps im Material Design styled. In diesem Kapitel werden wir Vuetify nur für einen Schalter benutzen. In den folgenden Kapiteln werden wir Vuetify noch für weitere Komponenten nutzen.
 
-
 ::: tip 💡
 Vuetify ist eine Komponentenbibliothek für Vue. Vuetify liefert sauber implementierte, semantische und wiederverwendbare Komponenten, um eine App zu bauen. Die Standard Anleitung und Dokumentation für Vuetify findest du [hier](https://vuetifyjs.com/en/getting-started/quick-start)
 :::
 
-Installiere Vuetify indem du auf den `Add Dependency`-Button in dem Dependency Dropdown auf der linken Seite in Code Sandbox klickst (eventuell musst du hinunter scrollen!). Suche nach 'Vuetify' und installiere es.
+Installiere Vuetify, indem du auf den `Add Dependency`-Button in dem Dependency Dropdown auf der linken Seite in Code Sandbox klickst (falls sie geschlossen ist, öffne die Seitenleiste `Sandbox Info` und eventuell musst du hinunter scrollen!). Suche nach 'Vuetify' und installiere es.
 
 Überprüfe, ob die neue Abhängigkeit installiert wurde. Öffne die Datei `package.json` und suche Vuetify unter `dependencies`. Es sollte so aussehen:
 
