@@ -95,9 +95,10 @@ module.exports = {
 				label: '日本語',
 				sidebar: [
 					{
-						title: 'ワークショップ',
+						title: 'ミニワークショップ',
 						children: [
-							'/jp/workshop/minis/mini1'
+							'/jp/workshop/minis/mini1',
+							'/jp/workshop/minis/mini2'
 						],
 					},
 				],

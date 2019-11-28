@@ -1,4 +1,4 @@
-# 🐶 Mini Workshop 1: Build A Simple Pet Fetching Web App - ペット情報取得アプリケーションの構築
+# 🐶 Mini Workshop 1: ペットの情報を取得する Web アプリケーションの構築
 
 | プロジェクトのゴール | Vueアプリケーションのセットアップ、コンポーネントの基本、Axiosを使用した簡単な REST API コールの実行 |
 | --- | --- |
