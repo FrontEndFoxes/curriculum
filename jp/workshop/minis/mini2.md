@@ -1,37 +1,35 @@
 # 📱 Mini Workshop 2: ペットの情報を表示する Mobile アプリケーションの構築
 
-<!-- TODO: localization -->
+| **プロジェクトのゴール** | ランダムにペットを表示するモバイルアプリを NativeScript-Vue で構築 |
+| ----------------- | ------------------------------------------------------- |
+| **このワークショップで学ぶこと** | NativeScript と Vue.js でのモバイルアプリの作り方、API コールとデータ表示の仕方 |
+| **必要なツール** | モダンブラウザ（例：Chrome）<br><br>[NativeScript Playground](http://play.nativescript.org)（バージョン管理のためアカウント作成を推奨します）<br><br>iOS または Android のスマートフォンと NativeScript Playground、Preview アプリのインストール<br><br>Playground 用に NativeScript Viewer と NativeScript Playground の二つのアプリがセットで必要です。<br><br>Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) / [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview).<br><br>iOS: [NativeScript Playground](https://itunes.apple.com/jp/app/nativescript-playground/id1263543946) / [NativeScript Preview](https://itunes.apple.com/jp/app/nativescript-preview/id1264484702) |
+| **かかる時間** | 20分 |
+| **サンプルアプリを試したい場合**   | [Playground App で開く](https://play.nativescript.org/?template=play-vue&id=c3o4tl&v=2) |
 
-| **Project Goal**                | Build a NativeScript-Vue mobile app to display random pets                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **What you’ll learn**           | How to build a mobile app with NativeScript and Vue.js, how to make external API calls and have data display in the app.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome.<br><br>Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact.<br><br>A mobile phone (iOS or Android) with the NativeScript Playground and Preview apps installed.<br><br>The two NativeScript companion apps for the playground are the NativeScript Viewer and NativeScript Playground.<br><br>On Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) and [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview).<br><br>On iOS: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) and [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702) |
-| **Time needed to complete**     | 20 minutes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| **Just want to try the app?**   | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=c3o4tl&v=2)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+# インストラクション
 
-# Instructions
+## アプリケーション基盤の構築
 
-## Scaffold your app
+[NativeScript Playground](http://play.nativescript.org) を開いてみましょう。初めて開いたときは主な機能の箇所を示すマークがいくつか表示されます。
 
-Open the [NativeScript Playground](http://play.nativescript.org) and take a look around. On your first visit, you'll see several 'coach marks' showing where key functionality is kept.
+![NS + Vue.js Playground 選択時のマーク](./images/playground1.png)
 
-![coach marks in the playground with NS + Vue.js selected](./images/playground1.png)
+メインエディタと数件のファイルがあります。デフォルトの Playground アプリは Angular で作成されています。上部の 'New' をクリックして 'NS + Vue.js' テンプレートを選んでください。これで NativeScript-Vue アプリの基盤構築ができます！
 
-Here is the main editor with a few files provided for an app. By default, the first playground app is created using Angular. Click 'new' at the top and choose the 'NS + Vue.js' template. This is how you scaffold your first NativeScript-Vue app!
+`QR Code` ボタンをクリックすると QR コードが表示されます。スマートフォンに入っている Playground アプリでスキャンしてください。あなたの端末がコードの変更に応じて自動的に更新されるようになります。端末が更新され、ベースとなるアプリが表示されるはずです：
 
-When you click the `QR Code` button, a QR code will appear - scan that with the NativeScript Playground app on your phone. This allows your phone to refresh automatically as you code. You'll see your phone refresh and a basic app appear:
+![ベースのアプリ](./images/playground2.png)
 
-![base app](./images/playground2.png)
+## スタイルの追加
 
-## Add some Styles
+ではアプリのインターフェースにスタイルを施し、 UI を構築していきましょう。 ActionBar と Card、ボタンを使います。
 
-Now we're going to style the app's interface and build its UI. It's going to have an ActionBar, a card, and a button.
+`/images` フォルダを新規作成し、アプリの背景用の画像を追加します。上部のパネルの '+' ボタンをクリックして images という名称のフォルダを作ってください。下記の画像をローカルPCにダウンロードし、再度 '+' ボタンと 'upload resources' をクリックしてブラウズします。作成したフォルダに `bg.jpg` としてこのファイルを追加してください。ファイルの保存のお忘れなく！
 
-We're going to add an image to a new `/images` folder for the app's background. Click the '+' button in the top panel and create a new folder called images. Download the file below to your local computer. Click the '+' button again and then 'upload resources' to browse and add this file (`bg.jpg`) in that folder. Make sure to save your file.
+![背景画像](./images/bg.jpg)
 
-![background](./images/bg.jpg)
-
-Next, open the app.css file in the app root. Overwrite the file with these styles:
+次に、ルートにある app.css ファイルを開きます。このようにファイルを上書きしてください：
 
 ```css
 Page {
@@ -64,13 +62,13 @@ Page {
 }
 ```
 
-As your app refreshes, you'll see that the UI shows some promise, but looks a little strange. Let's fix the UI.
+アプリが更新されると UI が変更されたことがわかりますが、少し不自然です。 UI を修正していきましょう。
 
-## Fix the UI
+## UI の修正
 
-Let's fix the ActionBar: In `app/components/HelloWorld.vue`, delete everything between the `<Page>` tags except the ActionBar. Add a title to the ActionBar, something like this: `<ActionBar title="So. Many. Dogs!" class="action-bar" />`.
+ActionBar を修正します。 `app/components/HelloWorld.vue` を開き、ActionBar 以外の `<Page>` タグの間の内容を全て削除してください。そして ActionBar にタイトルを追加します。例： `<ActionBar title="So. Many. Dogs!" class="action-bar" />`
 
-Next, add a StackLayout to replace the ScrollView that used to be there. Under the ActionBar, and above the closing `</Page>` tag, add a layout with a button:
+次に、今ある ScrollView の代わりに StackLayout を追加します。ActionBar の下、 `</Page>` の閉じタグの上の場所に、このようにボタン付きのレイアウトを追加してください：
 
 ```xml
     <StackLayout class="card">
@@ -78,19 +76,19 @@ Next, add a StackLayout to replace the ScrollView that used to be there. Under t
     </StackLayout>
 ```
 
-Now, you should see a nice looking green card with a darker green button.
+これで、いい感じの緑色のカードと濃い緑色のボタンが見えるはずです。
 
 ::: tip 💡
-NativeScript layouts differ from the html you write on the web. You're using NativeScript XML markup, which translates to native UI like GridLayouts and StackLayouts.
+NativeScript のレイアウトは Web で使う HTML とは異なります。ここで利用しているのは NativeScript XML マークアップで、ネイティブUIの GridLayouts や StackLayouts に変換されるものです。
 :::
 
-## Add Some Data
+## データの追加
 
-At this point, we need to start populating our UI with some data. To make external http calls, we need to leverage the http module, so add this line right under the `<script>` tag in HelloWorld.vue (above `export default`):
+ここからは UI にデータを投入していきます。外部と HTTP 通信をするために HTTP モジュールを活用する必要があります。 HelloWorld.vue の `<script>` タグの直下の行（`export default` の上）にこちらを追加してください：
 
 `const http = require("http");`
 
-Then, edit the `data` block, adding a placeholder for a dog image that will be populated shortly by data from the Dog CEO API.
+そして `data` ブロックを編集します。犬の画像の初期値を設定しておきます。後ほどすぐに Dog CEO API のデータがここに投入される予定です。
 
 ```js
 data() {
@@ -100,7 +98,7 @@ data() {
   },
 ```
 
-Finally, create a space for the image to populate. Under the Button tag and above the last closing `</StackLayout> tag, add this block:
+最後に、画像を投入するためのスペースを作成します。Button タグの下、最後の `</StackLayout>` 閉じタグの上にこれを追加してください：
 
 ```xml
  <StackLayout class="placeholder">
@@ -109,14 +107,14 @@ Finally, create a space for the image to populate. Under the Button tag and abov
 ```
 
 ::: tip 💡
-Note, if at any time your app stops refreshing on your device, try rescanning the QR code by pressing the "Preview" button. Watch for errors in the console of the Playground.
+端末でアプリの自動更新が止まってしまったら、"Preview" ボタンを推して QR コードの再スキャンを試してみてください。Playground のコンソールにエラーが出ていないか確認してください。
 :::
 
-## Make the Call
+## 通信する
 
-The last thing we have to do is add a method to call the Dog CEO API so we can populate our card with data when we press the button. We're going to query this API for random data.
+最後にやることは、Dog CEO API を呼ぶメソッドを追加し、ボタンを押したらカードにデータが投入できるようにすることです。ランダムなデータを取得するよう API に問い合わせます。
 
-Add a `methods` section under the final comma of the `data` block:
+`methods` セクションを `data` ブロックの最後のカンマの下に追加してください：
 
 ```js
 methods: {
@@ -132,9 +130,9 @@ methods: {
   }
 ```
 
-Try pressing the button and seeing if dogs appear. Cute, right? Check the console to see if the dog image urls are being logged, if you encounter any difficulty.
+ボタンを押して犬が表示されるか見てみてください。可愛いでしょ？もし何か不具合があったら、コンソールに犬の画像のURLのログが出ているか確認してみてください。
 
-The entire code of your HelloWorld.vue file should look like this:
+HelloWorld.vue の全体のコードはこのようになっているはずです：
 
 ```js
 <template>
@@ -175,13 +173,13 @@ const http = require("http");
 </script>
 ```
 
-The final app looks like this:
+最終的なアプリはこんな感じです：
 
-![final app](./images/playground3.png)
+![最終的なアプリ](./images/playground3.png)
 
-It's really interesting to build Vue.js apps for mobile devices in the NativeScript playground. Now that you know how, what else can you build?
+NativeScript Playground で Vue.js の モバイルアプリを作るのはとても楽しいですね。これでやり方がわかったので、次は何を作りましょう？
 
-**🎊Congratulations, you've finished the base project!🎊**
+**🎊ベースプロジェクト修了です。おめでとうございます！🎊**
 
 ## Supplement 1: Adding a Cat to the App
 
@@ -275,6 +273,6 @@ If you are having any trouble loading the images from the cat api, you can get m
 
 :::
 
-## Author
+## 著者
 
 Made with ❤️ by Jen Looper and Emily Stamey
