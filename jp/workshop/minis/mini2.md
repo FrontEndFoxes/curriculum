@@ -181,29 +181,29 @@ NativeScript Playground で Vue.js の モバイルアプリを作るのはと�
 
 **🎊ベースプロジェクト修了です。おめでとうございます！🎊**
 
-## Supplement 1: Adding a Cat to the App
+## Supplement 1: アプリに猫を追加
 
-Suppose you want to also be able to load cute cat photos with your dog photos. This will require another API request. The cat API requires a key which you can request at [the CatAPI](https://thecatapi.com/). They will email your new api key to you. Make a note of it when you receive the key via email.
+かわいい猫の写真を犬の写真と一緒に読み込めるようにします。これには別のAPIリクエストが必要です。 cat APIは、 [the CatAPI](https://thecatapi.com/)でリクエストできるキーが必要です。新しいAPIキーをメールで受け取ります。メールでキーを受け取ったらメモしてください。
 
-## Edit the UI
+## UIの修正
 
-Update the ActionBar to indicate we have more than dogs on the app.
+ActionBarを更新して、アプリ上に犬以外のものがあることを示します。
 
 `<ActionBar title="So. Many. Cute. Pets!" class="action-bar" />`
 
-Update the placeholder size in the `app.css` file so that we can fit more than one placeholder on the page:
+ `app.css` ファイルのプレースホルダーサイズを更新して、ページに複数のプレースホルダーが収まるようにします。
 
-```js
+```css
     .placeholder {
         height: 30%;
     }
 ```
 
-## Call Some Cats
+## 猫を読み込み
 
-Next, add a method called `getACat`. It will look like the `getADog` method. But the Cat API requires an api key, so after we pass the url and the method, we will pass a limit of 1 and a header with the key. After making the request, the `getACat` method will update a variable called `catImage` and log the `catImage.url` that is returned by the request.
+次に、  `getACat`というメソッドを追加します。ベースプロジェクトで作成した`getADog` のようになります。 ただし、Cat APIにはAPIキーが必要なため、urlとメソッドを渡した後、1の制限とキーを含むヘッダーを渡します。 リクエストを行った後、`getACat` メソッドは呼び出された `catImage` という変数を更新し、リクエストによって返された `catImage.url` を記録します。
 
-Add this method above the `getADog` method, adding your own API key for the Cat API:
+`getADog` メソッドの上にこのメソッドを追加し、Cat API用の独自のAPIキーを追加します。
 
 ```js
         methods: {
@@ -230,10 +230,9 @@ Add this method above the `getADog` method, adding your own API key for the Cat 
             }
         }
 ```
+ここで、プレースホルダーに追加される画像を更新する必要があります。
 
-Now you need to update the image that will be added to the placeholder.
-
-In the `data()` part of the script, we returned the `dogImage`, and now we need to return the `catImage`. Add `catImage` above `dogImage` in the data block:
+scriptの `data（）` 部分で、`dogImage` を返しましたが、`catImage` も返す必要があります。データブロックの `dogImage` の上に `catImage` を追加します。
 
 ```js
     data() {
@@ -245,12 +244,12 @@ In the `data()` part of the script, we returned the `dogImage`, and now we need 
 ```
 
 ::: tip 💡
-Don't forget the comma that we use to separate the two methods (`getADog` and `getACat`) and the two return variables (`dogImage` and `catImage`).
+2つのメソッド（ `getADog` と `getACat` ）と2つの戻り変数（ `dogImage` と `catImage` ）を分離するために使用するコンマを忘れないでください。
 :::
 
-## Edit the UI
+## UIを修正
 
-Finally, we need to add a button to load the cat within a `StackLayout` placeholder. Place this in between `<StackLayout class="card">` and `</StackLayout>` at the same level as the button and placeholder for the `dogImage`:
+最後に、 `StackLayout` プレースホルダー内に猫をロードするボタンを追加する必要があります。これを `<StackLayout class="card">` と `</ StackLayout>` の間に、ボタンと `dogImage` のプレースホルダーと同じレベルに配置します。
 
 ```xml
     <Button class="btn" @tap="getACat">Find Me A Cat!</Button>
@@ -259,14 +258,14 @@ Finally, we need to add a button to load the cat within a `StackLayout` placehol
     </StackLayout>
 ```
 
-Click the `Preview` button in the NativeScript Playground and you will see the new `Find Me A Cat!` button and when you click it, you should see a very cute cat!
+NativeScriptプレイグラウンドの `Preview` ボタンをクリックすると、新しい `Find Me A Cat!` ボタンが表示され、クリックすると、非常にかわいい猫が表示されます。
 
-It should look like this:
+表示は次のようになります。
 
 ![Image of the Pets App with a Cute Dog and Cute Cat Photo loaded](./images/mini2_2.png)
 
 ::: tip 💡
-If you are having any trouble loading the images from the cat api, you can get more information in the `Device Logs` at the bottom of the Playground screen. To do this, you need to set `Config.silent = false` in `app.js`. By default, in `app.js` you should see the lines below commented out. Uncomment the second line to get more verbose output.
+cat apiからの画像の読み込みに問題がある場合は、プレイグラウンド画面の下部にある `Device Logs` で詳細を確認できます。これを行うには、 `app.js` で `Config.silent = false` を設定する必要があります。デフォルトでは、 `app.js` で以下の行がコメントアウトされているはずです。より詳細な出力を取得するには、2行目のコメントを解除します。
 
     // Uncommment the following to see NativeScript-Vue output logs
     Vue.config.silent = false;
