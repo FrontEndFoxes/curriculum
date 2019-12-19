@@ -1,3 +1,5 @@
+const addCopyButton = require('./copyButton');
+
 module.exports = {
 	base: '/',
 	head: [['link', { rel: 'icon', href: '/favicon.png' }]],
@@ -107,5 +109,8 @@ module.exports = {
 	},
 	markdown: {
 		lineNumbers: true,
+		extendMarkdown: (md) => {
+			addCopyButton(md);
+		}
 	},
 };
