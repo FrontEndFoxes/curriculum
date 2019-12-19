@@ -1,10 +1,10 @@
-# 👜 Nano Activity 1: Vuex 101 (intermediate)
+# 👜 1: Vuex 101 (intermediate)
 
-| **Project Goal**            | A video game card collection app using Vuex                                                                                                                                   |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **What you’ll learn**       | *Vuex* is a state management library made for Vue.js. In this nano you will learn the basic concepts of Vuex and how to use it in a Vue application.
-| **Tools you’ll need**       | A modern browser like Chrome or Firefox. Access to [CodeSandbox](https://codesandbox.io). [Vue Developer tools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en) extension for Chrome, or [Vue Developer tools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/) from Firefox.
-| **Time needed to complete** | 30 minutes
+| **Project Goal**            | A video game card collection app using Vuex                                                                                                                                                                                                                                                                                                    |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **What you’ll learn**       | _Vuex_ is a state management library made for Vue.js. In this nano you will learn the basic concepts of Vuex and how to use it in a Vue application.                                                                                                                                                                                           |
+| **Tools you’ll need**       | A modern browser like Chrome or Firefox. Access to [CodeSandbox](https://codesandbox.io). [Vue Developer tools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en) extension for Chrome, or [Vue Developer tools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/) from Firefox. |
+| **Time needed to complete** | 30 minutes                                                                                                                                                                                                                                                                                                                                     |
 
 # Build a video game card collection using Vuex
 
@@ -20,18 +20,13 @@ There are three important files to observe here:
 
 ```html
 <div class="col-12 col-md-6 col-lg-4" v-for="game in games">
-  <card
-    @click="removeGame(game);"
-    :name="game.title"
-    :image="game.img"
-  >
-  </card>
+	<card @click="removeGame(game);" :name="game.title" :image="game.img"> </card>
 </div>
 
 <ul class="list-group">
-  <li class="list-group-item" v-for="title in gameTitles" :key="title">
-    {{ title }}
-  </li>
+	<li class="list-group-item" v-for="title in gameTitles" :key="title">
+		{{ title }}
+	</li>
 </ul>
 ```
 
@@ -41,7 +36,7 @@ There are three important files to observe here:
 
 ## Install Vuex
 
-Since we are using CodeSandbox, the only thing we need to install Vuex is to add it to our list of 
+Since we are using CodeSandbox, the only thing we need to install Vuex is to add it to our list of
 dependencies, so go to the `Dependencies` tab on the bottom left of your screen and add it to
 your project.
 
@@ -57,8 +52,8 @@ First, create a new file on the project root called `store.js`. This file will h
 Open the file, and import Vue and Vuex by adding the following code:
 
 ```js
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue';
+import Vuex from 'vuex';
 
 Vue.use(Vuex);
 ```
@@ -69,18 +64,15 @@ Let's now create our store. Add this to the file under the code you just pasted 
 
 ```js
 const store = new Vuex.Store({
-  state: {
-    games: []
-  },
+	state: {
+		games: [],
+	},
 
-  getters: {
-  },
+	getters: {},
 
-  mutations: {
-  },
+	mutations: {},
 
-  actions: {
-  }
+	actions: {},
 });
 
 export default store;
@@ -95,18 +87,18 @@ We will add a `games` array which will hold our data soon.
 Go back to `main.js` and import the store:
 
 ```js
-import store from "./store";
+import store from './store';
 ```
 
 And finally add it to our Vue app:
 
 ```js
 new Vue({
-  el: "#app",
-  components: { App },
-  template: "<App/>",
-  store
-}); 
+	el: '#app',
+	components: { App },
+	template: '<App/>',
+	store,
+});
 ```
 
 ::: tip 💡
@@ -122,7 +114,7 @@ Take a look at `App.vue`. You will notice that we are already importing our data
 ```js
 const apiData = data; // Our "pretend" ajax call
 apiData.forEach(game => {
-  this.$store.dispatch("addGame", game);
+	this.$store.dispatch('addGame', game);
 });
 ```
 
@@ -132,14 +124,15 @@ js array method `forEach` to loop through the array.
 Let's learn a bit more about `$store.dispatch`?
 
 Vuex has three different state management types of methods.
+
 1. **Getters**. Used to get data from the store
 2. **Mutations**. Used to mutate/change the data in the store
-3. **Actions**. Similar to mutations, but they *commit* the mutations and can hold other logic.
+3. **Actions**. Similar to mutations, but they _commit_ the mutations and can hold other logic.
 
-In this case, we are using an **action** via *dispatch* to add a game to our store.
+In this case, we are using an **action** via _dispatch_ to add a game to our store.
 
 ::: tip 💡
-*Why am I not mutating the data with a commit?* This is considered good practice but is not mandatory.
+_Why am I not mutating the data with a commit?_ This is considered good practice but is not mandatory.
 You can commit directly from your components, but this way tends to be more maintainable since you can rest assured
 that all your mutations are only being used within your store.
 :::
@@ -167,7 +160,7 @@ In our action, we are making a micro validation for the data we will insert. Thi
 of what you can do inside this function. You could also make axios/ajax calls and commit data on the
 responses!
 
-`context.commit` will call our *addGame* **mutation** and pass the data after we validate it.
+`context.commit` will call our _addGame_ **mutation** and pass the data after we validate it.
 
 Inside our mutation, we simply push the game into our array.
 
@@ -191,7 +184,7 @@ games() {
 }
 ```
 
-Here, we are going inside our `$store` and fetching the *games* array from the **state**.
+Here, we are going inside our `$store` and fetching the _games_ array from the **state**.
 
 The cards will now populate with all our store data!
 
@@ -221,7 +214,7 @@ Our `<ul>` element will now be populated with the titles of our games!
 
 ## Modifying Data
 
-At this point you have all the tools you need to be able to start using Vuex in your apps, but let's make one more 
+At this point you have all the tools you need to be able to start using Vuex in your apps, but let's make one more
 change and give those **Delete** buttons some functionality.
 
 Go to `store.js` and add this **action**:
@@ -280,8 +273,6 @@ Try adding a new component `Form.vue` in which you add new games to your library
 Congratulations! You have earned a badge!
 
 ![Vuex 101 badge](./images/vuex-101-badge.png)
-
-
 
 ## Author
 

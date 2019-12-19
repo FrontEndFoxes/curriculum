@@ -1,11 +1,10 @@
-# 😻 Nano Activity 6: Create a Mobile App to Spread Emoji Love (Beginner)
+# 😻 6: Create a Mobile App to Spread Emoji Love (Beginner)
 
-| **Project Goal**            | In this nano you will learn how to create a cute mobile app to display and send emoji to friends.                                                                                                                                   |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **What you’ll learn**       | You'll scaffold a NativeScript-Vue App in the playground and build a list that you can send via the Social Share plugin.                                                                                             |
+| **Project Goal**            | In this nano you will learn how to create a cute mobile app to display and send emoji to friends.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **What you’ll learn**       | You'll scaffold a NativeScript-Vue App in the playground and build a list that you can send via the Social Share plugin.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | **Tools you’ll need**       | A modern browser like Chrome. A mobile device (iOS or Android). Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact. A mobile phone (iOS or Android) with the NativeScript Playground and Viewer apps installed.<br><br>On Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) and [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview).<br><br>On iOS: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) and [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702) |
-| **Time needed to complete** | 10 minutes
-
+| **Time needed to complete** | 10 minutes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 # Create an emoji-sharing mobile app
 
@@ -35,7 +34,7 @@ Let's add some nice styles to your mobile app. NativeScript-Vue comes with sever
 
 Play around with other themes like `sky` or `forest` or `ruby`. Get creative!
 
-Change the title in the ActionBar to rename your app: 
+Change the title in the ActionBar to rename your app:
 
 ```xml
 <ActionBar title="MyMojis" class="action-bar" />
@@ -87,7 +86,7 @@ data() {
 
 ## Build the ListView
 
-Now, you need a place to display that data. NativeScript-Vue uses NativeScript modules to build native elements for your mobile app, so instead of using HTML elements like `<li>` or `<ul>`, we're going to use `<ListView>`. Delete all the markup under the `<ActionBar>` and before the closing `</Page>` tag. 
+Now, you need a place to display that data. NativeScript-Vue uses NativeScript modules to build native elements for your mobile app, so instead of using HTML elements like `<li>` or `<ul>`, we're going to use `<ListView>`. Delete all the markup under the `<ActionBar>` and before the closing `</Page>` tag.
 
 Then, add:
 
@@ -109,13 +108,14 @@ Now, when you app refreshes, you can see a list of emoji with their label. Add m
 
 This list needs to do more than just sit there. Let's make it interactive by adding the ability to tap it and send an emoji.
 
-First, you need to implement the Social Share plugin to access your device's social apps like Twitter and WhatsApp. 
+First, you need to implement the Social Share plugin to access your device's social apps like Twitter and WhatsApp.
 
 Under `<script>`, add this line:
 
 ```JavaScript
 import * as SocialShare from "nativescript-social-share";
 ```
+
 The Social Share plugin is built into the Playground apps, so you don't have to do anything more to access it from within your app.
 
 Next, add a `methods` block under `export default {`:
@@ -127,6 +127,7 @@ methods: {
     }
 },
 ```
+
 You now have a method available for the user to use the Social Share plugin.
 
 Finally, add a `@tap` event to your FlexBoxLayout, so that it looks like this:
@@ -135,9 +136,9 @@ Finally, add a `@tap` event to your FlexBoxLayout, so that it looks like this:
 <FlexboxLayout flexDirection="row" class="list-group-item" @tap="share(person)">
 ```
 
-Now, when you save your app and tap on an element in the list, you are given a list of social apps (depending on what is installed on your device) with which to send the emoji you just tapped! 
+Now, when you save your app and tap on an element in the list, you are given a list of social apps (depending on what is installed on your device) with which to send the emoji you just tapped!
 
-Go ahead, send a Tweet with your new app! 
+Go ahead, send a Tweet with your new app!
 
 ## Final Result
 
@@ -205,15 +206,16 @@ Your entire app's code (all in `HelloWorld.vue`) looks like this:
 </script>
 
 ```
+
 ![final app](./images/mymoji_app.png)
 
 ## Conclusion and Challenge
 
-Now that you know how to build a native mobile app with NativeScript-Vue, you can customize it however you like. 
+Now that you know how to build a native mobile app with NativeScript-Vue, you can customize it however you like.
 
-🎨 Change the styles and tweak the list so that it has more interesting labels next to the emoji. 
+🎨 Change the styles and tweak the list so that it has more interesting labels next to the emoji.
 
-😍 Add more emoji! 
+😍 Add more emoji!
 
 ❤️ And make sure to share your work socially using the Social Share capability you implemented. Have fun!
 

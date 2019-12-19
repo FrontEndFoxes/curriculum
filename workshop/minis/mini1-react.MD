@@ -1,4 +1,4 @@
-# 🖥️ Mini Workshop 1: Build A Simple Dog Fetching Web App
+# 🖥️ 1: Build A Simple Dog Fetching Web App
 
 | ** Project & nbsp; Goal **              | Get started with ReactJs basics and simple API calls with axios                                                                                                         |
 | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -15,9 +15,9 @@ Yes, the main objective is to learn the basics about React.But if we say it that
 
 What are we going to need to achieve our Goal ?
 
-- ReactJS
-- Axios(To perform AJAX API requests)
-- Some Style with Materialize
+-   ReactJS
+-   Axios(To perform AJAX API requests)
+-   Some Style with Materialize
 
 ## Install required packages
 
@@ -37,9 +37,9 @@ We're going to build an application to load random dog images and store them to 
 
 ### Basic ReactJS App Structure:
 
-- public /
-- src /
-- package.json
+-   public /
+-   src /
+-   package.json
 
 _public_ will contain our image assets, html static files and custom client side javascript files, `package.json` is used by npm(Node package manager) to save all the packages needed to deploy our App, but we dont have to worry about this because CodeSandbox installs and updates this file for us.
 
@@ -48,22 +48,22 @@ _src_ will contain our App and our ReactJs Components.
 Take a look at the code that was scaffolded by CodeSandbox for a basic ReactJS app.The file`index.js` is opened by default.This is the starting point of a ReactJS app.You will see something like this:
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import './styles.css'
+import './styles.css';
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
-  )
+	return (
+		<div className="App">
+			<h1>Hello CodeSandbox</h1>
+			<h2>Start editing to see some magic happen!</h2>
+		</div>
+	);
 }
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById('root');
+ReactDOM.render(<App />, rootElement);
 ```
 
 ::: tip 💡
@@ -80,48 +80,48 @@ By default CodeSandbox imports all the needed dependencies from npm to build the
 
 Another important detail is the App function, this represents a React component. We can define a React Component in two ways:
 
-- Functions
-- Classes and Objects
+-   Functions
+-   Classes and Objects
 
 The difference between these two options is that with classes we can access the React Lifecycle hooks, in Other words this gives us more control for example on the specific moment we want to load anything in particular.
 
 As we mentioned before, the App function represents a Component. You can create you components as a Individual files (Single File Component - SFC).So go ahead and create the components directory(just to be more organized) and in the same folder create `App.js`, inserting the following code:
 
 ```js
-import React from 'react'
+import React from 'react';
 class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-  render() {
-    return (
-      <div className="App">
-        <h1>Hello CodeSandbox</h1>
-        <h2>Start editing to see some magic happen!</h2>
-      </div>
-    )
-  }
+	constructor(props) {
+		super(props);
+		this.state = {};
+	}
+	render() {
+		return (
+			<div className="App">
+				<h1>Hello CodeSandbox</h1>
+				<h2>Start editing to see some magic happen!</h2>
+			</div>
+		);
+	}
 }
-export default App
+export default App;
 ```
 
-- The`props` attribute allow us to control dynamic properties for our App Component.For example you can provide the property "color" to the App Component`<App color="red"/>`.So you can access it through`this.props.color`.
-- The`state` atrribute contains all the App Component data that will dynamically change.
-- Notice that the `return()` function contains the template that ReactJS is going to render for our App Component.
-- The`export default` tells javascript that we want to export the component for reusing it.
+-   The`props` attribute allow us to control dynamic properties for our App Component.For example you can provide the property "color" to the App Component`<App color="red"/>`.So you can access it through`this.props.color`.
+-   The`state` atrribute contains all the App Component data that will dynamically change.
+-   Notice that the `return()` function contains the template that ReactJS is going to render for our App Component.
+-   The`export default` tells javascript that we want to export the component for reusing it.
 
 Now go back to the`index.js` file, delete the App function and add the import for our new Component.The file should look as follows:
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './components/App'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
 
-import './styles.css'
+import './styles.css';
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById('root');
+ReactDOM.render(<App />, rootElement);
 ```
 
 Here we import the App Component you just created and we pass it to the render method of ReactDom to render it into the `rootElement`.
@@ -134,70 +134,70 @@ Let's start in `style.css` and Add the following style block at the bottom of th
 
 ```css
 .App {
-  font-family: sans-serif;
-  text-align: center;
+	font-family: sans-serif;
+	text-align: center;
 }
 .content {
-  width: 100%;
-  height: 100%;
-  position: absolute;
+	width: 100%;
+	height: 100%;
+	position: absolute;
 }
 .dog {
-  margin: auto;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  position: relative;
+	margin: auto;
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+	position: relative;
 }
 .dog img {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .thumb .dog {
-  height: 100px !important;
-  margin-top: 5px;
-  position: unset;
+	height: 100px !important;
+	margin-top: 5px;
+	position: unset;
 }
 
 .thumb .dog img {
-  width: auto !important;
-  min-width: 100%;
-  height: 100px !important;
+	width: auto !important;
+	min-width: 100%;
+	height: 100px !important;
 }
 
 body {
-  background: url('https://media.istockphoto.com/vectors/dog-paw-print-seamless-template-for-your-design-wrapping-paper-card-vector-id922637404?k=6&m=922637404&s=612x612&w=0&h=oaqzPXnPZjq-kekUyEo4uNvSnEMHhneUg0D658ELCwo=');
+	background: url('https://media.istockphoto.com/vectors/dog-paw-print-seamless-template-for-your-design-wrapping-paper-card-vector-id922637404?k=6&m=922637404&s=612x612&w=0&h=oaqzPXnPZjq-kekUyEo4uNvSnEMHhneUg0D658ELCwo=');
 }
 
 .semitrans {
-  position: fixed;
-  width: 50%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.5;
+	position: fixed;
+	width: 50%;
+	height: 100%;
+	z-index: -1;
+	opacity: 0.5;
 }
 .superdi-icon {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  z-index: 1000;
-  background: #fff;
-  border-radius: 50%;
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	z-index: 1000;
+	background: #fff;
+	border-radius: 50%;
 }
 .super-title {
-  z-index: 10000;
-  width: 100%;
-  padding: 0px !important;
+	z-index: 10000;
+	width: 100%;
+	padding: 0px !important;
 }
 .favorite {
-  width: 100%;
+	width: 100%;
 }
 
 .relative {
-  position: relative;
+	position: relative;
 }
 ```
 
@@ -213,20 +213,14 @@ For this app, we will use Materialize, a modern responsive front - end framework
 
 To start with Materialize, edit `public/index.html` and add the following lines:
 
-- Before title tag:
+-   Before title tag:
 
 ```html
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-/>
-<link
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-  rel="stylesheet"
-/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 ```
 
-- After the root div element:
+-   After the root div element:
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -246,31 +240,26 @@ Then, go ahead and overwrite the content of the template in `App.js` with this m
 
 ```js
 return (
-  <div className="App container-fluid">
-    <div className="content">
-      <div className="row dog-row valign-wrapper">
-        <div className="col s10 offset-s1 m6 offset-m3 l4 offset-l4">
-          <div className="card lighten-2 dog-card">
-            <div className="card-image">
-              <img
-                src="https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg"
-                alt="chihuahua"
-              />
-              <span className="card-title super-title red">
-                Choose your favorite dogs
-              </span>
-            </div>
-            <div className="card-action right-align actions">
-              <a className="btn-floating waves-effect waves-light red">
-                <i className="material-icons">favorite</i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-)
+	<div className="App container-fluid">
+		<div className="content">
+			<div className="row dog-row valign-wrapper">
+				<div className="col s10 offset-s1 m6 offset-m3 l4 offset-l4">
+					<div className="card lighten-2 dog-card">
+						<div className="card-image">
+							<img src="https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg" alt="chihuahua" />
+							<span className="card-title super-title red">Choose your favorite dogs</span>
+						</div>
+						<div className="card-action right-align actions">
+							<a className="btn-floating waves-effect waves-light red">
+								<i className="material-icons">favorite</i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+);
 ```
 
 Your app should refresh(if it doesn't, use the manual refresh button in the app preview address bar).
@@ -280,10 +269,7 @@ Your app should refresh(if it doesn't, use the manual refresh button in the app 
 At the moment we can only see a centered card with a static image of a chihuahua dog loaded using the`src` property in the image tag.
 
 ```html
-<img
-  src="https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg"
-  alt="chihuahua"
-/>
+<img src="https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg" alt="chihuahua" />
 ```
 
 But the idea is to make this link dynamic, so it's time to create your first Reactive variable.
@@ -295,19 +281,19 @@ Go to `App.js` modify the state variable
 Before:
 
 ```js
-this.state = {}
+this.state = {};
 ```
 
 After:
 
 ```js
 this.state = {
-  //current dog
-  dog: {
-    image: 'https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg',
-    link: 'a valid link'
-  }
-}
+	//current dog
+	dog: {
+		image: 'https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg',
+		link: 'a valid link',
+	},
+};
 ```
 
 As you can see we have added an object instead of a string to show that we can store complex objects in the state. Now we have to change the template to make the `src` property _dynamic_ so it can use the value of the variable we just populated above.Now we can modify the `App.js` template section, right where our image loads.
@@ -315,10 +301,7 @@ As you can see we have added an object instead of a string to show that we can s
 Before:
 
 ```js
-<img
-  src="https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg"
-  alt="chihuahua"
-/>
+<img src="https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg" alt="chihuahua" />
 ```
 
 After:
@@ -340,7 +323,7 @@ At the very begining, we installed Axios, Now is the time to use it!. It will ba
 Import Axios into the component where we will perform our API call. Go to `App.js`, and in script block, add the following line:
 
 ```js
-import axios from 'axios'
+import axios from 'axios';
 ```
 
 you can add this below the react import at the very beggining.
@@ -348,8 +331,8 @@ you can add this below the react import at the very beggining.
 Your import should look like this:
 
 ```js
-import React from 'react'
-import axios from 'axios'
+import React from 'react';
+import axios from 'axios';
 ```
 
 Now we ar ready to start loading images from the API.
@@ -381,13 +364,13 @@ To perform a `GET` request, Axios uses the `axios.get` method. The result will b
 
 ```js
 axios
-  .get('https://dog.ceo/api/breeds/image/random')
-  .then(response => {
-    console.log(response)
-  })
-  .catch(error => {
-    console.log(error)
-  })
+	.get('https://dog.ceo/api/breeds/image/random')
+	.then(response => {
+		console.log(response);
+	})
+	.catch(error => {
+		console.log(error);
+	});
 ```
 
 We want a new image to replace the old one right when the component is created, so let's add a `componentDidMount()` hook right after `UpdateRandom` method:
@@ -417,9 +400,9 @@ Let's replace our `dog` state object with the API loaded data. At this point we 
 
 ```js
 this.state = {
-  //current dog
-  dog: { image: '', link: '' }
-}
+	//current dog
+	dog: { image: '', link: '' },
+};
 ```
 
 Inside the`UpdateRandom` method instead of printing the result to the console we will assign`response.data.message`(which is actually the image URL) to the`dog` property object:
@@ -446,8 +429,8 @@ We also want to call the same method when you click on the image card, so it sho
 
 ```js
 <div className="card-image" onClick={this.UpdateRandom()}>
-  <img src={this.state.dog.image} alt={this.state.dog.link} />
-  <span className="card-title super-title red">Choose your favorite dogs</span>
+	<img src={this.state.dog.image} alt={this.state.dog.link} />
+	<span className="card-title super-title red">Choose your favorite dogs</span>
 </div>
 ```
 
@@ -459,32 +442,31 @@ We want to let a user add dog images to a personal list of their favorites and s
 
 ```js
 this.state = {
-  //Favorite dogs
-  dogs: [],
-  //current dog
-  dog: { image: '', link: '' }
-}
+	//Favorite dogs
+	dogs: [],
+	//current dog
+	dog: { image: '', link: '' },
+};
 ```
 
 To display the favorite dogs we should make changes to our template. Let's add the following code snippet right after the closing `card div`
 
 ```html
 <div className="section">
-  <div className="row">
-    {this.state.dogs != null && this.state.dogs != undefined &&
-    this.state.dogs.map((dog, index) => (
-    <div key="{index}" className="col s4 thumb">
-      <div className="relative">
-        <div name="randdog" className="dog waves-effect waves-light">
-          <img className="favorite" src="{dog.image}" alt="{dog.link}" />
-          <i className="material-icons superdi-icon red-text">
-            do_not_disturb_on
-          </i>
-        </div>
-      </div>
-    </div>
-    ))}
-  </div>
+	<div className="row">
+		{this.state.dogs != null && this.state.dogs != undefined && this.state.dogs.map((dog, index) => (
+		<div key="{index}" className="col s4 thumb">
+			<div className="relative">
+				<div name="randdog" className="dog waves-effect waves-light">
+					<img className="favorite" src="{dog.image}" alt="{dog.link}" />
+					<i className="material-icons superdi-icon red-text">
+						do_not_disturb_on
+					</i>
+				</div>
+			</div>
+		</div>
+		))}
+	</div>
 </div>
 ```
 
@@ -541,11 +523,8 @@ AddNewdog() {
 And of course we need to bind it to the 'Like' button in the top card:
 
 ```html
-<a
-  className="btn-floating waves-effect waves-light red"
-  onClick="{this.AddNewdog()}"
->
-  <i className="material-icons">favorite</i>
+<a className="btn-floating waves-effect waves-light red" onClick="{this.AddNewdog()}">
+	<i className="material-icons">favorite</i>
 </a>
 ```
 
@@ -559,12 +538,12 @@ We will also create a `isInPack` state and assign a `false` value to it. This va
 
 ```js
 this.state = {
-  //Favorite dogs
-  dogs: [],
-  //current dog
-  dog: { image: '', link: '' },
-  isInPack: false
-}
+	//Favorite dogs
+	dogs: [],
+	//current dog
+	dog: { image: '', link: '' },
+	isInPack: false,
+};
 ```
 
 Add `checkPack` before `UpdateRandom()`
@@ -599,11 +578,8 @@ Now in `App.js` we can evaluate the `isInPack` state to enable or disable the fa
 Before:
 
 ```js
-<a
-  className="btn-floating waves-effect waves-light red"
-  onClick={this.AddNewdog()}
->
-  <i className="material-icons">favorite</i>
+<a className="btn-floating waves-effect waves-light red" onClick={this.AddNewdog()}>
+	<i className="material-icons">favorite</i>
 </a>
 ```
 
@@ -611,14 +587,14 @@ After:
 
 ```js
 <a
-  className={
-    this.state.isInPack
-      ? 'btn-floating waves-effect waves-light red disabled'
-      : 'btn-floating waves-effect waves-light red'
-  }
-  onClick={e => this.handleClick(e, 'favorite')}
+	className={
+		this.state.isInPack
+			? 'btn-floating waves-effect waves-light red disabled'
+			: 'btn-floating waves-effect waves-light red'
+	}
+	onClick={e => this.handleClick(e, 'favorite')}
 >
-  <i className="material-icons">favorite</i>
+	<i className="material-icons">favorite</i>
 </a>
 ```
 
@@ -654,18 +630,15 @@ Before:
 
 ```html
 <i className="material-icons superdi-icon red-text">
-  do_not_disturb_on
+	do_not_disturb_on
 </i>
 ```
 
 After
 
 ```js
-<i
-  onClick={this.Deletedog(index)}
-  className="material-icons superdi-icon red-text"
->
-  do_not_disturb_on
+<i onClick={this.Deletedog(index)} className="material-icons superdi-icon red-text">
+	do_not_disturb_on
 </i>
 ```
 
@@ -682,53 +655,48 @@ We have a`components` folder. Let's create a new file here and name it `dog.js`.
 Open this file and add the following code:
 
 ```js
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class dog extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-  render() {
-    return (
-      <div className="relative">
-        <div name="randdog" className="dog waves-effect waves-light">
-          <img
-            className={
-              this.props.context !== null && this.props.context !== undefined
-                ? this.props.context
-                : ''
-            }
-            src={this.props.image}
-            alt={this.props.link}
-          />
-          {this.props.context !== null &&
-          this.props.context !== undefined &&
-          this.props.context == 'favorite' ? (
-            <i
-              onClick={this.props.onClick}
-              className="material-icons superdi-icon red-text"
-            >
-              do_not_disturb_on
-            </i>
-          ) : (
-            ''
-          )}
-        </div>
-      </div>
-    )
-  }
+	constructor(props) {
+		super(props);
+		this.state = {};
+	}
+	render() {
+		return (
+			<div className="relative">
+				<div name="randdog" className="dog waves-effect waves-light">
+					<img
+						className={
+							this.props.context !== null && this.props.context !== undefined ? this.props.context : ''
+						}
+						src={this.props.image}
+						alt={this.props.link}
+					/>
+					{this.props.context !== null &&
+					this.props.context !== undefined &&
+					this.props.context == 'favorite' ? (
+						<i onClick={this.props.onClick} className="material-icons superdi-icon red-text">
+							do_not_disturb_on
+						</i>
+					) : (
+						''
+					)}
+				</div>
+			</div>
+		);
+	}
 }
 
-export default dog
+export default dog;
 ```
 
 As you can see this code is pretty similar to the favorite section code.
 
 You know, that section where we loop the `dogs` array in `App.js`?.That's because we reuse code, In fact the idea of this Component is to adapt depending of two contexts:
 
-- The main random dog card
-- The favorites section
+-   The main random dog card
+-   The favorites section
 
 We are going to receive parent information of the context and we are going to render the component according to that context.
 
@@ -736,13 +704,9 @@ Analyzing the code:
 
 ```js
 <img
-  className={
-    this.props.context !== null && this.props.context !== undefined
-      ? this.props.context
-      : ''
-  }
-  src={this.props.image}
-  alt={this.props.link}
+	className={this.props.context !== null && this.props.context !== undefined ? this.props.context : ''}
+	src={this.props.image}
+	alt={this.props.link}
 />
 ```
 
@@ -756,18 +720,13 @@ Let's see: `<dog image="image.jpg"/>`, here we assign the image property to the`
 
 ```js
 {
-  this.props.context !== null &&
-  this.props.context !== undefined &&
-  this.props.context == 'favorite' ? (
-    <i
-      onClick={this.props.onClick}
-      className="material-icons superdi-icon red-text"
-    >
-      do_not_disturb_on
-    </i>
-  ) : (
-    ''
-  )
+	this.props.context !== null && this.props.context !== undefined && this.props.context == 'favorite' ? (
+		<i onClick={this.props.onClick} className="material-icons superdi-icon red-text">
+			do_not_disturb_on
+		</i>
+	) : (
+		''
+	);
 }
 ```
 
@@ -776,7 +735,7 @@ We can see how we evaluate that if we are in the favorite context, we load the d
 Notice that in the `onClick` event we assign `this.props.onClick`, and that's because `App.js` is going to pass the Deletedog Method for the element of the current iteration, and the delete icon is going to trigger this method when the user clicks it.
 
 ```js
-export default dog
+export default dog;
 ```
 
 In here we export the dog class. Then you can reuse it wherever you want.
@@ -786,16 +745,16 @@ In here we export the dog class. Then you can reuse it wherever you want.
 Now let's move back to our `App.js` and make some changes. First of all we should import our newly created `dog` component into `App.js`. Add this string at the beginning of the file after the axios import, like this:
 
 ```js
-import React from 'react'
-import axios from 'axios'
-import dog from './dog'
+import React from 'react';
+import axios from 'axios';
+import dog from './dog';
 ```
 
 Now we are going to tell react how to handle the context. We are going to manage three contexts:
 
-- favorite context
-- delete_favorite
-- the default context(update random dog)
+-   favorite context
+-   delete_favorite
+-   the default context(update random dog)
 
 to handle this, we define a new method called `handleClick` inside the App component class. You can add this one after the constructor:
 
@@ -839,70 +798,61 @@ Now rewrite the App component template as follows:
 
 ```js
 return (
-  <div className="App container-fluid">
-    <div className="content">
-      <div className="row dog-row valign-wrapper">
-        <div className="col s10 offset-s1 m6 offset-m3 l4 offset-l4">
-          <div className="card lighten-2 dog-card">
-            <div
-              className="card-image"
-              onClick={e => this.handleClick(e, 'randdog')}
-            >
-              <dog image={this.state.dog.image} link={this.state.dog.link} />
-              <span className="card-title super-title red">
-                Choose your favorite dogs
-              </span>
-            </div>
-            <div className="card-action right-align actions">
-              <a
-                className={
-                  this.state.isInPack
-                    ? 'btn-floating waves-effect waves-light red disabled'
-                    : 'btn-floating waves-effect waves-light red'
-                }
-                onClick={e => this.handleClick(e, 'favorite')}
-              >
-                <i className="material-icons">favorite</i>
-              </a>
-            </div>
-          </div>
-          <div className="section">
-            <div className="row">
-              {this.state.dogs != null &&
-                this.state.dogs != undefined &&
-                this.state.dogs.map((dog, index) => (
-                  <div key={index} className="col s4 thumb">
-                    <dog
-                      onClick={e =>
-                        this.handleClick(e, 'delete_favorite', index)
-                      }
-                      context="favorite"
-                      image={dog.image}
-                      link={dog.link}
-                    />
-                  </div>
-                ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-)
+	<div className="App container-fluid">
+		<div className="content">
+			<div className="row dog-row valign-wrapper">
+				<div className="col s10 offset-s1 m6 offset-m3 l4 offset-l4">
+					<div className="card lighten-2 dog-card">
+						<div className="card-image" onClick={e => this.handleClick(e, 'randdog')}>
+							<dog image={this.state.dog.image} link={this.state.dog.link} />
+							<span className="card-title super-title red">Choose your favorite dogs</span>
+						</div>
+						<div className="card-action right-align actions">
+							<a
+								className={
+									this.state.isInPack
+										? 'btn-floating waves-effect waves-light red disabled'
+										: 'btn-floating waves-effect waves-light red'
+								}
+								onClick={e => this.handleClick(e, 'favorite')}
+							>
+								<i className="material-icons">favorite</i>
+							</a>
+						</div>
+					</div>
+					<div className="section">
+						<div className="row">
+							{this.state.dogs != null &&
+								this.state.dogs != undefined &&
+								this.state.dogs.map((dog, index) => (
+									<div key={index} className="col s4 thumb">
+										<dog
+											onClick={e => this.handleClick(e, 'delete_favorite', index)}
+											context="favorite"
+											image={dog.image}
+											link={dog.link}
+										/>
+									</div>
+								))}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+);
 ```
 
 We are going to analyze what changed here:
 
-- First: the Card for Random dogs
+-   First: the Card for Random dogs
 
-  ```js
-  <div className="card-image" onClick={e => this.handleClick(e, 'randdog')}>
-    <dog image={this.state.dog.image} link={this.state.dog.link} />
-    <span className="card-title super-title red">
-      Choose your favorite dogs
-    </span>
-  </div>
-  ```
+    ```js
+    <div className="card-image" onClick={e => this.handleClick(e, 'randdog')}>
+    	<dog image={this.state.dog.image} link={this.state.dog.link} />
+    	<span className="card-title super-title red">Choose your favorite dogs</span>
+    </div>
+    ```
 
 ````
 
@@ -927,26 +877,26 @@ For the random card section we use the dog component and pass the _current_ dog 
 
 The only thing that changed here was the `onClick` handler. We use `handleClick` now and we pass the favorite context. When favorite context is passed, `handleClick` executes the `AddNewdog` method.
 
-- Third: The dogs iteration
+-   Third: The dogs iteration
 
-  ```js
-  <div className="section">
-    <div className="row">
-      {this.state.dogs != null &&
-        this.state.dogs != undefined &&
-        this.state.dogs.map((dog, index) => (
-          <div key={index} className="col s4 thumb">
-            <dog
-              onClick={e => this.handleClick(e, 'delete_favorite', index)}
-              context="favorite"
-              image={dog.image}
-              link={dog.link}
-            />
-          </div>
-        ))}
+    ```js
+    <div className="section">
+    	<div className="row">
+    		{this.state.dogs != null &&
+    			this.state.dogs != undefined &&
+    			this.state.dogs.map((dog, index) => (
+    				<div key={index} className="col s4 thumb">
+    					<dog
+    						onClick={e => this.handleClick(e, 'delete_favorite', index)}
+    						context="favorite"
+    						image={dog.image}
+    						link={dog.link}
+    					/>
+    				</div>
+    			))}
+    	</div>
     </div>
-  </div>
-  ```
+    ```
 
 ```
 

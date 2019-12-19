@@ -1,11 +1,11 @@
-# 🖥️ Mini Workshop 1: Build A Simple Pet Fetching Web App
+# 🖥️ 1: Build A Simple Pet Fetching Web App
 
-| **Project&nbsp;Goal**           | Get started with Vue.js basics and simple API calls                                                                                                                           |
-| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **What&nbsp;you’ll&nbsp;learn** | Setting up your Vue app, components basics, performing simple REST API calls using Axios                                                                                      |
+| **Project&nbsp;Goal**           | Get started with Vue.js basics and simple API calls                                                                                                                       |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **What&nbsp;you’ll&nbsp;learn** | Setting up your Vue app, components basics, performing simple REST API calls using Axios                                                                                  |
 | **Tools&nbsp;you’ll need**      | A modern browser like Chrome. Access to [CodeSandbox](https://codesandbox.io) - be sure to create an account in the CodeSandbox to keep the versions of your work intact. |
-| **Time needed to complete**     | 1 hour                                                                                                                                                                        |
-| **Just want to try the app?**   | [CodeSandbox link](https://codesandbox.io/s/web-1-mini-workshop-koj8w)                                                                                                                      |
+| **Time needed to complete**     | 1 hour                                                                                                                                                                    |
+| **Just want to try the app?**   | [CodeSandbox link](https://codesandbox.io/s/web-1-mini-workshop-koj8w)                                                                                                    |
 
 # Instructions
 
@@ -23,7 +23,7 @@ Take a look at the code that was scaffolded by CodeSandbox for a basic Vue.js ap
 
 ```js
 new Vue({
-  render: h => h(App),
+	render: h => h(App),
 }).$mount('#app');
 ```
 
@@ -105,36 +105,37 @@ Check whether the dependency is installed by opening `package.json` and checking
     "vuetify": "^2.0.19"
 },
 ```
-Vuetify works via a plugin structure. In the `/src` folder of your project, create a new folder called `plugins` and inside that a new file called `vuetify.js`. 
+
+Vuetify works via a plugin structure. In the `/src` folder of your project, create a new folder called `plugins` and inside that a new file called `vuetify.js`.
 
 ::: tip 💡
 In CodeSandbox, right click on the new folder to create a new file. Be careful to create these new assets in the `/src` folder!
-::: 
+:::
 
 In the new `vuetify.js` file, add this code to bootstrap the plugin:
 
 ```js
-import Vue from "vue";
-import Vuetify from "vuetify";
-import "vuetify/dist/vuetify.min.css";
+import Vue from 'vue';
+import Vuetify from 'vuetify';
+import 'vuetify/dist/vuetify.min.css';
 Vue.use(Vuetify);
 
 export default new Vuetify();
-
 ```
 
 Next, initialize Vuetify by opening `main.js` and adding these lines under the second `import` (line 3):
 
 ```js
-import vuetify from "@/plugins/vuetify";
+import vuetify from '@/plugins/vuetify';
 ```
+
 Then, change the Vue initialization at the bottom of `main.js` to this:
 
 ```js
 new Vue({
-  vuetify,
-  render: h => h(App)
-}).$mount("#app");
+	vuetify,
+	render: h => h(App),
+}).$mount('#app');
 ```
 
 This ensures that Vuetify's themes and components will be available throughout the Vue app.
@@ -142,10 +143,7 @@ This ensures that Vuetify's themes and components will be available throughout t
 We are going to use icons in this app, so we also have to add Material icons into the `head` part of the `index.html` file. This file is in the `public` folder. Insert this line after the `<title>` tag:
 
 ```html
-<link
-  href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" />
 ```
 
 Let's also change the page title to `Dog Lover`. To do so, we have to change the content of the `title` tag:
@@ -158,27 +156,27 @@ Then, overwrite the current template in `App.vue` with this markup:
 
 ```html
 <template>
-  <v-app>
-    <v-content class="dogs-layout">
-      <v-container fill-height>
-        <div class="dogs-overlay">
-          <h1 class="display-2 text-xs-center">Choose your favorite dogs</h1>
-          <v-card class="dog-card">
-            <v-img height="400px"></v-img>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn icon>
-                <v-icon>favorite</v-icon>
-              </v-btn>
-              <v-btn icon>
-                <v-icon>forward</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </div>
-      </v-container>
-    </v-content>
-  </v-app>
+	<v-app>
+		<v-content class="dogs-layout">
+			<v-container fill-height>
+				<div class="dogs-overlay">
+					<h1 class="display-2 text-xs-center">Choose your favorite dogs</h1>
+					<v-card class="dog-card">
+						<v-img height="400px"></v-img>
+						<v-card-actions>
+							<v-spacer></v-spacer>
+							<v-btn icon>
+								<v-icon>favorite</v-icon>
+							</v-btn>
+							<v-btn icon>
+								<v-icon>forward</v-icon>
+							</v-btn>
+						</v-card-actions>
+					</v-card>
+				</div>
+			</v-container>
+		</v-content>
+	</v-app>
 </template>
 ```
 
@@ -193,10 +191,7 @@ Note the use of `<v-app>` in this template markup - this is a requirement of Vue
 At this point, we need to start populating our UI with some data. First thing we want to do is to display a dog image inside our `v-card`. Let's add a static link just to test how it looks. In `App.vue`'s template, change the `src` property of `v-img`:
 
 ```html
-<v-img
-  height="400px"
-  src="https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg"
-></v-img>
+<v-img height="400px" src="https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg"></v-img>
 ```
 
 How cute! 🐶
@@ -303,13 +298,13 @@ To perform a GET request Axios uses the `axios.get` method. The result will be a
 
 ```js
 axios
-  .get('https://dog.ceo/api/breeds/image/random')
-  .then(response => {
-    console.log(response);
-  })
-  .catch(error => {
-    console.log(error);
-  });
+	.get('https://dog.ceo/api/breeds/image/random')
+	.then(response => {
+		console.log(response);
+	})
+	.catch(error => {
+		console.log(error);
+	});
 ```
 
 We want a new image to replace the old one right when the component is created, so let's add a `created()` hook right after `methods`:
@@ -369,7 +364,7 @@ We also want to call the same method when the 'Next' arrow is clicked. Let's add
 
 ```html
 <v-btn icon @click="loadNewDog">
-  <v-icon>forward</v-icon>
+	<v-icon>forward</v-icon>
 </v-btn>
 ```
 
@@ -392,19 +387,19 @@ To display the favorite dogs we should make changes to our template. Let's add t
 
 ```html
 <v-container grid-list-md fluid>
-  <v-layout wrap>
-    <v-flex xs6 sm4 md2>
-      <v-card class="dog-card">
-        <v-img height="150px"></v-img>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn icon>
-            <v-icon>delete</v-icon>
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+	<v-layout wrap>
+		<v-flex xs6 sm4 md2>
+			<v-card class="dog-card">
+				<v-img height="150px"></v-img>
+				<v-card-actions>
+					<v-spacer></v-spacer>
+					<v-btn icon>
+						<v-icon>delete</v-icon>
+					</v-btn>
+				</v-card-actions>
+			</v-card>
+		</v-flex>
+	</v-layout>
 </v-container>
 ```
 
@@ -413,7 +408,7 @@ You can see an empty card with a 'Delete' button right after the current dog vie
 To render a list of items based on an array Vue has a `v-for` directive, which will iterate through this array and render each item. Let's add this directive to our opening `v-flex` element that will show the array of favorite cards in the new container you just added:
 
 ```html
-<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
+<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet"></v-flex>
 ```
 
 Here `pet` is the reference to the _current array element_ and `index` is the _index of this element_ inside the array.
@@ -448,7 +443,7 @@ And of course we need to bind it to the 'Like' button in the top card:
 
 ```html
 <v-btn icon @click="addToFavorites">
-  <v-icon>favorite</v-icon>
+	<v-icon>favorite</v-icon>
 </v-btn>
 ```
 
@@ -482,7 +477,7 @@ Now we can add a dynamic `disabled` attribute to the 'Like' button in the top ca
 
 ```html
 <v-btn icon @click="addToFavorites" :disabled="isAlreadyInFavorites">
-  <v-icon>favorite</v-icon>
+	<v-icon>favorite</v-icon>
 </v-btn>
 ```
 
@@ -512,7 +507,7 @@ Now we have to bind this new method to the 'Delete' button with a click handler:
 
 ```html
 <v-btn icon @click="removeFromFavorites(index)">
-  <v-icon>delete</v-icon>
+	<v-icon>delete</v-icon>
 </v-btn>
 ```
 
@@ -572,15 +567,15 @@ In our template in `Dog.vue` we should replace `pet` with `dog`, because we don'
 
 ```html
 <template>
-  <v-card class="dog-card">
-    <v-img height="150px" :src="dog"></v-img>
-    <v-card-actions>
-      <v-spacer></v-spacer>
-      <v-btn icon @click="removeFromFavorites(index)">
-        <v-icon>delete</v-icon>
-      </v-btn>
-    </v-card-actions>
-  </v-card>
+	<v-card class="dog-card">
+		<v-img height="150px" :src="dog"></v-img>
+		<v-card-actions>
+			<v-spacer></v-spacer>
+			<v-btn icon @click="removeFromFavorites(index)">
+				<v-icon>delete</v-icon>
+			</v-btn>
+		</v-card-actions>
+	</v-card>
 </template>
 ```
 
@@ -617,7 +612,7 @@ In `App.vue`, place the custom tag in the space where you deleted the card earli
 
 ```html
 <v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
-  <app-dog></app-dog>
+	<app-dog></app-dog>
 </v-flex>
 ```
 
@@ -625,7 +620,7 @@ We have to pass a `dog` prop to our `Dog` component. It will be done with the fa
 
 ```html
 <v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
-  <app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
+	<app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
 </v-flex>
 ```
 
@@ -634,7 +629,7 @@ Now if you try to add a dog to Favorites you will see the dogs in the grid again
 Instead of using the method, we will replace it with an _event emitter_ to the `delete` button inside the Dog component.
 
 ```html
-<v-btn icon @click="$emit('remove')">
+<v-btn icon @click="$emit('remove')"></v-btn>
 ```
 
 By using `$emit`, we are sending a message to our parent component (in this case it's `App.vue`): 'Hi, something is happening here! Please read this message and react to it'.
@@ -650,10 +645,10 @@ Now let's make our application more appealing by adding some animation effects t
 ::: tip 💡
 Vue provides a `transition` wrapper component, allowing you to add entering/leaving transitions for any element or component in the following contexts:
 
-- Conditional rendering (using `v-if`)
-- Conditional display (using `v-show`)
-- Dynamic components
-- Component root nodes
+-   Conditional rendering (using `v-if`)
+-   Conditional display (using `v-show`)
+-   Dynamic components
+-   Component root nodes
 
 :::
 
@@ -678,7 +673,7 @@ Now you can observe this ugly effect: the image disappears every time the user c
 
 ```html
 <transition name="fade">
-  <v-img v-if="currentDogLink" height="400px" :src="currentDogLink"></v-img>
+	<v-img v-if="currentDogLink" height="400px" :src="currentDogLink"></v-img>
 </transition>
 ```
 
@@ -689,11 +684,11 @@ Now that we have our hooks, we can create the transition using them. Edit the CS
 ```css
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1s ease;
+	transition: opacity 1s ease;
 }
 .fade-enter,
 .fade-leave-to {
-  opacity: 0;
+	opacity: 0;
 }
 ```
 
@@ -712,9 +707,9 @@ In `App.vue`, replace the `<v-layout>` component surrounding the `<app-dog>` nes
 
 ```html
 <transition-group name="slide" tag="v-layout" class="wrap">
-  <v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
-    <app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
-  </v-flex>
+	<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
+		<app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
+	</v-flex>
 </transition-group>
 ```
 
@@ -724,12 +719,12 @@ Now we can use CSS classes to describe the slide transition - add these classes 
 
 ```css
 .slide-enter-active {
-  transition: all 0.3s ease;
+	transition: all 0.3s ease;
 }
 .slide-enter,
 .slide-leave-to {
-  transform: translateX(10px);
-  opacity: 0;
+	transform: translateX(10px);
+	opacity: 0;
 }
 ```
 
@@ -737,11 +732,11 @@ Great! We have a nice animation when we add a new dog to the grid. But there are
 
 ```css
 .slide-leave-active {
-  position: absolute;
+	position: absolute;
 }
 
 .slide-move {
-  transition: transform 0.5s;
+	transition: transform 0.5s;
 }
 ```
 

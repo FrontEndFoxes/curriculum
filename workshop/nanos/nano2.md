@@ -1,4 +1,4 @@
-# ☎️ Nano Activity 2: Use Axios to Call an API (intermediate)
+# ☎️ 2: Use Axios to Call an API (intermediate)
 
 | **Project Goal**            | Learn how to build a simple app to fetch random cat images                             |
 | --------------------------- | -------------------------------------------------------------------------------------- |

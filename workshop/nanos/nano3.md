@@ -1,4 +1,4 @@
-# 🏠 Nano Activity 3: Setup Visual Studio Code the Right Way for Vue (beginner)
+# 🏠 3: Setup Visual Studio Code the Right Way for Vue (beginner)
 
 | **Project Goal**            | The goal of this nano is to learn how to properly setup VS Code for Vue development                                    |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------- |

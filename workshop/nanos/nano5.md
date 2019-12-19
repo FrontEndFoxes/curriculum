@@ -1,14 +1,14 @@
-# 🔨 Nano Activity 5: Scaffold a Nuxt App and Explore Its Architecture (Advanced)
+# 🔨 5: Scaffold a Nuxt App and Explore Its Architecture (Advanced)
 
-| **Project Goal**            | Scaffold a Nuxt app and explore its architecture                                                  |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **What you’ll learn**       | You will learn how to set up a Nuxt application and how to understand its architecture to build your own applications.
-| **Tools you’ll need**       | A modern browser like Chrome or Firefox. A text editor of your choice. Access to a terminal.
-| **Time needed to complete** | 30 minutes
+| **Project Goal**            | Scaffold a Nuxt app and explore its architecture                                                                       |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **What you’ll learn**       | You will learn how to set up a Nuxt application and how to understand its architecture to build your own applications. |
+| **Tools you’ll need**       | A modern browser like Chrome or Firefox. A text editor of your choice. Access to a terminal.                           |
+| **Time needed to complete** | 30 minutes                                                                                                             |
 
 # Nuxt
 
-In very simple terms, *Nuxt.js* is a framework that allows us to create Vue.js applications with preset configurations for _SPAs_ and _SSR_ ([Server Side Rendered](https://medium.freecodecamp.org/what-exactly-is-client-side-rendering-and-hows-it-different-from-server-side-rendering-bd5c786b340d)) apps. In this nano you will learn how to set up a *Nuxt* application in your local development environment. You'll also get a first glance at its structure and how to add your own pages and components.
+In very simple terms, _Nuxt.js_ is a framework that allows us to create Vue.js applications with preset configurations for _SPAs_ and _SSR_ ([Server Side Rendered](https://medium.freecodecamp.org/what-exactly-is-client-side-rendering-and-hows-it-different-from-server-side-rendering-bd5c786b340d)) apps. In this nano you will learn how to set up a _Nuxt_ application in your local development environment. You'll also get a first glance at its structure and how to add your own pages and components.
 
 ## Scaffolding Your App
 
@@ -27,16 +27,16 @@ The argument after `create-nuxt-app`, `nuxt-nano`, will be the name of our folde
 
 The tool will create for you a bunch of settings you can configure, so let's take a look.
 
-* **Project name** This simply sets the name of our project, and is your choice.
-* **Project description** A short description for your project.
-* **Use a custom server framework** If you choose one of these, Nuxt will use it for server-side code. You can choose `none` for now, as this is beyond the scope of this nano.
-* **Use a custom UI framework** If you choose one here, it will be installed and plugged in to your project automagically! Let's however choose `none` for this project.
-* **Choose rendering mode** `Universal` will use both SSR and client side rendering, so this is great for SEO tracking. `SPA` is the typical single page app with client side rendering. We pick `Universal` in this case.
-* **Use axios module** Adds the popular HTTP library Axios to your project. Select `no`.
-* **Use eslint** Adds eslinting to your project. We're going to go with `no` for this.
-* **Use prettier** This adds Prettier, a library that formats your code, to your project, but we're going to also say `no`.
-* **Author name** Time to sign your name!
-* **Choose a package manager** This allows you to use either _npm_ or _yarn_ as your package manager, we're using npm for this nano - but feel free to choose yarn if that's your preference.
+-   **Project name** This simply sets the name of our project, and is your choice.
+-   **Project description** A short description for your project.
+-   **Use a custom server framework** If you choose one of these, Nuxt will use it for server-side code. You can choose `none` for now, as this is beyond the scope of this nano.
+-   **Use a custom UI framework** If you choose one here, it will be installed and plugged in to your project automagically! Let's however choose `none` for this project.
+-   **Choose rendering mode** `Universal` will use both SSR and client side rendering, so this is great for SEO tracking. `SPA` is the typical single page app with client side rendering. We pick `Universal` in this case.
+-   **Use axios module** Adds the popular HTTP library Axios to your project. Select `no`.
+-   **Use eslint** Adds eslinting to your project. We're going to go with `no` for this.
+-   **Use prettier** This adds Prettier, a library that formats your code, to your project, but we're going to also say `no`.
+-   **Author name** Time to sign your name!
+-   **Choose a package manager** This allows you to use either _npm_ or _yarn_ as your package manager, we're using npm for this nano - but feel free to choose yarn if that's your preference.
 
 ![Nuxt options](./images/nuxt-options.png)
 
@@ -54,18 +54,18 @@ You should see this structure on your file explorer:
 
 Let's take a closer look to the folders:
 
-* **assets** This is a folder for placing images, css, and just about any media assets that you will need for your project.
-* **components** In here, you can place components like your `Header.vue` or your `FoxyButton.vue`.
-* **layouts** Layouts are `.vue` files that are used to provide a general structure for your page. For example, you may place a structure that includes your Header, Footer and a spot for your dynamic content. More on this later.
-* **middleware** Middleware are custom functions that allow us to plug-in functionality before rendering a page; it acts directly on the http _request_. Middleware is a HUGE subject worthy of its own workshop, but if you want to delve deeper into it, check out the [official docs](https://nuxtjs.org/guide/routing#middleware).
-* **node_modules** This holds your app's dependencies.
-* **pages** This is where we will put our actual pages and content. More on this later!
-* **static** This folder is used for placing assets that will never change, like the `favicon` or the `robots.txt`. Everything you put in here will be mapped to `/` so, if you make a folder inside called `stuff` with a file `secret.txt` you will access it through `<url>/stuff/secret.txt`.
-* **store** This folder is for placing your `store` files in case you're using **Vuex**. It's empty by default, but if you want to _activate_ it and use Vuex, add an index.js file and code away!
+-   **assets** This is a folder for placing images, css, and just about any media assets that you will need for your project.
+-   **components** In here, you can place components like your `Header.vue` or your `FoxyButton.vue`.
+-   **layouts** Layouts are `.vue` files that are used to provide a general structure for your page. For example, you may place a structure that includes your Header, Footer and a spot for your dynamic content. More on this later.
+-   **middleware** Middleware are custom functions that allow us to plug-in functionality before rendering a page; it acts directly on the http _request_. Middleware is a HUGE subject worthy of its own workshop, but if you want to delve deeper into it, check out the [official docs](https://nuxtjs.org/guide/routing#middleware).
+-   **node_modules** This holds your app's dependencies.
+-   **pages** This is where we will put our actual pages and content. More on this later!
+-   **static** This folder is used for placing assets that will never change, like the `favicon` or the `robots.txt`. Everything you put in here will be mapped to `/` so, if you make a folder inside called `stuff` with a file `secret.txt` you will access it through `<url>/stuff/secret.txt`.
+-   **store** This folder is for placing your `store` files in case you're using **Vuex**. It's empty by default, but if you want to _activate_ it and use Vuex, add an index.js file and code away!
 
 ## Pages in Depth
 
-The pages folder is one of the most important folders in a *Nuxt* app since it holds both our views and also our routes!
+The pages folder is one of the most important folders in a _Nuxt_ app since it holds both our views and also our routes!
 
 If you open it on your text editor, you will see that inside there is an `index.vue` file with some basic HTML/CSS content inside of it. Let's go ahead and run the project.
 
@@ -83,7 +83,7 @@ The folder structure in _Nuxt_ is important for determining your app's pages bec
 
 ```js
 <template>
-  <h1>The About page</h1>
+	<h1>The About page</h1>
 </template>
 ```
 
@@ -95,7 +95,7 @@ Create a `contact` folder with an `index.vue` file inside with dummy content.
 
 ```js
 <template>
-  <h1>The Contact page</h1>
+	<h1>The Contact page</h1>
 </template>
 ```
 
@@ -121,7 +121,7 @@ Now paste this code inside:
 
 Check out `http://localhost:3000/posts/123` in your browser, and you will see **123** displayed as the post ID for that page. If you look closely at the code, you will notice that you are retrieving the ID paramter through `$route.params`.
 
-The actual __NAME__ of this param is taken from the name of the folder that contains it, so in this case we named it `_id` and our param is named `id`!
+The actual **NAME** of this param is taken from the name of the folder that contains it, so in this case we named it `_id` and our param is named `id`!
 
 ## Layouts in Depth
 
@@ -129,14 +129,14 @@ Layouts are a way to define a "global container" for your views. This is easily 
 
 Go into the `layouts` folder and open up `default.vue`.
 
-You notice the `<nuxt></nuxt>` element? This is where your views are actually being loaded. Place an *h1* tag above it like so:
+You notice the `<nuxt></nuxt>` element? This is where your views are actually being loaded. Place an _h1_ tag above it like so:
 
 ```js
 <template>
-  <div>
-    <h1>Hello from default.vue</h1>
-    <nuxt/>
-  </div>
+	<div>
+		<h1>Hello from default.vue</h1>
+		<nuxt />
+	</div>
 </template>
 ```
 
@@ -150,10 +150,10 @@ Every _top level_ file inside this folder will be a new layout. So for example, 
 
 ```js
 <template>
-  <div>
-    <h1>Hello from Vue Vixens!</h1>
-    <nuxt/>
-  </div>
+	<div>
+		<h1>Hello from Vue Vixens!</h1>
+		<nuxt />
+	</div>
 </template>
 ```
 

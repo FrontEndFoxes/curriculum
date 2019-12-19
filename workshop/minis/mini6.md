@@ -1,4 +1,4 @@
-# 🎧 Mini Workshop 6: Build a Spotify music player with the Composition API (beta!)
+# 🎧 6: Build a Spotify Music Player with the Composition API (beta!)
 
 | **Project Goal**            | Build a Spotify music player                                                                                                                              |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |

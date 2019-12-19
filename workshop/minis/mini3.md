@@ -1,4 +1,4 @@
-# 🌈🦄⚡️📱 Mini Workshop 3: Build a Rainbow/Unicorn Mobile App that Lights Up a Particle Photon Device
+# 🌈🦄 3: Build a Rainbow/Unicorn Mobile App that Lights Up a Particle Photon Device
 
 | **Project Goal**              | Build a NativeScript-Vue mobile app to make a Photon's built-in LED flash different colors based on user selection.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -255,14 +255,18 @@ NativeScript layouts differ from the html you write on the web. You're using Nat
 Open `app/components/HelloWorld.vue` and delete everything between the template's `<Page>` tags and add the following:
 
 ```html
-<ActionBar class="action-bar" title="Awesome Photons!"/>
-        <StackLayout>
-          <SegmentedBar color="white" backgroundColor="blueviolet"
-                selectedBackgroundColor="hotpink"  class="bar"
-                :items="segmentedBarItems" v-model="selectedBarIndex"
-                  />
-            <StackLayout height="100%" :class="mode"></StackLayout>
-        </StackLayout>
+<ActionBar class="action-bar" title="Awesome Photons!" />
+<StackLayout>
+	<SegmentedBar
+		color="white"
+		backgroundColor="blueviolet"
+		selectedBackgroundColor="hotpink"
+		class="bar"
+		:items="segmentedBarItems"
+		v-model="selectedBarIndex"
+	/>
+	<StackLayout height="100%" :class="mode"></StackLayout>
+</StackLayout>
 ```
 
 The SegmentedBar does not yet appear as the binded values `:items` and the `v-model` have not yet been set. Find the data block (under the template block, within the script block) and add values for a SegmentedBar by overwriting the `data()` method. Also set its default SelectedBarIndex and create a placeholder value for `mode`. The latter will be used to change the UI when the Bar is tapped:
@@ -363,16 +367,21 @@ The finished template block now looks like this:
 
 ```html
 <template>
-    <Page>
-        <ActionBar class="action-bar" title="Awesome Photons!" />
-        <StackLayout>
-            <SegmentedBar color="white" backgroundColor="blueviolet"
-                selectedBackgroundColor="hotpink" class="bar"
-                :items="segmentedBarItems" v-model="selectedBarIndex"
-                @selectedIndexChange="onSelectedIndexChange($event)" />
-            <StackLayout height="100%" :class="mode"></StackLayout>
-        </StackLayout>
-    </Page>
+	<Page>
+		<ActionBar class="action-bar" title="Awesome Photons!" />
+		<StackLayout>
+			<SegmentedBar
+				color="white"
+				backgroundColor="blueviolet"
+				selectedBackgroundColor="hotpink"
+				class="bar"
+				:items="segmentedBarItems"
+				v-model="selectedBarIndex"
+				@selectedIndexChange="onSelectedIndexChange($event)"
+			/>
+			<StackLayout height="100%" :class="mode"></StackLayout>
+		</StackLayout>
+	</Page>
 </template>
 ```
 
