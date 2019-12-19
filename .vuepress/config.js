@@ -55,10 +55,7 @@ module.exports = {
 							'/workshop/minis/mini2',
 							'/workshop/minis/mini3',
 							'/workshop/minis/mini4',
-							[
-								'https://nsvue-workshop.netlify.com',
-								'🔮 Mini Workshop 5: Build a complete mobile app - TarotMoji',
-							],
+							['https://nsvue-workshop.netlify.com', '🔮 5: Build a complete mobile app - TarotMoji'],
 							'/workshop/minis/mini6',
 						],
 					},
@@ -98,10 +95,7 @@ module.exports = {
 				sidebar: [
 					{
 						title: 'ミニワークショップ',
-						children: [
-							'/jp/workshop/minis/mini1',
-							'/jp/workshop/minis/mini2'
-						],
+						children: ['/jp/workshop/minis/mini1', '/jp/workshop/minis/mini2'],
 					},
 				],
 			},
@@ -109,8 +103,8 @@ module.exports = {
 	},
 	markdown: {
 		lineNumbers: true,
-		extendMarkdown: (md) => {
+		extendMarkdown: md => {
 			addCopyButton(md);
-		}
+		},
 	},
 };
