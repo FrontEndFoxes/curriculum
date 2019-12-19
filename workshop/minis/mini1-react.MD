@@ -1,27 +1,27 @@
-# 🖥️ 1: Build A Simple Dog Fetching Web App
+# 🖥️ 1: Build A Simple Pet Fetching Web App
 
-| ** Project & nbsp; Goal **              | Get started with ReactJs basics and simple API calls with axios                                                                                                         |
-| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ** What & nbsp; you’ll & nbsp; learn ** | Setting up your ReactJs app, components basics, performing simple REST API calls using Axios                                                                            |
-| ** Tools & nbsp; you’ll need **         | A modern browser like Chrome.Access to[CodeSandbox](https://codesandbox.io) - be sure to create an account in the CodeSandbox to keep the versions of your work intact. |
-| ** Time needed to complete **           | 1 hour                                                                                                                                                                  |
-| ** Just want to try the app ?**         | [CodeSandbox link](https://codesandbox.io/s/fetch-a-dog-00ruj)                                                                                                          |
+| **Project & nbsp; Goal**              | Get started with React basics and simple API calls with axios                                                                                                           |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **What & nbsp; you’ll & nbsp; learn** | Setting up your React app, components basics, performing simple REST API calls using Axios                                                                              |
+| **Tools & nbsp; you’ll need**         | A modern browser like Chrome.Access to[CodeSandbox](https://codesandbox.io) - be sure to create an account in the CodeSandbox to keep the versions of your work intact. |
+| **Time needed to complete**           | 1 hour                                                                                                                                                                  |
+| **Just want to try the app ?**        | [CodeSandbox link](https://codesandbox.io/s/fetch-a-dog-00ruj)                                                                                                          |
 
     # Instructions
 
     ## The Goal
 
-Yes, the main objective is to learn the basics about React.But if we say it that way is pretty boring.So what about creating an App to fetch random dogs with the option to add our preferences to a favorite list.It sounds much better right.
+Yes, the main objective is to learn the basics about React. But if we say it that way is pretty boring. So what about creating an App to fetch random dogs with the option to add our preferences to a favorite list. It sounds much better right.
 
 What are we going to need to achieve our Goal ?
 
--   ReactJS
+-   React
 -   Axios(To perform AJAX API requests)
 -   Some Style with Materialize
 
 ## Install required packages
 
-We have ReactJS installed, But we need to install Axios too.So click on `Add Dependency` and Search for `axios`.Just click on the firt result and CodeSanbox is going to install it for you.
+We have React installed, But we need to install Axios too.So click on `Add Dependency` and Search for `axios`.Just click on the firt result and CodeSanbox is going to install it for you.
 
 ::: tip 💡
 To perform API calls we will need a library called[Axios](https://github.com/axios/axios). It's a promise-based HTTP client that works both in the browser and in other node.js environments.
@@ -29,13 +29,13 @@ To perform API calls we will need a library called[Axios](https://github.com/axi
 
 ## Scaffold your app
 
-We'll start from scratch in [CodeSandbox](http://codesandbox.io). Create a CodeSandbox account and scaffold a starter ReactJS template by clicking [here](https://codesandbox.io/s/new).
+We'll start from scratch in [CodeSandbox](http://codesandbox.io). Create a CodeSandbox account and scaffold a starter React template by clicking [here](https://codesandbox.io/s/new).
 
 We're going to build an application to load random dog images and store them to a favorites list:
 
 ![Fetch a cute Dog](./images/mini1 - react.png)
 
-### Basic ReactJS App Structure:
+### Basic React App Structure:
 
 -   public /
 -   src /
@@ -43,9 +43,9 @@ We're going to build an application to load random dog images and store them to 
 
 _public_ will contain our image assets, html static files and custom client side javascript files, `package.json` is used by npm(Node package manager) to save all the packages needed to deploy our App, but we dont have to worry about this because CodeSandbox installs and updates this file for us.
 
-_src_ will contain our App and our ReactJs Components.
+_src_ will contain our App and our React Components.
 
-Take a look at the code that was scaffolded by CodeSandbox for a basic ReactJS app.The file`index.js` is opened by default.This is the starting point of a ReactJS app.You will see something like this:
+Take a look at the code that was scaffolded by CodeSandbox for a basic React app.The file`index.js` is opened by default.This is the starting point of a React app.You will see something like this:
 
 ```js
 import React from 'react';
@@ -108,7 +108,7 @@ export default App;
 
 -   The`props` attribute allow us to control dynamic properties for our App Component.For example you can provide the property "color" to the App Component`<App color="red"/>`.So you can access it through`this.props.color`.
 -   The`state` atrribute contains all the App Component data that will dynamically change.
--   Notice that the `return()` function contains the template that ReactJS is going to render for our App Component.
+-   Notice that the `return()` function contains the template that React is going to render for our App Component.
 -   The`export default` tells javascript that we want to export the component for reusing it.
 
 Now go back to the`index.js` file, delete the App function and add the import for our new Component.The file should look as follows:
@@ -380,7 +380,7 @@ componentDidMount() {}
 ```
 
 ::: tip 💡
-This is our app's first lifecycle hook! These are very useful when you want fine control over when to run blocks of code. Read more [here](https://reactjs.org/docs/state-and-lifecycle.html)
+This is our app's first lifecycle hook! These are very useful when you want fine control over when to run blocks of code. Read more [here](https://React.org/docs/state-and-lifecycle.html)
 :::
 
 Inside the `componentDidMount` hook we will call our method.
