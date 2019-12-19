@@ -354,7 +354,7 @@ methods: {
 ```
 
 ::: tip
-Sometimes the NativeScript Playground gets scrambled if you add JavaScript via paste. To fix it, type <command><X> twice.
+Sometimes the NativeScript Playground gets scrambled if you add JavaScript via paste. To fix it, type `<command><X>` twice.
 :::
 
 Then, edit the `<SegmentedBar>` itself to watch for this method: append @selectedIndexChange to the `<SegmentedBar>` markup in `<template>`:
