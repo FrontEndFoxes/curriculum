@@ -734,18 +734,18 @@ Now we are going to tell react how to handle the context. We are going to manage
 -   delete_favorite
 -   the default context(update random dog)
 
-to handle this, we define a new method called `handleClick` inside the App component class. You can add this one after the constructor:
+to handle this, we define a new method called `handleClick` inside the App component class. You can add this one after `useEffect`:
 
 ```js
-handleClick(event, id, index) {
+const handleClick = (event, id, index) => {
   if (id !== null && id !== undefined) {
     if (id == "favorite") {
-      this.AddNewdog();
+      addNewDog();
     } else {
       if (id == "delete_favorite") {
-        this.Deletedog(index);
+        deleteDog(index);
       } else {
-        this.updateRandomDogDog();
+        updateRandomDog();
       }
     }
   }
@@ -753,6 +753,8 @@ handleClick(event, id, index) {
 }
 ```
 
+<!-- 
+Because I'm using arrow functions we don't have to bind anything... I'm not sure if that's what we want or not.
 Also we need to add the following code at the end of the constructor
 
 ```js
@@ -770,7 +772,7 @@ constructor(props) {
 }
 ```
 
-the line`this.handleClick = this.handleClick.bind(this);` indicates that `handleClick` is going to handle the click event and manage the event object.
+the line`this.handleClick = this.handleClick.bind(this);` indicates that `handleClick` is going to handle the click event and manage the event object. -->
 
 Now rewrite the App component template as follows:
 
@@ -781,18 +783,16 @@ return (
 			<div className="row dog-row valign-wrapper">
 				<div className="col s10 offset-s1 m6 offset-m3 l4 offset-l4">
 					<div className="card lighten-2 dog-card">
-						<div className="card-image" onClick={e => this.handleClick(e, 'randdog')}>
-							<dog image={this.state.dog.image} link={this.state.dog.link} />
+						<div className="card-image" onClick={e => handleClick(e, 'randdog')}>
+							<Dog image={dog} link={dog} />
 							<span className="card-title super-title red">Choose your favorite dogs</span>
 						</div>
 						<div className="card-action right-align actions">
 							<a
 								className={
-									this.state.isInPack
-										? 'btn-floating waves-effect waves-light red disabled'
-										: 'btn-floating waves-effect waves-light red'
+									isInPack ? 'btn-floating waves-effect waves-light red disabled' : 'btn-floating waves-effect waves-light red'
 								}
-								onClick={e => this.handleClick(e, 'favorite')}
+								onClick={e => handleClick(e, 'favorite')}
 							>
 								<i className="material-icons">favorite</i>
 							</a>
@@ -800,18 +800,16 @@ return (
 					</div>
 					<div className="section">
 						<div className="row">
-							{this.state.dogs != null &&
-								this.state.dogs != undefined &&
-								this.state.dogs.map((dog, index) => (
-									<div key={index} className="col s4 thumb">
-										<dog
-											onClick={e => this.handleClick(e, 'delete_favorite', index)}
-											context="favorite"
-											image={dog.image}
-											link={dog.link}
-										/>
-									</div>
-								))}
+							{dogs != null && dogs != undefined && .dogs.map((dog, index) => (
+								<div key={index} className="col s4 thumb">
+									<Dog
+                                        onClick={e => handleClick(e, 'delete_favorite', index)}
+                                        context="favorite"
+                                        image={dog}
+                                        link={dog}
+                                    />
+								</div>
+							))}
 						</div>
 					</div>
 				</div>
@@ -826,28 +824,27 @@ We are going to analyze what changed here:
 -   First: the Card for Random dogs
 
     ```js
-    <div className="card-image" onClick={e => this.handleClick(e, 'randdog')}>
-    	<dog image={this.state.dog.image} link={this.state.dog.link} />
+    <div className="card-image" onClick={e => handleClick(e, 'randdog')}>
+    	<dog image={dog} link={dogk} />
     	<span className="card-title super-title red">Choose your favorite dogs</span>
     </div>
     ```
 
-````
 
-When you click the card-image, Our `handleClick` method is triggered. The first argument is the event and the second argument is the context. in this case `randdog`. When `randdog` is passed to `handleClick`, `updateRandomDogDog` is executed and the random dog image is loaded.
+When you click the card-image, Our `handleClick` method is triggered. The first argument is the event and the second argument is the context. in this case `randdog`. When `randdog` is passed to `handleClick`, `updateRandomDog` is executed and the random dog image is loaded.
 
-For the random card section we use the dog component and pass the _current_ dog object(image and link).
+For the random card section we use the dog component and pass the _current_ dog state as the link and image.
 
 - Second: The card actions
 
 ```js
 <a
   className={
-    this.state.isInPack
+    isInPack
       ? "btn-floating waves-effect waves-light red disabled"
       : "btn-floating waves-effect waves-light red"
   }
-  onClick={e => this.handleClick(e, "favorite")}
+  onClick={e => handleClick(e, "favorite")}
 >
   <i className="material-icons">favorite</i>
 </a>
@@ -857,30 +854,28 @@ The only thing that changed here was the `onClick` handler. We use `handleClick`
 
 -   Third: The dogs iteration
 
-    ```js
-    <div className="section">
-    	<div className="row">
-    		{this.state.dogs != null &&
-    			this.state.dogs != undefined &&
-    			this.state.dogs.map((dog, index) => (
-    				<div key={index} className="col s4 thumb">
-    					<dog
-    						onClick={e => this.handleClick(e, 'delete_favorite', index)}
-    						context="favorite"
-    						image={dog.image}
-    						link={dog.link}
-    					/>
-    				</div>
-    			))}
-    	</div>
+```js
+<div className="section">
+    <div className="row">
+        {this.state.dogs != null &&
+            this.state.dogs != undefined &&
+            this.state.dogs.map((dog, index) => (
+                <div key={index} className="col s4 thumb">
+                    <dog
+                        onClick={e => this.handleClick(e, 'delete_favorite', index)}
+                        context="favorite"
+                        image={dog}
+                        link={dog}
+                    />
+                </div>
+            ))}
     </div>
-    ```
-
+</div>
 ```
 
 As you cand see we deleted the img html tag and we added the dog Component inside the iteration. Throughout the `handleClick` method we pass the `delete_favorite` context and the _current_ index we want to delete. This method is triggered when the user clicks the delete icon inside the dog component as we have mentioned before.
 
-We also we pass the `dog.image` and the `dog.link` attributes to the dog Component to render the image of the dog in the favorite section.
+We also we pass `image` and `link` and attributes to the dog component to render the image of the dog in the favorite section.
 
 **🎊You've finished Supplement 1!🎊**
 
