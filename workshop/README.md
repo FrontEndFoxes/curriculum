@@ -1,6 +1,6 @@
 # About Vue Vixens Workshops
 
-Vue Vixens is an initiative created by Jen Looper, a Cloud Developer Advocate Lead at [Microsoft](http://www.microsoft.com). Vue Vixens' mission is to create workshops to teach Vue.js in a cool and fun way to 'foxy people who identify as women'. We have chapters worldwide; find us at [VueVixens.org](https://vuevixens.org).
+Vue Vixens is an initiative created by Jen Looper, a Cloud Developer Advocate Lead at [Microsoft](http://www.microsoft.com). Vue Vixens' mission is to create workshops to teach Vue.js in a cool and fun way to 'foxy people who identify as women'. We have chapters worldwide; find us at [VueVixens.org](https://vuevixens.org). Vue Vixens workshops are called 'skulks' because a group of foxes is called a 'skulk'.
 
 These self-driven workshops are designed to help people get better acquainted with Vue.js for both web and mobile development. Our teaching methodology is explained in [this article](https://dev.to/vuevixens/the-way-of-the-fox-the-vue-vixens-curriculum-290).
 
