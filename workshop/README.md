@@ -4,7 +4,9 @@ Vue Vixens is an initiative created by Jen Looper, a Cloud Developer Advocate Le
 
 These self-driven workshops are designed to help people get better acquainted with Vue.js for both web and mobile development. Our teaching methodology is explained in [this article](https://dev.to/vuevixens/the-way-of-the-fox-the-vue-vixens-curriculum-290).
 
----
+![inaugural skulk in New Orleans](./images/inaugural_skulk.jpg)
+
+> The inaugural Vue Vixens Skulk at Vue.US Conference in New Orleans in March, 2018
 
 ## FAQ
 
@@ -23,7 +25,3 @@ Workshop attendees and mentors can register for events at [vuevixens.org](https:
 **I'm a guy. Can I participate?**
 
 The goal of the program is to familiarize women and those who identify as such with concepts of programming for web and mobile using Vue.js in a supportive and inclusive environment. Experienced Vue developers, however, are very welcome to join in our efforts to organize events, support our scholarship fund, mentor a skulk, and provide content. We are grateful for all kinds of help!
-
-![inaugural skulk in New Orleans](./images/inaugural_skulk.jpg)
-
-> The inaugural Vue Vixens Skulk at Vue.US Conference in New Orleans in March, 2018
