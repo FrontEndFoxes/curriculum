@@ -1,4 +1,4 @@
-# 7: Build an Accessible Memory Game
+# 🃏 1: Build an Accessible Memory Game
 
 | **Project Goal**            | Build A Memory Game                                      with accessibility in mind!                                                                                                                                    |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -9,7 +9,7 @@
 
 ## What You'll Build
 
-![sketchnote](./images/mini7.png)
+![sketchnote](./images/halfday1.png)
 
 # Instructions
 
@@ -21,7 +21,7 @@ If you need to restart your project, clone [this repo](https://github.com/mlama0
 
 Let's start by adding a set of instructions to the game by editing `Instructions.vue` inside the views folder. We want to create instructions for our users so they can access them via a link.
 
-![sketchnote](./images/mini7-instuctions.png)
+![instructions](./images/halfday1-instructions.png)
 
 Let's first create a section for the rules. Edit `views/Instructions.vue` by adding this text under the `h2`'s closing tag:
 
@@ -86,26 +86,23 @@ scores: [
 
 Finally add styles at the bottom of the document, after the closing `</script> tag. Feel free to update any of these styles!
 
-```css
+```html
 <style lang='scss'>
-.main-instruction {
-  width: 80vw;
-  max-width: 600px;
-  margin: auto;
-}
-.list-instruct {
-  list-style: none;
-  padding: 0;
-}
-.star-category {
-  font-weight: bold;
-  margin-bottom: 0;
-}
+    .main-instruction {
+      width: 80vw;
+      max-width: 600px;
+      margin: auto;
+    }
+    .list-instruct {
+      list-style: none;
+      padding: 0;
+    }
+    .star-category {
+      font-weight: bold;
+      margin-bottom: 0;
+    }
 </style>
 ```
-
----
----
 
 ## Setting Up the Board
 
@@ -113,7 +110,7 @@ Finally add styles at the bottom of the document, after the closing `</script> t
 
 Let's build out our game's home page!
 
-We can start by building the section above the Memory game; the reset button, stars and number of moves. Switch to `/views/Home.vue` and overwrite the content in `<div class="home"> in the template:
+We can start by building the section above the Memory game; the reset button, stars and number of moves. Switch to `/views/Home.vue` and overwrite the content in `<div class="home">` in the template:
 
 ```html
 <div class="home">
@@ -137,15 +134,13 @@ We can start by building the section above the Memory game; the reset button, st
 ```
 
 ::: tip 💡
-We are importing `font-awesome` in the `index.html` file inside the `public` folder. So we have access to all the icons from there. [Check out the font-aweseome icons](https://fontawesome.com/icons?from=io)!
+We are importing `font-awesome` in the `index.html` file inside the `public` folder. So we have access to all the icons from there. [Check out the font-awesome icons](https://fontawesome.com/icons?from=io)!
 :::
 
 Add styles to the bottom of this file:
 
-```css
-
+```html
 <style lang="scss">
-// Game Controller
 .gameController .stars {
   padding: 0px;
   display: inline-block;
@@ -183,7 +178,7 @@ Where's the data? We will be using data stored in a Vuex store.
 Vuex is a state management pattern and library for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion. [Learn more about Vuex](https://vuex.vuejs.org/)
 :::
 
-Inside the `store` folder, open the `index.js` file. This holds all the content of our store which we will use to build our game. Lets start by adding some data that we can use to make Game Controller section dynamic!
+Inside the `store` folder, open the `index.js` file. This holds all the content of our store which we will use to build our game. Let's start by adding some data that we can use to make Game Controller section dynamic!
 
 Add some data to the state by overwriting the `state` object in `/store/index.js`:
 
@@ -344,7 +339,6 @@ In `/views/Home.vue`, overwrite the current `<ul class="cards">` with this marku
 It's pretty ugly, so add some styles to the cards inside `/views/Home.vue`'s `<style>` block:
 
 ```css
-// Cards
 .cards {
   margin: 2em auto;
   display: grid;
@@ -439,7 +433,7 @@ Alright! We have our hidden cards! You can see that we have duplicates of each, 
 If you are stuck at this point, feel free to [start from here](https://codesandbox.io/s/vuevixens-mini7-added-cards-upuhh)
 :::
 
-In `Home.vue`, create a shuffle method which will go through all of the cards and change the order. Also, lets trigger that method on the `created` lifecycle hook.
+In `Home.vue`, create a shuffle method which will go through all of the cards and change the order. Also, let's trigger that method on the `created` lifecycle hook.
 
 ::: tip 💡
 [Learn about Lifecycle Hooks](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram)
@@ -469,6 +463,7 @@ methods: {
     }
 },
 ```
+
 Then, call this new `shuffle` method in a new lifecycle hook by adding a `created()` method under the `methods()` object you just pasted in:
 
 ```js
@@ -476,6 +471,7 @@ created() {
     this.shuffle(this.deck.cards);
   },
 ```
+
 You should see the order of the cards change as you refresh the page.
 
 ### Adding Functionality
@@ -489,9 +485,10 @@ update_NumMoves({ commit }, { moves }) {
       commit("UPDATE_NUMMOVES", moves);
     },
 ```
+
 Then, add a Mutation in a similar fashion:
 
-```js 
+```js
 UPDATE_NUMMOVES(state, payload) {
       state.numMoves = payload;
     },
@@ -540,7 +537,7 @@ Now let's make those cards flip when you click them (`@click`). Edit the card bu
 
 Let's make sure users can only open 2 cards at once. We will need to keep track of which and how many cards are open on the board.
 
-Lets go to the Vuex store in `/store/index.js` to add a new value to keep track of which cards are open: `cardsFlipped`. Another to see how many cards are open: `numCardsFlipped`. Add these values into the `state`:
+Let's go to the Vuex store in `/store/index.js` to add a new value to keep track of which cards are open: `cardsFlipped`. Another to see how many cards are open: `numCardsFlipped`. Add these values into the `state`:
 
 ```js
 cardsFlipped: [],
@@ -606,17 +603,15 @@ flipCard(card) {
 }
 ```
 
-At this point, you are keeping track of the card flips. 
+At this point, you are keeping track of the card flips.
 
 ::: tip 💡
 Remember that each card has these properties:
-
 * name
 * icon
 * flipped
 * match
 * close
-
 :::
 
 We want to keep track of all matches to know when we win the game. So let's keep track of which cards have been matched in the store.
@@ -626,6 +621,7 @@ In `store/index.js` add this array to state:
 ```js
 cardsMatched: [],
 ```
+
 Add to mutations:
 
 ```js
@@ -636,6 +632,7 @@ UPDATE_CARDSMATCHED(state, payload) {
     state.cardsMatched.push(payload);
 }
 ```
+
 Add to actions:
 
 ```js
@@ -650,6 +647,7 @@ update_CardsMatched({ commit }, { cards }) {
 Going back to `/store/Home.vue`, change the `match` to true when flipped cards are the same. Edit the `mapState` and `mapActions` methods:
 
 Import State
+
 ```js
 ...mapState([
     "stars",
@@ -660,7 +658,9 @@ Import State
     "cardsMatched"
 ]),
 ```
+
 Import Action
+
 ```js
 ...mapActions([
     "update_NumMoves",
@@ -692,7 +692,7 @@ if (
 }
 ```
 
-> You should be able to match cards and see them stay on the board permanently. However, we are not handling what happens when flipped cards don't match, lets do that next!
+> You should be able to match cards and see them stay on the board permanently. However, we are not handling what happens when flipped cards don't match, let's do that next!
 
 Continuing the `flipCard()` method, add this check after the closing bracket of the if statement you just added:
 
@@ -731,6 +731,7 @@ In `store/index.js`, add to State:
 ```js
 win: false,
 ```
+
 Add to Mutations:
 
 ```js
@@ -741,6 +742,7 @@ UPDATE_STARS(state, payload) {
     state.stars = payload;
 },
 ```
+
 Add to Actions:
 
 ```js
@@ -752,10 +754,9 @@ update_Stars({ commit, dispatch }, { num }) {
 },
 ```
 
-Now that those are available, lets import them in `/views/Home.vue`:
+Now that those are available, let's import them in `/views/Home.vue`:
 
 ```js
-
 // In computed
 ...mapState([
     "stars",
@@ -766,7 +767,6 @@ Now that those are available, lets import them in `/views/Home.vue`:
     "cardsMatched",
     "win"
 ]),
-
 // In methods
 ...mapActions([
     "update_NumMoves",
@@ -780,7 +780,7 @@ Now that those are available, lets import them in `/views/Home.vue`:
 ]),
 ```
 
-Use these inside the `flipCard()` method after we increase the number of moves. Overwrite the top `if` statement 
+Use these inside the `flipCard()` method after we increase the number of moves. Overwrite the top `if` statement:
 
 ```js
 if (card.flipped) {
@@ -799,9 +799,9 @@ if (card.flipped) {
 }
 ```
 
-Lets add some logic when we find a match. Overwrite the `// MATCH` logic:
+Let's add some logic when we find a match. Overwrite the `// MATCH` logic:
 
-```js 
+```js
 // MATCH
 if (
     this.numCardsFlipped === 2 &&
@@ -815,7 +815,6 @@ if (
     this.update_CardsMatched({ cards: this.cardsFlipped });
     this.clear_CardsFlipped({ cards: [] });
     this.update_NumCardsFlipped({ num: 0 });
-    
     // if number of cards matched = number or cards, then win the game
     if (this.cardsMatched.length === this.deck.cards.length / 2) {
         this.update_Win({ win: true });
@@ -823,7 +822,7 @@ if (
   }
 ```
 
-Now You should see the stars updating as you play.
+Now you should see the stars updating as you play.
 
 * 3 stars = 30 moves or less
 * 2 stars = 40 moves or less
@@ -831,7 +830,7 @@ Now You should see the stars updating as you play.
 
 ### Reset
 
-Now, lets add make sure we can start a new game and reset all of the game data when we press the reset button. Lets update our store first (`/store/index.js`):
+Now, let's add make sure we can start a new game and reset all of the game data when we press the reset button. Let's update our store first (`/store/index.js`):
 
 Add to Actions:
 
@@ -853,7 +852,7 @@ async clearGame({ commit, dispatch }) {
 
 In `/views/Home.vue`, add `clearGame` to your mapActions:
 
-```js 
+```js
 ...mapActions([
       "update_NumMoves",
       "clear_CardsFlipped",
@@ -896,18 +895,18 @@ Almost done!
 
 ### Winning!
 
-Let's add a congratulatory message when the game is finished. We will need the pre-built `Winning` component. Lets import it in `views/Home.vue` so we can use it a a child component:
+Let's add a congratulatory message when the game is finished. We will need the pre-built `Winning` component. Let's import it in `views/Home.vue` so we can use it a a child component:
 
 ```js
 // inside the script block
 import Winning from "@/components/Winning.vue";
-
 // under export default
 components: {
     Winning
 },
 ```
-Lets show it once the game is won and hide the board. Add this snippet at the top of the `views/Home.vue` component, overwriting the current `<main>` line:
+
+Let's show it once the game is won and hide the board. Add this snippet at the top of the `views/Home.vue` component, overwriting the current `<main>` line:
 
 ```html
 <Winning v-if="win" :newGame="newGame"></Winning>
@@ -937,7 +936,7 @@ Inside `/components/Winning.vue`, add a congratulatory message and a button to r
 
 Inside the script area in `components/Winning.vue`, bring over the `newGame` and `stars` by overwriting its current script:
 
-```js
+```html
 <script>
 import { mapState } from "vuex";
 
@@ -953,15 +952,13 @@ export default {
 </script>
 ```
 
-> Don't forget to remove the {{card.name}} that shows the name of the card when you're ready to truly play the game!
+> Don't forget to remove the card.name that shows the name of the card when you're ready to truly play the game!
 
-## Add UI finishing touches!
+## Add UI finishing touches
 
 In `Home.vue` add the following styles:
-```css
 
-// Buttons
-
+```js
 .buttonGray {
   background: #2e3d49;
   font-size: 1em;
@@ -982,7 +979,6 @@ In `Home.vue` add the following styles:
   padding-left: 1em;
 }
 
-// MEDIA QUERIES
 @media (min-width: 450px) {
   .cards {
     grid-gap: 1em;
@@ -1025,7 +1021,7 @@ Your goal? Get a 100% Lighthouse score!
 
 [Project Checkpoint 2 - Added Functionality](https://codesandbox.io/s/vuevixens-mini7-functionality-added-2mxse)
 
-[Finished project](https://codesandbox.io/s/vuevixens-mini7-end-qyr1b) 
+[Finished project](https://codesandbox.io/s/vuevixens-mini7-end-qyr1b)
 
 ## Author
 

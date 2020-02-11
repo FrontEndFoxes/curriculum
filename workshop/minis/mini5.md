@@ -1,4 +1,4 @@
-# 🎧 6: Build a Spotify Music Player with the Composition API (beta!)
+# 🎧 5: Build a Spotify Music Player with the Composition API (beta!)
 
 | **Project Goal**            | Build a Spotify music player                                                                                                                              |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -41,7 +41,7 @@ Ideas include:
 
 ## Augment basic UI
 
-In this Codsandbox, you're provided with a basic UI that isn't quite done. Some people prefer to start with the UI layer and hook up the data after. Others prefer to fix the UI after the behind-the-scenes is done. The choice is yours! Here, we suggest starting with the UI so you can test for functionality as you go.
+In this Code Sandbox, you're provided with a basic UI that isn't quite done. Some people prefer to start with the UI layer and hook up the data after. Others prefer to fix the UI after the behind-the-scenes is done. The choice is yours! Here, we suggest starting with the UI so you can test for functionality as you go.
 
 ::: tip 💡
 Be sure to "time box" this step - it is tempting to spend a long time perfecting the styling, but try to limit yourself to 15 minutes if you can. You can always come back later!
@@ -73,21 +73,21 @@ Okay, **still looking for more?** Try moving from the Web Playback SDK to the �
 
 **Slides**
 
--   [Deck from Vue.js London 2019](https://docs.google.com/presentation/d/15aACMcHrUJWn1jpauRY3Jf6KDL2KrDWsoRAu-xqNeBg/edit?usp=sharing)
+- [Deck from Vue.js London 2019](https://docs.google.com/presentation/d/15aACMcHrUJWn1jpauRY3Jf6KDL2KrDWsoRAu-xqNeBg/edit?usp=sharing)
 
 **Vue Vixens**
 
--   [Vue Vixens Code of Conduct](https://github.com/VueVixens/docs/blob/master/workshop/CODE_OF_CONDUCT.md)
+- [Vue Vixens Code of Conduct](https://github.com/VueVixens/docs/blob/master/workshop/CODE_OF_CONDUCT.md)
 
 **Spotify**
 
--   [Web Playback SDK Quick Start](https://developer.spotify.com/documentation/web-playback-sdk/quick-start/)
--   [Web Playback SDK Reference](https://developer.spotify.com/documentation/web-playback-sdk/reference/)
+- [Web Playback SDK Quick Start](https://developer.spotify.com/documentation/web-playback-sdk/quick-start/)
+- [Web Playback SDK Reference](https://developer.spotify.com/documentation/web-playback-sdk/reference/)
 
 **Vue Composition API**
 
--   [RFC](https://vue-composition-api-rfc.netlify.com/)
--   [API Reference](https://vue-composition-api-rfc.netlify.com/api.html)
+- [RFC](https://vue-composition-api-rfc.netlify.com/)
+- [API Reference](https://vue-composition-api-rfc.netlify.com/api.html)
 
 ## Author
 

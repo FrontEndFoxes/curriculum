@@ -49,14 +49,21 @@ module.exports = {
 						],
 					},
 					{
-						title: '🐾 Mini Workshops',
+						title: '🐾 Half-Day Workshops',
+						children: [
+							'/workshop/half-day/half-day1',
+							['https://nsvue-workshop.netlify.com', '🔮 2: Build a complete mobile app - TarotMoji'],
+
+						],
+					},
+					{
+						title: '🦴 Mini Workshops',
 						children: [
 							'/workshop/minis/mini1',
 							'/workshop/minis/mini2',
 							'/workshop/minis/mini3',
 							'/workshop/minis/mini4',
-							['https://nsvue-workshop.netlify.com', '🔮 5: Build a complete mobile app - TarotMoji'],
-							'/workshop/minis/mini6',
+							'/workshop/minis/mini5',
 						],
 					},
 					{
