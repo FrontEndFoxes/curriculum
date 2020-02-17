@@ -2,8 +2,8 @@
 
 | **Project Goal**            | Build A Memory Game                                      with accessibility in mind!                                                                                                                                    |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **What you’ll learn**       | How to build a memory game and about accessibility principles. You can play with the [finished project](https://codesandbox.io/s/vuevixens-mini7-end-qyr1b)                                                                                                                     |
-| **Tools you’ll need**       | A modern browser like Chrome. An account at CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/mlama007/Vue-Memory-Game/tree/start). Instructions on how to do this are in [Appendix 1](appendix_1.md). Or you can go to the [Memory Game Code Sandbox](https://codesandbox.io/s/vuevixens-mini7-start-6g0cj).
+| **What you’ll learn**       | How to build a memory game and about accessibility principles. You can play with the [finished project](https://codesandbox.io/s/vuevixens-memorygame-complete-650zb)                                                                                                                     |
+| **Tools you’ll need**       | A modern browser like Chrome. An account at CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/mlama007/Vue-Memory-Game/tree/start). Instructions on how to do this are in [Appendix 1](appendix_1.md). Or you can go to the [Memory Game Code Sandbox](https://codesandbox.io/s/vuevixens-memorygame-start-6g0cj).
 | **Time needed to complete** | 4 hours
 |
 
@@ -13,7 +13,7 @@
 
 # Instructions
 
-If you need to restart your project, clone [this repo](https://github.com/mlama007/Vue-Memory-Game/tree/start). To start this project, sign into your Code Sandbox account and fork this [Memory Game Code Sandbox](https://codesandbox.io/s/vuevixens-mini7-start-6g0cj). You'll work in Code Sandbox to build out a memory game.
+If you need to restart your project, clone [this repo](https://github.com/mlama007/Vue-Memory-Game/tree/start). To start this project, sign into your Code Sandbox account and fork this [Memory Game Code Sandbox](https://codesandbox.io/s/vuevixens-memorygame-start-6g0cj). You'll work in Code Sandbox to build out a memory game.
 
 # Getting Started
 
@@ -262,32 +262,33 @@ Now we can start working on the game logic!
 
 ### Game Logic
 
-Let's start by creating a computed property that grabs the `types` and generates card metadata.
+Let's start by creating a getter that grabs the `types` and generates card metadata.
 
 ::: tip 💡
+[Learn about Vuex Getters](https://vuex.vuejs.org/guide/getters.html).
 [Learn about computed properties](https://vuejs.org/v2/guide/computed.html).
 :::
 
-Overwrite the current `computed` property in `/views/Home.vue`:
+Add a Getter to the store and import it in `/views/Home.vue`:
 
+Store:
 ```js
-computed: {
-    ...mapState(["stars", "numMoves", "types"]),
-    deck: function() {
+getters: {
+    deck: (state) => {
       let deck = {
         cards: []
       };
-      for (let index = 0; index < this.types.length; index++) {
+      for (let index = 0; index < state.types.length; index++) {
         deck.cards.push({
-          name: this.types[index],
-          icon: "fa fa-" + this.types[index],
+          name: state.types[index],
+          icon: "fa fa-" + state.types[index],
           flipped: false,
           match: false,
           close: false
         });
         deck.cards.push({
-          name: this.types[index],
-          icon: "fa fa-" + this.types[index],
+          name: state.types[index],
+          icon: "fa fa-" + state.types[index],
           flipped: false,
           match: false,
           close: false
@@ -296,6 +297,27 @@ computed: {
       return deck;
     }
 }
+```
+
+Home.vue:
+```js
+// Import mapGetters
+import { mapState, mapGetters, mapActions } from "vuex";
+
+// Add Getters to computed
+computed: {
+    ...mapState([
+      "gameAnnounce",
+      "win",
+      "stars",
+      "cardsFlipped",
+      "numCardsFlipped",
+      "numMoves",
+      "cardsMatched",
+      "types"
+    ]),
+    ...mapGetters(["deck"])
+  },
 ```
 
 And update the display content by overwriting the card `ul` in `/views/Home.vue`:
@@ -327,7 +349,7 @@ In `/views/Home.vue`, overwrite the current `<ul class="cards">` with this marku
     <li class="cardItem" v-for="(card, index) in deck.cards" :key="index">
     {{card.name}} <!-- placeholder to show what is inside each card -->
     <button
-        :class="[ card.match ? 'card match' : card.flipped ? 'card open show' : card.close ? 'card close' : 'card']"
+        :class="[ card.match ? 'card match' : card.flipped ? 'card show' : card.close ? 'card close' : 'card']"
     >
         <span v-if="!card.flipped">?</span>
         <div v-else :class="deck.cards[index].icon"></div>
@@ -339,10 +361,11 @@ In `/views/Home.vue`, overwrite the current `<ul class="cards">` with this marku
 It's pretty ugly, so add some styles to the cards inside `/views/Home.vue`'s `<style>` block:
 
 ```css
+// Cards
 .cards {
   margin: 2em auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 0.5em;
   padding: 0;
 
@@ -351,10 +374,10 @@ It's pretty ugly, so add some styles to the cards inside `/views/Home.vue`'s `<s
   }
 
   .card {
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
     font-size: 4em;
-    /* background: #061018 url("imgs/fabric.png"); */
+    background: #061018 url(/img/fabric.5959b418.png);
     background-blend-mode: soft-light;
     border: 1px solid #acacac;
     color: #ffffff;
@@ -364,31 +387,20 @@ It's pretty ugly, so add some styles to the cards inside `/views/Home.vue`'s `<s
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
-
-    &:hover,
-    &:focus {
-      background-blend-mode: hard-light;
-      color: #112c3e;
-      border: 2px solid #112c3e;
-    }
-  }
-
-  .open {
-    transform: rotateY(0);
-    /* background: #0b5891 url("imgs/fabric.png"); */
-    cursor: default;
   }
 
   .show {
     font-size: 33px;
+    background: #0b5891 url(/img/fabric.5959b418.png);
+    cursor: default;
   }
 
   .match {
     cursor: default;
-    /* background: #0e4b5a url("imgs/fabric.png"); */
-    font-size: 3rgb (3, 3, 3);
-    animation-name: pulse_animation;
-    -webkit-animation-name: pulse_animation;
+    background: #0e4b5a url(/img/fabric.5959b418.png);
+    font-size: 33px;
+    animation-name: match-animation;
+    -webkit-animation-name: match-animation;
     animation-duration: 1000ms;
     -webkit-animation-duration: 1000ms;
     transform-origin: 70% 70%;
@@ -400,10 +412,16 @@ It's pretty ugly, so add some styles to the cards inside `/views/Home.vue`'s `<s
     cursor: default;
     animation-name: close;
     -webkit-animation-name: close;
-    animation-duration: 0.5s;
-    -webkit-animation-duration: 0.5s;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
+    &:hover,
+    &:focus {
+      background-blend-mode: hard-light;
+      color: #112c3e;
+      border: 2px solid #112c3e;
+    }
   }
 }
 ```
@@ -417,7 +435,7 @@ In `App.vue` add more card styles so a nice contrasting background image shows u
   .card {
     background: #061018 url("imgs/fabric.png");
   }
-  .open {
+  .show {
     background: #0b5891 url("imgs/fabric.png");
   }
 
@@ -430,7 +448,7 @@ In `App.vue` add more card styles so a nice contrasting background image shows u
 Alright! We have our hidden cards! You can see that we have duplicates of each, but they should really be shuffled so they are not in the same order every time. Let's make that happen!
 
 ::: tip 💡
-If you are stuck at this point, feel free to [start from here](https://codesandbox.io/s/vuevixens-mini7-added-cards-upuhh)
+If you are stuck at this point, feel free to [start from here](https://codesandbox.io/s/vuevixens-memorygame-added-cards-upuhh)
 :::
 
 In `Home.vue`, create a shuffle method which will go through all of the cards and change the order. Also, let's trigger that method on the `created` lifecycle hook.
@@ -525,7 +543,7 @@ Now let's make those cards flip when you click them (`@click`). Edit the card bu
 
 ```html
 <button
-    :class="[ card.match ? 'card match' : card.flipped ? 'card open show' : card.close ? 'card close' : 'card']"
+    :class="[ card.match ? 'card match' : card.flipped ? 'card show' : card.close ? 'card close' : 'card']"
     @click="flipCard(card)"
     >
     <span v-if="!card.flipped">?</span>
@@ -996,18 +1014,21 @@ In `Home.vue` add the following styles:
 ```
 
 ::: tip 💡
-If you are stuck, feel free to [start from here](https://codesandbox.io/s/vuevixens-mini7-functionality-added-2mxse)
+If you are stuck, feel free to [start from here](https://codesandbox.io/s/vuevixens-memorygame-functionality-added-y5jp3)
 :::
 
 ## Challenge
 
 Let's add Assistive Technology support! You can announce route changes and inform screen readers about important actions. Here are some tasks you can tackle:
 
+* Update Metadata (titles)
+* Announce Route Update
+* Add Skip to Main Content link
+  * Focus on this when route changes
 * Announce which cards are flipped
 * Announce when a match is made
 * Announce how many matches are left to find
 * Announce how many stars player won with
-* Announce route changes
 * Check for keyboard functionality
 * Disable matched cards
 
@@ -1015,13 +1036,13 @@ Your goal? Get a 100% Lighthouse score!
 
 ## Resources
 
-[Project Starting Point](https://codesandbox.io/s/vuevixens-mini7-start-6g0cj)
+[Project Starting Point](https://codesandbox.io/s/vuevixens-memorygame-start-6g0cj)
 
-[Project Checkpoint 1 - Added Cards](https://codesandbox.io/s/vuevixens-mini7-added-cards-upuhh)
+[Project Checkpoint 1 - Added Cards](https://codesandbox.io/s/vuevixens-memorygame-added-cards-upuhh)
 
-[Project Checkpoint 2 - Added Functionality](https://codesandbox.io/s/vuevixens-mini7-functionality-added-2mxse)
+[Project Checkpoint 2 - Added Functionality](https://codesandbox.io/s/vuevixens-memorygame-functionality-added-y5jp3)
 
-[Finished project](https://codesandbox.io/s/vuevixens-mini7-end-qyr1b)
+[Finished project](https://codesandbox.io/s/vuevixens-memorygame-complete-650zb)
 
 ## Author
 
