@@ -1021,16 +1021,464 @@ If you are stuck, feel free to [start from here](https://codesandbox.io/s/vuevix
 
 Let's add Assistive Technology support! You can announce route changes and inform screen readers about important actions. Here are some tasks you can tackle:
 
-* Update Metadata (titles)
-* Announce Route Update
-* Add Skip to Main Content link
-  * Focus on this when route changes
-* Announce which cards are flipped
-* Announce when a match is made
-* Announce how many matches are left to find
-* Announce how many stars player won with
-* Check for keyboard functionality
-* Disable matched cards
+### Update Metadata (titles)
+
+In the router:
+
+```js
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    meta: {
+      title: 'Memory Game - Home Page',
+      metaTags: [
+        {
+          name: 'description',
+          content: 'This is the home page for the accessible Memory Game using Vue.js.'
+        }
+      ]
+    },
+    component: Home
+  },
+  {
+    path: '/Instructions',
+    name: 'Instructions',
+    meta: {
+      title: 'Memory Game - Instructions Page',
+      metaTags: [
+        {
+          name: 'description',
+          content: 'This is the instructions page for the accessible Memory Game using Vue.js.'
+        }
+      ]
+    },
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Instructions.vue')
+  }
+]
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
+})
+
+router.beforeEach((to, from, next) => {
+  const newMetaTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
+  if (newMetaTitle) document.title = newMetaTitle.meta.title;
+  next();
+});
+```
+
+Doing this, will provide a summary of a web page. Search engines display the meta description in search results.
+
+### Announce Route Update
+
+In the store add the following to;
+
+State:
+```js
+routeAnnouncement: '',
+```
+Mutations: 
+```js
+UPDATE_ROUTE_ANNOUNCEMENT(state, payload) {	
+  state.routeAnnouncement = payload	
+},
+```
+Actions:
+```js
+update_routeAnnouncement({ commit }, { message }) {	
+  commit('UPDATE_ROUTE_ANNOUNCEMENT', message)	
+},
+```
+
+In app.vue, lets bring in the announcement with `role="status"`.
+
+>The aria live region role of status has an implicit aria-live value of polite, which allows a user to be notified via AT (such as a screen reader) when status messages are added.
+[Learn about role="status".](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA22.html)
+
+```html
+<p role="status">{{routeAnnouncement}}</p>
+```
+
+```js
+methods: {
+  ...mapActions(["update_routeAnnouncement"]),
+  announceRoute(message) {
+    this.update_routeAnnouncement(message);
+  }
+}
+```
+
+In App.vue, lets keep track of when the route changes, and change the route announcement, as well as change the `aria-current` to active link. [Learn about aria-current.](https://www.w3.org/TR/wai-aria-1.1/#aria-current)
+
+```js
+watch: {
+  $route: function() {
+    this.announceRoute({ message: this.$route.name + " page loaded" });
+    
+    this.$nextTick(function() {
+      let navLinks = this.$refs.nav
+      
+      navLinks.querySelectorAll("[aria-current]")
+        .forEach(current => {
+          current.removeAttribute("aria-current");
+        });
+
+      navLinks.querySelectorAll(".router-link-exact-active")
+        .forEach(current => {
+          current.setAttribute("aria-current", "page");
+        });
+    });
+  }
+}
+```
+
+By doing this, you are giving all users the ability to become aware of new conent on the page and handling the focus accordingly.
+
+
+### Add Skip to Main Content link
+
+Adding a _Skip to Main Content_ link will allow users to focus on this when new route is loaded. They can choose to navigate the site from the beginning or skip to main content.
+
+Lets add this to the header in App.vue:
+
+```html
+<ul class="skip-links">
+  <li>
+    <a href="#main" ref="skipLink">Skip to main content</a>
+  </li>
+</ul>
+```
+
+Add the style for this: notice that this link will remain hidden unless users tab to it or it is focused on reroute (we will add this next)
+```css
+
+/* Skip to Main */
+.skip-links {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+
+  a {
+    background: #0e4b5a url(/img/fabric.5959b418.png);
+    background-blend-mode: color-burn;
+    display: block;
+    opacity: 0;
+    font-size: 1em;
+    font-weight: bold;
+
+    &:focus {
+      opacity: 1;
+      padding: 1em;
+    }
+
+    &:visited {
+      color: white;
+    }
+  }
+}
+```
+To add focus to this on route change, add the following to the wacth inside App.vue:
+
+```js
+this.$refs["skipLink"].focus();
+```
+
+Add `id="main"` along with aria-labele inside the `<main>` tags in Home.vue and Instructions.vue:
+
+```html
+<!-- Inside Home.vue -->
+<main class="container" v-else id="main" tabindex="-1" aria-labelledby="gameTitle">
+      <h2 id="gameTitle">Game Board</h2>
+
+<!-- Inside Home.vue -->
+<main class="main-instruction" id="main" tabindex="-1" aria-labelledby="instructionsTitle">
+      <h2 id="instructionsTitle">Instructions</h2>
+```
+
+This will allow screen readers to pick up the content of the id as the accessible name for `<main>`.
+
+### Announce gameplay
+
+Lets make sure that we are letting users know what is happening in the game as they play. They need to know the content of the cards they flip, whether they got a match or not, how many moves and stars they have left, how many matches are left in the game.
+
+Try to do this one yourself without looking ahead. Only look at the code if you get stuck. Feel free to ask questions!!
+
+:::tip
+[Learn about `aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute)
+
+[Learn about `aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)
+
+[Learn about `aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute)
+:::
+
+Lets make some changes inside Home.vue. We will be adding `aria-labels`, `aria-describedby`, gameAnnounce, and update the announcement in the gameplay:
+
+```html
+<template>
+  <div class="home" aria-label="Memory Game Board">
+    <p role="status">{{gameAnnounce}}</p>
+    <Winning v-if="win" :newGame="newGame" :winningMessage="winningMessage"></Winning>
+    <main class="container" v-else id="main" tabindex="-1" aria-labelledby="gameTitle">
+      <h2 id="gameTitle">Game Board</h2>
+      <section aria-label="Memory Game Controller" class="gameController">
+        <button @click="newGame" class="restart buttonGray">
+          <i class="fa fa-repeat"></i>
+          <span class="reset">Reset</span>
+        </button>
+        <div>
+          <ul class="stars" :aria-label="stars + ' stars left'">
+            <li v-for="(star, index) in stars" :key="index" class="star">
+              <i :class="`${index} fa fa-star`"></i>
+            </li>
+          </ul>
+          <p class="moves">Moves: {{numMoves}}</p>
+        </div>
+      </section>
+
+      <section aria-label="Memory Game Board" id="cards">
+        <p id="gameUpdate">{{gameUpdate}}</p>
+        <ul class="cards">
+          <li
+            v-for="(card, index) in this.deck.cards"
+            :key="index"
+            :aria-label="[ card.flipped ? card.name : '']"
+            class="cardItem"
+          >
+            <button
+              aria-describedby="gameUpdate"
+              :aria-label="[ card.flipped ? card.name + ' flipped' : 'card ' + (index+1)]"
+              :class="[ card.match ? 'card match' : card.flipped ? 'card show' : card.close ? 'card close' : 'card']"
+              @click="flipCard(card)"
+              :disabled="card.match"
+            >
+              <span v-if="!card.flipped">?</span>
+              <div v-else :class="deck.cards[index].icon"></div>
+            </button>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</template>
+```
+
+Update the Script as well:
+
+```js
+<script>
+import Winning from "@/components/Winning.vue";
+import { mapState, mapGetters, mapActions } from "vuex";
+
+export default {
+  name: "Home",
+  components: {
+    Winning
+  },
+  computed: {
+    ...mapState([
+      "gameAnnounce",
+      "win",
+      "stars",
+      "cardsFlipped",
+      "numCardsFlipped",
+      "numMoves",
+      "cardsMatched",
+      "types"
+    ]),
+    ...mapGetters(["gameUpdate", "deck", "winningMessage"])
+  },
+  created() {
+    this.shuffle(this.deck.cards);
+  },
+  methods: {
+    ...mapActions([
+      "clearGame",
+      "updateDeck",
+      "update_Win",
+      "update_Stars",
+      "clear_CardsFlipped",
+      "update_CardsFlipped",
+      "update_NumCardsFlipped",
+      "update_NumMoves",
+      "clear_CardsMatched",
+      "update_CardsMatched",
+      "update_GameAnnounce"
+    ]),
+    shuffle(cards) {
+      this.deck.cards = [];
+      var currentIndex = cards.length,
+        temporaryValue,
+        randomIndex;
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        // And swap it with the current element.
+        temporaryValue = cards[currentIndex];
+        cards[currentIndex] = cards[randomIndex];
+        cards[randomIndex] = temporaryValue;
+      }
+
+      this.deck.cards = cards;
+    },
+    newGame() {
+      this.shuffle(this.deck.cards);
+
+      for (let i = 0; i < this.deck.cards.length; i++) {
+        this.deck.cards[i].flipped = false;
+        this.deck.cards[i].close = false;
+        this.deck.cards[i].match = false;
+      }
+
+      this.clearGame();
+    },
+
+    flipCard(card) {
+      this.update_GameAnnounce({ message: "" });
+      if (card.flipped) {
+        this.update_GameAnnounce({
+          message: "Card already flipped."
+        });
+        return;
+      } else {
+        this.update_NumMoves({ moves: this.numMoves + 1 });
+        if (this.numMoves < 30) {
+          this.update_Stars({ num: 3 });
+        } else if (this.numMoves < 40) {
+          this.update_Stars({ num: 2 });
+        } else if (this.numMoves < 50) {
+          this.update_Stars({ num: 1 });
+        } else if (this.numMoves > 50) {
+          this.update_Stars({ num: 0 });
+        }
+      }
+      // only allow flips if there are < or = 2 flipped cards
+      if (this.numCardsFlipped < 2) {
+        if (this.numCardsFlipped < 1) {
+          this.update_GameAnnounce({
+            message: card.name + " flipped."
+          });
+        }
+        card.flipped = true;
+        this.update_NumCardsFlipped({ num: this.numCardsFlipped + 1 });
+        this.update_CardsFlipped({ cards: card });
+        // MATCH
+        if (
+          this.numCardsFlipped === 2 &&
+          this.cardsFlipped[0].name == this.cardsFlipped[1].name
+        ) {
+          let matchesRemaining =
+            this.deck.cards.length / 2 - this.cardsMatched.length - 1;
+          for (let i = 0; i < this.deck.cards.length; i++) {
+            if (this.deck.cards[i].name == this.cardsFlipped[0].name) {
+              this.deck.cards[i].match = true;
+            }
+            this.update_GameAnnounce({
+              message:
+                card.name +
+                " flipped. Match found! " +
+                matchesRemaining +
+                " matches left!"
+            });
+          }
+          this.update_CardsMatched({ cards: this.cardsFlipped });
+          this.clear_CardsFlipped({ cards: [] });
+          this.update_NumCardsFlipped({ num: 0 });
+          //if number of cards matched = number or cards, then win the game
+          if (this.cardsMatched.length === this.deck.cards.length / 2) {
+            this.update_Win({ win: true });
+            this.update_GameAnnounce({
+              message: this.winningMessage
+            });
+          }
+        }
+        // NO MATCH
+        else if (
+          this.numCardsFlipped === 2 &&
+          this.cardsFlipped[0].name !== this.cardsFlipped[1].name
+        ) {
+          // Wait before closing mismatched card
+          this.update_GameAnnounce({
+            message: card.name + " flipped. No match."
+          });
+          setTimeout(() => {
+            for (let i = 0; i < this.deck.cards.length; i++) {
+              if (this.deck.cards[i].flipped && !this.deck.cards[i].match) {
+                this.deck.cards[i].flipped = false;
+                this.deck.cards[i].close = true;
+              }
+            }
+            this.clear_CardsFlipped({ cards: [] });
+            this.update_NumCardsFlipped({ num: 0 });
+            return;
+          }, 900);
+        }
+      }
+    }
+  }
+};
+</script>
+```
+
+### Update Winning to focus
+
+When players win the game, we want to make sure they focus moves into the new content.
+
+Lets create a directive to auto-focus an element when it comes into view. 
+
+Inside main.js:
+```js
+Vue.directive('focus', {
+  inserted: function (el) {
+    el.focus()
+  }
+})
+```
+
+We will use this in Winning.vue:
+```html
+<template>
+  <div class="win">
+    <div>
+      <h2 id="congratulations" aria-labelledby="congratulations winningMsg" v-focus tabindex="-1">Congratulations!</h2>
+      <ul class="stars" :aria-label="stars + ' stars left'">
+        <li v-for="(star, index) in stars" :key="index">
+          <i :class="`${index} fa fa-star`"></i>
+        </li>
+      </ul>
+      <p id="winningMsg">{{winningMessage}}</p>
+      <button class="buttonGray" @click="newGame()">Play again</button>
+    </div>
+  </div>
+</template>
+```
+
+And here is what the script should look like:
+```js
+<script>
+import { mapState } from "vuex";
+export default {
+  name: "Winning",
+  props: {
+    newGame: { type: Function },
+    winningMessage: {type: String}
+  },
+  computed: {
+    ...mapState([
+      "stars"
+    ])
+  }
+};
+</script>
+```
 
 Your goal? Get a 100% Lighthouse score!
 
