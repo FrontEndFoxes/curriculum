@@ -2,7 +2,7 @@
 
 | **Project Goal**            | Build A Memory Game                                      with accessibility in mind!                                                                                                                                    |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **What you’ll learn**       | How to build a memory game and about accessibility principles. You can play with the [finished project](https://codesandbox.io/s/vuevixens-memorygame-complete-650zb)                                                                                                                     |
+| **What you’ll learn**       | How to build a memory game while applying accessibility principles. You can play with the [finished project](https://codesandbox.io/s/vuevixens-memorygame-complete-650zb)                                                                                                                     |
 | **Tools you’ll need**       | A modern browser like Chrome. An account at CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/mlama007/Vue-Memory-Game/tree/start). Instructions on how to do this are in [Appendix 1](appendix_1.md). Or you can go to the [Memory Game Code Sandbox](https://codesandbox.io/s/vuevixens-memorygame-start-6g0cj).
 | **Time needed to complete** | 4 hours
 |
@@ -84,7 +84,7 @@ scores: [
 ]
 ```
 
-Finally add styles at the bottom of the document, after the closing `</script> tag. Feel free to update any of these styles!
+Finally add styles at the bottom of the document, after the closing `</script>` tag. Feel free to update any of these styles!
 
 ```html
 <style lang='scss'>
@@ -220,7 +220,7 @@ This will allow us to use the data from the store as you would use data from tha
 </div>
 ```
 
-By using a `v-for` in the stars, we can loop through the number of stars stored in our Vuex state. As people play the game and lose stars, it will automatically show the correct number. We will add that logic once the game is further along.
+By using a `v-for` for the stars, we can loop through the number of stars stored in our Vuex state. As people play the game and lose stars, it will automatically show the correct number. We will add that logic once the game is further along.
 
 ### Game Board
 
@@ -428,7 +428,7 @@ It's pretty ugly, so add some styles to the cards inside `/views/Home.vue`'s `<s
 
 Looking better!
 
-In `App.vue` add more card styles so a nice contrasting background image shows up. Note, you might need to refresh your Code Sandbox to see these new styles.
+In `App.vue`, add more card styles so a nice contrasting background image shows up. Note, you might need to refresh your Code Sandbox to see these new styles.
 
 ```css
 .cards {
@@ -848,7 +848,7 @@ Now you should see the stars updating as you play.
 
 ### Reset
 
-Now, let's add make sure we can start a new game and reset all of the game data when we press the reset button. Let's update our store first (`/store/index.js`):
+Now, let's make sure we can start a new game and reset all of the game data when we press the reset button. Let's update our store first (`/store/index.js`):
 
 Add to Actions:
 
@@ -1072,11 +1072,11 @@ router.beforeEach((to, from, next) => {
 });
 ```
 
-Doing this, will provide a summary of a web page. Search engines display the meta description in search results.
+Doing this will provide a summary of a web page. Search engines display the meta description in search results.
 
 ### Announce Route Update
 
-In the store add the following to;
+In the store, add the following to:
 
 State:
 ```js
@@ -1095,7 +1095,7 @@ update_routeAnnouncement({ commit }, { message }) {
 },
 ```
 
-In app.vue, lets bring in the announcement with `role="status"`.
+In App.vue, lets bring in the announcement with `role="status"`.
 
 >The aria live region role of status has an implicit aria-live value of polite, which allows a user to be notified via AT (such as a screen reader) when status messages are added.
 [Learn about role="status".](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA22.html)
@@ -1137,12 +1137,12 @@ watch: {
 }
 ```
 
-By doing this, you are giving all users the ability to become aware of new conent on the page and handling the focus accordingly.
+By doing this, you are giving all users the ability to become aware of new content on the page and handling the focus accordingly.
 
 
 ### Add Skip to Main Content link
 
-Adding a _Skip to Main Content_ link will allow users to focus on this when new route is loaded. They can choose to navigate the site from the beginning or skip to main content.
+Adding a _Skip to Main Content_ link will allow users to focus on this when the new route is loaded. They can choose to navigate the site from the beginning or skip to main content.
 
 Lets add this to the header in App.vue:
 
@@ -1184,13 +1184,13 @@ Add the style for this: notice that this link will remain hidden unless users ta
   }
 }
 ```
-To add focus to this on route change, add the following to the wacth inside App.vue:
+To add focus to this on route change, add the following to the watch inside App.vue:
 
 ```js
 this.$refs["skipLink"].focus();
 ```
 
-Add `id="main"` along with aria-labele inside the `<main>` tags in Home.vue and Instructions.vue:
+Add `id="main"` along with aria-label inside the `<main>` tags in Home.vue and Instructions.vue:
 
 ```html
 <!-- Inside Home.vue -->
@@ -1269,7 +1269,7 @@ Lets make some changes inside Home.vue. We will be adding `aria-labels`, `aria-d
 </template>
 ```
 
-Update the Script as well:
+Update the `script` as well:
 
 ```js
 <script>
@@ -1430,7 +1430,7 @@ export default {
 
 ### Update Winning to focus
 
-When players win the game, we want to make sure they focus moves into the new content.
+When players win the game, we want to make sure the focus moves into the new content.
 
 Lets create a directive to auto-focus an element when it comes into view. 
 
