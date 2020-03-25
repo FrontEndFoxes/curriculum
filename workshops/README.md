@@ -1,12 +1,12 @@
 # About Our Workshops
 
-![Front-End Foxes](../images/vue-vixens.png)
+![Front-End Foxes](/vue-vixens.png)
 
 Front-End Foxes and its sub-group, Vue Vixens, are initiatives created by Jen Looper, a Cloud Developer Advocate Lead at [Microsoft](http://www.microsoft.com). Our mission is to create workshops to teach Vue.js in a cool and fun way to 'foxy people who identify as women'. We have chapters worldwide; find us at [FrontEndFoxes.org](https://frontendfoxes.org). Front-End Foxes workshops are called 'skulks' because a group of foxes is called a 'skulk'.
 
 These self-driven workshops are designed to help people get better acquainted with front-end technologies for both web and mobile development. Our teaching methodology is explained in [this article](https://dev.to/vuevixens/the-way-of-the-fox-the-vue-vixens-curriculum-290).
 
-![inaugural skulk in New Orleans](../images/inaugural_skulk.jpg)
+![inaugural skulk in New Orleans](/inaugural_skulk.jpg)
 
 > Our inaugural Skulk at Vue.US Conference in New Orleans in March, 2018
 

@@ -1,3 +1,3 @@
 # Vue Workshops
 
-![Vue Vixens](../images/vue-vixens.png)
+![Vue Vixens](/vue-vixens.png)
