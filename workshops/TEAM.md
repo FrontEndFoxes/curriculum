@@ -1,7 +1,3 @@
-# Vue Vixens, Inc.
-
-Vue Vixens, Inc. is a public tax-exempt nonprofit organization dedicated to helping women and those who identify as such to learn Vue.js and advance their careers. Learn more at [vuevixens.org](VueVixens.org).
-
 # Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -57,6 +53,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

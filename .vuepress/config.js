@@ -3,23 +3,23 @@ const addCopyButton = require('./copyButton');
 module.exports = {
 	base: '/',
 	head: [['link', { rel: 'icon', href: '/favicon.png' }]],
-	title: 'Vue Vixens Workshops',
-	description: 'Workshops to teach web and mobile development with Vue.js to beginners',
+	title: 'Front-End Foxes Workshops',
+	description: 'Workshops to teach web and mobile development to beginners',
 	locales: {
 		'/': {
 			lang: 'en-US',
-			title: 'Vue Vixens Workshops',
-			description: 'Workshops to teach web and mobile development with Vue.js to beginners',
+			title: 'Front-End Foxes Workshops',
+			description: 'Workshops to teach web and mobile development to beginners',
 		},
 		'/de/': {
 			lang: 'de-DE',
-			title: 'Vue Vixens Workshops',
-			description: 'Anfänger-Workshops für Web-Entwicklung mit Vue.js',
+			title: 'Front-End Foxes Workshops',
+			description: 'Anfänger-Workshops für Web-Entwicklung',
 		},
 		'/jp/': {
 			lang: 'jp-JP',
-			title: 'Vue Vixens Workshops',
-			description: 'Vue.js ワークショップ',
+			title: 'Front-End Foxes Workshops',
+			description: 'ワークショップ',
 		},
 	},
 	themeConfig: {
@@ -28,56 +28,59 @@ module.exports = {
 		// custom text for edit link. Defaults to "Edit this page"
 		editLinkText: 'Help us improve this page!',
 		nav: [
-			{ text: 'Home', link: '/' },
-			{ text: 'Team', link: '/workshop/TEAM' },
-			{ text: 'Code of Conduct', link: '/workshop/CODE_OF_CONDUCT' },
+			{ text: 'React Workshops', link: '/workshops/react/' },
+			{ text: 'Vue Workshops', link: '/workshops/vue/' },
+			{ text: 'Code of Conduct', link: '/workshops/CODE_OF_CONDUCT' },
+			{ text: 'Team', link: '/workshops/TEAM' },
 		],
 		locales: {
 			'/': {
 				selectText: 'Languages',
 				label: 'English',
-				sidebar: [
-					{
-						title: '🐶 Full Day Workshop',
-						children: [
-							'/workshop/full-day/ch1',
-							'/workshop/full-day/ch2',
-							'/workshop/full-day/ch3',
-							'/workshop/full-day/ch4',
-							'/workshop/full-day/ch5',
-							'/workshop/full-day/appendix_1',
-						],
-					},
-					{
-						title: '🐾 Half-Day Workshops',
-						children: [
-							'/workshop/half-day/half-day1',
-							['https://nsvue-workshop.netlify.com', '🔮 2: Build a complete mobile app - TarotMoji'],
-
-						],
-					},
-					{
-						title: '🦴 Mini Workshops',
-						children: [
-							'/workshop/minis/mini1',
-							'/workshop/minis/mini2',
-							'/workshop/minis/mini3',
-							'/workshop/minis/mini4',
-							'/workshop/minis/mini5',
-						],
-					},
-					{
-						title: '👩‍🎓 Nano Activities',
-						children: [
-							'/workshop/nanos/nano1',
-							'/workshop/nanos/nano2',
-							'/workshop/nanos/nano3',
-							'/workshop/nanos/nano4',
-							'/workshop/nanos/nano5',
-							'/workshop/nanos/nano6',
-						],
-					},
-				],
+				sidebar: {
+					'/workshops/react': [{ title: 'Coming Soon!' }],
+					'/workshops/vue': [
+						{
+							title: '🐶 Full Day Workshop',
+							children: [
+								'/workshops/vue/full-day/ch1',
+								'/workshops/vue/full-day/ch2',
+								'/workshops/vue/full-day/ch3',
+								'/workshops/vue/full-day/ch4',
+								'/workshops/vue/full-day/ch5',
+								'/workshops/vue/full-day/appendix_1',
+							],
+						},
+						{
+							title: '🐾 Half-Day Workshops',
+							children: [
+								'/workshops/vue/half-day/half-day1',
+								['https://nsvue-workshop.netlify.com', '🔮 2: Build a complete mobile app - TarotMoji'],
+							],
+						},
+						{
+							title: '🦴 Mini Workshops',
+							children: [
+								'/workshops/vue/minis/mini1',
+								'/workshops/vue/minis/mini2',
+								'/workshops/vue/minis/mini3',
+								'/workshops/vue/minis/mini4',
+								'/workshops/vue/minis/mini5',
+							],
+						},
+						{
+							title: '👩‍🎓 Nano Activities',
+							children: [
+								'/workshops/vue/nanos/nano1',
+								'/workshops/vue/nanos/nano2',
+								'/workshops/vue/nanos/nano3',
+								'/workshops/vue/nanos/nano4',
+								'/workshops/vue/nanos/nano5',
+								'/workshops/vue/nanos/nano6',
+							],
+						},
+					],
+				},
 			},
 			'/de/': {
 				selectText: 'Sprache',
@@ -86,12 +89,12 @@ module.exports = {
 					{
 						title: '🐶 Tagesworkshop',
 						children: [
-							'/de/workshop/full-day/ch1',
-							'/de/workshop/full-day/ch2',
-							'/de/workshop/full-day/ch3',
-							'/de/workshop/full-day/ch4',
-							'/de/workshop/full-day/ch5',
-							'/de/workshop/full-day/appendix_1',
+							'/de/workshops/vue/full-day/ch1',
+							'/de/workshops/vue/full-day/ch2',
+							'/de/workshops/vue/full-day/ch3',
+							'/de/workshops/vue/full-day/ch4',
+							'/de/workshops/vue/full-day/ch5',
+							'/de/workshops/vue/full-day/appendix_1',
 						],
 					},
 				],
@@ -102,7 +105,7 @@ module.exports = {
 				sidebar: [
 					{
 						title: 'ミニワークショップ',
-						children: ['/jp/workshop/minis/mini1', '/jp/workshop/minis/mini2'],
+						children: ['/jp/workshops/vue/minis/mini1', '/jp/workshops/vue/minis/mini2'],
 					},
 				],
 			},
