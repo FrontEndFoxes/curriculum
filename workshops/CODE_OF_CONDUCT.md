@@ -67,7 +67,8 @@ This code of conduct and its related procedures also applies to unacceptable beh
 
 ## 9. Contact info
 
-info@vuevixens.org
+coc@frontendfoxes.org
+To report an incident, please us this form: https://forms.gle/RWsQQMbG2rGHG9Wh7
 
 ## 10. License and attribution
 
