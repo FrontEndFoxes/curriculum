@@ -67,8 +67,9 @@ This code of conduct and its related procedures also applies to unacceptable beh
 
 ## 9. Contact info
 
-coc@frontendfoxes.org
+Reach out to us directly at coc@frontendfoxes.org
 To report an incident, please us this form: https://forms.gle/RWsQQMbG2rGHG9Wh7
+We abide by our community Accountability Ladder: https://github.com/VueVixens/accountability-ladder/blob/master/README.md
 
 ## 10. License and attribution
 
