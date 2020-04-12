@@ -6,8 +6,6 @@ This code of conduct outlines our expectations for all those who participate in 
 
 We invite all those who participate in Front-End Foxes activities to help us create safe and positive experiences for everyone.
 
-To report an incident, please us this form: https://forms.gle/RWsQQMbG2rGHG9Wh7
-
 ## 2. Open Source Citizenship
 
 A supplemental goal of this Code of Conduct is to increase open source citizenship by encouraging participants to recognize and strengthen the relationships between our actions and their effects on our community.
@@ -53,9 +51,9 @@ If a community member engages in unacceptable behavior, the community organizers
 
 ## 6. Reporting Guidelines
 
-If you are subject to or witness unacceptable behavior, or have any other concerns, please notify a community organizer as soon as possible. info@vuevixens.org.
+If you are subject to or witness unacceptable behavior, or have any other concerns, please fill out this form: https://forms.gle/RWsQQMbG2rGHG9Wh7
 
-Additionally, community organizers are available to help community members engage with local law enforcement or to otherwise help those experiencing unacceptable behavior feel safe. In the context of in-person events, organizers will also provide escorts as desired by the person experiencing distress.
+Our Code of Conduct committee members are available to help community members engage with local law enforcement or to otherwise help those experiencing unacceptable behavior feel safe. Please reach out to us directly at coc@frontendfoxes.org.
 
 ## 7. Addressing Grievances
 
