@@ -57,7 +57,7 @@ Our Code of Conduct committee members are available to help community members en
 
 ## 7. Addressing Grievances
 
-If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify community organizers with a concise description of your grievance. Your grievance will be handled in accordance with our existing governing policies.
+If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify community organizers with a concise description of your grievance by email via coc@frontendfoxes.org. Your grievance will be handled in accordance with our existing governing policies.
 
 ## 8. Scope
 
@@ -67,7 +67,7 @@ This code of conduct and its related procedures also applies to unacceptable beh
 
 ## 9. Contact info
 
-Reach out to us directly at coc@frontendfoxes.org
+Reach out to us directly at coc@frontendfoxes.org with any questions.
 To report an incident, please us this form: https://forms.gle/RWsQQMbG2rGHG9Wh7
 We abide by our community Accountability Ladder: https://github.com/VueVixens/accountability-ladder/blob/master/README.md
 
