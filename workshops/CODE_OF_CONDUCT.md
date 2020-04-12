@@ -6,6 +6,8 @@ This code of conduct outlines our expectations for all those who participate in 
 
 We invite all those who participate in Front-End Foxes activities to help us create safe and positive experiences for everyone.
 
+To report an incident, please us this form: https://forms.gle/RWsQQMbG2rGHG9Wh7
+
 ## 2. Open Source Citizenship
 
 A supplemental goal of this Code of Conduct is to increase open source citizenship by encouraging participants to recognize and strengthen the relationships between our actions and their effects on our community.
