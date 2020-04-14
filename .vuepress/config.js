@@ -66,6 +66,7 @@ module.exports = {
 								'/workshops/vue/minis/mini3',
 								'/workshops/vue/minis/mini4',
 								'/workshops/vue/minis/mini5',
+								'/workshops/vue/minis/mini6',
 							],
 						},
 						{
