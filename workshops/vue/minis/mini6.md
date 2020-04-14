@@ -19,11 +19,11 @@ The workshop idea is inspired by [Dmytro Barylo](https://www.linkedin.com/in/dmy
 Create a new sandbox Vue project by going to CodeSandbox and clicking on the “Create Sandbox” box.
 The options for which kind of sandbox you want to have will appear.
 
-![Create new Sandbox](images/mini6/create-new-sandbox.png)
+![Create new Sandbox](./images/mini6-create-new-sandbox.png)
 
 There, choose Vue as the basis for your sandbox. The instant IDE will then set up a base Vue project for you.
 
-![Choose template in Sandbox](images/mini6/create-new-sandbox2.png)
+![Choose template in Sandbox](./images/mini6-create-new-sandbox2.png)
 
 Once the IDE finished the setup, it opens your project in the editor.
 
@@ -34,7 +34,7 @@ On the right side to the navigation bar, you'll find the editor. Here you can co
 
 If you see the project boilerplate, it'll have content so far. It contains a lot of references provided by Vue.js itself to get help.
 
-![Brand new Vue Project in Sandbox](images/mini6/the-new-project-sandbox.png)
+![Brand new Vue Project in Sandbox](./images/mini6-the-new-project-sandbox.png)
 
 
 The `main.js` is the entrypoint for the application start.
@@ -76,7 +76,7 @@ The App.vue actually contains the ID-Selector `#app` which we'll use to mount th
 
 At the end of step 1, your application should look similar to the following:
 
-![Create new Sandbox](images/mini6/step1-result.png)
+![Create new Sandbox](./images/mini6-step1-result.png)
 
 
 ## Step 2: Create the first own Vue component "Quiz.vue"
@@ -88,7 +88,7 @@ In the components folder all vue components are stored. There you can also find 
 
 Let's create a quiz component **Quiz.vue** inside the components folder.
 
-![components folder](images/mini6/components.png)
+![components folder](./images/mini6-components.png)
 
 The file will be empty so far.
 
@@ -400,7 +400,7 @@ We can again use the `stage` property for it.
 
 At the end of step 2, your application should look like that:
 
-![Create new Sandbox](images/mini6/step2-welcome-result.png)
+![Create new Sandbox](./images/mini6-step2-welcome-result.png)
 
 ## Step 3: Using the Quiz data
 
@@ -552,11 +552,11 @@ At the end of step 3, your application should look like that:
 
 **Welcome Screen:**
 
-![Welcome Screen](images/mini6/step3-welcome-result.png)
+![Welcome Screen](./images/mini6-step3-welcome-result.png)
 
 **After clicking on the start button:**
 
-![After clicking on start button](images/mini6/step3-started-result.png)
+![After clicking on start button](./images/mini6-step3-started-result.png)
 
 ## Step 4: Displaying possible movie options to user
 
@@ -599,7 +599,7 @@ At the end of step 4, after starting the Quiz, your screen should contain the fi
 
 **After clicking on the start button:**
 
-![After clicking on start button](images/mini6/step4-started-result.png)
+![After clicking on start button](./images/mini6-step4-started-result.png)
 
 ## Step 5: Evaluate the option which was clicked
 
@@ -660,11 +660,11 @@ At the end of step 5, you can click on the button. It when turns its background 
 
 **Correct answer:**
 
-![Correct answer](images/mini6/step5-correct-result.png)
+![Correct answer](./images/mini6-step5-correct-result.png)
 
 **Wrong answer:**
 
-![Wrong answer](images/mini6/step5-wrong-result.png)
+![Wrong answer](./images/mini6-step5-wrong-result.png)
 
 ## Step 6: Proceed with next question
 
@@ -728,7 +728,7 @@ nextQuestion() {
 
 At the end of step 6, a user can answer all questions. Every time she makes a choice, the application forwards to the next question after a short time.
 
-![Stepping threw questions](images/mini6/step6-result.gif)
+![Stepping threw questions](./images/mini6-step6-result.gif)
 
 ## Step 7: Introducing usage of store and saving data in local storage
 
@@ -969,7 +969,7 @@ In CodeSandbox we're running into a problem when using `localStorage`. This is b
 
 At the end of step 7, a user can refresh the page and the question, that was asked last time and has not yet been answered by the user will be loaded.
 
-![Save progress and answers](images/mini6/step7-result.gif)
+![Save progress and answers](./images/mini6-step7-result.gif)
 
 ## Step 8: Create the score view
 
@@ -1145,7 +1145,7 @@ You've completed your very first Harry Potter movie quiz app with Vue.js!
 
 **Well done :)**
 
-![Score](images/mini6/step8-result.png)
+![Score](./images/mini6-step8-result.png)
 
 
 ## Author
