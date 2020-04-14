@@ -50,8 +50,8 @@ Here you can see that a Vue project is initialized and a Vue instance is generat
 Every Vue application, no matter how big or small, starts with the root Vue instance.
 
 For more information check out:
-- https://codingexplained.com/coding/front-end/vue-js/mounting-templates-dynamically
-- https://vuejs.org/v2/guide/instance.html
+- [https://codingexplained.com/coding/front-end/vue-js/mounting-templates-dynamically](https://codingexplained.com/coding/front-end/vue-js/mounting-templates-dynamically)
+- [https://vuejs.org/v2/guide/instance.html](https://vuejs.org/v2/guide/instance.html)
 
 In the first lines of the `main.js` you can find some imports.
 The first one imports the Vue module and the second one is the very first component we will use - it is the App component.
@@ -232,11 +232,9 @@ This can be achieved by adding the shorthand event modifier `@click` to the butt
 <button class="quiz-button" @click="initQuizStage">Start Quiz</button>
 ```
 
-You can read more about Vue Modifiers here:
-- https://vuejs.org/v2/guide/events.html#Event-Modifiers
+You can read more about Vue Modifiers here: [https://vuejs.org/v2/guide/events.html#Event-Modifiers](https://vuejs.org/v2/guide/events.html#Event-Modifiers)
 
-And read about Vue Shorthands here:
-- https://vuejs.org/v2/guide/syntax.html#Shorthands
+And read about Vue Shorthands here: [https://vuejs.org/v2/guide/syntax.html#Shorthands](https://vuejs.org/v2/guide/syntax.html#Shorthands)
 
 This shorthand event modifier contains `initQuizStage` as a value, which is expected to be a method for Vue.
 Such method will be called when a user clicks the button.
@@ -261,8 +259,7 @@ Next, we're going to provide all movie titles for our Quiz component.
 Providing data to child components can be done with so-called props in Vue.
 Props are custom attributes you can register on a component to be able to pass data to them from a parent component. A value can be passed to a prop attribute, which becomes a property on that component instance.
 
-You can read more about Vue Props here:
-- https://vuejs.org/v2/guide/components.html#Passing-Data-to-Child-Components-with-Props
+You can read more about Vue Props here: [https://vuejs.org/v2/guide/components.html#Passing-Data-to-Child-Components-with-Props](https://vuejs.org/v2/guide/components.html#Passing-Data-to-Child-Components-with-Props)
 
 In the App.vue let's extend the quiz element with a props attribute called “movies” and provide it with movies' data, which you get from the `data()` method. With the colon in front of the prop name, you are telling Vue that the value inside the brackets is not just a string but a variable, which in this case is an array.
 
@@ -325,20 +322,17 @@ To see if it works, we can use a simple list and iterate over the entries of mov
 
 With the `v-for` directive we can tell vue to iterate over the values in movies and to repeat the `<li>` element with each value provided during each iteration.
 
-You can read more about Vue Directives here:
-- https://vuejs.org/v2/guide/syntax.html#Directives
+You can read more about Vue Directives here: [https://vuejs.org/v2/guide/syntax.html#Directives](https://vuejs.org/v2/guide/syntax.html#Directives)
 
 The `{{ movie }}` is the most basic form of data binding called text interpolation using the “Mustache” syntax (double curly braces). The mustache tag will be replaced with movie names, which are saved in the property movies (which we defined earlier). It will also be updated whenever the component's movies property changes.
 
-You can read more about Vue Text Interpolation here:
-- https://vuejs.org/v2/guide/syntax.html#Interpolations
+You can read more about Vue Text Interpolation here: [https://vuejs.org/v2/guide/syntax.html#Interpolations](https://vuejs.org/v2/guide/syntax.html#Interpolations)
 
 Let’s ensure that the part with the printed movies list is only shown when `initQuizStage` is clicked.
 This can be achieved by using the `stage` computed property and with the `v-if` directive in the template.
 The `v-if` directive validates the expression of its content. When it is true, the component is rendered and shown, if false, it is not rendered.
 
-You can read more about Vue Computed Properties here:
-- https://vuejs.org/v2/guide/computed.html#Computed-Properties
+You can read more about Vue Computed Properties here: [https://vuejs.org/v2/guide/computed.html#Computed-Properties](https://vuejs.org/v2/guide/computed.html#Computed-Properties)
 
 ```html
 <!-- Quiz.vue -->
@@ -377,7 +371,7 @@ You can read more about Vue Computed Properties here:
             }
 
             Learn about ternary operators here:
-            - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
           */
       }
     },
@@ -409,8 +403,8 @@ We'll get this data from a JSON (Javascript Object Notation) file.
 JSON is the description of an object in a more human readable way. It is mainly used to transfer information between systems.
 
 You can read more about JSON here:
-- https://en.wikipedia.org/wiki/JSON
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
+- [https://en.wikipedia.org/wiki/JSON](https://en.wikipedia.org/wiki/JSON)
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
 
 The JSON contains a list (an array) of questions. Each question contains 4 different numbers, which matches to the movies we are going to provide as labels to the buttons of answer choices. It also contains the correct answer and furthermore the movie scene as link to the giphy image, which has to be guessed.
 
@@ -433,14 +427,12 @@ The JSON contains a list (an array) of questions. Each question contains 4 diffe
 }
 ```
 
-To learn more about data primitives, like string, numbers and arrays, which are useful to understand the JSON structure better, we warmly recommend Lydia Hallie. She has written a very good explanation about it:
-- https://www.theavocoder.com/complete-javascript/2018/12/18/primitive-data-types
+To learn more about data primitives, like string, numbers and arrays, which are useful to understand the JSON structure better, we warmly recommend Lydia Hallie. She has written a very good explanation about it: [https://www.theavocoder.com/complete-javascript/2018/12/18/primitive-data-types](https://www.theavocoder.com/complete-javascript/2018/12/18/primitive-data-types)
 
 To load the questions we're going to provide the Quiz component with the `questions-url` props from where the questions can be loaded. We'll use this to fetch the data from there.
 The fetching magic will happen with the `mounted()` method of our Quiz component. The `mounted()` method is a lifecycle hook, which is called after the instance has been mounted.
 
-You can read more about Vue Mounted here:
-- https://vuejs.org/v2/api/#mounted
+You can read more about Vue Mounted here: [https://vuejs.org/v2/api/#mounted](https://vuejs.org/v2/api/#mounted)
 
 ```html
 <!-- App.vue -->
@@ -474,8 +466,7 @@ async mounted() {
 },
 ```
 
-You can read more about Vue Async Components here:
-- https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components
+You can read more about Vue Async Components here: [https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components](https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components)
 
 Now we're able to use these loaded questions to enhance the `initQuizStage` and use this data to provide the first question to the user.
 
@@ -485,8 +476,7 @@ First, we need to know which question is in which order. We'll store the informa
 
 A computed property in Vue is an instance property as well, but the main advantage it's that it can be built by different properties together. Vue will watch for changes inside dependent properties, and if they change, the computed property will be evaluated again. On the other hand, it'll be kept cached and only the cached value is provided.
 
-You can read more about Vue Computed Caching here:
-- https://vuejs.org/v2/guide/computed.html#Computed-Caching-vs-Methods
+You can read more about Vue Computed Caching here: [https://vuejs.org/v2/guide/computed.html#Computed-Caching-vs-Methods](https://vuejs.org/v2/guide/computed.html#Computed-Caching-vs-Methods)
 
 ```html
 <!-- Quiz.vue -->
@@ -539,8 +529,7 @@ computed: {
 
 At last, let's add the title via text interpolation (Mustache syntax) into our template inside **Quiz.vue**.
 
-You can read more about Vue Text Interpolation here:
-- https://vuejs.org/v2/guide/syntax.html#Interpolations
+You can read more about Vue Text Interpolation here: [https://vuejs.org/v2/guide/syntax.html#Interpolations](https://vuejs.org/v2/guide/syntax.html#Interpolations)
 
 ```html
   <h1 class="quiz-heading">{{ title }}</h1>
@@ -745,8 +734,7 @@ Apps can often grow in complexity, due to multiple pieces of state scattered acr
 We're going to use a lightweight implementation of state management in Vue.js, which is done with observables.
 This is a function that returns a reactive instance of a given object.
 
-You can read more about Vue Observables here:
-- https://vuejs.org/v2/api/#Vue-observable
+You can read more about Vue Observables here: [https://vuejs.org/v2/api/#Vue-observable](https://vuejs.org/v2/api/#Vue-observable)
 
 The following is the data we want to handle via the store:
 - questions
@@ -785,8 +773,7 @@ For changing our values in the store we have to use a defined way for it, and do
 Therefore, we have to define further each property inside the store as a set method if we want to mutate those values.
 We'll also store the data in the `localStorage` of the browser.
 
-You can read more about window local storage here:
-- https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Local_storage
+You can read more about window local storage here: [https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Local_storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Local_storage)
 
 ```javascript
 // store/index.js
@@ -879,8 +866,7 @@ async mounted() {
 After this, we want to use all data from the store.
 Therefore, we have to add the computed properties for `image()`, `title()` and `answers()`.
 
-You can read more about Vue computed properties here:
-- https://vuejs.org/v2/guide/computed.html#Basic-Example
+You can read more about Vue computed properties here: [https://vuejs.org/v2/guide/computed.html#Basic-Example](https://vuejs.org/v2/guide/computed.html#Basic-Example)
 
 ```javascript
 // Quiz.vue
@@ -1023,8 +1009,7 @@ From the `quiz stage` we have to switch to the `result stage`. To do this, we'll
 
 We have to consider when a refresh by the user is done and the application needs to initialize again when the component is mounted.
 
-You can read more about Vue Mounted here:
-- https://vuejs.org/v2/api/#mounted
+You can read more about Vue Mounted here: [https://vuejs.org/v2/api/#mounted](https://vuejs.org/v2/api/#mounted)
 
 ```javascript
   // ...
