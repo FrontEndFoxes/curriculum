@@ -324,7 +324,7 @@ With the `v-for` directive we can tell vue to iterate over the values in movies 
 
 You can read more about Vue Directives here: [https://vuejs.org/v2/guide/syntax.html#Directives](https://vuejs.org/v2/guide/syntax.html#Directives)
 
-The `{{ movie }}` is the most basic form of data binding called text interpolation using the “Mustache” syntax (double curly braces). The mustache tag will be replaced with movie names, which are saved in the property movies (which we defined earlier). It will also be updated whenever the component's movies property changes.
+The `{{` movie `}}` is the most basic form of data binding called text interpolation using the “Mustache” syntax (double curly braces). The mustache tag will be replaced with movie names, which are saved in the property movies (which we defined earlier). It will also be updated whenever the component's movies property changes.
 
 You can read more about Vue Text Interpolation here: [https://vuejs.org/v2/guide/syntax.html#Interpolations](https://vuejs.org/v2/guide/syntax.html#Interpolations)
 
