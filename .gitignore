@@ -3,4 +3,6 @@
 *.log
 *.vuepress/dist
 .idea
+.vscode
+.history
 node_modules
