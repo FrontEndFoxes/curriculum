@@ -1,17 +1,17 @@
 {
-	"name": "vue-vixens-workshops",
+	"name": "front-end-foxes-workshops",
 	"version": "1.0.0",
-	"description": "Vue Vixens Workshops",
+	"description": "Front-End Foxes Workshops",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/vuevixens/docs.git"
 	},
 	"keywords": [
-		"Vue Vixens",
+		"Front-End Foxes",
 		"workshops",
 		"Vue.js"
 	],
-	"author": "Vue Vixens Inc.",
+	"author": "Front-End Foxes Inc.",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/vuevixens/docs/issues"
