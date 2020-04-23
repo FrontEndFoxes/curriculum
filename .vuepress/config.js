@@ -16,6 +16,11 @@ module.exports = {
 			title: 'Front-End Foxes Workshops',
 			description: 'Anfänger-Workshops für Web-Entwicklung',
 		},
+		'/fr/': {
+			lang: 'fr-FR',
+			title: 'Front-End Foxes Workshops',
+			description: 'Ateliers pour apprendre la programmation web et mobile',
+		},
 		'/jp/': {
 			lang: 'jp-JP',
 			title: 'Front-End Foxes Workshops',
@@ -100,12 +105,22 @@ module.exports = {
 					},
 				],
 			},
+			'/fr/': {
+				selectText: 'Langue',
+				label: 'Français',
+				sidebar: [
+					{
+						title: '🦴Ateliers Minis',
+						children: ['/fr/workshops/vue/minis/mini1'],
+					},
+				],
+			},
 			'/jp/': {
 				selectText: '言語',
 				label: '日本語',
 				sidebar: [
 					{
-						title: 'ミニワークショップ',
+						title: '🦴ミニワークショップ',
 						children: ['/jp/workshops/vue/minis/mini1', '/jp/workshops/vue/minis/mini2'],
 					},
 				],
@@ -114,7 +129,7 @@ module.exports = {
 	},
 	markdown: {
 		lineNumbers: true,
-		extendMarkdown: md => {
+		extendMarkdown: (md) => {
 			addCopyButton(md);
 		},
 	},
