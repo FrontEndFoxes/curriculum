@@ -97,7 +97,7 @@ Veturは、Prettierのようなフォーマッタの助けを借りて、html, c
 
 オートフォーマット（自動のフォーマット）は `save` コマンドで行うこともできますし、ワークフローの最後にドキュメント全体をフォーマットするオプションもあります。
 
-!format](./images/format.png)
+![format](./images/format.png)
 
 ## インテリセンス
 
