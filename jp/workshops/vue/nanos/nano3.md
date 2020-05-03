@@ -31,7 +31,8 @@ Vueアプリケーションの開発を始めるためには、まずワーク�
 ![vetur image](./images/vetur-image.png)
 
 ::: ヒント 💡
-この拡張機能をインストールするもう一つの方法は、VSCodeの拡張機能タブ（extension tab）をクリックして、「Vetur」を検索することです。そうすると、VSCodeに直接インストールできます。:::
+この拡張機能をインストールするもう一つの方法は、VSCodeの拡張機能タブ（extension tab）をクリックして、「Vetur」を検索することです。そうすると、VSCodeに直接インストールできます。
+:::
 
 ![vetur code](./images/vetur-code.png)
 
@@ -81,7 +82,7 @@ Veturでは、VSCodeでコンポーネント内でスニペットを使用する
 
 ## Emmet
 
-Veturは、以下の言語のEmmetをサポートしています: html, css, scss, less, and stylus。
+Veturは、以下の言語のEmmetをサポートしています:html、css、scss、less、そして stylus。
 
 ![Emmet](./images/emmets.gif)
 
@@ -93,7 +94,7 @@ Veturは、リンティングとエラーチェックを提供し、eslintプラ
 
 ## フォーマット
 
-Veturは、Prettierのようなフォーマッタの助けを借りて、html, css, scss, less,postcss, stylus, js, ts のフォーマットをサポートしています。
+Veturは、Prettierのようなフォーマッタの助けを借りて、html、css、scss、less、postcss、stylus、js、ts のフォーマットをサポートしています。
 
 オートフォーマット（自動のフォーマット）は `save` コマンドで行うこともできますし、ワークフローの最後にドキュメント全体をフォーマットするオプションもあります。
 
