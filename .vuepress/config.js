@@ -123,6 +123,10 @@ module.exports = {
 						title: '🦴ミニワークショップ',
 						children: ['/jp/workshops/vue/minis/mini1', '/jp/workshops/vue/minis/mini2'],
 					},
+					{
+						title: '👩‍🎓 ナノアクティビティ',
+						children: ['/jp/workshops/vue/nanos/nano3'],
+					},
 				],
 			},
 		},
