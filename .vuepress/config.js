@@ -121,7 +121,11 @@ module.exports = {
 				sidebar: [
 					{
 						title: '🦴ミニワークショップ',
-						children: ['/jp/workshops/vue/minis/mini1', '/jp/workshops/vue/minis/mini2'],
+						children: [
+							'/jp/workshops/vue/minis/mini1',
+							'/jp/workshops/vue/minis/mini2',
+							'/jp/workshops/vue/minis/mini3',
+						],
 					},
 				],
 			},
