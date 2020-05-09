@@ -49,6 +49,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/nahokomatsui"><img src="https://avatars3.githubusercontent.com/u/12132975?v=4" width="100px;" alt=""/><br /><sub><b>Nahoko Matsui</b></sub></a><br /><a href="https://github.com/FrontEndFoxes/docs/commits?author=nahokomatsui" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/ryamakuchi"><img src="https://avatars3.githubusercontent.com/u/35450730?v=4" width="100px;" alt=""/><br /><sub><b>rry</b></sub></a><br /><a href="https://github.com/FrontEndFoxes/docs/commits?author=ryamakuchi" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/chisaco"><img src="https://avatars3.githubusercontent.com/u/13715682?v=4" width="100px;" alt=""/><br /><sub><b>chisaco</b></sub></a><br /><a href="https://github.com/FrontEndFoxes/docs/commits?author=chisaco" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://medium.com/@dzeyelid"><img src="https://avatars0.githubusercontent.com/u/977117?v=4" width="100px;" alt=""/><br /><sub><b>Kazumi OHIRA (@dz_)</b></sub></a><br /><a href="https://github.com/FrontEndFoxes/docs/commits?author=dzeyelid" title="Documentation">📖</a></td>
   </tr>
 </table>
 
