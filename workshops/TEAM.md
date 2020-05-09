@@ -53,6 +53,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/marymar"><img src="https://avatars3.githubusercontent.com/u/6716466?v=4" width="100px;" alt=""/><br /><sub><b>Mary</b></sub></a><br /><a href="https://github.com/FrontEndFoxes/docs/commits?author=marymar" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/AnBusse"><img src="https://avatars3.githubusercontent.com/u/22819829?v=4" width="100px;" alt=""/><br /><sub><b>AnBusse</b></sub></a><br /><a href="https://github.com/FrontEndFoxes/docs/commits?author=AnBusse" title="Documentation">📖</a></td>
   </tr>
 </table>
 
