@@ -1,6 +1,6 @@
 {
   "projectName": "docs",
-  "projectOwner": "VueVixens",
+  "projectOwner": "FrontEndFoxes",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -306,7 +306,17 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "chisaco",
+      "name": "chisaco",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/13715682?v=4",
+      "profile": "https://github.com/chisaco",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
-  "contributorsPerLine": 7
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
