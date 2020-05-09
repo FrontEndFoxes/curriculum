@@ -324,6 +324,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "marymar",
+      "name": "Mary",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6716466?v=4",
+      "profile": "https://github.com/marymar",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
