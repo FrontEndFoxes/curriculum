@@ -53,14 +53,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/marymar"><img src="https://avatars3.githubusercontent.com/u/6716466?v=4" width="100px;" alt=""/><br /><sub><b>Mary</b></sub></a><br /><a href="https://github.com/FrontEndFoxes/docs/commits?author=marymar" title="Documentation">📖</a></td>
-
-
     <td align="center"><a href="https://assurance-maladie-digital.github.io/vue-dot/en/"><img src="https://avatars1.githubusercontent.com/u/10298932?v=4" width="100px;" alt=""/><br /><sub><b>Dylan Broussard</b></sub></a><br /><a href="https://github.com/FrontEndFoxes/docs/commits?author=deraw" title="Documentation">📖</a></td>
-
     <td align="center"><a href="http://www.elizabethtiller.com"><img src="https://avatars1.githubusercontent.com/u/20691549?v=4" width="100px;" alt=""/><br /><sub><b>Liz Tiller</b></sub></a><br /><a href="https://github.com/FrontEndFoxes/docs/commits?author=lizthrilla" title="Documentation">📖</a></td>
-
     <td align="center"><a href="https://github.com/AnBusse"><img src="https://avatars3.githubusercontent.com/u/22819829?v=4" width="100px;" alt=""/><br /><sub><b>AnBusse</b></sub></a><br /><a href="https://github.com/FrontEndFoxes/docs/commits?author=AnBusse" title="Documentation">📖</a></td>
-
   </tr>
 </table>
 
