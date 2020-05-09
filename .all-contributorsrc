@@ -4,7 +4,7 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
-    "workshop/TEAM.md"
+    "workshops/TEAM.md"
   ],
   "imageSize": 100,
   "commit": true,
