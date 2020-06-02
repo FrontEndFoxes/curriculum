@@ -18,11 +18,11 @@ API は _Application Programming Interface_　の略です. とても簡単に�
 
 [CodeSandbox](https://codesandbox.io) にアクセスし、 [新しい **Vue** テンプレートを作成しましょう](https://codesandbox.io/s/vue)。
 
-The sandbox will set up a new Vue application where we can write our code, and it will be automatically compiled and rendered in the window on the right.
+The sandbox will set up a new Vue application where we can write our code, and it will be automatically compiled and rendered in the window on the right.このサンドボックスはコードを記載できる新しいVueアプリのセットアップをしてくれます。また、自動でコンパイルされ、ウィンドウの右にレンダリングされます。
 
-## Preliminary Code Clean Up
+## デフォルトで記載されているコードのクリーンナップ
 
-Go to `App.vue` and remove everything from inside the `div` with the id `#app` and clear the `<script>` tag. In the end, your file should look like this:
+`App.vue` を開き、idが `#app` の `div` 内のコードを全て削除しましょう。`<script>` タグも整理しましょう。最終的にあなたのファイルはこのようになっているのが望ましいです。：
 
 ```js
 <template>
@@ -39,15 +39,15 @@ export default {
 </script>
 ```
 
-The reason you're doing this is so that you have a clean slate without all the boilerplate stuff Codesandbox adds.
+これを行う理由は、Codesandboxが追加している例文コードを取り除き、必要最小限のコードにするためです。
 
-## Adding Axios to the project
+## プロジェクトにAxiosを追加
 
-Now you need to add **Axios** to the project!
+それでは、 **Axios** をプロジェクトに追加しましょう！
 
-Head over to the left side menu bar and click the `Dependencies` tab. Once it has expanded, click the `Add Dependency` button and search for `axios`. Click on it once you find it on the list and _voilà_, it's added to your project dependencies.
+左のサイドメニューバーで `Dependencies` をクリックしましょう。開いたら、 `Add Dependency` ボタンをクリックし、 `axios` を検索してください。検索結果のリストで`axios` を見つけてクリックしたら _ジャジャーン!_ 、project depenciesに追加されます。 
 
-::: tip 💡
+::: ヒント 💡
 Are you following this nano on a local development enviroment outside the Codesandbox environment? Install `axios` by running `npm install axios` or `yarn add axios` on your terminal on the project root.
 :::
 
