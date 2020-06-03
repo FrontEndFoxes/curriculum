@@ -48,30 +48,31 @@ export default {
 左のサイドメニューバーで `Dependencies` をクリックしましょう。開いたら、 `Add Dependency` ボタンをクリックし、 `axios` を検索してください。検索結果のリストで`axios` を見つけてクリックしたら _ジャジャーン!_ 、project depenciesに追加されます。 
 
 ::: ヒント 💡
-Are you following this nano on a local development enviroment outside the Codesandbox environment? Install `axios` by running `npm install axios` or `yarn add axios` on your terminal on the project root.
+このnanoプロジェクトをCodesandboxではなく、ローカル開発環境で試してみていますか？
+その場合は、プロジェクトrootに移動して、ターミナルで `npm install axios` または `yarn add axios` を実行し、 `axios` をインストールしましょう。
 :::
 
-## Importing the Axios library
+## Axios ライブラリのインポート
 
-Before you can start making all the _cat-tastic_ HTTP calls, you need to add the `axios` library to your component.
+全ての _cat-tastic_ HTTPコールの呼び出しを始める前に、コンポーネントに `axios` ライブラリを追加する必要があります。
 
-::: tip 💡
-Just adding a dependency to the project doesn't automatically _include_ it to your components. In Vue, you need to manually import the dependencies you are going to use.
+::: ヒント 💡
+プロジェクトにdependencyを追加しただけでは、自動的にはコンポーネントに _インクルード_ されません。Vueにおいては、これから使用する dependenciesを手動でインポートしなければなりません。
 :::
 
-Head to `App.vue` again and add this `import statement` directly below the opening `<script>` tag:
+ `App.vue` を再び開き、この `import statement` を直接、 `<script>` タグの下に追加しましょう:
 
 ```js
 import axios from 'axios';
 ```
 
-Now you can use `axios` on your component.
+これで、あなたのコンポーネントで `axios` が使えるようになりました。
 
-## Create the API call
+## APIコールの作成
 
-It's time to prepare a function to call the Cat API.
+猫APIをコールするための関数を準備していきましょう。
 
-Go inside the `export default { }` block and add a new method:
+ `export default { }` ブロック内に入って、新しいメソッドを追加してみましょう。:
 
 ```js
 export default {
@@ -93,28 +94,29 @@ export default {
 };
 ```
 
-This may be overwhelming to see for the first time, so let's break it down in digestible pieces.
+このコード初めてみたら、難しそうと圧倒されてしまうかもしれません。　なので、理解しやすいように細かくみていきましょう。
 
-First, you are declaring a new method `fetchNewCat` that will take no parameters `()`.
+まず、新しいメソッド `fetchNewCat` を定義していきます。これは `()` パラメータは必要ありません。
 
-Inside this method, you start our `axios` call by calling `.get`:
+このメソッド内で、`.get`　を実行し、 `axios` コールを開始します。：
 
 ```js
 axios.get('https://api.thecatapi.com/v1/images/search');
 ```
 
-`Axios` works with the so-called [_HTTP Verbs or HTTP Methods_](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods). Here you are making a _GET_ type call to the **https://api.thecatapi.com/v1/images/search** URL.
+`Axios` は、いわゆる [_HTTP Verbs or HTTP Methods_](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)と一緒に動きます。つまり、あなたは今、**https://api.thecatapi.com/v1/images/search** というURLに対して、 _GET_ タイプのコールを作成しようとしているのです。
 
 The most "common" ones are:
+最も "一般的な"　コールのタイプは：
 
--   GET - To GET information _from_ an HTTP URL
--   POST - To POST information _to_ an HTTP URL
+-   GET - ある HTTP URL _から_ 情報を取得
+-   POST - ある HTTP URL _へ_ 情報を送信
 
-::: tip 💡
-_Which method should I use?_ It depends! Working with APIs involves usually interacting with its creator or diving into the documentation. `GET` and `POST` are used 99% of the time, but some APIs (REST APIs in particular) may use a lot more.
+::: ヒント 💡
+_どのメソッドをを使ったらいいの?_ 場合によります！ APIの操作は通常、その作成者とのやりとりや、ドキュメントの取得を含みます。99% の割合で `GET` と `POST` が使用されますが、API（特にREST API）によっては、もっと他のものを使うものもあります。
 :::
 
-Axios returns a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), which is a JavaScript object that holds the response from an _asynchronous_ HTTP call.
+Axiosは[`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)を戻り値として返します。これは _非同期_ HTTP コールからの応答を扱うJavaScriptのオブジェクトです。
 
 If this call succeeds, then the code inside the `then` block is executed. If there is a problem, then the code inside the `catch` block is executed.
 
