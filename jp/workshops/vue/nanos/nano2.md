@@ -68,7 +68,7 @@ import axios from 'axios';
 
 これで、あなたのコンポーネントで `axios` が使えるようになりました。
 
-## APIコールの作成
+## APIコールの呼び出し
 
 猫APIをコールするための関数を準備していきましょう。
 
@@ -118,13 +118,13 @@ _どのメソッドをを使ったらいいの?_ 場合によります！ APIの
 
 Axiosは[`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)を戻り値として返します。これは _非同期_ HTTP コールからの応答を扱うJavaScriptのオブジェクトです。
 
-If this call succeeds, then the code inside the `then` block is executed. If there is a problem, then the code inside the `catch` block is executed.
+このコールが成功したら、 `then` ブロック内のコードが実行されます。もしエラーが発生した場合は、 `catch` ブロック内のコードが実行されます。
 
-In both cases you're just going to print the results to the console for now.
+どちらのケースでも、とりあえず今はコンソールに結果をただ表示することにしましょう。
 
-Let's quickly add a button to our app so you can call this API ad hoc.
+さあ、このAPIをコールできるように、手短にアプリにボタンを追加しましょう。
 
-Add this markup to your `<template>`:
+このマークアップを `<template>` に追加します。:
 
 ```js
 <template>
@@ -134,23 +134,23 @@ Add this markup to your `<template>`:
 </template>
 ```
 
-Go ahead and click on the button on the right hand screen and open up the **Console** tab on the very bottom of your screen.
+画面右のボタンをクリックし、画面のかなり下の方にある **Console** タブを開いてみてください。
 
-You will see an output that is very similar to this:
+このような出力が見てとれるはずです：
 
 ![consoleoutput](./images/axios-consoleoutput.png)
 
-This is logging the `response` parameter in our `then` block. You are getting back a JS _Object_ with a bunch of data about the HTTP call you just made, like the `status` and `headers`.
+これは `then` ブロック内の `response` パラメータをログしたものです。先ほど作成したHTTPコールに関するデータを伴ったJS _オブジェクト_ を取得します。  
 
-Inside this object you also get a `data` array which holds the actual response that the API returned. In this case, it's another _Object_ that holds the information for your cat picture.
+このオブジェクト内では、APIが返した実際のレスポンスが格納されている `data` 配列も取得します。このケースでは、猫の画像情報を格納している _オブジェクト_ を取得します。
 
-**Congratulations!** That's all it take to make a simple API call using Axios!
+**おめでとうございます!** これで、Axiosを使った簡単なAPIを作成することができました！
 
-## Using the Data
+## データの使用
 
-This app is kind of basic right now if you don't do anything with the data, so let's put it to good use. Let's store the `URL` of the cat image inside a property in our app so we can put it on the screen.
+取得したデータを使って何かしない限り、このアプリは今のところ、ベースとなる何か、といったところでしょう。なので、これを上手く活用してみましょう。猫画像の `URL` をアプリの変数内に格納し、画面上に表示できるようにしましょう。
 
-Go into the `export default {}` block again, and add a `catImage` property, and let's store the `URL` in our `then` block.
+`export default {}` ブロックに戻って、 `catImage` 変数を追加し、 `then` ブロック内で `URL` を格納してみてください。
 
 ```js
 <script>
@@ -185,7 +185,7 @@ export default {
 </script>
 ```
 
-Finally, let's create an image on our markup to show our result:
+最後に、これまでやったことの成果を確認するため、マークアップにimageを作成しましょう。:
 
 ```html
 <template>
@@ -193,9 +193,9 @@ Finally, let's create an image on our markup to show our result:
 </template>
 ```
 
-Now click the "New Cat" button and behold! (PS. You can click again for new images!)
+さあ、 "New Cat" ボタンをクリックし、確認してみてください！　（追伸 もう一度クリックすると新しい画像が！）
 
-The entire code of your `App.vue` file should look like this:
+ `App.vue` の全コードはこのようになっているはずです：
 
 ```js
 <template>
@@ -234,20 +234,20 @@ export default {
 </script>
 ```
 
-You can also see the completed app here: [![Edit Nano - Axios Cats](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/zr6444nl0m)
+さらに、こちらで完成したアプリを確認できます。: [![Edit Nano - Axios Cats](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/zr6444nl0m)
 
-## Conclusion and Challenge
+## まとめとチャレンジ
 
-Making HTTP calls adds dynamic functionality to your app and is a core functionality to learn for any front-end developer.
+HTTPコールの呼び出しはアプリに動的な機能を追加し、さらに、これはフロントエンドディベロッパーにとって学ぶべきコア機能の一つです。
 
-Your challenge, if you're feeling **bold**, is to go to https://docs.thecatapi.com/api-reference and see if you can implement a more complex GET call passing parameters, or even make a POST call to upload your own cat image!
+あなたがもっと難しいことに挑戦したいという気持ちなら、チャレンジとして、 https://docs.thecatapi.com/api-reference にアクセスし、パラメータを渡してもっと複雑なGETコールを実装できることや、あなたが所有している猫画像をアップロードするPOSTコールも作成できることを確認してください！
 
-PS. You will need the `axios` documentation on hand. https://github.com/axios/axios
+追伸　`axios` ドキュメントを手元に置いておくといいでしょう。 https://github.com/axios/axios
 
-## Badge
+## バッジ
 
-![Call API Badge](./images/call-api-badge.png)
+![コールAPIバッジ](./images/call-api-badge.png)
 
-## Author
+## 著者
 
 Made with ❤️ by Marina Mosti
