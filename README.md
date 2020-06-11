@@ -1,6 +1,6 @@
 ---
 home: true
-footer: MIT Licensed | Copyright &copy; 2018-present Vue Vixens Inc, a 501(c)(3) public charity
+footer: MIT Licensed | Copyright &copy; 2018-present Front-End Foxes Inc, a 501(c)(3) public charity
 ---
 
 # About Our Workshops
