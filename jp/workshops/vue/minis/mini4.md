@@ -1,37 +1,37 @@
-# 📱4: Build a Tinder-Style Mobile App: Tindogs!
+# 📱Mini Workshop 4:  Tinder風のモバイルアプリ「Tindogs」を作ろう!
 
-| **Project&nbsp;Goal**           | Build a card-swipe style mobile app with NativeScript and Vue                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **プロジェクトのゴール**           | NativeScriptとVueを使ってカードスワイプスタイルのモバイルアプリを作る |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **What&nbsp;you’ll&nbsp;learn** | How to build native mobile cross-platform apps with Vue and NativeScript including managing layouts and plugins                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome.<br><br>Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact.<br><br>A mobile phone (iOS or Android) with the NativeScript Playground and Preview apps installed.<br><br>The two NativeScript companion apps for the playground are the NativeScript Viewer and NativeScript Playground.<br><br>On Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) and [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview).<br><br>On iOS: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) and [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702) |
-| **Time needed to complete**     | 1 hour                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| **Just want to try the app?**   | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=zyoLbV&v=3)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **このワークショップで学ぶこと** | レイアウトやプラグインの管理を含む、VueとNativeScriptを使ってクロスプラットフォームのネイティブモバイルアプリを構築する方法  |
+| **必要なツール** | Chromeのような最新のブラウザ。<br><br> [NativeScript Playground](http://play.nativescript.org) へのアクセス- Playgroundにアカウントを作成して、自分の作品のバージョンをそのままにしておくことを検討してください。<br><br>NativeScript PlaygroundとPreviewアプリがインストールされた携帯電話（iOSまたはAndroid）。<br><br>プレイグラウンド用の2つのNativeScriptコンパニオンアプリは、NativeScript ViewerとNativeScript Playgroundです。<br><br>Androidの場合: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) と [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview)<br><br>iOSの場合: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) と [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702) |
+| **かかる時間**     | 1時間 |
+| **サンプルアプリを試したい場合**   | [Playgroundでこのアプリを開く](https://play.nativescript.org/?template=play-vue&id=zyoLbV&v=3)    |
 
-## What You'll Build
+## 今回構築するもの
 
 ![sketchnote](./images/mini_4.png)
 
-## Instructions
+## 手順
 
-In this chapter, we're going to move from building a web app to create a pet adoption experience to building a mobile app for a variation on this theme. Using the Dog CEO API again, we're going to create "Tinder for Dogs" - "Tindogs" - where the user can load up a deck of 15 dog images at a time and swipe left and right to 'like' various dogs. All in good fun! Let's get started.
+この章では、ペットの里親探し体験を作るためのウェブアプリの構築から、このテーマのバリエーションとしてのモバイルアプリの構築に移ります。Dog CEO APIを再び使用して、 ユーザーが一度に15匹の犬の画像のデッキを読み込んで、左右にスワイプして様々な犬を "いいね！"することができる "Tinder for Dogs" - "Tindogs" を作ろうとしています。楽しみで仕方がありません！では、さっそく始めてみましょう。
 
-## Scaffold a NativeScript-Vue App and Connect your Device
+## NativeScript-Vue アプリを足場にしてデバイスを接続する
 
-We're going to work in the NativeScript Playground to build this app. Open the [NativeScript Playground](http://play.nativescript.org) and take a look around. On your first visit, you'll see several 'coach marks' showing where key functionality is kept.
+今回はNativeScript Playgroundで作業して、このアプリを構築していきます。[NativeScript Playground](http://play.nativescript.org) を開いて見てみましょう。最初の訪問時には、主要な機能が保存されている場所を示す「コーチマーク」がいくつか見えます。
 
 ![coach marks in the playground](./images/playground1.png)
 
-Click 'Play Now' to open the main editor. You'll see a QR code appear - scan that with the NativeScript Play app. This allows your phone to refresh automatically as you code. Now you're ready to scaffold a NativeScript-Vue app!
+「Play Now」をクリックして、メインエディタを開きます。QRコードが表示されますので、NativeScript Playgroundアプリでスキャンしてください。QRコードをスキャンすると、携帯電話が自動的に更新されます。これで、NativeScript-Vueアプリを足場にする準備ができました。
 
-By default, the first playground app is created using Angular. Click 'new' at the top and choose 'NS-Vue' as a template. You'll get another QR code, so scan that one. You'll see your phone refresh and a basic app appear:
+デフォルトでは、最初のPlaygroundアプリはAngularで作成されています。上部の「New」をクリックし、テンプレートとして「NS-Vue」を選択します。別のQRコードが表示されるので、そちらをスキャンしてください。スマホが更新され、基本的なアプリが表示されます。
 
 ![base app](./images/playground2.png)
 
-## Add some Styles
+## いくつかのスタイルを追加
 
-Now we're going to style the app's interface and build its UI. It's going to have an ActionBar, a title, two hidden buttons, and a stack of cards. Depending on whether you swipe right or left, those buttons will briefly appear and disappear.
+ここでは、アプリのインターフェイスのスタイルを作成し、UIを構築します。アクションバー、タイトル、2つの隠しボタン、カードのスタックがあります。右にスワイプするか左にスワイプするかに応じて、これらのボタンは短く表示されたり消えたりします。
 
-Open the app.css file in the app root. Overwrite the file with these styles:
+アプリのルートで app.css ファイルを開き、ファイルを以下のスタイルで上書きします。
 
 ```css
 @import 'nativescript-theme-core/css/core.light.css';
@@ -75,23 +75,23 @@ Open the app.css file in the app root. Overwrite the file with these styles:
 }
 ```
 
-Take a look at what's going on in this file. We are able to write CSS to style the various elements in our Android and iOS mobile apps, using a subset of standard CSS. Take note of the z-index and the opacity settings, which will allow us to layer elements vertically.
+このファイルの中身を見てみましょう。標準的なCSSのサブセットを使って、AndroidやiOSのモバイルアプリの様々な要素をスタイル化するためのCSSを書くことができます。z-indexとopacity（不透明度）の設定に注意してください。
 
-For the moment, the styling hasn't done much other than colorize the ActionBar. We need to prepare to build up the UI by adding a plugin.
+今のところ、スタイリングはActionBarに色をつける以外には何もしていません。プラグインを追加してUIを構築する準備が必要です。
 
-## Add a Plugin to Create a Card Layout
+## カードレイアウトを作成するプラグインを追加する
 
-We're going to use a NativeScript Plugin to create a layout of stackable cards created from images fetched from the Dog CEO API.
+今回はNativeScriptプラグインを使って、Dog CEO APIから取得する画像からスタッカブルカードのレイアウトを作成してみます。
 
 ::: tip 💡
-Find all kinds of cool verified and community-built plugins in the [NativeScript Marketplace](http://market.nativescript.org), along with code samples and templates.
+[NativeScript Marketplace](http://market.nativescript.org)では、コードサンプルやテンプレートとともに、あらゆる種類のクールな検証済みプラグインやコミュニティ構築プラグインを見つけることができます。
 :::
 
-Import a plugin into the playground by clicking on the small `+` button next to the title `Explorer`. In the modal, search for `nativescript-swipe-layout` and import the latest version of the plugin.
+タイトル `Explorer` の横にある小さな `+` ボタンをクリックして、プラグインをプレイグラウンドにインポートします。モーダルで `nativescript-swipe-layout` を検索し、プラグインの最新バージョンをインポートします。
 
 ![base app](./images/plugin.png)
 
-Next, we need to import the plugin so we can use it. In the `app.js` file, under the first line where `Vue` is imported, import the plugin:
+次に、プラグインを使用できるようにするためにインポートする必要があります。`app.js` ファイルの最初の行で `Vue` がインポートされているところで、プラグインをインポートしましょう。
 
 ```js
 Vue.registerElement('SwipeLayout', () => require('./nativescript-swipe-layout').SwipeLayout);
@@ -99,14 +99,14 @@ Vue.config.silent = false;
 ```
 
 ::: tip 💡
-It's useful for debugging purposes to set `Vue.config.silent` to `false`, and watch for errors in the Device Logs panel at the bottom of the Playground interface.
+デバッグ目的で `Vue.config.silent` を `false` に設定し、Playground インターフェースの下部にある Device Logs パネルでエラーを確認すると便利です。
 :::
 
-## Add some Data
+## データの追加
 
-Let's query the Dog CEO API again to get 15 random images of dogs for the users to swipe. Open the `HelloWorld.vue` file and add a `data` object as a placeholder for our data arrays and to keep the `swipeLayoutAnimated` value `ON_EVENTS`. This latter value will force the user to only be able to swipe left or right (and not up or down) - because the plugin allows the developer to specify that the layout will only respond to swipe gestures that have a callback.
+ユーザーがスワイプするための犬の画像を15個ランダムにDog CEO APIから取得してみましょう。`HelloWorld.vue` ファイルを開き、データ配列のプレースホルダとして `data` オブジェクトを追加し、`swipeLayoutAnimated` の値を `ON_EVENTS` にします。後者の値を設定することで、ユーザーは左右のスワイプのみを強制的に行うことができます (上や下にはスワイプしません)。
 
-Replace the current data block:
+現在のデータブロックを置き換える:
 
 ```js
 data() {
@@ -118,13 +118,13 @@ data() {
   },
 ```
 
-> Note, if you find code in the `<script>` area of your file is unformatted, try typing `cmd-Z` a few times to reformat the code.
+> 注意: ファイルの `<script>` 領域のコードがフォーマットされていない場合は、`cmd-Z` と数回タイプしてコードを再フォーマットしてみてください。
 
-Now we can get ready to call the API. First, import the `http` module right under the `<script>` tag:
+これでAPIを呼び出す準備ができました。まず、`<script>` タグのすぐ下に `http` モジュールをインポートします。
 
 `const http = require("http");`
 
-Then, create a `methods` block. After the final comma of `the data() {...},` block, add a call to the API:
+次に、`methods` ブロックを作成します。`data() {...},` ブロックの最後のカンマの後にAPIへの呼び出しを追加します。
 
 ```js
 methods: {
@@ -145,21 +145,21 @@ methods: {
   },
 ```
 
-Take a look at this API call. We are asking the API for 15 random images, to ensure that we don't load up too many cards at once which would slow the app. We parse the response into an array, and then loop over it, creating an array of dog image urls. You should see them printed out in the Device Logs.
+このAPIコールを見てください。一度に多くのカードを読み込んでアプリの動作が遅くならないように、15枚のランダムな画像をAPIに要求しています。レスポンスを配列にパースし、それをループして犬の画像のURLの配列を作成します。デバイスログに出力されるようになるはずです。
 
-Next, call this `getMultiDogs` method when the app is created. Add this block right after the last comma in the `methods: {},` block:
+次に、アプリの作成時にこの `getMultiDogs` メソッドを呼び出します。このブロックを `methods: {},` ブロックの最後のカンマの直後に追加します。
 
 ```js
 created() {
     this.getMultiDogs();
-  },
+},
 ```
 
 ::: tip 💡
-Careful, it's tempting to enclose this `created()` lifecycle hook inside the `methods`, but it actually must reside outside the methods block.
+注意してください。この `created()` ライフサイクルフックを `methods` の中で囲みたくなりますが、実際にはメソッドブロックの外側になければなりません。
 :::
 
-Finally, display the images in the UI. Replace the `<ScrollView...` tags in the `template` block with this markup:
+最後に、UIに画像を表示します。テンプレートブロック内の `<ScrollView...` タグを以下のマークアップに置き換えてください。
 
 ```html
 <StackLayout>
@@ -172,16 +172,16 @@ Finally, display the images in the UI. Replace the `<ScrollView...` tags in the 
 ```
 
 ::: tip 💡
-The biggest difference between developing for web and mobile is the layouts. NativeScript layouts are designed to handle native mobile layouting, and don't have the type of DOM-building techniques familiar to web developers. Learn more about NativeScript layouting [here](https://www.nslayouts.com/)
+ウェブ用の開発とモバイル用の開発の最大の違いは、レイアウトです。NativeScript のレイアウトは、ネイティブのモバイルレイアウトを処理するために設計されており、ウェブ開発者に馴染みのある DOM 構築のようなテクニックはありません。NativeScript のレイアウトについての詳細は [こちら](https://www.nslayouts.com/)
 :::
 
-By this time, you should see a dog appearing in a card, but the card isn't swipable. Let's fix that.
+この頃になると、カードの中に犬が出てくるはずですが、カードがスワイプできません。そこを直しましょう。
 
-## Make the Cards Swipable
+## カードをスワイプ可能にする
 
-We need to add a few methods to manage the user's gestures, swiping right and left.
+ユーザーのジェスチャー、左右スワイプを管理するメソッドをいくつか追加する必要があります。
 
-First, add two new methods in the methods block, adding a comma after the closing bracket of the `getMultiDogs` method:
+まず、メソッドブロックに2つの新しいメソッドを追加し、`getMultiDogs`メソッドの閉じ括弧の後にカンマを追加します。
 
 ```js
 next() {
@@ -195,19 +195,20 @@ swipeLeftCallback(e) {
 }
 ```
 
-Then, edit the `<SwipeLayout` markup so that the callback is invoked on swipe:
+次に、スワイプ時にコールバックが呼び出されるように `<SwipeLayout` マークアップを編集します。
 
-Change this line:
+この行を：
 
 `<SwipeLayout v-for="dog in dogs" :key="dog.id" row="0" col="0" :animationState="swipeLayoutAnimated">`
 
-To this:
+このように変更します。：
 
-`<SwipeLayout v-for="dog in dogs" :key="dog.id" row="0" col="0" :animationState="swipeLayoutAnimated" @swipeLeft="swipeLeftCallback($event)" @swipeRight="swipeRightCallback($event)">`.
+`<SwipeLayout v-for="dog in dogs" :key="dog.id" row="0" col="0" :animationState="swipeLayoutAnimated" @swipeLeft="swipeLeftCallback($event)" @swipeRight="swipeRightCallback($event)">`
 
-For the moment, this edit will add a callback for left and right swiping gestures, removing elements from the dogs array as the user disposes of the card. The cards should swipe left and right by now.
+とりあえず、この編集では、ユーザーがカードを廃棄する際に dogs 配列から要素を削除して、左右のスワイプジェスチャーのコールバックを追加します。これでカードは左右にスワイプするようになるはずです。
 
-What happens, though, when you swipe more than fifteen times? We can add a call to the `next()` method to call the API again for a new set of data, once the old is discarded. Edit `next()`:
+しかし、15回以上スワイプした場合はどうなるのでしょうか？古いデータが破棄された後、新しいデータセットのために再度APIを呼び出すために `next()` メソッドの呼び出しを追加することができます。`next()` を編集しましょう。：
+
 
 ```js
 next() {
@@ -220,19 +221,20 @@ next() {
 },
 ```
 
-Try to swipe left and right. What happens when you get up to swipe number 15? Watch the Device Log to verify the length of your array.
+左右にスワイプしてみてください。15番までスワイプするとどうなりますか？デバイスログを見て、配列の長さを確認してみましょう。
 
-## Add Some Animated Buttons
 
-Your app now loads 15 dogs, allows you to swipe left and right, and loads 15 more when the dogs array is empty.
+## アニメーションボタンを追加する
 
-Let's experiment with some NativeScript animations to make a red button flash on left swipe, and a green button on right swipe.
+あなたのアプリは15匹の犬をロードし、左右にスワイプすることができ、犬の配列が空のときにさらに15匹の犬をロードすることができます。
 
-First, require the Animation module at the top, under the `<script>` tag:
+左にスワイプすると赤いボタンが点滅し、右にスワイプすると緑のボタンが点滅するようなNativeScriptのアニメーションを試してみましょう。
+
+まず、上部の `<script>` タグの下でアニメーションモジュールをrequireします。：
 
 `const Animation = require('ui/animation');`
 
-Then, add a section at the top of the UI, under the opening `<StackLayout` tag:
+そして、UIの上部、オープニングの `<StackLayout` タグの直下にセクションを追加します。
 
 ```html
 <AbsoluteLayout>
@@ -244,41 +246,41 @@ Then, add a section at the top of the UI, under the opening `<StackLayout` tag:
 </AbsoluteLayout>
 ```
 
-This markup presents a nice mix of layouts: AbsoluteLayout fixes the invisible buttons to the top of the app, overlaying the title. Inside the AbsoluteLayout tag there is a GridLayout with the buttons aligned horizontally.
+このマークアップでは、レイアウトの素敵な組み合わせを紹介しています。AbsoluteLayoutは、見えないボタンをアプリの上部に固定し、タイトルを重ねています。AbsoluteLayoutタグの中には、ボタンを水平に配置したGridLayoutがあります。
 
-Finally, replace the callback code with the following two methods. Note the use of the animation module to change the opacity of each button quickly from invisible to visible:
+最後に、コールバックコードを以下の2つのメソッドに置き換えます。各ボタンのopacityを不可視から可視に素早く変更するためにアニメーションモジュールを使用していることに注意してください。
 
 ```js
 swipeRightCallback(e) {
-      this.$refs.yes.nativeView.animate({ opacity: 1 })
+  this.$refs.yes.nativeView.animate({ opacity: 1 })
+    .then(() => {
+      this.$refs.yes.nativeView.animate({ opacity: 0 })
         .then(() => {
-          this.$refs.yes.nativeView.animate({ opacity: 0 })
-            .then(() => {
-              this.next();
-            })
+          this.next();
         })
-    },
-    swipeLeftCallback(e) {
-      this.$refs.no.nativeView.animate({ opacity: 1 })
+    })
+},
+swipeLeftCallback(e) {
+  this.$refs.no.nativeView.animate({ opacity: 1 })
+    .then(() => {
+      this.$refs.no.nativeView.animate({ opacity: 0 })
         .then(() => {
-          this.$refs.no.nativeView.animate({ opacity: 0 })
-            .then(() => {
-              this.next();
-            })
+          this.next();
         })
-    }
+    })
+}
 ```
 
 ::: tip 💡
-Note the use of `$refs`, a reference to the element that needs to be animated within the nativeView. Identify which element is referenced by looking for its `ref` in the markup: `ref="no"`. Refs function like a div's 'id' in web development.
+ネイティブビュー内でアニメーションさせる必要がある要素への参照である `$refs` を使用していることに注意してください。どの要素が参照されているかは、マークアップの中で `ref` を探すことで識別できます。`ref="no"` を探すことで、どの要素が参照されているかを特定できます。参照は、Web開発におけるdivの'id'のような役割を果たします。
 :::
 
-Now, try swiping! You should see a red and green label briefly appearing as you swipe.
+では、スワイプしてみてください。スワイプすると、赤と緑のラベルが表示されます。
 
-One final tweak is to change the ActionBar title! Give your app a name.
+最後の微調整は、ActionBarのタイトルを変更することです! アプリに名前をつけましょう。
 
-**🎊Congratulations, you've finished your mobile app!🎊**
+**🎊モバイルアプリが完成しましたね！おめでとうございます！！！🎊**
 
-# Final result
+# 最終結果
 
 ![base app](./images/tindogs.png)
