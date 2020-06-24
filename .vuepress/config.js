@@ -125,6 +125,7 @@ module.exports = {
 							'/jp/workshops/vue/minis/mini1',
 							'/jp/workshops/vue/minis/mini2',
 							'/jp/workshops/vue/minis/mini3',
+							'/jp/workshops/vue/minis/mini4',
 						],
 					},
 					{
