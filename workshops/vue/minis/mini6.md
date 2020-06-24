@@ -1,11 +1,11 @@
 # 🎩 6: Build a Harry Potter Movie Quiz
 
-| **Project Goal**            | Build a Harry Potter Movie Quiz                                                                                                                                   |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **What you’ll learn**       | Basics about Vue components, how data binding is done in Vue, and how to perform simple REST API calls                                                                                             |
-| **Tools you’ll need**       | Modern browser like chrome and access to [CodeSandbox](https://codesandbox.io)
-| **Time needed to complete** | 1.5 to 3+ hours (don't stress) |
-| **Just want to try the app?** | [Code Sandbox link](https://codesandbox.io/s/ws-harry-potter-quiz-55ygd)
+| **Project Goal**              | Build a Harry Potter Movie Quiz                                                                     |
+| ----------------------------- | --------------------------------------------------------------------------------------------------- |
+| **What you’ll learn**         | Basics of Vue components, how data binding is done in Vue, and how to perform simple REST API calls |
+| **Tools you’ll need**         | Modern browser like chrome and access to [CodeSandbox](https://codesandbox.io)                      |
+| **Time needed to complete**   | 1.5 to 3+ hours (don't stress)                                                                      |
+| **Just want to try the app?** | [Code Sandbox link](https://codesandbox.io/s/ws-harry-potter-quiz-55ygd)                            |
 
 # Acknowledgment
 
@@ -35,12 +35,11 @@ If you see the project boilerplate, it'll have content so far. It contains a lot
 
 ![Brand new Vue Project in Sandbox](./images/mini6-the-new-project-sandbox.png)
 
-
 The `main.js` is the entry point for the application start.
 
 ```javascript
 new Vue({
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");
 ```
 
@@ -49,11 +48,12 @@ Here you can see that a Vue project is initialized and a Vue instance is generat
 Every Vue application, no matter how big or small, starts with the root Vue instance.
 
 For more information check out:
+
 - [https://codingexplained.com/coding/front-end/vue-js/mounting-templates-dynamically](https://codingexplained.com/coding/front-end/vue-js/mounting-templates-dynamically)
 - [https://vuejs.org/v2/guide/instance.html](https://vuejs.org/v2/guide/instance.html)
 
-In the first lines of the `main.js` you can find some *imports*.
-The first one imports the Vue module and the second one is the very first component we will use - it is the App *component*.
+In the first lines of the `main.js` you can find some _imports_.
+The first one imports the Vue module and the second one is the very first component we will use - it is the App _component_.
 
 ```javascript
 import Vue from "vue";
@@ -77,7 +77,6 @@ At this point, your application should look similar to the following:
 
 ![Create new Sandbox](./images/mini6-step1-result.png)
 
-
 ## Step 2: Create your first Vue component: "Quiz.vue"
 
 Now we are going to create our first component in Vue. All components are also called Vue instances.
@@ -91,6 +90,7 @@ Let's create a quiz component **Quiz.vue** inside the components folder. Right-c
 The file will be empty so far.
 
 Normally Vue components contain:
+
 - A template
 - A script
 - A style section
@@ -102,7 +102,9 @@ The smallest Vue component looks like this. Copy this snippet and paste it into 
   <div></div>
 </template>
 
-<script>export default {};</script>
+<script>
+  export default {};
+</script>
 
 <style></style>
 ```
@@ -127,7 +129,7 @@ After that, the Quiz component has to be registered within **App.vue**, which is
 
 ```javascript
 components: {
-    Quiz
+  Quiz;
 }
 ```
 
@@ -139,6 +141,7 @@ components: {
     'quiz': Quiz
 }
 ```
+
 :::
 
 The last thing to do is to add the component element `<Quiz />` in the template. You can remove the logo. Your template in `App.vue` now looks like this:
@@ -146,7 +149,7 @@ The last thing to do is to add the component element `<Quiz />` in the template.
 ```html
 <template>
   <div id="app">
-    <Quiz/>
+    <Quiz />
   </div>
 </template>
 ```
@@ -160,12 +163,12 @@ In the **Quiz.vue** template section we'll remove the previous content, and plac
 
 ```html
 <div>
-    <img
-      src="https://media0.giphy.com/media/Bh3YfliwBZNwk/giphy.gif?cid=3640f6095c852266776c6f746fb2fc67"
-      alt="A castle at the top of a mountain in a gray day with thunder."
-    >
-    <h1 class="quiz-heading">How Well Do You Know the Harry Potter Movies?</h1>
-    <button class="quiz-button">Start Quiz</button>
+  <img
+    src="https://media0.giphy.com/media/Bh3YfliwBZNwk/giphy.gif?cid=3640f6095c852266776c6f746fb2fc67"
+    alt="A castle at the top of a mountain in a gray day with thunder."
+  />
+  <h1 class="quiz-heading">How Well Do You Know the Harry Potter Movies?</h1>
+  <button class="quiz-button">Start Quiz</button>
 </div>
 ```
 
@@ -178,25 +181,25 @@ Within **App.vue**, set some general CSS styling by overwriting the style block:
 ```html
 /* App.vue */
 <style>
-* {
-  box-sizing: border-box;
-}
-html {
-  height: 100%;
-}
-body {
-  height: 100%;
-  background: #020815; /* Black */
-  color: #eee; /* Gray */
-}
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    height: 100%;
+  }
+  body {
+    height: 100%;
+    background: #020815; /* Black */
+    color: #eee; /* Gray */
+  }
 
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  margin-top: 60px;
-}
+  #app {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    margin-top: 60px;
+  }
 </style>
 ```
 
@@ -205,28 +208,29 @@ In **Quiz.vue**, add some more styles. Note, you add the `scoped` element to the
 ```html
 /* Quiz.vue */
 <style scoped>
-.quiz-heading {
-  margin: -40px 0 30px;
-  font-size: 30px;
-  text-shadow: 1px 1px 2px #020815;
-  line-height: 1.2;
-}
+  .quiz-heading {
+    margin: -40px 0 30px;
+    font-size: 30px;
+    text-shadow: 1px 1px 2px #020815;
+    line-height: 1.2;
+  }
 
-.quiz-button {
-  color: #eee; /* Gray */
-  text-decoration: none;
-  cursor: pointer;
-  display: inline-block;
-  padding: 10px 30px;
-  border: 1px solid rgba(238, 238, 238, 0.3);
-  background: none;
-  transition: border-color 0.5s;
-}
-.quiz-button:hover {
-  border-color: #eee; /* Gray */
-}
+  .quiz-button {
+    color: #eee; /* Gray */
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid rgba(238, 238, 238, 0.3);
+    background: none;
+    transition: border-color 0.5s;
+  }
+  .quiz-button:hover {
+    border-color: #eee; /* Gray */
+  }
 </style>
 ```
+
 ### Binding an Action
 
 When you click on the button "Start Quiz" to start the quiz, nothing happens.
@@ -279,7 +283,7 @@ In **App.vue** let's extend the quiz element with a props attribute called “mo
 <!-- App.vue -->
 <template>
   <div id="app">
-    <Quiz :movies="movies"/>
+    <Quiz :movies="movies" />
   </div>
 </template>
 ```
@@ -328,7 +332,7 @@ To see the movie list, we can use a simple list and iterate over the entries of 
 ```html
 <!-- Quiz.vue -->
 <ul>
-    <li v-for="movie in movies" :key="movie">{{ movie }}</li>
+  <li v-for="movie in movies" :key="movie">{{ movie }}</li>
 </ul>
 ```
 
@@ -354,16 +358,17 @@ Let’s ensure that the part with the printed movies list is only shown when `in
 You can read more about Vue Computed Properties here: [https://vuejs.org/v2/guide/computed.html#Computed-Properties](https://vuejs.org/v2/guide/computed.html#Computed-Properties)
 :::
 
-
 ```html
 <!-- Quiz.vue -->
 <template>
-<!--image and button go here--->
+  <!--image and button go here--->
   <ul class="quiz-choices" v-if="stage==='quiz'">
-   <li v-for="movie in movies" :key="movie">{{ movie }}</li>
+    <li v-for="movie in movies" :key="movie">{{ movie }}</li>
   </ul>
-<template>
+  <template></template
+></template>
 ```
+
 The **Quiz.vue** script block should look like this:
 
 ```javascript
@@ -397,7 +402,9 @@ The **Quiz.vue** script block should look like this:
 Also let's ensure that the “Start Quiz” button disappears and the list of movies appears when the Quiz is started. We can again use the `stage` property for it.
 
 ```html
-<button class="quiz-button" v-if="stage==='welcome'" @click="initQuizStage">Start Quiz</button>
+<button class="quiz-button" v-if="stage==='welcome'" @click="initQuizStage">
+  Start Quiz
+</button>
 ```
 
 ### Achievement
@@ -415,14 +422,14 @@ JSON is the description of an object in a more human readable way. It is mainly 
 
 ::: tip 💡
 You can read more about JSON here:
+
 - [https://en.wikipedia.org/wiki/JSON](https://en.wikipedia.org/wiki/JSON)
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
-:::
+  :::
 
 The JSON contains a list (an array) of questions. Each question contains 4 different numbers, which matches to the movies we are going to provide as labels to the buttons of answer choices. It also contains the correct answer and furthermore the movie scene as link to the giphy image. The quiz involves guessing which movie the giphy image belongs to.
 
 The JSON structure we'll use looks like this, but we're going to load it from an external url:
-
 
 ```json
 {
@@ -432,8 +439,7 @@ The JSON structure we'll use looks like this, but we're going to load it from an
       "answers": [2, 3, 4, 5],
       "img": "https://media1.giphy.com/media/26BRzozg4TCBXv6QU/giphy.gif"
     },
-    ...
-    {
+    ...{
       "correct": 4,
       "answers": [2, 4, 3, 5],
       "img": "https://media2.giphy.com/media/Zl1fSRaVDsnxS/giphy.gif"
@@ -445,7 +451,6 @@ The JSON structure we'll use looks like this, but we're going to load it from an
     }
   ]
 }
-
 ```
 
 ::: tip 💡
@@ -464,8 +469,12 @@ Edit the template in **App.vue** to create this prop and pass it to **Quiz.vue**
 
 ```html
 <!-- App.vue -->
-<quiz :movies="movies" questions-url="https://api.jsonbin.io/b/5e3f0514f47af813bad11ac5"/>
+<quiz
+  :movies="movies"
+  questions-url="https://api.jsonbin.io/b/5e3f0514f47af813bad11ac5"
+/>
 ```
+
 Then in **Quiz.vue** add the prop, as well as a `questions` array in `data` and the mounted hook. Be careful to add the `mounted` hook at the bottom of the `export default` object, right before its ending parenthesis.
 
 ```javascript
@@ -494,6 +503,7 @@ async mounted() {
     console.log(this.questions);
 },
 ```
+
 ::: tip 💡
 You can read more about Vue Async Components here: [https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components](https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components)
 :::
@@ -517,10 +527,13 @@ Edit **Quiz.vue**'s template to show a dynamic image at the top, right under the
 ```html
 <!-- Quiz.vue -->
 <template>
-    <div>
-    <img :src="image" alt>
+  <div>
+    <img :src="image" alt />
     ...
+  </div></template
+>
 ```
+
 Then add to the `computed` property a new computed method called `image` (be sure to put it under the `stage` method's last comma):
 
 ```javascript
@@ -537,6 +550,7 @@ Then add to the `computed` property a new computed method called `image` (be sur
     },
   // ...
 ```
+
 This code shows a default image until the quiz is started.
 
 We're going to do something similar for the title, because with the start of the script we want to change the title from “How Well Do You Know the Harry Potter Movies?” to “Which movie is this?”.
@@ -545,7 +559,7 @@ Add a new computed method to **Quiz.vue**, adding a comma as needed to separate 
 
 ::: tip 💡
 In this snippet we're using a ternary operator in JS. The above code is equal to this:
-        
+
 ```
 if (this.currentQuestionNumber) {
   "Which movie is this?"
@@ -553,6 +567,7 @@ if (this.currentQuestionNumber) {
   "How Well Do You Know the Harry Potter Movies?"
 }
 ```
+
 Learn about ternary operators here: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
 :::
 
@@ -574,7 +589,7 @@ You can read more about Vue Text Interpolation here: [https://vuejs.org/v2/guide
 :::
 
 ```html
-  <h1 class="quiz-heading">{{ title }}</h1>
+<h1 class="quiz-heading">{{ title }}</h1>
 ```
 
 ### Achievement
@@ -606,11 +621,12 @@ Edit **Quiz.vue**'s `ul` tag:
 ```html
 <!--Quiz.vue -->
 <ul class="quiz-choices" v-if="stage==='quiz'">
-      <li v-for="answerNumber in answers" :key="answerNumber">
-            <button class="quiz-button">{{ movies[answerNumber] }}</button>
-      </li>
+  <li v-for="answerNumber in answers" :key="answerNumber">
+    <button class="quiz-button">{{ movies[answerNumber] }}</button>
+  </li>
 </ul>
 ```
+
 And add a new computed property to the growing list:
 
 ```javascript
@@ -626,6 +642,7 @@ answers() {
       */
 }
 ```
+
 Finally, add a few more styles to make the buttons appear without bullet points:
 
 ```
@@ -659,10 +676,12 @@ Edit the button in **Quiz.vue**:
   :class="{
     'correct': isCorrectAnswer(answerNumber) && currentUserAnswer === answerNumber,
     'wrong': !isCorrectAnswer(answerNumber) && currentUserAnswer === answerNumber
-  }">
+  }"
+>
   {{ movies[answerNumber - 1] }}
 </button>
 ```
+
 Add logic in `data` to clear the current answers, determine the correct answer, and handle it. Don't forget to add commas to prior elements when adding new ones:
 
 ```javascript
@@ -753,7 +772,7 @@ nextQuestion() {
 ```
 
 ::: tip 💡
-Learn about setTimeout functions here: [https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout). In this area we are also increating a variable by one with an unary operator: `++this.currentQuestionNumber`. That line of line of code is equal to this: `this.currentQuestionNumber = this.currentQuestionNumber + 1` or `this.currentQuestionNumber += 1`. 
+Learn about setTimeout functions here: [https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout). In this area we are also increating a variable by one with an unary operator: `++this.currentQuestionNumber`. That line of line of code is equal to this: `this.currentQuestionNumber = this.currentQuestionNumber + 1` or `this.currentQuestionNumber += 1`.
 
 Learn about expressions and operators here: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators)
 :::
@@ -781,6 +800,7 @@ You can read more about Vue Observables here: [https://vuejs.org/v2/api/#Vue-obs
 :::
 
 The following is the data we want to handle via the store:
+
 - questions
 - currentQuestion
   - img
@@ -797,7 +817,6 @@ Create a folder called "store" in the root of your app and inside it, a file cal
 // store/index.js
 import Vue from "vue";
 
-
 export const store = Vue.observable({
   questions: [],
   stage: null,
@@ -805,10 +824,10 @@ export const store = Vue.observable({
   currentQuestion: {
     img: null,
     correct: null,
-    answers: []
+    answers: [],
   },
   currentQuestionNumber: null,
-  userAnswers: []
+  userAnswers: [],
 });
 ```
 
@@ -854,7 +873,7 @@ export const mutations = {
   resetUserAnswers() {
     store.userAnswers = [];
     localStorage.userAnswers = JSON.stringify([]);
-  }
+  },
 };
 ```
 
@@ -882,7 +901,7 @@ export const actions = {
       : [];
 
     mutations.setUserAnswers(answers);
-  }
+  },
 };
 ```
 
@@ -902,16 +921,16 @@ So add two additional methods into the mounted lifecycle hook: `initWelcomeStage
 <!-- Quiz.vue -->
 <!-- ... --->
 <script>
-import { mutations, store, actions } from "../store";
-async mounted() {
-    await actions.fetchData(this.questionsUrl);
-     if (store.stage === "welcome") {
-      this.initWelcomeStage();
-    } else if (store.stage === "quiz") {
-      this.initQuizStage();
-    }
-}
-// ...
+  import { mutations, store, actions } from "../store";
+  async mounted() {
+      await actions.fetchData(this.questionsUrl);
+       if (store.stage === "welcome") {
+        this.initWelcomeStage();
+      } else if (store.stage === "quiz") {
+        this.initQuizStage();
+      }
+  }
+  // ...
 </script>
 ```
 
@@ -957,12 +976,17 @@ computed: {
   // ...
 }
 ```
+
 Edit the quiz's initial button as well to add the v-if test to display properly:
 
 ```html
 <!-- Quiz.vue -->
-<button class="quiz-button" v-if="stage === 'welcome'" @click="initQuizStage">Start Quiz</button>
-<ul class="quiz-choices" v-else-if="stage === 'quiz'">...</ul>
+<button class="quiz-button" v-if="stage === 'welcome'" @click="initQuizStage">
+  Start Quiz
+</button>
+<ul class="quiz-choices" v-else-if="stage === 'quiz'">
+  ...
+</ul>
 ```
 
 If the user makes a choice, we have to change some values in the store to continue with the next question, and to save all answers the user gave us until this point.
@@ -1025,11 +1049,12 @@ We're enhancing the App.vue with the `resultsInfo` data which is provided to the
 ```html
 <!-- App.vue -->
 <quiz
-      :movies="movies"
-      :resultsInfo="resultsInfo"
-      questions-url="https://api.jsonbin.io/b/5cdd1762dbffad51f8aa85a5"
+  :movies="movies"
+  :resultsInfo="resultsInfo"
+  questions-url="https://api.jsonbin.io/b/5cdd1762dbffad51f8aa85a5"
 />
 ```
+
 And enhance the data method to **App.vue**, adding a comma under the movies array:
 
 ```javascript
@@ -1162,8 +1187,14 @@ Add the detailed result text in an extra element and a button to restart the qui
 Add this at the bottom of the template in **Quiz.vue** before the div's closing tag:
 
 ```html
-<p v-if="this.stage === 'result'" v-html="this.result.text"/>
-<button class="wellcome-button" v-if="stage === 'result'" @click="initWelcomeStage">Start again</button>
+<p v-if="this.stage === 'result'" v-html="this.result.text" />
+<button
+  class="wellcome-button"
+  v-if="stage === 'result'"
+  @click="initWelcomeStage"
+>
+  Start again
+</button>
 ```
 
 Maybe you also don't want to keep the last quiz question's image.
@@ -1193,7 +1224,6 @@ You've completed your very first Harry Potter movie quiz app with Vue.js!
 **Well done :)**
 
 ![Score](./images/mini6-step8-result.png)
-
 
 ## Author
 
