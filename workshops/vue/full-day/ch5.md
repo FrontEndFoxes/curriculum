@@ -3,7 +3,7 @@
 | **Project&nbsp;Goal**           | Build a form to accept dummy 'checkout' data                                                                                                                                                                                                                       |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **What&nbsp;you’ll&nbsp;learn** | How to create and validate forms in a Vue application                                                                                                                                                                                                              |
-| **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome. An account in CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/VueVixens/projects/tree/master/chapter-4-end). Instructions on how to do this are in [Appendix 1](appendix_1.md) |
+| **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome. An account in CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/VueVixens/projects/tree/main/chapter-4-end). Instructions on how to do this are in [Appendix 1](appendix_1.md) |
 | **Time needed to complete**     | 1 hour                                                                                                                                                                                                                                                             |
 
 ## What You'll Build
@@ -12,7 +12,7 @@
 
 ## Instructions
 
-If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/master/chapter-4-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields. You can also continue with the project you've created in [chapter 4](ch4.md).
+If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/main/chapter-4-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields. You can also continue with the project you've created in [chapter 4](ch4.md).
 
 In this chapter, we will create a form to fill after you finish selecting dogs. First of all, we should create a new component to contain this form and add a form route to our router settings.
 

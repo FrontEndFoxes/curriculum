@@ -3,7 +3,7 @@
 | **Project&nbsp;Goal**           | Create a tagging system for the shop so that you can add and remove a dog from your 'loyalty' list                                                                                                                                                                 |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **What&nbsp;you’ll&nbsp;learn** | State management in Vue application with Vuex                                                                                                                                                                                                                      |
-| **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome. An account in CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/VueVixens/projects/tree/master/chapter-3-end). Instructions on how to do this are in [Appendix 1](appendix_1.md) |
+| **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome. An account in CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/VueVixens/projects/tree/main/chapter-3-end). Instructions on how to do this are in [Appendix 1](appendix_1.md) |
 | **Time needed to complete**     | 1.5 hours                                                                                                                                                                                                                                                          |
 
 ## What You'll Build
@@ -12,7 +12,7 @@
 
 ## Instructions
 
-If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/master/chapter-3-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields. You can also continue with the project you've created in [chapter 3](ch3.md).
+If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/main/chapter-3-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields. You can also continue with the project you've created in [chapter 3](ch3.md).
 
 In this chapter, we will build a 'loyalty list' - like a shopping cart but for adoptions - to show the list of dogs that we particularly like and would like to adopt. To get started, create a new, blank file in the `views` folder and name it `Favorites.vue`.
 
