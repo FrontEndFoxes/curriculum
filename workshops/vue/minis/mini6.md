@@ -1,11 +1,11 @@
 # 🎩 6: Build a Harry Potter Movie Quiz
 
-| **Project Goal**              | Build a Harry Potter Movie Quiz                                                                     |
-| ----------------------------- | --------------------------------------------------------------------------------------------------- |
-| **What you’ll learn**         | Basics of Vue components, how data binding is done in Vue, and how to perform simple REST API calls |
-| **Tools you’ll need**         | Modern browser like chrome and access to [CodeSandbox](https://codesandbox.io)                      |
-| **Time needed to complete**   | 1.5 to 3+ hours (don't stress)                                                                      |
-| **Just want to try the app?** | [Code Sandbox link](https://codesandbox.io/s/ws-harry-potter-quiz-55ygd)                            |
+| **Project Goal**              | Build a Harry Potter Movie Quiz                                                                                                           |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **What you’ll learn**         | Basics of Vue components, how data binding is done in Vue, and how to perform simple REST API calls                                       |
+| **Tools you’ll need**         | A modern browser like Chrome. A [GitHub](https://github.com) account which can be used to login to [CodeSandbox](https://codesandbox.io). |  |
+| **Time needed to complete**   | 1.5 to 3+ hours (don't stress)                                                                                                            |
+| **Just want to try the app?** | [Code Sandbox link](https://codesandbox.io/s/ws-harry-potter-quiz-55ygd)                                                                  |
 
 # Acknowledgment
 
