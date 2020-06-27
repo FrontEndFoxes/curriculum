@@ -335,13 +335,19 @@
       ]
     },
     {
-
       "login": "deraw",
       "name": "Dylan Broussard",
       "avatar_url": "https://avatars1.githubusercontent.com/u/10298932?v=4",
       "profile": "https://assurance-maladie-digital.github.io/vue-dot/en/",
-
-
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "FarhiaM",
+      "name": "Farhia",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/20928494?v=4",
+      "profile": "http://farhia.netlify.app",
       "contributions": [
         "doc"
       ]
