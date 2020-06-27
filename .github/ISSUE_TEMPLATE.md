@@ -1,6 +1,6 @@
 **Context**
 
-Describe the issue.
+Describe the issue in detail.
 
 **Expected Behavior**
 
@@ -12,7 +12,7 @@ What needs to be done so that this issue can be marked as solved?
 
 **Steps to recreate the issue (for bugs)**
 
-If this issue is about a bug, please describe the steps to reproduce this bug (Remove this part of the template is this issue is not a bug).
+If the issue is a bug, please describe the steps needed to reproduce it (Remove this part of the template is this issue is not a bug).
 
   1. ...
   2. ...
@@ -25,3 +25,4 @@ If this issue is about a bug, please describe the steps to reproduce this bug (R
 **Additional information**
 
 Here, you can provide any additional information or documentation you have.
+
