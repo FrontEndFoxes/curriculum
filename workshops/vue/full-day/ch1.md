@@ -3,7 +3,7 @@
 | **Project Goal**            | Get started with Vue.js by creating a static Pet Shop web app                                        |
 | --------------------------- | ---------------------------------------------------------------------------------------------------- |
 | **What you’ll learn**       | Setting up your Vue app, CSS Grid, Styling in Vue, code structure in preparation for moving forward. |
-| **Tools you’ll need**       | A modern browser like Chrome. An account in CodeSandbox.io.                                          |
+| **Tools you’ll need**       | A modern browser like Chrome. A [GitHub](https://github.com) account which can be used to login to [CodeSandbox](https://codesandbox.io).                                          |
 | **Time needed to complete** | 1/2 hour                                                                                             |
 
 ## What You'll Build
