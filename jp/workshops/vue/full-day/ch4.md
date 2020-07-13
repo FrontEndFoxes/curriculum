@@ -1,26 +1,26 @@
-# 📋 Chapter 4: Create a Dog Adoption Experience
+# 📋 Chapter 4: 犬の里親体験アプリの作成
 
-| **Project&nbsp;Goal**           | Create a tagging system for the shop so that you can add and remove a dog from your 'loyalty' list                                                                                                                                                                 |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **What&nbsp;you’ll&nbsp;learn** | State management in Vue application with Vuex                                                                                                                                                                                                                      |
-| **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome. An account in CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/VueVixens/projects/tree/main/chapter-3-end). Instructions on how to do this are in [Appendix 1](appendix_1.md) |
-| **Time needed to complete**     | 1.5 hours                                                                                                                                                                                                                                                          |
+| **プロジェクトのゴール** | お店のタグ付けシステムを作成して、「ロイヤルティ」リストに犬を追加したり削除したりできるようにします。 |
+| -- | -- |
+| **このワークショップで学ぶこと** | Vuex による Vue アプリケーションの状態管理 |
+| **必要なツール** | Chromeのような最新のブラウザ。CodeSandbox.io のアカウント。もし迷ったら、このチャプターのスタート地点を[ここ](https://github.com/VueVixens/projects/tree/main/chapter-3-end)にインポートします。この方法についての説明は [Appendix 1](appendix_1.md) にあります。 |
+| **かかる時間**     | 1.5時間 |
 
-## What You'll Build
+## 今回構築するもの
 
 ![sketchnote](./images/Ch4.png)
 
-## Instructions
+## 手順
 
-If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/main/chapter-3-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields. You can also continue with the project you've created in [chapter 3](ch3.md).
+もしプロジェクトを作り直す必要がある場合は、メインページの左下にある **GitHub からインポート**リンクをクリックし、フィールドにリポジトリの URL を貼り付けて、[このリポジトリ](https://github.com/VueVixens/projects/tree/main/chapter-3-end)を Code Sandbox に複製します。[チャプター 3](ch3.md)で作成したプロジェクトを続行することもできます。
 
-In this chapter, we will build a 'loyalty list' - like a shopping cart but for adoptions - to show the list of dogs that we particularly like and would like to adopt. To get started, create a new, blank file in the `views` folder and name it `Favorites.vue`.
+このチャプターでは、ショッピングカートのように、里親用の「ロイヤルティリスト」を作成して、私たちが特に好きでお迎えしたい犬のリストを表示します。はじめに、 `views` フォルダ内に新しい空のファイルを作成し、 `Favorites.vue` という名前をつけます。
 
-## Build the Loyalty List
+## ロイヤルティリストの作成
 
-The first thing we need in this new component is a template. Inside this new file add a `<template></template>` tags.
+この新しいコンポーネントで最初に必要なのはテンプレートです。この新しいファイル内に `<template></template>` タグを追加します。
 
-Inside `template` tags create a `<div></div>` tag and add a simple text 'My Favorites'.
+テンプレートタグの中に `<div></div>` タグを作成し、シンプルなテキスト「My Favorites」を追加します。
 
 ```html
 <template>
@@ -30,23 +30,23 @@ Inside `template` tags create a `<div></div>` tag and add a simple text 'My Favo
 </template>
 ```
 
-Now let's connect our newly created component with the router and check if it's displaying correctly on its corresponding route.
+次に、新しく作成したコンポーネントをルーターに接続し、対応するルートに正しく表示されているかどうかを確認します。
 
-Go to the `main.js` file. On the top, after importing `Home` and `Pets` components, add one more import statement:
+`main.js` ファイルに移動します。上部にある `Home` と `Pets` コンポーネントをインポートしたあと、インポート文をもう一つ追加します：
 
 ```js
 import Favorites from "./views/Favorites";
 ```
 
-After that, add one more route to the `routes`:
+そのあと、 `routes` にもうひとつのルートを追加します：
 
 ```js
 { path: "/favorites", component: Favorites }
 ```
 
-In the browser address bar try to navigate to `/favorites` (simply add `/favorites` to the URL of the homepage). You should see the text 'My Favorites' between the header and the footer.
+ブラウザのアドレスバーから `/favorites` （ホームページの URL に `/favorites` を追加するだけ）に移動してみてください。ヘッダーとフッターの間に「My Favorites」というテキストが表示されているはずです。
 
-Let's add a link to our list inside the navbar. Later we will also show the selected items amount on it, but for now it will be just a plain icon with link. Go to the `App.vue` file and add the following code inside `v-toolbar` right after the closing tag of `v-toolbar-items`:
+ナビバー内のリストにリンクを追加してみましょう。あとで、選択したアイテムの金額も表示しますが、今のところはリンクのついた単なるアイコンです。 `App.vue` ファイルに移動し、 `v-toolbar-items` の閉じタグの直後に以下のコードを追加します：
 
 ```html
 <v-spacer></v-spacer>
@@ -55,13 +55,13 @@ Let's add a link to our list inside the navbar. Later we will also show the sele
 </router-link>
 ```
 
-::: tip 💡
-`v-spacer` is a Vuetify component to fill the whole free space between other components. `v-icon` is a component displaying [Material icons](https://material.io/icons/).
+::: 💡
+`v-spacer` は他のコンポーネント間の空きスペースを埋めるための Vuetify のコンポーネントです。 `v-icon` は[マテリアルアイコン](https://material.io/icons/)を表示するコンポーネントです。
 :::
 
-Now when you're clicking on the favorites icon you will be navigated to `/favorites` route.
+これで、お気に入りアイコンをクリックすると `/favorites` ルートに移動します。
 
-Let's create markup for the `Favorites` component. We will use Vuetify's list component to display our dogs. Let's remove our placeholder text from the `<div></div>` tag and replace it with `<v-list></v-list` tag. Now the template looks like this:
+Favorites コンポーネントのマークアップを作成しましょう。Vuetify のリストコンポーネントを使用して、犬を表示します。 `<div></div>` タグからプレースホルダーテキストを削除して、 `<v-list></v-list>` タグで置き換えましょうテンプレートは次のようになります：
 
 ```html
 <div>
@@ -69,7 +69,7 @@ Let's create markup for the `Favorites` component. We will use Vuetify's list co
 </div>
 ```
 
-We need a name for this list. Vuetify is using a `v-subheader` component for this purpose, so let's add one:
+このリストの名前が必要です。Vuetify はこの目的のために `v-subheader` コンポーネントを使用しているので、追加してみましょう：
 
 ```html
 <div>
@@ -79,13 +79,14 @@ We need a name for this list. Vuetify is using a `v-subheader` component for thi
 </div>
 ```
 
-Now let's add a list element with mock data: a dog image, its name and a delete icon. We will need a `v-list-item` component for the list item; `v-list-item-avatar` for the dog image; `v-list-item-content` for its name and `v-list-item-action` plus `v-icon` for the delete button.
+次に、モックデータを含むリスト要素を追加しましょう。犬の画像とその名前、削除アイコンです。リスト項目には `v-list-item` コンポーネントが必要です。
+犬の画像は `v-list-item-avatar` 、名前は `v-list-item-content` 、削除ボタンは `v-list-item-action` と `v-icon` です。
 
-::: tip 💡
-Learn more about lists in the [Vuetify list component docs](https://vuetifyjs.com/en/components/lists).
+::: 💡
+リストの詳細については、[Vuetify リストコンポーネントのドキュメント](https://vuetifyjs.com/en/components/lists)をご覧ください。
 :::
 
-Now our template is:
+ここまでのテンプレート：
 
 ```html
 <div>
@@ -104,19 +105,19 @@ Now our template is:
 </div>
 ```
 
-## Manage the List's State with Vuex
+## Vuex でリストの状態を管理する
 
-At this point, you can see the UI coming together. Now it's time to display some real data inside the list, but now we have a problem: how can we save selected dogs and pass them from the `Pets` component to the `Favorites` one? We cannot use props, because these two components don't have any 'parent-child' relationship... In such cases we need a _state management_ library and Vue does have one: it's called `Vuex`.
+この時点で、UI が統合されているのがわかります。リストの中に実際のデータを表示する時が来ましたが、このままでは問題があります。選択した犬を保存して `Pets` コンポーネントから `Favorites` コンポーネントに犬を渡すにはどうすればよいのでしょうか？これらの2つのコンポーネントには「親子」関係がないため、props を使用することはできません... そのような場合に、 _状態管理_ ライブラリが必要であり、Vue には Vuex というライブラリがあります。
 
-::: tip 💡
-Vuex is a state management pattern and library for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion. It allows you to keep data that can be shared with the components in your application. Learn more [here](http://vuex.vuejs.org/en/).
+::: 💡
+Vuex は、Vue.js アプリケーションの状態管理パターンおよびライブラリです。これは、アプリケーション内のすべてのコンポーネントのための一元化されたストアとして機能し、ステートが予測可能な方法でのみ変更できるようにルールが保証されています。これにより、アプリケーション内のコンポーネントと共有できるデータを保持することができます。詳細は[こちら](http://vuex.vuejs.org/en/)をご覧ください。
 :::
 
-To start working with this centralized store we have to add Vuex to our application. First, scroll down in the `Explorer` tab and open the `Dependencies` dropdown. Click on `Add dependency` button and seach for `vuex`. Install the dependency. Vuex will be added to your `package.json`.
+この一元化されたストアで作業を開始するには、Vuex をアプリケーションに追加する必要があります。まず、 `Explorer` タブで下にスクロールして `Dependencies` ドロップダウンを開きます。 `Add dependency` ボタンをクリックして `vuex` を探します。依存関係をインストールします。Vuex が `package.json` に追加されます。
 
-Now let's create a `store` folder inside `/src`. Add a `store.js` file inside of this new folder. This is where we will save all the application's data.
+では、 `/src` の中に `store` フォルダを作成してみましょう。この新しいフォルダの中に `store.js` ファイルを追加します。これは、アプリケーションのすべてのデータを保存する場所です。
 
-Open the `store.js` and import Vuex:
+`store.js` を開き、Vuex をインポートします：
 
 ```js
 import Vue from "vue";
@@ -125,13 +126,13 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 ```
 
-Now let's create and export the actual store:
+次に、実際のストアを作成してエクスポートします：
 
 ```js
 export default new Vuex.Store({});
 ```
 
-What actually do we want to save on our application state? It's a list of favorites, which will contain selected dogs. Let's add a `favorites` array to our initial `state` object by adding it between the curly brackets:
+実際にアプリケーションのステートで保存したいものは何でしょうか？それは、選択された犬を含むお気に入りのリストです。初期状態の `state` オブジェクトに `favorites` 配列を中括弧で囲んで追加してみましょう：
 
 ```js
 export default new Vuex.Store({
@@ -141,13 +142,13 @@ export default new Vuex.Store({
 });
 ```
 
-We then have to add this store to our Vue instance. To do this, move to the `main.js` file and import it under the rest of the imports:
+次に、このストアを Vue インスタンスに追加する必要があります。これを行うには、 `main.js` ファイルに移動し、残りのインポートの下にインポートします：
 
 ```js
 import store from "./store/store";
 ```
 
-Then add the `store` to the Vue instance properties in `main.js`:
+そして、 `main.js` の Vue インスタンスのプロパティに `store` を追加します：
 
 ```js
 new Vue({
@@ -158,19 +159,19 @@ new Vue({
 }).$mount("#app");
 ```
 
-Now all the components in the application will have access to our state via `this.$store.state` placed inside any component's computed property. Let's try to access it from the `Favorites` component.
+これで、アプリケーション内のすべてのコンポーネントは、任意のコンポーネントの computed プロパティの中に `this.$store.state` と書けば、これを通してステートにアクセスできるようになりました。では、`Favorites` コンポーネントからアクセスしてみましょう。
 
-::: tip 💡
-Computed properties can be used to do quick calculations of properties that are displayed in the view. These calculations will be cached and will only update when their dependencies are changed.
+::: 💡
+Computed プロパティを使用して、ビューに表示されるプロパティをすばやく計算できます。これらの計算はキャッシュされ、依存関係が変更されたときにのみ更新されます。
 :::
 
-Inside `Favorites.vue` add the `<script>` block under the `<template>` block with the `export default` statement:
+`Favorites.vue` の内部の、 `<template>` ブロックの下に `<script>` ブロックを追加し、 `export default` 文を追加します：
 
 ```js
 <script>export default {};</script>
 ```
 
-...and add the `computed` property to the component by editing the `<script>` block:
+...そして、 `<script>` ブロックを編集して `computed` プロパティをコンポーネントに追加します：
 
 ```js
 <script>
@@ -184,13 +185,13 @@ Inside `Favorites.vue` add the `<script>` block under the `<template>` block wit
 </script>
 ```
 
-You can see that `favorites()` is a function which will return the value of the `favorites` array stored in state so we can use it in our component.
+`favorites()` はステートに保存されている `favorites` 配列の値を返す関数であることがわかり、これをコンポーネントで使用することができます。
 
-## Populate Favorites
+## お気に入りを登録
 
-Let's replace our mock data with the `favorites` content.
+モックデータを `favorites` のコンテンツに置き換えましょう。
 
-First let's temporarily add some content to the `state.favorites`. Copy the first three dogs from the `data/dogs.js` file and paste them to the `favorites` array in `store.js`:
+まず、 `state.favorites` に一時的にコンテンツを追加してみましょう。 `data/dogs.js` ファイルから最初の3つの犬をコピーして、 `store.js` の `favorites` 配列に貼り付けます：
 
 ```js
 state: {
@@ -214,7 +215,7 @@ state: {
 },
 ```
 
-Inside the `Favorites.vue` component we will iterate through the `favorites` array with the now-familiar `v-for` directive. Change the `<template>` `<div>` to this markup:
+`Favorites.vue` コンポーネントの内部では、おなじみの `v-for` ディレクティブを使って `favorites` の配列を繰り返し処理します。 `<template>` `<div>` をこのようなマークアップに変更します：
 
 ```html
 <div>
@@ -233,15 +234,15 @@ Inside the `Favorites.vue` component we will iterate through the `favorites` arr
 </div>
 ```
 
-::: tip 💡
-What changed? Notice that the `src` attribute changed to `:src`, because now we are using a dynamic property for it. We have also made sure the name is dynamic by changing `Fluffy` to `dog.name` in curly braces.
+::: 💡
+何が変わったのでしょうか？ `src` 属性が `:src` に変更されたことに注目してください。また、中括弧内の `Fluffy` を `dog.name` に変更することで、名前が動的に変わることを確認しました。
 :::
 
-::: tip 💡
-Note that we have also added `:key` next to our `v-for` in the `v-list-item` opening tag. We did this because Vue wants us to provide a key when using `v-for`. By using `(dog, index) in favorites` in our `v-for`, we also get the index of the array per dog. For Max we get index 0, for Rusty we get index 1 and so on. We can then use this as our key. More background information can be found [here](https://vuejs.org/guide/list.html#Maintaining-State).
+::: 💡
+また、`v-list-item` のオープニングタグで `v-for` の隣に `:key` を追加したことに注意してください。これは、Vue が `v-for` を使用する際にキーを提供することを望んでいるためです。 `v-for` で `(dog, index) in favorites` を使うことで、犬ごとに配列のインデックスを取得することができます。Max の場合はインデックス0、Rusty の場合はインデックス1などを取得します。これをキーとして使うことができます。より詳しい情報は[こちら](https://vuejs.org/guide/list.html#Maintaining-State)を参照してください。
 :::
 
-Now we can see our mock data displaying on the `/favorites` route! Let's add some more UI tweaks to make the page look better.
+これで `/favorites` ルートにモックデータが表示されるようになりました。ページの見た目を良くするために、もう少し UI を微調整してみましょう。
 
 ## UI Tweaks
 
