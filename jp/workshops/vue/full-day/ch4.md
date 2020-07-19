@@ -244,15 +244,17 @@ state: {
 
 これで `/favorites` ルートにモックデータが表示されるようになりました。ページの見た目を良くするために、もう少し UI を微調整してみましょう。
 
-## UI Tweaks
+## UI の微調整
 
-First, we need to add a placeholder to show when our list is empty.
+まず、リストが空の場合に表示するプレースホルダを追加する必要があります。
 
-::: tip 💡
-Note: the `v-if` directive conditionally renders the element based on the "truthiness" of the expression value - whether it is true or false. `v-else` directive serves as an 'else' block for `v-if`, providing an 'else' condition.
+::: 💡
+注意： `v-if` ディレクティブは、式の値が真か偽かという「真実性」に基づいて条件付きで要素をレンダリングします。 `v-else` ディレクティブは `v-if` の「else」ブロックとして機能し、「else」条件を提供します。
 :::
 
 We will wrap the whole list content in the wrapper div and show it only when we have items in our list of favorites; otherwise the user will see the placeholder text. Let's change the template:
+
+リストの内容全体をラッパー div でラップし、お気に入りリストに項目がある場合にのみ表示します。テンプレートを変更してみましょう：
 
 ```html
 <template>
@@ -276,11 +278,11 @@ We will wrap the whole list content in the wrapper div and show it only when we 
 </template>
 ```
 
-::: tip 💡
-What is happening here? First, the application will check if the `favorites` array has a _length_ (i.e. if there are some items inside this array; an empty array has a length equal to 0). If the length is 0, the application will display `Your favorites list is empty` text and will ignore the `v-else` block. If the array is not empty, the application will jump to the `v-else` block and render it.
+::: 💡
+ここで何が起こっているのでしょうか？ まず、アプリケーションは _length_ で `favorites` 配列の長さをチェックします（つまり、配列の中にいくつかの項目があるかどうかをチェックします。空の配列の長さは0に等しくなります）。長さが0の場合、アプリケーションは `Your favorites list is empty` というテキストを表示し、 `v-else` ブロックを無視します。配列が空でない場合、アプリケーションは `v-else` ブロックにジャンプしてそれをレンダリングします。
 :::
 
-Let's also display the number of selected dogs above the tag icon in the toolbar. Move to the `App.vue` and add a computed property for `favorites` (similar to the `Favorites` component one we added earlier). You can place this under the `name` property:
+また、ツールバーのタグアイコンの上に選択された犬の数を表示してみましょう。 `App.vue` に移動して、 `favorites` のプロパティを追加します（先ほど追加したコンポーネントの `Favorites` に似ています）。これは `name` プロパティの下に配置することができます：
 
 ```js
 computed: {
@@ -290,7 +292,7 @@ computed: {
 },
 ```
 
-Now let's wrap our favorites icon with the Vuetify `v-badge` component and show the number of items inside of it. Edit `App.vue` where we change the `<router-link>` block that we have for our favorites with the following markup:
+お気に入りのアイコンを Vuetifyの `v-badge` コンポーネントでラップし、その中にあるアイテムの数を表示してみましょう。 `App.vue` を編集し、お気に入り用の `<router-link>` ブロックを以下のマークアップで変更します：
 
 ```html
 <router-link to="/favorites">
@@ -301,13 +303,13 @@ Now let's wrap our favorites icon with the Vuetify `v-badge` component and show 
 </router-link>
 ```
 
-::: tip 💡
-The `v-model` directive here will define the visibility of the badge. So, if the list is empty, the badge will be hidden. Since there are three items in our mock data, we can see the number `3` inside the badge. This is behavior that is defined in the Vuetify badge component for which the documentation can be found [here](https://vuetifyjs.com/en/components/badges).
+::: 💡
+ここでの `v-model` ディレクティブはバッジの可視性を定義します。つまり、リストが空の場合、バッジは非表示になります。モックデータには3つの項目があるので、バッジの中に `3` という数字が表示されています。これは Vuetify バッジコンポーネントで定義されている動作で、ドキュメントは [こちら](https://vuetifyjs.com/en/components/badges) にあります。
 :::
 
-## Add and Remove Dogs
+## 犬の追加と削除
 
-We also need to build a way to add dogs to this favorites list and, sadly, to remove them from it. In other words, we have to _change our state_. The only way to actually change state in a Vuex store is by committing a _mutation_. Vuex mutations are very similar to events: each mutation has a string **type** and a **handler**. The type should denote what the mutation does, you can choose the name. Since we are creating a mutation to add dogs to our favorites, we choose `addToFavorites`. The handler function is where we perform actual state modifications and it will receive the state as the first argument. Let's create our first mutation. Inside the `store.js` clear the state `favorites` array and after the `state` property, add `mutations`:
+また、このお気に入りリストに犬を追加したり、悲しいことに犬を削除したりする方法を構築する必要があります。言い換えれば、_状態を変更_しなければならないということです。Vuex ストアで実際に状態を変更する唯一の方法は、_mutation_ をコミットすることです。Vuex の mutation はイベントと非常に似ています。各 mutation には文字列 **タイプ** と **ハンドラー** を持ちます。タイプは mutation が何をするかを示すもので、名前を指定することができます。ここでは犬をお気に入りに追加するための mutation を作成しているので、`addToFavorites` を選択します。ハンドラー関数は実際に状態を変更するところであり、第一引数として state を受け取ります。最初の mutation を作成してみましょう。 `store.js` の内部で `favorites` の配列を初期化し、`state` プロパティのあとに `mutations` を追加します：
 
 ```js
 export default new Vuex.Store({
@@ -318,7 +320,7 @@ export default new Vuex.Store({
 });
 ```
 
-Inside this object create the `addToFavorites` mutation:
+このオブジェクトの中に `addToFavorites` の mutation を作成します：
 
 ```js
 export default new Vuex.Store({
@@ -333,17 +335,17 @@ export default new Vuex.Store({
 });
 ```
 
-This mutation has two parameters: first is the `state` as said above; the second is the `data` or `payload` which we will add to our `state.favorites`. The `addToFavorites` mutation will add the payload item to the `state.favorites` array.
+この mutation には2つのパラメータがあります。1つ目は上記のように `state` で、2つ目は `state.favorites` に追加する `data` または `payload` です。 `addToFavorites` mutation はペイロードを `state.favorites` 配列に追加します。
 
-::: tip 💡
-You cannot directly call a mutation handler. To invoke it, you need to call store.commit with its type: `store.commit('addToFavorites')` and as you will see we will also have to add the payload.
+::: 💡
+mutation ハンドラを直接呼び出すことはできません。それを呼び出すには、store.commit をそのタイプで呼び出す必要があります。 `store.commit('addToFavorites')` を呼び出して、ペイロードを追加する必要があります。
 :::
 
-::: tip 💡
-Usually in Vuex mutations are committed with _actions_. Actions are similar to mutations but they can contain asynchronous operations (like API calls).
+::: 💡
+通常、Vuex では mutation は _actions_ でコミットされます。アクションは mutation に似ていますが、非同期操作（API コールのような）を含むことができます。
 :::
 
-Let's register an action to commit our `addToFavorites` mutation. Add the `actions` property to the store object and `addToFavorites` action to this property:
+`addToFavorites` の mutation をコミットするアクションを登録してみましょう。ストアオブジェクトに `actions` プロパティを追加し、このプロパティに `addToFavorites` アクションを追加します：
 
 ```js
 export default new Vuex.Store({
@@ -363,49 +365,49 @@ export default new Vuex.Store({
 });
 ```
 
-::: tip 💡
-Action handlers receive a context object which exposes the same set of methods/properties on the store instance, so you can call `context.commit` to commit a mutation. We are using ES6 [argument destructuring](https://github.com/lukehoban/es6features#destructuring) to use the `commit` method of `context`, that's why we don't have `context` as our first argument but `{ commit }` as our first argument. If we would have `context` as a first argument, we should call `context.commit(...)` instead of directly calling `commit(...)`.
+::: 💡
+アクションハンドラはストアインスタンスと同じメソッド/プロパティのセットを公開するコンテキストオブジェクトを受け取るので、 `context.commit` を呼び出して mutation をコミットすることができます。ES6 の[分割代入](https://github.com/lukehoban/es6features#destructuring) を使って `context` の `commit` メソッドを使用していますが、これが第一引数に `context` を持たずに `{ commit }` を第一引数に持つ理由です。もし第一引数に `context` を持つのであれば、`commit(....)` を直接呼び出すのではなく、 `context.commit(....)` を呼び出さなければなりません。
 :::
 
-::: tip 💡
-`payload` here is the same data we want to pass from the component to the mutation to change the state.
+::: 💡
+ここにある `payload` は、状態を変更するためにコンポーネントから mutation に渡したいデータと同じものが入ります。
 :::
 
-## Build the UI
+## UI を構築する
 
-Let's call our action from inside the `Pets.vue` component. First we need some kind of a button to add a certain dog to the favorites list. Move to the `Dog.vue` component and add the button right below the `v-card-title` closing tag but still within the `v-card` tag:
+`Pets.vue` コンポーネントの中からアクションを呼び出してみましょう。まず、特定の犬をお気に入りリストに追加するためのボタンのようなものが必要です。 `Dog.vue` コンポーネントに移動し、ボタンを `v-card-title` 閉じタグのすぐ下に追加しますが、これはまだ `v-card` タグの中にあります：
 
 ```html
 <v-btn @click="$emit('addToFavorites', dog)">Add to Favorites</v-btn>
 ```
 
-By using `$emit`, we are sending the message to our parent component (in this case it's `Pets.vue`) like 'Hi, something is happening here! Please read this message and react to it'.
+`$emit` を使うことで、親コンポーネント（この場合は `Pets.vue`）にこんなメッセージを送信しています。「Hey、ここで何かが起きています！このメッセージを読んで反応してください」
 
-Our message also contains a second parameter: it's the `dog` which we're trying to add to our favorites list.
+メッセージには2つ目のパラメータも含まれています：お気に入りリストに追加しようとしている `dog` です。
 
-::: tip 💡
-So by calling `$emit('addToFavorites', dog)` we are sending an event with type `addToFavorites` and with data the dog that users want to add to the favorites. We have basically created a custom event for which more information can be found [here](https://vuejs.org/v2/guide/components-custom-events.html).
+::: 💡
+そこで `$emit('addToFavorites', dog)` を呼び出すことで、`addToFavorites` タイプのイベントを送信し、ユーザがお気に入りに追加したい犬のデータを送信します。基本的にはカスタムイベントを作成しており、その詳細については[こちらをご覧ください](https://vuejs.org/v2/guide/components-custom-events.html)。
 :::
 
-Now let's open `Pets.vue` and add a _listener_ to our emitted event `addToFavorites` by overwriting the current `<app-dog>` tag with this snippet:
+では、`Pets.vue` を開き、現在の `<app-dog>` タグを以下のスニペットで上書きして、`addToFavorites` というイベントに _listener_ を追加してみましょう：
 
 ```html
 <app-dog :dog="pet" @addToFavorites=""></app-dog>
 ```
 
-For now this listener is doing nothing but we want to call an action on this event. To do so we have to map the actions to our component.
+今のところ、このリスナーは何もしていませんが、このイベントに対してアクションを呼び出したいと思います。そのためには、アクションをコンポーネントにマッピングしなければなりません。
 
-::: tip 💡
-You can dispatch actions in components with `this.$store.dispatch('xxx')`, or use the `mapActions` helper which maps component methods to store.dispatch calls.
+::: 💡
+アクションをコンポーネントにディスパッチするには `this.$store.dispatch('xxx')` を使うか、コンポーネントのメソッドを store.dispatch 呼び出しにマップする `mapActions` ヘルパーを使います。
 :::
 
-We will use the second solution. First import the `mapActions` helper in `Pets.vue`:
+後者の方法を使います。まず、 `Pets.vue` に `mapActions` ヘルパーをインポートします：
 
 ```js
 import { mapActions } from "vuex";
 ```
 
-Then, add it to the component by creating a `methods` block, using the [ES6 spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax):
+そして、[ES6 のスプレッド演算子](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)を使って `methods` ブロックを作成し、コンポーネントに追加します：
 
 ```js
 methods: {
@@ -413,23 +415,23 @@ methods: {
 },
 ```
 
-::: tip 💡
-By calling `mapActions` with one parameter, we are defining which actions from our store we want to retrieve. For now we only have `addToFavorites` in this array but in the future we can add more actions as our store grows. You don't always need all actions from your store in one single component. So by passing on this array to `mapActions` we make sure we only get what we need in thhis component. More information can be found [here](https://vuex.vuejs.org/guide/actions.html#dispatching-actions-in-components).
+::: 💡
+パラメータをひとつ指定して `mapActions` を呼び出すことで、ストアから取得したいアクションを定義しています。今のところ、この配列には `addToFavorites` だけがありますが、将来的にはストアの成長に合わせてアクションを追加することができます。ストアのすべてのアクションを一つのコンポーネントにまとめておく必要はありません。そのため、この配列を `mapActions` に渡すことで、このコンポーネントに必要なものだけを取得できるようにします。詳細な情報は [こちら](https://vuex.vuejs.org/guide/actions.html#dispatching-actions-in-components) をご覧ください。
 :::
 
-Now we can dispatch `addToFavorites` like a simple component method.
+これで、単純なコンポーネントメソッドのように `addToFavorites` をディスパッチできるようになりました。
 
-Let's call this method on the `app-dog` `addToFavorites` event. Edit the `<app-dog` tag in `Pets.vue`:
+このメソッドを `app-dog` の `addToFavorites` イベントで呼び出してみましょう。 `Pets.vue` の `<app-dog>` タグを編集します：
 
 ```html
 <app-dog :dog="pet" @addToFavorites="addToFavorites"></app-dog>
 ```
 
-Try to click on `Add to Favorites` buttons. You can see how the icon badge number increases, open the favorites list by clicking on this icon and check how many dogs we have there.
+`Add to Favorites` ボタンをクリックしてみてください。アイコンバッジの数が増える様子を確認したり、このアイコンをクリックしてお気に入りリストを開き、そこにある犬の数を確認することができます。
 
-## Enhance the Logic
+## ロジックを強化する
 
-For now we can add any dog multiple times but we don't have five Maxes! Let's check our payload inside the `store.js` mutation and add the dog only if it's not in the list already:
+今のところ、任意の犬を複数回追加することができますが、マックス（犬）は5匹もいません！ `store.js` の mutation の中にあるペイロードをチェックして、リストにない場合にのみ犬を追加するようにしてみましょう：
 
 ```js
 addToFavorites(state, payload) {
@@ -439,13 +441,13 @@ addToFavorites(state, payload) {
 },
 ```
 
-Here we're first checking if the `payload` element is included in `state.favorites`. We are adding the element only if it's not already in the array.
+ここではまず `payload` 要素が `state.favorites` に含まれているかどうかを確認します。まだ配列に含まれていない場合にのみ要素を追加しています。
 
-## Remove from List
+## リストから削除
 
-Now we need a mechanism to remove dogs from the favorites list. Maybe they were adopted by someone else! Let's create an action and a mutation for this.
+あとは、お気に入りリストから犬を削除する仕組みが必要です。もしかしたら誰かに里親に出されたのかもしれません！そのためのアクションと mutation を作ってみましょう。
 
-In the `store.js` add the `removeFromFavorites` mutation to `mutations` object:
+`store.js` で `mutations` オブジェクトに `removeFromFavorites` の mutation を追加します：
 
 ```js
 removeFromFavorites(state, payload) {
@@ -453,13 +455,13 @@ removeFromFavorites(state, payload) {
 }
 ```
 
-::: tip 💡
-Here the splice() method changes the contents of an array by removing existing elements. The first argument is the index of the element we want to start with and the second argument is the number of elements we want to remove.
+::: 💡
+ここで splice() メソッドは、既存の要素を削除することで配列の内容を変更します。第一引数には開始したい要素のインデックス、第二引数には削除したい要素の数を指定します。
 :::
 
-So first we're finding the index of the `payload` item inside the `state.favorites` array and removing the one item starting from this index (i.e. we will remove only the `payload` item itself).
+そのため、まず `state.favorites` 配列内の `payload` アイテムのインデックスを見つけ、このインデックスから始まるアイテムを削除します（つまり、削除するのは `payload` アイテムそのものだけです）
 
-Add the action to commit the `removeFromFavorites` mutation:
+mutation `removeFromFavorites` をコミットするアクションを追加します：
 
 ```js
 removeFromFavorites({ commit }, payload) {
@@ -467,13 +469,13 @@ removeFromFavorites({ commit }, payload) {
 }
 ```
 
-Now we need to dispatch this action when the user clicks the delete icon. Go to the `Favorites.vue` file. As you remember, first we should map actions to component methods. Import `mapActions` helper at the top of the `<script>` tag:
+ここでは、ユーザーが削除アイコンをクリックしたときにこのアクションをディスパッチする必要があります。ファイル `Favorites.vue` に移動してください。覚えていると思いますが、まずアクションをコンポーネントメソッドにマッピングする必要があります。 `<script>` タグの先頭にある `mapActions` ヘルパーをインポートしてください：
 
 ```js
 import { mapActions } from "vuex";
 ```
 
-and add it to the component `methods` under the `computed` block:
+そして `computed` ブロックの下のコンポーネント `methods` に追加します：
 
 ```js
 methods: {
@@ -481,16 +483,16 @@ methods: {
 }
 ```
 
-And finally add the click listener to the delete icon:
+最後にクリックリスナーを削除アイコンに追加します：
 
 ```html
 <v-icon @click="removeFromFavorites(dog)">delete</v-icon>
 ```
 
-Now you can add and remove dogs from your favorites list.
+これで、お気に入りリストに犬を追加したり削除したりできるようになりました。
 
-**Whew! Chapter 4 is complete!**
+**ふぅ！Chapter 4 が終わりました！**
 
-## Final result
+## 最終結果
 
 ![chapter 4 final](./images/petshop_chapter4.jpg)
