@@ -61,7 +61,7 @@ import Favorites from "./views/Favorites";
 
 これで、お気に入りアイコンをクリックすると `/favorites` ルートに移動します。
 
-Favorites コンポーネントのマークアップを作成しましょう。Vuetify のリストコンポーネントを使用して、犬を表示します。 `<div></div>` タグからプレースホルダーテキストを削除して、 `<v-list></v-list>` タグで置き換えましょうテンプレートは次のようになります：
+Favorites コンポーネントのマークアップを作成しましょう。Vuetify のリストコンポーネントを使用して、犬を表示します。 `<div></div>` タグからプレースホルダーテキストを削除して、 `<v-list></v-list>` タグで置き換えましょう。テンプレートは次のようになります：
 
 ```html
 <div>
@@ -239,7 +239,7 @@ state: {
 :::
 
 ::: 💡
-また、`v-list-item` のオープニングタグで `v-for` の隣に `:key` を追加したことに注意してください。これは、Vue が `v-for` を使用する際にキーを提供することを望んでいるためです。 `v-for` で `(dog, index) in favorites` を使うことで、犬ごとに配列のインデックスを取得することができます。Max の場合はインデックス0、Rusty の場合はインデックス1などを取得します。これをキーとして使うことができます。より詳しい情報は[こちら](https://vuejs.org/guide/list.html#Maintaining-State)を参照してください。
+また、`v-list-item` のオープニングタグで `v-for` の隣に `:key` を追加したことに注意してください。これは、Vue が `v-for` を使用する際にキーを提供することを望んでいるためです。 `v-for` で `(dog, index) in favorites` を使うことで、犬ごとに配列のインデックスを取得することができます。マックスの場合はインデックス0、ラスティの場合はインデックス1などを取得します。これをキーとして使うことができます。より詳しい情報は[こちら](https://vuejs.org/guide/list.html#Maintaining-State)を参照してください。
 :::
 
 これで `/favorites` ルートにモックデータが表示されるようになりました。ページの見た目を良くするために、もう少し UI を微調整してみましょう。
@@ -251,8 +251,6 @@ state: {
 ::: 💡
 注意： `v-if` ディレクティブは、式の値が真か偽かという「真実性」に基づいて条件付きで要素をレンダリングします。 `v-else` ディレクティブは `v-if` の「else」ブロックとして機能し、「else」条件を提供します。
 :::
-
-We will wrap the whole list content in the wrapper div and show it only when we have items in our list of favorites; otherwise the user will see the placeholder text. Let's change the template:
 
 リストの内容全体をラッパー div でラップし、お気に入りリストに項目がある場合にのみ表示します。テンプレートを変更してみましょう：
 
@@ -309,7 +307,7 @@ computed: {
 
 ## 犬の追加と削除
 
-また、このお気に入りリストに犬を追加したり、悲しいことに犬を削除したりする方法を構築する必要があります。言い換えれば、_状態を変更_しなければならないということです。Vuex ストアで実際に状態を変更する唯一の方法は、_mutation_ をコミットすることです。Vuex の mutation はイベントと非常に似ています。各 mutation には文字列 **タイプ** と **ハンドラー** を持ちます。タイプは mutation が何をするかを示すもので、名前を指定することができます。ここでは犬をお気に入りに追加するための mutation を作成しているので、`addToFavorites` を選択します。ハンドラー関数は実際に状態を変更するところであり、第一引数として state を受け取ります。最初の mutation を作成してみましょう。 `store.js` の内部で `favorites` の配列を初期化し、`state` プロパティのあとに `mutations` を追加します：
+また、このお気に入りリストに犬を追加したり、悲しいことに犬を削除したりする方法を構築する必要があります。言い換えれば、 _状態を変更_ しなければならないということです。Vuex ストアで実際に状態を変更する唯一の方法は、_mutation_ をコミットすることです。Vuex の mutation はイベントと非常に似ています。各 mutation には文字列 **タイプ** と **ハンドラー** を持ちます。タイプは mutation が何をするかを示すもので、名前を指定することができます。ここでは犬をお気に入りに追加するための mutation を作成しているので、`addToFavorites` を選択します。ハンドラー関数は実際に状態を変更するところであり、第一引数として state を受け取ります。最初の mutation を作成してみましょう。 `store.js` の内部で `favorites` の配列を初期化し、`state` プロパティのあとに `mutations` を追加します：
 
 ```js
 export default new Vuex.Store({
