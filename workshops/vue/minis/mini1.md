@@ -23,7 +23,7 @@ Take a look at the code that was scaffolded by CodeSandbox for a basic Vue.js ap
 
 ```js
 new Vue({
-	render: h => h(App),
+	render: (h) => h(App),
 }).$mount('#app');
 ```
 
@@ -85,6 +85,10 @@ This style block uses a path to an external image hosted on Github, rather than 
 
 Adding the stylesheet didn't do much to our template except break the existing styles. Let's fix the template!
 
+::: warning ☕️ Take a break! ☕️
+Now's a great time to join a breakout room if you're joining us on Zoom!
+:::
+
 ## Install Vuetify
 
 Before we edit the template, we're going to install Vuetify. Vuetify is a cool library that gives a Material Design styling to your Vue apps.
@@ -134,7 +138,7 @@ Then, change the Vue initialization at the bottom of `main.js` to this:
 ```js
 new Vue({
 	vuetify,
-	render: h => h(App),
+	render: (h) => h(App),
 }).$mount('#app');
 ```
 
@@ -157,7 +161,7 @@ Then, overwrite the current template in `App.vue` with this markup:
 ```html
 <template>
 	<v-app>
-		<v-content class="dogs-layout">
+		<v-main class="dogs-layout">
 			<v-container fill-height>
 				<div class="dogs-overlay">
 					<h1 class="display-2 text-xs-center">Choose your favorite dogs</h1>
@@ -175,7 +179,7 @@ Then, overwrite the current template in `App.vue` with this markup:
 					</v-card>
 				</div>
 			</v-container>
-		</v-content>
+		</v-main>
 	</v-app>
 </template>
 ```
@@ -235,6 +239,10 @@ The `v-bind` directive dynamically binds one or more attributes, or a component 
 :::
 
 Great! Now it's time to load some dogs from an API!
+
+::: warning ☕️ Take a break! ☕️
+Now's a great time to join a breakout room if you're joining us on Zoom!
+:::
 
 ## Add Axios
 
@@ -299,10 +307,10 @@ To perform a GET request Axios uses the `axios.get` method. The result will be a
 ```js
 axios
 	.get('https://dog.ceo/api/breeds/image/random')
-	.then(response => {
+	.then((response) => {
 		console.log(response);
 	})
-	.catch(error => {
+	.catch((error) => {
 		console.log(error);
 	});
 ```
@@ -330,6 +338,10 @@ created() {
 ```
 
 Now after clicking the refresh button in the browser window, you should see an object in your console. Drill into it by clicking its left-hand arrow. We are interested in its `data` field. You can see we have a status `success` and a message with an image URL.
+
+::: warning ☕️ Take a break! ☕️
+Now's a great time to join a breakout room if you're joining us on Zoom!
+:::
 
 ## Use the API
 
@@ -428,6 +440,10 @@ One thing left to do is to bind `pet` (which will be the image link) to the `src
 ```
 
 Now it's time to like some dogs 💖🐶!
+
+::: warning ☕️ Take a break! ☕️
+Now's a great time to join a breakout room if you're joining us on Zoom!
+:::
 
 ## Adding Dogs to Favorites
 

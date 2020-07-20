@@ -1,11 +1,11 @@
 # 🐶 Mini Workshop 1: ペットの情報を取得する Web アプリケーションの構築
 
-| プロジェクトのゴール | Vueアプリケーションのセットアップ、コンポーネントの基本、Axiosを使用した簡単な REST API コールの実行 |
-| --- | --- |
-| このワークショップで学ぶこと | Vue アプリケーションのセットアップ、コンポーネントの基本、Axios を使用した簡単なREST APIコールの実行 |
-| 必要なツール | Chrome のようなモダンブラウザ、 [Codesandbox](https://codesandbox.io/) （アカウントを作成して、作業のバージョンをそのまま維持するようにしてください） |
-| かかる時間 | 1時間 |
-| アプリケーションを試してみたいですか？ | [Code Sandbox link](https://codesandbox.io/s/q3kk74yp1w) |
+| プロジェクトのゴール                   | Vue アプリケーションのセットアップ、コンポーネントの基本、Axios を使用した簡単な REST API コールの実行                                                |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| このワークショップで学ぶこと           | Vue アプリケーションのセットアップ、コンポーネントの基本、Axios を使用した簡単な REST API コールの実行                                                |
+| 必要なツール                           | Chrome のようなモダンブラウザ、 [Codesandbox](https://codesandbox.io/) （アカウントを作成して、作業のバージョンをそのまま維持するようにしてください） |
+| かかる時間                             | 1 時間                                                                                                                                                |
+| アプリケーションを試してみたいですか？ | [Code Sandbox link](https://codesandbox.io/s/q3kk74yp1w)                                                                                              |
 
 # イントロダクション
 
@@ -28,11 +28,11 @@ main.js は、アプリケーションを新しい Vue.js アプリケーショ�
 
 ```js
 new Vue({
-  render: h => h(App),
+	render: (h) => h(App),
 }).$mount('#app');
 ```
 
-`App.vue` を開きます。このファイルでは、「home」コンポーネントがビルドされています。 Vue.js シングルファイルコンポーネント（SFC）の 3つの主要部分、テンプレート、スクリプトブロック、スタイルブロックが含まれています。
+`App.vue` を開きます。このファイルでは、「home」コンポーネントがビルドされています。 Vue.js シングルファイルコンポーネント（SFC）の 3 つの主要部分、テンプレート、スクリプトブロック、スタイルブロックが含まれています。
 
 テンプレートブロックの最初の div の ID は「app」であることに注意してください。これは、アプリコードが挿入される div です。 ロゴ画像の下に含まれる `<HelloWorld>` コンポーネントもあります。 これは、 `App.vue` に含まれる SFC の例です。
 
@@ -89,6 +89,10 @@ h1 {
 
 スタイルシートを追加しても、既存のスタイルを変えることを除いて、テンプレートはあまり変わりませんでした。テンプレートを修正しましょう！
 
+::: warning ☕️ Pause! ☕️
+This is a great time to join a 'breakout room' on Zoom!
+:::
+
 ## Install Vuetify - Vuetify の導入
 
 テンプレートを編集する前に、Vuetify をインストールします。Vuetify は、Vue アプリケーションにマテリアルデザインスタイリングを提供するクールなライブラリです。
@@ -120,39 +124,36 @@ Vuetify はプラグインストラクチャを用いて機能します。プロ
 新しい `vuetify.js` ファイルで、以下のコードを追加してプラグインを実行できるようにします。
 
 ```js
-import Vue from "vue";
-import Vuetify from "vuetify";
-import "vuetify/dist/vuetify.min.css";
+import Vue from 'vue';
+import Vuetify from 'vuetify';
+import 'vuetify/dist/vuetify.min.css';
 Vue.use(Vuetify);
 
 export default new Vuetify();
 ```
 
-次に、 `main.js` を開いて 2番目の `import` （3行目）の下に、以下の行を追加して Vuetify を初期化します。 
+次に、 `main.js` を開いて 2 番目の `import` （3 行目）の下に、以下の行を追加して Vuetify を初期化します。
 
 ```js
-import vuetify from "@/plugins/vuetify";
+import vuetify from '@/plugins/vuetify';
 ```
 
 そして `main.js` の下部にある Vue を初期化している部分を、以下のように変更します。
 
 ```js
 new Vue({
-  vuetify,
-  render: h => h(App)
-}).$mount("#app");
+	vuetify,
+	render: (h) => h(App),
+}).$mount('#app');
 ```
 
 これにより、Vuetify のテーマとコンポーネントが Vue アプリケーション全体で利用可能になります。
 
-このアプリケーションではアイコンを使用するため、  `index.html` ファイルの `head` 部分にマテリアルアイコンを追加する必要があります。このファイルは `public` フォルダーにあります。
+このアプリケーションではアイコンを使用するため、 `index.html` ファイルの `head` 部分にマテリアルアイコンを追加する必要があります。このファイルは `public` フォルダーにあります。
 `<title>` タグの後に次の行を挿入します。
 
 ```html
-<link
-  href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" />
 ```
 
 ページのタイトルを「Dog Lover」に変更しましょう。そのために、 `title` タグのコンテンツを変更します。
@@ -165,27 +166,27 @@ new Vue({
 
 ```html
 <template>
-  <v-app>
-    <v-content class="dogs-layout">
-      <v-container fill-height>
-        <div class="dogs-overlay">
-          <h1 class="display-2 text-xs-center">Choose your favorite dogs</h1>
-          <v-card class="dog-card">
-            <v-img height="400px"></v-img>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn icon>
-                <v-icon color="red">favorite</v-icon>
-              </v-btn>
-              <v-btn icon>
-                <v-icon>forward</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </div>
-      </v-container>
-    </v-content>
-  </v-app>
+	<v-app>
+		<v-main class="dogs-layout">
+			<v-container fill-height>
+				<div class="dogs-overlay">
+					<h1 class="display-2 text-xs-center">Choose your favorite dogs</h1>
+					<v-card class="dog-card">
+						<v-img height="400px"></v-img>
+						<v-card-actions>
+							<v-spacer></v-spacer>
+							<v-btn icon>
+								<v-icon color="red">favorite</v-icon>
+							</v-btn>
+							<v-btn icon>
+								<v-icon>forward</v-icon>
+							</v-btn>
+						</v-card-actions>
+					</v-card>
+				</div>
+			</v-container>
+		</v-main>
+	</v-app>
 </template>
 ```
 
@@ -200,19 +201,16 @@ new Vue({
 
 ## Add some data - データの操作
 
-この時点で、UI にデータを入力する必要があります。最初にしたいことは、 `v-card` 内に犬の画像を表示することです。見た目を検証する目的で静的リンクを追加しましょう。 `App.vue` のテンプレートで、 `v-img` の  `src` プロパティを変更します。
+この時点で、UI にデータを入力する必要があります。最初にしたいことは、 `v-card` 内に犬の画像を表示することです。見た目を検証する目的で静的リンクを追加しましょう。 `App.vue` のテンプレートで、 `v-img` の `src` プロパティを変更します。
 
 ```html
-<v-img
-  height="400px"
-  src="https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg"
-></v-img>
+<v-img height="400px" src="https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg"></v-img>
 ```
 
 かわいいね！🐶
 
 しかし、考えていることはこのリンクを動的にすることなので、最初の Vue 変数を作成します。まず、 `data()` を Vue コンポーネントに追加する必要があります。
-この関数は、Vue 変数のオブジェクトを返す必要があります。 `<script>` ブロックで作成しましょう。  `App.vue` の現在の `<script>` ブロックを上書きします。
+この関数は、Vue 変数のオブジェクトを返す必要があります。 `<script>` ブロックで作成しましょう。 `App.vue` の現在の `<script>` ブロックを上書きします。
 
 ```js
 <script>
@@ -247,9 +245,13 @@ data() {
 ```
 
 > 💡
-> `v-bind` ディレクティブは、1つ以上の属性、またはコンポーネントのプロパティ（props）を式に動的にバインドします。その小さな `:` がすべての違いを生みます！
+> `v-bind` ディレクティブは、1 つ以上の属性、またはコンポーネントのプロパティ（props）を式に動的にバインドします。その小さな `:` がすべての違いを生みます！
 
 グレート！今度は API からいくつかの犬をロードします！
+
+::: warning ☕️ Pause! ☕️
+This is a great time to join a 'breakout room' on Zoom!
+:::
 
 ## Add Axios - Axios の導入
 
@@ -313,13 +315,13 @@ GET リクエストを実行するには、Axios は `axios.get` メソッドを
 
 ```js
 axios
-  .get('https://dog.ceo/api/breeds/image/random')
-  .then(response => {
-    console.log(response);
-  })
-  .catch(error => {
-    console.log(error);
-  });
+	.get('https://dog.ceo/api/breeds/image/random')
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	});
 ```
 
 コンポーネントの作成時に新しいイメージで古いイメージを置き換える必要があるため、 `methods` の直後に `created()` フックを追加しましょう。
@@ -346,6 +348,10 @@ created() {
 
 `data` フィールドに関心があります。ステータスが `success` で、画像の URL を含むメッセージがあることがわかります。
 
+::: warning ☕️ Pause! ☕️
+This is a great time to join a 'breakout room' on Zoom!
+:::
+
 ## Use the API - API データの利用
 
 `currentDogLink` をロードされたものに置き換えましょう。このときに、静的な値を削除できます。
@@ -358,7 +364,7 @@ data() {
 },
 ```
 
-`loadNewDog` メソッド内で、`response.data.message` （実際には画像URL）を、コンソールに結果を出力するのではなく `currentDogLink` プロパティに割り当てます。
+`loadNewDog` メソッド内で、`response.data.message` （実際には画像 URL）を、コンソールに結果を出力するのではなく `currentDogLink` プロパティに割り当てます。
 
 ```js
 loadNewDog() {
@@ -382,7 +388,7 @@ loadNewDog() {
 
 ```html
 <v-btn icon @click="loadNewDog">
-  <v-icon>forward</v-icon>
+	<v-icon>forward</v-icon>
 </v-btn>
 ```
 
@@ -390,9 +396,8 @@ loadNewDog() {
 
 ## Build the Favorites - お気に入り機能の構築
 
-ユーザーがお気に入りのパーソナルリストに犬の画像を追加し、現在の犬のビューのすぐ下にこれらの画像のギャラリーを表示できるようにします。リンクを保存するには、もう 1つのデータプロパティ `favoriteDogs` という配列が必要です。
+ユーザーがお気に入りのパーソナルリストに犬の画像を追加し、現在の犬のビューのすぐ下にこれらの画像のギャラリーを表示できるようにします。リンクを保存するには、もう 1 つのデータプロパティ `favoriteDogs` という配列が必要です。
 `currentDogLink` の直後に追加し、デフォルトで空にしておきます。
-
 
 ```js
 data() {
@@ -407,19 +412,19 @@ data() {
 
 ```html
 <v-container grid-list-md fluid>
-  <v-layout wrap>
-    <v-flex xs6 sm4 md2>
-      <v-card class="dog-card">
-        <v-img height="150px"></v-img>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn icon>
-            <v-icon>delete</v-icon>
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+	<v-layout wrap>
+		<v-flex xs6 sm4 md2>
+			<v-card class="dog-card">
+				<v-img height="150px"></v-img>
+				<v-card-actions>
+					<v-spacer></v-spacer>
+					<v-btn icon>
+						<v-icon>delete</v-icon>
+					</v-btn>
+				</v-card-actions>
+			</v-card>
+		</v-flex>
+	</v-layout>
 </v-container>
 ```
 
@@ -449,6 +454,10 @@ data() {
 
 ちょっと一息。お犬の鑑賞タイムです 💖🐶！
 
+::: warning ☕️ Pause! ☕️
+This is a great time to join a 'breakout room' on Zoom!
+:::
+
 ## Adding dogs to Favorites - お気に入り追加機能の実装
 
 `addToFavorites` という新しいメソッドを作成します。これは、 `currentDogLink` の値を `favoriteDogs` 配列に追加します。
@@ -466,13 +475,13 @@ addToFavorites() {
 
 ```html
 <v-btn icon @click="addToFavorites">
-  <v-icon color="red">favorite</v-icon>
+	<v-icon color="red">favorite</v-icon>
 </v-btn>
 ```
 
 「お気に入り」ボタンをクリックしてみてください！ギャラリーが犬の画像でどのように満たされていくかを見ることができます 🖼️
 
-1つ問題があります。1つの画像を数回追加できるようになっています。これを防ぐために、 `currentDogLink` が既に `favoriteDogs` 配列内にあるかどうかを確認し、「お気に入り」ボタンを無効化します。この複雑なロジックをテンプレート内に配置する代わりに、_computed_ プロパティを作成します。
+1 つ問題があります。1 つの画像を数回追加できるようになっています。これを防ぐために、 `currentDogLink` が既に `favoriteDogs` 配列内にあるかどうかを確認し、「お気に入り」ボタンを無効化します。この複雑なロジックをテンプレート内に配置する代わりに、_computed_ プロパティを作成します。
 
 `created()` フックの直後に `computed` を追加して（ `created()` を閉じた後のカンマを忘れないでください）、その中に `isAlreadyInFavorites` という名前のプロパティを作成しましょう。
 
@@ -496,7 +505,7 @@ computed: {
 
 ```html
 <v-btn icon @click="addToFavorites" :disabled="isAlreadyInFavorites">
-  <v-icon color="red">favorite</v-icon>
+	<v-icon color="red">favorite</v-icon>
 </v-btn>
 ```
 
@@ -504,7 +513,7 @@ computed: {
 
 ## Removing dogs from Favorites - お気に入り削除機能の実装
 
-ところで、犬の画像の 1つが気に入らなくなったらどうしますか？このまれなイベントでは、 `favoriteDogs` 配列からそれを削除する必要があります。これにはもう 1つのメソッドが必要なので、 `addToFavorites` の後に追加します。
+ところで、犬の画像の 1 つが気に入らなくなったらどうしますか？このまれなイベントでは、 `favoriteDogs` 配列からそれを削除する必要があります。これにはもう 1 つのメソッドが必要なので、 `addToFavorites` の後に追加します。
 （ `addToFavorites` の閉じ括弧の後にカンマを追加します）
 
 ```js
@@ -520,13 +529,13 @@ removeFromFavorites(index) {
 ```
 
 > 💡
-> この `splice()` メソッドは、既存の要素を削除して配列の内容を変更します。最初の引数は開始する要素のインデックスで、2番目の引数は削除する要素の数です。
+> この `splice()` メソッドは、既存の要素を削除して配列の内容を変更します。最初の引数は開始する要素のインデックスで、2 番目の引数は削除する要素の数です。
 
 次に、この新しいメソッドをクリックハンドラーで「削除」ボタンにバインドする必要があります。
 
 ```html
 <v-btn icon @click="removeFromFavorites(index)">
-  <v-icon>delete</v-icon>
+	<v-icon>delete</v-icon>
 </v-btn>
 ```
 
@@ -535,7 +544,7 @@ removeFromFavorites(index) {
 
 お気に入りからいくつかの犬を追加および削除してみてください。動きます！
 
-**🎊おめでとうございます、ベースプロジェクトが終了しました！🎊**
+**🎊 おめでとうございます、ベースプロジェクトが終了しました！🎊**
 
 ## Supplement 1: Creating a Dog Component - Dog コンポーネントの作成
 
@@ -553,10 +562,10 @@ removeFromFavorites(index) {
 
 ここで、お気に入りの犬を含む `v-card` コンポーネント全体（css クラスが `dog-card` ）を `App.vue` からコピーし、テンプレートタグ内に貼り付けます。コピペしたら `App.vue` から削除できます。
 
-ここで、表示する犬の画像を親コンポーネントから子コンポーネントに渡す必要があります。そのために、Vueは `props` を使用します。
+ここで、表示する犬の画像を親コンポーネントから子コンポーネントに渡す必要があります。そのために、Vue は `props` を使用します。
 
 > 💡
-> props は、コンポーネントに登録できるカスタム属性です。値が prop 属性に渡されると、そのコンポーネントインスタンスの  _プロパティ_ になります。この場合、 `Dog` コンポーネントには、その親の `App` コンポーネントから渡される `dog` プロパティがあります。
+> props は、コンポーネントに登録できるカスタム属性です。値が prop 属性に渡されると、そのコンポーネントインスタンスの _プロパティ_ になります。この場合、 `Dog` コンポーネントには、その親の `App` コンポーネントから渡される `dog` プロパティがあります。
 
 `Dog.vue` コンポーネントに `props` オプションを追加しましょう。最初に、 `script` タグ内に export ステートメントを作成する必要があります。
 （後で、 `Dog` コンポーネントを `App` コンポーネント内にインポートできるようになります）
@@ -586,15 +595,15 @@ removeFromFavorites(index) {
 
 ```html
 <template>
-  <v-card class="dog-card">
-    <v-img height="150px" :src="dog"></v-img>
-    <v-card-actions>
-      <v-spacer></v-spacer>
-      <v-btn icon @click="removeFromFavorites(index)">
-        <v-icon>delete</v-icon>
-      </v-btn>
-    </v-card-actions>
-  </v-card>
+	<v-card class="dog-card">
+		<v-img height="150px" :src="dog"></v-img>
+		<v-card-actions>
+			<v-spacer></v-spacer>
+			<v-btn icon @click="removeFromFavorites(index)">
+				<v-icon>delete</v-icon>
+			</v-btn>
+		</v-card-actions>
+	</v-card>
 </template>
 ```
 
@@ -629,7 +638,7 @@ export default {
 
 ```html
 <v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
-  <app-dog></app-dog>
+	<app-dog></app-dog>
 </v-flex>
 ```
 
@@ -637,16 +646,16 @@ export default {
 
 ```html
 <v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
-  <app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
+	<app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
 </v-flex>
 ```
 
-これで、お気に入りに犬を追加しようとすると、グリッドに犬が再び表示されます！ただし、1つの問題があります。犬を削除すると、コンソールで大量のエラーが発生します。その理由は、 `Dog.vue` 内に `removeFromFavorites` メソッドがなく、 `index` についても何も知らないためです。
+これで、お気に入りに犬を追加しようとすると、グリッドに犬が再び表示されます！ただし、1 つの問題があります。犬を削除すると、コンソールで大量のエラーが発生します。その理由は、 `Dog.vue` 内に `removeFromFavorites` メソッドがなく、 `index` についても何も知らないためです。
 
 メソッドを使用する代わりに、 `Dog` コンポーネント内の「削除」ボタンを _イベントエミッター_ に置き換えます。
 
 ```html
-<v-btn icon @click="$emit('remove')">
+<v-btn icon @click="$emit('remove')"></v-btn>
 ```
 
 `$emit` を使用して、 `Dog.vue` は親コンポーネント（この場合は `App.vue` ）にこんな風にメッセージを送信しています。
@@ -663,10 +672,11 @@ export default {
 
 > 💡
 > Vue は、 `transition` ラッパーコンポーネントを提供します。これにより、次のコンテキストで任意の要素またはコンポーネントの開始 / 終了トランジションを追加できます。
-> - 条件付きレンダリング（ `v-if` を使用）
-> - 条件付き表示（ `v-show` を使用）
-> - 動的コンポーネント
-> - コンポーネントルートノード
+>
+> -   条件付きレンダリング（ `v-if` を使用）
+> -   条件付き表示（ `v-show` を使用）
+> -   動的コンポーネント
+> -   コンポーネントルートノード
 
 現在の犬の画像をアニメーション化してみましょう。最初に、将来の移行に適切なコンテキストを提供するために、 `v-if` ディレクティブを追加する必要があります。 `App.vue` で、メインの犬のカードを編集します。
 
@@ -694,7 +704,7 @@ loadNewDog() {
 
 ```html
 <transition name="fade">
-  <v-img v-if="currentDogLink" height="400px" :src="currentDogLink"></v-img>
+	<v-img v-if="currentDogLink" height="400px" :src="currentDogLink"></v-img>
 </transition>
 ```
 
@@ -706,11 +716,11 @@ loadNewDog() {
 ```css
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1s ease;
+	transition: opacity 1s ease;
 }
 .fade-enter,
 .fade-leave-to {
-  opacity: 0;
+	opacity: 0;
 }
 ```
 
@@ -727,9 +737,9 @@ loadNewDog() {
 
 ```html
 <transition-group name="slide" tag="v-layout" class="wrap">
-  <v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
-    <app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
-  </v-flex>
+	<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
+		<app-dog :dog="pet" @remove="removeFromFavorites(index)"></app-dog>
+	</v-flex>
 </transition-group>
 ```
 
@@ -738,29 +748,27 @@ loadNewDog() {
 
 これで、CSS クラスを使用してスライドトランジションを説明できます — これらのクラスを `App.vue` の CSS に追加します。
 
-
 ```css
 .slide-enter-active {
-  transition: all 0.3s ease;
+	transition: all 0.3s ease;
 }
 .slide-enter,
 .slide-leave-to {
-  transform: translateX(10px);
-  opacity: 0;
+	transform: translateX(10px);
+	opacity: 0;
 }
 ```
 
 グレート！新しい犬をグリッドに追加すると、素晴らしいアニメーションができます。ただし、削除には影響しません。 `-move` クラスがあります。これは、アイテムの位置が変わったときに追加されます。
 他のクラスと同様に、そのプレフィックスは提供された `name` 属性（この場合は `slide` ）の値と一致します。したがって、さらにスタイルを追加する必要があります。
 
-
 ```css
 .slide-leave-active {
-  position: absolute;
+	position: absolute;
 }
 
 .slide-move {
-  transition: transform 0.5s;
+	transition: transform 0.5s;
 }
 ```
 
