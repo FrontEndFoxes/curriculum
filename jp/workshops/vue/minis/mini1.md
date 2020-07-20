@@ -167,7 +167,7 @@ new Vue({
 ```html
 <template>
 	<v-app>
-		<v-content class="dogs-layout">
+		<v-main class="dogs-layout">
 			<v-container fill-height>
 				<div class="dogs-overlay">
 					<h1 class="display-2 text-xs-center">Choose your favorite dogs</h1>
@@ -185,7 +185,7 @@ new Vue({
 					</v-card>
 				</div>
 			</v-container>
-		</v-content>
+		</v-main>
 	</v-app>
 </template>
 ```
@@ -434,7 +434,7 @@ data() {
 このディレクティブを、 `v-flex` の開始要素に追加しましょう。コンテナ内に追加した新しいお気に入りのカードの配列を表示します。
 
 ```html
-<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet"></v-flex>
+<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
 ```
 
 ここで、`pet` は _現在の配列要素_ への参照であり、`index` は配列内の _この要素のインデックス_ です。

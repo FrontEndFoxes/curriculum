@@ -161,7 +161,7 @@ Ensuite, écrasez le template actuel dans `App.vue` avec ce code :
 ```html
 <template>
 	<v-app>
-		<v-content class="dogs-layout">
+		<v-main class="dogs-layout">
 			<v-container fill-height>
 				<div class="dogs-overlay">
 					<h1 class="display-2 text-xs-center">Choisissez vos chiens préférés</h1>
@@ -179,7 +179,7 @@ Ensuite, écrasez le template actuel dans `App.vue` avec ce code :
 					</v-card>
 				</div>
 			</v-container>
-		</v-content>
+		</v-main>
 	</v-app>
 </template>
 ```
@@ -420,7 +420,7 @@ Vous pouvez voir une carte vide avec un bouton « Supprimer » juste après l'im
 Pour afficher une liste d'éléments basée sur un tableau, Vue a une directive `v-for` qui parcourra ce tableau et rendra chaque élément. Ajoutons cette directive à notre balise d'ouverture `v-flex`, ce qui montrera le tableau des favoris dans le nouveau conteneur que vous venez d'ajouter :
 
 ```html
-<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet"></v-flex>
+<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
 ```
 
 Ici, `pet` est la référence à l'_élément de tableau actuel_ et `index` est l'_index de cet élément_ à l'intérieur du tableau.
