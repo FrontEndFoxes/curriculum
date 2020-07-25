@@ -1,32 +1,32 @@
 {
-    "name": "front-end-foxes-workshops",
-    "version": "1.0.0",
-    "description": "Front-End Foxes Workshops",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/vuevixens/docs.git"
-    },
-    "keywords": [
-        "Front-End Foxes",
-        "workshops",
-        "Vue.js"
-    ],
-    "author": "Front-End Foxes Inc.",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/vuevixens/docs/issues"
-    },
-    "homepage": "https://github.com/vuevixens/docs/#readme",
-    "dependencies": {
-        "vuepress": "^1.4.0"
-    },
-    "scripts": {
-        "docs:build": "vuepress build",
-        "dev": "vuepress dev"
-    },
-    "devDependencies": {
-        "all-contributors-cli": "^6.9.1"
-    },
+	"name": "front-end-foxes-workshops",
+	"version": "1.0.0",
+	"description": "Front-End Foxes Workshops",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vuevixens/docs.git"
+	},
+	"keywords": [
+		"Front-End Foxes",
+		"workshops",
+		"Vue.js"
+	],
+	"author": "Front-End Foxes Inc.",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/vuevixens/docs/issues"
+	},
+	"homepage": "https://github.com/vuevixens/docs/#readme",
+	"dependencies": {
+		"vuepress": "^1.4.0"
+	},
+	"scripts": {
+		"docs:build": "vuepress build",
+		"dev": "vuepress dev"
+	},
+	"devDependencies": {
+		"all-contributors-cli": "^6.9.1"
+	},
     "resolutions": {
         "vuepress/**/kind-of": "^6.0.3"
     }
