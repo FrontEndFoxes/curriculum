@@ -3,7 +3,7 @@
 | **プロジェクトのゴール** | お店のタグ付けシステムを作成して、「ロイヤルティ」リストに犬を追加したり削除したりできるようにします。 |
 | -- | -- |
 | **このワークショップで学ぶこと** | Vuex による Vue アプリケーションの状態管理 |
-| **必要なツール** | Chromeのような最新のブラウザ。CodeSandbox.io のアカウント。もし迷ったら、このチャプターのスタート地点を[ここ](https://github.com/VueVixens/projects/tree/main/chapter-3-end)にインポートします。この方法についての説明は [Appendix 1](appendix_1.md) にあります。 |
+| **必要なツール** | Chromeのような最新のブラウザ。CodeSandbox.io のアカウント。もし迷ったら、このチャプターは[こちら](https://github.com/VueVixens/projects/tree/main/chapter-3-end)をインポートして始めてみてください。この方法についての説明は [Appendix 1](appendix_1.md) にあります。 |
 | **かかる時間**     | 1.5時間 |
 
 ## 今回構築するもの
