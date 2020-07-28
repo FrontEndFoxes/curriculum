@@ -373,7 +373,7 @@ export default new Vuex.Store({
 
 ## UI を構築する
 
-`Pets.vue` コンポーネントの中からアクションを呼び出してみましょう。まず、特定の犬をお気に入りリストに追加するためのボタンのようなものが必要です。 `Dog.vue` コンポーネントに移動し、ボタンを `v-card-title` 閉じタグのすぐ下に追加しますが、これはまだ `v-card` タグの中にあります：
+`Pets.vue` コンポーネントの中からアクションを呼び出してみましょう。まず、特定の犬をお気に入りリストに追加するためのボタンのようなものが必要です。 `Dog.vue` コンポーネントに移動し、ボタンを `v-card-title` 閉じタグのすぐ下、かつ `v-card` タグの中に追加します：
 
 ```html
 <v-btn @click="$emit('addToFavorites', dog)">Add to Favorites</v-btn>
