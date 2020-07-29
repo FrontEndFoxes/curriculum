@@ -1,11 +1,11 @@
 # 🖥️ 1: Build A Simple Pet Fetching Web App
 
-| **Project&nbsp;Goal**           | Get started with Vue.js basics and simple API calls                                                                                                                       |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **What&nbsp;you’ll&nbsp;learn** | Setting up your Vue app, components basics, performing simple REST API calls using Axios                                                                                  |
-| **Tools you’ll need**       | A modern browser like Chrome. A [GitHub](https://github.com) account which can be used to login to [CodeSandbox](https://codesandbox.io).   |
-| **Time needed to complete**     | 1 hour                                                                                                                                                                    |
-| **Just want to try the app?**   | [CodeSandbox link](https://codesandbox.io/s/web-1-mini-workshop-koj8w)                                                                                                    |
+| **Project&nbsp;Goal**           | Get started with Vue.js basics and simple API calls                                                                                       |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **What&nbsp;you’ll&nbsp;learn** | Setting up your Vue app, components basics, performing simple REST API calls using Axios                                                  |
+| **Tools you’ll need**           | A modern browser like Chrome. A [GitHub](https://github.com) account which can be used to login to [CodeSandbox](https://codesandbox.io). |
+| **Time needed to complete**     | 1 hour                                                                                                                                    |
+| **Just want to try the app?**   | [CodeSandbox link](https://codesandbox.io/s/web-1-mini-workshop-koj8w)                                                                    |
 
 # Instructions
 
@@ -52,7 +52,7 @@ h1 {
 .dogs-layout {
   width: 100%;
   background: #fff center repeat;
-  background-image: url("https://github.com/VueVixens/projects/blob/master/petshop/images/bg3.jpg?raw=true");
+  background-image: url("https://github.com/FrontEndFoxes/projects/blob/main/petshop/images/bg3.jpg?raw=true");
 }
 
 .dogs-overlay {
@@ -420,7 +420,7 @@ You can see an empty card with a 'Delete' button right after the current dog vie
 To render a list of items based on an array Vue has a `v-for` directive, which will iterate through this array and render each item. Let's add this directive to our opening `v-flex` element that will show the array of favorite cards in the new container you just added:
 
 ```html
-<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
+<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet"></v-flex>
 ```
 
 Here `pet` is the reference to the _current array element_ and `index` is the _index of this element_ inside the array.
