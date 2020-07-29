@@ -303,7 +303,7 @@ Edit the form to bind the `valid` property:
 Let's also disable our `Submit` button when form is not valid.
 
 ```html
-<v-btn @click="submit" :disabled="!valid">Submit</v-btn>
+<v-btn @click="submit" :disabled="!nameRules">Submit</v-btn>
 ```
 
 Now we can start to create our validation rules.
