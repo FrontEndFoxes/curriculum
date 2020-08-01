@@ -120,6 +120,10 @@ module.exports = {
 				label: '日本語',
 				sidebar: [
 					{
+						title: '🐶 フルデイワークショップ',
+						children: ['/jp/workshops/vue/full-day/ch4'],
+					},
+					{
 						title: '🦴ミニワークショップ',
 						children: [
 							'/jp/workshops/vue/minis/mini1',

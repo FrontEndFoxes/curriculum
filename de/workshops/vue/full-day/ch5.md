@@ -1,14 +1,14 @@
 # 📋 Kapitel 5: Ein Formular zum Adoptieren hinzufügen
 
-| **Ziel**                   | Implementiere ein Formular, um einen Hund zu adoptieren                                                                                                                                                                                                                                              |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Was du lernen wirst**    | Formulare in einer Vue-App erstellen und validieren                                                                                                                                                                                                                                                  |
-| **Was du dafür benötigst** | Einen modernen Browser, z.B. Google Chrome. Ein Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von [hier](https://github.com/VueVixens/projects/tree/master/chapter-4-end) importieren. Wie das geht, steht im [Anhang 1](appendix_1.md) |
-| **Dauer**                  | 1 Stunde                                                                                                                                                                                                                                                                                             |
+| **Ziel**                   | Implementiere ein Formular, um einen Hund zu adoptieren                                                                                                                                                                                                                                                |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Was du lernen wirst**    | Formulare in einer Vue-App erstellen und validieren                                                                                                                                                                                                                                                    |
+| **Was du dafür benötigst** | Einen modernen Browser, z.B. Google Chrome. Ein Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von [hier](https://github.com/FrontEndFoxes/projects/tree/main/chapter-4-end) importieren. Wie das geht, steht im [Anhang 1](appendix_1.md) |
+| **Dauer**                  | 1 Stunde                                                                                                                                                                                                                                                                                               |
 
 ## Anleitung
 
-Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-4-end) in Code Sandbox, nachdem du dich eingeloggt hast. Dafür klickst du auf den Link **Import form Github** unten links auf der Hauptseite und fügst die URL des Repositories in das Feld. Du kannst ebenfalls mit dem Projekt fortfahren, dass du in [Kapitel 4](ch4.md) erstellt hast.
+Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/FrontEndFoxes/projects/tree/main/chapter-4-end) in Code Sandbox, nachdem du dich eingeloggt hast. Dafür klickst du auf den Link **Import form Github** unten links auf der Hauptseite und fügst die URL des Repositories in das Feld. Du kannst ebenfalls mit dem Projekt fortfahren, dass du in [Kapitel 4](ch4.md) erstellt hast.
 
 In diesem Kapitel implementieren wir ein Formular, das man ausfüllen kann nachdem man Hunde auf die Favoriten-Liste gesetzt hat.
 Zuerst müssen wir eine neue Komponente erstellen, die dieses Formular beinhaltet, und eine neue Route für dieses Formular im Router konfigurieren.
@@ -21,16 +21,16 @@ Schreibe den `<template></template>` in die neue Datei. Füge ein `div`-Tag hinz
 
 ```html
 <template>
-  <div>
-    This form works!
-  </div>
+	<div>
+		This form works!
+	</div>
 </template>
 ```
 
 Jetzt kommt die Route für diese neue Komponente. Importiere die `Form`-Komponente in `main.js`:
 
 ```js
-import Form from "./views/Form";
+import Form from './views/Form';
 ```
 
 Füge eine neue Option in der `routes`-Liste hinzu:
@@ -45,7 +45,7 @@ Fügen wir eine Klasse an das `div`, um es etwas zu gestalten.
 
 ```html
 <div class="form-wrapper">
-  This form works!
+	This form works!
 </div>
 ```
 
@@ -71,9 +71,9 @@ Als erstes fügen wir eine leere `v-form` in den `form-wrapper` ein:
 
 ```html
 <template>
-  <div class="form-wrapper">
-    <v-form> </v-form>
-  </div>
+	<div class="form-wrapper">
+		<v-form> </v-form>
+	</div>
 </template>
 ```
 
@@ -83,11 +83,11 @@ Für die Formularfelder nutzen wir die Vuetify-Komponente namens `v-text-field`.
 
 ```html
 <div class="form-wrapper">
-  <v-form>
-    <v-text-field label="Name"></v-text-field>
-    <v-text-field label="Email"></v-text-field>
-    <v-text-field label="Phone"></v-text-field>
-  </v-form>
+	<v-form>
+		<v-text-field label="Name"></v-text-field>
+		<v-text-field label="Email"></v-text-field>
+		<v-text-field label="Phone"></v-text-field>
+	</v-form>
 </div>
 ```
 
@@ -99,12 +99,12 @@ Irgendwie muss das Formular abgeschickt werden. Dafür fügen wir einen Absenden
 
 ```html
 <div class="form-wrapper">
-  <v-form>
-    <v-text-field label="Name"></v-text-field>
-    <v-text-field label="Email"></v-text-field>
-    <v-text-field label="Phone"></v-text-field>
-    <v-btn>Submit</v-btn>
-  </v-form>
+	<v-form>
+		<v-text-field label="Name"></v-text-field>
+		<v-text-field label="Email"></v-text-field>
+		<v-text-field label="Phone"></v-text-field>
+		<v-btn>Submit</v-btn>
+	</v-form>
 </div>
 ```
 
@@ -112,8 +112,8 @@ Unser Button ist erstmal links ausgerichtet. Um ihn zu zentrieren, schreiben wir
 
 ```css
 .form-wrapper {
-  padding: 40px;
-  text-align: center;
+	padding: 40px;
+	text-align: center;
 }
 ```
 
@@ -161,10 +161,10 @@ Verknüpfe diese Properties mit den entsprechenden Formularfeldern im Template i
 
 ```html
 <v-form>
-  <v-text-field label="Name" v-model="name"></v-text-field>
-  <v-text-field label="Email" v-model="email"></v-text-field>
-  <v-text-field label="Phone" v-model="phone"></v-text-field>
-  <v-btn>Submit</v-btn>
+	<v-text-field label="Name" v-model="name"></v-text-field>
+	<v-text-field label="Email" v-model="email"></v-text-field>
+	<v-text-field label="Phone" v-model="phone"></v-text-field>
+	<v-btn>Submit</v-btn>
 </v-form>
 ```
 
@@ -226,14 +226,14 @@ Jetzt müssen wir noch ein `div` erstellen, das das Formular ersetzt. Kopiere di
 
 ```html
 <div class="text-xs-center">
-  <h2>Thank you for you interest, we will contact you soon</h2>
-  <div class="details text-xs-left">
-    <h3 class="blue-grey--text">Customer details</h3>
-    <p><strong>Name:</strong> {{name}}</p>
-    <p><strong>Email:</strong> {{email}}</p>
-    <p><strong>Phone:</strong> {{phone}}</p>
-  </div>
-  <v-btn to="/">Go to homepage</v-btn>
+	<h2>Thank you for you interest, we will contact you soon</h2>
+	<div class="details text-xs-left">
+		<h3 class="blue-grey--text">Customer details</h3>
+		<p><strong>Name:</strong> {{name}}</p>
+		<p><strong>Email:</strong> {{email}}</p>
+		<p><strong>Phone:</strong> {{phone}}</p>
+	</div>
+	<v-btn to="/">Go to homepage</v-btn>
 </div>
 ```
 
@@ -241,10 +241,10 @@ und füge dafür ein paar Styles ein in den `<style>`-Tag:
 
 ```css
 .details {
-  padding-top: 30px;
+	padding-top: 30px;
 }
 h3 {
-  padding-bottom: 20px;
+	padding-bottom: 20px;
 }
 ```
 
@@ -258,10 +258,10 @@ Also fügen wor ein `v-if="submitted"` dem `div` und ein `v-else` dem Formular `
 
 ```html
 <div class="text-xs-center" v-if="submitted">
-  ...
+	...
 </div>
 <v-form v-else>
-  ...
+	...
 </v-form>
 ```
 
@@ -329,7 +329,7 @@ data() {
 Jetzt kommt die erste Regel. Denk dran, Validierungsregeln sind Funktionen, die den Wert des Feldes erhalten und einen Bool'schen Wert zurück geben; `true` bedeutet, dass das Feld einen korrekten/validen Wert beinhaltet, `false` bedeutet, dass der Wert nicht korrekt ist. Also sieht die erste Regel so aus:
 
 ```js
-nameRules: [name => !!name]
+nameRules: [(name) => !!name];
 ```
 
 Was passiert hier? `!name` gibt `true` zurück, wenn der Name leer ist und andernfalls `false`. Mit der zweiten Verneinung kehren wir das noch einmal um. Die doppelte Verneinung wird oft genutzt, um zu überprüfen, ob ein String nicht-leer ist.
@@ -337,12 +337,7 @@ Was passiert hier? `!name` gibt `true` zurück, wenn der Name leer ist und ander
 Füge `nameRules` zu der `rules`-Property des `name`-Feldes hinzu und markiere das Feld zusätzlich als `required` (=Pflichfeld):
 
 ```html
-<v-text-field
-  label="Name"
-  required
-  :rules="nameRules"
-  v-model="name"
-></v-text-field>
+<v-text-field label="Name" required :rules="nameRules" v-model="name"></v-text-field>
 ```
 
 Klicke jetzt in das Name-Feld und dann in ein anderes. Du sieht, wie Name rot wird und darunter der Text `false` erscheint. (Der Submit-Button ist immer noch deaktiviert.)
@@ -350,7 +345,7 @@ Klicke jetzt in das Name-Feld und dann in ein anderes. Du sieht, wie Name rot wi
 Fehlermeldungen können mit Hilfe des `||`-Operators in der Regel ergänzt werden. Der Wert der Validierung ist also `false OR <Fehlermeldung>`. Lass uns die Fehlermeldung für das Name-Feld verbessern:
 
 ```js
-nameRules: [name => !!name || "Name is required"]
+nameRules: [(name) => !!name || 'Name is required'];
 ```
 
 Jetzt sieht die Fehlermeldung doch schon besser aus!
@@ -359,9 +354,9 @@ Wir fügen eine weitere Regel hinzu: Ein Name darf nicht kürzer als zwei Buchst
 
 ```js
 nameRules: [
-  name => !!name || "Name is required",
-  name => name.length > 2 || "Name must be longer than 2 characters"
-]
+	(name) => !!name || 'Name is required',
+	(name) => name.length > 2 || 'Name must be longer than 2 characters',
+];
 ```
 
 Schreibe nur einen Buchstaben in das Name-Feld, die neue Fehlermeldung sollte angezeigt werden.
@@ -371,18 +366,13 @@ Schreibe nur einen Buchstaben in das Name-Feld, die neue Fehlermeldung sollte an
 Jetzt wechseln wir zum E-Mail-Feld. Zuerst erstellen wir die `emailRules`-Property in `data` und fügen den nicht-leeren Check wie zuvor auch beim Namen hinzu:
 
 ```js
-emailRules: [email => !!email || "Email is required"]
+emailRules: [(email) => !!email || 'Email is required'];
 ```
 
 Vergiss nicht `required` und die `rules`-Property an das E-Mail-Feld zu schreiben:
 
 ```html
-<v-text-field
-  label="Email"
-  required
-  :rules="emailRules"
-  v-model="email"
-></v-text-field>
+<v-text-field label="Email" required :rules="emailRules" v-model="email"></v-text-field>
 ```
 
 Die zweite Regel für das E-Mail-Feld ist etwas komplizierter. Wir wollen überprüfen, ob die eingegebene E-Mail einem bestimmten Muster entspricht, diese Muster heißen _Reguläre Ausdrücke_ (=regular expressions / RegEx).
@@ -397,11 +387,9 @@ Füge den Regulären Ausdruck zu den Validierungsregeln hinzu:
 
 ```js
 emailRules: [
-  email => !!email || "Email is required",
-  email =>
-      /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email) ||
-      "Email must be valid"
-]
+	(email) => !!email || 'Email is required',
+	(email) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email) || 'Email must be valid',
+];
 ```
 
 Gebe jetzt irgendwelche zufälligen Zeichen im E-Mail-Feld ein. Du siehst die Fehlermeldung; eine E-Mail muss ein `@`-Zeichen, einen Punkt und mindestens zwei Zeichen nach dem Punkt haben. Wenn du versuchst, deine eigene E-Mail-Adrresse einzufügen, wirst du sehen, dass ein Fehler angezeigt wird.
@@ -412,9 +400,9 @@ Jetzt wechseln wir zum `phone`-Feld. Wir erstellen ein ähnliches Regelset wie f
 
 ```js
 phoneRules: [
-  phone => !!phone || "Phone is required",
-  phone => phone.length >= 7 || "Phone number should be at least 7 digits"
-]
+	(phone) => !!phone || 'Phone is required',
+	(phone) => phone.length >= 7 || 'Phone number should be at least 7 digits',
+];
 ```
 
 Aber man kann immer noch Buchstaben eingeben. Und die Telefonnummer wird nicht formatiert. Um das zu erreichen, werden wir die `vue-the-mask` hinzufügen. Dafür klicke in Code Sandbox auf den Reiter `Explorer` -> `Dependencies` -> `Add Dependency` und suche nach `vue-the-mask`. Wenn du es installiert hast, wirst du sehen, dass es zu deiner `package.json` hinzugefügt wurde. Nun wurde `vue-the-mask` installiert, wir müssen es nun noch der Komponente als Direkte hinzufügen.
@@ -422,7 +410,7 @@ Aber man kann immer noch Buchstaben eingeben. Und die Telefonnummer wird nicht f
 Als erstes, fügst du `vue-the-mask` in deiner `Form.vue` hinzu:
 
 ```js
-import { mask } from "vue-the-mask";
+import { mask } from 'vue-the-mask';
 ```
 
 Im Anschluss, fügst du die Direktive direkt vor `data` in deinem `<script>` Block hinzu:
@@ -448,13 +436,7 @@ Indem wir `'(###) ### - ####'` als Input für die Maske benutzen, limitieren wir
 Im Ganzen sollte das Tag nun folgendermaßen aussehen:
 
 ```html
-<v-text-field
-  label="Phone"
-  required
-  :rules="phoneRules"
-  v-mask="'(###) ### - ####'"
-  v-model="phone"
-></v-text-field>
+<v-text-field label="Phone" required :rules="phoneRules" v-mask="'(###) ### - ####'" v-model="phone"></v-text-field>
 ```
 
 Jetzt kannst du nur Zahlen eingeben und die Telefonnummer wird direkt formatiert.

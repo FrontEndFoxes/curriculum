@@ -1,11 +1,11 @@
 # 🖥️ 1: Build A Simple Pet Fetching Web App
 
-| **Project&nbsp;Goal**           | Get started with Vue.js basics and simple API calls                                                                                                                       |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **What&nbsp;you’ll&nbsp;learn** | Setting up your Vue app, components basics, performing simple REST API calls using Axios                                                                                  |
-| **Tools&nbsp;you’ll need**      | A modern browser like Chrome. Access to [CodeSandbox](https://codesandbox.io) - be sure to create an account in the CodeSandbox to keep the versions of your work intact. |
-| **Time needed to complete**     | 1 hour                                                                                                                                                                    |
-| **Just want to try the app?**   | [CodeSandbox link](https://codesandbox.io/s/web-1-mini-workshop-koj8w)                                                                                                    |
+| **Project&nbsp;Goal**           | Get started with Vue.js basics and simple API calls                                                                                       |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **What&nbsp;you’ll&nbsp;learn** | Setting up your Vue app, components basics, performing simple REST API calls using Axios                                                  |
+| **Tools you’ll need**           | A modern browser like Chrome. A [GitHub](https://github.com) account which can be used to login to [CodeSandbox](https://codesandbox.io). |
+| **Time needed to complete**     | 1 hour                                                                                                                                    |
+| **Just want to try the app?**   | [CodeSandbox link](https://codesandbox.io/s/web-1-mini-workshop-koj8w)                                                                    |
 
 # Instructions
 
@@ -52,7 +52,7 @@ h1 {
 .dogs-layout {
   width: 100%;
   background: #fff center repeat;
-  background-image: url("https://github.com/VueVixens/projects/blob/master/petshop/images/bg3.jpg?raw=true");
+  background-image: url("https://github.com/FrontEndFoxes/projects/blob/main/petshop/images/bg3.jpg?raw=true");
 }
 
 .dogs-overlay {
@@ -534,6 +534,14 @@ Don't forget to pass `index` to the `removeFromFavorites` method! When we don't 
 Try to add and remove some dogs from favorites. IT WORKS!
 
 **🎊Congratulations, you've finished the base project!🎊**
+
+## Push your work to a repository on your GitHub account
+
+**Step 1**: In CodeSandbox, click the Github icon in the sidebar, and grant permissions if necessary.
+
+**Step 2**: Enter a name for your repository.
+
+**Step 3**: Click create repository.
 
 ## Supplement 1: Creating a Dog Component
 
