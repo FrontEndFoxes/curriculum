@@ -1,10 +1,10 @@
 # 📋 Chapter 5: Complete the Adoption Experience with a Form
 
-| **Project&nbsp;Goal**           | Build a form to accept dummy 'checkout' data                                                                                                                                                                                                                       |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **What&nbsp;you’ll&nbsp;learn** | How to create and validate forms in a Vue application                                                                                                                                                                                                              |
-| **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome. An account in CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/VueVixens/projects/tree/main/chapter-4-end). Instructions on how to do this are in [Appendix 1](appendix_1.md) |
-| **Time needed to complete**     | 1 hour                                                                                                                                                                                                                                                             |
+| **Project&nbsp;Goal**           | Build a form to accept dummy 'checkout' data                                                                                                                                                                                                                         |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **What&nbsp;you’ll&nbsp;learn** | How to create and validate forms in a Vue application                                                                                                                                                                                                                |
+| **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome. An account in CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/FrontEndFoxes/projects/tree/main/chapter-4-end). Instructions on how to do this are in [Appendix 1](appendix_1.md) |
+| **Time needed to complete**     | 1 hour                                                                                                                                                                                                                                                               |
 
 ## What You'll Build
 
@@ -12,7 +12,7 @@
 
 ## Instructions
 
-If you need to restart your project, clone [this repo](https://github.com/VueVixens/projects/tree/main/chapter-4-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields. You can also continue with the project you've created in [chapter 4](ch4.md).
+If you need to restart your project, clone [this repo](https://github.com/FrontEndFoxes/projects/tree/main/chapter-4-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields. You can also continue with the project you've created in [chapter 4](ch4.md).
 
 In this chapter, we will create a form to fill after you finish selecting dogs. First of all, we should create a new component to contain this form and add a form route to our router settings.
 
@@ -24,16 +24,16 @@ Inside this file place a `<template></template>` tag and create a div inside it.
 
 ```html
 <template>
-  <div>
-    This form works!
-  </div>
+	<div>
+		This form works!
+	</div>
 </template>
 ```
 
 Now let's create a route for this component. Go to `main.js` and import the `Form` component:
 
 ```js
-import Form from "./views/Form";
+import Form from './views/Form';
 ```
 
 Add one more option to the `routes` array:
@@ -48,7 +48,7 @@ Let's add a class to our `div` and create a styling for it.
 
 ```html
 <div class="form-wrapper">
-  This form works!
+	This form works!
 </div>
 ```
 
@@ -74,9 +74,9 @@ As a first step we will add an empty `v-form` inside our `form-wrapper`
 
 ```html
 <template>
-  <div class="form-wrapper">
-    <v-form> </v-form>
-  </div>
+	<div class="form-wrapper">
+		<v-form> </v-form>
+	</div>
 </template>
 ```
 
@@ -86,11 +86,11 @@ For the form inputs Vuetify uses the component called `v-text-field`. It has an 
 
 ```html
 <div class="form-wrapper">
-  <v-form>
-    <v-text-field label="Name"></v-text-field>
-    <v-text-field label="Email"></v-text-field>
-    <v-text-field label="Phone"></v-text-field>
-  </v-form>
+	<v-form>
+		<v-text-field label="Name"></v-text-field>
+		<v-text-field label="Email"></v-text-field>
+		<v-text-field label="Phone"></v-text-field>
+	</v-form>
 </div>
 ```
 
@@ -102,12 +102,12 @@ Of course we need to submit our form somehow. Let's add a submit button below th
 
 ```html
 <div class="form-wrapper">
-  <v-form>
-    <v-text-field label="Name"></v-text-field>
-    <v-text-field label="Email"></v-text-field>
-    <v-text-field label="Phone"></v-text-field>
-    <v-btn>Submit</v-btn>
-  </v-form>
+	<v-form>
+		<v-text-field label="Name"></v-text-field>
+		<v-text-field label="Email"></v-text-field>
+		<v-text-field label="Phone"></v-text-field>
+		<v-btn>Submit</v-btn>
+	</v-form>
 </div>
 ```
 
@@ -115,8 +115,8 @@ Our button is aligned to the left side, so let's also add a `text-align: center`
 
 ```css
 .form-wrapper {
-  padding: 40px;
-  text-align: center;
+	padding: 40px;
+	text-align: center;
 }
 ```
 
@@ -164,10 +164,10 @@ Bind these properties to corresponding form inputs in the template by adding `v-
 
 ```html
 <v-form>
-  <v-text-field label="Name" v-model="name"></v-text-field>
-  <v-text-field label="Email" v-model="email"></v-text-field>
-  <v-text-field label="Phone" v-model="phone"></v-text-field>
-  <v-btn>Submit</v-btn>
+	<v-text-field label="Name" v-model="name"></v-text-field>
+	<v-text-field label="Email" v-model="email"></v-text-field>
+	<v-text-field label="Phone" v-model="phone"></v-text-field>
+	<v-btn>Submit</v-btn>
 </v-form>
 ```
 
@@ -229,14 +229,14 @@ Finally, we have to create a div which will replace our form. Add this code abov
 
 ```html
 <div class="text-xs-center">
-  <h2>Thank you for you interest, we will contact you soon</h2>
-  <div class="details text-xs-left">
-    <h3 class="blue-grey--text">Customer details</h3>
-    <p><strong>Name:</strong> {{name}}</p>
-    <p><strong>Email:</strong> {{email}}</p>
-    <p><strong>Phone:</strong> {{phone}}</p>
-  </div>
-  <v-btn to="/">Go to homepage</v-btn>
+	<h2>Thank you for you interest, we will contact you soon</h2>
+	<div class="details text-xs-left">
+		<h3 class="blue-grey--text">Customer details</h3>
+		<p><strong>Name:</strong> {{name}}</p>
+		<p><strong>Email:</strong> {{email}}</p>
+		<p><strong>Phone:</strong> {{phone}}</p>
+	</div>
+	<v-btn to="/">Go to homepage</v-btn>
 </div>
 ```
 
@@ -244,10 +244,10 @@ and add some styles to our `<style>`:
 
 ```css
 .details {
-  padding-top: 30px;
+	padding-top: 30px;
 }
 h3 {
-  padding-bottom: 20px;
+	padding-bottom: 20px;
 }
 ```
 
@@ -261,10 +261,10 @@ So we're going to add `v-if="submitted"` to the wrapper div of the form data and
 
 ```html
 <div class="text-xs-center" v-if="submitted">
-  ...
+	...
 </div>
 <v-form v-else>
-  ...
+	...
 </v-form>
 ```
 
@@ -300,10 +300,10 @@ Edit the form to bind the `valid` property:
 <v-form v-else v-model="valid"></v-form>
 ```
 
-Let's also disable our `Submit` button when form is not valid.
+Let's also disable our `Submit` button when form is not valid, adding  variable `nameRules` , we will include more information  for this variable in next steps.
 
 ```html
-<v-btn @click="submit" :disabled="!valid">Submit</v-btn>
+<v-btn @click="submit" :disabled="!nameRules">Submit</v-btn>
 ```
 
 Now we can start to create our validation rules.
@@ -332,7 +332,7 @@ data() {
 Now add the first rule. Remember, validation rules are functions which receive the value of the field and return a boolean value; `true` will mean this field has valid value and `false` means it doesn't. So, our first rule will be:
 
 ```js
-nameRules: [name => !!name]
+nameRules: [(name) => !!name];
 ```
 
 What is happening here? `!name` will return `true` if the name is empty and `false` if it has non-empty value. Then we perform the second negation, reverting value one more time. The double negation is a pretty common method to check if string is non-empty.
@@ -340,12 +340,7 @@ What is happening here? `!name` will return `true` if the name is empty and `fal
 Add `nameRules` to the `rules` prop of the `name` field and make this field `required`:
 
 ```html
-<v-text-field
-  label="Name"
-  required
-  :rules="nameRules"
-  v-model="name"
-></v-text-field>
+<v-text-field label="Name" required :rules="nameRules" v-model="name"></v-text-field>
 ```
 
 Now try to select the `Name` field and then select other one. You can see the red color and the text `false` below the field (and the `Submit` button is disabled as well).
@@ -353,7 +348,7 @@ Now try to select the `Name` field and then select other one. You can see the re
 Error text can be provided via the `||` operator in the rule. So the value of this error is `false OR <error message>`. Let's provide a more meaningful error for the name field:
 
 ```js
-nameRules: [name => !!name || "Name is required"]
+nameRules: [(name) => !!name || 'Name is required'];
 ```
 
 Now the error message looks better!
@@ -362,9 +357,9 @@ Let's add one more rule: a name cannot be shorter than 2 letters:
 
 ```js
 nameRules: [
-  name => !!name || "Name is required",
-  name => name.length > 2 || "Name must be longer than 2 characters"
-]
+	(name) => !!name || 'Name is required',
+	(name) => name.length > 2 || 'Name must be longer than 2 characters',
+];
 ```
 
 Try to fill the name field with 1 character and check the error.
@@ -374,18 +369,13 @@ Try to fill the name field with 1 character and check the error.
 Now we're switching to the email field. First we will create an `emailRules` property in `data` and add the non-empty check similar to the non-empty name rule:
 
 ```js
-emailRules: [email => !!email || "Email is required"];
+emailRules: [(email) => !!email || 'Email is required'];
 ```
 
 Don't forget to add `required` and the `rules` property to the email field:
 
 ```html
-<v-text-field
-  label="Email"
-  required
-  :rules="emailRules"
-  v-model="email"
-></v-text-field>
+<v-text-field label="Email" required :rules="emailRules" v-model="email"></v-text-field>
 ```
 
 The second rule for email will be a little tricky. We will check if email matched a certain pattern called _regular expression_ or _RegEx_
@@ -400,11 +390,9 @@ For now, simply copy the regex from the code below:
 
 ```js
 emailRules: [
-  email => !!email || "Email is required",
-  email =>
-      /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email) ||
-      "Email must be valid"
-  ]
+	(email) => !!email || 'Email is required',
+	(email) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email) || 'Email must be valid',
+];
 ```
 
 Now try to enter any random characters to the email field. You can see this new error because now this field demands a `@` character, a dot and at least 2 characters after the dot. If you try to fill in your own email, you will see that the error disappears.
@@ -415,9 +403,9 @@ Now switch to the `phone` field. Let's create a set of rules very similar to the
 
 ```js
 phoneRules: [
-  phone => !!phone || "Phone is required",
-  phone => phone.length >= 7 || "Phone number should be at least 7 digits"
-]
+	(phone) => !!phone || 'Phone is required',
+	(phone) => phone.length >= 7 || 'Phone number should be at least 7 digits',
+];
 ```
 
 But as you can guess, you can still enter letters and the phone number is not formatted at all. To fix this, we have to add `vue-the-mask`. First, scroll down in the `Explorer` tab and open the `Dependencies` dropdown. Click on `Add dependency` button and seach for `vue-the-mask`. Install the dependency. vue-the-mask will be added to your `package.json`. We now have installed vue-the-mask but we need to add it to our component as a directive.
@@ -425,7 +413,7 @@ But as you can guess, you can still enter letters and the phone number is not fo
 First, import `vue-the-mask` as such in your `Form.vue`:
 
 ```js
-import { mask } from "vue-the-mask";
+import { mask } from 'vue-the-mask';
 ```
 
 After that, add the following just before `data` in your `<script>` block:
@@ -449,13 +437,7 @@ v-mask="'(###) ### - ####'"
 By using `'(###) ### - ####'` as the input for our mask, we limit the input of our component to digits in that specific format. This means that a phone number such as `(555) 555-1234` will be possible but we are unable to input it into another format or use non-digit characters. If your country uses a different format for phone numbers, go ahead and change the input to `v-mask`.
 
 ```html
-<v-text-field
-  label="Phone"
-  required
-  :rules="phoneRules"
-  v-mask="'(###) ### - ####'"
-  v-model="phone"
-></v-text-field>
+<v-text-field label="Phone" required :rules="phoneRules" v-mask="'(###) ### - ####'" v-model="phone"></v-text-field>
 ```
 
 ## Clear the Favorites List On Submit
