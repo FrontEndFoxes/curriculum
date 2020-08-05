@@ -300,10 +300,10 @@ Edit the form to bind the `valid` property:
 <v-form v-else v-model="valid"></v-form>
 ```
 
-Let's also disable our `Submit` button when form is not valid.
+Let's also disable our `Submit` button when form is not valid, adding  variable `nameRules` , we will include more information  for this variable in next steps.
 
 ```html
-<v-btn @click="submit" :disabled="!valid">Submit</v-btn>
+<v-btn @click="submit" :disabled="!nameRules">Submit</v-btn>
 ```
 
 Now we can start to create our validation rules.
