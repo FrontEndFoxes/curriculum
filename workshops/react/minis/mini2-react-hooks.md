@@ -1,9 +1,9 @@
 # 🖥️ 1: Build A Simple Pet Fetching Web App using React Hooks
 
-| **Project & nbsp; Goal**              | Get started with React basics and simple API calls with axios                                                                                                           |
+| **Project &nbsp; Goal**              | Get started with React basics and simple API calls with axios                                                                                                           |
 | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **What & nbsp; you'll & nbsp; learn** | Setting up your React app, components basics, performing simple REST API calls using Axios                                                                              |
-| **Tools & nbsp; you'll need**         | A modern browser like Chrome.Access to[CodeSandbox](https://codesandbox.io) - be sure to create an account in the CodeSandbox to keep the versions of your work intact. |
+| **What &nbsp; you'll &nbsp; learn** | Setting up your React app, components basics, performing simple REST API calls using Axios                                                                              |
+| **Tools &nbsp; you'll need**         | A modern browser like Chrome. Access to [CodeSandbox](https://codesandbox.io) - be sure to create an account in the CodeSandbox to keep the versions of your work intact. |
 | **Time needed to complete**           | 1 hour                                                                                                                                                                  |
 | **Just want to try the app ?**        | [CodeSandbox link](https://codesandbox.io/s/fetch-a-dog-00ruj)                                                                                                          |
 
@@ -16,7 +16,7 @@ Yes, the main objective is to learn the basics about React. But if we say it tha
 What are we going to need to achieve our Goal ?
 
 -   React
--   Axios(To perform AJAX API requests)
+-   Axios (To perform AJAX API requests)
 -   Some Style with Materialize
 
 ## Scaffold your app
@@ -29,10 +29,10 @@ We're going to build an application to load random dog images and store them to 
 
 ## Install required packages
 
-We have React installed, But we need to install Axios to help with our API calls. So click on `Add Dependency` and Search for `axios`.Just click on the firt result and CodeSanbox is going to install it for you.
+We have React installed, But we need to install Axios to help with our API calls. So click on `Add Dependency` and Search for `axios`. Just click on the firt result and CodeSanbox is going to install it for you.
 
 ::: tip 💡
-To perform API calls we will be using a library called[Axios](https://github.com/axios/axios). It's a promise-based HTTP client that works both in the browser and in other node.js environments.
+To perform API calls we will be using a library called [Axios](https://github.com/axios/axios). It's a promise-based HTTP client that works both in the browser and in other node.js environments.
 :::
 
 ### Basic React App Structure:
@@ -41,11 +41,11 @@ To perform API calls we will be using a library called[Axios](https://github.com
 -   src /
 -   package.json
 
-_public_ will contain our image assets, html static files and custom client side javascript files, `package.json` is used by npm(Node package manager) to save all the packages needed to deploy our App, but we dont have to worry about this because CodeSandbox installs and updates this file for us.
+_public_ will contain our image assets, html static files and custom client side JavaScript files, `package.json` is used by npm (Node Package Manager) to save all the packages needed to deploy our App, but we dont have to worry about this because CodeSandbox installs and updates this file for us.
 
 _src_ will contain our App and our React Components.
 
-Take a look at the code that was scaffolded by CodeSandbox for a basic React app.The file`index.js` is opened by default.This is the starting point of a React app.You will see something like this:
+Take a look at the code that was scaffolded by CodeSandbox for a basic React app. The file `index.js` is opened by default. This is the starting point of a React app.You will see something like this:
 
 ```js
 import React from 'react';
@@ -67,16 +67,16 @@ ReactDOM.render(<App />, rootElement);
 ```
 
 ::: tip 💡
-Wait a minute.Whats that? An HTML tag inside Javascript? Yes, that's right. In react components look like custom HTML tags that will return a function or assign them to a javascript variable. This kind of syntax is called JSX (syntax extension to JavaScript). Now let's get back to business.
+Wait a minute. Whats that? An HTML tag inside JavaScript? Yes, that's right. In react components look like custom HTML tags that will return a function or assign them to a JavaScript variable. This kind of syntax is called JSX (syntax extension to JavaScript). Now let's get back to business.
 :::
 
-This file includes three sections.The first one imports react, react - dom and style files to our app.The second section is the App function that defines the App component and the Third section reders(injects) the App component code into the root element.
+This file includes three sections. The first one imports `React`, `ReactDOM` and style files to our app. The second section is the App function that defines the App component and the Third section reders (injects) the App component code into the root element.
 
-Another important file inside the`src` directory is`style.css`, We will write our Custom CSS code and give our app a cool makeover!.
+Another important file inside the `src` directory is `style.css`, We will write our Custom CSS code and give our app a cool makeover!
 
-Note that we inject our App component into the root element. We can find this element in the`public/index.html` file, this place is perfect to include general css and js libraries that can be used in the client side of our Application.
+Note that we inject our App component into the root element. We can find this element in the `public/index.html` file, this place is perfect to include general css and js libraries that can be used in the client side of our Application.
 
-By default CodeSandbox imports all the needed dependencies from npm to build the app.You can always check out `package.json` to find out which dependencies are needed.In fact you'll see a list of the minimum packages installed by default under the `Dependencies` option on the sidebar.
+By default CodeSandbox imports all the needed dependencies from npm to build the app.You can always check out `package.json` to find out which dependencies are needed. In fact you'll see a list of the minimum packages installed by default under the `Dependencies` option on the sidebar.
 
 Another important detail is the App function (`App.js`), this represents a React component. We can define a React Component in two ways:
 
@@ -101,11 +101,11 @@ export default function App() {
 
 As we mentioned before, the App function represents a Component. React components are small, reusable pieces of code that return a React element to be rendered to the page. You can create you components as a indiviual files (Single File Component - SFC).So go ahead and create the components directory (just to be more organized), and move your `App.js` file to components. Then delete `import "./styles.css"` from `App.js`. We will import the CSS into `index.js` instead.
 
--   The`props` attribute allow us to control dynamic properties for our App Component.For example you can provide the property "color" to the App Component`<App color="red"/>`.So you can access it through`this.props.color`.
+-   The `props` attribute allow us to control dynamic properties for our App Component.For example you can provide the property "color" to the App Component `<App color="red"/>`. So you can access it through `props.color`.
 -   Notice that the `return()` function contains the template that React is going to render for our App Component.
--   The`export default` tells javascript that we want to export the component for reusing it.
+-   The `export default` tells JavaScript that we want to export the component for reusing it.
 
-Now go back to the`index.js` file, delete the App function and add the import for our new Component and `./styles.css`. The file should look as follows:
+Now go back to the `index.js` file, delete the App function and add the import for our new Component and `./styles.css`. The file should look as follows:
 
 ```js
 import React from 'react';
@@ -196,7 +196,7 @@ body {
 ```
 
 ::: tip 💡
-This style block uses a path to an external image hosted on iStockPhoto, rather than to a relative path.This is because CodeSandbox doesn't host images easily; normally you'd just add an image on a relative path such as `/images/myImage.png` inside the`public` directory.
+This style block uses a path to an external image hosted on iStockPhoto, rather than to a relative path.This is because CodeSandbox doesn't host images easily; normally you'd just add an image on a relative path such as `/images/myImage.png` inside the `public` directory.
 :::
 
 Adding the stylesheet didn't do much to our template except break the existing styles. Let's fix the template!
@@ -244,7 +244,7 @@ return (
                             <span className="card-title super-title red">Choose your favorite dogs</span>
                         </div>
                         <div className="card-action right-align actions">
-                            <a className="btn-floating waves-effect waves-light red">
+                            <a href="/" className="btn-floating waves-effect waves-light red">
                                 <i className="material-icons">favorite</i>
                             </a>
                         </div>
@@ -305,7 +305,7 @@ After:
 ```
 
 ::: Important tip 💡
-As we mentioned before, you can use html tags in an assignment, a return function or in the render function of ReactDom.But to pass the values of the state or the properties of a component, you have to write the variable in brackets it can be rendered.
+As we mentioned before, you can use html tags in an assignment, a return function or in the render function of ReactDom. But to pass the values of the state or the properties of a component, you have to write the variable in brackets it can be rendered.
 :::
 
 Great! Now it's time to load some dogs from the Dog CEO API!
@@ -325,7 +325,7 @@ you can add this below the react import at the very beggining.
 Your import should look like this:
 
 ```js
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 ```
 
@@ -333,7 +333,7 @@ Now we ar ready to start loading images from the API.
 
 ## Making the (API) call! ☎️
 
-Let's perform our first API call. To do so, we will create an `updateRandomDogDog` _method_ inside our component (App.js).
+Let's perform our first API call. To do so, we will create an `updateRandomDog` _method_ inside our component (App.js).
 
 Let's add it right after the `useState`:
 
@@ -347,7 +347,7 @@ For now this method does nothing but we want it to load a new dog from the API.
 
 First we have to check which endpoint we have to use. Looking at the API's [documentation](https://dog.ceo/dog-api/), it tells us to use `https://dog.ceo/api/breeds/image/random` as our endpoint. It will provide a random dog image.
 
-To perform a `GET` request, Axios uses the `axios.get` method. The result will be a JavaScript promise, so we have to provide success and failure callbacks to manage its lifecycle. For now, let's simply print the query result to console. Still in `App.js`, edit the `updateRandomDogDog(){}` method by placing this snippet between the curly brackets:
+To perform a `GET` request, Axios uses the `axios.get` method. The result will be a JavaScript promise, so we have to provide success and failure callbacks to manage its lifecycle. For now, let's simply print the query result to console. Still in `App.js`, edit the `updateRandomDog(){}` method by placing this snippet between the curly brackets:
 
 ```js
 axios
@@ -360,7 +360,7 @@ axios
     });
 ```
 
-We want a new image to replace the old one right when the component is created, so let's add a `useEffect` hook right before `updateRandomDogDog` method:
+We want a new image to replace the old one right when the component is created, so let's add a `useEffect` hook right before `updateRandomDog` method:
 
 ```js
 useEffect();
@@ -379,10 +379,11 @@ The Effect Hook allows you to perform side effects in functional components. It 
 Inside the `useEffect` hook we will call our method.
 
 ```js
-componentDidMount() {
-    //Each time our App loads show a random dog
+useEffect(() => {
+    // Each time our App loads show a random dog
     updateRandomDog();
-}
+}, [])
+// if we intend to run an effect and clean it up only once (on mount and unmount), we just pass an empty array ([]) as a second argument. 
 ```
 
 Now after clicking the refresh button in the browser window, you should see an object in your console. Drill into it by clicking the left-hand arrow. We are interested in the `data` field.You can see we have a status: `success` and a message with an image URL.
@@ -395,10 +396,10 @@ Let's replace our `dog` state object with the API loaded data. At this point we 
 const [dog, setDog] = useState('');
 ```
 
-Inside the`updateRandomDog` method instead of printing the result to the console we will assign`response.data.message`(which is actually the image URL) to the`dog` property object:
+Inside the `updateRandomDog` method instead of printing the result to the console we will assign `response.data.message` (which is actually the image URL) to the `dog` property object:
 
 ```js
-  updateRandomDogDog() {
+  const updateRandomDog = () {
     axios.get("https://dog.ceo/api/breeds/image/random").then(response => {
       setDog(response.data.message);
     }).catch(error => {
@@ -416,7 +417,7 @@ Now every time you refresh the page, you will have a shiny new dog image!
 We also want to call the same method when you click on the image card, so it shows us a new dog on each click!. Let's add a click handler to the card. We are going to use the `OnClick` event for this purpose:
 
 ```js
-<div className="card-image" onClick={updateRandomDog()}>
+<div className="card-image" onClick={updateRandomDog}>
     <img src={dog} alt={dog} />
     <span className="card-title super-title red">Choose your favorite dogs</span>
 </div>
@@ -439,10 +440,10 @@ To display the favorite dogs we should make changes to our template. Let's add t
 <div className="section">
     <div className="row">
         {dogs != null && dogs !== undefined && dogs.map((dog, index) => (
-        <div key="{index}" className="col s4 thumb">
+        <div key={index} className="col s4 thumb">
             <div className="relative">
                 <div name="randdog" className="dog waves-effect waves-light">
-                    <img className="favorite" src="{dog}" alt="{dog}" />
+                    <img className="favorite" src={dog} alt={dog} />
                     <i className="material-icons superdi-icon red-text">
                         do_not_disturb_on
                     </i>
@@ -474,9 +475,9 @@ Inside the loop there is:
 <img className="favorite" src={dog} alt={dog} />
 ```
 
-This is going to load the image and the link of the dog object for each iteration, providing the `dog` link to the `src` attribute to render the image. Another important detail is that when you do this kind of iteration React waits for a unique key attribute in the root element.Thats why the`<div key={index} className="col s4 thumb">` has the `key` property included.
+This is going to load the image and the link of the dog object for each iteration, providing the `dog` link to the `src` attribute to render the image. Another important detail is that when you do this kind of iteration React waits for a unique key attribute in the root element. Thats why the`<div key={index} className="col s4 thumb">` has the `key` property included.
 
-The following code shows the delete icon. This icon is going to trigger a function that removes an element of the `dogs` array.But for now this element is disabled because we need to focus on showing our favorite dogs list.
+The following code shows the delete icon. This icon is going to trigger a function that removes an element of the `dogs` array. But for now this element is disabled because we need to focus on showing our favorite dogs list.
 
 ```js
 <i className="material-icons superdi-icon red-text">do_not_disturb_on</i>
@@ -486,7 +487,7 @@ The following code shows the delete icon. This icon is going to trigger a functi
 Remember, we chose a specific name inside the directive; if we had written`dogs.map((element, number) => (` each item would have been called `element` and its index would have been called `number`).
 :::
 
-You can see that our empty card disappeared.It's fine! We have an empty `dogs` array so there's simply nothing to render right now.
+You can see that our empty card disappeared. It's fine! We have an empty `dogs` array so there's simply nothing to render right now.
 
 Now it's time to like some dogs.
 
@@ -505,14 +506,18 @@ const addNewDog = () => {
 And of course we need to bind it to the 'Like' button in the top card:
 
 ```html
-<a className="btn-floating waves-effect waves-light red" onClick={() => addNewDog()}>
+<a 
+    href="/" 
+    className="btn-floating waves-effect waves-light red" 
+    onClick={() => addNewDog()}
+>
     <i className="material-icons">favorite</i>
 </a>
 ```
 
 Now try to click on the 'favorite' button! You can see how our gallery is populated with dog images!!
 
-There is one issue: now we can add the same image a few times. To prevent this we should check if the `dog.image` is already inside the`dogs` array and if it is the case, we will disable the 'favorite' button.
+There is one issue: now we can add the same image a few times. To prevent this we should check if the `dog.image` is already inside the `dogs` array and if it is the case, we will disable the 'favorite' button.
 
 Instead of placing this complex logic inside the template, we will create a `isInPack` state and a `checkPack` function.
 
@@ -526,7 +531,7 @@ const [dogs, setDogs] = useState([]);
 const [isInPack, setIsInPack] = useState(false);
 ```
 
-Add `checkPack` before `updateRandomDogDog()`
+Add `checkPack` before `updateRandomDog()`
 
 ```js
 const checkPack = () => {
@@ -558,7 +563,11 @@ Now in `App.js` we can evaluate the `isInPack` state to enable or disable the fa
 Before:
 
 ```js
-<a className="btn-floating waves-effect waves-light red" onClick={() => addNewDog()}>
+<a 
+    href="/" 
+    className="btn-floating waves-effect waves-light red" 
+    onClick={() => addNewDog()}
+>
     <i className="material-icons">favorite</i>
 </a>
 ```
@@ -567,6 +576,7 @@ After:
 
 ```js
 <a
+    href="/" 
     className={
         isInPack ? 'btn-floating waves-effect waves-light red disabled' : 'btn-floating waves-effect waves-light red'
     }
@@ -616,7 +626,7 @@ Before:
 After
 
 ```js
-<i onClick={index => deleteDog(index))} className="material-icons superdi-icon red-text">
+<i onClick={index => deleteDog(index)} className="material-icons superdi-icon red-text">
     do_not_disturb_on
 </i>
 ```
@@ -636,19 +646,19 @@ Open this file and add the following code:
 ```js
 import React from 'react';
 
-const Dog = () => {
+const Dog = (props) => {
     return (
         <div className="relative">
             <div name="randdog" className="dog waves-effect waves-light">
                 <img
                     className={
-                        this.props.context !== null && this.props.context !== undefined ? this.props.context : ''
+                        props.context !== null && props.context !== undefined ? props.context : ''
                     }
-                    src={this.props.image}
-                    alt={this.props.link}
+                    src={props.image}
+                    alt={props.link}
                 />
-                {this.props.context !== null && this.props.context !== undefined && this.props.context == 'favorite' ? (
-                    <i onClick={this.props.onClick} className="material-icons superdi-icon red-text">
+                {props.context !== null && props.context !== undefined && props.context === 'favorite' ? (
+                    <i onClick={props.onClick} className="material-icons superdi-icon red-text">
                         do_not_disturb_on
                     </i>
                 ) : (
@@ -662,7 +672,7 @@ const Dog = () => {
 
 As you can see this code is pretty similar to the favorite section code.
 
-You know, that section where we loop the `dogs` array in `App.js`?.That's because we reuse code, In fact the idea of this Component is to adapt depending of two contexts:
+You know, that section where we loop the `dogs` array in `App.js`?. That's because we reuse code, in fact the idea of this Component is to adapt depending of two contexts:
 
 -   The main random dog card
 -   The favorites section
@@ -677,11 +687,11 @@ Analyzing the code:
 
 For the `img` tag we are going to add a context class to apply a style for a specific context.
 
-For example: when `dog` is loaded in the favorite context, `img` will receive the class favorite and we can apply custom css using the`.favorite` class.
+For example: when `dog` is loaded in the favorite context, `img` will receive the class favorite and we can apply custom css using the `.favorite` class.
 
-Instead of using the`src={dog}` to load the data of the current iteration, now we receive this data from the props of the component. That's why we use `src={image}`. The value of this property is assigned by the parent(App.js). For example:
+Instead of using the `src={dog}` to load the data of the current iteration, now we receive this data from the props of the component. That's why we use `src={image}`. The value of this property is assigned by the parent (App.js). For example:
 
-Let's see: `<dog image="image.jpg"/>`, here we assign the image property to the`dog` component and we can read this property inside the component using `image`.
+Let's see: `<dog image="image.jpg"/>`, here we assign the image property to the `dog` component and we can read this property inside the component using `image`.
 
 ```js
 {
@@ -710,8 +720,8 @@ In here we export the dog class. Then you can reuse it wherever you want.
 Now let's move back to our `App.js` and make some changes. First of all we should import our newly created `Dog` component into `App.js`. Add this string at the beginning of the file after the axios import, like this:
 
 ```js
-import React from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Dog from './Dog';
 ```
 
@@ -726,10 +736,10 @@ to handle this, we define a new method called `handleClick` inside the App compo
 ```js
 const handleClick = (event, id, index) => {
     if (id !== null && id !== undefined) {
-        if (id == 'favorite') {
+        if (id === 'favorite') {
             addNewDog();
         } else {
-            if (id == 'delete_favorite') {
+            if (id === 'delete_favorite') {
                 deleteDog(index);
             } else {
                 updateRandomDog();
@@ -776,6 +786,7 @@ return (
                         </div>
                         <div className="card-action right-align actions">
                             <a
+                                href="/"
                                 className={
                                     isInPack ? 'btn-floating waves-effect waves-light red disabled' : 'btn-floating waves-effect waves-light red'
                                 }
@@ -787,7 +798,7 @@ return (
                     </div>
                     <div className="section">
                         <div className="row">
-                            {dogs != null && dogs != undefined && .dogs.map((dog, index) => (
+                            {dogs !== null && dogs !== undefined && dogs.map((dog, index) => (
                                 <div key={index} className="col s4 thumb">
                                     <Dog
                                         onClick={e => handleClick(e, 'delete_favorite', index)}
@@ -812,7 +823,7 @@ We are going to analyze what changed here:
 
     ```js
     <div className="card-image" onClick={e => handleClick(e, 'randdog')}>
-        <dog image={dog} link={dogk} />
+        <dog image={dog} link={dog} />
         <span className="card-title super-title red">Choose your favorite dogs</span>
     </div>
     ```
@@ -825,6 +836,7 @@ For the random card section we use the dog component and pass the _current_ dog 
 
 ```js
 <a
+    href="/"
     className={
         isInPack ? 'btn-floating waves-effect waves-light red disabled' : 'btn-floating waves-effect waves-light red'
     }
@@ -841,12 +853,10 @@ The only thing that changed here was the `onClick` handler. We use `handleClick`
 ```js
 <div className="section">
     <div className="row">
-        {this.state.dogs != null &&
-            this.state.dogs != undefined &&
-            this.state.dogs.map((dog, index) => (
+        {dogs !== null && dogs !== undefined && dogs.map((dog, index) => (
                 <div key={index} className="col s4 thumb">
                     <dog
-                        onClick={e => this.handleClick(e, 'delete_favorite', index)}
+                        onClick={e => handleClick(e, 'delete_favorite', index)}
                         context="favorite"
                         image={dog}
                         link={dog}
