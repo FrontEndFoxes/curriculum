@@ -4,7 +4,7 @@
 	"description": "Front-End Foxes Workshops",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/vuevixens/docs.git"
+		"url": "git+https://github.com/frontendfoxes/curriculum.git"
 	},
 	"keywords": [
 		"Front-End Foxes",
@@ -14,14 +14,14 @@
 	"author": "Front-End Foxes Inc.",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/vuevixens/docs/issues"
+		"url": "https://github.com/frontendfoxes/curriculum/issues"
 	},
-	"homepage": "https://github.com/vuevixens/docs/#readme",
+	"homepage": "https://github.com/frontendfoxes/curriculum/#readme",
 	"dependencies": {
-		"vuepress": "^1.4.0"
+		"vuepress": "^1.5.3"
 	},
 	"scripts": {
-		"docs:build": "vuepress build",
+		"build": "vuepress build",
 		"dev": "vuepress dev"
 	},
 	"devDependencies": {
@@ -30,5 +30,5 @@
 	"resolutions": {
     "vuepress/**/chokidar": "^3.4.0",
     "vuepress/**/kind-of": "^6.0.3"
-  }
+	}
 }

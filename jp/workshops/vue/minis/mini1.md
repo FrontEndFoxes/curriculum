@@ -15,7 +15,7 @@
 
 ランダムな犬の画像をロードしてお気に入りに保存するアプリケーションを作成します。
 
-![](https://vuevixens.github.io/docs/assets/img/mini2_1.97e0e6ec.png)
+![scaffolding](images/mini2_1.png)
 
 基本的な Vue.js アプリ用に CodeSandbox が Scaffold したコードを見てください。
 ファイル `main.js` はデフォルトでオープンしています。これは、Vue.js アプリケーションの主要なスタートポイントです。
