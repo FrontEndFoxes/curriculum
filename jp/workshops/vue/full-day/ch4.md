@@ -1,10 +1,10 @@
 # 📋 Chapter 4: 犬の里親体験アプリの作成
 
-| **プロジェクトのゴール** | お店のタグ付けシステムを作成して、「ロイヤルティ」リストに犬を追加したり削除したりできるようにします。 |
-| -- | -- |
-| **このワークショップで学ぶこと** | Vuex による Vue アプリケーションの状態管理 |
-| **必要なツール** | Chromeのような最新のブラウザ。CodeSandbox.io のアカウント。もし迷ったら、このチャプターは[こちら](https://github.com/VueVixens/projects/tree/main/chapter-3-end)をインポートして始めてみてください。この方法についての説明は [Appendix 1](appendix_1.md) にあります。 |
-| **かかる時間**     | 1.5時間 |
+| **プロジェクトのゴール**         | お店のタグ付けシステムを作成して、「ロイヤルティ」リストに犬を追加したり削除したりできるようにします。                                                                                                                                                                     |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **このワークショップで学ぶこと** | Vuex による Vue アプリケーションの状態管理                                                                                                                                                                                                                                 |
+| **必要なツール**                 | Chrome のような最新のブラウザ。CodeSandbox.io のアカウント。もし迷ったら、このチャプターは[こちら](https://github.com/frontendfoxes/projects/tree/main/chapter-3-end)をインポートして始めてみてください。この方法についての説明は [Appendix 1](appendix_1.md) にあります。 |
+| **かかる時間**                   | 1.5 時間                                                                                                                                                                                                                                                                   |
 
 ## 今回構築するもの
 
@@ -12,7 +12,7 @@
 
 ## 手順
 
-もしプロジェクトを作り直す必要がある場合は、メインページの左下にある **GitHub からインポート**リンクをクリックし、フィールドにリポジトリの URL を貼り付けて、[このリポジトリ](https://github.com/VueVixens/projects/tree/main/chapter-3-end)を Code Sandbox に複製します。[チャプター 3](ch3.md)で作成したプロジェクトを続行することもできます。
+もしプロジェクトを作り直す必要がある場合は、メインページの左下にある **GitHub からインポート**リンクをクリックし、フィールドにリポジトリの URL を貼り付けて、[このリポジトリ](https://github.com/frontendfoxes/projects/tree/main/chapter-3-end)を Code Sandbox に複製します。[チャプター 3](ch3.md)で作成したプロジェクトを続行することもできます。
 
 このチャプターでは、ショッピングカートのように、里親用の「ロイヤルティリスト」を作成して、私たちが特に好きでお迎えしたい犬のリストを表示します。はじめに、 `views` フォルダ内に新しい空のファイルを作成し、 `Favorites.vue` という名前をつけます。
 
@@ -24,9 +24,9 @@
 
 ```html
 <template>
-  <div>
-    My Favorites
-  </div>
+	<div>
+		My Favorites
+	</div>
 </template>
 ```
 
@@ -35,7 +35,7 @@
 `main.js` ファイルに移動します。上部にある `Home` と `Pets` コンポーネントのインポートの後に、インポート文をもう一つ追加します：
 
 ```js
-import Favorites from "./views/Favorites";
+import Favorites from './views/Favorites';
 ```
 
 そのあと、 `routes` にもうひとつのルートを追加します：
@@ -51,7 +51,7 @@ import Favorites from "./views/Favorites";
 ```html
 <v-spacer></v-spacer>
 <router-link to="/favorites">
-  <v-icon large>loyalty</v-icon>
+	<v-icon large>loyalty</v-icon>
 </router-link>
 ```
 
@@ -65,7 +65,7 @@ Favorites コンポーネントのマークアップを作成しましょう。V
 
 ```html
 <div>
-  <v-list> </v-list>
+	<v-list> </v-list>
 </div>
 ```
 
@@ -73,9 +73,9 @@ Favorites コンポーネントのマークアップを作成しましょう。V
 
 ```html
 <div>
-  <v-list>
-    <v-subheader>My Favorites</v-subheader>
-  </v-list>
+	<v-list>
+		<v-subheader>My Favorites</v-subheader>
+	</v-list>
 </div>
 ```
 
@@ -90,24 +90,24 @@ Favorites コンポーネントのマークアップを作成しましょう。V
 
 ```html
 <div>
-  <v-list>
-    <v-subheader>My Favorites</v-subheader>
-    <v-list-item @click="{}">
-      <v-list-item-avatar>
-        <img src="https://images.dog.ceo/breeds/husky/n02110185_7888.jpg" />
-      </v-list-item-avatar>
-      <v-list-item-content>Fluffy</v-list-item-content>
-      <v-list-item-action>
-        <v-icon>delete</v-icon>
-      </v-list-item-action>
-    </v-list-item>
-  </v-list>
+	<v-list>
+		<v-subheader>My Favorites</v-subheader>
+		<v-list-item @click="{}">
+			<v-list-item-avatar>
+				<img src="https://images.dog.ceo/breeds/husky/n02110185_7888.jpg" />
+			</v-list-item-avatar>
+			<v-list-item-content>Fluffy</v-list-item-content>
+			<v-list-item-action>
+				<v-icon>delete</v-icon>
+			</v-list-item-action>
+		</v-list-item>
+	</v-list>
 </div>
 ```
 
 ## Vuex でリストの状態を管理する
 
-この時点で、UI が統合されているのがわかります。リストの中に実際のデータを表示する時が来ましたが、このままでは問題があります。選択した犬を保存して `Pets` コンポーネントから `Favorites` コンポーネントに犬を渡すにはどうすればよいのでしょうか？これらの2つのコンポーネントには「親子」関係がないため、props を使用することはできません... そのような場合に、 _状態管理_ ライブラリが必要であり、Vue には Vuex というライブラリがあります。
+この時点で、UI が統合されているのがわかります。リストの中に実際のデータを表示する時が来ましたが、このままでは問題があります。選択した犬を保存して `Pets` コンポーネントから `Favorites` コンポーネントに犬を渡すにはどうすればよいのでしょうか？これらの 2 つのコンポーネントには「親子」関係がないため、props を使用することはできません... そのような場合に、 _状態管理_ ライブラリが必要であり、Vue には Vuex というライブラリがあります。
 
 ::: tip 💡
 Vuex は、Vue.js アプリケーションの状態管理パターンおよびライブラリです。これは、アプリケーション内のすべてのコンポーネントのための一元化されたストアとして機能し、ステートが予測可能な方法でのみ変更できるようにルールが保証されています。これにより、アプリケーション内のコンポーネントと共有できるデータを保持することができます。詳細は[こちら](http://vuex.vuejs.org/en/)をご覧ください。
@@ -120,8 +120,8 @@ Vuex は、Vue.js アプリケーションの状態管理パターンおよび�
 `store.js` を開き、Vuex をインポートします：
 
 ```js
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue';
+import Vuex from 'vuex';
 
 Vue.use(Vuex);
 ```
@@ -136,27 +136,27 @@ export default new Vuex.Store({});
 
 ```js
 export default new Vuex.Store({
-  state: {
-    favorites: []
-  }
+	state: {
+		favorites: [],
+	},
 });
 ```
 
 次に、このストアを Vue インスタンスに追加する必要があります。これを行うには、 `main.js` ファイルに移動し、残りのインポートの下にインポートします：
 
 ```js
-import store from "./store/store";
+import store from './store/store';
 ```
 
 そして、 `main.js` の Vue インスタンスのプロパティに `store` を追加します：
 
 ```js
 new Vue({
-  router,
-  store,
-  vuetify,
-  render: h => h(App)
-}).$mount("#app");
+	router,
+	store,
+	vuetify,
+	render: (h) => h(App),
+}).$mount('#app');
 ```
 
 これで、アプリケーション内のすべてのコンポーネントは、任意のコンポーネントの computed プロパティの中に `this.$store.state` と書けば、これを通してステートにアクセスできるようになりました。では、`Favorites` コンポーネントからアクセスしてみましょう。
@@ -191,7 +191,7 @@ Computed プロパティを使用して、ビューに表示されるプロパ�
 
 モックデータを `favorites` のコンテンツに置き換えましょう。
 
-まず、 `state.favorites` に一時的にコンテンツを追加してみましょう。 `data/dogs.js` ファイルから最初の3つの犬をコピーして、 `store.js` の `favorites` 配列に貼り付けます：
+まず、 `state.favorites` に一時的にコンテンツを追加してみましょう。 `data/dogs.js` ファイルから最初の 3 つの犬をコピーして、 `store.js` の `favorites` 配列に貼り付けます：
 
 ```js
 state: {
@@ -219,18 +219,18 @@ state: {
 
 ```html
 <div>
-  <v-list>
-    <v-subheader>My Favorites</v-subheader>
-    <v-list-item v-for="(dog, index) in favorites" :key="index" @click="{}">
-      <v-list-item-avatar>
-        <img :src="dog.img" />
-      </v-list-item-avatar>
-      <v-list-item-content>{{dog.name}}</v-list-item-content>
-      <v-list-item-action>
-        <v-icon>delete</v-icon>
-      </v-list-item-action>
-    </v-list-item>
-  </v-list>
+	<v-list>
+		<v-subheader>My Favorites</v-subheader>
+		<v-list-item v-for="(dog, index) in favorites" :key="index" @click="{}">
+			<v-list-item-avatar>
+				<img :src="dog.img" />
+			</v-list-item-avatar>
+			<v-list-item-content>{{dog.name}}</v-list-item-content>
+			<v-list-item-action>
+				<v-icon>delete</v-icon>
+			</v-list-item-action>
+		</v-list-item>
+	</v-list>
 </div>
 ```
 
@@ -239,7 +239,7 @@ state: {
 :::
 
 ::: tip 💡
-また、`v-list-item` のオープニングタグで `v-for` の隣に `:key` を追加したことに注意してください。これは、Vue が `v-for` を使用する際にキーを提供することを望んでいるためです。 `v-for` で `(dog, index) in favorites` を使うことで、犬ごとに配列のインデックスを取得することができます。マックスの場合はインデックス0、ラスティの場合はインデックス1などを取得します。これをキーとして使うことができます。より詳しい情報は[こちら](https://vuejs.org/guide/list.html#Maintaining-State)を参照してください。
+また、`v-list-item` のオープニングタグで `v-for` の隣に `:key` を追加したことに注意してください。これは、Vue が `v-for` を使用する際にキーを提供することを望んでいるためです。 `v-for` で `(dog, index) in favorites` を使うことで、犬ごとに配列のインデックスを取得することができます。マックスの場合はインデックス 0、ラスティの場合はインデックス 1 などを取得します。これをキーとして使うことができます。より詳しい情報は[こちら](https://vuejs.org/guide/list.html#Maintaining-State)を参照してください。
 :::
 
 これで `/favorites` ルートにモックデータが表示されるようになりました。ページの見た目を良くするために、もう少し UI を微調整してみましょう。
@@ -256,28 +256,26 @@ state: {
 
 ```html
 <template>
-  <v-list>
-    <v-subheader v-if="!favorites.length"
-      >Your favorites list is empty</v-subheader
-    >
-    <div v-else>
-      <v-subheader>Your favorites</v-subheader>
-      <v-list-item v-for="(dog, index) in favorites" :key="index" @click="{}">
-        <v-list-item-avatar>
-          <img :src="dog.img" />
-        </v-list-item-avatar>
-        <v-list-item-content>{{dog.name}}</v-list-item-content>
-        <v-list-item-action>
-          <v-icon>delete</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-    </div>
-  </v-list>
+	<v-list>
+		<v-subheader v-if="!favorites.length">Your favorites list is empty</v-subheader>
+		<div v-else>
+			<v-subheader>Your favorites</v-subheader>
+			<v-list-item v-for="(dog, index) in favorites" :key="index" @click="{}">
+				<v-list-item-avatar>
+					<img :src="dog.img" />
+				</v-list-item-avatar>
+				<v-list-item-content>{{dog.name}}</v-list-item-content>
+				<v-list-item-action>
+					<v-icon>delete</v-icon>
+				</v-list-item-action>
+			</v-list-item>
+		</div>
+	</v-list>
 </template>
 ```
 
 ::: tip 💡
-ここで何が起こっているのでしょうか？ まず、アプリケーションは _length_ で `favorites` 配列の長さをチェックします（つまり、配列の中にいくつかの項目があるかどうかをチェックします。空の配列の長さは0に等しくなります）。長さが0の場合、アプリケーションは `Your favorites list is empty` というテキストを表示し、 `v-else` ブロックを無視します。配列が空でない場合、アプリケーションは `v-else` ブロックにジャンプしてそれをレンダリングします。
+ここで何が起こっているのでしょうか？ まず、アプリケーションは _length_ で `favorites` 配列の長さをチェックします（つまり、配列の中にいくつかの項目があるかどうかをチェックします。空の配列の長さは 0 に等しくなります）。長さが 0 の場合、アプリケーションは `Your favorites list is empty` というテキストを表示し、 `v-else` ブロックを無視します。配列が空でない場合、アプリケーションは `v-else` ブロックにジャンプしてそれをレンダリングします。
 :::
 
 また、ツールバーのタグアイコンの上に選択された犬の数を表示してみましょう。 `App.vue` に移動して、 `favorites` のプロパティを追加します（先ほど追加したコンポーネントの `Favorites` に似ています）。これは `name` プロパティの下に配置することができます：
@@ -290,19 +288,19 @@ computed: {
 },
 ```
 
-お気に入りのアイコンを Vuetifyの `v-badge` コンポーネントでラップし、その中にあるアイテムの数を表示してみましょう。 `App.vue` を編集し、お気に入り用の `<router-link>` ブロックを以下のマークアップで変更します：
+お気に入りのアイコンを Vuetify の `v-badge` コンポーネントでラップし、その中にあるアイテムの数を表示してみましょう。 `App.vue` を編集し、お気に入り用の `<router-link>` ブロックを以下のマークアップで変更します：
 
 ```html
 <router-link to="/favorites">
-  <v-badge color="grey lighten-1" overlap right v-model="favorites.length">
-    <span slot="badge">{{favorites.length}}</span>
-    <v-icon large>loyalty</v-icon>
-  </v-badge>
+	<v-badge color="grey lighten-1" overlap right v-model="favorites.length">
+		<span slot="badge">{{favorites.length}}</span>
+		<v-icon large>loyalty</v-icon>
+	</v-badge>
 </router-link>
 ```
 
 ::: tip 💡
-ここでの `v-model` ディレクティブはバッジの可視性を定義します。つまり、リストが空の場合、バッジは非表示になります。モックデータには3つの項目があるので、バッジの中に `3` という数字が表示されています。これは Vuetify バッジコンポーネントで定義されている動作で、ドキュメントは [こちら](https://vuetifyjs.com/en/components/badges) にあります。
+ここでの `v-model` ディレクティブはバッジの可視性を定義します。つまり、リストが空の場合、バッジは非表示になります。モックデータには 3 つの項目があるので、バッジの中に `3` という数字が表示されています。これは Vuetify バッジコンポーネントで定義されている動作で、ドキュメントは [こちら](https://vuetifyjs.com/en/components/badges) にあります。
 :::
 
 ## 犬の追加と削除
@@ -311,10 +309,10 @@ computed: {
 
 ```js
 export default new Vuex.Store({
-  state: {
-    favorites: []
-  },
-  mutations: {}
+	state: {
+		favorites: [],
+	},
+	mutations: {},
 });
 ```
 
@@ -322,18 +320,18 @@ export default new Vuex.Store({
 
 ```js
 export default new Vuex.Store({
-  state: {
-    favorites: []
-  },
-  mutations: {
-    addToFavorites(state, payload) {
-      state.favorites.push(payload);
-    }
-  }
+	state: {
+		favorites: [],
+	},
+	mutations: {
+		addToFavorites(state, payload) {
+			state.favorites.push(payload);
+		},
+	},
 });
 ```
 
-この mutation には2つのパラメータがあります。1つ目は上記のように `state` で、2つ目は `state.favorites` に追加する `data` または `payload` です。 `addToFavorites` mutation はペイロードを `state.favorites` 配列に追加します。
+この mutation には 2 つのパラメータがあります。1 つ目は上記のように `state` で、2 つ目は `state.favorites` に追加する `data` または `payload` です。 `addToFavorites` mutation はペイロードを `state.favorites` 配列に追加します。
 
 ::: tip 💡
 mutation ハンドラを直接呼び出すことはできません。それを呼び出すには、store.commit をそのタイプで呼び出す必要があります。 `store.commit('addToFavorites')` を呼び出して、ペイロードを追加する必要があります。
@@ -347,19 +345,19 @@ mutation ハンドラを直接呼び出すことはできません。それを�
 
 ```js
 export default new Vuex.Store({
-  state: {
-    favorites: []
-  },
-  mutations: {
-    addToFavorites(state, payload) {
-      state.favorites.push(payload);
-    }
-  },
-  actions: {
-    addToFavorites({ commit }, payload) {
-      commit("addToFavorites", payload);
-    }
-  }
+	state: {
+		favorites: [],
+	},
+	mutations: {
+		addToFavorites(state, payload) {
+			state.favorites.push(payload);
+		},
+	},
+	actions: {
+		addToFavorites({ commit }, payload) {
+			commit('addToFavorites', payload);
+		},
+	},
 });
 ```
 
@@ -381,7 +379,7 @@ export default new Vuex.Store({
 
 `$emit` を使うことで、親コンポーネント（この場合は `Pets.vue`）にこんなメッセージを送信しています。「ねえ、ここで何か起きてるよ！このメッセージを読んで反応して」
 
-メッセージには2つ目のパラメータも含まれています：お気に入りリストに追加しようとしている `dog` です。
+メッセージには 2 つ目のパラメータも含まれています：お気に入りリストに追加しようとしている `dog` です。
 
 ::: tip 💡
 そこで `$emit('addToFavorites', dog)` を呼び出すことで、`addToFavorites` タイプのイベントを送信し、ユーザがお気に入りに追加したい犬のデータを送信します。基本的にはカスタムイベントを作成しており、その詳細については[こちらをご覧ください](https://vuejs.org/v2/guide/components-custom-events.html)。
@@ -402,7 +400,7 @@ export default new Vuex.Store({
 後者の方法を使います。まず、 `Pets.vue` に `mapActions` ヘルパーをインポートします：
 
 ```js
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
 ```
 
 そして、[ES6 のスプレッド演算子](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)を使って `methods` ブロックを作成し、コンポーネントに追加します：
@@ -429,7 +427,7 @@ methods: {
 
 ## ロジックを強化する
 
-今のところ、任意の犬を複数回追加することができますが、マックス（犬）は5匹もいません！ `store.js` の mutation の中にあるペイロードをチェックして、リストにない場合にのみ犬を追加するようにしてみましょう：
+今のところ、任意の犬を複数回追加することができますが、マックス（犬）は 5 匹もいません！ `store.js` の mutation の中にあるペイロードをチェックして、リストにない場合にのみ犬を追加するようにしてみましょう：
 
 ```js
 addToFavorites(state, payload) {
@@ -470,7 +468,7 @@ removeFromFavorites({ commit }, payload) {
 ここでは、ユーザーが削除アイコンをクリックしたときにこのアクションをディスパッチする必要があります。ファイル `Favorites.vue` に移動してください。覚えていると思いますが、まずアクションをコンポーネントメソッドにマッピングする必要があります。 `<script>` タグの先頭にある `mapActions` ヘルパーをインポートしてください：
 
 ```js
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
 ```
 
 そして `computed` ブロックの下のコンポーネント `methods` に追加します：
