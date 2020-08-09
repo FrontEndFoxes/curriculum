@@ -28,6 +28,7 @@
 		"all-contributors-cli": "^6.9.1"
 	},
 	"resolutions": {
-		"vuepress/**/kind-of": "^6.0.3"
+    "vuepress/**/chokidar": "^3.4.0",
+    "vuepress/**/kind-of": "^6.0.3"
 	}
 }
