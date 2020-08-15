@@ -31,6 +31,7 @@
 		"eslint-plugin-markdown": "^2.0.0-alpha.0"
 	},
 	"resolutions": {
-		"vuepress/**/kind-of": "^6.0.3"
+		"vuepress/**/kind-of": "^6.0.3",
+		"vuepress/**/chokidar": "^3.4.0"
 	}
 }
