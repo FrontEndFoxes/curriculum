@@ -26,6 +26,11 @@ module.exports = {
 			title: 'Front-End Foxes Workshops',
 			description: 'ワークショップ',
 		},
+		'/es/': {
+			lang: 'es-ES',
+			title: 'Front-End Foxes Workshops',
+			description: 'Talleres que enseñan desarrollo web y mobil para principiantes',
+		},
 	},
 	themeConfig: {
 		repo: 'frontendfoxes/curriculum',
@@ -135,6 +140,19 @@ module.exports = {
 					{
 						title: '👩‍🎓 ナノアクティビティ',
 						children: ['/jp/workshops/vue/nanos/nano3'],
+					},
+				],
+			},
+			'/es/': {
+				selectText: 'Idioma',
+				label: 'Español',
+				sidebar: [
+					{
+						title: '🐶 Taller dia completo',
+						children: [
+							'/es/workshops/vue/full-day/ch1',
+							'/es/workshops/vue/full-day/appendix_1',
+						],
 					},
 				],
 			},
