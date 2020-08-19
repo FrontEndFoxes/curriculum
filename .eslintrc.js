@@ -9,10 +9,12 @@ module.exports = {
   },
   overrides: [
     {
+      // override block for markdown files & markdown code
       files: ['**/*.md'],
       processor: 'markdown/markdown'
     },
     {
+      // override block for javascript code inside of js code fences ( ```js )
       files: ['**/*.md/*.js'],
       parserOptions: {
         ecmaFeatures: {
