@@ -15,7 +15,7 @@
 
 ランダムな犬の画像をロードしてお気に入りに保存するアプリケーションを作成します。
 
-![](https://vuevixens.github.io/docs/assets/img/mini2_1.97e0e6ec.png)
+![scaffolding](images/mini2_1.png)
 
 基本的な Vue.js アプリ用に CodeSandbox が Scaffold したコードを見てください。
 ファイル `main.js` はデフォルトでオープンしています。これは、Vue.js アプリケーションの主要なスタートポイントです。
@@ -57,7 +57,7 @@ h1 {
 .dogs-layout {
   width: 100%;
   background: #fff center repeat;
-  background-image: url("https://github.com/VueVixens/projects/blob/master/petshop/images/bg3.jpg?raw=true");
+  background-image: url("https://github.com/FrontEndFoxes/projects/blob/main/petshop/images/bg3.jpg?raw=true");
 }
 
 .dogs-overlay {
@@ -434,7 +434,7 @@ data() {
 このディレクティブを、 `v-flex` の開始要素に追加しましょう。コンテナ内に追加した新しいお気に入りのカードの配列を表示します。
 
 ```html
-<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
+<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet"></v-flex>
 ```
 
 ここで、`pet` は _現在の配列要素_ への参照であり、`index` は配列内の _この要素のインデックス_ です。

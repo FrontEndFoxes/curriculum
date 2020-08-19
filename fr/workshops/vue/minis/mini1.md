@@ -52,7 +52,7 @@ h1 {
 .dogs-layout {
   width: 100%;
   background: #fff center repeat;
-  background-image: url("https://github.com/VueVixens/projects/blob/master/petshop/images/bg3.jpg?raw=true");
+  background-image: url("https://github.com/FrontEndFoxes/projects/blob/main/petshop/images/bg3.jpg?raw=true");
 }
 
 .dogs-overlay {
@@ -420,7 +420,7 @@ Vous pouvez voir une carte vide avec un bouton « Supprimer » juste après l'im
 Pour afficher une liste d'éléments basée sur un tableau, Vue a une directive `v-for` qui parcourra ce tableau et rendra chaque élément. Ajoutons cette directive à notre balise d'ouverture `v-flex`, ce qui montrera le tableau des favoris dans le nouveau conteneur que vous venez d'ajouter :
 
 ```html
-<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet">
+<v-flex xs6 sm4 md2 v-for="(pet, index) in favoriteDogs" :key="pet"></v-flex>
 ```
 
 Ici, `pet` est la référence à l'_élément de tableau actuel_ et `index` est l'_index de cet élément_ à l'intérieur du tableau.

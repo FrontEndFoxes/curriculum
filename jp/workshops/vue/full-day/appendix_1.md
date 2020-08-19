@@ -2,7 +2,7 @@
 
 Don't worry! At the beginning of each chapter, you are given a link to start fresh with a new sandbox. Below are instructions on how to create a new sandbox with this Github repo link.
 
-All the chapter links are kept [here](https://github.com/FrontEndFoxes/projects) - pick your chapter by saving its URL. For example, the downloadable link for Chapter 1 is [https://github.com/FrontEndFoxes/projects/tree/main/chapter-1-end](https://github.com/FrontEndFoxes/projects/tree/main/chapter-1-end).
+All the chapter links are kept [here](https://github.com/frontendfoxes/projects) - pick your chapter by saving its URL. For example, the downloadable link for Chapter 1 is [https://github.com/frontendfoxes/projects/tree/main/chapter-1-end](https://github.com/frontendfoxes/projects/tree/main/chapter-1-end).
 
 ::: tip 💡
 Ensure that you are logged into CodeSandbox.io so that you are able to keep your sandboxes in your account.
