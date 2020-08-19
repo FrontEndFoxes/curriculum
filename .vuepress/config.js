@@ -54,6 +54,7 @@ module.exports = {
 								'/workshops/vue/full-day/ch4',
 								'/workshops/vue/full-day/ch5',
 								'/workshops/vue/full-day/appendix_1',
+                '/workshops/vue/full-day/appendix_2',
 							],
 						},
 						{
