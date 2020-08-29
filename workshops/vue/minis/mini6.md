@@ -151,7 +151,7 @@ The last thing to do is to add the component element `<Quiz />` in the template.
 </template>
 ```
 
-At this point you can delete the <HelloWorld> component.
+At this point you can delete the `<HelloWorld>` component.
 
 ### Styling the Quiz
 
