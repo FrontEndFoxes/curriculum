@@ -129,7 +129,7 @@ After that, the Quiz component has to be registered within **App.vue**, which is
 
 ```javascript
 components: {
-  Quiz;
+  Quiz
 }
 ```
 
@@ -439,7 +439,10 @@ The JSON structure we'll use looks like this, but we're going to load it from an
       "answers": [2, 3, 4, 5],
       "img": "https://media1.giphy.com/media/26BRzozg4TCBXv6QU/giphy.gif"
     },
-    ...{
+
+    ...
+
+    {
       "correct": 4,
       "answers": [2, 4, 3, 5],
       "img": "https://media2.giphy.com/media/Zl1fSRaVDsnxS/giphy.gif"
@@ -530,8 +533,8 @@ Edit **Quiz.vue**'s template to show a dynamic image at the top, right under the
   <div>
     <img :src="image" alt />
     ...
-  </div></template
->
+  </div></template>
+
 ```
 
 Then add to the `computed` property a new computed method called `image` (be sure to put it under the `stage` method's last comma):
