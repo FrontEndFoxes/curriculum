@@ -39,7 +39,7 @@ The `main.js` is the entry point for the application start.
 
 ```javascript
 new Vue({
-  render: (h) => h(App),
+  render: h => h(App)
 }).$mount("#app");
 ```
 
