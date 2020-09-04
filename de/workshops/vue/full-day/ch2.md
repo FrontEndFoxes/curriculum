@@ -1,14 +1,14 @@
 # 📋 Kapitel 2: Baue eine Haustier-Galerie
 
-| **Ziel**                   | Lerne, wie du Daten in der Webanwendung verändern kannst                                                                                                                                                                                                                                               |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Was du lernen wirst**    | Verwendung von statischen Daten. Du baust eine Oberfläche aus Kacheln, die Adoptivhunde anzeigt                                                                                                                                                                                                        |
-| **Was du dafür benötigst** | Einen modernen Browser, z.B. Google Chrome. Einen Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von [hier](https://github.com/VueVixens/projects/tree/master/chapter-1-end) importieren. Wie das geht, steht im [Anhang 1](appendix_1.md) |
-| **Dauer**                  | 1 Stunde                                                                                                                                                                                                                                                                                               |
+| **Ziel**                   | Lerne, wie du Daten in der Webanwendung verändern kannst                                                                                                                                                                                                                                                 |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Was du lernen wirst**    | Verwendung von statischen Daten. Du baust eine Oberfläche aus Kacheln, die Adoptivhunde anzeigt                                                                                                                                                                                                          |
+| **Was du dafür benötigst** | Einen modernen Browser, z.B. Google Chrome. Einen Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von [hier](https://github.com/FrontEndFoxes/projects/tree/main/chapter-1-end) importieren. Wie das geht, steht im [Anhang 1](appendix_1.md) |
+| **Dauer**                  | 1 Stunde                                                                                                                                                                                                                                                                                                 |
 
 ## Anleitung
 
-Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-1-end) in Code Sandbox, nachdem du dich eingeloggt hast. Dafür klickst du auf den Link **Import form Github** unten links auf der Hauptseite und fügst die URL des Repositories in das Feld. Du kannst ebenfalls mit dem Projekt fortfahren, dass du in [Kapitel 1](ch1.md) erstellt hast.
+Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/FrontEndFoxes/projects/tree/main/chapter-1-end) in Code Sandbox, nachdem du dich eingeloggt hast. Dafür klickst du auf den Link **Import form Github** unten links auf der Hauptseite und fügst die URL des Repositories in das Feld. Du kannst ebenfalls mit dem Projekt fortfahren, dass du in [Kapitel 1](ch1.md) erstellt hast.
 
 Aktuell hat unser Pet Shop nur eine Homepage. Wir möchten eine weitere Seite hinzufügen, auf der in mehreren Kacheln Haustiere angezeigt werden können. Wir erstellen eine Single-Page Anwendung mit einer Navigation und zwei Navigationspunkten: "home" und "pets" (=Haustiere). Wenn man auf "pets" klickt, wird die neue Seite angezeigt, die wir jetzt erstellen und "home" wird eine Seite öffnen, die wir in [Kapitel 1](ch1.md) erstellt haben.
 
@@ -28,11 +28,12 @@ import VueRouter from 'vue-router';
 ```
 
 Du solltest nun diese vier Import-Zeilen hinzufügen:
+
 ```js
-import Vue from "vue";
-import App from "./App.vue";
-import vuetify from "@/plugins/vuetify";
-import VueRouter from "vue-router";
+import Vue from 'vue';
+import App from './App.vue';
+import vuetify from '@/plugins/vuetify';
+import VueRouter from 'vue-router';
 ```
 
 Jetzt müssen wir das Plugin bei der Vue-App registrieren mit Hilfe der globalen `Vue.use()`-Methode:
@@ -45,18 +46,18 @@ Füge diese Zeile vor `new Vue(...)` hinzu, um sicherzustellen, dass jede neue I
 
 ::: tip 💡
 Überlege für einen Moment, wie die App aufgebaut sein muss. Der Header und Footer sollen auf jeder Seite gleich sein. Der eigentliche Inhalt dazwischen soll sich verändern, je nach dem auf welchem Navigationspunkt man klickt.
-Die Komponente, die zu der Route (=dem geklickten Navigationspunkt) passt, wird in einem `<router-view>`-Tag angezeigt. Das heißt wir müssen unseren Code verändern, damit nicht mehr alles in der `App.vue` steht. Weil der Header und Footer jederzeit sichtbar sein sollen, bleiben sie in der `App.vue`.  Der Inhalt der spezifischen Seiten wird in separate Komponten veschoben. Wir werden somit davon wegkommen, dass alle Teile unserer Applikation in die `App.vue` sind, wir werden also ein Refactoring durchführen.
+Die Komponente, die zu der Route (=dem geklickten Navigationspunkt) passt, wird in einem `<router-view>`-Tag angezeigt. Das heißt wir müssen unseren Code verändern, damit nicht mehr alles in der `App.vue` steht. Weil der Header und Footer jederzeit sichtbar sein sollen, bleiben sie in der `App.vue`. Der Inhalt der spezifischen Seiten wird in separate Komponten veschoben. Wir werden somit davon wegkommen, dass alle Teile unserer Applikation in die `App.vue` sind, wir werden also ein Refactoring durchführen.
 :::
 
 ## Eine Homepage erstellen
 
 Wir erstellen eine separate Komponente für alle Elemente in `<div class="wrapper">`.
 
-- Gehe in den `views`-Ordner in `src`, falls dieser nicht existiert, erstelle ihn zuerst. In diesem Ordner erstelle eine Datei namens `Home.vue`.
+-   Gehe in den `views`-Ordner in `src`, falls dieser nicht existiert, erstelle ihn zuerst. In diesem Ordner erstelle eine Datei namens `Home.vue`.
 
-- Füge den `<template></template>`-Tag in diese Datei ein.
+-   Füge den `<template></template>`-Tag in diese Datei ein.
 
-- Öffne die `App.vue`-Datei. Kopiere das `<div class="wrapper">` und alle Elemente darin in dem `template`-Tag in `Home.vue`. Du solltest dort nun allen Code, der zwischen `<header>` und `<footer>` stand, stehen haben. Lösche diesen Teil aus `App.vue`.
+-   Öffne die `App.vue`-Datei. Kopiere das `<div class="wrapper">` und alle Elemente darin in dem `template`-Tag in `Home.vue`. Du solltest dort nun allen Code, der zwischen `<header>` und `<footer>` stand, stehen haben. Lösche diesen Teil aus `App.vue`.
 
 Du wirst sehen, dass unsere Applikation etwas leer aussieht, aber keine Sorge - wir werden die entfernten Bestandteile später wieder hinzufügen.
 
@@ -66,27 +67,26 @@ Jetzt erstellen wir eine Seite für die Haustiere. Erstelle im `src/views`-Ordne
 
 ```html
 <template>
-  <v-container grid-list-md fluid>
-    <v-layout wrap>
-      <v-flex xs12 sm4 md3>
-        <v-card color="grey lighten-2">
-          <v-img src="https://goo.gl/6CQNDo" height="170px">
-          </v-img>
-          <v-card-title>
-            <div>
-              <h3>Looking for a dog?</h3>
-            </div>
-          </v-card-title>
-        </v-card>
-      </v-flex>
-    </v-layout>
-  </v-container>
+	<v-container grid-list-md fluid>
+		<v-layout wrap>
+			<v-flex xs12 sm4 md3>
+				<v-card color="grey lighten-2">
+					<v-img src="https://goo.gl/6CQNDo" height="170px"> </v-img>
+					<v-card-title>
+						<div>
+							<h3>Looking for a dog?</h3>
+						</div>
+					</v-card-title>
+				</v-card>
+			</v-flex>
+		</v-layout>
+	</v-container>
 </template>
 
 <style scoped>
-p {
-  margin: 0;
-}
+	p {
+		margin: 0;
+	}
 </style>
 ```
 
@@ -94,45 +94,45 @@ p {
 
 Super! Jetzt haben wir zwei verschiedene Komponenten für unsere Startseite und die Haustier-Galerie. Wie du sicher schon bemerkt hast, wird das aber noch nicht in der App angezeigt. Dafür müssen wir zwei Routen erstellen.
 
-- Zurück zur `main.js`. Zurerst importieren wir die neuen Kopmonenten nach den anderen Importen:
+-   Zurück zur `main.js`. Zurerst importieren wir die neuen Kopmonenten nach den anderen Importen:
 
 ```js
 import Home from './views/Home';
 import Pets from './views/Pets';
 ```
 
-- Jetzt erstellen wir die Routen. Jede Route ist ein Objekt, das einen Pfad und eine Komponente enthält. Füge die zwei Routen unter `Vue.use...` ein (eine ist für die Startseite, die andere für die Haustier-Galerie):
+-   Jetzt erstellen wir die Routen. Jede Route ist ein Objekt, das einen Pfad und eine Komponente enthält. Füge die zwei Routen unter `Vue.use...` ein (eine ist für die Startseite, die andere für die Haustier-Galerie):
 
 ```js
 const routes = [
-  {
-      path: '/',
-      component: Home
-  },
-  {
-      path: '/pets',
-      component: Pets
-  },
+	{
+		path: '/',
+		component: Home,
+	},
+	{
+		path: '/pets',
+		component: Pets,
+	},
 ];
 ```
 
-- Jetzt müssen wir eine `VueRouter`-Instanz erstellen und dieser unsere Routen übergeben. Kopiere diese Zeile unter das Objekt `const routes` (eine Zeile unter `];`):
+-   Jetzt müssen wir eine `VueRouter`-Instanz erstellen und dieser unsere Routen übergeben. Kopiere diese Zeile unter das Objekt `const routes` (eine Zeile unter `];`):
 
 ```js
 const router = new VueRouter({ routes });
 ```
 
-- Zum Schluss müssen wir den Router noch der Vue-App hinzufügen:
+-   Zum Schluss müssen wir den Router noch der Vue-App hinzufügen:
 
 ```js
 new Vue({
-  vuetify,
-  router,
-  render: h => h(App)
-}).$mount("#app");
+	vuetify,
+	router,
+	render: (h) => h(App),
+}).$mount('#app');
 ```
 
-- Öffne jetzt die `App.vue`-Datei. Schreibe an die Stelle, an der vorher `<div class="wrapper">` stand, den `<router-view></router-view>`-Tag. Er sollte zwischen dem Header und Footer stehen. Und nun wird in der App auch wieder etwas angezeigt!
+-   Öffne jetzt die `App.vue`-Datei. Schreibe an die Stelle, an der vorher `<div class="wrapper">` stand, den `<router-view></router-view>`-Tag. Er sollte zwischen dem Header und Footer stehen. Und nun wird in der App auch wieder etwas angezeigt!
 
 Teste deinen Code. Füge `/pets` an das Ende der URL, jetzt kannst du die Haustier-Galerie sehen anstelle der Startseite.
 
@@ -144,10 +144,10 @@ Die Toolbar-Komponente von Vuetify heißt `v-toolbar`. Kopiere sie in der `App.v
 
 ```html
 <v-toolbar>
-    <v-toolbar-items>
-        <v-btn to="/" flat>Home</v-btn>
-        <v-btn to="/pets" flat>Pets</v-btn>
-    </v-toolbar-items>
+	<v-toolbar-items>
+		<v-btn to="/" flat>Home</v-btn>
+		<v-btn to="/pets" flat>Pets</v-btn>
+	</v-toolbar-items>
 </v-toolbar>
 ```
 
@@ -161,57 +161,55 @@ Wir werden zunächst ein paar Dummy-Daten hinzufügen. Erstelle dazu im `src`-Or
 
 ```js
 export const Dogs = [
-  {
-    name: 'Max',
-    breed: 'husky',
-    img: 'https://images.dog.ceo/breeds/husky/n02110185_1469.jpg',
-  },
-  {
-    name: 'Rusty',
-    breed: 'shiba',
-    img: 'https://images.dog.ceo/breeds/shiba/shiba-13.jpg',
-  },
-  {
-    name: 'Rocco',
-    breed: 'boxer',
-    img: 'https://images.dog.ceo/breeds/boxer/n02108089_14112.jpg',
-  },
-  {
-    name: 'Zoey',
-    breed: 'beagle',
-    img: 'https://images.dog.ceo/breeds/beagle/n02088364_11136.jpg',
-  },
-  {
-    name: 'Duke',
-    breed: 'doberman',
-    img: 'https://images.dog.ceo/breeds/doberman/n02107142_4653.jpg',
-  },
-  {
-    name: 'Lily',
-    breed: 'malamute',
-    img: 'https://images.dog.ceo/breeds/malamute/n02110063_1104.jpg',
-  },
-  {
-    name: 'Winston',
-    breed: 'pug',
-    img: 'https://images.dog.ceo/breeds/pug/n02110958_15626.jpg',
-  },
-  {
-    name: 'Angel',
-    breed: 'samoyed',
-    img: 'https://images.dog.ceo/breeds/samoyed/n02111889_4470.jpg',
-  },
+	{
+		name: 'Max',
+		breed: 'husky',
+		img: 'https://images.dog.ceo/breeds/husky/n02110185_1469.jpg',
+	},
+	{
+		name: 'Rusty',
+		breed: 'shiba',
+		img: 'https://images.dog.ceo/breeds/shiba/shiba-13.jpg',
+	},
+	{
+		name: 'Rocco',
+		breed: 'boxer',
+		img: 'https://images.dog.ceo/breeds/boxer/n02108089_14112.jpg',
+	},
+	{
+		name: 'Zoey',
+		breed: 'beagle',
+		img: 'https://images.dog.ceo/breeds/beagle/n02088364_11136.jpg',
+	},
+	{
+		name: 'Duke',
+		breed: 'doberman',
+		img: 'https://images.dog.ceo/breeds/doberman/n02107142_4653.jpg',
+	},
+	{
+		name: 'Lily',
+		breed: 'malamute',
+		img: 'https://images.dog.ceo/breeds/malamute/n02110063_1104.jpg',
+	},
+	{
+		name: 'Winston',
+		breed: 'pug',
+		img: 'https://images.dog.ceo/breeds/pug/n02110958_15626.jpg',
+	},
+	{
+		name: 'Angel',
+		breed: 'samoyed',
+		img: 'https://images.dog.ceo/breeds/samoyed/n02111889_4470.jpg',
+	},
 ];
 ```
 
 Hier wird eine Konstante (`const`) names `Dogs` exportiert, die alle Daten beinhaltet, die wir benötigen.
 
-- Jetzt importieren wir diese Daten in die `pets`-Komponente. Öffne die `Pets.vue`-Datei und kopiere den folgenden `<script>` Block unter den `<template>`-Block.
+-   Jetzt importieren wir diese Daten in die `pets`-Komponente. Öffne die `Pets.vue`-Datei und kopiere den folgenden `<script>` Block unter den `<template>`-Block.
 
 ```js
-<script>
-import { Dogs } from "../data/dogs";
-</script>
+<script>import {Dogs} from "../data/dogs";</script>
 ```
 
 Dieser Teil importiert die Daten der Hunde. Jetzt müssen wir diese Daten der `data()`-Funktion hinzufügen. Bearbeite den `<script>` Block:
@@ -256,7 +254,7 @@ In der `dog.js` kannst du sehen, dass jeder Hund drei Eigenschaften hat: Name (`
 Wenn wir `src` nur mit dem Attriubut `pet.img` ersetzen...
 
 ```html
-<v-img src="pet.img" height="170px">
+<v-img src="pet.img" height="170px"></v-img>
 ```
 
 ... werden noch keine Bilder angezeigt. Warum? Weil wir so einen statischen Wert einsetzen, die App erwartet eine Datei mit dem Namen `pet.img`. Diese Datei gibt es allerdings nicht. Um den Wert von `pet.img` dynamisch in das `src`-Attribut zu setzen, müssen wir die `v-bind`-Direktive (oder den Shortcut `:`) nutzen.
@@ -296,13 +294,9 @@ Erstelle einen neuen Ordner `components` im `src`-Ordner.
 Erstelle eine neue Datei `Dog.vue` in dem `components`-Ordner und schreibe die `<template></template>` und `<script></script>`-Tags hinein. So sieht die neue Datei jetzt aus:
 
 ```html
-<template>
+<template> </template>
 
-</template>
-
-<script>
-
-</script>
+<script></script>
 ```
 
 Kopiere die gesamte `v-card`-Komponente aus `Pets.vue` in den `<template>`-Tag der `Dogs`-Komponente. Den Teil kannst du nun aus dem `template` in `Pets.vue` löschen.
@@ -333,16 +327,15 @@ In dem Template von `Dog.vue` musst du `pet` mit `dog` ersetzen, weil es innerha
 
 ```html
 <template>
-  <v-card color="grey lighten-2">
-    <v-img :src="dog.img" height="170px">
-    </v-img>
-      <v-card-title>
-        <div>
-          <h3>{{dog.name}}</h3>
-          <p class="breed">{{dog.breed}}</p>
-        </div>
-      </v-card-title>
-  </v-card>
+	<v-card color="grey lighten-2">
+		<v-img :src="dog.img" height="170px"> </v-img>
+		<v-card-title>
+			<div>
+				<h3>{{dog.name}}</h3>
+				<p class="breed">{{dog.breed}}</p>
+			</div>
+		</v-card-title>
+	</v-card>
 </template>
 ```
 
@@ -356,14 +349,14 @@ Nun müssen wir der `Pets`-Komponente mitteilen, dass sie eine sogenannte Kind-K
 
 ```js
 export default {
-  components: {
-    appDog: Dog,
-  },
-  data() {
-    return {
-      dogs: Dogs,
-    };
-  },
+	components: {
+		appDog: Dog,
+	},
+	data() {
+		return {
+			dogs: Dogs,
+		};
+	},
 };
 ```
 
@@ -379,7 +372,7 @@ Füge den neuen `<app-dog>`-Tag in `Pets.vue` an die Stelle ein, an der du zuvor
 
 ```html
 <v-flex xs12 sm4 md3 v-for="pet in dogs" :key="pet.breed">
-  <app-dog></app-dog>
+	<app-dog></app-dog>
 </v-flex>
 ```
 
@@ -387,7 +380,7 @@ Jetzt müssen wir der `Dog`-Komponente noch die `dog`-Eigenschaft übergeben. Da
 
 ```html
 <v-flex xs12 sm4 md3 v-for="pet in dogs" :key="pet.breed">
-  <app-dog :dog="pet"></app-dog>
+	<app-dog :dog="pet"></app-dog>
 </v-flex>
 ```
 

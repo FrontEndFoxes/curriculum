@@ -28,7 +28,7 @@ module.exports = {
 		},
 	},
 	themeConfig: {
-		repo: 'vuevixens/docs',
+		repo: 'frontendfoxes/curriculum',
 		editLinks: true,
 		// custom text for edit link. Defaults to "Edit this page"
 		editLinkText: 'Help us improve this page!',
@@ -120,11 +120,16 @@ module.exports = {
 				label: '日本語',
 				sidebar: [
 					{
+						title: '🐶 フルデイワークショップ',
+						children: ['/jp/workshops/vue/full-day/ch4'],
+					},
+					{
 						title: '🦴ミニワークショップ',
 						children: [
 							'/jp/workshops/vue/minis/mini1',
 							'/jp/workshops/vue/minis/mini2',
 							'/jp/workshops/vue/minis/mini3',
+							'/jp/workshops/vue/minis/mini4',
 						],
 					},
 					{
