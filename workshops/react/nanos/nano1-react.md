@@ -13,8 +13,8 @@ The main objective here is to learn **React** fundamentals in conjunction with w
 
 -   Go over React basics
 -   Create components in React
--   Fetch data from an external API data source called Chec
--   Use an axios-based library, Commerce.js, to add eCommerce logic
+-   Fetch data from an external API data source
+-   Use an axios-based JavaScript SDK to add eCommerce logic
 -   List products on a products catalogue page
 
 Check out this [live demo](https://codesandbox.io/s/commercejs-react-products-c5s8j) sneakpeek to have a look at what we're building today! 
@@ -103,25 +103,21 @@ Now that we've walked through the starting structure in a React application, thi
 
 ## Install our commerce API
 
-We will be using a commerce API platform to source our products data. The commerce backend we will be using is called [Chec](https://commercejs.com/) and it comes with the handy [Commerce.js](https://github.com/chec/commerce.js) SDK packed with helper functions to handle our commerce logic in the frontend seamlessly. 
+We will be using a commerce API platform to source our products data. The commerce backend we will be using comes with the handy JavaScript SDK packed with helper functions to handle our commerce logic in the frontend seamlessly. 
 
 ::: tip 💡
 What are **API**s and **SDK**s? **API** stands for Application Programming Interface and acts as a "contract" between client and server. The client which is a browser or any front-facing layer makes a request to a server to receive a response or initiate a defined action. When a platform has an API, it allows a software or front-facing client to interact with its data. **SDK** stands for Software Development Kit and is a installable package of development tools that typically comes with a library, a debugger, and other common tooling.
 :::
 
-In a standard local development environment, the Chec/Commerce.js SDK can be installed in two ways: 
-1. Install the package via package manager either with npm `npm install @chec/commerce.js` or yarn `yarn @chec/commerce.js`
-2. Install via CDN by included this script `<script type="text/javascript" src="https://cdn.chec.io/v2/commerce.js"></script>` in the `index.html` file.
-
-Since we are using Codesandbox, we can conveniently add a dependency on the left sidebar. So let's go ahead and do that! Click on **Add dependency** and in the search field type in `@chec/commerce.js` and select the option which is the latest 2.1.1 version.
+Since we are using Codesandbox, we can conveniently add the commerce dependency on the left sidebar. So let's go ahead and do that! Click on **Add dependency** and in the search field type in `@chec/commerce.js` and select the option which is the latest 2.1.1 version.
 
 ::: tip 💡
-The Commerce.js SDK is using the axios library under the hood. Axios is a promise-based HTTP client that works both in the browser and in other node.js environments.
+The JavaScript SDK is using the axios library under the hood. Axios is a promise-based HTTP client that works both in the browser and in other node.js environments.
 :::
 
 ## Link up our Commerce instance
 
-The Commerce.js SDK comes packed with all the frontend oriented functionality to get a customer-facing web-store up and running. In order to utilize all the features of this commerce platform's SDK, we are going to import the module into a folder called `lib` so that we can have access to our Commerce object instance throughout our application.
+The JavaScript SDK comes packed with all the frontend oriented functionality to get a customer-facing web-store up and running. In order to utilize all the features of this commerce platform's SDK, we are going to import the module into a folder called `lib` so that we can have access to the commerce object instance throughout our application.
 
 Let's go ahead and do that right now! In your `src` directory, we'll create a new folder called `lib`, create a file `commerce.js` and copy and paste the below code in it. Typically a lib folder in a project stores files that abstracts functions or some form of data.
 
@@ -133,22 +129,18 @@ import Commerce from '@chec/commerce.js';
 export const commerce = new Commerce('pk_17695092cf047ebda22cd36e60e0acbe5021825e45cb7');
 ```
 
-Ok so what have we done here? First we import in the Commerce.js module which we will be using to communicate with the API platform, then we export an instance of `Commerce` and pass in a public key. The public key is needed to give us access to data in the Chec API.
+Ok so what have we done here? First we import in the Commerce.js module which we will be using to communicate with the API platform, then we export an instance of `Commerce` and pass in a public key. The public key is needed to give us access to data in the API.
 
 ::: tip 💡
-Please note that for the purpose of getting you up and running with an account with products data, a public key is provided from a demo merchant account. A token key acess is what gives the API an authentication scope. A public key will give us access to Chec's core API resources such as your products and cart data.
+Please note that for the purpose of getting you up and running with an account with products data, a public key is provided from a demo merchant account. A token key acess is what gives the API an authentication scope. A public key will give us access to core API resources such as your products and cart data.
 :::
 
-Now that we've installed our commerce SDK and created our Commerce instance, we now have access to the Commerce object throughout our application!
+Now that we've installed our SDK and created our Commerce instance, we now have access to the Commerce object throughout our application!
 
 ## Make your first request to fetch the products data
 
-Commerce.js was built with all the frontend functionalities you would need to build a complete eCommerce store. All you need to do is make requests to various Chec API endpoints, receive successful responses, then you have your raw data to output beautifully onto your web store.
-
-One of the main resources in Chec is the [Products](https://commercejs.com/docs/sdk/products) endpoint. Commerce.js
-makes it seamless to fetch product data with its promise-based
-[method](https://commercejs.com/docs/sdk/products#list-products) `commerce.products.list()`. This request would make a
-call to the `GET v1/products` API endpoint and return a list of product data. Open up your `App.js` file and delete the code that came with creating a new React app and we will write this file from scratch.
+One of the main resources in the API is the products endpoint. The SDK
+makes it seamless to fetch product data with its promise-based methods. This request would make a call to the `GET v1/products` API endpoint and return a list of product data. Open up your `App.js` file and delete the code that came with creating a new React app and we will write this file from scratch.
 
 Import `commerce` as well as a `ProductsList` component which you'll create in the next
 section. While there, initialize an empty array `products` state in your constructor.
@@ -189,12 +181,11 @@ The **constructor** method in a React class component gets called before the com
 
 You will be creating the products components as stateful components. This means that the components has the ability to keep track of changing data. You might ask why would be want to keep track of changing data. Any commerce store needs to have the ability to update its products listing in real-time. Be it new products being added, products being sold out, or products being taken off. The API data constantly will get updated, therefore the UI has to be reactive.
 
-You can now make your first Commerce.js request! Create a function called `fetchProducts()` in the component and make a request to the products endpoint using the Commerce.js method `commerce.products.list()`.
+You can now make your first API request! Create a function called `fetchProducts()` in the component and make a request to the products endpoint using the method `commerce.products.list()`.
 
 ```jsx
 /**
- * Fetch products data from Chec and stores in the products data object.
- * https://commercejs.com/docs/sdk/products
+ * Fetch products data and stores in the products data object.
  */
 fetchProducts() {
   commerce.products.list().then((products) => {
@@ -205,13 +196,12 @@ fetchProducts() {
 }
 ```
 
-Inside the function, use the `commerce` object to access the `products.list()` method for access to product data. [`commerce.products.list()`](https://commercejs.com/docs/sdk/products#list-products) is a
+Inside the function, use the `commerce` object to access the `products.list()` method for access to product data. `commerce.products.list()` is a
 promise-based function call that will resolve the request and `then()` sets the response data with `this.setState()` into
 the `products` state key created earlier in the component's constructor. The `catch()` method catches any errors in the
 case that the request to the server fails.
 
-Of course simply creating the function does not do anything as you have yet to call this function. When the app
-component mounts to the DOM, use the lifecycle hook `componentDidMount()` to fetch your data. It is a React lifecycle method that helps to call functions when the component first mounts to the DOM. Since we are loading data from a remote endpoint, we want to invoke the `fetchProducts()` function to update the state with the returned products products so that we can render our updated data.
+Of course simply creating the function does not do anything as you have yet to call this function. When the app component mounts to the DOM, use the lifecycle hook `componentDidMount()` to fetch your data. It is a React lifecycle method that helps to call functions when the component first mounts to the DOM. Since we are loading data from a remote endpoint, we want to invoke the `fetchProducts()` function to update the state with the returned products products so that we can render our updated data.
 
 ```jsx
 componentDidMount() {
@@ -283,10 +273,6 @@ would get logged onto your frontend. Below is the expected returned data (abbrev
       "billing_address": false,
       "extrafields": false
     },
-    "checkout_url": {
-      "checkout": "https://checkout.chec.io/TSUTww?checkout=true",
-      "display": "https://checkout.chec.io/TSUTww"
-    },
     "extrafields": [],
     "variants": [],
     "categories": [
@@ -311,10 +297,9 @@ would get logged onto your frontend. Below is the expected returned data (abbrev
 ]
 ```
 
-The data object contains all the property endpoints such as the product name, the product description, product price or any uploaded variants or assets. This data is exposed when you make a request to the API. As mentioned above, Commerce.js is a Software Development Kit(SDK) that comes with abstracted axios promise-based function calls that will help to fetch data from the endpoints. The public key access that we briefed over above is a public token key from a merchant store. This account already has products and products information uploaded to the Chec dashboard for us to run a demo store with. 
+The data object contains all the property endpoints such as the product name, the product description, product price or any uploaded variants or assets. This data is exposed when you make a request to the API. As mentioned above, the open sourced Software Development Kit(SDK) that comes with abstracted axios promise-based function calls that will help to fetch data from the endpoints. The public key access that we briefed over above is a public token key from a merchant store. This account already has products and products information uploaded to the in the backend for us to run a demo store with. 
 
-Now add the empty `<ProductsList
-/>` component to your render function:
+Now add the empty `<ProductsList/>` component to your render function:
 
 ```jsx
 render() {
@@ -328,9 +313,7 @@ render() {
 }
 ```
 
-Destructure `products` from state to make it a little cleaner. You'll need to pass the `products` property as an argument
- to your `ProductsList` component. This means that the value of the `ProductsList` component's prop
-`products` will be resolved from the parent (`App`) component's state, and will update automatically whenever it changes.
+Destructure `products` from state to make it a little cleaner. You'll need to pass the `products` property as an argument to your `ProductsList` component. This means that the value of the `ProductsList` component's prop `products` will be resolved from the parent (`App`) component's state, and will update automatically whenever it changes.
 
 ## Start to style your components
 
@@ -618,8 +601,7 @@ class App extends Component {
   };
 
   /**
-   * Fetch products data from Chec and stores in the products data object.
-   * https://commercejs.com/docs/sdk/products
+   * Fetch products data and stores in the products data object.
    */
   fetchProducts() {
     commerce.products.list().then((products) => {
@@ -652,5 +634,3 @@ Awesome, there you have it! You have just created a e-commerce React application
 ### Author
 
 Made with ❤️ by Jaeriah Tay
-
-
