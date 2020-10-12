@@ -300,10 +300,10 @@ Edit the form to bind the `valid` property:
 <v-form v-else v-model="valid"></v-form>
 ```
 
-Let's also disable our `Submit` button when form is not valid, adding  variable `nameRules` , we will include more information  for this variable in next steps.
+Let's also disable our `Submit` button when form is not valid by using the variable `valid`.
 
 ```html
-<v-btn @click="submit" :disabled="!nameRules">Submit</v-btn>
+<v-btn @click="submit" :disabled="!valid">Submit</v-btn>
 ```
 
 Now we can start to create our validation rules.
@@ -332,7 +332,7 @@ data() {
 Now add the first rule. Remember, validation rules are functions which receive the value of the field and return a boolean value; `true` will mean this field has valid value and `false` means it doesn't. So, our first rule will be:
 
 ```js
-nameRules: [(name) => !!name];
+nameRules: [(name) => !!name]
 ```
 
 What is happening here? `!name` will return `true` if the name is empty and `false` if it has non-empty value. Then we perform the second negation, reverting value one more time. The double negation is a pretty common method to check if string is non-empty.
@@ -348,7 +348,7 @@ Now try to select the `Name` field and then select other one. You can see the re
 Error text can be provided via the `||` operator in the rule. So the value of this error is `false OR <error message>`. Let's provide a more meaningful error for the name field:
 
 ```js
-nameRules: [(name) => !!name || 'Name is required'];
+nameRules: [(name) => !!name || 'Name is required']
 ```
 
 Now the error message looks better!
@@ -359,7 +359,7 @@ Let's add one more rule: a name cannot be shorter than 2 letters:
 nameRules: [
 	(name) => !!name || 'Name is required',
 	(name) => name.length > 2 || 'Name must be longer than 2 characters',
-];
+]
 ```
 
 Try to fill the name field with 1 character and check the error.
@@ -369,7 +369,7 @@ Try to fill the name field with 1 character and check the error.
 Now we're switching to the email field. First we will create an `emailRules` property in `data` and add the non-empty check similar to the non-empty name rule:
 
 ```js
-emailRules: [(email) => !!email || 'Email is required'];
+emailRules: [(email) => !!email || 'Email is required']
 ```
 
 Don't forget to add `required` and the `rules` property to the email field:
@@ -392,7 +392,7 @@ For now, simply copy the regex from the code below:
 emailRules: [
 	(email) => !!email || 'Email is required',
 	(email) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email) || 'Email must be valid',
-];
+]
 ```
 
 Now try to enter any random characters to the email field. You can see this new error because now this field demands a `@` character, a dot and at least 2 characters after the dot. If you try to fill in your own email, you will see that the error disappears.
@@ -405,7 +405,7 @@ Now switch to the `phone` field. Let's create a set of rules very similar to the
 phoneRules: [
 	(phone) => !!phone || 'Phone is required',
 	(phone) => phone.length >= 7 || 'Phone number should be at least 7 digits',
-];
+]
 ```
 
 But as you can guess, you can still enter letters and the phone number is not formatted at all. To fix this, we have to add `vue-the-mask`. First, scroll down in the `Explorer` tab and open the `Dependencies` dropdown. Click on `Add dependency` button and seach for `vue-the-mask`. Install the dependency. vue-the-mask will be added to your `package.json`. We now have installed vue-the-mask but we need to add it to our component as a directive.
