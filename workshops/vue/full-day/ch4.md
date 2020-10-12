@@ -293,7 +293,7 @@ Now let's wrap our favorites icon with the Vuetify `v-badge` component and show 
 <router-link to="/favorites">
 	<v-badge color="grey lighten-1" overlap right v-model="favorites.length">
 		<template #badge>
-			<span>{{favorites.length}}</span>
+			{{favorites.length}}
 		</template>
 		<v-icon large>loyalty</v-icon>
 	</v-badge>
