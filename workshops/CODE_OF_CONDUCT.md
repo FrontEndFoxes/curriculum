@@ -69,7 +69,7 @@ This code of conduct and its related procedures also applies to unacceptable beh
 
 Reach out to us directly at coc@frontendfoxes.org with any questions.
 To report an incident, please us this form: https://forms.gle/RWsQQMbG2rGHG9Wh7
-We abide by our community Accountability Ladder: https://github.com/frontendfoxes/accountability-ladder/blob/master/README.md
+We abide by our community Accountability Ladder: https://github.com/frontendfoxes/accountability-ladder/blob/main/README.md
 
 ## 10. License and attribution
 

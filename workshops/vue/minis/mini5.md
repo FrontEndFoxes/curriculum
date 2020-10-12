@@ -77,7 +77,7 @@ Okay, **still looking for more?** Try moving from the Web Playback SDK to the ðŸ
 
 **Vue Vixens**
 
--   [Vue Vixens Code of Conduct](https://github.com/frontendfoxes/curriculum/blob/master/workshop/CODE_OF_CONDUCT.md)
+-   [Vue Vixens Code of Conduct](https://github.com/frontendfoxes/curriculum/blob/main/workshop/CODE_OF_CONDUCT.md)
 
 **Spotify**
 
