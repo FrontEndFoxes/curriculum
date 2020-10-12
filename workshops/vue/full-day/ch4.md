@@ -292,7 +292,9 @@ Now let's wrap our favorites icon with the Vuetify `v-badge` component and show 
 ```html
 <router-link to="/favorites">
 	<v-badge color="grey lighten-1" overlap right v-model="favorites.length">
-		<span slot="badge">{{favorites.length}}</span>
+		<template #badge>
+			<span>{{favorites.length}}</span>
+		</template>
 		<v-icon large>loyalty</v-icon>
 	</v-badge>
 </router-link>
@@ -411,7 +413,7 @@ methods: {
 ```
 
 ::: tip 💡
-By calling `mapActions` with one parameter, we are defining which actions from our store we want to retrieve. For now we only have `addToFavorites` in this array but in the future we can add more actions as our store grows. You don't always need all actions from your store in one single component. So by passing on this array to `mapActions` we make sure we only get what we need in thhis component. More information can be found [here](https://vuex.vuejs.org/guide/actions.html#dispatching-actions-in-components).
+By calling `mapActions` with one parameter, we are defining which actions from our store we want to retrieve. For now we only have `addToFavorites` in this array but in the future we can add more actions as our store grows. You don't always need all actions from your store in one single component. So by passing on this array to `mapActions` we make sure we only get what we need in this component. More information can be found [here](https://vuex.vuejs.org/guide/actions.html#dispatching-actions-in-components).
 :::
 
 Now we can dispatch `addToFavorites` like a simple component method.
