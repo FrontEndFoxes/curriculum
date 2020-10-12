@@ -293,7 +293,9 @@ computed: {
 ```html
 <router-link to="/favorites">
 	<v-badge color="grey lighten-1" overlap right v-model="favorites.length">
-		<span slot="badge">{{favorites.length}}</span>
+		<template #badge>
+			{{favorites.length}}
+		</template>
 		<v-icon large>loyalty</v-icon>
 	</v-badge>
 </router-link>
