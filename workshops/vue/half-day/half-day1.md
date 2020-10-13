@@ -1105,6 +1105,13 @@ In App.vue, lets bring in the announcement with `role="status"`.
 ```
 
 ```js
+import { mapActions, mapState } from "vuex";
+```
+
+```js
+computed: {
+  ...mapState(["routeAnnouncement"]),
+},
 methods: {
   ...mapActions(["update_routeAnnouncement"]),
   announceRoute(message) {
@@ -1197,7 +1204,7 @@ Add `id="main"` along with aria-label inside the `<main>` tags in Home.vue and I
 <main class="container" v-else id="main" tabindex="-1" aria-labelledby="gameTitle">
       <h2 id="gameTitle">Game Board</h2>
 
-<!-- Inside Home.vue -->
+<!-- Inside Instructions.vue -->
 <main class="main-instruction" id="main" tabindex="-1" aria-labelledby="instructionsTitle">
       <h2 id="instructionsTitle">Instructions</h2>
 ```
