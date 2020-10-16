@@ -18,7 +18,7 @@
 	},
 	"homepage": "https://github.com/frontendfoxes/curriculum/#readme",
 	"dependencies": {
-		"vuepress": "1.5.3"
+		"vuepress": "^1.5.3"
 	},
 	"scripts": {
 		"build": "vuepress build",
