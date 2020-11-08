@@ -3,7 +3,7 @@
 | **Project Goal**            | Build a Harry Potter Movie Quiz                                                                                                                                   |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **What you’ll learn**       | Basics about Vue components, how data binding is done in Vue, and how to perform simple REST API calls                                                                                             |
-| **Tools you’ll need**       | Modern browser like chrome and access to [CodeSandbox](https://codesandbox.io)
+| **Tools you’ll need**       | Modern browser like Chrome. A [GitHub](https://github.com) account which can be used to login to [CodeSandbox](https://codesandbox.io).
 | **Time needed to complete** | 1.5 to 3+ hours (don't stress) |
 | **Just want to try the app?** | [Code Sandbox link](https://codesandbox.io/s/ws-harry-potter-quiz-55ygd)
 
@@ -151,7 +151,7 @@ The last thing to do is to add the component element `<Quiz />` in the template.
 </template>
 ```
 
-At this point you can delete the <HelloWorld> component.
+At this point you can delete the `<HelloWorld>` component.
 
 ### Styling the Quiz
 
@@ -1198,3 +1198,15 @@ You've completed your very first Harry Potter movie quiz app with Vue.js!
 ## Author
 
 Made with ❤️ by Mary Vokicic with support from Ilithya and Steffanie Stoppel
+
+# Appendix 2: Add your CodeSandbox to your Github account.
+
+If you login to CodeSandbox using your GitHub account, you can save your project to a new repository and keep it in sync with CodeSandbox.
+
+## Instructions
+
+Step 1: In CodeSandbox, click the Github icon in the sidebar, and grant permissions if necessary.
+
+Step 2: Enter a name for your repository. 
+
+Step 3: Click create repository.
