@@ -389,6 +389,7 @@ The **Quiz.vue** script block should look like this:
     methods: {
       initQuizStage() {
         this.currentQuestionNumber = 1;
+      }
     }
   };
 </script>
