@@ -4,7 +4,7 @@
 
 Front-End Foxes and its sub-group, Vue Vixens, are initiatives created by Jen Looper, a Cloud Developer Advocate Lead at [Microsoft](http://www.microsoft.com). Our mission is to create workshops to teach Vue.js in a cool and fun way to 'foxy people who identify as women'. We have chapters worldwide; find us at [FrontEndFoxes.org](https://frontendfoxes.org). Front-End Foxes workshops are called 'skulks' because a group of foxes is called a 'skulk'.
 
-These self-driven workshops are designed to help people get better acquainted with front-end technologies for both web and mobile development. Our teaching methodology is explained in [this article](https://dev.to/vuevixens/the-way-of-the-fox-the-vue-vixens-curriculum-290).
+These self-driven workshops are designed to help people get better acquainted with front-end technologies for both web and mobile development. Our teaching methodology is explained in [this article](https://dev.to/frontendfoxes/the-way-of-the-fox-the-vue-vixens-curriculum-290).
 
 ![inaugural skulk in New Orleans](/inaugural_skulk.jpg)
 
@@ -22,8 +22,10 @@ All the online codelabs are designed to be completed in groups in a self-study m
 
 **Where can I register for a skulk?**
 
-Workshop attendees and mentors can register for events at [FrontEndFoxes.org](https://www.frontendfoxes.org). Keep an eye on our Twitter feeds @vuevixens and @frontendfoxes for announcements of upcoming events. Front-End Foxes workshops are free, but depend on budget from conferences and meetups to provide lunch, breakfast, or snacks, and a space with wifi.
+Workshop attendees and mentors can register for events at [FrontEndFoxes.org](https://www.frontendfoxes.org). Keep an eye on our Twitter feeds [@vuevixens](https://twitter.com/VueVixens) and [@frontendfoxes](https://twitter.com/FrontendFoxes) for announcements of upcoming events. Front-End Foxes workshops are free, but depend on budget from conferences and meetups to provide lunch, breakfast, or snacks, and a space with wifi.
 
 **I'm a guy. Can I participate?**
 
 The goal of the program is to familiarize women and those who identify as such with concepts of programming for web and mobile in a supportive and inclusive environment. Experienced developers, however, are very welcome to join in our efforts to organize events, support our scholarship fund, mentor a skulk, and provide content. We are grateful for all kinds of help!
+
+**Want to contribute? Please make sure to check out our [Code of Conduct](CODE_OF_CONDUCT.md).**

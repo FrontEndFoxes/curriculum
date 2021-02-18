@@ -1,14 +1,14 @@
 # 📋 Kapitel 3: Anbindung einer API
 
-| **Ziel**                   | Lerne, wie API-Aufrufe funktionieren und wie sie in einer Webapp genutzt werden können.                                                                                                                                                                                                                |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Was du lernen wirst**    | Verwendung der [DogCEO API](https://dog.ceo/dog-api/) zum dynamischen Laden von Hundebildern anstelle von Dummy-Daten.                                                                                                                                                                                 |
-| **Was du dafür benötigst** | Einen modernen Browser, z.B. Google Chrome. Einen Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von [hier](https://github.com/VueVixens/projects/tree/master/chapter-2-end) importieren. Wie das geht, steht im [Anhang 1](appendix_1.md) |
-| **Dauer**                  | 1 Stunde                                                                                                                                                                                                                                                                                               |
+| **Ziel**                   | Lerne, wie API-Aufrufe funktionieren und wie sie in einer Webapp genutzt werden können.                                                                                                                                                                                                                  |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Was du lernen wirst**    | Verwendung der [DogCEO API](https://dog.ceo/dog-api/) zum dynamischen Laden von Hundebildern anstelle von Dummy-Daten.                                                                                                                                                                                   |
+| **Was du dafür benötigst** | Einen modernen Browser, z.B. Google Chrome. Einen Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von [hier](https://github.com/FrontEndFoxes/projects/tree/main/chapter-2-end) importieren. Wie das geht, steht im [Anhang 1](appendix_1.md) |
+| **Dauer**                  | 1 Stunde                                                                                                                                                                                                                                                                                                 |
 
 ## Anleitung
 
-Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-1-end) in Code Sandbox, nachdem du dich eingeloggt hast. Dafür klickst du auf den Link **Import form Github** unten links auf der Hauptseite und fügst die URL des Repositories in das Feld. Du kannst ebenfalls mit dem Projekt fortfahren, dass du in [Kapitel 2](ch2.md) erstellt hast.
+Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/FrontEndFoxes/projects/tree/main/chapter-1-end) in Code Sandbox, nachdem du dich eingeloggt hast. Dafür klickst du auf den Link **Import form Github** unten links auf der Hauptseite und fügst die URL des Repositories in das Feld. Du kannst ebenfalls mit dem Projekt fortfahren, dass du in [Kapitel 2](ch2.md) erstellt hast.
 
 Bisher haben wir Hundebilder über eine statische JSON-Datei, die wir in eine Komponente importiert haben, angezeigt. Für Demozwecke ist das sehr nützlich. In produktiven Anwendungen werden meistens Echtdaten genutzt, die entweder von internen Datenquellen oder einer API geliefert werden. Wir werden eine externe API dafür nutzen.
 
@@ -25,13 +25,13 @@ Zuerst musst du Axios den Projekt-Abhängigkeiten hinzufügen. Dafür klicke in 
 Importiere Axios in der Komponenten, in der der API-Aufruf gemacht werden soll - `views/Pets.vue`. Kopiere folgende Zeile in den `<script>`-Block dieser Komponente:
 
 ```js
-import axios from "axios";
+import axios from 'axios';
 ```
 
 Alle Aufrufe werde die gleiche Basis-URL mit verschiedenen Endpunkten nutzen. Konfiguriere direkt unter allen Imports, dem Axios-Import und möglichen anderen, die Basis-URL:
 
 ```js
-axios.defaults.baseURL = "https://dog.ceo/api";
+axios.defaults.baseURL = 'https://dog.ceo/api';
 ```
 
 Mit dieser Zeile haben wir Axios so konfiguriert, dass jeder API-Aufruf mit der URL `https://dog.ceo/api` beginnen wird. Jetzt können wir den ersten API-Aufruf machen.
@@ -58,13 +58,13 @@ In dem neuen Hook werden wir nun die API aufrufen. Für eine GET-Anfrage (=reque
 
 ```js
 axios
-  .get("/breed/husky/images/random")
-  .then(response => {
-    console.log(response);
-  })
-  .catch(error => {
-    console.log(error);
-  });
+	.get('/breed/husky/images/random')
+	.then((response) => {
+		console.log(response);
+	})
+	.catch((error) => {
+		console.log(error);
+	});
 ```
 
 Sieh dir in der Browseransicht von Code Sandbox die Seite an und wechsel auf die Pets-Seite. In der Konsole solltest du eine Ausgabe sehen. Untersuche das Objekt indem du auf den kleinen Pfeil an der linken Seite klickst. Suche das `data`-Feld. Hier siehst du (hoffentlich) den Status `success` und eine Nachricht (=message) mit einer URL zu einem Bild. Du kannst dir diese URL kopieren und in einem neuen Browserfenster aufrufen, es sollte dir ein Bild von einem Husky anzeigen.
@@ -74,7 +74,7 @@ Sieh dir in der Browseransicht von Code Sandbox die Seite an und wechsel auf die
 Wir wollen das Husky-Bild durch ein neues ersetzen. Zuerst müssen wir in der Liste der Hunde einen Husky finden. Dafür nutzen wir die `Array.find`-Methode. Es durchsucht die `dogs`-Liste, die wir bereits von `data/dogs.js` in die Komponente laden, bis es ein Element findet, dass die angegebene Bedingung erfüllt. In unserem Fall soll die Art (`breed`) dem Wert `husky` entsprechen. Ersetze die Zeile mit `console.log()` im `then`-Abschnitt des Axios-Aufrufs mit diesen Zeilen:
 
 ```js
-const husky = this.dogs.find(dog => dog.breed === "husky");
+const husky = this.dogs.find((dog) => dog.breed === 'husky');
 console.log(husky);
 ```
 
@@ -97,9 +97,7 @@ Die `map()`-Methode erzeugt eine neue Liste. Die Elemente dieser Liste entstehen
 Überschreibe den Code in `created()`...`.then`, um die neue Liste zu bestimmen:
 
 ```js
-const linksArray = this.dogs.map(
-  dog => "/breed/" + dog.breed + "/images/random"
-);
+const linksArray = this.dogs.map((dog) => '/breed/' + dog.breed + '/images/random');
 ```
 
 Wir nehmen die Art von jedem Hund in der Liste und fügen sie in den Endpunkt ein. (Zuvor haben wir den gleichen Endpunkt genutzt, nur mit `husky`, statt dem wechselnden Wert der Hundeart.)
@@ -134,8 +132,8 @@ Ein Problem gibt es noch: Wenn wir die Seite aufrufen, sehen wir für einen kurz
 Kopiere diesen Teil an die erste Stelle in den `created()`-Hook:
 
 ```js
-this.dogs.forEach(dog => {
-  dog.img = "";
+this.dogs.forEach((dog) => {
+	dog.img = '';
 });
 ```
 

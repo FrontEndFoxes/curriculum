@@ -1,11 +1,11 @@
 # 🖥️ 1: Build A Simple Pet Fetching Web App
 
-| **Project&nbsp;Goal**           | Get started with Vue.js basics and simple API calls                                                                                                                       |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **What&nbsp;you’ll&nbsp;learn** | Setting up your Vue app, components basics, performing simple REST API calls using Axios                                                                                  |
-| **Tools&nbsp;you’ll need**      | A modern browser like Chrome. Access to [CodeSandbox](https://codesandbox.io) - be sure to create an account in the CodeSandbox to keep the versions of your work intact. |
-| **Time needed to complete**     | 1 hour                                                                                                                                                                    |
-| **Just want to try the app?**   | [CodeSandbox link](https://codesandbox.io/s/web-1-mini-workshop-koj8w)                                                                                                    |
+| **Project&nbsp;Goal**           | Get started with Vue.js basics and simple API calls                                                                                       |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **What&nbsp;you’ll&nbsp;learn** | Setting up your Vue app, components basics, performing simple REST API calls using Axios                                                  |
+| **Tools you’ll need**           | A modern browser like Chrome. A [GitHub](https://github.com) account which can be used to login to [CodeSandbox](https://codesandbox.io). |
+| **Time needed to complete**     | 1 hour                                                                                                                                    |
+| **Just want to try the app?**   | [CodeSandbox link](https://codesandbox.io/s/web-1-mini-workshop-koj8w)                                                                    |
 
 # Instructions
 
@@ -23,7 +23,7 @@ Take a look at the code that was scaffolded by CodeSandbox for a basic Vue.js ap
 
 ```js
 new Vue({
-	render: h => h(App),
+	render: (h) => h(App),
 }).$mount('#app');
 ```
 
@@ -52,7 +52,7 @@ h1 {
 .dogs-layout {
   width: 100%;
   background: #fff center repeat;
-  background-image: url("https://github.com/VueVixens/projects/blob/master/petshop/images/bg3.jpg?raw=true");
+  background-image: url("https://github.com/FrontEndFoxes/projects/blob/main/petshop/images/bg3.jpg?raw=true");
 }
 
 .dogs-overlay {
@@ -84,6 +84,10 @@ Notice we don't use `<scoped>` as part of the style block. The 'scoped' keyword 
 This style block uses a path to an external image hosted on Github, rather than to a relative path. This is because CodeSandbox doesn't host images easily; normally you'd just add an image on a relative path such as `/images/myImage.png`.
 
 Adding the stylesheet didn't do much to our template except break the existing styles. Let's fix the template!
+
+::: warning ☕️ Take a break! ☕️
+Now's a great time to join a breakout room if you're joining us on Zoom!
+:::
 
 ## Install Vuetify
 
@@ -134,7 +138,7 @@ Then, change the Vue initialization at the bottom of `main.js` to this:
 ```js
 new Vue({
 	vuetify,
-	render: h => h(App),
+	render: (h) => h(App),
 }).$mount('#app');
 ```
 
@@ -157,7 +161,7 @@ Then, overwrite the current template in `App.vue` with this markup:
 ```html
 <template>
 	<v-app>
-		<v-content class="dogs-layout">
+		<v-main class="dogs-layout">
 			<v-container fill-height>
 				<div class="dogs-overlay">
 					<h1 class="display-2 text-xs-center">Choose your favorite dogs</h1>
@@ -175,7 +179,7 @@ Then, overwrite the current template in `App.vue` with this markup:
 					</v-card>
 				</div>
 			</v-container>
-		</v-content>
+		</v-main>
 	</v-app>
 </template>
 ```
@@ -235,6 +239,10 @@ The `v-bind` directive dynamically binds one or more attributes, or a component 
 :::
 
 Great! Now it's time to load some dogs from an API!
+
+::: warning ☕️ Take a break! ☕️
+Now's a great time to join a breakout room if you're joining us on Zoom!
+:::
 
 ## Add Axios
 
@@ -299,10 +307,10 @@ To perform a GET request Axios uses the `axios.get` method. The result will be a
 ```js
 axios
 	.get('https://dog.ceo/api/breeds/image/random')
-	.then(response => {
+	.then((response) => {
 		console.log(response);
 	})
-	.catch(error => {
+	.catch((error) => {
 		console.log(error);
 	});
 ```
@@ -330,6 +338,10 @@ created() {
 ```
 
 Now after clicking the refresh button in the browser window, you should see an object in your console. Drill into it by clicking its left-hand arrow. We are interested in its `data` field. You can see we have a status `success` and a message with an image URL.
+
+::: warning ☕️ Take a break! ☕️
+Now's a great time to join a breakout room if you're joining us on Zoom!
+:::
 
 ## Use the API
 
@@ -429,6 +441,10 @@ One thing left to do is to bind `pet` (which will be the image link) to the `src
 
 Now it's time to like some dogs 💖🐶!
 
+::: warning ☕️ Take a break! ☕️
+Now's a great time to join a breakout room if you're joining us on Zoom!
+:::
+
 ## Adding Dogs to Favorites
 
 We will create a new method called `addToFavorites`. It will add the value of `currentDogLink` to the `favoriteDogs` array (JavaScript has a `push` array method for this purpose). Let's place it after the `loadNewDog` one _(don't miss the comma!)_
@@ -518,6 +534,14 @@ Don't forget to pass `index` to the `removeFromFavorites` method! When we don't 
 Try to add and remove some dogs from favorites. IT WORKS!
 
 **🎊Congratulations, you've finished the base project!🎊**
+
+## Push your work to a repository on your GitHub account
+
+**Step 1**: In CodeSandbox, click the Github icon in the sidebar, and grant permissions if necessary.
+
+**Step 2**: Enter a name for your repository.
+
+**Step 3**: Click create repository.
 
 ## Supplement 1: Creating a Dog Component
 

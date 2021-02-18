@@ -2,7 +2,7 @@
 
 Keine Sorge! Zu Beginn jedes Kapitels steht ein Link, mit dem du eine neue Code Sandbox starten kannst. Mit der folgenden Anleitung kannst du eine neue Sandbox über den Github-Link erstellen:
 
-Die Links zu allen Kapiteln findest du [hier](https://github.com/VueVixens/projects) - kopiere die URL von dem Kapitel, ab welchem du das Projekt neu beginnen möchtest. Der Link für das Kapitel 1 ist z.B. [https://github.com/VueVixens/projects/tree/master/chapter-1-end](https://github.com/VueVixens/projects/tree/master/chapter-1-end).
+Die Links zu allen Kapiteln findest du [hier](https://github.com/FrontEndFoxes/projects) - kopiere die URL von dem Kapitel, ab welchem du das Projekt neu beginnen möchtest. Der Link für das Kapitel 1 ist z.B. [https://github.com/FrontEndFoxes/projects/tree/main/chapter-1-end](https://github.com/FrontEndFoxes/projects/tree/main/chapter-1-end).
 
 ::: tip 💡
 Stelle zuerst sicher, dass du in CodeSandbox.io eingeloggt bist, damit deine neue Sandbox in deinem Account erstellt wird.

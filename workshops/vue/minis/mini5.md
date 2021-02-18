@@ -73,21 +73,21 @@ Okay, **still looking for more?** Try moving from the Web Playback SDK to the ðŸ
 
 **Slides**
 
-- [Deck from Vue.js London 2019](https://docs.google.com/presentation/d/15aACMcHrUJWn1jpauRY3Jf6KDL2KrDWsoRAu-xqNeBg/edit?usp=sharing)
+-   [Deck from Vue.js London 2019](https://docs.google.com/presentation/d/15aACMcHrUJWn1jpauRY3Jf6KDL2KrDWsoRAu-xqNeBg/edit?usp=sharing)
 
 **Vue Vixens**
 
-- [Vue Vixens Code of Conduct](https://github.com/VueVixens/docs/blob/master/workshop/CODE_OF_CONDUCT.md)
+-   [Vue Vixens Code of Conduct](https://github.com/frontendfoxes/curriculum/blob/main/workshop/CODE_OF_CONDUCT.md)
 
 **Spotify**
 
-- [Web Playback SDK Quick Start](https://developer.spotify.com/documentation/web-playback-sdk/quick-start/)
-- [Web Playback SDK Reference](https://developer.spotify.com/documentation/web-playback-sdk/reference/)
+-   [Web Playback SDK Quick Start](https://developer.spotify.com/documentation/web-playback-sdk/quick-start/)
+-   [Web Playback SDK Reference](https://developer.spotify.com/documentation/web-playback-sdk/reference/)
 
 **Vue Composition API**
 
-- [RFC](https://vue-composition-api-rfc.netlify.com/)
-- [API Reference](https://vue-composition-api-rfc.netlify.com/api.html)
+-   [RFC](https://vue-composition-api-rfc.netlify.com/)
+-   [API Reference](https://vue-composition-api-rfc.netlify.com/api.html)
 
 ## Author
 

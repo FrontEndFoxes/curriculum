@@ -28,7 +28,8 @@ module.exports = {
 		},
 	},
 	themeConfig: {
-		repo: 'vuevixens/docs',
+		repo: 'frontendfoxes/curriculum/',
+		docsBranch: 'main',
 		editLinks: true,
 		// custom text for edit link. Defaults to "Edit this page"
 		editLinkText: 'Help us improve this page!',
@@ -69,6 +70,7 @@ module.exports = {
 								'/workshops/vue/full-day/ch4',
 								'/workshops/vue/full-day/ch5',
 								'/workshops/vue/full-day/appendix_1',
+								'/workshops/vue/full-day/appendix_2',
 							],
 						},
 						{
@@ -134,6 +136,10 @@ module.exports = {
 				selectText: '言語',
 				label: '日本語',
 				sidebar: [
+					{
+						title: '🐶 フルデイワークショップ',
+						children: ['/jp/workshops/vue/full-day/ch4'],
+					},
 					{
 						title: '🦴ミニワークショップ',
 						children: [

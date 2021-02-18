@@ -3,7 +3,7 @@
 | **Project&nbsp;Goal**           | Learn how API calls work and how to implement them in your web app                                                                                                                                                                                                   |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **What&nbsp;you’ll&nbsp;learn** | Using the [DogCEO API](https://dog.ceo/dog-api/) you will load dog images dynamically, instead of using dummy data                                                                                                                                                   |
-| **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome. An account in CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/FrontEndFoxes/projects/tree/main/chapter-2-end). Instructions on how to do this are in [Appendix 1](appendix_1.md) |
+| **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome. An account in CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/frontendfoxes/projects/tree/main/chapter-2-end). Instructions on how to do this are in [Appendix 1](appendix_1.md) |
 | **Time needed to complete**     | 1 hour                                                                                                                                                                                                                                                               |
 
 ## What You'll Build
@@ -12,7 +12,7 @@
 
 ## Instructions
 
-If you need to restart your project, clone [this repo](https://github.com/FrontEndFoxes/projects/tree/main/chapter-2-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields. You can also continue with the project you've created in [chapter 2](ch2.md).
+If you need to restart your project, clone [this repo](https://github.com/frontendfoxes/projects/tree/main/chapter-2-end) into Code Sandbox by clicking on the **Import from GitHub** link on the bottom left of the main page, and then pasting the repo's url into the fields. You can also continue with the project you've created in [chapter 2](ch2.md).
 
 So far, we have placed images of dogs onto our screens via some static JSON data that we imported into a component. That's great for demo purposes, but in real life, you're almost always going to build web apps that consume real data that's coming from either your own data sources, or externally, from somewhere on the internet. Let's learn how to consume third-party data.
 

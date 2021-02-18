@@ -1,11 +1,11 @@
 # 🖥️ 1 : Créer une petite application Web de récupération d'images d'animaux de compagnie
 
-| **But du projet**           | Démarrer avec les bases de Vue.js et les appels API simples                                                                                                                       |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Ce que vous apprendrez** | Configuration de votre application Vue, principes de base des composants, exécution d'appels API REST simples à l'aide d'Axios                                                                                  |
-| **Outils dont vous aurez besoin**      | Un navigateur moderne comme Chrome. Un accès à [CodeSandbox](https://codesandbox.io) (assurez-vous de créer un compte dans CodeSandbox pour garder les versions de votre travail intactes.) |
-| **Temps nécessaire pour terminer**     | 1 heure                                                                                                                                                                    |
-| **Vous voulez juste essayer l'application ?**   | [lien vers CodeSandbox](https://codesandbox.io/s/web-1-mini-workshop-koj8w)                                                                                                    |
+| **But du projet**                             | Démarrer avec les bases de Vue.js et les appels API simples                                                                                                                                 |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Ce que vous apprendrez**                    | Configuration de votre application Vue, principes de base des composants, exécution d'appels API REST simples à l'aide d'Axios                                                              |
+| **Outils dont vous aurez besoin**             | Un navigateur moderne comme Chrome. Un accès à [CodeSandbox](https://codesandbox.io) (assurez-vous de créer un compte dans CodeSandbox pour garder les versions de votre travail intactes.) |
+| **Temps nécessaire pour terminer**            | 1 heure                                                                                                                                                                                     |
+| **Vous voulez juste essayer l'application ?** | [lien vers CodeSandbox](https://codesandbox.io/s/web-1-mini-workshop-koj8w)                                                                                                                 |
 
 # Instructions
 
@@ -23,7 +23,7 @@ Jetez un œil au code qui a été créé par CodeSandbox pour une application de
 
 ```js
 new Vue({
-	render: h => h(App),
+	render: (h) => h(App),
 }).$mount('#app');
 ```
 
@@ -52,7 +52,7 @@ h1 {
 .dogs-layout {
   width: 100%;
   background: #fff center repeat;
-  background-image: url("https://github.com/VueVixens/projects/blob/master/petshop/images/bg3.jpg?raw=true");
+  background-image: url("https://github.com/FrontEndFoxes/projects/blob/main/petshop/images/bg3.jpg?raw=true");
 }
 
 .dogs-overlay {
@@ -84,6 +84,10 @@ Notez que nous n'utilisons pas `<scoped>` dans le bloc de style. Le mot clé 'sc
 Ce bloc de style utilise un chemin vers une image externe hébergée sur Github, plutôt que vers un chemin relatif. En effet, CodeSandbox n'héberge pas facilement les images ; normalement, vous ajouteriez simplement une image sur un chemin relatif tel que `/images/monImage.png`.
 
 L'ajout de la feuille de style n'a pas fait grand-chose à notre template, à part casser les styles existants. Corrigeons le !
+
+::: warning ☕️ Pause! ☕️
+C'est un bon moment de rejoindre un 'breakout room' sur Zoom!
+:::
 
 ## Installer Vuetify
 
@@ -134,7 +138,7 @@ Ensuite, modifiez l'initialisation de Vue en bas de `main.js` comme ceci :
 ```js
 new Vue({
 	vuetify,
-	render: h => h(App),
+	render: (h) => h(App),
 }).$mount('#app');
 ```
 
@@ -157,7 +161,7 @@ Ensuite, écrasez le template actuel dans `App.vue` avec ce code :
 ```html
 <template>
 	<v-app>
-		<v-content class="dogs-layout">
+		<v-main class="dogs-layout">
 			<v-container fill-height>
 				<div class="dogs-overlay">
 					<h1 class="display-2 text-xs-center">Choisissez vos chiens préférés</h1>
@@ -175,7 +179,7 @@ Ensuite, écrasez le template actuel dans `App.vue` avec ce code :
 					</v-card>
 				</div>
 			</v-container>
-		</v-content>
+		</v-main>
 	</v-app>
 </template>
 ```
@@ -183,7 +187,7 @@ Ensuite, écrasez le template actuel dans `App.vue` avec ce code :
 Votre application devrait s'être actualisée (si ce n'est pas le cas, utilisez le bouton d'actualisation dans la barre d'adresse d'aperçu de l'application). Wow, cela a fait un sacré changement !
 
 ::: tip 💡
-Notez l'utilisation de `<v-app>` dans ce code, c'est un pré-requis de Vuetify et c'est un signe certain que vous aurez une application faite avec Vuetify. Nous utilisons également un tas d'éléments de présentation Vuetify comme `v-container` et des composants d'interface utilisateur comme` v-card` et `v-btn`.
+Notez l'utilisation de `<v-app>` dans ce code, c'est un pré-requis de Vuetify et c'est un signe certain que vous aurez une application faite avec Vuetify. Nous utilisons également un tas d'éléments de présentation Vuetify comme `v-container` et des composants d'interface utilisateur comme`v-card` et `v-btn`.
 :::
 
 ## Ajouter des données
@@ -214,7 +218,7 @@ export default {
 À ce stade, vous pouvez supprimer le fichier `HelloWorld.vue` du dossier `components` car nous n'en aurons pas besoin. Cliquez avec le bouton droit sur le fichier dans CodeSandbox et cliquez sur « delete ».
 :::
 
-Vous avez maintenant une variable appelée `currentDogLink` et sa valeur par défaut est une chaîne vide. Nous utiliserons cette variable pour fournir un lien vers l'image de chien dans `v-img`. Tout d'abord, nous allons définir la valeur de `currentDogLink` en écrasant le bloc de données que nous venons d'ajouter dans` App.vue` :
+Vous avez maintenant une variable appelée `currentDogLink` et sa valeur par défaut est une chaîne vide. Nous utiliserons cette variable pour fournir un lien vers l'image de chien dans `v-img`. Tout d'abord, nous allons définir la valeur de `currentDogLink` en écrasant le bloc de données que nous venons d'ajouter dans`App.vue` :
 
 ```js
 data() {
@@ -224,7 +228,7 @@ data() {
 }
 ```
 
-Maintenant, nous devons modifier le template pour rendre la propriété `src` _dynamique_ afin qu'elle puisse utiliser la valeur de la variable que nous venons de créer ci-dessus. Pour ce faire, nous avons besoin d'une directive `v-bind` ou de son raccourci `:`. Encore une fois dans `App.vue`, modifiez la balise` <v-img> `pour supprimer sa valeur codée en dur :
+Maintenant, nous devons modifier le template pour rendre la propriété `src` _dynamique_ afin qu'elle puisse utiliser la valeur de la variable que nous venons de créer ci-dessus. Pour ce faire, nous avons besoin d'une directive `v-bind` ou de son raccourci `:`. Encore une fois dans `App.vue`, modifiez la balise`<v-img>`pour supprimer sa valeur codée en dur :
 
 ```html
 <v-img height="400px" :src="currentDogLink"></v-img>
@@ -235,6 +239,10 @@ La directive `v-bind` lie dynamiquement un ou plusieurs attributs, ou une propri
 :::
 
 Génial ! Il est maintenant temps de charger des images de chiens depuis une API !
+
+::: warning ☕️ Pause! ☕️
+C'est un bon moment de rejoindre un 'breakout room' sur Zoom!
+:::
 
 ## Ajouter Axios
 
@@ -299,10 +307,10 @@ Pour effectuer une requête GET, Axios utilise la méthode `axios.get`. Le résu
 ```js
 axios
 	.get('https://dog.ceo/api/breeds/image/random')
-	.then(response => {
+	.then((response) => {
 		console.log(response);
 	})
-	.catch(error => {
+	.catch((error) => {
 		console.log(error);
 	});
 ```
@@ -330,6 +338,10 @@ created() {
 ```
 
 Maintenant, après avoir cliqué sur le bouton actualiser dans la fenêtre du navigateur, vous devriez voir un objet dans votre console. Explorez-le en cliquant sur sa flèche gauche. Nous sommes intéressés par son champ `data`. Vous pouvez voir que nous avons un statut `success` et un message avec l'URL d'une image.
+
+::: warning ☕️ Pause! ☕️
+C'est un bon moment de rejoindre un 'breakout room' sur Zoom!
+:::
 
 ## Utiliser l'API
 
@@ -421,7 +433,7 @@ Pour parcourir correctement votre tableau de chiens favoris et en ajouter un aut
 
 Vous pouvez voir que notre carte vide a disparu. C'est normal ! Nous avons un tableau vide `favoriteDogs`, donc il n'y a tout simplement rien à afficher pour le moment.
 
-Une chose qui reste à faire est de lier `pet` (qui sera le lien de l'image) à la propriété` src` du composant `v-img` dans les cartes que vous construisez :
+Une chose qui reste à faire est de lier `pet` (qui sera le lien de l'image) à la propriété`src` du composant `v-img` dans les cartes que vous construisez :
 
 ```html
 <v-img height="150px" :src="pet"></v-img>
@@ -429,9 +441,13 @@ Une chose qui reste à faire est de lier `pet` (qui sera le lien de l'image) à 
 
 Il est maintenant temps de mettre en favoris certains chiens 💖🐶 !
 
+::: warning ☕️ Pause! ☕️
+C'est un bon moment de rejoindre un 'breakout room' sur Zoom!
+:::
+
 ## Ajout aux favoris
 
-Nous allons créer une nouvelle méthode appelée `addToFavorites`. Elle ajoutera la valeur de `currentDogLink` au tableau` favoriteDogs` (JavaScript a une méthode de tableau `push` prévue à cet effet). Plaçons-la après `loadNewDog` (n'oubliez pas la virgule !) :
+Nous allons créer une nouvelle méthode appelée `addToFavorites`. Elle ajoutera la valeur de `currentDogLink` au tableau`favoriteDogs` (JavaScript a une méthode de tableau `push` prévue à cet effet). Plaçons-la après `loadNewDog` (n'oubliez pas la virgule !) :
 
 ```js
 addToFavorites() {
@@ -463,7 +479,7 @@ Ajoutons l'objet `computed` juste après le hook `created()` (n'oubliez pas la v
   }
 ```
 
-Toute propriété calculée doit être une fonction renvoyant le résultat des calculs. Vérifions l'index de `currentDogLink` à l'intérieur du tableau `favoriteDogs`. Si elle est supérieure à -1 (en d'autres termes si le tableau contient un tel élément), la fonction renverra `true`, sinon elle renverra` false` :
+Toute propriété calculée doit être une fonction renvoyant le résultat des calculs. Vérifions l'index de `currentDogLink` à l'intérieur du tableau `favoriteDogs`. Si elle est supérieure à -1 (en d'autres termes si le tableau contient un tel élément), la fonction renverra `true`, sinon elle renverra`false` :
 
 ```js
 computed: {
@@ -512,7 +528,7 @@ Maintenant, nous devons lier cette nouvelle méthode au bouton « Supprimer » :
 ```
 
 ::: tip 💡
-N'oubliez pas de passer `index` à la méthode` removeFromFavorites` ! Lorsque nous ne transmettons aucun paramètre, nous pouvons simplement ignorer les parenthèses comme nous l'avons fait pour la méthode `addToFavorites`.
+N'oubliez pas de passer `index` à la méthode`removeFromFavorites` ! Lorsque nous ne transmettons aucun paramètre, nous pouvons simplement ignorer les parenthèses comme nous l'avons fait pour la méthode `addToFavorites`.
 :::
 
 Essayez d'ajouter et de supprimer certains chiens de vos favoris. ÇA FONCTIONNE !
@@ -544,20 +560,22 @@ Les props sont des attributs personnalisables que vous pouvez enregistrer dans u
 Ajoutons une option `props` à notre composant `Dog.vue`. Tout d'abord, nous devons créer une déclaration d'exportation à l'intérieur de notre balise `script` (donc plus tard, nous pourrons importer notre composant `Dog` à l'intérieur de `App`). Ajoutez ce bloc de code à `Dog.vue` :
 
 ```html
-<script>export default {}</script>
+<script>
+	export default {};
+</script>
 ```
 
 Maintenant, nous pouvons ajouter une option `props` à cet objet et une propriété `dog`:
 
 ```html
 <script>
-  export default {
-    props: {
-      dog: {
-        type: String
-      }
-    }
-  };
+	export default {
+		props: {
+			dog: {
+				type: String,
+			},
+		},
+	};
 </script>
 ```
 
@@ -579,7 +597,7 @@ Dans notre template dans `Dog.vue`, nous devons remplacer `pet` par `dog`, car n
 </template>
 ```
 
-Revenons maintenant à notre composant `App.vue` et apportons quelques modifications. Tout d'abord, nous devons importer notre composant `Dog` nouvellement créé dans `App.vue`. Ajoutez ce code avant l'instruction `export default` dans le bloc` <script>` :
+Revenons maintenant à notre composant `App.vue` et apportons quelques modifications. Tout d'abord, nous devons importer notre composant `Dog` nouvellement créé dans `App.vue`. Ajoutez ce code avant l'instruction `export default` dans le bloc`<script>` :
 
 ```js
 import Dog from './components/Dog';
@@ -649,7 +667,7 @@ Vue fournit un composant wrapper `transition`, vous permettant d'ajouter des tra
 -   Affichage conditionnel (en utilisant `v-show`)
 -   Composants dynamiques
 -   Nœuds racine des composants
-:::
+    :::
 
 Essayons d'animer l'image de chien actuelle. Tout d'abord, nous devons lui ajouter une directive `v-if` pour fournir le contexte approprié pour la future transition. Dans `App.vue`, modifiez la carte principale :
 
@@ -657,7 +675,7 @@ Essayons d'animer l'image de chien actuelle. Tout d'abord, nous devons lui ajout
 <v-img v-if="currentDogLink" height="400px" :src="currentDogLink"></v-img>
 ```
 
-Mais maintenant, `currentDogLink` retournera toujours `true` ! Mettons la chaîne à vide à chaque fois que nous cliquons sur le bouton « Suivant », donc avant que l'image suivante ne soit chargée, `currentDogLink` retournera` false` :
+Mais maintenant, `currentDogLink` retournera toujours `true` ! Mettons la chaîne à vide à chaque fois que nous cliquons sur le bouton « Suivant », donc avant que l'image suivante ne soit chargée, `currentDogLink` retournera`false` :
 
 ```js
 loadNewDog() {
@@ -668,7 +686,7 @@ loadNewDog() {
 },
 ```
 
-Vous pouvez maintenant observer cet effet laid : l'image disparaît à chaque fois que l'utilisateur clique sur « Suivant ». Nous allons corriger cela avec l'effet d'animation de fondu. Enveloppons le `v-img` dans une balise `<transition> `et mettons un attribut nom avec comme valeur `fade`.
+Vous pouvez maintenant observer cet effet laid : l'image disparaît à chaque fois que l'utilisateur clique sur « Suivant ». Nous allons corriger cela avec l'effet d'animation de fondu. Enveloppons le `v-img` dans une balise `<transition>`et mettons un attribut nom avec comme valeur `fade`.
 
 ```html
 <transition name="fade">
@@ -695,7 +713,7 @@ Les classes `.fade-enter-active` et `.fade-Leave-active` seront les endroits où
 
 Vous pouvez maintenant voir que l'image du chien a un bel effet de fondu lorsque vous cliquez sur « Suivant » !
 
-Ajoutons également quelques effets à notre grille de favoris. Pour animer la liste rendue avec `v-for`, Vue utilise la balise` transition-group`.
+Ajoutons également quelques effets à notre grille de favoris. Pour animer la liste rendue avec `v-for`, Vue utilise la balise`transition-group`.
 
 ::: tip 💡
 Contrairement à `<transition>`, `transition-group` rend un élément réel : une balise `<span>` par défaut. Vous pouvez modifier l'élément rendu avec l'attribut tag.

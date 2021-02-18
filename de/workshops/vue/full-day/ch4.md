@@ -1,14 +1,14 @@
 # 📋 Kapitel 4: Eine Merkliste erstellen
 
-| **Ziel**                   | Programmiere eine Favoriten-Funktion, so dass du Hunde einer Merkliste hinzufügen oder entfernen kannst.                                                                                                                                                                                             |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Was du lernen wirst**    | Zustandsmanagement in einer Vue-Anwendung mit Vuex                                                                                                                                                                                                                                                   |
-| **Was du dafür benötigst** | Einen modernen Browser, z.B. Google Chrome. Ein Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von [hier](https://github.com/VueVixens/projects/tree/master/chapter-3-end) importieren. Wie das geht, steht im [Anhang 1](appendix_1.md) |
-| **Dauer**                  | 1 1/2 Stunden                                                                                                                                                                                                                                                                                        |
+| **Ziel**                   | Programmiere eine Favoriten-Funktion, so dass du Hunde einer Merkliste hinzufügen oder entfernen kannst.                                                                                                                                                                                               |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Was du lernen wirst**    | Zustandsmanagement in einer Vue-Anwendung mit Vuex                                                                                                                                                                                                                                                     |
+| **Was du dafür benötigst** | Einen modernen Browser, z.B. Google Chrome. Ein Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von [hier](https://github.com/FrontEndFoxes/projects/tree/main/chapter-3-end) importieren. Wie das geht, steht im [Anhang 1](appendix_1.md) |
+| **Dauer**                  | 1 1/2 Stunden                                                                                                                                                                                                                                                                                          |
 
 ## Anleitung
 
-Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/VueVixens/projects/tree/master/chapter-1-end) in Code Sandbox, nachdem du dich eingeloggt hast. Dafür klickst du auf den Link **Import form Github** unten links auf der Hauptseite und fügst die URL des Repositories in das Feld. Du kannst ebenfalls mit dem Projekt fortfahren, dass du in [Kapitel 3](ch3.md) erstellt hast.
+Falls du das Projekt von vorn beginnen musst, klone [dieses Projekt](https://github.com/FrontEndFoxes/projects/tree/main/chapter-1-end) in Code Sandbox, nachdem du dich eingeloggt hast. Dafür klickst du auf den Link **Import form Github** unten links auf der Hauptseite und fügst die URL des Repositories in das Feld. Du kannst ebenfalls mit dem Projekt fortfahren, dass du in [Kapitel 3](ch3.md) erstellt hast.
 
 In diesem Kapitel bauen wir eine Merkliste für Hunde, die wir mögen und vielleicht adoptieren möchten.
 Zuerst benötigen wir eine neue, leere Datei im `views`-Ordner namens `Favorites.vue`.
@@ -20,9 +20,9 @@ Schreibe in den `template`-Tag ein `<div></div>`-Tag und darin den Text 'My Favo
 
 ```html
 <template>
-  <div>
-    My Favorites
-  </div>
+	<div>
+		My Favorites
+	</div>
 </template>
 ```
 
@@ -31,7 +31,7 @@ Jetzt müssen wir diese neue Komponente mit dem Router verknüpfen.
 Gehe in die `main.js`-Datei und füge einen weiteren Import nach `Home` und `Pets` hinzu:
 
 ```js
-import Favorites from "./views/Favorites";
+import Favorites from './views/Favorites';
 ```
 
 Füge danach die neue Route den `routes` hinzu:
@@ -47,7 +47,7 @@ Lass uns einen Link zu der Liste der Navigation hinzufügen. Später zeigen wir 
 ```html
 <v-spacer></v-spacer>
 <router-link to="/favorites">
-  <v-icon large>loyalty</v-icon>
+	<v-icon large>loyalty</v-icon>
 </router-link>
 ```
 
@@ -61,7 +61,7 @@ Jetzt erstellen wir das Template für die `Favorites`-Komponente. Dafür nutzen 
 
 ```html
 <div>
-  <v-list> </v-list>
+	<v-list> </v-list>
 </div>
 ```
 
@@ -69,9 +69,9 @@ Die Liste braucht noch einen Namen. Dafür können wir die `v-subheader`-Kompone
 
 ```html
 <div>
-  <v-list>
-    <v-subheader>My Favorites</v-subheader>
-  </v-list>
+	<v-list>
+		<v-subheader>My Favorites</v-subheader>
+	</v-list>
 </div>
 ```
 
@@ -85,18 +85,18 @@ So sieht das Template jetzt aus:
 
 ```html
 <div>
-  <v-list>
-    <v-subheader>My Favorites</v-subheader>
-    <v-list-item @click="{}">
-      <v-list-item-avatar>
-        <img src="https://images.dog.ceo/breeds/husky/n02110185_7888.jpg" />
-      </v-list-item-avatar>
-      <v-list-item-content>Fluffy</v-list-item-content>
-      <v-list-item-action>
-        <v-icon>delete</v-icon>
-      </v-list-item-action>
-    </v-list-item>
-  </v-list>
+	<v-list>
+		<v-subheader>My Favorites</v-subheader>
+		<v-list-item @click="{}">
+			<v-list-item-avatar>
+				<img src="https://images.dog.ceo/breeds/husky/n02110185_7888.jpg" />
+			</v-list-item-avatar>
+			<v-list-item-content>Fluffy</v-list-item-content>
+			<v-list-item-action>
+				<v-icon>delete</v-icon>
+			</v-list-item-action>
+		</v-list-item>
+	</v-list>
 </div>
 ```
 
@@ -115,8 +115,8 @@ Erstelle jetzt einen `store`-Ordner in dem `src`-Ordner. Erstelle eine neue Date
 Öffne die `store.js` und importiere Vuex:
 
 ```js
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue';
+import Vuex from 'vuex';
 
 Vue.use(Vuex);
 ```
@@ -131,26 +131,26 @@ Was wollen wir eigentlich in diesem Speicher sichern? Eine Liste von Favoriten, 
 
 ```js
 export default new Vuex.Store({
-  state: {
-    favorites: []
-  }
+	state: {
+		favorites: [],
+	},
 });
 ```
 
 Jetzt müssen wir den Speicher unserer Vue-Instanz hinzufügen. Öffne die `main.js`-Datei und importiere den Speicher unter den anderen Imports:
 
 ```js
-import store from "./store/store";
+import store from './store/store';
 ```
 
 Füge den `store` dann den Properties der Vue-Instanz in `main.js` hinzu:
 
 ```js
 new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount("#app");
+	router,
+	store,
+	render: (h) => h(App),
+}).$mount('#app');
 ```
 
 Jetzt haben alle Komponenten der Anwendung Zugriff auf den Speicher in einer "berechneten Eigenschaft" (=computed property) über `this.$store.state`. Greifen wir darauf mal in der `Favorites`-Komponente zu:
@@ -213,18 +213,18 @@ In der `Favorites.vue`-Komponente iterieren wir über die `favorites`-Liste aus 
 
 ```html
 <div>
-  <v-list>
-    <v-subheader>My Favorites</v-subheader>
-    <v-list-item v-for="(dog, index) in favorites" :key="index" @click="{}">
-      <v-list-item-avatar>
-        <img :src="dog.img" />
-      </v-list-item-avatar>
-      <v-list-item-content>{{dog.name}}</v-list-item-content>
-      <v-list-item-action>
-        <v-icon>delete</v-icon>
-      </v-list-item-action>
-    </v-list-item>
-  </v-list>
+	<v-list>
+		<v-subheader>My Favorites</v-subheader>
+		<v-list-item v-for="(dog, index) in favorites" :key="index" @click="{}">
+			<v-list-item-avatar>
+				<img :src="dog.img" />
+			</v-list-item-avatar>
+			<v-list-item-content>{{dog.name}}</v-list-item-content>
+			<v-list-item-action>
+				<v-icon>delete</v-icon>
+			</v-list-item-action>
+		</v-list-item>
+	</v-list>
 </div>
 ```
 
@@ -250,23 +250,21 @@ Wir werden die gesamte Liste in ein umfassendes `div` schreiben und nur anzeigen
 
 ```html
 <div>
-  <v-list>
-    <v-subheader v-if="!favorites.length"
-      >Your favorites list is empty</v-subheader
-    >
-    <div v-else>
-      <v-subheader>Your favorites</v-subheader>
-      <v-list-item v-for="(dog, index) in favorites" :key="index" @click="{}">
-        <v-list-item-avatar>
-          <img :src="dog.img" />
-        </v-list-item-avatar>
-        <v-list-item-content>{{dog.name}}</v-list-item-content>
-        <v-list-item-action>
-          <v-icon>delete</v-icon>
-        </v-list-item-action>
-      </v-list-item>
-    </div>
-  </v-list>
+	<v-list>
+		<v-subheader v-if="!favorites.length">Your favorites list is empty</v-subheader>
+		<div v-else>
+			<v-subheader>Your favorites</v-subheader>
+			<v-list-item v-for="(dog, index) in favorites" :key="index" @click="{}">
+				<v-list-item-avatar>
+					<img :src="dog.img" />
+				</v-list-item-avatar>
+				<v-list-item-content>{{dog.name}}</v-list-item-content>
+				<v-list-item-action>
+					<v-icon>delete</v-icon>
+				</v-list-item-action>
+			</v-list-item>
+		</div>
+	</v-list>
 </div>
 ```
 
@@ -288,10 +286,12 @@ Das Favoriten-Icon wird jetzt innerhalb der `v-badge`-Komponente von Vuetify ges
 
 ```html
 <router-link to="/favorites">
-  <v-badge color="grey lighten-1" overlap right v-model="favorites.length">
-    <span slot="badge">{{favorites.length}}</span>
-    <v-icon large>loyalty</v-icon>
-  </v-badge>
+	<v-badge color="grey lighten-1" overlap right v-model="favorites.length">
+		<template #badge>
+			{{favorites.length}}
+		</template>
+		<v-icon large>loyalty</v-icon>
+	</v-badge>
 </router-link>
 ```
 
@@ -305,10 +305,10 @@ Wir brauchen einen Weg, um Hunde zu markieren und der Favoriten-Liste hinzuzufü
 
 ```js
 export default new Vuex.Store({
-  state: {
-    favorites: []
-  },
-  mutations: {}
+	state: {
+		favorites: [],
+	},
+	mutations: {},
 });
 ```
 
@@ -316,14 +316,14 @@ In dieses Objekt schreiben wir die `addToFavorites`-Mutation:
 
 ```js
 export default new Vuex.Store({
-  state: {
-    favorites: []
-  },
-  mutations: {
-    addToFavorites(state, payload) {
-      state.favorites.push(payload);
-    }
-  }
+	state: {
+		favorites: [],
+	},
+	mutations: {
+		addToFavorites(state, payload) {
+			state.favorites.push(payload);
+		},
+	},
 });
 ```
 
@@ -341,19 +341,19 @@ Wir registeren jetzt die Aktion, um die `addToFavorites`-Mutation ausführen zu 
 
 ```js
 export default new Vuex.Store({
-  state: {
-    favorites: []
-  },
-  mutations: {
-    addToFavorites(state, payload) {
-      state.favorites.push(payload);
-    }
-  },
-  actions: {
-    addToFavorites({ commit }, payload) {
-      commit("addToFavorites", payload);
-    }
-  }
+	state: {
+		favorites: [],
+	},
+	mutations: {
+		addToFavorites(state, payload) {
+			state.favorites.push(payload);
+		},
+	},
+	actions: {
+		addToFavorites({ commit }, payload) {
+			commit('addToFavorites', payload);
+		},
+	},
 });
 ```
 
@@ -396,7 +396,7 @@ Du kannst Aktionen aus Komponenten heraus anstoßen indem du `this.$store.dispat
 Wir werden den zweiten Weg nutzen. Importiere zuerst die `mapActions` in `Pets.vue`:
 
 ```js
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
 ```
 
 Erstelle dann einen `methods`-Block in der Komponente und füge dort die `mapActions` hinzu. (Dazu nutzen wir den [ES6 spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).)
@@ -462,7 +462,7 @@ removeFromFavorites({ commit }, payload) {
 Jetzt müssen wir diese Aktion aufrufen, wenn jemand auf den Löschen-Button klickt. Öffne die `Favorites.vue`-Datei. Zuerst müssen wir die Aktionen mit Methoden verknüpfen. Importiere wie zuvor auch die `mapActions` am Anfang des `<script>`-Tags:
 
 ```js
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
 ```
 
 und füge die `methods` unter den `computed`-Block ein:
