@@ -45,19 +45,9 @@ module.exports = {
 				label: 'English',
 				sidebar: {
 					'/workshops/react': [
-						// { 
-						// 	title: '🦴 Mini', 
-						// 	children: [
-						// 		'/workshops/react/minis/mini1-react',
-						// 		'/workshops/react/minis/mini2-react-hooks',
-						// 		'/workshops/react/minis/mini3-react',
-						// 	],
-						// },
 						{
-							title: '👩‍🎓 Nano Activities',
-							children: [
-								'/workshops/react/nanos/nano1-react',
-							],
+							title: '🦴 Mini Workshops',
+							children: ['/workshops/react/minis/ecommerce'],
 						},
 					],
 					'/workshops/vue': [
