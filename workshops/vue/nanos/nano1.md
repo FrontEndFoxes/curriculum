@@ -87,7 +87,7 @@ We will add a `games` array which will hold our data soon.
 Go back to `main.js` and import the store:
 
 ```js
-import store from './store';
+import store from '../store';
 ```
 
 And finally add it to our Vue app:
