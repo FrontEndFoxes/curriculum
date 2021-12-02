@@ -1,11 +1,11 @@
-# 🖥️ 2: Build A Simple Pet Fetching Web App with Simple Styling
+# 🖥️ 2: Build A Simple Fox Liking Web App with Grid Styling
 
 | **Project&nbsp;Goal**           | Get started with Vue.js basics and simple API calls                                                                                       |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | **What&nbsp;you’ll&nbsp;learn** | Setting up your Vue app, components basics, performing simple REST API calls using fetch                                                  |
 | **Tools you’ll need**           | A modern browser like Chrome. A [GitHub](https://github.com) account which can be used to login to [CodeSandbox](https://codesandbox.io). |
 | **Time needed to complete**     | 1 hour                                                                                                                                    |
-| **Just want to try the app?**   | [CodeSandbox link](https://codesandbox.io/s/web-1-mini-workshop-koj8w)                                                                    |
+| **Just want to try the app?**   | [CodeSandbox link](https://codesandbox.io/s/web-2-mini-workshop-zq436)                                                                    |
 
 # Instructions
 
@@ -15,7 +15,7 @@ We'll start from scratch in [CodeSandbox](http://codesandbox.io). Create a CodeS
 
 We're going to build an application to load random dog images and store them to a favorites list:
 
-![random dog app](./images/mini2_1.png)
+![random fox app](./images/minifox_1.png)
 
 Take a look at the code that was scaffolded by CodeSandbox for a basic Vue.js app. The file `main.js` is open by default. This is the main starting point of a Vue.js app. Note that in this file you import Vue from its npm package: `import Vue from "vue";`. CodeSandbox imports all the needed dependencies from npm to build the app. You can always check out the root `package.json` to find out which dependencies are needed.
 
@@ -26,6 +26,13 @@ new Vue({
 	render: (h) => h(App),
 }).$mount('#app');
 ```
+> Note, since we are using the 'Vue' sandbox template from CodeSandbox, we scaffolded a default Vue 2 app. This workshop will also work with the Vue 3 sandbox since the Vue 2 Options API is supported in Vue 3, but this particular code snippet will look different: 
+>  ```
+>  import { createApp } from 'vue'
+>  import App from './App.vue'
+>
+>  createApp(App).mount('#app')
+>  ```
 
 Open up `App.vue`. In this file, the 'home' component is built. It contains the three main parts of a Vue.js Single File Component (SFC): a template, a script block, and a style block.
 
