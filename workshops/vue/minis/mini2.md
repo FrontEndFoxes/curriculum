@@ -13,7 +13,7 @@
 
 We'll start from scratch in [CodeSandbox](http://codesandbox.io). Create a CodeSandbox account and scaffold a starter Vue.js template by clicking [here](https://codesandbox.io/s/vue).
 
-We're going to build an application to load random dog images and store them to a favorites list:
+We're going to build an application to load random fox images and store them to a favorites list:
 
 ![random fox app](./images/minifox_1.png)
 
@@ -286,7 +286,7 @@ Let's add it right after the `data` function:
 
 For now this method does nothing, but we want it to load a new fox from the [randomfox.ca API](https://randomfox.ca). First we have to check which endpoint we have to use. Looking at the [API](https://randomfox.ca/floof/), we learn that we need to use `https://randomfox.ca/floof` as our endpoint. It will provide a random fox image.
 
-To query this very simple API, we will perform a GET request via fetch. We will wrap our function with `async` and `await` to ensure that the front end awaits the result of the image fetch nicely. For now, let's simply print the query result to console. Still in `App.vue`, overwrite the `loadNewDog(){}` method by placing this snippet between the curly brackets:
+To query this very simple API, we will perform a GET request via fetch. We will wrap our function with `async` and `await` to ensure that the front end awaits the result of the image fetch nicely. For now, let's simply print the query result to console. Still in `App.vue`, overwrite the `loadFox(){}` method by placing this snippet between the curly brackets:
 
 ```js
   loadFox: async function () {
@@ -336,7 +336,7 @@ data() {
 },
 ```
 
-Inside the `loadFox` method instead of printing result to the console we will assign `response.data.message` (which is actually the image URL) to the `currentDogLink` property:
+Inside the `loadFox` method instead of printing result to the console we will assign `response.data.message` (which is actually the image URL) to the `currentFoxUrl` property:
 
 ```js
 loadFox: async function () {
@@ -415,7 +415,7 @@ Now's a great time to join a breakout room if you're joining us on Zoom!
 
 ## Adding Foxes to Favorites
 
-We will create a new method called `addToFavorites`. It will add the value of `currentDogLink` to the `favoriteDogs` array (JavaScript has a `push` array method for this purpose). Let's place it after the `loadNewDog` one _(don't miss the comma!)_
+We will create a new method called `addFave`. It will add the value of `currentFoxUrl` to the `favorites` array (JavaScript has a `push` array method for this purpose). Let's place it after the `loadFox` one _(don't miss the comma!)_
 
 ```js
 addFave() {
@@ -490,7 +490,7 @@ Now we have to bind this new method to the 'Delete' button with a click handler:
 ```
 > Note, you may have noticed the error has gone away, because we finally are making use of `index` - passing it to the method on button click.
 
-Try to add and remove some dogs from favorites. IT WORKS!
+Try to add and remove some foxes from favorites. IT WORKS!
 
 **🎊Congratulations, you've finished the base project!🎊**
 
@@ -539,7 +539,7 @@ Let's add a `props` option to our `Fox.vue` component. First, we need to create 
 <script>export default {}</script>
 ```
 
-Now we can add a `props` option to this object and a prop `dog`:
+Now we can add a `props` option to this object and a prop `fox`:
 
 ```js
 <script>
@@ -604,7 +604,7 @@ We have to pass a `fox` prop to our `Fox` component. It will be done with the fa
 </ul>
 ```
 
-Now if you try to add a fox to Favorites you will see the foxes in the grid again! But we have one issue: deleting a dog will cause a bunch of errors in console. The reason is we don't have a `removeFave` method inside the `Fox.vue` and it knows nothing about `index` as well.
+Now if you try to add a fox to Favorites you will see the foxes in the grid again! But we have one issue: deleting a fox will cause a bunch of errors in console. The reason is we don't have a `removeFave` method inside the `Fox.vue` and it knows nothing about `index` as well.
 
 Instead of using the method, we will add an _event emitter_ to the `delete` button inside the Fox component.
 
@@ -721,7 +721,7 @@ Now we can use CSS classes to describe the slide transition - add these classes 
 }
 ```
 
-Great! We have a nice animation when we add a new dog to the grid. But there are no effects on delete. There is a `-move` class, which is added when items are changing positions. Like the other classes, its prefix will match the value of a provided `name` attribute (`slide` in our case). So we need to add some more styles:
+Great! We have a nice animation when we add a new fox to the grid. But there are no effects on delete. There is a `-move` class, which is added when items are changing positions. Like the other classes, its prefix will match the value of a provided `name` attribute (`slide` in our case). So we need to add some more styles:
 
 ```css
 .slide-leave-active {
