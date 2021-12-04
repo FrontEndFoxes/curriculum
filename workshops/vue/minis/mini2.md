@@ -4,7 +4,7 @@
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | **What&nbsp;you’ll&nbsp;learn** | Setting up your Vue app, components basics, performing simple REST API calls using fetch                                                  |
 | **Tools you’ll need**           | A modern browser like Chrome. A [GitHub](https://github.com) account which can be used to login to [CodeSandbox](https://codesandbox.io). |
-| **Time needed to complete**     | 1 hour                                                                                                                                    |
+| **Time needed to complete**     | 1 hour + refactor time                                                                                                                                   |
 | **Just want to try the app?**   | [CodeSandbox link](https://codesandbox.io/s/web-2-mini-workshop-zq436)                                                                    |
 
 # Instructions
@@ -26,7 +26,7 @@ new Vue({
 	render: (h) => h(App),
 }).$mount('#app');
 ```
-> Note, since we are using the 'Vue' sandbox template from CodeSandbox, we scaffolded a default Vue 2 app. This workshop will also work with the Vue 3 sandbox since the Vue 2 Options API is supported in Vue 3, but this particular code snippet will look different: 
+> Note, since we are using the 'Vue' sandbox template from CodeSandbox, we scaffolded a default Vue 2 app. This workshop will also work with the Vue 3 sandbox since the Vue 2 Options API is supported in Vue 3, but the above code snippet will look different: 
 >  ```
 >  import { createApp } from 'vue'
 >  import App from './App.vue'
@@ -172,7 +172,7 @@ h2 {
 Notice we don't use `<scoped>` as part of the style block. The 'scoped' keyword ensures that your styles will remain valid only for the current SFC, but we're going to make these styles universal.
 :::
 
-This style block uses some paths to external images hosted on GitHub, rather than to a relative path. This is because it's a bit time consuming to host images on CodeSandbox. Normally you'd just add an image on a relative path such as `/images/myImage.png`.
+> This style block uses some paths to external images hosted on GitHub, rather than to a relative path. This is because it's a bit time consuming to host images on CodeSandbox. Normally you'd just add an image on a relative path to images hosted in the app.
 
 This stylesheet is an example of using CSS Grid and Flexbox in a basic responsive layout populated by cards. It also uses `grid-templates` in the `.app` styles, which are worth taking a minute to look at. This styling identifies 'grid template areas' and builds the page as a two column layout with the title, card, and favorites areas spanning the 'fav' and 'next' areas, where the two action buttons live. Take a minute to walk through the CSS and understand how it's built.
 
@@ -205,7 +205,7 @@ Now, let's go to work in `App.vue`. Let's edit the template block. Overwrite the
 </template>
 ```
 
-Save your changes, and your app should refresh (if it doesn't, use the manual refresh button in the app preview address bar). Now, you can see a title, a card, and two buttons.
+Save your changes, and your app should refresh (if it doesn't, use the manual refresh button in the app preview address bar). Now, you can see an h1 title, a card, and two buttons.
 
 ## Add some data
 
@@ -252,7 +252,7 @@ Now we have to change the template to make the image's `src` property _dynamic_ 
 ```
 
 ::: tip 💡
-The `v-bind` directive dynamically binds one or more attributes, or a component prop to an expression. That little `:` makes all the difference!
+The `v-bind` directive dynamically binds one or more attributes, or a component prop to an expression. That little `:` shortcut makes all the difference!
 :::
 
 Great! Now it's time to load some foxes from an API!
@@ -336,7 +336,7 @@ data() {
 },
 ```
 
-Inside the `loadFox` method instead of printing result to the console we will assign `response.data.message` (which is actually the image URL) to the `currentFoxUrl` property:
+Inside the `loadFox` method instead of printing result to the console we will assign its `response`, formatted with json (this is actually the image URL) to the `currentFoxUrl` property:
 
 ```js
 loadFox: async function () {
@@ -397,7 +397,7 @@ Here `floof` is the reference to the _current array element_ and `index` is the 
 
 > Note: there's an error at this point in console, because `index` is not yet defined. We'll fix it in a minute
 
-To properly loop over your array of favorite foxes and append another one, you need to provide a unique key attribute for each item. In our case, the `fox` itself will be the key.
+To properly loop over your array of favorite foxes and append another one, you need to provide a unique key attribute for each item. In our case, the `floof` reference will be the key.
 
 You can see that our empty card disappeared. It's fine! We have an empty `favorites` array so there's simply nothing to render right now.
 
@@ -530,7 +530,9 @@ Now copy the image and delete button area that contains the favorite foxes from 
 We now need a way to pass the fox image we want to view from the parent to the child. To do so, Vue uses `props`.
 
 ::: tip 💡
-Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a \_prop_erty on that component instance. In our case the `Fox` component will have a `fox` property, passed from its parent `App` component.
+Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a \_prop_erty on that component instance. In our case the `Fox` component will have a `fox` property, passed from its parent `App` component. 
+
+✨Remember!✨ Props down, events up!
 :::
 
 Let's add a `props` option to our `Fox.vue` component. First, we need to create an export statement inside our `script` tag (so later we will be able to import our `Fox` component inside the `App` one). Add this code block to `Fox.vue`:
@@ -609,7 +611,7 @@ Now if you try to add a fox to Favorites you will see the foxes in the grid agai
 Instead of using the method, we will add an _event emitter_ to the `delete` button inside the Fox component.
 
 ```html
-<v-btn icon @click="$emit('remove')"></v-btn>
+<button @click="$emit('remove')" class="remove">Remove</button>
 ```
 
 By using `$emit`, we are sending a message to our parent component (in this case it's `App.vue`): 'Hi, something is happening here! Please read this message and react to it'.
@@ -634,7 +636,12 @@ Vue provides a `transition` wrapper component, allowing you to add entering/leav
 Let's try to animate the image of the current fox. First, we need to add a `v-if` directive to it to provide the proper context for the future transition. In `App.vue`, edit the main fox's card:
 
 ```html
-<img v-if="currentFoxUrl" height="400px" :src="currentFoxUrl"/>
+<img
+  v-if="currentFoxUrl"
+  class="card"
+  alt="So floofy!"
+  :src="currentFoxUrl"
+/>
 ```
 
 But now `currentFoxUrl` will always return `true`! Let's set it to an empty string in the loadFox() method so that every time we click the 'Next' button, so before the next image is loaded, `currentFoxUrl` will return `false`:
@@ -688,7 +695,7 @@ Unlike `<transition>`, `transition-group` renders an actual element: a `<span>` 
 Elements inside are _always_ required to have a unique key attribute.
 :::
 
-In `App.vue`, surround the ul element surrounding the `<app-fox>` nested component with `v-transition-group` and provide it with a proper tag attribute and class:
+In `App.vue`, surround the ul element surrounding the `<app-fox>` nested component with `transition-group` and provide it with a proper tag attribute and class:
 
 ```html
 <transition-group
@@ -698,15 +705,14 @@ In `App.vue`, surround the ul element surrounding the `<app-fox>` nested compone
 >
 <li
   v-for="(floof, index) in favorites"
-    :key="floof"
-    class="favorites-item"
-  >
-<app-fox :fox="floof" @remove="removeFave(index)"></app-fox>
-  </li>
+  :key="floof"
+  class="favorites-item">
+  <app-fox :fox="floof" @remove="removeFave(index)"></app-fox>
+</li>
 </transition-group>
 ```
 
-`transition-group` will render as a `ul` component now. The class `wrap` is needed to wrap grid elements to the next row (it replaces the `wrap` attribute of `ul`). We also gave our new transition a name `slide`.
+With the `tag`, `transition-group` will render as a `ul` component now. The class `wrap` is needed to wrap the grid elements to the next row (it replaces the `wrap` attribute of `ul`). We also gave our new transition a name, `slide`.
 
 Now we can use CSS classes to describe the slide transition - add these classes to the CSS in `App.vue`:
 
@@ -744,4 +750,4 @@ Now our list has a move animation after deleting its element!
 
 ## Authors
 
-Made with ❤️ by Jen Looper, from the original Mini 1 by Natalia Tepluhina, updated by Jen Looper
+Made with ❤️ by Jen Looper with CSS from Jo Franchetti, from the original Mini 1 by Natalia Tepluhina, updated by Jen Looper
