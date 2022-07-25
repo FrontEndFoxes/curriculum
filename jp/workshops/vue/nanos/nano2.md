@@ -11,7 +11,7 @@
 猫の画像を取得するため、[**Axios**](https://github.com/axios/axios)を使用してリモート _API_ へHTTPコールを実行する、簡単なアプリを作成していきます。
 
 ::: ヒント 💡
-API は _Application Programming Interface_　の略です. とても簡単に言えば、データを取得または送信するためにリクエストを作成できるURL群のことです。
+API は _Application Programming Interface_　の略です. とても簡単に言えば、「データの取得または送信のためのリクエスト」を作成できるURLを集めたものことです。
 :::
 
 ## はじめに
