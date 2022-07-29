@@ -143,8 +143,8 @@ module.exports = {
 						title: '👩‍🎓 ナノアクティビティ',
 						children: [
 							'/jp/workshops/vue/nanos/nano2',
-							'/jp/workshops/vue/nanos/nano6',
-							'/jp/workshops/vue/nanos/nano3'
+							'/jp/workshops/vue/nanos/nano3',
+							'/jp/workshops/vue/nanos/nano6'
 						],
 					},
 				],
