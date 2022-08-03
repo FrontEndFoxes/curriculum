@@ -44,8 +44,7 @@ When you click the `QR Code` ボタンをクリックした時、QRコードが�
 
 ## リストデータの追加
 
-これから絵文字で可愛く装飾したリストを作っていきます。 There's a treasure trove of emoji, sorted into a JSON object and labeled, 
-この [レポジトリ](https://github.com/shanraisshan/EmojiCodeSheet)　内に、絵文字の一覧があります。JSONオブジェクトで作ってあり、ラベルも付けられています。このレポジトリJSON/stringフォルダ内に入って、[人間カテゴリの絵文字](https://github.com/shanraisshan/EmojiCodeSheet/blob/master/json/string/People.json)　をみてみましょう。
+これから絵文字で可愛く装飾したリストを作っていきます。この [レポジトリ](https://github.com/shanraisshan/EmojiCodeSheet)　内に、絵文字の一覧があります。JSONオブジェクトで作ってあり、ラベルも付けられています。このレポジトリJSON/stringフォルダ内に入って、[人間カテゴリの絵文字](https://github.com/shanraisshan/EmojiCodeSheet/blob/master/json/string/People.json)　をみてみましょう。
 
 アプリに表示するデータを作るため、このJSONをいくつか使いましょう。`HelloWorld.vue` の`data`オブジェクトを絵文字で上書きします。下記のコードを使うか、または、上のレポジトリから他のJSONを借りてくるのもいいですね。:
 
