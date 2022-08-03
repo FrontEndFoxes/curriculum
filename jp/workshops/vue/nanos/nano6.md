@@ -12,41 +12,42 @@ NativeScript-Vueを使って、モバイルアプリのビルド方法とVue.js�
 
 ## アプリケーション基盤の構築
 
-[NativeScript Playground](http://play.nativescript.org) を開いて、ざっと中身を見てみてください。初めて開いた時、アカウントを作る前は、説明用のモーダルが出てきます。モーダルにはPlaygroundを使うときに必要になる、上記２つのモバイルアプリのダウンロード方法が書かれているはずです。
+[NativeScript Playground](http://play.nativescript.org) を開いて、ざっと中身を見てみてください。初めて開いた際、アカウントを作る前に、説明用のモーダルが出てきます。モーダルにはPlaygroundを使うときに必要になる、上記２つのモバイルアプリのダウンロード方法が書かれているはずです。
 
-Here is the main editor with a few files provided for an app. By default, the first playground app is created using Angular. Click 'new' at the top and choose the 'NS + Vue.js' template. This is how you scaffold your first NativeScript-Vue app!
+メインエディタが表示されますが、そこにはアプリ作成用のいくつかのファイルが既に存在している状態です。デフォルトでは最初のプレイグラウンド用アプリはAngularで書かれています。上部にある'new'をクリックし、'NS + Vue.js' テンプレートを選択しましょう。これが最初のNativeScript-Vueアプリの基盤構築方法です！
 
-When you click the `QR Code` button, a QR code will appear - scan that with the NativeScript Playground app on your phone. This allows your phone to refresh automatically as you code. You'll see your phone refresh and a basic app appear:
+When you click the `QR Code` ボタンをクリックした時、QRコードが出てきます。このQRコードを、スマホのNativeScript Playgroundアプリでスキャンしてください。これで、コードを変更した際に、あなたのスマホ上で自動でリフレッシュできるようになります。 リフレッシュされ、デフォルトのアプリが表示されることが確認できると思います。
 
-![base app](./images/playground1.png)
+![デフォルトのアプリ](./images/playground1.png)
 
-::: tip 💡
-If you ever need to fully refresh your app on your device, you can recreate your QR code and re-scan it using the Playground app.
+::: 開発のヒント 💡
+もしスマホ上でアプリを完全にリフレッシュしたい場合は、QRコードを再作成し、もう一度NativeScript Playgroundアプリでスキャンしてみてください。
 :::
 
 ## スタイルの追加
 
-Let's add some nice styles to your mobile app. NativeScript-Vue comes with several built-in themes and the app is scaffolded to support them with proper class names. You can see a line in the `app.css` file referencing a theme's style sheet. Change it to use a different style sheet:
+モバイルアプリの見た目を良くしてみましょう。NativeScript-Vue は複数のテーマを最初の段階で既に持っており、アプリはそれらのクラス名が正しく使えるように構築されています。`app.css` ファイル上でテーマのスタイルシートを参照している行があるので、他のスタイルシートが使えるように変更しましょう:
 
 ```css
 @import '~nativescript-theme-core/css/orange.css';
 ```
 
-Play around with other themes like `sky` or `forest` or `ruby`. Get creative!
+`sky` や `forest` や `ruby`などの他のテーマに変更して遊んでみましょう。クリエイティブに！
 
-Change the title in the ActionBar to rename your app:
+アプリの名前を変えるため、ActionBar内のタイトルを変更してみてください:
 
 ```xml
 <ActionBar title="MyMojis" class="action-bar" />
 ```
 
-You won't need any of the local styles in the `<style>` block at the bottom of `HelloWorld.vue` so you can delete them.
+`HelloWorld.vue`の下にある `<style>` ブロック内のローカルのスタイルはもう必要ないので、削除してしまいましょう。
 
 ## リストデータの追加
 
-We're going to build a list populated with emoji. There's a treasure trove of emoji, sorted into a JSON object and labeled, on this [repo](https://github.com/shanraisshan/EmojiCodeSheet). Dig into the JSON/string folder on that repo to take a look at [emoji associated with people](https://github.com/shanraisshan/EmojiCodeSheet/blob/master/json/string/People.json).
+これから絵文字で可愛く装飾したリストを作っていきます。 There's a treasure trove of emoji, sorted into a JSON object and labeled, 
+この [レポジトリ](https://github.com/shanraisshan/EmojiCodeSheet)　内に、絵文字の一覧があります。JSONオブジェクトで作ってあり、ラベルも付けられています。このレポジトリJSON/stringフォルダ内に入って、[人間カテゴリの絵文字](https://github.com/shanraisshan/EmojiCodeSheet/blob/master/json/string/People.json)　をみてみましょう。
 
-You can borrow some JSON to help build up some data for your app to display. Overwrite the `data` object in `HelloWorld.vue` with emoji. You can use this code, or borrow some other JSON from the repo above:
+アプリに表示するデータを作るため、このJSONをいくつか使いましょう。`HelloWorld.vue` の`data`オブジェクトを絵文字で上書きします。下記のコードを使うか、または、上のレポジトリから他のJSONを借りてくるのもいいですね。:
 
 ```JavaScript
 data() {
@@ -86,9 +87,9 @@ data() {
 
 ## ビルドと作成したリストの確認
 
-Now, you need a place to display that data. NativeScript-Vue uses NativeScript modules to build native elements for your mobile app, so instead of using HTML elements like `<li>` or `<ul>`, we're going to use `<ListView>`. Delete all the markup under the `<ActionBar>` and before the closing `</Page>` tag.
+ここで、データを表示する場所が必要になってきます。NativeScript-Vue は NativeScript モジュールを使って、アプリ用にネイティブ要素をビルドします。なので、`<li>` や `<ul>`などのHTML要素を使う代わりに、 `<ListView>`　要素を使っていきましょう。 `<ActionBar>` と　`</Page>` タグの間のマークアップを全て削除します。
 
-Then, add:
+その後、下記を追加します:
 
 ```XML
 <ListView class="list-group" for="person in people" style="height:1250px">
@@ -102,23 +103,23 @@ Then, add:
 </ListView>
 ```
 
-Now, when you app refreshes, you can see a list of emoji with their label. Add more emoji to your list and tweak the label, if you like, to make it more descriptive.
+これで、アプリがリフレッシュしたら、ラベル付きの絵文字リストが表示されると思います。さらに分かりやすいリストにするために、絵文字をもっとリストに追加したり、ラベルを変更したりしてみるといいかもしれませんね。
 
 ## リストをインタラクティブ(クリックしたら動くよう)に実装
 
-This list needs to do more than just sit there. Let's make it interactive by adding the ability to tap it and send an emoji.
+リストがただ表示されるだけではなく、もっと何かできるようにしたいと思います。クリックしたら絵文字を送信できるように実装してみましょう。
 
-First, you need to implement the Social Share plugin to access your device's social apps like Twitter and WhatsApp.
+最初に、Social Share pluginを導入して、Twitter や WhatsAppなど、あなたのスマホ上のSNSにアクセスできるようにします。
 
-Under `<script>`, add this line:
+`<script>`　タグの下に下記のコードを追加してください:
 
 ```JavaScript
 import * as SocialShare from "nativescript-social-share";
 ```
 
-The Social Share plugin is built into the Playground apps, so you don't have to do anything more to access it from within your app.
+Social Share plugin はビルドされて、Playgroundアプリに使用されます。なので、アプリからアクセスするために、もう何もする必要はありません。
 
-Next, add a `methods` block under `export default {`:
+次に, `methods` ブロックを　`export default {`　の下に追加します。:
 
 ```JavaScript
 methods: {
@@ -128,21 +129,21 @@ methods: {
 },
 ```
 
-You now have a method available for the user to use the Social Share plugin.
+Social Share pluginをユーザーが使うためのメソッドが定義できました。
 
-Finally, add a `@tap` event to your FlexBoxLayout, so that it looks like this:
+最後に, FlexBoxLayoutに`@tap` イベントを追加します。こんな感じになるはずです。:
 
 ```XML
 <FlexboxLayout flexDirection="row" class="list-group-item" @tap="share(person)">
 ```
 
-Now, when you save your app and tap on an element in the list, you are given a list of social apps (depending on what is installed on your device) with which to send the emoji you just tapped!
+現時点で、アプリを保存してリストの要素をクリックした際に、SNSのリストが表示されると思います。（表示されるSNSは、どんなSNSがあなたのスマホにインストールされているかによって変わります。）リスト内のSNSを一つ選択してタップするだけで、絵文字が送れます！
 
-Go ahead, send a Tweet with your new app!
+それでは早速、今作ったアプリで、ツイートしてみましょう！
 
 ## 最終確認
 
-Your entire app's code (all in `HelloWorld.vue`) looks like this:
+アプリのコード全体 (`HelloWorld.vue`内の全てのコード) はこんな感じになっているはずです:
 
 ```XML
 <template>
@@ -207,17 +208,17 @@ Your entire app's code (all in `HelloWorld.vue`) looks like this:
 
 ```
 
-![final app](./images/mymoji_app.png)
+![完成したアプリ](./images/mymoji_app.png)
 
 ## まとめとチャレンジ
 
-Now that you know how to build a native mobile app with NativeScript-Vue, you can customize it however you like.
+これで、NativeScript-Vueを使ったネイティブモバイルアプリの作り方がわかったと思います。好きなようにカスタマイズできます。
 
-🎨 Change the styles and tweak the list so that it has more interesting labels next to the emoji.
+🎨 スタイルを変えたり、リストを変更してみましょう。そうすることで、もっと面白いラベルが絵文字の横に表示されるようになると思います。
 
-😍 Add more emoji!
+😍 もっと絵文字を増やしてみましょう！
 
-❤️ And make sure to share your work socially using the Social Share capability you implemented. Have fun!
+❤️ 実装したSocial Shareの機能を使って、あなたの作ったアプリを是非、周りの人にシェアしてくださいね！Have fun！
 
 ## バッジ
 
