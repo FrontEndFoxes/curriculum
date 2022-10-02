@@ -1,8 +1,3 @@
----
-title: "Contributing Instructions"
----
-<TagLinks />
-
 # Contributing Instructions
 Below you'll find instructions to make a contribution to this repo.
 ## Steps
