@@ -18,5 +18,3 @@ Below you'll find instructions to make a contribution to this repo.
 ## Attention
 - If your Pull Request creates new content, be sure to update config.js with the new route(s).
 
-## Author
-Eda Yavuz
