@@ -27,12 +27,8 @@ This content is presented as various types, divided by length. The first five ch
 
 All the online codelabs are designed to be completed in groups in a self-study mode in a workshop format during meetups, conferences, and brown-bag lunches. For the all-day workshops, it is best to break up the day into parts and regroup users periodically so that 'no developer is left behind'. If an attendee gets lost, she can 'reboot' by downloading the ending point for each previous chapter into a new Code Sandbox.
 
-**Where can I register for a skulk?**
-
-Workshop attendees and mentors can register for events at [FrontEndFoxes.org](https://www.frontendfoxes.org). Keep an eye on our Twitter feeds [@vuevixens](https://twitter.com/VueVixens) and [@frontendfoxes](https://twitter.com/FrontendFoxes) for announcements of upcoming events. Front-End Foxes workshops are free, but depend on budget from conferences and meetups to provide lunch, breakfast, or snacks, and a space with wifi.
-
 **I'm a guy. Can I participate?**
 
 The goal of the program is to familiarize women and those who identify as such with concepts of programming for web and mobile in a supportive and inclusive environment. Experienced developers, however, are very welcome to join in our efforts to organize events, support our scholarship fund, mentor a skulk, and provide content. We are grateful for all kinds of help!
 
-**Want to contribute? Please make sure to check out our [Code of Conduct](workshops/CODE_OF_CONDUCT.md) as well as our [Contributing instructions](contributing.md).**
+**Want to contribute? Please make sure to check out our [Code of Conduct](workshops/CODE_OF_CONDUCT.md) as well as our [Contributing instructions](../contributing.md).**
