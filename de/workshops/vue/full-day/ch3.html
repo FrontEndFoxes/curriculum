@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>📋 Kapitel 3: Anbindung einer API | Front-End Foxes Workshops</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/curriculum/favicon.png">
+    <meta name="description" content="Anfänger-Workshops für Web-Entwicklung">
+    
+    <link rel="preload" href="/curriculum/assets/css/0.styles.c2383ade.css" as="style"><link rel="preload" href="/curriculum/assets/js/app.7a4aa1b0.js" as="script"><link rel="preload" href="/curriculum/assets/js/2.5909c2e7.js" as="script"><link rel="preload" href="/curriculum/assets/js/1.8280c2b5.js" as="script"><link rel="preload" href="/curriculum/assets/js/51.939ab618.js" as="script"><link rel="prefetch" href="/curriculum/assets/js/10.ca4f7878.js"><link rel="prefetch" href="/curriculum/assets/js/11.39fabe8a.js"><link rel="prefetch" href="/curriculum/assets/js/12.4e273fd3.js"><link rel="prefetch" href="/curriculum/assets/js/13.9ef5660d.js"><link rel="prefetch" href="/curriculum/assets/js/14.65b0ca50.js"><link rel="prefetch" href="/curriculum/assets/js/15.ecd94876.js"><link rel="prefetch" href="/curriculum/assets/js/16.68793acb.js"><link rel="prefetch" href="/curriculum/assets/js/17.f2a1fdca.js"><link rel="prefetch" href="/curriculum/assets/js/18.7ba36a75.js"><link rel="prefetch" href="/curriculum/assets/js/19.ef711273.js"><link rel="prefetch" href="/curriculum/assets/js/20.e0ce5fdf.js"><link rel="prefetch" href="/curriculum/assets/js/21.36effa68.js"><link rel="prefetch" href="/curriculum/assets/js/22.063a073c.js"><link rel="prefetch" href="/curriculum/assets/js/23.504c9ec5.js"><link rel="prefetch" href="/curriculum/assets/js/24.509de174.js"><link rel="prefetch" href="/curriculum/assets/js/25.3fee59a8.js"><link rel="prefetch" href="/curriculum/assets/js/26.84872638.js"><link rel="prefetch" href="/curriculum/assets/js/27.7c4f8b3c.js"><link rel="prefetch" href="/curriculum/assets/js/28.1a700b9c.js"><link rel="prefetch" href="/curriculum/assets/js/29.2ddc5a83.js"><link rel="prefetch" href="/curriculum/assets/js/3.a7c41ec0.js"><link rel="prefetch" href="/curriculum/assets/js/30.e782a43f.js"><link rel="prefetch" href="/curriculum/assets/js/31.7420713b.js"><link rel="prefetch" href="/curriculum/assets/js/32.cb8006dd.js"><link rel="prefetch" href="/curriculum/assets/js/33.cd8a49d5.js"><link rel="prefetch" href="/curriculum/assets/js/34.af7bec77.js"><link rel="prefetch" href="/curriculum/assets/js/35.0c150a2f.js"><link rel="prefetch" href="/curriculum/assets/js/36.c6385503.js"><link rel="prefetch" href="/curriculum/assets/js/37.630d9e57.js"><link rel="prefetch" href="/curriculum/assets/js/38.8a384911.js"><link rel="prefetch" href="/curriculum/assets/js/39.f2ee1645.js"><link rel="prefetch" href="/curriculum/assets/js/4.31053f34.js"><link rel="prefetch" href="/curriculum/assets/js/40.fca2d06f.js"><link rel="prefetch" href="/curriculum/assets/js/41.c99ff83c.js"><link rel="prefetch" href="/curriculum/assets/js/42.88f262ad.js"><link rel="prefetch" href="/curriculum/assets/js/43.36ec3f20.js"><link rel="prefetch" href="/curriculum/assets/js/44.4291cd09.js"><link rel="prefetch" href="/curriculum/assets/js/45.f6027c6e.js"><link rel="prefetch" href="/curriculum/assets/js/46.c161aa53.js"><link rel="prefetch" href="/curriculum/assets/js/47.d1b51532.js"><link rel="prefetch" href="/curriculum/assets/js/48.16e79cad.js"><link rel="prefetch" href="/curriculum/assets/js/49.38db29ee.js"><link rel="prefetch" href="/curriculum/assets/js/5.9df2437c.js"><link rel="prefetch" href="/curriculum/assets/js/50.1e5ab1c7.js"><link rel="prefetch" href="/curriculum/assets/js/52.327fd43d.js"><link rel="prefetch" href="/curriculum/assets/js/53.4d1806d8.js"><link rel="prefetch" href="/curriculum/assets/js/54.636ea52a.js"><link rel="prefetch" href="/curriculum/assets/js/55.784e44a9.js"><link rel="prefetch" href="/curriculum/assets/js/56.070964ef.js"><link rel="prefetch" href="/curriculum/assets/js/57.1388cb7d.js"><link rel="prefetch" href="/curriculum/assets/js/58.03195ad2.js"><link rel="prefetch" href="/curriculum/assets/js/59.b85902e4.js"><link rel="prefetch" href="/curriculum/assets/js/6.8479fb84.js"><link rel="prefetch" href="/curriculum/assets/js/60.cb6ad11c.js"><link rel="prefetch" href="/curriculum/assets/js/61.d30e460a.js"><link rel="prefetch" href="/curriculum/assets/js/62.2f0756ce.js"><link rel="prefetch" href="/curriculum/assets/js/63.2ec5ac86.js"><link rel="prefetch" href="/curriculum/assets/js/64.9ff57a08.js"><link rel="prefetch" href="/curriculum/assets/js/65.a9717421.js"><link rel="prefetch" href="/curriculum/assets/js/66.b8f0619d.js"><link rel="prefetch" href="/curriculum/assets/js/67.cf93efcd.js"><link rel="prefetch" href="/curriculum/assets/js/68.7993fcb1.js"><link rel="prefetch" href="/curriculum/assets/js/69.de933680.js"><link rel="prefetch" href="/curriculum/assets/js/7.8a2e7228.js"><link rel="prefetch" href="/curriculum/assets/js/70.4fe4310c.js"><link rel="prefetch" href="/curriculum/assets/js/71.f61620b6.js"><link rel="prefetch" href="/curriculum/assets/js/72.e19c86a8.js"><link rel="prefetch" href="/curriculum/assets/js/73.4655972c.js"><link rel="prefetch" href="/curriculum/assets/js/74.8e238311.js"><link rel="prefetch" href="/curriculum/assets/js/75.b9dc9475.js"><link rel="prefetch" href="/curriculum/assets/js/76.08b2f1b1.js"><link rel="prefetch" href="/curriculum/assets/js/77.099ee248.js"><link rel="prefetch" href="/curriculum/assets/js/78.d062e305.js"><link rel="prefetch" href="/curriculum/assets/js/vendors~docsearch.38838867.js">
+    <link rel="stylesheet" href="/curriculum/assets/css/0.styles.c2383ade.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/curriculum/de/" class="home-link router-link-active"><!----> <span class="site-name">Front-End Foxes Workshops</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/curriculum/workshops/react/" class="nav-link">
+  React Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/vue/" class="nav-link">
+  Vue Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/CODE_OF_CONDUCT.html" class="nav-link">
+  Code of Conduct
+</a></div><div class="nav-item"><a href="/curriculum/workshops/TEAM.html" class="nav-link">
+  Team
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Sprache</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Sprache</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/curriculum/workshops/vue/full-day/ch3.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/de/workshops/vue/full-day/ch3.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Deutsch
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/fr/" class="nav-link">
+  Français
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/jp/workshops/vue/full-day/ch3.html" class="nav-link">
+  日本語
+</a></li></ul></div></div> <a href="https://github.com/frontendfoxes/curriculum/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/curriculum/workshops/react/" class="nav-link">
+  React Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/vue/" class="nav-link">
+  Vue Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/CODE_OF_CONDUCT.html" class="nav-link">
+  Code of Conduct
+</a></div><div class="nav-item"><a href="/curriculum/workshops/TEAM.html" class="nav-link">
+  Team
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Sprache</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Sprache</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/curriculum/workshops/vue/full-day/ch3.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/de/workshops/vue/full-day/ch3.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Deutsch
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/fr/" class="nav-link">
+  Français
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/jp/workshops/vue/full-day/ch3.html" class="nav-link">
+  日本語
+</a></li></ul></div></div> <a href="https://github.com/frontendfoxes/curriculum/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>🐶 Tagesworkshop</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/curriculum/de/workshops/vue/full-day/ch1.html" class="sidebar-link">📋 Kapitel 1: Die My Pet Shop Web App</a></li><li><a href="/curriculum/de/workshops/vue/full-day/ch2.html" class="sidebar-link">📋 Kapitel 2: Baue eine Haustier-Galerie</a></li><li><a href="/curriculum/de/workshops/vue/full-day/ch3.html" aria-current="page" class="active sidebar-link">📋 Kapitel 3: Anbindung einer API</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/curriculum/de/workshops/vue/full-day/ch3.html#anleitung" class="sidebar-link">Anleitung</a></li><li class="sidebar-sub-header"><a href="/curriculum/de/workshops/vue/full-day/ch3.html#axios-hinzufugen" class="sidebar-link">Axios hinzufügen</a></li><li class="sidebar-sub-header"><a href="/curriculum/de/workshops/vue/full-day/ch3.html#api-aufrufen" class="sidebar-link">API aufrufen</a></li><li class="sidebar-sub-header"><a href="/curriculum/de/workshops/vue/full-day/ch3.html#die-api-nutzen-1-statischen-inhalt-ersetzen" class="sidebar-link">Die API nutzen 1 - Statischen Inhalt ersetzen</a></li><li class="sidebar-sub-header"><a href="/curriculum/de/workshops/vue/full-day/ch3.html#die-api-nutzen-2-zufallige-bilder-anzeigen" class="sidebar-link">Die API nutzen 2 - Zufällige Bilder anzeigen</a></li></ul></li><li><a href="/curriculum/de/workshops/vue/full-day/ch4.html" class="sidebar-link">📋 Kapitel 4: Eine Merkliste erstellen</a></li><li><a href="/curriculum/de/workshops/vue/full-day/ch5.html" class="sidebar-link">📋 Kapitel 5: Ein Formular zum Adoptieren hinzufügen</a></li><li><a href="/curriculum/de/workshops/vue/full-day/appendix_1.html" class="sidebar-link">🤷 Anhang 1: Neuanfang?</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="📋-kapitel-3-anbindung-einer-api"><a href="#📋-kapitel-3-anbindung-einer-api" class="header-anchor">#</a> 📋 Kapitel 3: Anbindung einer API</h1> <table><thead><tr><th><strong>Ziel</strong></th> <th>Lerne, wie API-Aufrufe funktionieren und wie sie in einer Webapp genutzt werden können.</th></tr></thead> <tbody><tr><td><strong>Was du lernen wirst</strong></td> <td>Verwendung der <a href="https://dog.ceo/dog-api/" target="_blank" rel="noopener noreferrer">DogCEO API<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> zum dynamischen Laden von Hundebildern anstelle von Dummy-Daten.</td></tr> <tr><td><strong>Was du dafür benötigst</strong></td> <td>Einen modernen Browser, z.B. Google Chrome. Einen Account bei CodeSandbox.io. Falls du nicht mehr weißt, wo du warst, kannst du die Basis für dieses Kapitel von <a href="https://github.com/FrontEndFoxes/projects/tree/main/chapter-2-end" target="_blank" rel="noopener noreferrer">hier<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> importieren. Wie das geht, steht im <a href="/curriculum/de/workshops/vue/full-day/appendix_1.html">Anhang 1</a></td></tr> <tr><td><strong>Dauer</strong></td> <td>1 Stunde</td></tr></tbody></table> <h2 id="anleitung"><a href="#anleitung" class="header-anchor">#</a> Anleitung</h2> <p>Falls du das Projekt von vorn beginnen musst, klone <a href="https://github.com/FrontEndFoxes/projects/tree/main/chapter-1-end" target="_blank" rel="noopener noreferrer">dieses Projekt<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> in Code Sandbox, nachdem du dich eingeloggt hast. Dafür klickst du auf den Link <strong>Import form Github</strong> unten links auf der Hauptseite und fügst die URL des Repositories in das Feld. Du kannst ebenfalls mit dem Projekt fortfahren, dass du in <a href="/curriculum/de/workshops/vue/full-day/ch2.html">Kapitel 2</a> erstellt hast.</p> <p>Bisher haben wir Hundebilder über eine statische JSON-Datei, die wir in eine Komponente importiert haben, angezeigt. Für Demozwecke ist das sehr nützlich. In produktiven Anwendungen werden meistens Echtdaten genutzt, die entweder von internen Datenquellen oder einer API geliefert werden. Wir werden eine externe API dafür nutzen.</p> <p>Um eine API anzufragen, benötigen wir eine weitere Bibliothek namens <a href="https://github.com/axios/axios" target="_blank" rel="noopener noreferrer">axios<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>. Axios arbeitet mit Promises (=Versprechen) und funktioniert sowohl im Browser als auch in Node.js-Umgebungen.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Zu Beginn hat Vue einen eigenen Weg für API-Aufrufe mit .ajax genutzt. Dies wurde jedoch verworfen, da die Axios-Bibliothek sehr gut funktioniert und als zusätzliches Paket geladen werden kann, sofern es gebraucht wird. Mehr Informationen zu dieser Veränderung kannst du <a href="https://medium.com/the-vue-point/retiring-vue-resource-871a82880af4" target="_blank" rel="noopener noreferrer">hier<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> nachlesen.</p></div> <h2 id="axios-hinzufugen"><a href="#axios-hinzufugen" class="header-anchor">#</a> Axios hinzufügen</h2> <p>Zuerst musst du Axios den Projekt-Abhängigkeiten hinzufügen. Dafür klicke in Code Sandbox auf den Reiter <code>Explorer</code> -&gt; <code>Dependencies</code> -&gt; <code>Add Dependency</code> und suche nach <code>axios</code>. Wenn du es installiert hast, wirst du sehen, dass es zu deiner <code>package.json</code> hinzugefügt wurde.</p> <p>Importiere Axios in der Komponenten, in der der API-Aufruf gemacht werden soll - <code>views/Pets.vue</code>. Kopiere folgende Zeile in den <code>&lt;script&gt;</code>-Block dieser Komponente:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Alle Aufrufe werde die gleiche Basis-URL mit verschiedenen Endpunkten nutzen. Konfiguriere direkt unter allen Imports, dem Axios-Import und möglichen anderen, die Basis-URL:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code>axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>baseURL <span class="token operator">=</span> <span class="token string">'https://dog.ceo/api'</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Mit dieser Zeile haben wir Axios so konfiguriert, dass jeder API-Aufruf mit der URL <code>https://dog.ceo/api</code> beginnen wird. Jetzt können wir den ersten API-Aufruf machen.</p> <h2 id="api-aufrufen"><a href="#api-aufrufen" class="header-anchor">#</a> API aufrufen</h2> <p>Wir ersetzen das erste statische Bild mit einem zufälligen Husky-Bild von der Dog CEO API. Zuerst müssen wir den Endpunkt dafür herausfinden. Wir müssen <code>/breed/husky/images/random</code> als Endpunkt hinzufügen, das steht in der <a href="https://dog.ceo/dog-api/" target="_blank" rel="noopener noreferrer">Dokumentation<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> der API (der <code>api</code> Teil ist bereits in der Base-URL, die wir durch das Setzen von <code>axios.defaults.baseURL</code> konfigurierten).</p> <p>Wir möchten das alte Bild durch ein neues ersetzen, wenn die Komponente geladen wird. Dafür implementieren wir einen <code>created()</code>-Anker (=hook) direkt nach <code>data()</code>.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Beachte, dass du nach dem <code>data</code>-Objekt ein Komma setzen musst, bevor du den <code>created()</code>-Hook hinzufügst.</p></div> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Das ist der erste Hook unserer App! Hooks sind sehr nützlich, wenn du bestimmte Code-Blöcke besser kontrollieren musst. Mehr Informationen zu Hooks kannst du <a href="https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks" target="_blank" rel="noopener noreferrer">hier<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> finden.</p></div> <p>In dem neuen Hook werden wir nun die API aufrufen. Für eine GET-Anfrage (=request) muss <code>axios.get</code> genutzt werden. Das Ergebnis wird ein JavaScript-Promise sein (=Versprechen), in dem wir Maßnahmen (=callbacks) für einen erfolgreichen (=success) oder fehlerhaften (=failure) Aufruf implementieren müssen. Für den Moment geben wir das Ergebnis in der Konsole aus. Kopiere den folgenden Code, ein Axios Cide Snippet, zwischen die geschweiften Klammern von <code>created(){}</code>:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code>axios
+	<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/breed/husky/images/random'</span><span class="token punctuation">)</span>
+	<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>Sieh dir in der Browseransicht von Code Sandbox die Seite an und wechsel auf die Pets-Seite. In der Konsole solltest du eine Ausgabe sehen. Untersuche das Objekt indem du auf den kleinen Pfeil an der linken Seite klickst. Suche das <code>data</code>-Feld. Hier siehst du (hoffentlich) den Status <code>success</code> und eine Nachricht (=message) mit einer URL zu einem Bild. Du kannst dir diese URL kopieren und in einem neuen Browserfenster aufrufen, es sollte dir ein Bild von einem Husky anzeigen.</p> <h2 id="die-api-nutzen-1-statischen-inhalt-ersetzen"><a href="#die-api-nutzen-1-statischen-inhalt-ersetzen" class="header-anchor">#</a> Die API nutzen 1 - Statischen Inhalt ersetzen</h2> <p>Wir wollen das Husky-Bild durch ein neues ersetzen. Zuerst müssen wir in der Liste der Hunde einen Husky finden. Dafür nutzen wir die <code>Array.find</code>-Methode. Es durchsucht die <code>dogs</code>-Liste, die wir bereits von <code>data/dogs.js</code> in die Komponente laden, bis es ein Element findet, dass die angegebene Bedingung erfüllt. In unserem Fall soll die Art (<code>breed</code>) dem Wert <code>husky</code> entsprechen. Ersetze die Zeile mit <code>console.log()</code> im <code>then</code>-Abschnitt des Axios-Aufrufs mit diesen Zeilen:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> husky <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>dogs<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">dog</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> dog<span class="token punctuation">.</span>breed <span class="token operator">===</span> <span class="token string">'husky'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>husky<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>Ok. Wir haben einen Husky gefunden. Das erkennst du in der Ausgabe in der Konsole. Du siehst diesen Hund auch auf der Pets-Seite, er heißt 'Max'. Jetzt wollen wir ihm das neue Bild von der API zuweisen. Füge diese Zeile unter die letzten zwei Zeilen ein:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code>husky<span class="token punctuation">.</span>img <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>message<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Du solltest jetzt sehen, wie sich das Bild von 'Max' ändert.</p> <h2 id="die-api-nutzen-2-zufallige-bilder-anzeigen"><a href="#die-api-nutzen-2-zufallige-bilder-anzeigen" class="header-anchor">#</a> Die API nutzen 2 - Zufällige Bilder anzeigen</h2> <p>Jetzt wollen wir allen Hunden in der Liste ein Bild von der API zuweisen. Als erstes benötigen wir wieder den korrekten Endpunkt für jede Hundeart. Erinnerst du dich, wie wir den Endpunkt <code>/breed/husky/images/random</code> für die Art <code>husky</code> aufgerufen haben? Lass' uns eine Liste von Links erstellen, in dem jeder Link spezifisch für eine Art ist. Wir werden eine Liste mit allen Endpunkten für alle Arten erstellen. Dafür nutzen wie die<code>map</code>-Methode.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Die <code>map()</code>-Methode erzeugt eine neue Liste. Die Elemente dieser Liste entstehen aus den Elementen der ersten Liste, die durch eine Funktion verändert werden.</p></div> <p>Überschreibe den Code in <code>created()</code>...<code>.then</code>, um die neue Liste zu bestimmen:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> linksArray <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>dogs<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">dog</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">'/breed/'</span> <span class="token operator">+</span> dog<span class="token punctuation">.</span>breed <span class="token operator">+</span> <span class="token string">'/images/random'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Wir nehmen die Art von jedem Hund in der Liste und fügen sie in den Endpunkt ein. (Zuvor haben wir den gleichen Endpunkt genutzt, nur mit <code>husky</code>, statt dem wechselnden Wert der Hundeart.)</p> <p>Jetzt müssen wir die API für jeden Endpunkt der neuen Liste anfragen. Axios hat dafür Hilfsfunktionen namens <code>axios.all</code> und <code>axios.spread</code>. Der ersten übergeben wir die Liste mit den API-Anfragen und es gibt uns eine Liste mit den Antworten von der API zurück. Diese Liste teilen wir mit <code>axios.spread</code> auf, um die neuen Bilder den Hunden zuzuweisen.
+Um alle API-Anfragen der Liste abzuarbeiten, nutzen wir wieder die <code>map</code>-Methode und werden mit jedem Wert der Liste einen API-Aufruf <code>axios.get</code> machen.
+Kopiere den folgenden Code (Zeilen 5-12) dafür direkt unter die Definition des <code>linksArray</code>s.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><div class="highlight-lines"><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br></div><pre class="language-js"><code><span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> linksArray <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>dogs<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>
+        <span class="token parameter">dog</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;/breed/&quot;</span> <span class="token operator">+</span> dog<span class="token punctuation">.</span>breed <span class="token operator">+</span> <span class="token string">&quot;/images/random&quot;</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  axios<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span>linksArray<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">link</span> <span class="token operator">=&gt;</span> axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>link<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>
+     axios<span class="token punctuation">.</span><span class="token function">spread</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+       <span class="token keyword">this</span><span class="token punctuation">.</span>dogs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">dog<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+         dog<span class="token punctuation">.</span>img <span class="token operator">=</span> res<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>message<span class="token punctuation">;</span>
+       <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span><span class="token punctuation">)</span>
+   <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Was passiert hier? Die <code>forEach()</code>-Methode wendet eine Funktion auf jedes Element in der Liste an. Sie iteriert über die statische Liste unserer Hunde und ersetzt das fest definierte Bild durch das zufällige Bild von der API. Das passiert nachdem wir alle Bilder von der API bekommen haben.</p></div> <p>Jetzt werden bei jedem Aufruf der <code>Pets</code>-Komponente neue Bilder geladen. (Das kannst du sehen, in dem du die Seite aktualisierst oder zwischen der <code>pets</code> und der <code>home</code>-Seite hin und her wechselst.) Die Namen und Arten der Hunde werden immer noch von den statischen Daten aus <code>dogs.json</code> genommen, deshalb verändern sich diese nicht.</p> <p>Ein Problem gibt es noch: Wenn wir die Seite aufrufen, sehen wir für einen kurzen Moment noch die alten Bilder. Dafür setzen wir alle Bilder zurück bevor wir die API nach neuen Bildern fragen.
+Kopiere diesen Teil an die erste Stelle in den <code>created()</code>-Hook:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span>dogs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">dog</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	dog<span class="token punctuation">.</span>img <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>Jetzt sehen wir zunächst keine Bilder bevor die neuen Bilder von der API geladen werden. Es geht voran!</strong></p> <h1 id="ergebnise"><a href="#ergebnise" class="header-anchor">#</a> Ergebnise</h1> <p><img src="/curriculum/assets/img/petshop_chapter3.f1a4212c.jpg" alt="chapter 3 result"></p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/frontendfoxes/curriculum/edit/master/de/workshops/vue/full-day/ch3.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/curriculum/de/workshops/vue/full-day/ch2.html" class="prev">
+        📋 Kapitel 2: Baue eine Haustier-Galerie
+      </a></span> <span class="next"><a href="/curriculum/de/workshops/vue/full-day/ch4.html">
+        📋 Kapitel 4: Eine Merkliste erstellen
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/curriculum/assets/js/app.7a4aa1b0.js" defer></script><script src="/curriculum/assets/js/2.5909c2e7.js" defer></script><script src="/curriculum/assets/js/1.8280c2b5.js" defer></script><script src="/curriculum/assets/js/51.939ab618.js" defer></script>
+  </body>
+</html>

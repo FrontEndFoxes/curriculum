@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>🛍️ 1: Build An E-Commerce App | Front-End Foxes Workshops</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/curriculum/favicon.png">
+    <meta name="description" content="Workshops to teach web and mobile development to beginners">
+    
+    <link rel="preload" href="/curriculum/assets/css/0.styles.c2383ade.css" as="style"><link rel="preload" href="/curriculum/assets/js/app.7a4aa1b0.js" as="script"><link rel="preload" href="/curriculum/assets/js/2.5909c2e7.js" as="script"><link rel="preload" href="/curriculum/assets/js/1.8280c2b5.js" as="script"><link rel="preload" href="/curriculum/assets/js/72.e19c86a8.js" as="script"><link rel="prefetch" href="/curriculum/assets/js/10.ca4f7878.js"><link rel="prefetch" href="/curriculum/assets/js/11.39fabe8a.js"><link rel="prefetch" href="/curriculum/assets/js/12.4e273fd3.js"><link rel="prefetch" href="/curriculum/assets/js/13.9ef5660d.js"><link rel="prefetch" href="/curriculum/assets/js/14.65b0ca50.js"><link rel="prefetch" href="/curriculum/assets/js/15.ecd94876.js"><link rel="prefetch" href="/curriculum/assets/js/16.68793acb.js"><link rel="prefetch" href="/curriculum/assets/js/17.f2a1fdca.js"><link rel="prefetch" href="/curriculum/assets/js/18.7ba36a75.js"><link rel="prefetch" href="/curriculum/assets/js/19.ef711273.js"><link rel="prefetch" href="/curriculum/assets/js/20.e0ce5fdf.js"><link rel="prefetch" href="/curriculum/assets/js/21.36effa68.js"><link rel="prefetch" href="/curriculum/assets/js/22.063a073c.js"><link rel="prefetch" href="/curriculum/assets/js/23.504c9ec5.js"><link rel="prefetch" href="/curriculum/assets/js/24.509de174.js"><link rel="prefetch" href="/curriculum/assets/js/25.3fee59a8.js"><link rel="prefetch" href="/curriculum/assets/js/26.84872638.js"><link rel="prefetch" href="/curriculum/assets/js/27.7c4f8b3c.js"><link rel="prefetch" href="/curriculum/assets/js/28.1a700b9c.js"><link rel="prefetch" href="/curriculum/assets/js/29.2ddc5a83.js"><link rel="prefetch" href="/curriculum/assets/js/3.a7c41ec0.js"><link rel="prefetch" href="/curriculum/assets/js/30.e782a43f.js"><link rel="prefetch" href="/curriculum/assets/js/31.7420713b.js"><link rel="prefetch" href="/curriculum/assets/js/32.cb8006dd.js"><link rel="prefetch" href="/curriculum/assets/js/33.cd8a49d5.js"><link rel="prefetch" href="/curriculum/assets/js/34.af7bec77.js"><link rel="prefetch" href="/curriculum/assets/js/35.0c150a2f.js"><link rel="prefetch" href="/curriculum/assets/js/36.c6385503.js"><link rel="prefetch" href="/curriculum/assets/js/37.630d9e57.js"><link rel="prefetch" href="/curriculum/assets/js/38.8a384911.js"><link rel="prefetch" href="/curriculum/assets/js/39.f2ee1645.js"><link rel="prefetch" href="/curriculum/assets/js/4.31053f34.js"><link rel="prefetch" href="/curriculum/assets/js/40.fca2d06f.js"><link rel="prefetch" href="/curriculum/assets/js/41.c99ff83c.js"><link rel="prefetch" href="/curriculum/assets/js/42.88f262ad.js"><link rel="prefetch" href="/curriculum/assets/js/43.36ec3f20.js"><link rel="prefetch" href="/curriculum/assets/js/44.4291cd09.js"><link rel="prefetch" href="/curriculum/assets/js/45.f6027c6e.js"><link rel="prefetch" href="/curriculum/assets/js/46.c161aa53.js"><link rel="prefetch" href="/curriculum/assets/js/47.d1b51532.js"><link rel="prefetch" href="/curriculum/assets/js/48.16e79cad.js"><link rel="prefetch" href="/curriculum/assets/js/49.38db29ee.js"><link rel="prefetch" href="/curriculum/assets/js/5.9df2437c.js"><link rel="prefetch" href="/curriculum/assets/js/50.1e5ab1c7.js"><link rel="prefetch" href="/curriculum/assets/js/51.939ab618.js"><link rel="prefetch" href="/curriculum/assets/js/52.327fd43d.js"><link rel="prefetch" href="/curriculum/assets/js/53.4d1806d8.js"><link rel="prefetch" href="/curriculum/assets/js/54.636ea52a.js"><link rel="prefetch" href="/curriculum/assets/js/55.784e44a9.js"><link rel="prefetch" href="/curriculum/assets/js/56.070964ef.js"><link rel="prefetch" href="/curriculum/assets/js/57.1388cb7d.js"><link rel="prefetch" href="/curriculum/assets/js/58.03195ad2.js"><link rel="prefetch" href="/curriculum/assets/js/59.b85902e4.js"><link rel="prefetch" href="/curriculum/assets/js/6.8479fb84.js"><link rel="prefetch" href="/curriculum/assets/js/60.cb6ad11c.js"><link rel="prefetch" href="/curriculum/assets/js/61.d30e460a.js"><link rel="prefetch" href="/curriculum/assets/js/62.2f0756ce.js"><link rel="prefetch" href="/curriculum/assets/js/63.2ec5ac86.js"><link rel="prefetch" href="/curriculum/assets/js/64.9ff57a08.js"><link rel="prefetch" href="/curriculum/assets/js/65.a9717421.js"><link rel="prefetch" href="/curriculum/assets/js/66.b8f0619d.js"><link rel="prefetch" href="/curriculum/assets/js/67.cf93efcd.js"><link rel="prefetch" href="/curriculum/assets/js/68.7993fcb1.js"><link rel="prefetch" href="/curriculum/assets/js/69.de933680.js"><link rel="prefetch" href="/curriculum/assets/js/7.8a2e7228.js"><link rel="prefetch" href="/curriculum/assets/js/70.4fe4310c.js"><link rel="prefetch" href="/curriculum/assets/js/71.f61620b6.js"><link rel="prefetch" href="/curriculum/assets/js/73.4655972c.js"><link rel="prefetch" href="/curriculum/assets/js/74.8e238311.js"><link rel="prefetch" href="/curriculum/assets/js/75.b9dc9475.js"><link rel="prefetch" href="/curriculum/assets/js/76.08b2f1b1.js"><link rel="prefetch" href="/curriculum/assets/js/77.099ee248.js"><link rel="prefetch" href="/curriculum/assets/js/78.d062e305.js"><link rel="prefetch" href="/curriculum/assets/js/vendors~docsearch.38838867.js">
+    <link rel="stylesheet" href="/curriculum/assets/css/0.styles.c2383ade.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/curriculum/" class="home-link router-link-active"><!----> <span class="site-name">Front-End Foxes Workshops</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/curriculum/workshops/react/" class="nav-link router-link-active">
+  React Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/vue/" class="nav-link">
+  Vue Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/CODE_OF_CONDUCT.html" class="nav-link">
+  Code of Conduct
+</a></div><div class="nav-item"><a href="/curriculum/workshops/TEAM.html" class="nav-link">
+  Team
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/curriculum/workshops/react/minis/ecommerce.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/de/" class="nav-link">
+  Deutsch
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/fr/" class="nav-link">
+  Français
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/jp/" class="nav-link">
+  日本語
+</a></li></ul></div></div> <a href="https://github.com/frontendfoxes/curriculum/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/curriculum/workshops/react/" class="nav-link router-link-active">
+  React Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/vue/" class="nav-link">
+  Vue Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/CODE_OF_CONDUCT.html" class="nav-link">
+  Code of Conduct
+</a></div><div class="nav-item"><a href="/curriculum/workshops/TEAM.html" class="nav-link">
+  Team
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/curriculum/workshops/react/minis/ecommerce.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/de/" class="nav-link">
+  Deutsch
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/fr/" class="nav-link">
+  Français
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/jp/" class="nav-link">
+  日本語
+</a></li></ul></div></div> <a href="https://github.com/frontendfoxes/curriculum/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>🦴 Mini Workshops</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/curriculum/workshops/react/minis/ecommerce.html" aria-current="page" class="active sidebar-link">🛍️ 1: Build An E-Commerce App</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/curriculum/workshops/react/minis/ecommerce.html#getting-started" class="sidebar-link">Getting Started</a></li><li class="sidebar-sub-header"><a href="/curriculum/workshops/react/minis/ecommerce.html#install-our-commerce-api" class="sidebar-link">Install our commerce API</a></li><li class="sidebar-sub-header"><a href="/curriculum/workshops/react/minis/ecommerce.html#link-up-our-commerce-instance" class="sidebar-link">Link up our Commerce instance</a></li><li class="sidebar-sub-header"><a href="/curriculum/workshops/react/minis/ecommerce.html#make-your-first-request-to-fetch-the-products-data" class="sidebar-link">Make your first request to fetch the products data</a></li><li class="sidebar-sub-header"><a href="/curriculum/workshops/react/minis/ecommerce.html#start-to-style-your-components" class="sidebar-link">Start to style your components</a></li><li class="sidebar-sub-header"><a href="/curriculum/workshops/react/minis/ecommerce.html#create-our-product-item-component" class="sidebar-link">Create our product item component</a></li><li class="sidebar-sub-header"><a href="/curriculum/workshops/react/minis/ecommerce.html#create-our-products-list-component" class="sidebar-link">Create our products list component</a></li><li class="sidebar-sub-header"><a href="/curriculum/workshops/react/minis/ecommerce.html#conclusion" class="sidebar-link">Conclusion</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="🛍️-1-build-an-e-commerce-app"><a href="#🛍️-1-build-an-e-commerce-app" class="header-anchor">#</a> 🛍️ 1: Build An E-Commerce App</h1> <table><thead><tr><th><strong>Project Goal</strong></th> <th>Build an e-commerce web store with a products listing</th></tr></thead> <tbody><tr><td><strong>What you’ll learn</strong></td> <td>Setting up your React app, API basics, React components basics, fetch and display products data from an external API</td></tr> <tr><td><strong>Tools you’ll need</strong></td> <td>A modern browser like Chrome to access <a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer">CodeSandbox<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> - be sure to create an account in CodeSandbox to keep the versions of your work intact.</td></tr> <tr><td><strong>Time needed to complete</strong></td> <td>30 minutes</td></tr> <tr><td><strong>Just want to try the app?</strong></td> <td><a href="https://codesandbox.io/s/commercejs-react-products-c5s8j" target="_blank" rel="noopener noreferrer">CodeSandbox link<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></td></tr></tbody></table> <p>The main objective here is to learn <strong>React</strong> fundamentals in conjunction with working with an <strong>API</strong> to build an e-commerce application! We're going to create a real-world app fetching data from an external API to list products in a product catalogue page! We're really excited so let's get right to it!</p> <p><strong>Here is a summary of what we hope to achieve!</strong></p> <ul><li>Go over React basics</li> <li>Create components in React</li> <li>Fetch data from an external API data source</li> <li>Use an axios-based JavaScript SDK to add eCommerce logic</li> <li>List products on a products catalogue page</li></ul> <p>Check out this <a href="https://codesandbox.io/s/commercejs-react-products-c5s8j" target="_blank" rel="noopener noreferrer">live demo<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> sneakpeek to have a look at what we're building today!</p> <h3 id="prerequisites"><a href="#prerequisites" class="header-anchor">#</a> Prerequisites</h3> <p><strong>This project assumes you have some knowledge of the below concepts before starting:</strong></p> <ul><li>Some basic knowledge of JavaScript fundamentals</li> <li>Some basic knowledge of JavaScript frameworks</li> <li>An idea of the JAMstack architecture and how APIs work</li></ul> <h2 id="getting-started"><a href="#getting-started" class="header-anchor">#</a> Getting Started</h2> <p>We mentioned you needing <strong>Code Sandbox</strong> above, so what exactly is it? Codesandbox is an online IDE (Integrated Development Environment) playground that allows you to develop your project easily in the browser without having to set up your development environment.</p> <p>So that's exactly what we're going to do. Head on over to <a href="http://codesandbox.io" target="_blank" rel="noopener noreferrer">CodeSandbox<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> and create your account if you haven't already. Create a CodeSandbox account and scaffold a starter React template by clicking <a href="https://codesandbox.io/s/new" target="_blank" rel="noopener noreferrer">here<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>. Choosing a React template in codesandbox or downloading it as a dependency is the same idea as installing <a href="https://reactjs.org/docs/create-a-new-react-app.html" target="_blank" rel="noopener noreferrer"><code>create-react-app</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> and getting a starting boilerplate of a single page application. You can read more about Create React App <a href="https://github.com/facebook/create-react-app" target="_blank" rel="noopener noreferrer">here<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <h3 id="basic-react-app-structure"><a href="#basic-react-app-structure" class="header-anchor">#</a> Basic React App Structure:</h3> <p>In most cases when you scaffold a React project, a typical project structure would look like this.</p> <ul><li>my-app/
+<ul><li>README.md</li> <li>node_modules/</li> <li>package.json</li> <li>public/
+<ul><li>index.html</li> <li>favicon.ico</li></ul></li> <li>src/
+<ul><li>App.css</li> <li>App.js</li> <li>App.test.js</li> <li>index.css</li> <li>index.js</li> <li>logo.svg</li></ul></li></ul></li></ul> <p>The <code>public</code> folder contains our assets, html static files and custom client side javascript files. <code>package.json</code> is used by npm (Node package manager) to save all the packages needed to deploy our app, but we don't have to worry about this because CodeSandbox installs and updates this file for us.</p> <p>In our <code>public</code>, we have a standard html file called <code>index.html</code>. This is our point of entry file where we have our root element, which is named by convention. If you scroll down to line 30 in the body element, you will see <code>&lt;div id=&quot;root&quot;&gt;&lt;/div&gt;</code>. This is the root element where we will be injecting our application.</p> <p>The <code>src</code> folder contains all our React code and houses our <code>index.js</code>, <code>app.js</code> and later on our components when we start to create them. The file<code>index.js</code> is opened by default. You will see something like this:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">&quot;react-dom&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">&quot;./App&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&quot;root&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>React<span class="token punctuation">.</span>StrictMode<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>React<span class="token punctuation">.</span>StrictMode<span class="token operator">&gt;</span><span class="token punctuation">,</span>
+  rootElement
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>Here we import the React library and we use the ReactDOM <code>render()</code> method in order to print the contents of our App component into the root div in our <code>index.html</code> that we specified above. Our main app component <code>App.js</code> has to be imported as well to be included in the render.  The <code>App.js</code> component is passed in as the first argument in the render function and the <code>rootElement</code> as the second argument. That will tell React to render the app component and transform it into an element using the <code>React.createElement</code> method at build time to the index page. We will be stripping out all the scaffolded code in the component <code>App.js</code> and rebuilding later on.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&quot;./styles.css&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;App&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>Hello CodeSandbox<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>h2<span class="token operator">&gt;</span>Start editing to see some magic happen<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>The App function in <code>App.js</code> represents a React component. You can create your components as a individual files (Single File Component - SFC). In React, html-like tags which are what we call JSX can be passed in the render function and be returned. The JSX inside the return function is what the <code>App.js</code> will render out.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>What are <strong>Components</strong>?
+Components sections of your application that you extract out into separate files so that you can make them reusable.  There are two types of components, functional components and class components. We will get into these different components a bit more later in the tutorial.</p></div> <p>Now that we've walked through the starting structure in a React application, this is where the real fun begins. As you know we will be building a real-world e-commerce application sourcing data from an API data source. In order to do that, we will need to install a package dependency. So lets get right to it!</p> <h2 id="install-our-commerce-api"><a href="#install-our-commerce-api" class="header-anchor">#</a> Install our commerce API</h2> <p>We will be using a commerce API platform to source our products data. The commerce backend we will be using comes with the handy JavaScript SDK packed with helper functions to handle our commerce logic in the frontend seamlessly.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>What are <strong>API</strong>s and <strong>SDK</strong>s? <strong>API</strong> stands for Application Programming Interface and acts as a &quot;contract&quot; between client and server. The client which is a browser or any front-facing layer makes a request to a server to receive a response or initiate a defined action. When a platform has an API, it allows a software or front-facing client to interact with its data. <strong>SDK</strong> stands for Software Development Kit and is a installable package of development tools that typically comes with a library, a debugger, and other common tooling.</p></div> <p>Since we are using Codesandbox, we can conveniently add the commerce dependency on the left sidebar. So let's go ahead and do that! Click on <strong>Add dependency</strong> and in the search field type in <code>@chec/commerce.js</code> and select the option which is the latest 2.1.1 version.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>The JavaScript SDK is using the axios library under the hood. Axios is a promise-based HTTP client that works both in the browser and in other node.js environments.</p></div> <h2 id="link-up-our-commerce-instance"><a href="#link-up-our-commerce-instance" class="header-anchor">#</a> Link up our Commerce instance</h2> <p>The JavaScript SDK comes packed with all the frontend oriented functionality to get a customer-facing web-store up and running. In order to utilize all the features of this commerce platform's SDK, we are going to import the module into a folder called <code>lib</code> so that we can have access to the commerce object instance throughout our application.</p> <p>Let's go ahead and do that right now! In your <code>src</code> directory, we'll create a new folder called <code>lib</code>, create a file <code>commerce.js</code> and copy and paste the below code in it. Typically a lib folder in a project stores files that abstracts functions or some form of data.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// src/lib/Commerce.js</span>
+
+<span class="token keyword">import</span> Commerce <span class="token keyword">from</span> <span class="token string">'@chec/commerce.js'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> commerce <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Commerce</span><span class="token punctuation">(</span><span class="token string">'pk_17695092cf047ebda22cd36e60e0acbe5021825e45cb7'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>Ok so what have we done here? First we import in the Commerce.js module which we will be using to communicate with the API platform, then we export an instance of <code>Commerce</code> and pass in a public key. The public key is needed to give us access to data in the API.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Please note that for the purpose of getting you up and running with an account with products data, a public key is provided from a demo merchant account. A token key acess is what gives the API an authentication scope. A public key will give us access to core API resources such as your products and cart data.</p></div> <p>Now that we've installed our SDK and created our Commerce instance, we now have access to the Commerce object throughout our application!</p> <h2 id="make-your-first-request-to-fetch-the-products-data"><a href="#make-your-first-request-to-fetch-the-products-data" class="header-anchor">#</a> Make your first request to fetch the products data</h2> <p>One of the main resources in the API is the products endpoint. The SDK
+makes it seamless to fetch product data with its promise-based methods. This request would make a call to the <code>GET v1/products</code> API endpoint and return a list of product data. Open up your <code>App.js</code> file and delete the code that came with creating a new React app and we will write this file from scratch.</p> <p>Import <code>commerce</code> as well as a <code>ProductsList</code> component which you'll create in the next
+section. While there, initialize an empty array <code>products</code> state in your constructor.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// src/App.js</span>
+
+<span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> commerce <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./lib/commerce'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ProductsList <span class="token keyword">from</span> <span class="token string">'./components/ProductsList'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">products</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>In React, when a component is created, the constructor is the first method called. Initializing your state in the constructor will allow you to store data on the component's instance when it's created. We also need to pass <code>props</code> in as a parameter in the the constructor method and call the <code>super()</code> method in order to make the <code>this.props</code> object available. The <code>super()</code> method then calls the constructor of the parent class which is our class component in this case. You'll initialize <code>products</code>
+as an empty array in your app to be able to store the product data later on.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>The <strong>constructor</strong> method in a React class component gets called before the component gets mounted and helps to initialize local states or bind event handlers in the object you're creating. You would only need to define a constructor if you need to maintain some form of state in your React component.</p></div> <p>You will be creating the products components as stateful components. This means that the components has the ability to keep track of changing data. You might ask why would be want to keep track of changing data. Any commerce store needs to have the ability to update its products listing in real-time. Be it new products being added, products being sold out, or products being taken off. The API data constantly will get updated, therefore the UI has to be reactive.</p> <p>You can now make your first API request! Create a function called <code>fetchProducts()</code> in the component and make a request to the products endpoint using the method <code>commerce.products.list()</code>.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-jsx line-numbers-mode"><pre class="language-jsx"><code><span class="token comment">/**
+ * Fetch products data and stores in the products data object.
+ */</span>
+<span class="token function">fetchProducts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  commerce<span class="token punctuation">.</span>products<span class="token punctuation">.</span><span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">products</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">products</span><span class="token operator">:</span> products<span class="token punctuation">.</span>data <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'There was an error fetching the products'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>Inside the function, use the <code>commerce</code> object to access the <code>products.list()</code> method for access to product data. <code>commerce.products.list()</code> is a
+promise-based function call that will resolve the request and <code>then()</code> sets the response data with <code>this.setState()</code> into
+the <code>products</code> state key created earlier in the component's constructor. The <code>catch()</code> method catches any errors in the
+case that the request to the server fails.</p> <p>Of course simply creating the function does not do anything as you have yet to call this function. When the app component mounts to the DOM, use the lifecycle hook <code>componentDidMount()</code> to fetch your data. It is a React lifecycle method that helps to call functions when the component first mounts to the DOM. Since we are loading data from a remote endpoint, we want to invoke the <code>fetchProducts()</code> function to update the state with the returned products products so that we can render our updated data.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-jsx line-numbers-mode"><pre class="language-jsx"><code><span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">fetchProducts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Speaking of render, you are going to need one of the core React functions <code>render()</code>. Without <code>render()</code> and a <code>return</code> statement, nothing
+would get logged onto your frontend. Below is the expected returned data (abbreviated):</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-json line-numbers-mode"><pre class="language-json"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;prod_NqKE50BR4wdgBL&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;created&quot;</span><span class="token operator">:</span> <span class="token number">1594075580</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;last_updated&quot;</span><span class="token operator">:</span> <span class="token number">1599691862</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;active&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;permalink&quot;</span><span class="token operator">:</span> <span class="token string">&quot;TSUTww&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Kettle&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;p&gt;Black stove-top kettle&lt;/p&gt;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;raw&quot;</span><span class="token operator">:</span> <span class="token number">45.5</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;formatted&quot;</span><span class="token operator">:</span> <span class="token string">&quot;45.50&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;formatted_with_symbol&quot;</span><span class="token operator">:</span> <span class="token string">&quot;$45.50&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;formatted_with_code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;45.50 USD&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;quantity&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;media&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;image&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;source&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://cdn.chec.io/merchants/18462/images/676785cedc85f69ab27c42c307af5dec30120ab75f03a9889ab29|u9 1.png&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;sku&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;meta&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;conditionals&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;is_active&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;is_free&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;is_tax_exempt&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;is_pay_what_you_want&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;is_quantity_limited&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;is_sold_out&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;has_digital_delivery&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;has_physical_delivery&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;has_images&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;has_video&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;has_rich_embed&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;collects_fullname&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;collects_shipping_address&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;collects_billing_address&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;collects_extrafields&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;is&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;active&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;free&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;tax_exempt&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;pay_what_you_want&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;quantity_limited&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;sold_out&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;has&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;digital_delivery&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;physical_delivery&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;images&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;video&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;rich_embed&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;collects&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;fullname&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;shipping_address&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;billing_address&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;extrafields&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;extrafields&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;variants&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;categories&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cat_3zkK6oLvVlXn0Q&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;slug&quot;</span><span class="token operator">:</span> <span class="token string">&quot;office&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Home office&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;assets&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ast_7ZAMo1Mp7oNJ4x&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://cdn.chec.io/merchants/18462/images/676785cedc85f69ab27c42c307af5dec30120ab75f03a9889ab29|u9 1.png&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;is_image&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token number">1594075541</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;merchant_id&quot;</span><span class="token operator">:</span> <span class="token number">18462</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br></div></div><p>The data object contains all the property endpoints such as the product name, the product description, product price or any uploaded variants or assets. This data is exposed when you make a request to the API. As mentioned above, the open sourced Software Development Kit(SDK) that comes with abstracted axios promise-based function calls that will help to fetch data from the endpoints. The public key access that we briefed over above is a public token key from a merchant store. This account already has products and products information uploaded to the in the backend for us to run a demo store with.</p> <p>Now add the empty <code>&lt;ProductsList/&gt;</code> component to your render function:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-jsx line-numbers-mode"><pre class="language-jsx"><code><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> products <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ProductsList</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>Destructure <code>products</code> from state to make it a little cleaner. You'll need to pass the <code>products</code> property as an argument to your <code>ProductsList</code> component. This means that the value of the <code>ProductsList</code> component's prop <code>products</code> will be resolved from the parent (<code>App</code>) component's state, and will update automatically whenever it changes.</p> <h2 id="start-to-style-your-components"><a href="#start-to-style-your-components" class="header-anchor">#</a> Start to style your components</h2> <p>Before we go any further, let's start to port in some styles so we can start to make our UI look slick! We will be using SCSS, a CSS style compiler to style our application. Please note that we will not be going into styling details but will only go over the high-level of porting in the styles. First install <code>node-sass</code> by adding it as a dependency in the left sidebar or alternatively in a local environment by running the command below.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> node-sass
+<span class="token comment"># OR</span>
+<span class="token function">npm</span> <span class="token function">install</span> node-sass
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Next, let's go ahead and create a <code>styles</code> folder with a <code>scss</code> folder inside. Inside of the <code>scss</code> folder, create two other folders named <code>components</code> and <code>global</code>. Lastly, still in the <code>scss</code> folder, create a file and name it <code>styles.scss</code>. This file is where we will import in all our components and global styles. Your styles structure should look like the below tree.</p> <ul><li>src/
+<ul><li>styles/
+<ul><li>components/</li> <li>global/</li> <li>styles.scss</li></ul></li></ul></li></ul> <p>In the components folder, create a file named <code>_products.scss</code> and copy in the below code.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token comment">/* _products.scss */</span>
+
+<span class="token selector">.products</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 3rem<span class="token punctuation">;</span>
+
+    <span class="token atrule"><span class="token rule">@include</span> md</span> <span class="token punctuation">{</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+        <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span>3<span class="token punctuation">,</span> <span class="token function">minmax</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 1fr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token property">margin</span><span class="token punctuation">:</span> 10rem<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector">.product</span> <span class="token punctuation">{</span>
+
+        <span class="token selector">&amp;__card</span> <span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 55%<span class="token punctuation">;</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+            <span class="token property">margin-top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+            <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+            <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 2rem<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token selector">&amp;__image</span> <span class="token punctuation">{</span>
+            <span class="token property">border</span><span class="token punctuation">:</span> 2px solid $text-primary<span class="token punctuation">;</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> 90%<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    
+        <span class="token selector">&amp;__name</span> <span class="token punctuation">{</span>
+            <span class="token property">color</span><span class="token punctuation">:</span> $text-primary<span class="token punctuation">;</span>
+            <span class="token property">padding-top</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span>
+            <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 0.25rem<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    
+        <span class="token selector">&amp;__details</span> <span class="token punctuation">{</span>
+            <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+            <span class="token property">justify-content</span><span class="token punctuation">:</span> space-between<span class="token punctuation">;</span>
+            <span class="token property">margin-top</span><span class="token punctuation">:</span> 0.75rem<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    
+        <span class="token selector">&amp;__price</span> <span class="token punctuation">{</span>
+            <span class="token property">align-self</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+            <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+            <span class="token property">color</span><span class="token punctuation">:</span> $text-grey<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    
+    
+        <span class="token selector">&amp;__details</span> <span class="token punctuation">{</span>
+            <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+            <span class="token property">justify-content</span><span class="token punctuation">:</span> space-between<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    
+        <span class="token selector">&amp;__btn</span> <span class="token punctuation">{</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> $color-accent<span class="token punctuation">;</span>
+            <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+            <span class="token property">font-size</span><span class="token punctuation">:</span> 0.75rem<span class="token punctuation">;</span>
+            <span class="token property">text-transform</span><span class="token punctuation">:</span> uppercase<span class="token punctuation">;</span>
+            <span class="token property">padding</span><span class="token punctuation">:</span> 0.5rem 1rem<span class="token punctuation">;</span>
+            <span class="token property">transition</span><span class="token punctuation">:</span> all 0.3s ease-in-out<span class="token punctuation">;</span>
+            <span class="token property">margin-top</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span>
+            <span class="token property">border</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+    
+            <span class="token selector">&amp;:hover</span> <span class="token punctuation">{</span>
+                <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">lighten</span><span class="token punctuation">(</span>#EF4E42<span class="token punctuation">,</span> 5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token atrule"><span class="token rule">@include</span> sm</span> <span class="token punctuation">{</span>
+                <span class="token property">margin-top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br></div></div><p>Now in the global folder, create <code>_base.scss</code>, <code>_body.scss</code> and <code>_mixins.scss</code> and copy in the respective code below.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token comment">/* _base.scss */</span>
+
+// Font styles
+$<span class="token property">font-primary</span><span class="token punctuation">:</span> <span class="token string">'Amiko'</span><span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+$<span class="token property">font-secondary</span><span class="token punctuation">:</span> <span class="token string">'Adamina'</span><span class="token punctuation">,</span> serif<span class="token punctuation">;</span>
+
+// Colors
+$<span class="token property">bg-color</span><span class="token punctuation">:</span> #E8E2D7<span class="token punctuation">;</span>
+
+$<span class="token property">text-primary</span><span class="token punctuation">:</span> #292B83<span class="token punctuation">;</span>
+$<span class="token property">text-grey</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>67<span class="token punctuation">,</span> 67<span class="token punctuation">,</span> 67<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+$<span class="token property">color-accent</span><span class="token punctuation">:</span> #EF4E42<span class="token punctuation">;</span>
+
+// Media query sizes
+$<span class="token property">sm-width</span><span class="token punctuation">:</span> 576px<span class="token punctuation">;</span>
+$<span class="token property">md-width</span><span class="token punctuation">:</span> 768px<span class="token punctuation">;</span>
+$<span class="token property">lg-width</span><span class="token punctuation">:</span> 992px<span class="token punctuation">;</span>
+$<span class="token property">xl-width</span><span class="token punctuation">:</span> 1200px<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token comment">/* _body.scss */</span>
+
+<span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> $font-primary<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> $bg-color<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token comment">/* _mixins.scss */</span>
+
+<span class="token atrule"><span class="token rule">@mixin</span> small-xs</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> #</span><span class="token punctuation">{</span>$sm-width<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
+    <span class="token atrule"><span class="token rule">@content</span><span class="token punctuation">;</span></span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@mixin</span> sm</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> #</span><span class="token punctuation">{</span>$sm-width<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
+    <span class="token atrule"><span class="token rule">@content</span><span class="token punctuation">;</span></span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@mixin</span> md</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> #</span><span class="token punctuation">{</span>$md-width<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
+    <span class="token atrule"><span class="token rule">@content</span><span class="token punctuation">;</span></span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@mixin</span> lg</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> #</span><span class="token punctuation">{</span>$lg-width<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
+    <span class="token atrule"><span class="token rule">@content</span><span class="token punctuation">;</span></span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@mixin</span> xl</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> #</span><span class="token punctuation">{</span>$xl-width<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
+    <span class="token atrule"><span class="token rule">@content</span><span class="token punctuation">;</span></span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@mixin</span> md-max</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> #</span><span class="token punctuation">{</span>$lg-width<span class="token punctuation">}</span><span class="token selector">)</span> <span class="token punctuation">{</span>
+    <span class="token atrule"><span class="token rule">@content</span><span class="token punctuation">;</span></span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><p>Lastly as mentioned, you'll need to now import those created files in the style index <code>styles.scss</code>.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-scss line-numbers-mode"><pre class="language-scss"><code><span class="token keyword">@import</span> <span class="token string">&quot;global/base&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&quot;global/body&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&quot;global/mixins&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">&quot;components/product&quot;</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>Now that all the styles are written and imported, you should start to see the styles pull through when you render your components later.</p> <h2 id="create-our-product-item-component"><a href="#create-our-product-item-component" class="header-anchor">#</a> Create our product item component</h2> <p>The nature of React and most modern JavaScript frameworks is to separate your code into components. Components are a way to encapsulate a group of
+elements for reuse throughout your application. You'll be creating two components for products, one
+will be for the single product item and another for the list of product items.</p> <p>Start by creating a class component and name it <code>ProductItem.js</code> in <code>src/components</code>. This component will render the
+individual product card. In your render function destructure <code>product</code> from your props. You will reference this
+property to access each product's image, name, description, and price via <code>.media.source</code>, <code>.name</code>, <code>.description</code> and
+<code>.price</code> in the return statement.</p> <p>Product descriptions return HTML. To strip HTML from the product description string, using <a href="https://codsen.com/os/string-strip-html/" target="_blank" rel="noopener noreferrer">this <code>string-strip-html</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> handy library will do the trick. Install this library by running <code>yarn add string-strip-html</code> or <code>npm i string-strip-html</code>. After installing, import the module in and pass in the product description to the <code>stripHtml</code> function.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-jsx line-numbers-mode"><pre class="language-jsx"><code><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> stripHtml <span class="token keyword">from</span> <span class="token string">'string-strip-html'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ProductItem</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> product <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> result <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">stripHtml</span><span class="token punctuation">(</span>product<span class="token punctuation">.</span>description<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>product__card<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>product__image<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>product<span class="token punctuation">.</span>media<span class="token punctuation">.</span>source<span class="token punctuation">}</span></span> <span class="token attr-name">alt</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>product<span class="token punctuation">.</span>name<span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>product__info<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>product__name<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>product<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>product__description<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span><span class="token comment">/* product description stripped of html tags */</span><span class="token punctuation">}</span><span class="token plain-text">
+            </span><span class="token punctuation">{</span>result<span class="token punctuation">}</span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>product__details<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>product__price<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span>product<span class="token punctuation">.</span>price<span class="token punctuation">.</span>formatted_with_symbol<span class="token punctuation">}</span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> ProductItem<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p>As you saw earlier in the abbreviated JSON, the returned product data object comes with all the information that you
+need to build a product listing view. In the code snippet above, your <code>product</code> prop is being used to access the various
+properties. First, render an image tag with the <code>src</code> value of <code>product.media.source</code> as the values inside the curly
+braces dynamically binds to the attributes.</p> <h2 id="create-our-products-list-component"><a href="#create-our-products-list-component" class="header-anchor">#</a> Create our products list component</h2> <p>It's now time to create a <code>ProductsList.js</code> component inside <code>src/components</code>. The <code>ProductsList</code> component will be another
+class component which will loop through and render a list of <code>ProductItem</code> components.</p> <p>First, import in the <code>ProductItem</code> component. Next, define a <code>products</code> prop. This will be provided by the parent component.
+In your return statement you need to use the <code>map</code> function
+to render a <code>ProductItem</code> component for each product in your <code>products</code> prop. You also
+need to pass in a unique identifier (<code>product.id</code>) as the <code>key</code> attribute - React will use it to determine which
+items in a list have changed and which parts of your application need to be re-rendered.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ProductItem <span class="token keyword">from</span> <span class="token string">'./ProductItem'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ProductsList</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> products <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;products&quot;</span><span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span>products<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">product</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+          <span class="token operator">&lt;</span>ProductItem
+            key<span class="token operator">=</span><span class="token punctuation">{</span>product<span class="token punctuation">.</span>id<span class="token punctuation">}</span>
+            product<span class="token operator">=</span><span class="token punctuation">{</span>product<span class="token punctuation">}</span>
+          <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> ProductsList<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>This component will be a bit bare-boned for now except for looping through a <code>ProductItem</code> component.</p> <p>With both your product item and list components created, go back to <code>App.js</code> to render the
+<code>&lt;ProductsList /&gt;</code> and pass in the <code>products</code> prop with the returned product data as the value.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> commerce <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./lib/commerce'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ProductsList <span class="token keyword">from</span> <span class="token string">'./components/ProductsList'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">products</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">fetchProducts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/**
+   * Fetch products data and stores in the products data object.
+   */</span>
+  <span class="token function">fetchProducts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    commerce<span class="token punctuation">.</span>products<span class="token punctuation">.</span><span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">products</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">products</span><span class="token operator">:</span> products<span class="token punctuation">.</span>data <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'There was an error fetching the products'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> products <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>ProductsList
+          products<span class="token operator">=</span><span class="token punctuation">{</span>products<span class="token punctuation">}</span>
+        <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br></div></div><h2 id="conclusion"><a href="#conclusion" class="header-anchor">#</a> Conclusion</h2> <p>Awesome, there you have it! You have just created a e-commerce React application listing products on from an API backend! The next steps would be to add cart and checkout functionality to your application. Stay tuned for follow up workshops!</p> <h3 id="author"><a href="#author" class="header-anchor">#</a> Author</h3> <p>Made with ❤️ by Jaeriah Tay</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/frontendfoxes/curriculum/edit/master/workshops/react/minis/ecommerce.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/curriculum/assets/js/app.7a4aa1b0.js" defer></script><script src="/curriculum/assets/js/2.5909c2e7.js" defer></script><script src="/curriculum/assets/js/1.8280c2b5.js" defer></script><script src="/curriculum/assets/js/72.e19c86a8.js" defer></script>
+  </body>
+</html>

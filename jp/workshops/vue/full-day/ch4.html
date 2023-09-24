@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="jp-JP">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>📋 Chapter 4: 犬の里親体験アプリの作成 | Front-End Foxes Workshops</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/curriculum/favicon.png">
+    <meta name="description" content="ワークショップ">
+    
+    <link rel="preload" href="/curriculum/assets/css/0.styles.c2383ade.css" as="style"><link rel="preload" href="/curriculum/assets/js/app.7a4aa1b0.js" as="script"><link rel="preload" href="/curriculum/assets/js/2.5909c2e7.js" as="script"><link rel="preload" href="/curriculum/assets/js/1.8280c2b5.js" as="script"><link rel="preload" href="/curriculum/assets/js/40.fca2d06f.js" as="script"><link rel="prefetch" href="/curriculum/assets/js/10.ca4f7878.js"><link rel="prefetch" href="/curriculum/assets/js/11.39fabe8a.js"><link rel="prefetch" href="/curriculum/assets/js/12.4e273fd3.js"><link rel="prefetch" href="/curriculum/assets/js/13.9ef5660d.js"><link rel="prefetch" href="/curriculum/assets/js/14.65b0ca50.js"><link rel="prefetch" href="/curriculum/assets/js/15.ecd94876.js"><link rel="prefetch" href="/curriculum/assets/js/16.68793acb.js"><link rel="prefetch" href="/curriculum/assets/js/17.f2a1fdca.js"><link rel="prefetch" href="/curriculum/assets/js/18.7ba36a75.js"><link rel="prefetch" href="/curriculum/assets/js/19.ef711273.js"><link rel="prefetch" href="/curriculum/assets/js/20.e0ce5fdf.js"><link rel="prefetch" href="/curriculum/assets/js/21.36effa68.js"><link rel="prefetch" href="/curriculum/assets/js/22.063a073c.js"><link rel="prefetch" href="/curriculum/assets/js/23.504c9ec5.js"><link rel="prefetch" href="/curriculum/assets/js/24.509de174.js"><link rel="prefetch" href="/curriculum/assets/js/25.3fee59a8.js"><link rel="prefetch" href="/curriculum/assets/js/26.84872638.js"><link rel="prefetch" href="/curriculum/assets/js/27.7c4f8b3c.js"><link rel="prefetch" href="/curriculum/assets/js/28.1a700b9c.js"><link rel="prefetch" href="/curriculum/assets/js/29.2ddc5a83.js"><link rel="prefetch" href="/curriculum/assets/js/3.a7c41ec0.js"><link rel="prefetch" href="/curriculum/assets/js/30.e782a43f.js"><link rel="prefetch" href="/curriculum/assets/js/31.7420713b.js"><link rel="prefetch" href="/curriculum/assets/js/32.cb8006dd.js"><link rel="prefetch" href="/curriculum/assets/js/33.cd8a49d5.js"><link rel="prefetch" href="/curriculum/assets/js/34.af7bec77.js"><link rel="prefetch" href="/curriculum/assets/js/35.0c150a2f.js"><link rel="prefetch" href="/curriculum/assets/js/36.c6385503.js"><link rel="prefetch" href="/curriculum/assets/js/37.630d9e57.js"><link rel="prefetch" href="/curriculum/assets/js/38.8a384911.js"><link rel="prefetch" href="/curriculum/assets/js/39.f2ee1645.js"><link rel="prefetch" href="/curriculum/assets/js/4.31053f34.js"><link rel="prefetch" href="/curriculum/assets/js/41.c99ff83c.js"><link rel="prefetch" href="/curriculum/assets/js/42.88f262ad.js"><link rel="prefetch" href="/curriculum/assets/js/43.36ec3f20.js"><link rel="prefetch" href="/curriculum/assets/js/44.4291cd09.js"><link rel="prefetch" href="/curriculum/assets/js/45.f6027c6e.js"><link rel="prefetch" href="/curriculum/assets/js/46.c161aa53.js"><link rel="prefetch" href="/curriculum/assets/js/47.d1b51532.js"><link rel="prefetch" href="/curriculum/assets/js/48.16e79cad.js"><link rel="prefetch" href="/curriculum/assets/js/49.38db29ee.js"><link rel="prefetch" href="/curriculum/assets/js/5.9df2437c.js"><link rel="prefetch" href="/curriculum/assets/js/50.1e5ab1c7.js"><link rel="prefetch" href="/curriculum/assets/js/51.939ab618.js"><link rel="prefetch" href="/curriculum/assets/js/52.327fd43d.js"><link rel="prefetch" href="/curriculum/assets/js/53.4d1806d8.js"><link rel="prefetch" href="/curriculum/assets/js/54.636ea52a.js"><link rel="prefetch" href="/curriculum/assets/js/55.784e44a9.js"><link rel="prefetch" href="/curriculum/assets/js/56.070964ef.js"><link rel="prefetch" href="/curriculum/assets/js/57.1388cb7d.js"><link rel="prefetch" href="/curriculum/assets/js/58.03195ad2.js"><link rel="prefetch" href="/curriculum/assets/js/59.b85902e4.js"><link rel="prefetch" href="/curriculum/assets/js/6.8479fb84.js"><link rel="prefetch" href="/curriculum/assets/js/60.cb6ad11c.js"><link rel="prefetch" href="/curriculum/assets/js/61.d30e460a.js"><link rel="prefetch" href="/curriculum/assets/js/62.2f0756ce.js"><link rel="prefetch" href="/curriculum/assets/js/63.2ec5ac86.js"><link rel="prefetch" href="/curriculum/assets/js/64.9ff57a08.js"><link rel="prefetch" href="/curriculum/assets/js/65.a9717421.js"><link rel="prefetch" href="/curriculum/assets/js/66.b8f0619d.js"><link rel="prefetch" href="/curriculum/assets/js/67.cf93efcd.js"><link rel="prefetch" href="/curriculum/assets/js/68.7993fcb1.js"><link rel="prefetch" href="/curriculum/assets/js/69.de933680.js"><link rel="prefetch" href="/curriculum/assets/js/7.8a2e7228.js"><link rel="prefetch" href="/curriculum/assets/js/70.4fe4310c.js"><link rel="prefetch" href="/curriculum/assets/js/71.f61620b6.js"><link rel="prefetch" href="/curriculum/assets/js/72.e19c86a8.js"><link rel="prefetch" href="/curriculum/assets/js/73.4655972c.js"><link rel="prefetch" href="/curriculum/assets/js/74.8e238311.js"><link rel="prefetch" href="/curriculum/assets/js/75.b9dc9475.js"><link rel="prefetch" href="/curriculum/assets/js/76.08b2f1b1.js"><link rel="prefetch" href="/curriculum/assets/js/77.099ee248.js"><link rel="prefetch" href="/curriculum/assets/js/78.d062e305.js"><link rel="prefetch" href="/curriculum/assets/js/vendors~docsearch.38838867.js">
+    <link rel="stylesheet" href="/curriculum/assets/css/0.styles.c2383ade.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/curriculum/jp/" class="home-link router-link-active"><!----> <span class="site-name">Front-End Foxes Workshops</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/curriculum/workshops/react/" class="nav-link">
+  React Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/vue/" class="nav-link">
+  Vue Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/CODE_OF_CONDUCT.html" class="nav-link">
+  Code of Conduct
+</a></div><div class="nav-item"><a href="/curriculum/workshops/TEAM.html" class="nav-link">
+  Team
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">言語</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">言語</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/curriculum/workshops/vue/full-day/ch4.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/de/workshops/vue/full-day/ch4.html" class="nav-link">
+  Deutsch
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/fr/" class="nav-link">
+  Français
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/jp/workshops/vue/full-day/ch4.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  日本語
+</a></li></ul></div></div> <a href="https://github.com/frontendfoxes/curriculum/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/curriculum/workshops/react/" class="nav-link">
+  React Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/vue/" class="nav-link">
+  Vue Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/CODE_OF_CONDUCT.html" class="nav-link">
+  Code of Conduct
+</a></div><div class="nav-item"><a href="/curriculum/workshops/TEAM.html" class="nav-link">
+  Team
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">言語</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">言語</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/curriculum/workshops/vue/full-day/ch4.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/de/workshops/vue/full-day/ch4.html" class="nav-link">
+  Deutsch
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/fr/" class="nav-link">
+  Français
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/jp/workshops/vue/full-day/ch4.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  日本語
+</a></li></ul></div></div> <a href="https://github.com/frontendfoxes/curriculum/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>🐶 フルデイワークショップ</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/curriculum/jp/workshops/vue/full-day/ch4.html" aria-current="page" class="active sidebar-link">📋 Chapter 4: 犬の里親体験アプリの作成</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/full-day/ch4.html#今回構築するもの" class="sidebar-link">今回構築するもの</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/full-day/ch4.html#手順" class="sidebar-link">手順</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/full-day/ch4.html#ロイヤルティリストの作成" class="sidebar-link">ロイヤルティリストの作成</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/full-day/ch4.html#vuex-でリストの状態を管理する" class="sidebar-link">Vuex でリストの状態を管理する</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/full-day/ch4.html#お気に入りを登録" class="sidebar-link">お気に入りを登録</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/full-day/ch4.html#ui-の微調整" class="sidebar-link">UI の微調整</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/full-day/ch4.html#犬の追加と削除" class="sidebar-link">犬の追加と削除</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/full-day/ch4.html#ui-を構築する" class="sidebar-link">UI を構築する</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/full-day/ch4.html#ロジックを強化する" class="sidebar-link">ロジックを強化する</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/full-day/ch4.html#リストから削除" class="sidebar-link">リストから削除</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/full-day/ch4.html#最終結果" class="sidebar-link">最終結果</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>🦴ミニワークショップ</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>👩‍🎓 ナノアクティビティ</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="📋-chapter-4-犬の里親体験アプリの作成"><a href="#📋-chapter-4-犬の里親体験アプリの作成" class="header-anchor">#</a> 📋 Chapter 4: 犬の里親体験アプリの作成</h1> <table><thead><tr><th><strong>プロジェクトのゴール</strong></th> <th>お店のタグ付けシステムを作成して、「ロイヤルティ」リストに犬を追加したり削除したりできるようにします。</th></tr></thead> <tbody><tr><td><strong>このワークショップで学ぶこと</strong></td> <td>Vuex による Vue アプリケーションの状態管理</td></tr> <tr><td><strong>必要なツール</strong></td> <td>Chrome のような最新のブラウザ。CodeSandbox.io のアカウント。もし迷ったら、このチャプターは<a href="https://github.com/frontendfoxes/projects/tree/main/chapter-3-end" target="_blank" rel="noopener noreferrer">こちら<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>をインポートして始めてみてください。この方法についての説明は <a href="/curriculum/jp/workshops/vue/full-day/appendix_1.html">Appendix 1</a> にあります。</td></tr> <tr><td><strong>かかる時間</strong></td> <td>1.5 時間</td></tr></tbody></table> <h2 id="今回構築するもの"><a href="#今回構築するもの" class="header-anchor">#</a> 今回構築するもの</h2> <p><img src="/curriculum/assets/img/Ch4.d5ed2b99.png" alt="sketchnote"></p> <h2 id="手順"><a href="#手順" class="header-anchor">#</a> 手順</h2> <p>もしプロジェクトを作り直す必要がある場合は、メインページの左下にある <strong>GitHub からインポート</strong>リンクをクリックし、フィールドにリポジトリの URL を貼り付けて、<a href="https://github.com/frontendfoxes/projects/tree/main/chapter-3-end" target="_blank" rel="noopener noreferrer">このリポジトリ<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>を Code Sandbox に複製します。<a href="/curriculum/jp/workshops/vue/full-day/ch3.html">チャプター 3</a>で作成したプロジェクトを続行することもできます。</p> <p>このチャプターでは、ショッピングカートのように、里親用の「ロイヤルティリスト」を作成して、私たちが特に好きでお迎えしたい犬のリストを表示します。はじめに、 <code>views</code> フォルダ内に新しい空のファイルを作成し、 <code>Favorites.vue</code> という名前をつけます。</p> <h2 id="ロイヤルティリストの作成"><a href="#ロイヤルティリストの作成" class="header-anchor">#</a> ロイヤルティリストの作成</h2> <p>この新しいコンポーネントで最初に必要なのはテンプレートです。この新しいファイル内に <code>&lt;template&gt;&lt;/template&gt;</code> タグを追加します。</p> <p>テンプレートタグの中に <code>&lt;div&gt;&lt;/div&gt;</code> タグを作成し、シンプルなテキスト「My Favorites」を追加します。</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+		My Favorites
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>次に、新しく作成したコンポーネントをルーターに接続し、対応するルートに正しく表示されているかどうかを確認します。</p> <p><code>main.js</code> ファイルに移動します。上部にある <code>Home</code> と <code>Pets</code> コンポーネントのインポートの後に、インポート文をもう一つ追加します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> Favorites <span class="token keyword">from</span> <span class="token string">'./views/Favorites'</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>そのあと、 <code>routes</code> にもうひとつのルートを追加します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token punctuation">{</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">&quot;/favorites&quot;</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span> Favorites <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>ブラウザのアドレスバーから <code>/favorites</code> （ホームページの URL に <code>/favorites</code> を追加するだけ）に移動してみてください。ヘッダーとフッターの間に「My Favorites」というテキストが表示されているはずです。</p> <p>ナビバー内のリストにリンクを追加してみましょう。あとで、選択したアイテムの金額も表示しますが、今のところはリンクのついた単なるアイコンです。 <code>App.vue</code> ファイルに移動し、 <code>v-toolbar-items</code> の閉じタグの直後に以下のコードを追加します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-spacer</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-spacer</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-link</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/favorites<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-icon</span> <span class="token attr-name">large</span><span class="token punctuation">&gt;</span></span>loyalty<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-icon</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-link</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p><code>v-spacer</code> は他のコンポーネント間の空きスペースを埋めるための Vuetify のコンポーネントです。 <code>v-icon</code> は<a href="https://material.io/icons/" target="_blank" rel="noopener noreferrer">マテリアルアイコン<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>を表示するコンポーネントです。</p></div> <p>これで、お気に入りアイコンをクリックすると <code>/favorites</code> ルートに移動します。</p> <p>Favorites コンポーネントのマークアップを作成しましょう。Vuetify のリストコンポーネントを使用して、犬を表示します。 <code>&lt;div&gt;&lt;/div&gt;</code> タグからプレースホルダーテキストを削除して、 <code>&lt;v-list&gt;&lt;/v-list&gt;</code> タグで置き換えましょう。テンプレートは次のようになります：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>このリストの名前が必要です。Vuetify はこの目的のために <code>v-subheader</code> コンポーネントを使用しているので、追加してみましょう：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-subheader</span><span class="token punctuation">&gt;</span></span>My Favorites<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-subheader</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>次に、モックデータを含むリスト要素を追加しましょう。犬の画像とその名前、削除アイコンです。リスト項目には <code>v-list-item</code> コンポーネントが必要です。
+犬の画像は <code>v-list-item-avatar</code> 、名前は <code>v-list-item-content</code> 、削除ボタンは <code>v-list-item-action</code> と <code>v-icon</code> です。</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>リストの詳細については、<a href="https://vuetifyjs.com/en/components/lists" target="_blank" rel="noopener noreferrer">Vuetify リストコンポーネントのドキュメント<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>をご覧ください。</p></div> <p>ここまでのテンプレート：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-subheader</span><span class="token punctuation">&gt;</span></span>My Favorites<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-subheader</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list-item</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list-item-avatar</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>https://images.dog.ceo/breeds/husky/n02110185_7888.jpg<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list-item-avatar</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list-item-content</span><span class="token punctuation">&gt;</span></span>Fluffy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list-item-content</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list-item-action</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-icon</span><span class="token punctuation">&gt;</span></span>delete<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-icon</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list-item-action</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list-item</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="vuex-でリストの状態を管理する"><a href="#vuex-でリストの状態を管理する" class="header-anchor">#</a> Vuex でリストの状態を管理する</h2> <p>この時点で、UI が統合されているのがわかります。リストの中に実際のデータを表示する時が来ましたが、このままでは問題があります。選択した犬を保存して <code>Pets</code> コンポーネントから <code>Favorites</code> コンポーネントに犬を渡すにはどうすればよいのでしょうか？これらの 2 つのコンポーネントには「親子」関係がないため、props を使用することはできません... そのような場合に、 <em>状態管理</em> ライブラリが必要であり、Vue には Vuex というライブラリがあります。</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Vuex は、Vue.js アプリケーションの状態管理パターンおよびライブラリです。これは、アプリケーション内のすべてのコンポーネントのための一元化されたストアとして機能し、ステートが予測可能な方法でのみ変更できるようにルールが保証されています。これにより、アプリケーション内のコンポーネントと共有できるデータを保持することができます。詳細は<a href="http://vuex.vuejs.org/en/" target="_blank" rel="noopener noreferrer">こちら<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>をご覧ください。</p></div> <p>この一元化されたストアで作業を開始するには、Vuex をアプリケーションに追加する必要があります。まず、 <code>Explorer</code> タブで下にスクロールして <code>Dependencies</code> ドロップダウンを開きます。 <code>Add dependency</code> ボタンをクリックして <code>vuex</code> を探します。依存関係をインストールします。Vuex が <code>package.json</code> に追加されます。</p> <p>では、 <code>/src</code> の中に <code>store</code> フォルダを作成してみましょう。この新しいフォルダの中に <code>store.js</code> ファイルを追加します。これは、アプリケーションのすべてのデータを保存する場所です。</p> <p><code>store.js</code> を開き、Vuex をインポートします：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Vuex <span class="token keyword">from</span> <span class="token string">'vuex'</span><span class="token punctuation">;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Vuex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>次に、実際のストアを作成してエクスポートします：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>実際にアプリケーションのステートで保存したいものは何でしょうか？それは、選択された犬を含むお気に入りのリストです。初期状態の <code>state</code> オブジェクトに <code>favorites</code> 配列を中括弧で囲んで追加してみましょう：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+	<span class="token literal-property property">state</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">favorites</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>次に、このストアを Vue インスタンスに追加する必要があります。これを行うには、 <code>main.js</code> ファイルに移動し、残りのインポートの下にインポートします：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'./store/store'</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>そして、 <code>main.js</code> の Vue インスタンスのプロパティに <code>store</code> を追加します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+	router<span class="token punctuation">,</span>
+	store<span class="token punctuation">,</span>
+	vuetify<span class="token punctuation">,</span>
+	<span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">h</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>これで、アプリケーション内のすべてのコンポーネントは、任意のコンポーネントの computed プロパティの中に <code>this.$store.state</code> と書けば、これを通してステートにアクセスできるようになりました。では、<code>Favorites</code> コンポーネントからアクセスしてみましょう。</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Computed プロパティを使用して、ビューに表示されるプロパティをすばやく計算できます。これらの計算はキャッシュされ、依存関係が変更されたときにのみ更新されます。</p></div> <p><code>Favorites.vue</code> の内部の、 <code>&lt;template&gt;</code> ブロックの下に <code>&lt;script&gt;</code> ブロックを追加し、 <code>export default</code> 文を追加します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>...そして、 <code>&lt;script&gt;</code> ブロックを編集して <code>computed</code> プロパティをコンポーネントに追加します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">computed</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">favorites</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>favorites<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p><code>favorites()</code> はステートに保存されている <code>favorites</code> 配列の値を返す関数であることがわかり、これをコンポーネントで使用することができます。</p> <h2 id="お気に入りを登録"><a href="#お気に入りを登録" class="header-anchor">#</a> お気に入りを登録</h2> <p>モックデータを <code>favorites</code> のコンテンツに置き換えましょう。</p> <p>まず、 <code>state.favorites</code> に一時的にコンテンツを追加してみましょう。 <code>data/dogs.js</code> ファイルから最初の 3 つの犬をコピーして、 <code>store.js</code> の <code>favorites</code> 配列に貼り付けます：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token literal-property property">state</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">favorites</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">&quot;Max&quot;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">breed</span><span class="token operator">:</span> <span class="token string">&quot;husky&quot;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">img</span><span class="token operator">:</span> <span class="token string">&quot;https://images.dog.ceo/breeds/husky/n02110185_1469.jpg&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">&quot;Rusty&quot;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">breed</span><span class="token operator">:</span> <span class="token string">&quot;shiba&quot;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">img</span><span class="token operator">:</span> <span class="token string">&quot;https://images.dog.ceo/breeds/shiba/shiba-13.jpg&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">&quot;Rocco&quot;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">breed</span><span class="token operator">:</span> <span class="token string">&quot;boxer&quot;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">img</span><span class="token operator">:</span> <span class="token string">&quot;https://images.dog.ceo/breeds/boxer/n02108089_14112.jpg&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p><code>Favorites.vue</code> コンポーネントの内部では、おなじみの <code>v-for</code> ディレクティブを使って <code>favorites</code> の配列を繰り返し処理します。 <code>&lt;template&gt;</code> <code>&lt;div&gt;</code> をこのようなマークアップに変更します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-subheader</span><span class="token punctuation">&gt;</span></span>My Favorites<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-subheader</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list-item</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>(dog, index) in favorites<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>index<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list-item-avatar</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>dog.img<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list-item-avatar</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list-item-content</span><span class="token punctuation">&gt;</span></span>{{dog.name}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list-item-content</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list-item-action</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-icon</span><span class="token punctuation">&gt;</span></span>delete<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-icon</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list-item-action</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list-item</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>何が変わったのでしょうか？ <code>src</code> 属性が <code>:src</code> に変更されたことに注目してください。また、中括弧内の <code>Fluffy</code> を <code>dog.name</code> に変更することで、名前が動的に変わることを確認しました。</p></div> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>また、<code>v-list-item</code> のオープニングタグで <code>v-for</code> の隣に <code>:key</code> を追加したことに注意してください。これは、Vue が <code>v-for</code> を使用する際にキーを提供することを望んでいるためです。 <code>v-for</code> で <code>(dog, index) in favorites</code> を使うことで、犬ごとに配列のインデックスを取得することができます。マックスの場合はインデックス 0、ラスティの場合はインデックス 1 などを取得します。これをキーとして使うことができます。より詳しい情報は<a href="https://vuejs.org/guide/list.html#Maintaining-State" target="_blank" rel="noopener noreferrer">こちら<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>を参照してください。</p></div> <p>これで <code>/favorites</code> ルートにモックデータが表示されるようになりました。ページの見た目を良くするために、もう少し UI を微調整してみましょう。</p> <h2 id="ui-の微調整"><a href="#ui-の微調整" class="header-anchor">#</a> UI の微調整</h2> <p>まず、リストが空の場合に表示するプレースホルダを追加する必要があります。</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>注意： <code>v-if</code> ディレクティブは、式の値が真か偽かという「真実性」に基づいて条件付きで要素をレンダリングします。 <code>v-else</code> ディレクティブは <code>v-if</code> の「else」ブロックとして機能し、「else」条件を提供します。</p></div> <p>リストの内容全体をラッパー div でラップし、お気に入りリストに項目がある場合にのみ表示します。テンプレートを変更してみましょう：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-subheader</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>!favorites.length<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Your favorites list is empty<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-subheader</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-else</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-subheader</span><span class="token punctuation">&gt;</span></span>Your favorites<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-subheader</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list-item</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>(dog, index) in favorites<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>index<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list-item-avatar</span><span class="token punctuation">&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>dog.img<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list-item-avatar</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list-item-content</span><span class="token punctuation">&gt;</span></span>{{dog.name}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list-item-content</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-list-item-action</span><span class="token punctuation">&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-icon</span><span class="token punctuation">&gt;</span></span>delete<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-icon</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list-item-action</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list-item</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-list</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>ここで何が起こっているのでしょうか？ まず、アプリケーションは <em>length</em> で <code>favorites</code> 配列の長さをチェックします（つまり、配列の中にいくつかの項目があるかどうかをチェックします。空の配列の長さは 0 に等しくなります）。長さが 0 の場合、アプリケーションは <code>Your favorites list is empty</code> というテキストを表示し、 <code>v-else</code> ブロックを無視します。配列が空でない場合、アプリケーションは <code>v-else</code> ブロックにジャンプしてそれをレンダリングします。</p></div> <p>また、ツールバーのタグアイコンの上に選択された犬の数を表示してみましょう。 <code>App.vue</code> に移動して、 <code>favorites</code> のプロパティを追加します（先ほど追加したコンポーネントの <code>Favorites</code> に似ています）。これは <code>name</code> プロパティの下に配置することができます：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token literal-property property">computed</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token function">favorites</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>favorites<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>お気に入りのアイコンを Vuetify の <code>v-badge</code> コンポーネントでラップし、その中にあるアイテムの数を表示してみましょう。 <code>App.vue</code> を編集し、お気に入り用の <code>&lt;router-link&gt;</code> ブロックを以下のマークアップで変更します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-link</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>/favorites<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-badge</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>grey lighten-1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">overlap</span> <span class="token attr-name">right</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>favorites.length<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">#badge</span><span class="token punctuation">&gt;</span></span>
+			{{favorites.length}}
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-icon</span> <span class="token attr-name">large</span><span class="token punctuation">&gt;</span></span>loyalty<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-icon</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-badge</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-link</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>ここでの <code>v-model</code> ディレクティブはバッジの可視性を定義します。つまり、リストが空の場合、バッジは非表示になります。モックデータには 3 つの項目があるので、バッジの中に <code>3</code> という数字が表示されています。これは Vuetify バッジコンポーネントで定義されている動作で、ドキュメントは <a href="https://vuetifyjs.com/en/components/badges" target="_blank" rel="noopener noreferrer">こちら<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> にあります。</p></div> <h2 id="犬の追加と削除"><a href="#犬の追加と削除" class="header-anchor">#</a> 犬の追加と削除</h2> <p>また、このお気に入りリストに犬を追加したり、悲しいことに犬を削除したりする方法を構築する必要があります。言い換えれば、 <em>状態を変更</em> しなければならないということです。Vuex ストアで実際に状態を変更する唯一の方法は、<em>mutation</em> をコミットすることです。Vuex の mutation はイベントと非常に似ています。各 mutation には文字列 <strong>タイプ</strong> と <strong>ハンドラー</strong> を持ちます。タイプは mutation が何をするかを示すもので、名前を指定することができます。ここでは犬をお気に入りに追加するための mutation を作成しているので、<code>addToFavorites</code> を選択します。ハンドラー関数は実際に状態を変更するところであり、第一引数として state を受け取ります。最初の mutation を作成してみましょう。 <code>store.js</code> の内部で <code>favorites</code> の配列を初期化し、<code>state</code> プロパティのあとに <code>mutations</code> を追加します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+	<span class="token literal-property property">state</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">favorites</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">mutations</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>このオブジェクトの中に <code>addToFavorites</code> の mutation を作成します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+	<span class="token literal-property property">state</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">favorites</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">mutations</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token function">addToFavorites</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> payload</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			state<span class="token punctuation">.</span>favorites<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>この mutation には 2 つのパラメータがあります。1 つ目は上記のように <code>state</code> で、2 つ目は <code>state.favorites</code> に追加する <code>data</code> または <code>payload</code> です。 <code>addToFavorites</code> mutation はペイロードを <code>state.favorites</code> 配列に追加します。</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>mutation ハンドラを直接呼び出すことはできません。それを呼び出すには、store.commit をそのタイプで呼び出す必要があります。 <code>store.commit('addToFavorites')</code> を呼び出して、ペイロードを追加する必要があります。</p></div> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>通常、Vuex では mutation は <em>actions</em> でコミットされます。アクションは mutation に似ていますが、非同期操作（API コールのような）を含むことができます。</p></div> <p><code>addToFavorites</code> の mutation をコミットするアクションを登録してみましょう。ストアオブジェクトに <code>actions</code> プロパティを追加し、このプロパティに <code>addToFavorites</code> アクションを追加します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+	<span class="token literal-property property">state</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">favorites</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">mutations</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token function">addToFavorites</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> payload</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			state<span class="token punctuation">.</span>favorites<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">actions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token function">addToFavorites</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> commit <span class="token punctuation">}</span><span class="token punctuation">,</span> payload</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'addToFavorites'</span><span class="token punctuation">,</span> payload<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>アクションハンドラはストアインスタンスと同じメソッド/プロパティのセットを公開するコンテキストオブジェクトを受け取るので、 <code>context.commit</code> を呼び出して mutation をコミットすることができます。ES6 の<a href="https://github.com/lukehoban/es6features#destructuring" target="_blank" rel="noopener noreferrer">分割代入<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> を使って <code>context</code> の <code>commit</code> メソッドを使用していますが、これが第一引数に <code>context</code> を持たずに <code>{ commit }</code> を第一引数に持つ理由です。もし第一引数に <code>context</code> を持つのであれば、<code>commit(....)</code> を直接呼び出すのではなく、 <code>context.commit(....)</code> を呼び出さなければなりません。</p></div> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>ここにある <code>payload</code> は、状態を変更するためにコンポーネントから mutation に渡したいデータと同じものが入ります。</p></div> <h2 id="ui-を構築する"><a href="#ui-を構築する" class="header-anchor">#</a> UI を構築する</h2> <p><code>Pets.vue</code> コンポーネントの中からアクションを呼び出してみましょう。まず、特定の犬をお気に入りリストに追加するためのボタンのようなものが必要です。 <code>Dog.vue</code> コンポーネントに移動し、ボタンを <code>v-card-title</code> 閉じタグのすぐ下、かつ <code>v-card</code> タグの中に追加します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-btn</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>$emit('addToFavorites', dog)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Add to Favorites<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-btn</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><code>$emit</code> を使うことで、親コンポーネント（この場合は <code>Pets.vue</code>）にこんなメッセージを送信しています。「ねえ、ここで何か起きてるよ！このメッセージを読んで反応して」</p> <p>メッセージには 2 つ目のパラメータも含まれています：お気に入りリストに追加しようとしている <code>dog</code> です。</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>そこで <code>$emit('addToFavorites', dog)</code> を呼び出すことで、<code>addToFavorites</code> タイプのイベントを送信し、ユーザがお気に入りに追加したい犬のデータを送信します。基本的にはカスタムイベントを作成しており、その詳細については<a href="https://vuejs.org/v2/guide/components-custom-events.html" target="_blank" rel="noopener noreferrer">こちらをご覧ください<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p></div> <p>では、<code>Pets.vue</code> を開き、現在の <code>&lt;app-dog&gt;</code> タグを以下のスニペットで上書きして、<code>addToFavorites</code> というイベントに <em>listener</em> を追加してみましょう：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>app-dog</span> <span class="token attr-name">:dog</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>pet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@addToFavorites</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>app-dog</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>今のところ、このリスナーは何もしていませんが、このイベントに対してアクションを呼び出したいと思います。そのためには、アクションをコンポーネントにマッピングしなければなりません。</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>アクションをコンポーネントにディスパッチするには <code>this.$store.dispatch('xxx')</code> を使うか、コンポーネントのメソッドを store.dispatch 呼び出しにマップする <code>mapActions</code> ヘルパーを使います。</p></div> <p>後者の方法を使います。まず、 <code>Pets.vue</code> に <code>mapActions</code> ヘルパーをインポートします：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> mapActions <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>そして、<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax" target="_blank" rel="noopener noreferrer">ES6 のスプレッド演算子<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>を使って <code>methods</code> ブロックを作成し、コンポーネントに追加します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&quot;addToFavorites&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>パラメータをひとつ指定して <code>mapActions</code> を呼び出すことで、ストアから取得したいアクションを定義しています。今のところ、この配列には <code>addToFavorites</code> だけがありますが、将来的にはストアの成長に合わせてアクションを追加することができます。ストアのすべてのアクションを一つのコンポーネントにまとめておく必要はありません。そのため、この配列を <code>mapActions</code> に渡すことで、このコンポーネントに必要なものだけを取得できるようにします。詳細な情報は <a href="https://vuex.vuejs.org/guide/actions.html#dispatching-actions-in-components" target="_blank" rel="noopener noreferrer">こちら<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> をご覧ください。</p></div> <p>これで、単純なコンポーネントメソッドのように <code>addToFavorites</code> をディスパッチできるようになりました。</p> <p>このメソッドを <code>app-dog</code> の <code>addToFavorites</code> イベントで呼び出してみましょう。 <code>Pets.vue</code> の <code>&lt;app-dog&gt;</code> タグを編集します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>app-dog</span> <span class="token attr-name">:dog</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>pet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@addToFavorites</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>addToFavorites<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>app-dog</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><code>Add to Favorites</code> ボタンをクリックしてみてください。アイコンバッジの数が増える様子を確認したり、このアイコンをクリックしてお気に入りリストを開き、そこにある犬の数を確認することができます。</p> <h2 id="ロジックを強化する"><a href="#ロジックを強化する" class="header-anchor">#</a> ロジックを強化する</h2> <p>今のところ、任意の犬を複数回追加することができますが、マックス（犬）は 5 匹もいません！ <code>store.js</code> の mutation の中にあるペイロードをチェックして、リストにない場合にのみ犬を追加するようにしてみましょう：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">addToFavorites</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> payload</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>state<span class="token punctuation">.</span>favorites<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      state<span class="token punctuation">.</span>favorites<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>ここではまず <code>payload</code> 要素が <code>state.favorites</code> に含まれているかどうかを確認します。まだ配列に含まれていない場合にのみ要素を追加しています。</p> <h2 id="リストから削除"><a href="#リストから削除" class="header-anchor">#</a> リストから削除</h2> <p>あとは、お気に入りリストから犬を削除する仕組みが必要です。もしかしたら誰かに里親に出されたのかもしれません！そのためのアクションと mutation を作ってみましょう。</p> <p><code>store.js</code> で <code>mutations</code> オブジェクトに <code>removeFromFavorites</code> の mutation を追加します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">removeFromFavorites</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> payload</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  state<span class="token punctuation">.</span>favorites<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>favorites<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>payload<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>ここで splice() メソッドは、既存の要素を削除することで配列の内容を変更します。第一引数には開始したい要素のインデックス、第二引数には削除したい要素の数を指定します。</p></div> <p>そのため、まず <code>state.favorites</code> 配列内の <code>payload</code> アイテムのインデックスを見つけ、このインデックスから始まるアイテムを削除します（つまり、削除するのは <code>payload</code> アイテムそのものだけです）</p> <p>mutation <code>removeFromFavorites</code> をコミットするアクションを追加します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">removeFromFavorites</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> commit <span class="token punctuation">}</span><span class="token punctuation">,</span> payload</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">&quot;removeFromFavorites&quot;</span><span class="token punctuation">,</span> payload<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>ここでは、ユーザーが削除アイコンをクリックしたときにこのアクションをディスパッチする必要があります。ファイル <code>Favorites.vue</code> に移動してください。覚えていると思いますが、まずアクションをコンポーネントメソッドにマッピングする必要があります。 <code>&lt;script&gt;</code> タグの先頭にある <code>mapActions</code> ヘルパーをインポートしてください：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> mapActions <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>そして <code>computed</code> ブロックの下のコンポーネント <code>methods</code> に追加します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&quot;removeFromFavorites&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>最後にクリックリスナーを削除アイコンに追加します：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-icon</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>removeFromFavorites(dog)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>delete<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-icon</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>これで、お気に入りリストに犬を追加したり削除したりできるようになりました。</p> <p><strong>ふぅ！Chapter 4 が終わりました！</strong></p> <h2 id="最終結果"><a href="#最終結果" class="header-anchor">#</a> 最終結果</h2> <p><img src="/curriculum/assets/img/petshop_chapter4.b12bfb9d.jpg" alt="chapter 4 final"></p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/frontendfoxes/curriculum/edit/master/jp/workshops/vue/full-day/ch4.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/curriculum/jp/workshops/vue/minis/mini1.html">
+        🐶 Mini Workshop 1: ペットの情報を取得する Web アプリケーションの構築
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/curriculum/assets/js/app.7a4aa1b0.js" defer></script><script src="/curriculum/assets/js/2.5909c2e7.js" defer></script><script src="/curriculum/assets/js/1.8280c2b5.js" defer></script><script src="/curriculum/assets/js/40.fca2d06f.js" defer></script>
+  </body>
+</html>

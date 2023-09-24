@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="jp-JP">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>🏠 3: Visual Studio CodeにVueのための最適な設定をしよう （初級） | Front-End Foxes Workshops</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/curriculum/favicon.png">
+    <meta name="description" content="ワークショップ">
+    
+    <link rel="preload" href="/curriculum/assets/css/0.styles.c2383ade.css" as="style"><link rel="preload" href="/curriculum/assets/js/app.7a4aa1b0.js" as="script"><link rel="preload" href="/curriculum/assets/js/2.5909c2e7.js" as="script"><link rel="preload" href="/curriculum/assets/js/1.8280c2b5.js" as="script"><link rel="preload" href="/curriculum/assets/js/16.68793acb.js" as="script"><link rel="prefetch" href="/curriculum/assets/js/10.ca4f7878.js"><link rel="prefetch" href="/curriculum/assets/js/11.39fabe8a.js"><link rel="prefetch" href="/curriculum/assets/js/12.4e273fd3.js"><link rel="prefetch" href="/curriculum/assets/js/13.9ef5660d.js"><link rel="prefetch" href="/curriculum/assets/js/14.65b0ca50.js"><link rel="prefetch" href="/curriculum/assets/js/15.ecd94876.js"><link rel="prefetch" href="/curriculum/assets/js/17.f2a1fdca.js"><link rel="prefetch" href="/curriculum/assets/js/18.7ba36a75.js"><link rel="prefetch" href="/curriculum/assets/js/19.ef711273.js"><link rel="prefetch" href="/curriculum/assets/js/20.e0ce5fdf.js"><link rel="prefetch" href="/curriculum/assets/js/21.36effa68.js"><link rel="prefetch" href="/curriculum/assets/js/22.063a073c.js"><link rel="prefetch" href="/curriculum/assets/js/23.504c9ec5.js"><link rel="prefetch" href="/curriculum/assets/js/24.509de174.js"><link rel="prefetch" href="/curriculum/assets/js/25.3fee59a8.js"><link rel="prefetch" href="/curriculum/assets/js/26.84872638.js"><link rel="prefetch" href="/curriculum/assets/js/27.7c4f8b3c.js"><link rel="prefetch" href="/curriculum/assets/js/28.1a700b9c.js"><link rel="prefetch" href="/curriculum/assets/js/29.2ddc5a83.js"><link rel="prefetch" href="/curriculum/assets/js/3.a7c41ec0.js"><link rel="prefetch" href="/curriculum/assets/js/30.e782a43f.js"><link rel="prefetch" href="/curriculum/assets/js/31.7420713b.js"><link rel="prefetch" href="/curriculum/assets/js/32.cb8006dd.js"><link rel="prefetch" href="/curriculum/assets/js/33.cd8a49d5.js"><link rel="prefetch" href="/curriculum/assets/js/34.af7bec77.js"><link rel="prefetch" href="/curriculum/assets/js/35.0c150a2f.js"><link rel="prefetch" href="/curriculum/assets/js/36.c6385503.js"><link rel="prefetch" href="/curriculum/assets/js/37.630d9e57.js"><link rel="prefetch" href="/curriculum/assets/js/38.8a384911.js"><link rel="prefetch" href="/curriculum/assets/js/39.f2ee1645.js"><link rel="prefetch" href="/curriculum/assets/js/4.31053f34.js"><link rel="prefetch" href="/curriculum/assets/js/40.fca2d06f.js"><link rel="prefetch" href="/curriculum/assets/js/41.c99ff83c.js"><link rel="prefetch" href="/curriculum/assets/js/42.88f262ad.js"><link rel="prefetch" href="/curriculum/assets/js/43.36ec3f20.js"><link rel="prefetch" href="/curriculum/assets/js/44.4291cd09.js"><link rel="prefetch" href="/curriculum/assets/js/45.f6027c6e.js"><link rel="prefetch" href="/curriculum/assets/js/46.c161aa53.js"><link rel="prefetch" href="/curriculum/assets/js/47.d1b51532.js"><link rel="prefetch" href="/curriculum/assets/js/48.16e79cad.js"><link rel="prefetch" href="/curriculum/assets/js/49.38db29ee.js"><link rel="prefetch" href="/curriculum/assets/js/5.9df2437c.js"><link rel="prefetch" href="/curriculum/assets/js/50.1e5ab1c7.js"><link rel="prefetch" href="/curriculum/assets/js/51.939ab618.js"><link rel="prefetch" href="/curriculum/assets/js/52.327fd43d.js"><link rel="prefetch" href="/curriculum/assets/js/53.4d1806d8.js"><link rel="prefetch" href="/curriculum/assets/js/54.636ea52a.js"><link rel="prefetch" href="/curriculum/assets/js/55.784e44a9.js"><link rel="prefetch" href="/curriculum/assets/js/56.070964ef.js"><link rel="prefetch" href="/curriculum/assets/js/57.1388cb7d.js"><link rel="prefetch" href="/curriculum/assets/js/58.03195ad2.js"><link rel="prefetch" href="/curriculum/assets/js/59.b85902e4.js"><link rel="prefetch" href="/curriculum/assets/js/6.8479fb84.js"><link rel="prefetch" href="/curriculum/assets/js/60.cb6ad11c.js"><link rel="prefetch" href="/curriculum/assets/js/61.d30e460a.js"><link rel="prefetch" href="/curriculum/assets/js/62.2f0756ce.js"><link rel="prefetch" href="/curriculum/assets/js/63.2ec5ac86.js"><link rel="prefetch" href="/curriculum/assets/js/64.9ff57a08.js"><link rel="prefetch" href="/curriculum/assets/js/65.a9717421.js"><link rel="prefetch" href="/curriculum/assets/js/66.b8f0619d.js"><link rel="prefetch" href="/curriculum/assets/js/67.cf93efcd.js"><link rel="prefetch" href="/curriculum/assets/js/68.7993fcb1.js"><link rel="prefetch" href="/curriculum/assets/js/69.de933680.js"><link rel="prefetch" href="/curriculum/assets/js/7.8a2e7228.js"><link rel="prefetch" href="/curriculum/assets/js/70.4fe4310c.js"><link rel="prefetch" href="/curriculum/assets/js/71.f61620b6.js"><link rel="prefetch" href="/curriculum/assets/js/72.e19c86a8.js"><link rel="prefetch" href="/curriculum/assets/js/73.4655972c.js"><link rel="prefetch" href="/curriculum/assets/js/74.8e238311.js"><link rel="prefetch" href="/curriculum/assets/js/75.b9dc9475.js"><link rel="prefetch" href="/curriculum/assets/js/76.08b2f1b1.js"><link rel="prefetch" href="/curriculum/assets/js/77.099ee248.js"><link rel="prefetch" href="/curriculum/assets/js/78.d062e305.js"><link rel="prefetch" href="/curriculum/assets/js/vendors~docsearch.38838867.js">
+    <link rel="stylesheet" href="/curriculum/assets/css/0.styles.c2383ade.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/curriculum/jp/" class="home-link router-link-active"><!----> <span class="site-name">Front-End Foxes Workshops</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/curriculum/workshops/react/" class="nav-link">
+  React Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/vue/" class="nav-link">
+  Vue Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/CODE_OF_CONDUCT.html" class="nav-link">
+  Code of Conduct
+</a></div><div class="nav-item"><a href="/curriculum/workshops/TEAM.html" class="nav-link">
+  Team
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">言語</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">言語</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/curriculum/workshops/vue/nanos/nano3.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/de/" class="nav-link">
+  Deutsch
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/fr/" class="nav-link">
+  Français
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/jp/workshops/vue/nanos/nano3.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  日本語
+</a></li></ul></div></div> <a href="https://github.com/frontendfoxes/curriculum/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/curriculum/workshops/react/" class="nav-link">
+  React Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/vue/" class="nav-link">
+  Vue Workshops
+</a></div><div class="nav-item"><a href="/curriculum/workshops/CODE_OF_CONDUCT.html" class="nav-link">
+  Code of Conduct
+</a></div><div class="nav-item"><a href="/curriculum/workshops/TEAM.html" class="nav-link">
+  Team
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">言語</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">言語</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/curriculum/workshops/vue/nanos/nano3.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/de/" class="nav-link">
+  Deutsch
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/fr/" class="nav-link">
+  Français
+</a></li><li class="dropdown-item"><!----> <a href="/curriculum/jp/workshops/vue/nanos/nano3.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  日本語
+</a></li></ul></div></div> <a href="https://github.com/frontendfoxes/curriculum/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>🐶 フルデイワークショップ</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>🦴ミニワークショップ</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>👩‍🎓 ナノアクティビティ</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/curriculum/jp/workshops/vue/nanos/nano2.html" class="sidebar-link">☎️ 2: APIを実行するためにAxiosを使おう (中級)</a></li><li><a href="/curriculum/jp/workshops/vue/nanos/nano3.html" aria-current="page" class="active sidebar-link">🏠 3: Visual Studio CodeにVueのための最適な設定をしよう （初級）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/nanos/nano3.html#はじめに" class="sidebar-link">はじめに</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/nanos/nano3.html#vetur-のインストール" class="sidebar-link">Vetur のインストール</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/nanos/nano3.html#シンタックスハイライト" class="sidebar-link">シンタックスハイライト</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/nanos/nano3.html#スニペット" class="sidebar-link">スニペット</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/nanos/nano3.html#emmet" class="sidebar-link">Emmet</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/nanos/nano3.html#リンティング-エラーチェック" class="sidebar-link">リンティング/エラーチェック</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/nanos/nano3.html#フォーマット" class="sidebar-link">フォーマット</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/nanos/nano3.html#インテリセンス" class="sidebar-link">インテリセンス</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/nanos/nano3.html#最後に" class="sidebar-link">最後に</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/nanos/nano3.html#バッジ" class="sidebar-link">バッジ</a></li><li class="sidebar-sub-header"><a href="/curriculum/jp/workshops/vue/nanos/nano3.html#著者" class="sidebar-link">著者</a></li></ul></li><li><a href="/curriculum/jp/workshops/vue/nanos/nano6.html" class="sidebar-link">😻 6: 愛の絵文字を拡散するモバイルアプリを作ろう （初級）</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="🏠-3-visual-studio-codeにvueのための最適な設定をしよう-初級"><a href="#🏠-3-visual-studio-codeにvueのための最適な設定をしよう-初級" class="header-anchor">#</a> 🏠 3: Visual Studio CodeにVueのための最適な設定をしよう （初級）</h1> <table><thead><tr><th><strong>プロジェクトのゴール</strong></th> <th>このnanoプロジェクトの目標は、Vue開発に最適なVSCodeの設定方法を学ぶことです。</th></tr></thead> <tbody><tr><td><strong>あなたが学べること</strong></td> <td>Vueを使った開発のための、VSCodeの設定方法を学びます。</td></tr> <tr><td><strong>必要なツール</strong></td> <td>ChromeやFirefoxなどの最新のブラウザと、<a href="https://code.visualstudio.com/download" target="_blank" rel="noopener noreferrer">Visual Studio Code Editor<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> へのアクセス</td></tr> <tr><td><strong>かかる時間</strong></td> <td>15分</td></tr></tbody></table> <h1 id="vueを使った開発に最適なvscodeの設定方法を学びます。"><a href="#vueを使った開発に最適なvscodeの設定方法を学びます。" class="header-anchor">#</a> Vueを使った開発に最適なVSCodeの設定方法を学びます。</h1> <p>このアクティビティでは、Vueでの開発に適した <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">VSCode<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> の設定方法を説明します。Vueを使う開発者として、生産性を向上させるために開発環境を設定することはとても重要です。そうすれば、ほとんどの作業を行ってくれるツールを使えるので、それについて心配する必要しなくてよくなります。</p> <h2 id="はじめに"><a href="#はじめに" class="header-anchor">#</a> はじめに</h2> <p>Vueアプリケーションの開発を始めるためには、まずワークスペースやコードエディタを設定する必要があります。
+そして、このnanoプロジェクトは、VueのためのVSCodeのセットアップ方法に焦点を当てています。</p> <h2 id="vetur-のインストール"><a href="#vetur-のインストール" class="header-anchor">#</a> Vetur のインストール</h2> <p>まず、Visual Studio マーケットプレイスから <a href="https://marketplace.visualstudio.com/items?itemName=octref.vetur" target="_blank" rel="noopener noreferrer">Vetur<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> という拡張機能をインストールする必要があります。このプラグインは、Vueでの開発を容易にする多くの機能を備えています。これには以下の機能が含まれています。</p> <ul><li>シンタックスハイライト</li> <li>スニペット</li> <li>Emmet</li> <li>リンティング／エラーチェック</li> <li>フォーマット</li> <li>インテリセンス</li></ul> <p>マーケットプレイスから直接インストールボタンをクリックすると、インストールすることができます。</p> <p><img src="/curriculum/assets/img/vetur-image.33274ce6.png" alt="vetur image"></p> <p>::: ヒント 💡
+この拡張機能をインストールするもう一つの方法は、VSCodeの拡張機能タブ（extension tab）をクリックして、「Vetur」を検索することです。そうすると、VSCodeに直接インストールできます。
+:::</p> <p><img src="/curriculum/assets/img/vetur-code.4085d70a.png" alt="vetur code"></p> <h2 id="シンタックスハイライト"><a href="#シンタックスハイライト" class="header-anchor">#</a> シンタックスハイライト</h2> <p>Veturは以下の言語のシンタックスハイライトをサポートしています。</p> <p><img src="/curriculum/assets/img/vue-highlight.e06cbe39.png" alt="シンタックスハイライト"></p> <h2 id="スニペット"><a href="#スニペット" class="header-anchor">#</a> スニペット</h2> <p>Veturでは、VSCodeでコンポーネント内でスニペットを使用する機能を提供しています。</p> <p><code>scaffold</code></p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+	...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+	<span class="token operator">...</span>
+	<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+	...<span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p><code>template with HTML</code></p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+	...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><code>style with SCSS</code></p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>scss<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+	...
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="emmet"><a href="#emmet" class="header-anchor">#</a> Emmet</h2> <p>Veturは、以下の言語のEmmetをサポートしています:html、css、scss、less、そして stylus。</p> <p><img src="/curriculum/assets/img/emmets.54167026.gif" alt="Emmet"></p> <h2 id="リンティング-エラーチェック"><a href="#リンティング-エラーチェック" class="header-anchor">#</a> リンティング/エラーチェック</h2> <p>Veturは、リンティングとエラーチェックを提供し、eslintプラグインを利用するように設定することができます。</p> <p><img src="/curriculum/assets/img/vetur-lint.93d0b252.png" alt="Linting"></p> <h2 id="フォーマット"><a href="#フォーマット" class="header-anchor">#</a> フォーマット</h2> <p>Veturは、Prettierのようなフォーマッタの助けを借りて、html、css、scss、less、postcss、stylus、js、ts のフォーマットをサポートしています。</p> <p>オートフォーマット（自動のフォーマット）は <code>save</code> コマンドで行うこともできますし、ワークフローの最後にドキュメント全体をフォーマットするオプションもあります。</p> <p><img src="/curriculum/assets/img/format.d11a58ee.png" alt="format"></p> <h2 id="インテリセンス"><a href="#インテリセンス" class="header-anchor">#</a> インテリセンス</h2> <p>Veturは、デフォルトで.vueファイルにインテリセンス（IntelliSense）を提供しています。</p> <p><img src="/curriculum/assets/img/intellisense.671bc6d4.png" alt="IntelliSense"></p> <h2 id="最後に"><a href="#最後に" class="header-anchor">#</a> 最後に</h2> <p>ここでは、Vueを使った開発のための開発環境の素晴らしい設定方法をご紹介しました。これらのツールをすべてVSCode上で設定しておけば、開発作業がすっきりして楽になるので安心です。</p> <h2 id="バッジ"><a href="#バッジ" class="header-anchor">#</a> バッジ</h2> <p>おめでとう！バッジを獲得しました。</p> <p><img src="/curriculum/assets/img/vs-code.a46aa848.png" alt="バッジ"></p> <h2 id="著者"><a href="#著者" class="header-anchor">#</a> 著者</h2> <p>Made with ❤️ by Gift Egwuenu</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/frontendfoxes/curriculum/edit/master/jp/workshops/vue/nanos/nano3.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/curriculum/jp/workshops/vue/nanos/nano2.html" class="prev">
+        ☎️ 2: APIを実行するためにAxiosを使おう (中級)
+      </a></span> <span class="next"><a href="/curriculum/jp/workshops/vue/nanos/nano6.html">
+        😻 6: 愛の絵文字を拡散するモバイルアプリを作ろう （初級）
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/curriculum/assets/js/app.7a4aa1b0.js" defer></script><script src="/curriculum/assets/js/2.5909c2e7.js" defer></script><script src="/curriculum/assets/js/1.8280c2b5.js" defer></script><script src="/curriculum/assets/js/16.68793acb.js" defer></script>
+  </body>
+</html>
