@@ -18,17 +18,10 @@
 	},
 	"homepage": "https://github.com/frontendfoxes/curriculum/#readme",
 	"dependencies": {
-		"vuepress": "^0.14.11"
+		"vuepress": "^1.9.10"
 	},
 	"scripts": {
 		"build": "vuepress build",
 		"dev": "vuepress dev"
-	},
-	"devDependencies": {
-		"all-contributors-cli": "^6.9.1"
-	},
-	"resolutions": {
-		"vuepress/**/chokidar": "^3.4.0",
-		"vuepress/**/kind-of": "^6.0.3"
 	}
 }
