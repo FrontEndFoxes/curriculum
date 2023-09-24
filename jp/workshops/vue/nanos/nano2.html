@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="jp-JP">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>☎️ 2: APIを実行するためにAxiosを使おう (中級) | Front-End Foxes Workshops</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/favicon.png">
+    <meta name="description" content="ワークショップ">
+    
+    <link rel="preload" href="/assets/css/0.styles.cfc3c787.css" as="style"><link rel="preload" href="/assets/js/app.ae1f7f1c.js" as="script"><link rel="preload" href="/assets/js/2.1493f94c.js" as="script"><link rel="preload" href="/assets/js/1.698581a9.js" as="script"><link rel="preload" href="/assets/js/42.da39ee26.js" as="script"><link rel="prefetch" href="/assets/js/10.f8189797.js"><link rel="prefetch" href="/assets/js/11.fdd372d6.js"><link rel="prefetch" href="/assets/js/12.1a48da6e.js"><link rel="prefetch" href="/assets/js/13.bba5b44e.js"><link rel="prefetch" href="/assets/js/14.65b0ca50.js"><link rel="prefetch" href="/assets/js/15.0f7f7ed5.js"><link rel="prefetch" href="/assets/js/16.32e3ab23.js"><link rel="prefetch" href="/assets/js/17.b2fba88b.js"><link rel="prefetch" href="/assets/js/18.cb7ddc93.js"><link rel="prefetch" href="/assets/js/19.b205dfbe.js"><link rel="prefetch" href="/assets/js/20.e0ce5fdf.js"><link rel="prefetch" href="/assets/js/21.46472a06.js"><link rel="prefetch" href="/assets/js/22.a6593be3.js"><link rel="prefetch" href="/assets/js/23.00c0f558.js"><link rel="prefetch" href="/assets/js/24.59b64c01.js"><link rel="prefetch" href="/assets/js/25.581138de.js"><link rel="prefetch" href="/assets/js/26.0b8da5eb.js"><link rel="prefetch" href="/assets/js/27.7c4f8b3c.js"><link rel="prefetch" href="/assets/js/28.1a700b9c.js"><link rel="prefetch" href="/assets/js/29.8e51f627.js"><link rel="prefetch" href="/assets/js/3.a7c41ec0.js"><link rel="prefetch" href="/assets/js/30.0dbbd45c.js"><link rel="prefetch" href="/assets/js/31.f9050017.js"><link rel="prefetch" href="/assets/js/32.b00eb7dd.js"><link rel="prefetch" href="/assets/js/33.baa92c05.js"><link rel="prefetch" href="/assets/js/34.fcba6522.js"><link rel="prefetch" href="/assets/js/35.0c150a2f.js"><link rel="prefetch" href="/assets/js/36.c6385503.js"><link rel="prefetch" href="/assets/js/37.fdcf9bbb.js"><link rel="prefetch" href="/assets/js/38.05b7c83c.js"><link rel="prefetch" href="/assets/js/39.0e6f8a9d.js"><link rel="prefetch" href="/assets/js/4.16c33c19.js"><link rel="prefetch" href="/assets/js/40.c2a6cf08.js"><link rel="prefetch" href="/assets/js/41.4e33653c.js"><link rel="prefetch" href="/assets/js/43.8e217ddd.js"><link rel="prefetch" href="/assets/js/44.96b5368f.js"><link rel="prefetch" href="/assets/js/45.a08c9229.js"><link rel="prefetch" href="/assets/js/46.aed461c4.js"><link rel="prefetch" href="/assets/js/47.e01f25e7.js"><link rel="prefetch" href="/assets/js/48.a1e09420.js"><link rel="prefetch" href="/assets/js/49.7a5ead4d.js"><link rel="prefetch" href="/assets/js/5.9b57a164.js"><link rel="prefetch" href="/assets/js/50.460e6275.js"><link rel="prefetch" href="/assets/js/51.b8cca05e.js"><link rel="prefetch" href="/assets/js/52.4cd8acf0.js"><link rel="prefetch" href="/assets/js/53.6c429494.js"><link rel="prefetch" href="/assets/js/54.b8518cff.js"><link rel="prefetch" href="/assets/js/55.9aab3689.js"><link rel="prefetch" href="/assets/js/56.34757d38.js"><link rel="prefetch" href="/assets/js/57.cf3da2d7.js"><link rel="prefetch" href="/assets/js/58.1649f916.js"><link rel="prefetch" href="/assets/js/59.4e686269.js"><link rel="prefetch" href="/assets/js/6.a4b2b61c.js"><link rel="prefetch" href="/assets/js/60.0e4a368d.js"><link rel="prefetch" href="/assets/js/61.509ce38e.js"><link rel="prefetch" href="/assets/js/62.b32a7e3b.js"><link rel="prefetch" href="/assets/js/63.d3e67f8c.js"><link rel="prefetch" href="/assets/js/64.5b53b5e9.js"><link rel="prefetch" href="/assets/js/65.1bc287d9.js"><link rel="prefetch" href="/assets/js/66.ca6313cf.js"><link rel="prefetch" href="/assets/js/67.2300db05.js"><link rel="prefetch" href="/assets/js/68.0c74bc08.js"><link rel="prefetch" href="/assets/js/69.7917e1aa.js"><link rel="prefetch" href="/assets/js/7.4152b8de.js"><link rel="prefetch" href="/assets/js/70.8dfd6fe3.js"><link rel="prefetch" href="/assets/js/71.1fc613cb.js"><link rel="prefetch" href="/assets/js/72.2d2b545a.js"><link rel="prefetch" href="/assets/js/73.be66a633.js"><link rel="prefetch" href="/assets/js/74.173f7428.js"><link rel="prefetch" href="/assets/js/75.61eece34.js"><link rel="prefetch" href="/assets/js/76.89916b8e.js"><link rel="prefetch" href="/assets/js/77.92fc46e1.js"><link rel="prefetch" href="/assets/js/78.15d1f7e8.js"><link rel="prefetch" href="/assets/js/79.7906bc8b.js"><link rel="prefetch" href="/assets/js/80.9732e546.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.6f140a46.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.cfc3c787.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/jp/" class="home-link router-link-active"><!----> <span class="site-name">Front-End Foxes Workshops</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/workshops/react/" class="nav-link">
+  React Workshops
+</a></div><div class="nav-item"><a href="/workshops/vue/" class="nav-link">
+  Vue Workshops
+</a></div><div class="nav-item"><a href="/workshops/CODE_OF_CONDUCT.html" class="nav-link">
+  Code of Conduct
+</a></div><div class="nav-item"><a href="/workshops/TEAM.html" class="nav-link">
+  Team
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">言語</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">言語</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/workshops/vue/nanos/nano2.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/de/" class="nav-link">
+  Deutsch
+</a></li><li class="dropdown-item"><!----> <a href="/fr/" class="nav-link">
+  Français
+</a></li><li class="dropdown-item"><!----> <a href="/jp/workshops/vue/nanos/nano2.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  日本語
+</a></li></ul></div></div> <a href="https://github.com/frontendfoxes/curriculum/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/workshops/react/" class="nav-link">
+  React Workshops
+</a></div><div class="nav-item"><a href="/workshops/vue/" class="nav-link">
+  Vue Workshops
+</a></div><div class="nav-item"><a href="/workshops/CODE_OF_CONDUCT.html" class="nav-link">
+  Code of Conduct
+</a></div><div class="nav-item"><a href="/workshops/TEAM.html" class="nav-link">
+  Team
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">言語</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">言語</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/workshops/vue/nanos/nano2.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/de/" class="nav-link">
+  Deutsch
+</a></li><li class="dropdown-item"><!----> <a href="/fr/" class="nav-link">
+  Français
+</a></li><li class="dropdown-item"><!----> <a href="/jp/workshops/vue/nanos/nano2.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  日本語
+</a></li></ul></div></div> <a href="https://github.com/frontendfoxes/curriculum/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>🐶 フルデイワークショップ</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>🦴ミニワークショップ</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>👩‍🎓 ナノアクティビティ</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/jp/workshops/vue/nanos/nano2.html" aria-current="page" class="active sidebar-link">☎️ 2: APIを実行するためにAxiosを使おう (中級)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/jp/workshops/vue/nanos/nano2.html#はじめに" class="sidebar-link">はじめに</a></li><li class="sidebar-sub-header"><a href="/jp/workshops/vue/nanos/nano2.html#デフォルトで記載されているコードのクリーンナップ" class="sidebar-link">デフォルトで記載されているコードのクリーンナップ</a></li><li class="sidebar-sub-header"><a href="/jp/workshops/vue/nanos/nano2.html#プロジェクトにaxiosを追加" class="sidebar-link">プロジェクトにAxiosを追加</a></li><li class="sidebar-sub-header"><a href="/jp/workshops/vue/nanos/nano2.html#axios-ライブラリのインポート" class="sidebar-link">Axios ライブラリのインポート</a></li><li class="sidebar-sub-header"><a href="/jp/workshops/vue/nanos/nano2.html#apiコールの呼び出し" class="sidebar-link">APIコールの呼び出し</a></li><li class="sidebar-sub-header"><a href="/jp/workshops/vue/nanos/nano2.html#データの使用" class="sidebar-link">データの使用</a></li><li class="sidebar-sub-header"><a href="/jp/workshops/vue/nanos/nano2.html#まとめとチャレンジ" class="sidebar-link">まとめとチャレンジ</a></li><li class="sidebar-sub-header"><a href="/jp/workshops/vue/nanos/nano2.html#バッジ" class="sidebar-link">バッジ</a></li><li class="sidebar-sub-header"><a href="/jp/workshops/vue/nanos/nano2.html#著者" class="sidebar-link">著者</a></li></ul></li><li><a href="/jp/workshops/vue/nanos/nano3.html" class="sidebar-link">🏠 3: Visual Studio CodeにVueのための最適な設定をしよう （初級）</a></li><li><a href="/jp/workshops/vue/nanos/nano6.html" class="sidebar-link">😻 6: 愛の絵文字を拡散するモバイルアプリを作ろう （初級）</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="☎️-2-apiを実行するためにaxiosを使おう-中級"><a href="#☎️-2-apiを実行するためにaxiosを使おう-中級" class="header-anchor">#</a> ☎️ 2: APIを実行するためにAxiosを使おう (中級)</h1> <table><thead><tr><th><strong>プロジェクトのゴール</strong></th> <th>このnanoプロジェクトの目標は、ランダムな猫の画像を取得するための簡単なアプリ作成方法を学ぶことです。</th></tr></thead> <tbody><tr><td><strong>あなたが学べること</strong></td> <td><strong>axios</strong>を使ったHTTPコール作成の基礎を学びます。</td></tr> <tr><td><strong>必要なツール</strong></td> <td>ChromeやFirefoxなどの最新のブラウザと、<a href="https://code.visualstudio.com/download" target="_blank" rel="noopener noreferrer">Visual Studio Code Editor<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> へのアクセス</td></tr> <tr><td><strong>かかる時間</strong></td> <td>10 minutes</td></tr></tbody></table> <h1 id="ランダムな猫の画像ビュワーを作ります。"><a href="#ランダムな猫の画像ビュワーを作ります。" class="header-anchor">#</a> ランダムな猫の画像ビュワーを作ります。</h1> <p>猫の画像を取得するため、<a href="https://github.com/axios/axios" target="_blank" rel="noopener noreferrer"><strong>Axios</strong><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>を使用してリモート <em>API</em> へHTTPコールを実行する、簡単なアプリを作成していきます。</p> <p>::: ヒント 💡
+API は <em>Application Programming Interface</em>　の略です. とても簡単に言えば、「データの取得または送信のためのリクエスト」を作成できるURLを集めたものことです。
+:::</p> <h2 id="はじめに"><a href="#はじめに" class="header-anchor">#</a> はじめに</h2> <p><a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer">CodeSandbox<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> にアクセスし、 <a href="https://codesandbox.io/s/vue" target="_blank" rel="noopener noreferrer">新しい <strong>Vue</strong> テンプレートを作成しましょう<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p> <p>The sandbox will set up a new Vue application where we can write our code, and it will be automatically compiled and rendered in the window on the right.このサンドボックスはコードを記載できる新しいVueアプリのセットアップをしてくれます。また、自動でコンパイルされ、ウィンドウの右にレンダリングされます。</p> <h2 id="デフォルトで記載されているコードのクリーンナップ"><a href="#デフォルトで記載されているコードのクリーンナップ" class="header-anchor">#</a> デフォルトで記載されているコードのクリーンナップ</h2> <p><code>App.vue</code> を開き、idが <code>#app</code> の <code>div</code> 内のコードを全て削除しましょう。<code>&lt;script&gt;</code> タグも整理しましょう。最終的にあなたのファイルはこのようになっているのが望ましいです。：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">&quot;App&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>これを行う理由は、Codesandboxが追加している例文コードを取り除き、必要最小限のコードにするためです。</p> <h2 id="プロジェクトにaxiosを追加"><a href="#プロジェクトにaxiosを追加" class="header-anchor">#</a> プロジェクトにAxiosを追加</h2> <p>それでは、 <strong>Axios</strong> をプロジェクトに追加しましょう！</p> <p>左のサイドメニューバーで <code>Dependencies</code> をクリックしましょう。開いたら、 <code>Add Dependency</code> ボタンをクリックし、 <code>axios</code> を検索してください。検索結果のリストで<code>axios</code> を見つけてクリックしたら <em>ジャジャーン!</em> 、project depenciesに追加されます。</p> <p>::: ヒント 💡
+このnanoプロジェクトをCodesandboxではなく、ローカル開発環境で試してみていますか？
+その場合は、プロジェクトrootに移動して、ターミナルで <code>npm install axios</code> または <code>yarn add axios</code> を実行し、 <code>axios</code> をインストールしましょう。
+:::</p> <h2 id="axios-ライブラリのインポート"><a href="#axios-ライブラリのインポート" class="header-anchor">#</a> Axios ライブラリのインポート</h2> <p>全ての <em>cat-tastic</em> HTTPコールの呼び出しを始める前に、コンポーネントに <code>axios</code> ライブラリを追加する必要があります。</p> <p>::: ヒント 💡
+プロジェクトにdependencyを追加しただけでは、自動的にはコンポーネントに <em>インクルード</em> されません。Vueにおいては、これから使用する dependenciesを手動でインポートしなければなりません。
+:::</p> <p><code>App.vue</code> を再び開き、この <code>import statement</code> を直接、 <code>&lt;script&gt;</code> タグの下に追加しましょう:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>これで、あなたのコンポーネントで <code>axios</code> が使えるようになりました。</p> <h2 id="apiコールの呼び出し"><a href="#apiコールの呼び出し" class="header-anchor">#</a> APIコールの呼び出し</h2> <p>猫APIをコールするための関数を準備していきましょう。</p> <p><code>export default { }</code> ブロック内に入って、新しいメソッドを追加してみましょう。:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+	<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'App'</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token function">fetchNewCat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			axios
+				<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'https://api.thecatapi.com/v1/images/search'</span><span class="token punctuation">)</span>
+				<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+					console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Search complete!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+					console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span><span class="token punctuation">)</span>
+				<span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+					console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Search failed!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+					console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>このコード初めてみたら、難しそうと圧倒されてしまうかもしれません。　なので、理解しやすいように細かくみていきましょう。</p> <p>まず、新しいメソッド <code>fetchNewCat</code> を定義していきます。これは <code>()</code> パラメータは必要ありません。</p> <p>このメソッド内で、<code>.get</code>　を実行し、 <code>axios</code> コールを開始します。：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code>axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'https://api.thecatapi.com/v1/images/search'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><code>Axios</code> は、いわゆる <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods" target="_blank" rel="noopener noreferrer"><em>HTTP Verbs or HTTP Methods</em><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>と一緒に動きます。つまり、あなたは今、<strong>https://api.thecatapi.com/v1/images/search</strong> というURLに対して、 <em>GET</em> タイプのコールを作成しようとしているのです。</p> <p>The most &quot;common&quot; ones are:
+最も &quot;一般的な&quot;　コールのタイプは：</p> <ul><li>GET - ある HTTP URL <em>から</em> 情報を取得</li> <li>POST - ある HTTP URL <em>へ</em> 情報を送信</li></ul> <p>::: ヒント 💡
+<em>どのメソッドをを使ったらいいの?</em> 場合によります！ APIの操作は通常、その作成者とのやりとりや、ドキュメントの取得を含みます。99% の割合で <code>GET</code> と <code>POST</code> が使用されますが、API（特にREST API）によっては、もっと他のものを使うものもあります。
+:::</p> <p>Axiosは<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noopener noreferrer"><code>Promise</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>を戻り値として返します。これは <em>非同期</em> HTTP コールからの応答を扱うJavaScriptのオブジェクトです。</p> <p>このコールが成功したら、 <code>then</code> ブロック内のコードが実行されます。もしエラーが発生した場合は、 <code>catch</code> ブロック内のコードが実行されます。</p> <p>どちらのケースでも、とりあえず今はコンソールに結果をただ表示することにしましょう。</p> <p>さあ、このAPIをコールできるように、手短にアプリにボタンを追加しましょう。</p> <p>このマークアップを <code>&lt;template&gt;</code> に追加します。:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">&quot;fetchNewCat&quot;</span><span class="token operator">&gt;</span>New Cat<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>画面右のボタンをクリックし、画面のかなり下の方にある <strong>Console</strong> タブを開いてみてください。</p> <p>このような出力が見てとれるはずです：</p> <p><img src="/assets/img/axios-consoleoutput.3a484e0d.png" alt="consoleoutput"></p> <p>これは <code>then</code> ブロック内の <code>response</code> パラメータをログしたものです。先ほど作成したHTTPコールに関するデータを伴ったJS <em>オブジェクト</em> を取得します。</p> <p>このオブジェクト内では、APIが返した実際のレスポンスが格納されている <code>data</code> 配列も取得します。このケースでは、猫の画像情報を格納している <em>オブジェクト</em> を取得します。</p> <p><strong>おめでとうございます!</strong> これで、Axiosを使った簡単なAPIを作成することができました！</p> <h2 id="データの使用"><a href="#データの使用" class="header-anchor">#</a> データの使用</h2> <p>取得したデータを使って何かしない限り、このアプリは今のところ、ベースとなる何か、といったところでしょう。なので、これを上手く活用してみましょう。猫画像の <code>URL</code> をアプリの変数内に格納し、画面上に表示できるようにしましょう。</p> <p><code>export default {}</code> ブロックに戻って、 <code>catImage</code> 変数を追加し、 <code>then</code> ブロック内で <code>URL</code> を格納してみてください。</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">&quot;axios&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">&quot;App&quot;</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Were storing the cat image url in this prop</span>
+      <span class="token literal-property property">catImage</span><span class="token operator">:</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">fetchNewCat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      axios
+        <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;https://api.thecatapi.com/v1/images/search&quot;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Search complete!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token comment">// Add the cat image url to our app property</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>catImage <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>url<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Search failed!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p>最後に、これまでやったことの成果を確認するため、マークアップにimageを作成しましょう。:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>fetchNewCat<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>New Cat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>catImage<span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>Cat Image<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>さあ、 &quot;New Cat&quot; ボタンをクリックし、確認してみてください！　（追伸 もう一度クリックすると新しい画像が！）</p> <p><code>App.vue</code> の全コードはこのようになっているはずです：</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">&quot;fetchNewCat&quot;</span><span class="token operator">&gt;</span>New Cat<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>img <span class="token operator">:</span>src<span class="token operator">=</span><span class="token string">&quot;catImage&quot;</span> alt<span class="token operator">=</span><span class="token string">&quot;&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">&quot;axios&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">&quot;App&quot;</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">catImage</span><span class="token operator">:</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">fetchNewCat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      axios
+        <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;https://api.thecatapi.com/v1/images/search&quot;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Search complete!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>catImage <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>url<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Search failed!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><p>さらに、こちらで完成したアプリを確認できます。: <a href="https://codesandbox.io/s/zr6444nl0m" target="_blank" rel="noopener noreferrer"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit Nano - Axios Cats"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="まとめとチャレンジ"><a href="#まとめとチャレンジ" class="header-anchor">#</a> まとめとチャレンジ</h2> <p>HTTPコールの呼び出しはアプリに動的な機能を追加し、さらに、これはフロントエンドディベロッパーにとって学ぶべきコア機能の一つです。</p> <p>あなたがもっと難しいことに挑戦したいという気持ちなら、チャレンジとして、 https://docs.thecatapi.com/api-reference にアクセスし、パラメータを渡してもっと複雑なGETコールを実装できることや、あなたが所有している猫画像をアップロードするPOSTコールも作成できることを確認してください！</p> <p>追伸　<code>axios</code> ドキュメントを手元に置いておくといいでしょう。 https://github.com/axios/axios</p> <h2 id="バッジ"><a href="#バッジ" class="header-anchor">#</a> バッジ</h2> <p><img src="/assets/img/call-api-badge.597933af.png" alt="コールAPIバッジ"></p> <h2 id="著者"><a href="#著者" class="header-anchor">#</a> 著者</h2> <p>Made with ❤️ by Marina Mosti</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/frontendfoxes/curriculum/edit/main/jp/workshops/vue/nanos/nano2.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/jp/workshops/vue/minis/mini4.html" class="prev">
+        📱Mini Workshop 4:  Tinder風のモバイルアプリ「Tindogs」を作ろう!
+      </a></span> <span class="next"><a href="/jp/workshops/vue/nanos/nano3.html">
+        🏠 3: Visual Studio CodeにVueのための最適な設定をしよう （初級）
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ae1f7f1c.js" defer></script><script src="/assets/js/2.1493f94c.js" defer></script><script src="/assets/js/1.698581a9.js" defer></script><script src="/assets/js/42.da39ee26.js" defer></script>
+  </body>
+</html>

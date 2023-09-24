@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>🖥️ 1 : Créer une petite application Web de récupération d&#39;images d&#39;animaux de compagnie | Front-End Foxes Workshops</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/favicon.png">
+    <meta name="description" content="Ateliers pour apprendre la programmation web et mobile">
+    
+    <link rel="preload" href="/assets/css/0.styles.cfc3c787.css" as="style"><link rel="preload" href="/assets/js/app.ae1f7f1c.js" as="script"><link rel="preload" href="/assets/js/2.1493f94c.js" as="script"><link rel="preload" href="/assets/js/1.698581a9.js" as="script"><link rel="preload" href="/assets/js/56.34757d38.js" as="script"><link rel="prefetch" href="/assets/js/10.f8189797.js"><link rel="prefetch" href="/assets/js/11.fdd372d6.js"><link rel="prefetch" href="/assets/js/12.1a48da6e.js"><link rel="prefetch" href="/assets/js/13.bba5b44e.js"><link rel="prefetch" href="/assets/js/14.65b0ca50.js"><link rel="prefetch" href="/assets/js/15.0f7f7ed5.js"><link rel="prefetch" href="/assets/js/16.32e3ab23.js"><link rel="prefetch" href="/assets/js/17.b2fba88b.js"><link rel="prefetch" href="/assets/js/18.cb7ddc93.js"><link rel="prefetch" href="/assets/js/19.b205dfbe.js"><link rel="prefetch" href="/assets/js/20.e0ce5fdf.js"><link rel="prefetch" href="/assets/js/21.46472a06.js"><link rel="prefetch" href="/assets/js/22.a6593be3.js"><link rel="prefetch" href="/assets/js/23.00c0f558.js"><link rel="prefetch" href="/assets/js/24.59b64c01.js"><link rel="prefetch" href="/assets/js/25.581138de.js"><link rel="prefetch" href="/assets/js/26.0b8da5eb.js"><link rel="prefetch" href="/assets/js/27.7c4f8b3c.js"><link rel="prefetch" href="/assets/js/28.1a700b9c.js"><link rel="prefetch" href="/assets/js/29.8e51f627.js"><link rel="prefetch" href="/assets/js/3.a7c41ec0.js"><link rel="prefetch" href="/assets/js/30.0dbbd45c.js"><link rel="prefetch" href="/assets/js/31.f9050017.js"><link rel="prefetch" href="/assets/js/32.b00eb7dd.js"><link rel="prefetch" href="/assets/js/33.baa92c05.js"><link rel="prefetch" href="/assets/js/34.fcba6522.js"><link rel="prefetch" href="/assets/js/35.0c150a2f.js"><link rel="prefetch" href="/assets/js/36.c6385503.js"><link rel="prefetch" href="/assets/js/37.fdcf9bbb.js"><link rel="prefetch" href="/assets/js/38.05b7c83c.js"><link rel="prefetch" href="/assets/js/39.0e6f8a9d.js"><link rel="prefetch" href="/assets/js/4.16c33c19.js"><link rel="prefetch" href="/assets/js/40.c2a6cf08.js"><link rel="prefetch" href="/assets/js/41.4e33653c.js"><link rel="prefetch" href="/assets/js/42.da39ee26.js"><link rel="prefetch" href="/assets/js/43.8e217ddd.js"><link rel="prefetch" href="/assets/js/44.96b5368f.js"><link rel="prefetch" href="/assets/js/45.a08c9229.js"><link rel="prefetch" href="/assets/js/46.aed461c4.js"><link rel="prefetch" href="/assets/js/47.e01f25e7.js"><link rel="prefetch" href="/assets/js/48.a1e09420.js"><link rel="prefetch" href="/assets/js/49.7a5ead4d.js"><link rel="prefetch" href="/assets/js/5.9b57a164.js"><link rel="prefetch" href="/assets/js/50.460e6275.js"><link rel="prefetch" href="/assets/js/51.b8cca05e.js"><link rel="prefetch" href="/assets/js/52.4cd8acf0.js"><link rel="prefetch" href="/assets/js/53.6c429494.js"><link rel="prefetch" href="/assets/js/54.b8518cff.js"><link rel="prefetch" href="/assets/js/55.9aab3689.js"><link rel="prefetch" href="/assets/js/57.cf3da2d7.js"><link rel="prefetch" href="/assets/js/58.1649f916.js"><link rel="prefetch" href="/assets/js/59.4e686269.js"><link rel="prefetch" href="/assets/js/6.a4b2b61c.js"><link rel="prefetch" href="/assets/js/60.0e4a368d.js"><link rel="prefetch" href="/assets/js/61.509ce38e.js"><link rel="prefetch" href="/assets/js/62.b32a7e3b.js"><link rel="prefetch" href="/assets/js/63.d3e67f8c.js"><link rel="prefetch" href="/assets/js/64.5b53b5e9.js"><link rel="prefetch" href="/assets/js/65.1bc287d9.js"><link rel="prefetch" href="/assets/js/66.ca6313cf.js"><link rel="prefetch" href="/assets/js/67.2300db05.js"><link rel="prefetch" href="/assets/js/68.0c74bc08.js"><link rel="prefetch" href="/assets/js/69.7917e1aa.js"><link rel="prefetch" href="/assets/js/7.4152b8de.js"><link rel="prefetch" href="/assets/js/70.8dfd6fe3.js"><link rel="prefetch" href="/assets/js/71.1fc613cb.js"><link rel="prefetch" href="/assets/js/72.2d2b545a.js"><link rel="prefetch" href="/assets/js/73.be66a633.js"><link rel="prefetch" href="/assets/js/74.173f7428.js"><link rel="prefetch" href="/assets/js/75.61eece34.js"><link rel="prefetch" href="/assets/js/76.89916b8e.js"><link rel="prefetch" href="/assets/js/77.92fc46e1.js"><link rel="prefetch" href="/assets/js/78.15d1f7e8.js"><link rel="prefetch" href="/assets/js/79.7906bc8b.js"><link rel="prefetch" href="/assets/js/80.9732e546.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.6f140a46.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.cfc3c787.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/fr/" class="home-link router-link-active"><!----> <span class="site-name">Front-End Foxes Workshops</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/workshops/react/" class="nav-link">
+  React Workshops
+</a></div><div class="nav-item"><a href="/workshops/vue/" class="nav-link">
+  Vue Workshops
+</a></div><div class="nav-item"><a href="/workshops/CODE_OF_CONDUCT.html" class="nav-link">
+  Code of Conduct
+</a></div><div class="nav-item"><a href="/workshops/TEAM.html" class="nav-link">
+  Team
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Langue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Langue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/workshops/vue/minis/mini1.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/de/" class="nav-link">
+  Deutsch
+</a></li><li class="dropdown-item"><!----> <a href="/fr/workshops/vue/minis/mini1.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Français
+</a></li><li class="dropdown-item"><!----> <a href="/jp/workshops/vue/minis/mini1.html" class="nav-link">
+  日本語
+</a></li></ul></div></div> <a href="https://github.com/frontendfoxes/curriculum/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/workshops/react/" class="nav-link">
+  React Workshops
+</a></div><div class="nav-item"><a href="/workshops/vue/" class="nav-link">
+  Vue Workshops
+</a></div><div class="nav-item"><a href="/workshops/CODE_OF_CONDUCT.html" class="nav-link">
+  Code of Conduct
+</a></div><div class="nav-item"><a href="/workshops/TEAM.html" class="nav-link">
+  Team
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Langue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Langue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/workshops/vue/minis/mini1.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/de/" class="nav-link">
+  Deutsch
+</a></li><li class="dropdown-item"><!----> <a href="/fr/workshops/vue/minis/mini1.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Français
+</a></li><li class="dropdown-item"><!----> <a href="/jp/workshops/vue/minis/mini1.html" class="nav-link">
+  日本語
+</a></li></ul></div></div> <a href="https://github.com/frontendfoxes/curriculum/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>🦴Ateliers Minis</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/fr/workshops/vue/minis/mini1.html" aria-current="page" class="active sidebar-link">🖥️ 1 : Créer une petite application Web de récupération d'images d'animaux de compagnie</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/fr/workshops/vue/minis/mini1.html#creez-votre-application" class="sidebar-link">Créez votre application</a></li><li class="sidebar-sub-header"><a href="/fr/workshops/vue/minis/mini1.html#ajouter-les-styles" class="sidebar-link">Ajouter les styles</a></li><li class="sidebar-sub-header"><a href="/fr/workshops/vue/minis/mini1.html#installer-vuetify" class="sidebar-link">Installer Vuetify</a></li><li class="sidebar-sub-header"><a href="/fr/workshops/vue/minis/mini1.html#ajouter-des-donnees" class="sidebar-link">Ajouter des données</a></li><li class="sidebar-sub-header"><a href="/fr/workshops/vue/minis/mini1.html#ajouter-axios" class="sidebar-link">Ajouter Axios</a></li><li class="sidebar-sub-header"><a href="/fr/workshops/vue/minis/mini1.html#appel-api" class="sidebar-link">Appel API</a></li><li class="sidebar-sub-header"><a href="/fr/workshops/vue/minis/mini1.html#utiliser-l-api" class="sidebar-link">Utiliser l'API</a></li><li class="sidebar-sub-header"><a href="/fr/workshops/vue/minis/mini1.html#creer-la-liste-de-favoris" class="sidebar-link">Créer la liste de favoris</a></li><li class="sidebar-sub-header"><a href="/fr/workshops/vue/minis/mini1.html#ajout-aux-favoris" class="sidebar-link">Ajout aux favoris</a></li><li class="sidebar-sub-header"><a href="/fr/workshops/vue/minis/mini1.html#suppression-des-favoris" class="sidebar-link">Suppression des favoris</a></li><li class="sidebar-sub-header"><a href="/fr/workshops/vue/minis/mini1.html#supplement-1-creation-d-un-composant-dog" class="sidebar-link">Supplément 1 : Création d'un composant Dog</a></li><li class="sidebar-sub-header"><a href="/fr/workshops/vue/minis/mini1.html#supplement-2-ajout-d-animations" class="sidebar-link">Supplément 2 : Ajout d'animations</a></li><li class="sidebar-sub-header"><a href="/fr/workshops/vue/minis/mini1.html#auteure" class="sidebar-link">Auteure</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="🖥️-1-creer-une-petite-application-web-de-recuperation-d-images-d-animaux-de-compagnie"><a href="#🖥️-1-creer-une-petite-application-web-de-recuperation-d-images-d-animaux-de-compagnie" class="header-anchor">#</a> 🖥️ 1 : Créer une petite application Web de récupération d'images d'animaux de compagnie</h1> <table><thead><tr><th><strong>But du projet</strong></th> <th>Démarrer avec les bases de Vue.js et les appels API simples</th></tr></thead> <tbody><tr><td><strong>Ce que vous apprendrez</strong></td> <td>Configuration de votre application Vue, principes de base des composants, exécution d'appels API REST simples à l'aide d'Axios</td></tr> <tr><td><strong>Outils dont vous aurez besoin</strong></td> <td>Un navigateur moderne comme Chrome. Un accès à <a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer">CodeSandbox<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> (assurez-vous de créer un compte dans CodeSandbox pour garder les versions de votre travail intactes.)</td></tr> <tr><td><strong>Temps nécessaire pour terminer</strong></td> <td>1 heure</td></tr> <tr><td><strong>Vous voulez juste essayer l'application ?</strong></td> <td><a href="https://codesandbox.io/s/web-1-mini-workshop-koj8w" target="_blank" rel="noopener noreferrer">lien vers CodeSandbox<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></td></tr></tbody></table> <h1 id="instructions"><a href="#instructions" class="header-anchor">#</a> Instructions</h1> <h2 id="creez-votre-application"><a href="#creez-votre-application" class="header-anchor">#</a> Créez votre application</h2> <p>Nous partirons de zéro dans <a href="http://codesandbox.io" target="_blank" rel="noopener noreferrer">CodeSandbox<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>. Créez un compte CodeSandbox et utilisez un template de démarrage Vue.js en cliquant <a href="https://codesandbox.io/s/vue" target="_blank" rel="noopener noreferrer">ici<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <p>Nous allons créer une application pour charger des images aléatoires de chiens et les stocker dans une liste de favoris :</p> <p><img src="/assets/img/mini2_1.97e0e6ec.png" alt="random dog app"></p> <p>Jetez un œil au code qui a été créé par CodeSandbox pour une application de base Vue.js. Le fichier <code>main.js</code> est ouvert par défaut. Il s'agit du point de départ principal d'une application Vue.js. Notez que dans ce fichier vous importez Vue depuis son package npm : <code>import Vue from &quot;vue&quot;;</code>. CodeSandbox importe toutes les dépendances nécessaires à partir de npm pour créer l'application. Vous pouvez toujours consulter le fichier racine <code>package.json</code> pour savoir quelles dépendances sont nécessaires.</p> <p><code>main.js</code> initialise également l'application en tant que nouvelle application Vue.js et définit la div dans laquelle le code de l'application sera injecté.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+	<span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">h</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Ouvrez <code>App.vue</code>. Dans ce fichier, le composant 'home' est construit. Il contient les trois parties principales d'un composant monofichier Vue.js (Single File Component) : un modèle, un bloc de script et un bloc de style.</p> <p>Notez que la première div dans le bloc template a l'ID <em>app</em>, c'est la div où le code de l'application sera injecté. Il y a aussi un composant <code>&lt;HelloWorld&gt;</code> inclus sous l'image du logo. Ceci est un exemple d'un composant monofichier inclus dans <code>App.vue</code>.</p> <p>Ouvrez <code>components/HelloWorld.vue</code> et vous trouverez la source de la liste des liens qui apparaissent intégrés dans <code>App.vue</code>. Ce fichier comprend également un bloc de script avec une variable <code>msg</code> et quelques autres styles dans un bloc <code>&lt;style&gt;</code>.</p> <p>Nous allons découper cet exemple d'application et le recréer !</p> <h2 id="ajouter-les-styles"><a href="#ajouter-les-styles" class="header-anchor">#</a> Ajouter les styles</h2> <p>Commençons par <code>App.vue</code>, car nous n'avons pas à apporter de modifications à <code>main.js</code>. Ajoutez le bloc de style suivant en bas du fichier, en remplaçant le bloc <code>&lt;style&gt;</code> actuel :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token selector">&lt;style&gt;
+img</span> <span class="token punctuation">{</span>
+  <span class="token property">max-width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">h1</span> <span class="token punctuation">{</span>
+  <span class="token property">padding-bottom</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.dogs-layout</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #fff center repeat<span class="token punctuation">;</span>
+  <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">&quot;https://github.com/FrontEndFoxes/projects/blob/main/petshop/images/bg3.jpg?raw=true&quot;</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.dogs-overlay</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 768px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.dogs-overlay</span> <span class="token punctuation">{</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.dog-card</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">max-width</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+&lt;/style&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Notez que nous n'utilisons pas <code>&lt;scoped&gt;</code> dans le bloc de style. Le mot clé 'scoped' garantit que vos styles resteront valables uniquement pour le composant monofichier actuel, mais nous allons rendre ces styles universels.</p></div> <p>Ce bloc de style utilise un chemin vers une image externe hébergée sur Github, plutôt que vers un chemin relatif. En effet, CodeSandbox n'héberge pas facilement les images ; normalement, vous ajouteriez simplement une image sur un chemin relatif tel que <code>/images/monImage.png</code>.</p> <p>L'ajout de la feuille de style n'a pas fait grand-chose à notre template, à part casser les styles existants. Corrigeons le !</p> <div class="custom-block warning"><p class="custom-block-title">☕️ Pause! ☕️</p> <p>C'est un bon moment de rejoindre un 'breakout room' sur Zoom!</p></div> <h2 id="installer-vuetify"><a href="#installer-vuetify" class="header-anchor">#</a> Installer Vuetify</h2> <p>Avant de modifier le template, nous allons installer Vuetify. Vuetify est une bibliothèque populaire qui donne un style Material Design à vos applications Vue.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Vuetify est un framework de composants sémantiques pour Vue. Il vise à fournir des composants propres, sémantiques et réutilisables pour la construction de votre application. Vous pouvez trouver une documentation complète à ce sujet <a href="https://vuetifyjs.com/en/getting-started/quick-start" target="_blank" rel="noopener noreferrer">sur leur site<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p></div> <p>Installez-le en cliquant sur le bouton « Add Dependency » dans la liste déroulante « Dependency » à gauche dans CodeSandbox. Recherchez « Vuetify ».</p> <p>Cliquez ensuite sur la bibliothèque dans la liste pour l'installer.</p> <p>Vérifiez si la dépendance est installée en ouvrant le fichier <code>package.json</code> et en vérifiant l'objet « dependencies ». Ça devrait ressembler à cela :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-json line-numbers-mode"><pre class="language-json"><code><span class="token property">&quot;dependencies&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;vue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.6.10&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;vuetify&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.0.19&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>Vuetify fonctionne via une structure de plugin. Dans le dossier <code>/src</code> de votre projet, créez un nouveau dossier appelé <code>plugins</code> et à l'intérieur de celui-ci un nouveau fichier appelé <code>vuetify.js</code>.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Dans CodeSandbox, faites un clic droit sur le nouveau dossier pour créer un nouveau fichier. Faites attention à bien les créez dans le dossier <code>/src</code> !</p></div> <p>Dans le nouveau fichier <code>vuetify.js</code>, ajoutez ce code pour initier le plugin:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Vuetify <span class="token keyword">from</span> <span class="token string">'vuetify'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'vuetify/dist/vuetify.min.css'</span><span class="token punctuation">;</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Vuetify<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vuetify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>Ensuite, initialisez Vuetify en ouvrant le fichier <code>main.js</code> et en ajoutant ces lignes sous le deuxième <code>import</code> (ligne 3) :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> vuetify <span class="token keyword">from</span> <span class="token string">'@/plugins/vuetify'</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Ensuite, modifiez l'initialisation de Vue en bas de <code>main.js</code> comme ceci :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+	vuetify<span class="token punctuation">,</span>
+	<span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">h</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>Cela garantit que les thèmes et composants de Vuetify seront disponibles dans l'application Vue.</p> <p>Nous allons utiliser des icônes dans cette application, nous devons donc également ajouter les icônes Material Design dans la partie <code>head</code> du fichier <code>index.html</code>. Ce fichier se trouve dans le dossier <code>public</code>. Insérez cette ligne après la balise <code>&lt;title&gt;</code>:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons<span class="token punctuation">&quot;</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Modifions également le titre de la page en <code>Amoureux des chiens</code>. Pour ce faire, nous devons changer le contenu de la balise <code>title</code>:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Amoureux des chiens<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Ensuite, écrasez le template actuel dans <code>App.vue</code> avec ce code :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-app</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-main</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>dogs-layout<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-container</span> <span class="token attr-name">fill-height</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>dogs-overlay<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>display-2 text-xs-center<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Choisissez vos chiens préférés<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-card</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>dog-card<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+						<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-img</span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>400px<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-img</span><span class="token punctuation">&gt;</span></span>
+						<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-card-actions</span><span class="token punctuation">&gt;</span></span>
+							<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-spacer</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-spacer</span><span class="token punctuation">&gt;</span></span>
+							<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-btn</span> <span class="token attr-name">icon</span><span class="token punctuation">&gt;</span></span>
+								<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-icon</span><span class="token punctuation">&gt;</span></span>favorite<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-icon</span><span class="token punctuation">&gt;</span></span>
+							<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-btn</span><span class="token punctuation">&gt;</span></span>
+							<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-btn</span> <span class="token attr-name">icon</span><span class="token punctuation">&gt;</span></span>
+								<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-icon</span><span class="token punctuation">&gt;</span></span>forward<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-icon</span><span class="token punctuation">&gt;</span></span>
+							<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-btn</span><span class="token punctuation">&gt;</span></span>
+						<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-card-actions</span><span class="token punctuation">&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-card</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-container</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-main</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-app</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p>Votre application devrait s'être actualisée (si ce n'est pas le cas, utilisez le bouton d'actualisation dans la barre d'adresse d'aperçu de l'application). Wow, cela a fait un sacré changement !</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Notez l'utilisation de <code>&lt;v-app&gt;</code> dans ce code, c'est un pré-requis de Vuetify et c'est un signe certain que vous aurez une application faite avec Vuetify. Nous utilisons également un tas d'éléments de présentation Vuetify comme <code>v-container</code> et des composants d'interface utilisateur comme<code>v-card</code> et <code>v-btn</code>.</p></div> <h2 id="ajouter-des-donnees"><a href="#ajouter-des-donnees" class="header-anchor">#</a> Ajouter des données</h2> <p>À ce stade, nous devons commencer à remplir notre interface utilisateur avec des données. La première chose que nous voulons faire est d'afficher une image de chien à l'intérieur de notre <code>v-card</code>. Ajoutons un lien statique juste pour tester son apparence. Dans le fichier <code>App.vue</code>, modifiez la propriété <code>src</code> de <code>v-img</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-img</span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>400px<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-img</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Comme c'est mignon ! 🐶</p> <p>Mais l'idée est de rendre ce lien dynamique, il est donc temps de créer votre première variable Vue. Tout d'abord, vous devez ajouter <code>data()</code> à votre composant Vue. Cette fonction doit renvoyer un objet de nos variables Vue. Créons-en une dans le bloc <code>&lt;script&gt;</code>. Remplacez le bloc <code>&lt;script&gt;</code> actuel dans <code>App.vue</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">currentDogLink</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>À ce stade, vous pouvez supprimer le fichier <code>HelloWorld.vue</code> du dossier <code>components</code> car nous n'en aurons pas besoin. Cliquez avec le bouton droit sur le fichier dans CodeSandbox et cliquez sur « delete ».</p></div> <p>Vous avez maintenant une variable appelée <code>currentDogLink</code> et sa valeur par défaut est une chaîne vide. Nous utiliserons cette variable pour fournir un lien vers l'image de chien dans <code>v-img</code>. Tout d'abord, nous allons définir la valeur de <code>currentDogLink</code> en écrasant le bloc de données que nous venons d'ajouter dans<code>App.vue</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">currentDogLink</span><span class="token operator">:</span> <span class="token string">&quot;https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>Maintenant, nous devons modifier le template pour rendre la propriété <code>src</code> <em>dynamique</em> afin qu'elle puisse utiliser la valeur de la variable que nous venons de créer ci-dessus. Pour ce faire, nous avons besoin d'une directive <code>v-bind</code> ou de son raccourci <code>:</code>. Encore une fois dans <code>App.vue</code>, modifiez la balise<code>&lt;v-img&gt;</code>pour supprimer sa valeur codée en dur :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-img</span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>400px<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>currentDogLink<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-img</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>La directive <code>v-bind</code> lie dynamiquement un ou plusieurs attributs, ou une propriété de composant à une expression. Ce petit <code>:</code> fait toute la différence !</p></div> <p>Génial ! Il est maintenant temps de charger des images de chiens depuis une API !</p> <div class="custom-block warning"><p class="custom-block-title">☕️ Pause! ☕️</p> <p>C'est un bon moment de rejoindre un 'breakout room' sur Zoom!</p></div> <h2 id="ajouter-axios"><a href="#ajouter-axios" class="header-anchor">#</a> Ajouter Axios</h2> <p>Pour effectuer des appels API, nous aurons besoin d'une bibliothèque appelée <a href="https://github.com/axios/axios" target="_blank" rel="noopener noreferrer">Axios<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>. Il s'agit d'un client HTTP basé sur les promesses qui fonctionne à la fois dans le navigateur et dans d'autres environnements node.js.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>À l'origine, Vue supportait sa propre façon de faire des appels API en utilisant .ajax ; mais cette ressource a été dépréciée car la bibliothèque axios fonctionnait très bien pour cela, supprimant le besoin d'une solution intégrée. En savoir plus sur cette décision <a href="https://medium.com/the-vue-point/retiring-vue-resource-871a82880af4" target="_blank" rel="noopener noreferrer">ici<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p></div> <p>Tout d'abord, ajoutez la bibliothèque Axios à vos dépendances de projet. Pour ce faire, dans CodeSandbox, cliquez sur le bouton « Add Dependency » et recherchez « axios ». Installez la dernière version.</p> <p>Importez Axios dans le composant où nous effectuerons notre appel d'API : <code>App.vue</code>. Dans le bloc de script de ce composant, ajoutez cette ligne juste en-dessous de <code>&lt;script&gt;</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>À ce stade, votre partie script de <code>App.vue</code> devrait ressembler à ceci :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">&quot;axios&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">currentDogLink</span><span class="token operator">:</span>
+        <span class="token string">&quot;https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>Nous sommes maintenant prêts à charger une image à partir de l'API.</p> <h2 id="appel-api"><a href="#appel-api" class="header-anchor">#</a> Appel API</h2> <p>Exécutons notre premier appel d'API. Pour ce faire, nous allons créer une <em>méthode</em> <code>loadNewDog</code> à l'intérieur de notre composant.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>La propriété <code>methods</code> est une liste de fonctions qui associées à un objet, généralement l'instance Vue elle-même ou un composant Vue.</p></div> <p>Ajoutons-la juste après la fonction <code>data</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">currentDogLink</span><span class="token operator">:</span>
+      <span class="token string">&quot;https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+ <span class="token function">loadNewDog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>Pour l'instant, cette méthode ne fait rien mais nous voulons qu'elle charge une nouvelle image de chien depuis l'API. Nous devons d'abord vérifier quel endpoint nous devons utiliser. En regardant la <a href="https://dog.ceo/dog-api/" target="_blank" rel="noopener noreferrer">documentation<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> de l'API, nous apprenons que nous devons utiliser <code>https://dog.ceo/api/breeds/image/random</code>. Il fournira une image aléatoire de chien.</p> <p>Pour effectuer une requête GET, Axios utilise la méthode <code>axios.get</code>. Le résultat sera une promesse JavaScript, nous devons donc fournir des fonctions de callback de réussite et d'échec pour gérer son cycle de vie. Pour l'instant, imprimons simplement le résultat de la requête dans la console. Toujours dans <code>App.vue</code>, modifiez la méthode <code>loadNewDog(){}</code> en plaçant ce code entre les accolades :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code>axios
+	<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'https://dog.ceo/api/breeds/image/random'</span><span class="token punctuation">)</span>
+	<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>Nous voulons qu'une nouvelle image remplace l'ancienne lorsque le composant est créé, ajoutons donc un hook <code>created()</code> juste après <code>methods</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Remarque : assurez-vous d'ajouter une virgule après l'objet <code>methods</code>, puis ajoutez le hook <code>created()</code> !</p></div> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Ceci est le premier hook de cycle de vie de notre application ! Ceux-ci sont très utiles lorsque vous souhaitez contrôler avec précision quand exécuter des blocs de code. <a href="https://fr.vuejs.org/v2/guide/instance.html#Diagramme-du-cycle-de-vie" target="_blank" rel="noopener noreferrer">En savoir plus<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <p>À l'intérieur du hook créé, nous appellerons notre méthode.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">loadNewDog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Maintenant, après avoir cliqué sur le bouton actualiser dans la fenêtre du navigateur, vous devriez voir un objet dans votre console. Explorez-le en cliquant sur sa flèche gauche. Nous sommes intéressés par son champ <code>data</code>. Vous pouvez voir que nous avons un statut <code>success</code> et un message avec l'URL d'une image.</p> <div class="custom-block warning"><p class="custom-block-title">☕️ Pause! ☕️</p> <p>C'est un bon moment de rejoindre un 'breakout room' sur Zoom!</p></div> <h2 id="utiliser-l-api"><a href="#utiliser-l-api" class="header-anchor">#</a> Utiliser l'API</h2> <p>Remplaçons notre <code>currentDogLink</code> par celui chargé. À ce stade, nous pouvons supprimer sa valeur statique :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">currentDogLink</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>Dans la méthode <code>loadNewDog</code>, au lieu d'imprimer le résultat sur la console, nous assignerons <code>response.data.message</code> (qui est en fait l'URL de l'image) à la propriété <code>currentDogLink</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">loadNewDog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  axios
+    <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;https://dog.ceo/api/breeds/image/random&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>currentDogLink <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>message<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">error</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>Maintenant, chaque fois que vous actualiserez la page, vous aurez une nouvelle image de chien ! 🎉</p> <p>Nous voulons également appeler la même méthode lorsque vous cliquez sur la flèche « Suivant ». Ajoutons un événement <code>click</code> à ce bouton. Nous pouvons utiliser la directive <code>v-on</code> ou sa syntaxe abrégée <code>@</code>. Dans le template, modifiez l'icône <code>forward</code> dans le <code>v-btn</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-btn</span> <span class="token attr-name">icon</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>loadNewDog<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-icon</span><span class="token punctuation">&gt;</span></span>forward<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-icon</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-btn</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Maintenant, nous pouvons charger de nouvelles images en cliquant simplement sur le bouton « Suivant ».</p> <h2 id="creer-la-liste-de-favoris"><a href="#creer-la-liste-de-favoris" class="header-anchor">#</a> Créer la liste de favoris</h2> <p>Nous voulons permettre à un utilisateur d'ajouter des images de chiens à une liste personnelle de favoris et d'afficher la galerie de ces images juste en-dessous de notre image de chien actuelle. Pour stocker les liens, nous avons besoin d'une autre propriété de données : un tableau appelé <code>favoriteDogs</code>. Ajoutons-le juste après <code>currentDogLink</code> et initialisons-le à vide par défaut :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">currentDogLink</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">favoriteDogs</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>Pour afficher les chiens mis en favoris, nous devons apporter des modifications à notre template. Ajoutons l'extrait de code suivant juste après la balise de fermeture <code>&lt;/v-card&gt;</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-container</span> <span class="token attr-name">grid-list-md</span> <span class="token attr-name">fluid</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-layout</span> <span class="token attr-name">wrap</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-flex</span> <span class="token attr-name">xs6</span> <span class="token attr-name">sm4</span> <span class="token attr-name">md2</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-card</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>dog-card<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-img</span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>150px<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-img</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-card-actions</span><span class="token punctuation">&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-spacer</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-spacer</span><span class="token punctuation">&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-btn</span> <span class="token attr-name">icon</span><span class="token punctuation">&gt;</span></span>
+						<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-icon</span><span class="token punctuation">&gt;</span></span>delete<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-icon</span><span class="token punctuation">&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-btn</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-card-actions</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-card</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-flex</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-layout</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-container</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>Vous pouvez voir une carte vide avec un bouton « Supprimer » juste après l'image de chien actuelle. Maintenant, nous devons trouver un moyen d'afficher les objets <code>favoriteDogs</code> à l'intérieur de ces cartes.</p> <p>Pour afficher une liste d'éléments basée sur un tableau, Vue a une directive <code>v-for</code> qui parcourra ce tableau et rendra chaque élément. Ajoutons cette directive à notre balise d'ouverture <code>v-flex</code>, ce qui montrera le tableau des favoris dans le nouveau conteneur que vous venez d'ajouter :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-flex</span> <span class="token attr-name">xs6</span> <span class="token attr-name">sm4</span> <span class="token attr-name">md2</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>(pet, index) in favoriteDogs<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>pet<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-flex</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Ici, <code>pet</code> est la référence à l'<em>élément de tableau actuel</em> et <code>index</code> est l'<em>index de cet élément</em> à l'intérieur du tableau.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>N'oubliez pas, nous avons choisi ce nom dans la directive ; si nous avions écrit <code>v-for=&quot;(dog, number) in favoriteDogs&quot;</code> chaque élément serait appelé <code>dog</code> et son index serait appelé <code>number</code>).</p></div> <p>Pour parcourir correctement votre tableau de chiens favoris et en ajouter un autre, vous devez fournir un attribut <code>key</code> unique pour chaque élément. Dans notre cas, l'objet <code>pet</code> lui-même sera la clé.</p> <p>Vous pouvez voir que notre carte vide a disparu. C'est normal ! Nous avons un tableau vide <code>favoriteDogs</code>, donc il n'y a tout simplement rien à afficher pour le moment.</p> <p>Une chose qui reste à faire est de lier <code>pet</code> (qui sera le lien de l'image) à la propriété<code>src</code> du composant <code>v-img</code> dans les cartes que vous construisez :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-img</span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>150px<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>pet<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-img</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Il est maintenant temps de mettre en favoris certains chiens 💖🐶 !</p> <div class="custom-block warning"><p class="custom-block-title">☕️ Pause! ☕️</p> <p>C'est un bon moment de rejoindre un 'breakout room' sur Zoom!</p></div> <h2 id="ajout-aux-favoris"><a href="#ajout-aux-favoris" class="header-anchor">#</a> Ajout aux favoris</h2> <p>Nous allons créer une nouvelle méthode appelée <code>addToFavorites</code>. Elle ajoutera la valeur de <code>currentDogLink</code> au tableau<code>favoriteDogs</code> (JavaScript a une méthode de tableau <code>push</code> prévue à cet effet). Plaçons-la après <code>loadNewDog</code> (n'oubliez pas la virgule !) :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">addToFavorites</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>favoriteDogs<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>currentDogLink<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Et bien sûr, nous devons lier la méthode au bouton « J'aime » dans la carte du haut :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-btn</span> <span class="token attr-name">icon</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>addToFavorites<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-icon</span><span class="token punctuation">&gt;</span></span>favorite<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-icon</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-btn</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Maintenant, essayez de cliquer sur le bouton « J'aime » ! Vous pouvez voir comment notre galerie se remplit d'images des chiens 🖼️</p> <p>Il y a un problème : nous pouvons maintenant ajouter une image aux favoris plusieurs fois. Pour éviter cela, nous devons vérifier si le <code>currentDogLink</code> est déjà à l'intérieur du tableau <code>favoriteDogs</code>, et, s'il l'est, nous désactiverons le bouton « J'aime ». Au lieu de placer cette logique complexe à l'intérieur du modèle, nous allons créer une <em>propriété calculée</em>.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Les propriétés calculées peuvent être utilisées pour effectuer des calculs rapides des propriétés affichées dans la vue. Ces calculs seront mis en cache et ne seront mis à jour que lorsque leurs dépendances seront modifiées.</p></div> <p>Ajoutons l'objet <code>computed</code> juste après le hook <code>created()</code> (n'oubliez pas la virgule après la fermeture de <code>created()</code>) et créons une propriété nommée <code>isAlreadyInFavorites</code> dedans.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code>  <span class="token literal-property property">computed</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">isAlreadyInFavorites</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Toute propriété calculée doit être une fonction renvoyant le résultat des calculs. Vérifions l'index de <code>currentDogLink</code> à l'intérieur du tableau <code>favoriteDogs</code>. Si elle est supérieure à -1 (en d'autres termes si le tableau contient un tel élément), la fonction renverra <code>true</code>, sinon elle renverra<code>false</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token literal-property property">computed</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token function">isAlreadyInFavorites</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>favoriteDogs<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>currentDogLink<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>Maintenant, nous pouvons ajouter un attribut dynamique <code>disabled</code> au bouton « J'aime » dans la carte du dessus et le définir à <code>isAlreadyInFavorites</code>.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-btn</span> <span class="token attr-name">icon</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>addToFavorites<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:disabled</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>isAlreadyInFavorites<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-icon</span><span class="token punctuation">&gt;</span></span>favorite<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-icon</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-btn</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Essayez d'ajouter le chien aux favoris. Vous pouvez maintenant voir que le bouton « J'aime » est grisé et vous ne pouvez plus cliquer dessus.</p> <h2 id="suppression-des-favoris"><a href="#suppression-des-favoris" class="header-anchor">#</a> Suppression des favoris</h2> <p>Et si vous n'aimez plus une des images de chien ? Dans ce cas improbable, vous aurez besoin d'un moyen de la supprimer du tableau <code>favoriteDogs</code>. Nous avons besoin d'une méthode de plus pour cela, alors ajoutons-la après le <code>addToFavorites</code> (ajoutez une virgule après le crochet de fermeture de <code>addToFavorites</code>) :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">removeFromFavorites</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Bien sûr, nous devons spécifier en quelque sorte quel chien nous voulons supprimer du tableau. Heureusement, nous avons le paramètre <code>index</code>. Passons-le à notre méthode et supprimons l'élément avec l'index donné du tableau <code>favoriteDogs</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">removeFromFavorites</span><span class="token punctuation">(</span><span class="token parameter">index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>favoriteDogs<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Ici, la méthode <code>splice()</code> modifie le contenu d'un tableau en supprimant les éléments existants. Le premier argument est l'indice de l'élément avec lequel nous voulons commencer et le deuxième argument est le nombre d'éléments que nous voulons supprimer.</p></div> <p>Maintenant, nous devons lier cette nouvelle méthode au bouton « Supprimer » :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-btn</span> <span class="token attr-name">icon</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>removeFromFavorites(index)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-icon</span><span class="token punctuation">&gt;</span></span>delete<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-icon</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-btn</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>N'oubliez pas de passer <code>index</code> à la méthode<code>removeFromFavorites</code> ! Lorsque nous ne transmettons aucun paramètre, nous pouvons simplement ignorer les parenthèses comme nous l'avons fait pour la méthode <code>addToFavorites</code>.</p></div> <p>Essayez d'ajouter et de supprimer certains chiens de vos favoris. ÇA FONCTIONNE !</p> <p><strong>🎊 Félicitations, vous avez terminé le projet de base ! 🎊</strong></p> <h2 id="supplement-1-creation-d-un-composant-dog"><a href="#supplement-1-creation-d-un-composant-dog" class="header-anchor">#</a> Supplément 1 : Création d'un composant Dog</h2> <p>À ce stade, nous voulons extraire une carte de la grille des favoris dans un composant distinct pour apprendre comment les composants parents et enfants communiquent.</p> <p>Nous avons un dossier <code>components</code> mais pour l'instant il est vide. Créons un nouveau fichier ici et appelons-le <code>Dog.vue</code>.</p> <p>Ouvrez ce fichier et ajoutez les balises <code>&lt;template&gt;&lt;/template&gt;</code> et <code>&lt;script&gt;&lt;/script&gt;</code>. Maintenant, notre fichier ressemble à ceci :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Copiez maintenant tout le composant <code>v-card</code> qui contient les chiens favoris (il est près du bas, et a la classe CSS <code>dog-card</code>) depuis <code>App.vue</code> et collez-le dans la balise de modèle. Vous pouvez le supprimer de <code>App.vue</code>.</p> <p>Nous avons maintenant besoin d'un moyen de transmettre l'image du chien que nous voulons voir du parent à l'enfant. Pour ce faire, Vue utilise des props.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Les props sont des attributs personnalisables que vous pouvez enregistrer dans un composant. Quand valeur est passée à un attribut prop, elle devient une <em>propriété</em> de l'instance du composant. Dans notre cas, le composant <code>Dog</code> aura une propriété <code>dog</code>, transmise à partir de son composant parent <code>App</code>.</p></div> <p>Ajoutons une option <code>props</code> à notre composant <code>Dog.vue</code>. Tout d'abord, nous devons créer une déclaration d'exportation à l'intérieur de notre balise <code>script</code> (donc plus tard, nous pourrons importer notre composant <code>Dog</code> à l'intérieur de <code>App</code>). Ajoutez ce bloc de code à <code>Dog.vue</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Maintenant, nous pouvons ajouter une option <code>props</code> à cet objet et une propriété <code>dog</code>:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+			<span class="token literal-property property">dog</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+				<span class="token literal-property property">type</span><span class="token operator">:</span> String<span class="token punctuation">,</span>
+			<span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>Ici, nous spécifions également le type de notre propriété <code>dog</code> : ce sera une chaîne de caractères contenant l'URL de l'image du chien.</p> <p>Dans notre template dans <code>Dog.vue</code>, nous devons remplacer <code>pet</code> par <code>dog</code>, car nous n'avons aucun <code>pet</code> à l'intérieur du composant <code>Dog</code>, seulement une propriété <code>dog</code>. Maintenant, notre modèle devrait ressembler à ceci :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-card</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>dog-card<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-img</span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>150px<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>dog<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-img</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-card-actions</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-spacer</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-spacer</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-btn</span> <span class="token attr-name">icon</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>removeFromFavorites(index)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-icon</span><span class="token punctuation">&gt;</span></span>delete<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-icon</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-btn</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-card-actions</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-card</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>Revenons maintenant à notre composant <code>App.vue</code> et apportons quelques modifications. Tout d'abord, nous devons importer notre composant <code>Dog</code> nouvellement créé dans <code>App.vue</code>. Ajoutez ce code avant l'instruction <code>export default</code> dans le bloc<code>&lt;script&gt;</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> Dog <span class="token keyword">from</span> <span class="token string">'./components/Dog'</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Maintenant, nous devons « expliquer » au composant <code>App</code> qu'il contient un composant enfant. Vue utilise pour cela une option <code>components</code>. Ajoutons cette option au-dessus de celle de <code>data()</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">appDog</span><span class="token operator">:</span> Dog
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">currentDogLink</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">favoriteDogs</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Pour chaque propriété de l'objet <code>components</code>, la clé sera le nom de l'élément personnalisé, tandis que la valeur contiendra le composant.</p></div> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Pour le nom du composant, vous pouvez utiliser l'écriture camel-case (<code>appDog</code>) ou kebab-case (<code>'app-dog'</code>). Gardez à l'esprit qu'un nom écrit en camel-case sera « traduit » en écriture kebab-case dans les noms de balises HTML. Nous allons donc utiliser la balise HTML personnalisée <code>&lt;app-dog&gt;</code> et elle rendra un composant <code>Dog</code>.</p></div> <p>Dans <code>App.vue</code>, placez la balise personnalisée dans l'espace où vous avez supprimé la carte plus tôt, en écrasant la balise <code>&lt;v-flex&gt;</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-flex</span> <span class="token attr-name">xs6</span> <span class="token attr-name">sm4</span> <span class="token attr-name">md2</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>(pet, index) in favoriteDogs<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>pet<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>app-dog</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>app-dog</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-flex</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Nous devons passer une propriété <code>dog</code> à notre composant <code>Dog</code>. Cela se fait avec la directive <code>v-bind</code> (rappelez-vous, vous pouvez utiliser sa syntaxe abrégée <code>:</code>). Modifiez le code que vous venez d'ajouter à <code>App.vue</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-flex</span> <span class="token attr-name">xs6</span> <span class="token attr-name">sm4</span> <span class="token attr-name">md2</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>(pet, index) in favoriteDogs<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>pet<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>app-dog</span> <span class="token attr-name">:dog</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>pet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@remove</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>removeFromFavorites(index)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>app-dog</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-flex</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Maintenant, si vous essayez d'ajouter un chien aux favoris, vous verrez à nouveau les chiens dans la grille ! Mais nous avons un problème : la suppression d'un chien entraînera un tas d'erreurs dans la console. La raison est que nous n'avons pas de méthode <code>removeFromFavorites</code> à l'intérieur de <code>Dog.vue</code> et qu'il ne sait rien du tout sur <code>index</code>.</p> <p>Au lieu d'utiliser la méthode, nous la remplacerons par un <em>émetteur d'événement</em> sur le bouton <code>delete</code> à l'intérieur du composant Dog.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-btn</span> <span class="token attr-name">icon</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>$emit('remove')<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-btn</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>En utilisant <code>$emit</code>, nous envoyons un message à notre composant parent (dans ce cas, c'est <code>App.vue</code>): « Bonjour, quelque chose se passe ici ! Veuillez lire ce message et y réagir ».</p> <p>Maintenant, lorsque le composant <code>Dog</code> émet l'événement <code>remove</code> (c'est-à-dire lorsque vous cliquez sur le bouton « Supprimer »), son composant parent <code>App</code> appellera la méthode <code>removeFromFavorites</code> (qui supprime un chien du tableau de favoris).</p> <p><strong>🎊 Vous avez terminé le supplément 1 ! 🎊</strong></p> <h2 id="supplement-2-ajout-d-animations"><a href="#supplement-2-ajout-d-animations" class="header-anchor">#</a> Supplément 2 : Ajout d'animations</h2> <p>Rendons maintenant notre application plus attrayante en y ajoutant des effets d'animation.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Vue fournit un composant wrapper <code>transition</code>, vous permettant d'ajouter des transitions d'entrée / sortie pour tout élément ou composant dans les contextes suivants :</p> <ul><li>Rendu conditionnel (en utilisant <code>v-if</code>)</li> <li>Affichage conditionnel (en utilisant <code>v-show</code>)</li> <li>Composants dynamiques</li> <li>Nœuds racine des composants
+:::</li></ul> <p>Essayons d'animer l'image de chien actuelle. Tout d'abord, nous devons lui ajouter une directive <code>v-if</code> pour fournir le contexte approprié pour la future transition. Dans <code>App.vue</code>, modifiez la carte principale :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-img</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>currentDogLink<span class="token punctuation">&quot;</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>400px<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>currentDogLink<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-img</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Mais maintenant, <code>currentDogLink</code> retournera toujours <code>true</code> ! Mettons la chaîne à vide à chaque fois que nous cliquons sur le bouton « Suivant », donc avant que l'image suivante ne soit chargée, <code>currentDogLink</code> retournera<code>false</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">loadNewDog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>currentDogLink <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+  axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;https://dog.ceo/api/breeds/image/random&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>currentDogLink <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>message<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>Vous pouvez maintenant observer cet effet laid : l'image disparaît à chaque fois que l'utilisateur clique sur « Suivant ». Nous allons corriger cela avec l'effet d'animation de fondu. Enveloppons le <code>v-img</code> dans une balise <code>&lt;transition&gt;</code>et mettons un attribut nom avec comme valeur <code>fade</code>.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>transition</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>fade<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-img</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>currentDogLink<span class="token punctuation">&quot;</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>400px<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>currentDogLink<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-img</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>transition</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Cela nous donnera un tas de classes CSS à partir de <code>fade-</code>. Il y aura <code>enter</code> / <code>leave</code> qui sont les positions avec lesquelles commence l'animation sur la première image, <code>enter-active</code> / <code>leave-active</code> pendant que l'animation est en cours d'exécution (c'est celle avec laquelle vous placez les propriétés d'animation elles-mêmes), et <code>enter-to</code> / <code>leave-to</code>, qui spécifient où l'élément doit être sur la dernière image.</p> <p>Maintenant que nous avons nos hooks, nous pouvons créer la transition en les utilisant. Modifiez le CSS dans <code>App.vue</code> en ajoutant les classes suivantes :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token selector">.fade-enter-active,
+.fade-leave-active</span> <span class="token punctuation">{</span>
+	<span class="token property">transition</span><span class="token punctuation">:</span> opacity 1s ease<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.fade-enter,
+.fade-leave-to</span> <span class="token punctuation">{</span>
+	<span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>Les classes <code>.fade-enter-active</code> et <code>.fade-Leave-active</code> seront les endroits où nous appliquerons la transition réelle. Ce n'est rien de spécifique à Vue, juste du CSS normal. La propriété <code>ease</code> spécifie un effet de transition avec un démarrage lent, puis rapide, puis se terminant lentement.</p> <p>Vous pouvez maintenant voir que l'image du chien a un bel effet de fondu lorsque vous cliquez sur « Suivant » !</p> <p>Ajoutons également quelques effets à notre grille de favoris. Pour animer la liste rendue avec <code>v-for</code>, Vue utilise la balise<code>transition-group</code>.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Contrairement à <code>&lt;transition&gt;</code>, <code>transition-group</code> rend un élément réel : une balise <code>&lt;span&gt;</code> par défaut. Vous pouvez modifier l'élément rendu avec l'attribut tag.
+Les éléments à l'intérieur doivent toujours avoir un attribut <code>key</code> unique.</p></div></div> <p>Dans <code>App.vue</code>, remplacez le composant <code>&lt;v-layout&gt;</code> entourant le composant imbriqué <code>&lt;app-dog&gt;</code> par <code>v-transition-group</code> et définissez-lui une classe et une balise appropriés :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>transition-group</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>slide<span class="token punctuation">&quot;</span></span> <span class="token attr-name">tag</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>v-layout<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>wrap<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>v-flex</span> <span class="token attr-name">xs6</span> <span class="token attr-name">sm4</span> <span class="token attr-name">md2</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>(pet, index) in favoriteDogs<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>pet<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>app-dog</span> <span class="token attr-name">:dog</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>pet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@remove</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>removeFromFavorites(index)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>app-dog</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>v-flex</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>transition-group</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><code>transition-group</code> sera maintenant rendu en tant que composant <code>v-layout</code>. La classe <code>wrap</code> est nécessaire pour encapsuler les éléments de la grille à la ligne suivante (elle remplace l'attribut <code>wrap</code> de <code>v-layout</code>). Nous avons également donné à notre nouvelle transition le nom <code>slide</code>.</p> <p>Maintenant, nous pouvons utiliser des classes CSS pour décrire la transition des diapositives. Ajoutez ces classes au CSS dans <code>App.vue</code> :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token selector">.slide-enter-active</span> <span class="token punctuation">{</span>
+	<span class="token property">transition</span><span class="token punctuation">:</span> all 0.3s ease<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.slide-enter,
+.slide-leave-to</span> <span class="token punctuation">{</span>
+	<span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>10px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>Génial ! Nous avons une belle animation lorsque nous ajoutons un nouveau favori à la grille. Mais il n'y a aucun effet sur la suppression. Il existe une classe <code>-move</code>, qui est ajoutée lorsque les éléments changent de position. Comme les autres classes, son préfixe correspondra à la valeur d'un attribut <code>name</code> fourni (<code>slide</code> dans notre cas). Nous devons donc ajouter quelques styles supplémentaires :</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token selector">.slide-leave-active</span> <span class="token punctuation">{</span>
+	<span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.slide-move</span> <span class="token punctuation">{</span>
+	<span class="token property">transition</span><span class="token punctuation">:</span> transform 0.5s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Remarquez <code>position: absolute</code> sur les éléments qui partent ! C'est fait pour les retirer du flux naturel, déclenchant la transition de mouvement sur le reste des objets.</p></div> <p>Maintenant, notre liste a une belle animation de mouvement après avoir supprimé un de ses éléments !</p> <p><strong>🎊 Vous avez terminé le supplément 2 ! 🎊</strong></p> <h2 id="auteure"><a href="#auteure" class="header-anchor">#</a> Auteure</h2> <p>Fait avec ❤️ par Natalia Tepluhina, mis à jour par Jen Looper</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/frontendfoxes/curriculum/edit/main/fr/workshops/vue/minis/mini1.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ae1f7f1c.js" defer></script><script src="/assets/js/2.1493f94c.js" defer></script><script src="/assets/js/1.698581a9.js" defer></script><script src="/assets/js/56.34757d38.js" defer></script>
+  </body>
+</html>

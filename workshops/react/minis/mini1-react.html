@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>🖥️ 1: Build A Simple Pet Fetching Web App | Front-End Foxes Workshops</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/favicon.png">
+    <meta name="description" content="Workshops to teach web and mobile development to beginners">
+    
+    <link rel="preload" href="/assets/css/0.styles.cfc3c787.css" as="style"><link rel="preload" href="/assets/js/app.ae1f7f1c.js" as="script"><link rel="preload" href="/assets/js/2.1493f94c.js" as="script"><link rel="preload" href="/assets/js/1.698581a9.js" as="script"><link rel="preload" href="/assets/js/75.61eece34.js" as="script"><link rel="prefetch" href="/assets/js/10.f8189797.js"><link rel="prefetch" href="/assets/js/11.fdd372d6.js"><link rel="prefetch" href="/assets/js/12.1a48da6e.js"><link rel="prefetch" href="/assets/js/13.bba5b44e.js"><link rel="prefetch" href="/assets/js/14.65b0ca50.js"><link rel="prefetch" href="/assets/js/15.0f7f7ed5.js"><link rel="prefetch" href="/assets/js/16.32e3ab23.js"><link rel="prefetch" href="/assets/js/17.b2fba88b.js"><link rel="prefetch" href="/assets/js/18.cb7ddc93.js"><link rel="prefetch" href="/assets/js/19.b205dfbe.js"><link rel="prefetch" href="/assets/js/20.e0ce5fdf.js"><link rel="prefetch" href="/assets/js/21.46472a06.js"><link rel="prefetch" href="/assets/js/22.a6593be3.js"><link rel="prefetch" href="/assets/js/23.00c0f558.js"><link rel="prefetch" href="/assets/js/24.59b64c01.js"><link rel="prefetch" href="/assets/js/25.581138de.js"><link rel="prefetch" href="/assets/js/26.0b8da5eb.js"><link rel="prefetch" href="/assets/js/27.7c4f8b3c.js"><link rel="prefetch" href="/assets/js/28.1a700b9c.js"><link rel="prefetch" href="/assets/js/29.8e51f627.js"><link rel="prefetch" href="/assets/js/3.a7c41ec0.js"><link rel="prefetch" href="/assets/js/30.0dbbd45c.js"><link rel="prefetch" href="/assets/js/31.f9050017.js"><link rel="prefetch" href="/assets/js/32.b00eb7dd.js"><link rel="prefetch" href="/assets/js/33.baa92c05.js"><link rel="prefetch" href="/assets/js/34.fcba6522.js"><link rel="prefetch" href="/assets/js/35.0c150a2f.js"><link rel="prefetch" href="/assets/js/36.c6385503.js"><link rel="prefetch" href="/assets/js/37.fdcf9bbb.js"><link rel="prefetch" href="/assets/js/38.05b7c83c.js"><link rel="prefetch" href="/assets/js/39.0e6f8a9d.js"><link rel="prefetch" href="/assets/js/4.16c33c19.js"><link rel="prefetch" href="/assets/js/40.c2a6cf08.js"><link rel="prefetch" href="/assets/js/41.4e33653c.js"><link rel="prefetch" href="/assets/js/42.da39ee26.js"><link rel="prefetch" href="/assets/js/43.8e217ddd.js"><link rel="prefetch" href="/assets/js/44.96b5368f.js"><link rel="prefetch" href="/assets/js/45.a08c9229.js"><link rel="prefetch" href="/assets/js/46.aed461c4.js"><link rel="prefetch" href="/assets/js/47.e01f25e7.js"><link rel="prefetch" href="/assets/js/48.a1e09420.js"><link rel="prefetch" href="/assets/js/49.7a5ead4d.js"><link rel="prefetch" href="/assets/js/5.9b57a164.js"><link rel="prefetch" href="/assets/js/50.460e6275.js"><link rel="prefetch" href="/assets/js/51.b8cca05e.js"><link rel="prefetch" href="/assets/js/52.4cd8acf0.js"><link rel="prefetch" href="/assets/js/53.6c429494.js"><link rel="prefetch" href="/assets/js/54.b8518cff.js"><link rel="prefetch" href="/assets/js/55.9aab3689.js"><link rel="prefetch" href="/assets/js/56.34757d38.js"><link rel="prefetch" href="/assets/js/57.cf3da2d7.js"><link rel="prefetch" href="/assets/js/58.1649f916.js"><link rel="prefetch" href="/assets/js/59.4e686269.js"><link rel="prefetch" href="/assets/js/6.a4b2b61c.js"><link rel="prefetch" href="/assets/js/60.0e4a368d.js"><link rel="prefetch" href="/assets/js/61.509ce38e.js"><link rel="prefetch" href="/assets/js/62.b32a7e3b.js"><link rel="prefetch" href="/assets/js/63.d3e67f8c.js"><link rel="prefetch" href="/assets/js/64.5b53b5e9.js"><link rel="prefetch" href="/assets/js/65.1bc287d9.js"><link rel="prefetch" href="/assets/js/66.ca6313cf.js"><link rel="prefetch" href="/assets/js/67.2300db05.js"><link rel="prefetch" href="/assets/js/68.0c74bc08.js"><link rel="prefetch" href="/assets/js/69.7917e1aa.js"><link rel="prefetch" href="/assets/js/7.4152b8de.js"><link rel="prefetch" href="/assets/js/70.8dfd6fe3.js"><link rel="prefetch" href="/assets/js/71.1fc613cb.js"><link rel="prefetch" href="/assets/js/72.2d2b545a.js"><link rel="prefetch" href="/assets/js/73.be66a633.js"><link rel="prefetch" href="/assets/js/74.173f7428.js"><link rel="prefetch" href="/assets/js/76.89916b8e.js"><link rel="prefetch" href="/assets/js/77.92fc46e1.js"><link rel="prefetch" href="/assets/js/78.15d1f7e8.js"><link rel="prefetch" href="/assets/js/79.7906bc8b.js"><link rel="prefetch" href="/assets/js/80.9732e546.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.6f140a46.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.cfc3c787.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Front-End Foxes Workshops</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/workshops/react/" class="nav-link router-link-active">
+  React Workshops
+</a></div><div class="nav-item"><a href="/workshops/vue/" class="nav-link">
+  Vue Workshops
+</a></div><div class="nav-item"><a href="/workshops/CODE_OF_CONDUCT.html" class="nav-link">
+  Code of Conduct
+</a></div><div class="nav-item"><a href="/workshops/TEAM.html" class="nav-link">
+  Team
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/workshops/react/minis/mini1-react.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/de/" class="nav-link">
+  Deutsch
+</a></li><li class="dropdown-item"><!----> <a href="/fr/" class="nav-link">
+  Français
+</a></li><li class="dropdown-item"><!----> <a href="/jp/" class="nav-link">
+  日本語
+</a></li></ul></div></div> <a href="https://github.com/frontendfoxes/curriculum/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/workshops/react/" class="nav-link router-link-active">
+  React Workshops
+</a></div><div class="nav-item"><a href="/workshops/vue/" class="nav-link">
+  Vue Workshops
+</a></div><div class="nav-item"><a href="/workshops/CODE_OF_CONDUCT.html" class="nav-link">
+  Code of Conduct
+</a></div><div class="nav-item"><a href="/workshops/TEAM.html" class="nav-link">
+  Team
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/workshops/react/minis/mini1-react.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/de/" class="nav-link">
+  Deutsch
+</a></li><li class="dropdown-item"><!----> <a href="/fr/" class="nav-link">
+  Français
+</a></li><li class="dropdown-item"><!----> <a href="/jp/" class="nav-link">
+  日本語
+</a></li></ul></div></div> <a href="https://github.com/frontendfoxes/curriculum/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>🦴 Mini Workshops</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/workshops/react/minis/ecommerce.html" class="sidebar-link">🛍️ 1: Build An E-Commerce App</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="🖥️-1-build-a-simple-pet-fetching-web-app"><a href="#🖥️-1-build-a-simple-pet-fetching-web-app" class="header-anchor">#</a> 🖥️ 1: Build A Simple Pet Fetching Web App</h1> <table><thead><tr><th><strong>Project &amp; nbsp; Goal</strong></th> <th>Get started with React basics and simple API calls with axios</th></tr></thead> <tbody><tr><td><strong>What &amp; nbsp; you’ll &amp; nbsp; learn</strong></td> <td>Setting up your React app, components basics, performing simple REST API calls using Axios</td></tr> <tr><td><strong>Tools &amp; nbsp; you’ll need</strong></td> <td>A modern browser like Chrome.Access to<a href="https://codesandbox.io" target="_blank" rel="noopener noreferrer">CodeSandbox<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> - be sure to create an account in the CodeSandbox to keep the versions of your work intact.</td></tr> <tr><td><strong>Time needed to complete</strong></td> <td>1 hour</td></tr> <tr><td><strong>Just want to try the app ?</strong></td> <td><a href="https://codesandbox.io/s/fetch-a-dog-00ruj" target="_blank" rel="noopener noreferrer">CodeSandbox link<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></td></tr></tbody></table> <div class="language- extra-class"><pre><code># Instructions
+
+## The Goal
+</code></pre></div><p>Yes, the main objective is to learn the basics about React. But if we say it that way is pretty boring. So what about creating an App to fetch random dogs with the option to add our preferences to a favorite list. It sounds much better right.</p> <p>What are we going to need to achieve our Goal ?</p> <ul><li>React</li> <li>Axios(To perform AJAX API requests)</li> <li>Some Style with Materialize</li></ul> <h2 id="install-required-packages"><a href="#install-required-packages" class="header-anchor">#</a> Install required packages</h2> <p>We have React installed, But we need to install Axios too.So click on <code>Add Dependency</code> and Search for <code>axios</code>.Just click on the firt result and CodeSanbox is going to install it for you.</p> <div class="custom-block tip"><p class="custom-block-title">💡</p> <p>To perform API calls we will need a library called<a href="https://github.com/axios/axios" target="_blank" rel="noopener noreferrer">Axios<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>. It's a promise-based HTTP client that works both in the browser and in other node.js environments.</p></div> <h2 id="scaffold-your-app"><a href="#scaffold-your-app" class="header-anchor">#</a> Scaffold your app</h2> <p>We'll start from scratch in <a href="http://codesandbox.io" target="_blank" rel="noopener noreferrer">CodeSandbox<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>. Create a CodeSandbox account and scaffold a starter React template by clicking <a href="https://codesandbox.io/s/new" target="_blank" rel="noopener noreferrer">here<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <p>We're going to build an application to load random dog images and store them to a favorites list:</p> <p>![Fetch a cute Dog](./images/mini1 - react.png)</p> <h3 id="basic-react-app-structure"><a href="#basic-react-app-structure" class="header-anchor">#</a> Basic React App Structure:</h3> <ul><li>public /</li> <li>src /</li> <li>package.json</li></ul> <p><em>public</em> will contain our image assets, html static files and custom client side javascript files, <code>package.json</code> is used by npm(Node package manager) to save all the packages needed to deploy our App, but we dont have to worry about this because CodeSandbox installs and updates this file for us.</p> <p><em>src</em> will contain our App and our React Components.</p> <p>Take a look at the code that was scaffolded by CodeSandbox for a basic React app.The file<code>index.js</code> is opened by default.This is the starting point of a React app.You will see something like this:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token string">'./styles.css'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> <span class="token punctuation">(</span>
+		<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;App&quot;</span><span class="token operator">&gt;</span>
+			<span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>Hello CodeSandbox<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+			<span class="token operator">&lt;</span>h2<span class="token operator">&gt;</span>Start editing to see some magic happen<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+		<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> rootElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">,</span> rootElement<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Wait a minute.Whats that ? An HTML tag inside Javascript ? Yes, that's right. In react You can pass HTML Tags Or Component Tags to the return function or assign them to a javascript variable. This kind of syntax is called JSX (syntax extension to JavaScript). Now let's get back to business.</p></div> <p>This file includes three sections.The first one imports react, react - dom and style files to our app.The second section is the App function that defines the App component and the Third section reders(injects) the App component code into the root element.</p> <p>Another important file inside the<code>src</code> directory is<code>style.css</code>, We will write our Custom CSS code and give our app a cool makeover!.</p> <p>Note that we inject our App component into the root element. We can find this element in the<code>public/index.html</code> file, this place is perfect to include general css and js libraries that can be used in the client side of our Application.</p> <p>By default CodeSandbox imports all the needed dependencies from npm to build the app.You can always check out <code>package.json</code> to find out which dependencies are needed.In fact you'll see a list of the minimum packages installed by default under the <code>Dependencies</code> option on the sidebar.</p> <p>Another important detail is the App function, this represents a React component. We can define a React Component in two ways:</p> <ul><li>Functions</li> <li>Classes and Objects</li></ul> <p>The difference between these two options is that with classes we can access the React Lifecycle hooks, in Other words this gives us more control for example on the specific moment we want to load anything in particular.</p> <p>As we mentioned before, the App function represents a Component. You can create you components as a Individual files (Single File Component - SFC).So go ahead and create the components directory(just to be more organized) and in the same folder create <code>App.js</code>, inserting the following code:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+	<span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token punctuation">(</span>
+			<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;App&quot;</span><span class="token operator">&gt;</span>
+				<span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>Hello CodeSandbox<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+				<span class="token operator">&lt;</span>h2<span class="token operator">&gt;</span>Start editing to see some magic happen<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+			<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+		<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><ul><li>The<code>props</code> attribute allow us to control dynamic properties for our App Component.For example you can provide the property &quot;color&quot; to the App Component<code>&lt;App color=&quot;red&quot;/&gt;</code>.So you can access it through<code>this.props.color</code>.</li> <li>The<code>state</code> atrribute contains all the App Component data that will dynamically change.</li> <li>Notice that the <code>return()</code> function contains the template that React is going to render for our App Component.</li> <li>The<code>export default</code> tells javascript that we want to export the component for reusing it.</li></ul> <p>Now go back to the<code>index.js</code> file, delete the App function and add the import for our new Component.The file should look as follows:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./components/App'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token string">'./styles.css'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rootElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">,</span> rootElement<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>Here we import the App Component you just created and we pass it to the render method of ReactDom to render it into the <code>rootElement</code>.</p> <p>This was a little intro to the basics. Now we're going to rip this sample app apart and recreate it! Let's get started.</p> <h2 id="add-the-styles"><a href="#add-the-styles" class="header-anchor">#</a> Add the Styles</h2> <p>Let's start in <code>style.css</code> and Add the following style block at the bottom of the file:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token selector">.App</span> <span class="token punctuation">{</span>
+	<span class="token property">font-family</span><span class="token punctuation">:</span> sans-serif<span class="token punctuation">;</span>
+	<span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.content</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+	<span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+	<span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.dog</span> <span class="token punctuation">{</span>
+	<span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+	<span class="token property">height</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span>
+	<span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+	<span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.dog img</span> <span class="token punctuation">{</span>
+	<span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+	<span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+	<span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.thumb .dog</span> <span class="token punctuation">{</span>
+	<span class="token property">height</span><span class="token punctuation">:</span> 100px <span class="token important">!important</span><span class="token punctuation">;</span>
+	<span class="token property">margin-top</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+	<span class="token property">position</span><span class="token punctuation">:</span> unset<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.thumb .dog img</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> auto <span class="token important">!important</span><span class="token punctuation">;</span>
+	<span class="token property">min-width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+	<span class="token property">height</span><span class="token punctuation">:</span> 100px <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">body</span> <span class="token punctuation">{</span>
+	<span class="token property">background</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'https://media.istockphoto.com/vectors/dog-paw-print-seamless-template-for-your-design-wrapping-paper-card-vector-id922637404?k=6&amp;m=922637404&amp;s=612x612&amp;w=0&amp;h=oaqzPXnPZjq-kekUyEo4uNvSnEMHhneUg0D658ELCwo='</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.semitrans</span> <span class="token punctuation">{</span>
+	<span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+	<span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+	<span class="token property">z-index</span><span class="token punctuation">:</span> -1<span class="token punctuation">;</span>
+	<span class="token property">opacity</span><span class="token punctuation">:</span> 0.5<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.superdi-icon</span> <span class="token punctuation">{</span>
+	<span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+	<span class="token property">top</span><span class="token punctuation">:</span> -10px<span class="token punctuation">;</span>
+	<span class="token property">right</span><span class="token punctuation">:</span> -10px<span class="token punctuation">;</span>
+	<span class="token property">z-index</span><span class="token punctuation">:</span> 1000<span class="token punctuation">;</span>
+	<span class="token property">background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+	<span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.super-title</span> <span class="token punctuation">{</span>
+	<span class="token property">z-index</span><span class="token punctuation">:</span> 10000<span class="token punctuation">;</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+	<span class="token property">padding</span><span class="token punctuation">:</span> 0px <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.favorite</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.relative</span> <span class="token punctuation">{</span>
+	<span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>This style block uses a path to an external image hosted on iStockPhoto, rather than to a relative path.This is because CodeSandbox doesn't host images easily; normally you'd just add an image on a relative path such as <code>/images/myImage.png</code> inside the<code>public</code> directory.</p></div> <p>Adding the stylesheet didn't do much to our template except break the existing styles. Let's fix the template!</p> <h2 id="adding-materialize"><a href="#adding-materialize" class="header-anchor">#</a> Adding Materialize</h2> <p>For this app, we will use Materialize, a modern responsive front - end framework based on Material Design that provides us nice css components to show our data.</p> <p>To start with Materialize, edit <code>public/index.html</code> and add the following lines:</p> <ul><li>Before title tag:</li></ul> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>https://fonts.googleapis.com/icon?family=Material+Icons<span class="token punctuation">&quot;</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>After the root div element:</li></ul> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Materialize is awesome and very easy to work with! We encourage to check their documentation if you want to use it for other React projects.</p></div> <p>Let's also change the page title to <code>Random dog</code>. To do so, we have to change the content of the <code>title</code> tag:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Random dog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Then, go ahead and overwrite the content of the template in <code>App.js</code> with this markup, Just rewrite the lines inside the return function:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">return</span> <span class="token punctuation">(</span>
+	<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;App container-fluid&quot;</span><span class="token operator">&gt;</span>
+		<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;content&quot;</span><span class="token operator">&gt;</span>
+			<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;row dog-row valign-wrapper&quot;</span><span class="token operator">&gt;</span>
+				<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;col s10 offset-s1 m6 offset-m3 l4 offset-l4&quot;</span><span class="token operator">&gt;</span>
+					<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;card lighten-2 dog-card&quot;</span><span class="token operator">&gt;</span>
+						<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;card-image&quot;</span><span class="token operator">&gt;</span>
+							<span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">&quot;https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg&quot;</span> alt<span class="token operator">=</span><span class="token string">&quot;chihuahua&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+							<span class="token operator">&lt;</span>span className<span class="token operator">=</span><span class="token string">&quot;card-title super-title red&quot;</span><span class="token operator">&gt;</span>Choose your favorite dogs<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+						<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+						<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;card-action right-align actions&quot;</span><span class="token operator">&gt;</span>
+							<span class="token operator">&lt;</span>a className<span class="token operator">=</span><span class="token string">&quot;btn-floating waves-effect waves-light red&quot;</span><span class="token operator">&gt;</span>
+								<span class="token operator">&lt;</span>i className<span class="token operator">=</span><span class="token string">&quot;material-icons&quot;</span><span class="token operator">&gt;</span>favorite<span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+							<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+						<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+					<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+				<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+			<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+		<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+	<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>Your app should refresh(if it doesn't, use the manual refresh button in the app preview address bar).</p> <h2 id="add-some-data"><a href="#add-some-data" class="header-anchor">#</a> Add some data</h2> <p>At the moment we can only see a centered card with a static image of a chihuahua dog loaded using the<code>src</code> property in the image tag.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg<span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>chihuahua<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>But the idea is to make this link dynamic, so it's time to create your first Reactive variable.</p> <p>First, you have to add a <code>dog</code> variable to your state in your App component. We decided to put this variable there because it will change later (To load random images from the api). All the data that changes in our application must be saved in the React state object.</p> <p>Go to <code>App.js</code> modify the state variable</p> <p>Before:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>After:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token comment">//current dog</span>
+	<span class="token literal-property property">dog</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">'https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg'</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">link</span><span class="token operator">:</span> <span class="token string">'a valid link'</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>As you can see we have added an object instead of a string to show that we can store complex objects in the state. Now we have to change the template to make the <code>src</code> property <em>dynamic</em> so it can use the value of the variable we just populated above.Now we can modify the <code>App.js</code> template section, right where our image loads.</p> <p>Before:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">&quot;https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg&quot;</span> alt<span class="token operator">=</span><span class="token string">&quot;chihuahua&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>After:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dog<span class="token punctuation">.</span>image<span class="token punctuation">}</span> alt<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dog<span class="token punctuation">.</span>link<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>::: Important tip 💡
+As we mentioned before, you can use html tags in an assignment, a return function or in the render function of ReactDom.But to pass the values of the state or the properties of a component, you have to write the variable in brackets it can be rendered.
+:::</p> <p>Great! Now it's time to load some dogs from the Dog CEO API!</p> <h2 id="add-axios-to-our-code"><a href="#add-axios-to-our-code" class="header-anchor">#</a> Add Axios to Our Code</h2> <p>At the very begining, we installed Axios, Now is the time to use it!. It will basically help us load random dog images from the Dog CEO API.</p> <p>Import Axios into the component where we will perform our API call. Go to <code>App.js</code>, and in script block, add the following line:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>you can add this below the react import at the very beggining.</p> <p>Your import should look like this:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>Now we ar ready to start loading images from the API.</p> <h2 id="making-the-api-call-☎️"><a href="#making-the-api-call-☎️" class="header-anchor">#</a> Making the (API) call! ☎️</h2> <p>Let's perform our first API call. To do so, we will create an <code>UpdateRandom</code> <em>method</em> inside our component (App.js).</p> <p>Let's add it right after the <code>constructor</code>:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">//current dog</span>
+    <span class="token literal-property property">dog</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">&quot;https://images.dog.ceo/breeds/chihuahua/n02085620_3407.jpg&quot;</span><span class="token punctuation">,</span> <span class="token literal-property property">link</span><span class="token operator">:</span> <span class="token string">&quot;a valid link&quot;</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">UpdateRandom</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>For now this method does nothing but we want it to load a new dog from the API.</p> <p>First we have to check which endpoint we have to use. Looking at the API's <a href="https://dog.ceo/dog-api/" target="_blank" rel="noopener noreferrer">documentation<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>, it tells us to use <code>https://dog.ceo/api/breeds/image/random</code> as our endpoint. It will provide a random dog image.</p> <p>To perform a <code>GET</code> request, Axios uses the <code>axios.get</code> method. The result will be a JavaScript promise, so we have to provide success and failure callbacks to manage its lifecycle. For now, let's simply print the query result to console. Still in <code>App.js</code>, edit the <code>UpdateRandom(){}</code> method by placing this snippet between the curly brackets:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code>axios
+	<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'https://dog.ceo/api/breeds/image/random'</span><span class="token punctuation">)</span>
+	<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">error</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>We want a new image to replace the old one right when the component is created, so let's add a <code>componentDidMount()</code> hook right after <code>UpdateRandom</code> method:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>This is our app's first lifecycle hook! These are very useful when you want fine control over when to run blocks of code. Read more <a href="https://React.org/docs/state-and-lifecycle.html" target="_blank" rel="noopener noreferrer">here<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <p>Inside the <code>componentDidMount</code> hook we will call our method.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">componentDidMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//Each time our App loads show a random dog</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">UpdateRandom</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>Now after clicking the refresh button in the browser window, you should see an object in your console. Drill into it by clicking the left-hand arrow. We are interested in the <code>data</code> field.You can see we have a status: <code>success</code> and a message with an image URL.</p> <h2 id="using-the-api"><a href="#using-the-api" class="header-anchor">#</a> Using the API</h2> <p>Let's replace our <code>dog</code> state object with the API loaded data. At this point we can remove the static value:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token comment">//current dog</span>
+	<span class="token literal-property property">dog</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token literal-property property">link</span><span class="token operator">:</span> <span class="token string">''</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>Inside the<code>UpdateRandom</code> method instead of printing the result to the console we will assign<code>response.data.message</code>(which is actually the image URL) to the<code>dog</code> property object:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code>  <span class="token function">UpdateRandom</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;https://dog.ceo/api/breeds/image/random&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">dog</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">image</span><span class="token operator">:</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>message<span class="token punctuation">,</span> <span class="token literal-property property">link</span><span class="token operator">:</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>message <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">error</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>This is the first time we call the <code>setState</code> function.You may notice that we don't use <code>this.dog = {image: response.data.message, link: response.data.message}</code> to rewrite the values of this object. That's because if we do it this way we lose reactivity. In order to propagate the changes to all the sections where the dog state is used (including the templates) we have to follow the React rules and update the state using the <code>setState</code> method.</p></div> <p>Now every time you refresh the page, you will have a shiny new dog image!</p> <p>We also want to call the same method when you click on the image card, so it shows us a new dog on each click!. Let's add a click handler to the card. We are going to use the <code>OnClick</code> event for this purpose:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;card-image&quot;</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">UpdateRandom</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+	<span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dog<span class="token punctuation">.</span>image<span class="token punctuation">}</span> alt<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dog<span class="token punctuation">.</span>link<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+	<span class="token operator">&lt;</span>span className<span class="token operator">=</span><span class="token string">&quot;card-title super-title red&quot;</span><span class="token operator">&gt;</span>Choose your favorite dogs<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>Now we can load new images simply by clicking on the image card. Cool Beans!!! 🤓</p> <h2 id="build-the-favorites-list"><a href="#build-the-favorites-list" class="header-anchor">#</a> Build the Favorites List</h2> <p>We want to let a user add dog images to a personal list of their favorites and show the gallery of these images right below our current dog view. To store the links we need one more data property - an array called <code>dogs</code>. Let's add it right before <code>dog</code>. This time it should be empty by default:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token comment">//Favorite dogs</span>
+	<span class="token literal-property property">dogs</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+	<span class="token comment">//current dog</span>
+	<span class="token literal-property property">dog</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token literal-property property">link</span><span class="token operator">:</span> <span class="token string">''</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>To display the favorite dogs we should make changes to our template. Let's add the following code snippet right after the closing <code>card div</code></p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>section<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>row<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+		{this.state.dogs != null &amp;&amp; this.state.dogs != undefined &amp;&amp; this.state.dogs.map((dog, index) =&gt; (
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{index}<span class="token punctuation">&quot;</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>col s4 thumb<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>relative<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>randdog<span class="token punctuation">&quot;</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>dog waves-effect waves-light<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>favorite<span class="token punctuation">&quot;</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{dog.image}<span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{dog.link}<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>material-icons superdi-icon red-text<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+						do_not_disturb_on
+					<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+		))}
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>Hmmm, this may look a bit complicated, but over time you will get used to it.If you analyze it carefully you will understand it is actually quite simple.</p> <p>After the<code>&lt;div className=&quot;row&quot;&gt;</code> we see:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code>    <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs <span class="token operator">!=</span> <span class="token keyword">undefined</span> <span class="token operator">&amp;&amp;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">dog<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+        <span class="token comment">//what to render</span>
+    <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>The first two lines evaluate if <code>this.state.dogs</code> exists and is not empty. If it exists, then <code>this.state.dogs.map((dog, index) =&gt; (</code> is executed. The map function starts to loop each element of the <code>this.state.dogs</code> array. The <em>current</em> position index is represented by the index local var and the <em>current element</em> is represented by the dog variable.</p> <p>The <code>))}</code> represents the end of the operation.In the &quot;what to render&quot; space you can load the elements that you want data to show for.</p> <p>Inside the loop there is:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>img className<span class="token operator">=</span><span class="token string">&quot;favorite&quot;</span> src<span class="token operator">=</span><span class="token punctuation">{</span>dog<span class="token punctuation">.</span>image<span class="token punctuation">}</span> alt<span class="token operator">=</span><span class="token punctuation">{</span>dog<span class="token punctuation">.</span>link<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>This is going to load the image and the link of the dog object for each iteration, providing the<code>dog.image</code> to the <code>src</code> attribute to render the image. Another important detail is that when you do this kind of iteration React waits for a unique key attribute in the root element.Thats why the<code>&lt;div key={index} className=&quot;col s4 thumb&quot;&gt;</code> has the <code>key</code> property included.</p> <p>The following code shows the delete icon. This icon is going to trigger a function that removes an element of the <code>dogs</code> array.But for now this element is disabled because we need to focus on showing our favorite dogs list.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>i className<span class="token operator">=</span><span class="token string">&quot;material-icons superdi-icon red-text&quot;</span><span class="token operator">&gt;</span>do_not_disturb_on<span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Remember, we chose a specific name inside the directive; if we had written<code>this.state.dogs.map((element, number) =&gt; (</code> each item would have been called <code>element</code> and its index would have been called <code>number</code>).</p></div> <p>You can see that our empty card disappeared.It's fine! We have an empty <code>dogs</code> array so there's simply nothing to render right now.</p> <p>Now it's time to like some dogs.</p> <h2 id="adding-dogs-to-favorites"><a href="#adding-dogs-to-favorites" class="header-anchor">#</a> Adding dogs to favorites</h2> <p>We will create a new method called <code>AddNewdog</code>. It will add the value of <code>dog</code> to the <code>dogs</code> array (JavaScript has a<code>push</code> array method for this purpose). Let's place it after <code>UpdateRandom</code>:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">AddNewdog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dog<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//rewrite dogs array</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">dogs</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>And of course we need to bind it to the 'Like' button in the top card:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>btn-floating waves-effect waves-light red<span class="token punctuation">&quot;</span></span> <span class="token special-attr"><span class="token attr-name">onClick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token value javascript language-javascript"><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">AddNewdog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token punctuation">&quot;</span></span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>material-icons<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>favorite<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Now try to click on the 'favorite' button! You can see how our gallery is populated with dog images!!</p> <p>There is one issue: now we can add the same image a few times. To prevent this we should check if the <code>dog.image</code> is already inside the<code>dogs</code> array and if it is the case, we will disable the 'favorite' button.</p> <p>Instead of placing this complex logic inside the template, we will create a <code>isInPack</code> state and a <code>checkPack</code> function.</p> <p>We will also create a <code>isInPack</code> state and assign a <code>false</code> value to it. This value is going to be toggled between true and false to know if the current random image is inside our favorite list</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token comment">//Favorite dogs</span>
+	<span class="token literal-property property">dogs</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+	<span class="token comment">//current dog</span>
+	<span class="token literal-property property">dog</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token literal-property property">link</span><span class="token operator">:</span> <span class="token string">''</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">isInPack</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>Add <code>checkPack</code> before <code>UpdateRandom()</code></p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">checkPack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> pack <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs
+    <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">dog</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> dog<span class="token punctuation">.</span>image<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dog<span class="token punctuation">.</span>image<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">isInPack</span><span class="token operator">:</span> pack <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">?</span> <span class="token boolean">true</span> <span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>So, <code>this.state.dogs.map(function(dog) { return dog.image; })</code> loops the dogs array and returns an unidimensional array of images for each dog, then<code>.indexOf(this.state.dog.image)</code> can check if the current image is present in this unidimentional array.</p> <p>Then <code>this.setState({ isInPack: pack != -1 ? true : false });</code> updates the <code>isInPack</code> to true if the image is in our favorite list and if not, then false.</p> <p>The function has to be evaluated when you add a new image in the favorite list and when you remove an image from the list. Next step is to add <code>checkPack()</code> to <code>AddNewdog</code>:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">AddNewdog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dog<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">dogs</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">checkPack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>Now in <code>App.js</code> we can evaluate the <code>isInPack</code> state to enable or disable the favorite icon</p> <p>Before:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>a className<span class="token operator">=</span><span class="token string">&quot;btn-floating waves-effect waves-light red&quot;</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">AddNewdog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+	<span class="token operator">&lt;</span>i className<span class="token operator">=</span><span class="token string">&quot;material-icons&quot;</span><span class="token operator">&gt;</span>favorite<span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>After:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>a
+	className<span class="token operator">=</span><span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>isInPack
+			<span class="token operator">?</span> <span class="token string">'btn-floating waves-effect waves-light red disabled'</span>
+			<span class="token operator">:</span> <span class="token string">'btn-floating waves-effect waves-light red'</span>
+	<span class="token punctuation">}</span>
+	onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleClick</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token string">'favorite'</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token operator">&gt;</span>
+	<span class="token operator">&lt;</span>i className<span class="token operator">=</span><span class="token string">&quot;material-icons&quot;</span><span class="token operator">&gt;</span>favorite<span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>As you can see now <code>this.state.isInPack</code> is evaluated in the <code>className</code> attribute. If true the <code>disabled</code> css class is going to be added to the class list. Disabled class is used by materialize to disable elements.</p> <p>Try to add the the same dog to favorites. Now you can see the 'favorite' icon is greyed out and you cannot click it again.</p> <h2 id="removing-dogs-from-favorites"><a href="#removing-dogs-from-favorites" class="header-anchor">#</a> Removing dogs from Favorites</h2> <p>What if you stopped liking one of the dog images? In this unlikely event, you will need a way to remove it from the <code>dogs</code> array. We need one more method for this, so let's add it after <code>UpdateRandom</code>:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">Deletedog</span><span class="token punctuation">(</span><span class="token parameter">index</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>Of course we should specify somehow what dog we want to remove from the array. Fortunately, we have the<code>index</code> parameter. Let's pass it to our method and remove the element with the given index from the <code>dogs</code> array:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">Deletedog</span><span class="token punctuation">(</span><span class="token parameter">index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">dogs</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">checkPack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">💡</p> <p>Here the <code>splice()</code> method changes the contents of an array by removing existing elements. The first argument is the index of the element we want to start with and the second argument is the number of elements we want to remove.</p></div> <p>Now we have to bind this new method to the 'Delete' button with a click handler, Let's go again to <code>App.js</code> and change the following inside the dogs loop:</p> <p>Before:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>material-icons superdi-icon red-text<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	do_not_disturb_on
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>After</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>i onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">Deletedog</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">}</span> className<span class="token operator">=</span><span class="token string">&quot;material-icons superdi-icon red-text&quot;</span><span class="token operator">&gt;</span>
+	do_not_disturb_on
+<span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Try to add and remove dogs from favorites. IT WORKS!</p> <p><strong>🎊Congratulations, you've finished the base project!🎊</strong></p> <h2 id="supplement-1-creating-a-dog-component"><a href="#supplement-1-creating-a-dog-component" class="header-anchor">#</a> Supplement 1: Creating a dog Component</h2> <p>At this point we want to abstract a single dog card from the Favorites grid into a separate component to learn how parent and child components communicate.</p> <p>We have a<code>components</code> folder. Let's create a new file here and name it <code>dog.js</code>.</p> <p>Open this file and add the following code:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">dog</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+	<span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token punctuation">(</span>
+			<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;relative&quot;</span><span class="token operator">&gt;</span>
+				<span class="token operator">&lt;</span>div name<span class="token operator">=</span><span class="token string">&quot;randdog&quot;</span> className<span class="token operator">=</span><span class="token string">&quot;dog waves-effect waves-light&quot;</span><span class="token operator">&gt;</span>
+					<span class="token operator">&lt;</span>img
+						className<span class="token operator">=</span><span class="token punctuation">{</span>
+							<span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>context <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>context <span class="token operator">!==</span> <span class="token keyword">undefined</span> <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>context <span class="token operator">:</span> <span class="token string">''</span>
+						<span class="token punctuation">}</span>
+						src<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>image<span class="token punctuation">}</span>
+						alt<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>link<span class="token punctuation">}</span>
+					<span class="token operator">/</span><span class="token operator">&gt;</span>
+					<span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>context <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span>
+					<span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>context <span class="token operator">!==</span> <span class="token keyword">undefined</span> <span class="token operator">&amp;&amp;</span>
+					<span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>context <span class="token operator">==</span> <span class="token string">'favorite'</span> <span class="token operator">?</span> <span class="token punctuation">(</span>
+						<span class="token operator">&lt;</span>i onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>onClick<span class="token punctuation">}</span> className<span class="token operator">=</span><span class="token string">&quot;material-icons superdi-icon red-text&quot;</span><span class="token operator">&gt;</span>
+							do_not_disturb_on
+						<span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+					<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token punctuation">(</span>
+						<span class="token string">''</span>
+					<span class="token punctuation">)</span><span class="token punctuation">}</span>
+				<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+			<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+		<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> dog<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><p>As you can see this code is pretty similar to the favorite section code.</p> <p>You know, that section where we loop the <code>dogs</code> array in <code>App.js</code>?.That's because we reuse code, In fact the idea of this Component is to adapt depending of two contexts:</p> <ul><li>The main random dog card</li> <li>The favorites section</li></ul> <p>We are going to receive parent information of the context and we are going to render the component according to that context.</p> <p>Analyzing the code:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>img
+	className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>context <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>context <span class="token operator">!==</span> <span class="token keyword">undefined</span> <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>context <span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">}</span>
+	src<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>image<span class="token punctuation">}</span>
+	alt<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>link<span class="token punctuation">}</span>
+<span class="token operator">/</span><span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>For the <code>img</code> tag we are going to add a context class to apply a style for a specific context.</p> <p>For example: when <code>dog</code> is loaded in the favorite context, <code>img</code> will receive the class favorite and we can apply custom css using the<code>.favorite</code> class.</p> <p>Instead of using the<code>src={dog.image}</code> to load the data of the current iteration, now we receive this data from the props of the component. That's why we use <code>src={this.props.image}</code>. The value of this property is assigned by the parent(App.js). For example:</p> <p>Let's see: <code>&lt;dog image=&quot;image.jpg&quot;/&gt;</code>, here we assign the image property to the<code>dog</code> component and we can read this property inside the component using <code>this.props.image</code>.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>context <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>context <span class="token operator">!==</span> <span class="token keyword">undefined</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>context <span class="token operator">==</span> <span class="token string">'favorite'</span> <span class="token operator">?</span> <span class="token punctuation">(</span>
+		<span class="token operator">&lt;</span>i onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>onClick<span class="token punctuation">}</span> className<span class="token operator">=</span><span class="token string">&quot;material-icons superdi-icon red-text&quot;</span><span class="token operator">&gt;</span>
+			do_not_disturb_on
+		<span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+	<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token punctuation">(</span>
+		<span class="token string">''</span>
+	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>We can see how we evaluate that if we are in the favorite context, we load the delete icon. Otherwise we don't load anything.</p> <p>Notice that in the <code>onClick</code> event we assign <code>this.props.onClick</code>, and that's because <code>App.js</code> is going to pass the Deletedog Method for the element of the current iteration, and the delete icon is going to trigger this method when the user clicks it.</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> dog<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>In here we export the dog class. Then you can reuse it wherever you want.</p> <h2 id="adapting-app-js-to-use-dog-component"><a href="#adapting-app-js-to-use-dog-component" class="header-anchor">#</a> Adapting App.js to use dog Component</h2> <p>Now let's move back to our <code>App.js</code> and make some changes. First of all we should import our newly created <code>dog</code> component into <code>App.js</code>. Add this string at the beginning of the file after the axios import, like this:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> dog <span class="token keyword">from</span> <span class="token string">'./dog'</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Now we are going to tell react how to handle the context. We are going to manage three contexts:</p> <ul><li>favorite context</li> <li>delete_favorite</li> <li>the default context(update random dog)</li></ul> <p>to handle this, we define a new method called <code>handleClick</code> inside the App component class. You can add this one after the constructor:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> id<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> id <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">==</span> <span class="token string">&quot;favorite&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">AddNewdog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">==</span> <span class="token string">&quot;delete_favorite&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">Deletedog</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">UpdateRandom</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>Also we need to add the following code at the end of the constructor</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">//Favorite dogs</span>
+    <span class="token literal-property property">dogs</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment">//current dog</span>
+    <span class="token literal-property property">dog</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">image</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> <span class="token literal-property property">link</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">isInPack</span><span class="token operator">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token comment">//Tells react handleClick is a event handler</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>handleClick <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleClick</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>the line<code>this.handleClick = this.handleClick.bind(this);</code> indicates that <code>handleClick</code> is going to handle the click event and manage the event object.</p> <p>Now rewrite the App component template as follows:</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">return</span> <span class="token punctuation">(</span>
+	<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;App container-fluid&quot;</span><span class="token operator">&gt;</span>
+		<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;content&quot;</span><span class="token operator">&gt;</span>
+			<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;row dog-row valign-wrapper&quot;</span><span class="token operator">&gt;</span>
+				<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;col s10 offset-s1 m6 offset-m3 l4 offset-l4&quot;</span><span class="token operator">&gt;</span>
+					<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;card lighten-2 dog-card&quot;</span><span class="token operator">&gt;</span>
+						<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;card-image&quot;</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleClick</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token string">'randdog'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+							<span class="token operator">&lt;</span>dog image<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dog<span class="token punctuation">.</span>image<span class="token punctuation">}</span> link<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dog<span class="token punctuation">.</span>link<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+							<span class="token operator">&lt;</span>span className<span class="token operator">=</span><span class="token string">&quot;card-title super-title red&quot;</span><span class="token operator">&gt;</span>Choose your favorite dogs<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+						<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+						<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;card-action right-align actions&quot;</span><span class="token operator">&gt;</span>
+							<span class="token operator">&lt;</span>a
+								className<span class="token operator">=</span><span class="token punctuation">{</span>
+									<span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>isInPack
+										<span class="token operator">?</span> <span class="token string">'btn-floating waves-effect waves-light red disabled'</span>
+										<span class="token operator">:</span> <span class="token string">'btn-floating waves-effect waves-light red'</span>
+								<span class="token punctuation">}</span>
+								onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleClick</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token string">'favorite'</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+							<span class="token operator">&gt;</span>
+								<span class="token operator">&lt;</span>i className<span class="token operator">=</span><span class="token string">&quot;material-icons&quot;</span><span class="token operator">&gt;</span>favorite<span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+							<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+						<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+					<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+					<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;section&quot;</span><span class="token operator">&gt;</span>
+						<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;row&quot;</span><span class="token operator">&gt;</span>
+							<span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span>
+								<span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs <span class="token operator">!=</span> <span class="token keyword">undefined</span> <span class="token operator">&amp;&amp;</span>
+								<span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">dog<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+									<span class="token operator">&lt;</span>div key<span class="token operator">=</span><span class="token punctuation">{</span>index<span class="token punctuation">}</span> className<span class="token operator">=</span><span class="token string">&quot;col s4 thumb&quot;</span><span class="token operator">&gt;</span>
+										<span class="token operator">&lt;</span>dog
+											onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleClick</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token string">'delete_favorite'</span><span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">}</span>
+											context<span class="token operator">=</span><span class="token string">&quot;favorite&quot;</span>
+											image<span class="token operator">=</span><span class="token punctuation">{</span>dog<span class="token punctuation">.</span>image<span class="token punctuation">}</span>
+											link<span class="token operator">=</span><span class="token punctuation">{</span>dog<span class="token punctuation">.</span>link<span class="token punctuation">}</span>
+										<span class="token operator">/</span><span class="token operator">&gt;</span>
+									<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+								<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+						<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+					<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+				<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+			<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+		<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+	<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br></div></div><p>We are going to analyze what changed here:</p> <ul><li><p>First: the Card for Random dogs</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;card-image&quot;</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleClick</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token string">'randdog'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+	<span class="token operator">&lt;</span>dog image<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dog<span class="token punctuation">.</span>image<span class="token punctuation">}</span> link<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dog<span class="token punctuation">.</span>link<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+	<span class="token operator">&lt;</span>span className<span class="token operator">=</span><span class="token string">&quot;card-title super-title red&quot;</span><span class="token operator">&gt;</span>Choose your favorite dogs<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li></ul> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language- line-numbers-mode"><pre class="language-text"><code>
+When you click the card-image, Our `handleClick` method is triggered. The first argument is the event and the second argument is the context. in this case `randdog`. When `randdog` is passed to `handleClick`, `UpdateRandom` is executed and the random dog image is loaded.
+
+For the random card section we use the dog component and pass the _current_ dog object(image and link).
+
+- Second: The card actions
+
+```js
+&lt;a
+  className={
+    this.state.isInPack
+      ? &quot;btn-floating waves-effect waves-light red disabled&quot;
+      : &quot;btn-floating waves-effect waves-light red&quot;
+  }
+  onClick={e =&gt; this.handleClick(e, &quot;favorite&quot;)}
+&gt;
+  &lt;i className=&quot;material-icons&quot;&gt;favorite&lt;/i&gt;
+&lt;/a&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>The only thing that changed here was the <code>onClick</code> handler. We use <code>handleClick</code> now and we pass the favorite context. When favorite context is passed, <code>handleClick</code> executes the <code>AddNewdog</code> method.</p> <ul><li><p>Third: The dogs iteration</p> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;section&quot;</span><span class="token operator">&gt;</span>
+	<span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;row&quot;</span><span class="token operator">&gt;</span>
+		<span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs <span class="token operator">!=</span> <span class="token keyword">undefined</span> <span class="token operator">&amp;&amp;</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>dogs<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">dog<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+				<span class="token operator">&lt;</span>div key<span class="token operator">=</span><span class="token punctuation">{</span>index<span class="token punctuation">}</span> className<span class="token operator">=</span><span class="token string">&quot;col s4 thumb&quot;</span><span class="token operator">&gt;</span>
+					<span class="token operator">&lt;</span>dog
+						onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleClick</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token string">'delete_favorite'</span><span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">}</span>
+						context<span class="token operator">=</span><span class="token string">&quot;favorite&quot;</span>
+						image<span class="token operator">=</span><span class="token punctuation">{</span>dog<span class="token punctuation">.</span>image<span class="token punctuation">}</span>
+						link<span class="token operator">=</span><span class="token punctuation">{</span>dog<span class="token punctuation">.</span>link<span class="token punctuation">}</span>
+					<span class="token operator">/</span><span class="token operator">&gt;</span>
+				<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+			<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+	<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div></li></ul> <script>
+    function copyText(event, node) {
+      // So we don't go anywhere
+      event.preventDefault();
+
+      const toCopy = node.parentElement.nextElementSibling.querySelector('code');
+      const el = document.createElement('textarea');
+      el.value = toCopy.innerText;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+  </script> <div style="display:flex;justify-content:flex-end;"><a href="#" onclick="copyText(event, this)">
+      Copy
+    </a></div> <div class="language- line-numbers-mode"><pre class="language-text"><code>
+As you cand see we deleted the img html tag and we added the dog Component inside the iteration. Throughout the `handleClick` method we pass the `delete_favorite` context and the _current_ index we want to delete. This method is triggered when the user clicks the delete icon inside the dog component as we have mentioned before.
+
+We also we pass the `dog.image` and the `dog.link` attributes to the dog Component to render the image of the dog in the favorite section.
+
+**🎊You've finished Supplement 1!🎊**
+
+## Author
+
+Made with ❤️ by Natalia Tepluhina, updated by Jen Looper and migrated to React by SuperDiana!
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/frontendfoxes/curriculum/edit/main/workshops/react/minis/mini1-react.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ae1f7f1c.js" defer></script><script src="/assets/js/2.1493f94c.js" defer></script><script src="/assets/js/1.698581a9.js" defer></script><script src="/assets/js/75.61eece34.js" defer></script>
+  </body>
+</html>
