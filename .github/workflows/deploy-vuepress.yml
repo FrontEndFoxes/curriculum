@@ -1,10 +1,10 @@
 # When something is pushed to master, rebuild the docs
-name: DeployToGitHubPages
+name: deploy-vuepress-site
 
 on:
   push:
     branches:
-    - main
+    - main-built
 
 env:
   NODE_VERSION: '10.x'                # set this to the node version to use
