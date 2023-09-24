@@ -2,6 +2,7 @@
 	"name": "front-end-foxes-workshops",
 	"version": "1.0.0",
 	"description": "Front-End Foxes Workshops",
+	"main": "index.js",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/frontendfoxes/curriculum.git"
@@ -21,7 +22,7 @@
 		"vuepress": "^1.9.10"
 	},
 	"scripts": {
-		"build": "vuepress build",
-		"dev": "vuepress dev"
+		"build": "vuepress build src",
+		"dev": "vuepress dev src"
 	}
 }

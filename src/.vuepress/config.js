@@ -1,7 +1,7 @@
 const addCopyButton = require('./copyButton');
 
 module.exports = {
-	base: '/',
+	base: '/curriculum/',
 	head: [['link', { rel: 'icon', href: '/favicon.png' }]],
 	title: 'Front-End Foxes Workshops',
 	description: 'Workshops to teach web and mobile development to beginners',
@@ -29,7 +29,6 @@ module.exports = {
 	},
 	themeConfig: {
 		repo: 'frontendfoxes/curriculum/',
-		docsBranch: 'main',
 		editLinks: true,
 		// custom text for edit link. Defaults to "Edit this page"
 		editLinkText: 'Help us improve this page!',
