@@ -3,8 +3,6 @@ home: true
 footer: MIT Licensed | Copyright 2018-present Front-End Foxes Inc, a 501(c)(3) public charity
 ---
 
-> Hello, Hacktoberfest folks! We are currently looking to upgrade these workshops to Vue 3+. Start with the Minis and let's see how the look. I'm looking for clean, documented code that we can run in Code Sandbox to help the legacy of Front-End Foxes live on. 
-
 # About Our Workshops
 
 ![Front-End Foxes](./workshops/images/logo.png)

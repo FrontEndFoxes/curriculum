@@ -1,7 +1,7 @@
 
 # Front-End Foxes Workshops
 
-> Hello, Hacktoberfest folks! We are currently looking to upgrade these workshops to Vue 3+. Start with the Minis and let's see how the look. I'm looking for clean, documented code that we can run in Code Sandbox to help the legacy of Front-End Foxes live on. 
+> Hello, Hacktoberfest folks! We are currently looking to upgrade these workshops to Vue 3+. Start with the Minis and let's see how they look. I'm looking for clean, documented code that we can run in Code Sandbox to help the legacy of Front-End Foxes live on. First pass would be on the Mini 1 pet-liking app - convert it to Vue 3 with composition API, perhaps with Options API as an alternate option.
 
 # About Our Workshops
 
