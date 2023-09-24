@@ -67,7 +67,7 @@ module.exports = {
 							title: '🐾 Half-Day Workshops',
 							children: [
 								'/workshops/vue/half-day/half-day1',
-								['https://nsvue-workshop.netlify.com', '🔮 2: Build a complete mobile app - TarotMoji'],
+								//['https://nsvue-workshop.netlify.com', '🔮 2: Build a complete mobile app - TarotMoji'],
 							],
 						},
 						{
