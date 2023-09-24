@@ -1,5 +1,5 @@
 # When something is pushed to master, rebuild the docs
-name: DeployToGitHubPages
+name: build and deploy vuepress site to GH Pages
 
 on:
   push:
