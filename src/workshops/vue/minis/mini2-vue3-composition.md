@@ -1,4 +1,4 @@
-# 🖥️ 2: Build A Simple Fox Liking Web App with Grid Styling
+# 🖥️ 2: Build A Simple Fox Liking Web App with Grid Styling using Vue 3 with the Composition API
 
 | **Project&nbsp;Goal**           | Get started with Vue.js 3 basics and simple API calls using the Composition API                                                                                       |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |

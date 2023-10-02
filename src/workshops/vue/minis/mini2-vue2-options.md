@@ -1,4 +1,4 @@
-# 🖥️ 2: Build A Simple Fox Liking Web App with Grid Styling
+# 🖥️ 2: Build A Simple Fox Liking Web App with Grid Styling using Vue 2 and the Options API
 
 | **Project&nbsp;Goal**           | Get started with Vue.js basics and simple API calls                                                                                       |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
