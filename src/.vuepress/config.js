@@ -73,7 +73,8 @@ module.exports = {
 							title: '🦴 Mini Workshops',
 							children: [
 								'/workshops/vue/minis/mini1',
-								'/workshops/vue/minis/mini2',
+								'/workshops/vue/minis/mini2-vue2-options',
+								'/workshops/vue/minis/mini2-vue3-composition',
 								'/workshops/vue/minis/mini3',
 								'/workshops/vue/minis/mini4',
 								'/workshops/vue/minis/mini5',
