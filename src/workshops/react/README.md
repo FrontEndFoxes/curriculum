@@ -1,5 +1,5 @@
 # React Workshops
 
-![React Renards](/react-renards.png)
+![React Renards](./src/react-renards.png)
 
 Stay tuned!
