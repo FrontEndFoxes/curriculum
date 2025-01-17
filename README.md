@@ -1,10 +1,6 @@
 
 # Front-End Foxes Workshops
 
-> Hello, Hacktoberfest folks! We are currently looking to upgrade these workshops to Vue 3+. Start with the Minis and let's see how they look. I'm looking for clean, documented code that we can run in Code Sandbox to help the legacy of Front-End Foxes live on. First pass would be on the Mini 1 pet-liking app - convert it to Vue 3 with composition API, perhaps with Options API as an alternate option.
-
-# About Our Workshops
-
 ![Front-End Foxes](./src/workshops/images/logo.png)
 
 Front-End Foxes, formerly known as Vue Vixens, were initiatives created by Jen Looper, currently Head of Academic Advocacy at AWS. Our mission was to create workshops to teach Vue.js in a cool and fun way to 'foxy people who identify as women'. We had chapters worldwide before closing the nonprofit in 2022. Front-End Foxes workshops are called 'skulks' because a group of foxes is called a 'skulk'.
