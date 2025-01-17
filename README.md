@@ -3,7 +3,7 @@
 
 ![Front-End Foxes](./src/workshops/images/logo.png)
 
-Front-End Foxes, formerly known as Vue Vixens, were initiatives created by Jen Looper, currently Head of Academic Advocacy at AWS. Our mission was to create workshops to teach Vue.js in a cool and fun way to 'foxy people who identify as women'. We had chapters worldwide before closing the nonprofit in 2022. Front-End Foxes workshops are called 'skulks' because a group of foxes is called a 'skulk'.
+Front-End Foxes, formerly known as Vue Vixens, were initiatives created by [Jen Looper](https://jenlooper.com). Our mission was to create workshops to teach Vue.js in a cool and fun way to 'foxy people who identify as women'. We had chapters worldwide before closing the nonprofit in 2022. Front-End Foxes workshops are called 'skulks' because a group of foxes is called a 'skulk'.
 
 These self-driven workshops have helped hundreds of women get better acquainted with front-end technologies for both web and mobile development. Our teaching methodology is explained in [this article](https://dev.to/frontendfoxes/the-way-of-the-fox-the-vue-vixens-curriculum-290).
 
