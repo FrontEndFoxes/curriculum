@@ -1,0 +1,117 @@
+/* Custom styles for VitePress */
+
+/* Hide right navigation area */
+.aside {
+  display: none !important;
+}
+
+/* Hide language dropdown */
+.dropdown-wrapper {
+  display: none !important;
+}
+
+/* Header styles */
+:root {
+  --vp-nav-height: 3.6rem;
+  --vp-nav-bg-color: #162643;
+  --vp-nav-text-color: #ffffff;
+  --vp-nav-hover-text-color: #ffffff;
+}
+
+.VPNav {
+  background-color: var(--vp-nav-bg-color) !important;
+  border-bottom: none !important;
+}
+
+.VPNav .container {
+  background-color: var(--vp-nav-bg-color) !important;
+}
+
+.VPNav .title {
+  color: var(--vp-nav-text-color) !important;
+}
+
+.VPNav .curtain {
+  background-color: var(--vp-nav-bg-color) !important;
+}
+
+.VPNavBar .content {
+  background-color: var(--vp-nav-bg-color) !important;
+}
+
+.VPNavBar .content-body {
+  background-color: var(--vp-nav-bg-color) !important;
+}
+
+.VPNavBarMenuLink {
+  color: var(--vp-nav-text-color) !important;
+}
+
+.VPNavBarMenuLink:hover {
+  color: var(--vp-nav-hover-text-color) !important;
+}
+
+.VPNavBarMenuLink.active {
+  color: var(--vp-nav-hover-text-color) !important;
+}
+
+/* Copy button styles */
+.copy-code-button {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  z-index: 1;
+  padding: 0.2em 0.5em;
+  background-color: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  font-size: 0.8em;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.copy-code-button:hover {
+  opacity: 1;
+}
+
+/* Line numbers */
+.line-numbers-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.5em;
+  height: 100%;
+  text-align: right;
+  padding: 1em 0.5em;
+  color: var(--vp-c-text-3);
+  font-size: 0.9em;
+  user-select: none;
+}
+
+/* Code block wrapper */
+.code-block-wrapper {
+  position: relative;
+}
+
+/* Language badge */
+.language-badge {
+  position: absolute;
+  top: 0.5em;
+  right: 3em;
+  z-index: 1;
+  padding: 0.2em 0.5em;
+  background-color: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  font-size: 0.8em;
+  color: var(--vp-c-text-2);
+}
+
+h1,
+img {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+

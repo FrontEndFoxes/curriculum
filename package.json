@@ -18,11 +18,13 @@
 		"url": "https://github.com/frontendfoxes/curriculum/issues"
 	},
 	"homepage": "https://github.com/frontendfoxes/curriculum/#readme",
-	"dependencies": {
-		"vuepress": "^1.9.10"
-	},
+	"type": "module",
 	"scripts": {
-		"build": "vuepress build src",
-		"dev": "vuepress dev src"
+		"dev": "vitepress dev src",
+		"build": "vitepress build src",
+		"preview": "vitepress preview src"
+	},
+	"devDependencies": {
+		"vitepress": "^1.6.3"
 	}
 }

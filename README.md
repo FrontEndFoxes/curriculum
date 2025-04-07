@@ -11,7 +11,7 @@ These self-driven workshops have helped hundreds of women get better acquainted 
 
 > Our inaugural Skulk at Vue.US Conference in New Orleans in March, 2018
 
-## FAQ
+### FAQ
 
 **What's the difference between a Chapter, a 'Mini', and a 'Nano'?**
 
