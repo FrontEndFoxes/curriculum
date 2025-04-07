@@ -2,30 +2,29 @@
 
 | **Project Goal**                | Build a NativeScript-Vue mobile app to display random pets                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **What you’ll learn**           | How to build a mobile app with NativeScript and Vue.js, how to make external API calls and have data display in the app.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| **Tools&nbsp;you’ll&nbsp;need** | A modern browser like Chrome.<br><br>Access to the [NativeScript Playground](http://play.nativescript.org) - consider creating an account in the Playground to keep the versions of your work intact.<br><br>A mobile phone (iOS or Android) with the NativeScript Playground and Preview apps installed.<br><br>The two NativeScript companion apps for the playground are the NativeScript Viewer and NativeScript Playground.<br><br>On Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) and [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview).<br><br>On iOS: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) and [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702) |
+| **What you'll learn**           | How to build a mobile app with NativeScript and Vue.js, how to make external API calls and have data display in the app.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Tools&nbsp;you'll&nbsp;need** | A modern browser like Chrome.<br><br>Access to [Stackblitz](https://stackblitz.com) - consider creating an account in the Playground to keep the versions of your work intact.<br><br>A mobile phone (iOS or Android) with the NativeScript Playground and Preview apps installed.<br><br>The two NativeScript companion apps for the playground are the NativeScript Viewer and NativeScript Playground.<br><br>On Android: [NativeScript Playground](https://play.google.com/store/apps/details?id=org.nativescript.play) and [NativeScript Preview](https://play.google.com/store/apps/details?id=org.nativescript.preview).<br><br>On iOS: [NativeScript Playground](https://itunes.apple.com/us/app/nativescript-playground/id1263543946) and [NativeScript Preview](https://itunes.apple.com/us/app/nativescript-preview/id1264484702) |
 | **Time needed to complete**     | 20 minutes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| **Just want to try the app?**   | [Open this link in the Playground App](https://play.nativescript.org/?template=play-vue&id=c3o4tl&v=2)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-
+| **Just want to try the app?**   | [Open this link in the Playground App](https://stackblitz.com/edit/nativescript-pets-workshop?file=package.json)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 # Instructions
 
 ## Scaffold your app
 
-Open the [NativeScript Playground](http://play.nativescript.org) and take a look around. On your first visit, you'll see several 'coach marks' showing where key functionality is kept.
+Open [Stackblitz](https://stackblitz.com), sign in, and take a look around. Create a new project by clicking the + New Project button. You'll see a popup with a lot of templates available.
 
-![coach marks in the playground with NS + Vue.js selected](./images/playground1.png)
+Click the 'Mobile & VR' tab in the popup and you'll see several options for creating a NativeScript app. Choose 'Vue'. This is how you scaffold your first NativeScript-Vue app!
 
-Here is the main editor with a few files provided for an app. By default, the first playground app is created using Angular. Click 'new' at the top and choose the 'NS + Vue.js' template. This is how you scaffold your first NativeScript-Vue app!
+![base app](./images/stackblitz-1.png)
 
-When you click the `QR Code` button, a QR code will appear - scan that with the NativeScript Playground app on your phone. This allows your phone to refresh automatically as you code. You'll see your phone refresh and a basic app appear:
-
-![base app](./images/playground2.png)
+Using the NativeScript Playground app on your phone, scan the QR code to start the process of launching it on your device as it builds in Stackblitz. The code is built in Stackblitz and 'flashed' onto your connected device.
 
 ## Add some Styles
 
 Now we're going to style the app's interface and build its UI. It's going to have an ActionBar, a card, and a button.
 
-We're going to add an image to a new `/images` folder for the app's background. Click the '+' button in the top panel and create a new folder called images. Download the file below to your local computer. Click the '+' button again and then 'upload resources' to browse and add this file (`bg.jpg`) in that folder. Make sure to save your file.
+We're going to add an image to a new `/assets` folder for the app's background. Click the '+' button in the top panel and create a new folder called assets in the app folder, at the same level as your components folder. Download the file below to your local computer. Click the '+' button again and then 'upload resources' to browse and add this file (`bg.jpg`) in that folder. Make sure to save your file.
+
+> Note, if you see a circle icon in the tab of the code you're working on, that means it hasn't been saved, so be sure to save your work using ctrl-s or the save icon on the top left.
 
 ![background](./images/bg.jpg)
 
@@ -33,7 +32,7 @@ Next, open the app.css file in the app root. Overwrite the file with these style
 
 ```css
 Page {
-	background-image: url('~/images/bg.jpg');
+	background-image: url('~/assets/bg.jpg');
 }
 
 .action-bar {
@@ -66,7 +65,7 @@ As your app refreshes, you'll see that the UI shows some promise, but looks a li
 
 ## Fix the UI
 
-Let's fix the ActionBar: In `app/components/HelloWorld.vue`, delete everything between the `<Page>` tags except the ActionBar. Add a title to the ActionBar, something like this: `<ActionBar title="So. Many. Dogs!" class="action-bar" />`.
+Let's fix the ActionBar: In `app/components/Home.vue`, delete everything between the `<Page>` tags except the ActionBar. Add a title to the ActionBar, something like this: `<ActionBar title="So. Many. Dogs!" class="action-bar" />`.
 
 Next, add a StackLayout to replace the ScrollView that used to be there. Under the ActionBar, and above the closing `</Page>` tag, add a layout with a button:
 
@@ -84,21 +83,43 @@ NativeScript layouts differ from the html you write on the web. You're using Nat
 
 ## Add Some Data
 
-At this point, we need to start populating our UI with some data. To make external http calls, we need to leverage the http module, so add this line right under the `<script>` tag in HelloWorld.vue (above `export default`):
-
-`const http = require("http");`
-
-Then, edit the `data` block, adding a placeholder for a dog image that will be populated shortly by data from the Dog CEO API.
+At this point, we need to start populating our UI with some data. To make external http calls, we need to leverage the http module, so add this import at the top of the script section in Home.vue:
 
 ```js
-data() {
+import { Http } from '@nativescript/core';
+```
+
+Then, using NativeScript-Vue's syntax, we'll set up our component with data and methods. Replace the script section with:
+
+```js
+<script lang="ts">
+import Vue from 'nativescript-vue';
+import { Http } from '@nativescript/core';
+
+export default Vue.extend({
+  data() {
     return {
       dogImage: {}
     }
   },
+
+  methods: {
+    getADog() {
+      Http.getJSON('https://dog.ceo/api/breeds/image/random')
+        .then((response) => {
+          this.dogImage = response;
+          console.log(this.dogImage.message);
+        })
+        .catch((e) => {
+          alert("error");
+        });
+    }
+  }
+});
+</script>
 ```
 
-Finally, create a space for the image to populate. Under the Button tag and above the last closing `</StackLayout> tag, add this block:
+Finally, create a space for the image to populate. Under the Button tag and above the last closing `</StackLayout>` tag, add this block:
 
 ```xml
  <StackLayout class="placeholder">
@@ -110,29 +131,7 @@ Finally, create a space for the image to populate. Under the Button tag and abov
 Note, if at any time your app stops refreshing on your device, try rescanning the QR code by pressing the "Preview" button. Watch for errors in the console of the Playground.
 :::
 
-## Make the Call
-
-The last thing we have to do is add a method to call the Dog CEO API so we can populate our card with data when we press the button. We're going to query this API for random data.
-
-Add a `methods` section under the final comma of the `data` block:
-
-```js
-methods: {
-    getADog() {
-      http.request({ url: "https://dog.ceo/api/breeds/image/random", method: "GET" }).then((response) => {
-        this.dogImage = JSON.parse(response.content);
-        console.log(this.dogImage.message);
-      }, (e) => {
-        alert("error")
-      });
-    }
-
-  }
-```
-
-Try pressing the button and seeing if dogs appear. Cute, right? Check the console to see if the dog image urls are being logged, if you encounter any difficulty.
-
-The entire code of your HelloWorld.vue file should look like this:
+The entire code of your Home.vue file should look like this:
 
 ```js
 <template>
@@ -147,29 +146,30 @@ The entire code of your HelloWorld.vue file should look like this:
 	</Page>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'nativescript-vue';
+import { Http } from '@nativescript/core';
 
-const http = require("http");
-
-  export default {
-
+export default Vue.extend({
   data() {
     return {
       dogImage: {}
     }
   },
+
   methods: {
     getADog() {
-      http.request({ url: "https://dog.ceo/api/breeds/image/random", method: "GET" }).then((response) => {
-        this.dogImage = JSON.parse(response.content)
-        console.log(this.dogImage.message)
-      }, (e) => {
-        alert("error")
-      });
+      Http.getJSON('https://dog.ceo/api/breeds/image/random')
+        .then((response) => {
+          this.dogImage = response;
+          console.log(this.dogImage.message);
+        })
+        .catch((e) => {
+          alert("error");
+        });
     }
   }
-}
-
+});
 </script>
 ```
 
@@ -177,7 +177,7 @@ The final app looks like this:
 
 ![final app](./images/playground3.png)
 
-It's really interesting to build Vue.js apps for mobile devices in the NativeScript playground. Now that you know how, what else can you build?
+It's really interesting to build Vue.js apps for mobile devices in Stackblitz. Now that you know how, what else can you build?
 
 **🎊Congratulations, you've finished the base project!🎊**
 
@@ -201,52 +201,47 @@ Update the placeholder size in the `app.css` file so that we can fit more than o
 
 ## Call Some Cats
 
-Next, add a method called `getACat`. It will look like the `getADog` method. But the Cat API requires an api key, so after we pass the url and the method, we will pass a limit of 1 and a header with the key. After making the request, the `getACat` method will update a variable called `catImage` and log the `catImage.url` that is returned by the request.
-
-Add this method above the `getADog` method, adding your own API key for the Cat API:
+Next, add a method called `getACat`. Using NativeScript-Vue's syntax, we'll update our script section to include the cat functionality:
 
 ```js
-        methods: {
-            getACat() {
-                http.request({
-                    url: "https://api.thecatapi.com/v1/images/search",
-                    method: "GET",
-                    limit: 1,
-                    header: {
-                        key: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-                    }
-                }).then(
-                    response => {
-                        this.catImage = JSON.parse(response.content)[0];
-                        console.log(this.catImage.url);
-                    },
-                    e => {
-                        alert("error");
-                    }
-                );
-            },
-            getADog() {
-            ...
-            }
-        }
+<script lang="ts">
+import Vue from 'nativescript-vue';
+import { Http } from '@nativescript/core';
+
+export default Vue.extend({
+  data() {
+    return {
+      dogImage: {},
+      catImage: {}
+    }
+  },
+
+  methods: {
+    getADog() {
+      Http.getJSON('https://dog.ceo/api/breeds/image/random')
+        .then((response) => {
+          this.dogImage = response;
+          console.log(this.dogImage.message);
+        })
+        .catch((e) => {
+          alert("error");
+        });
+    },
+
+    getACat() {
+      Http.getJSON('https://api.thecatapi.com/v1/images/search')
+        .then((response) => {
+          this.catImage = response[0];
+          console.log(this.catImage.url);
+        })
+        .catch((e) => {
+          alert("error");
+        });
+    }
+  }
+});
+</script>
 ```
-
-Now you need to update the image that will be added to the placeholder.
-
-In the `data()` part of the script, we returned the `dogImage`, and now we need to return the `catImage`. Add `catImage` above `dogImage` in the data block:
-
-```js
-    data() {
-        return {
-                catImage: {},
-                dogImage: {}
-            };
-        },
-```
-
-::: tip 💡
-Don't forget the comma that we use to separate the two methods (`getADog` and `getACat`) and the two return variables (`dogImage` and `catImage`).
-:::
 
 ## Edit the UI
 
@@ -265,14 +260,7 @@ It should look like this:
 
 ![Image of the Pets App with a Cute Dog and Cute Cat Photo loaded](./images/mini2_2.png)
 
-::: tip 💡
-If you are having any trouble loading the images from the cat api, you can get more information in the `Device Logs` at the bottom of the Playground screen. To do this, you need to set `Config.silent = false` in `app.js`. By default, in `app.js` you should see the lines below commented out. Uncomment the second line to get more verbose output.
 
-    // Uncommment the following to see NativeScript-Vue output logs
-    Vue.config.silent = false;
+## Authors
 
-:::
-
-## Author
-
-Made with ❤️ by Jen Looper and Emily Stamey
+Made with ❤️ by Jen Looper and Emily Stamey for Front-End Foxes, Inc.
