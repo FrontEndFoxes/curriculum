@@ -27,9 +27,9 @@ Take a look at the code that was scaffolded by Code Sandbox for a basic Vue.js a
 `main.js` also initializes the app as a new Vue.js app and sets the div into which the app code will be injected, the div with id `app`. It also defines which component will be used as a starting point, in this case `App`:
 
 ```js
-new Vue({
-	render: (h) => h(App),
-}).$mount('#app');
+	new Vue({
+		render: (h) => h(App),
+	}).$mount('#app');
 ```
 
 Open up `App.vue`. In this file, the 'home' component is built. It contains the three main parts of a Vue.js Single File Component (SFC): a `<template>` block, a `<script>` block, and a `<style>` block.

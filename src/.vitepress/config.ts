@@ -122,7 +122,7 @@ export default defineConfig({
     }
   },
   markdown: {
-    lineNumbers: true,
+    lineNumbers: false,
     config: (md) => {
       addCopyButton(md)
     }

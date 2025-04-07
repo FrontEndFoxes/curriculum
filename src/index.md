@@ -29,4 +29,3 @@ All the online codelabs are designed to be completed in groups in a self-study m
 
 The goal of the program is to familiarize women and those who identify as such with concepts of programming for web and mobile in a supportive and inclusive environment. Experienced developers, however, are very welcome to join in our efforts to organize events, support our scholarship fund, mentor a skulk, and provide content. We are grateful for all kinds of help!
 
-**Want to contribute? Please make sure to check out our [Code of Conduct](workshops/CODE_OF_CONDUCT.md) as well as our [Contributing instructions](../contributing.md).**

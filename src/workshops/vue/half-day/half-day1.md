@@ -3,7 +3,7 @@
 | **Project Goal**            | Build A Memory Game                                      with accessibility in mind!                                                                                                                                    |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **What you’ll learn**       | How to build a memory game while applying accessibility principles. You can play with the [finished project](https://codesandbox.io/s/vuevixens-memorygame-complete-650zb)                                                                                                                     |
-| **Tools you’ll need**       | A modern browser like Chrome. An account at CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/mlama007/Vue-Memory-Game/tree/start). Instructions on how to do this are in [Appendix 1](appendix_1.md). Or you can go to the [Memory Game Code Sandbox](https://codesandbox.io/s/vuevixens-memorygame-start-6g0cj).
+| **Tools you’ll need**       | A modern browser like Chrome. An account at CodeSandbox.io. If you get lost, import the starting point for this chapter [here](https://github.com/mlama007/Vue-Memory-Game/tree/start). Or you can go to the [Memory Game Code Sandbox](https://codesandbox.io/s/vuevixens-memorygame-start-6g0cj).
 | **Time needed to complete** | 4 hours
 |
 

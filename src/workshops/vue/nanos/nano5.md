@@ -71,7 +71,7 @@ If you open it on your text editor, you will see that inside there is an `index.
 
 Open up your terminal and `cd nuxt-nano` into your app's folder. Once you're inside, go ahead and `npm run dev` or `yarn dev` to start up the compile process and start _serving_ the content into your browser.
 
-The terminal will show you in what url/port it's going to serve your app. Usually it'll be [http://localhost:3000]. Go ahead and open the URL in your browser.
+The terminal will show you in what url/port it's going to serve your app. Usually it'll be ``http://localhost:3000``. Go ahead and open the URL in your browser.
 
 ![Nuxt listening](./images/nuxt-listening.png)
 
