@@ -2,10 +2,10 @@ import { defineConfig } from 'vitepress'
 import { addCopyButton } from './copyButton'
 
 export default defineConfig({
-  base: '/curriculum/',
+  base: '/',
   head: [
     ['link', { rel: 'icon', href: '/favicon.png' }],
-    ['link', { rel: 'stylesheet', href: '/curriculum/.vitepress/styles/custom.css' }]
+    ['link', { rel: 'stylesheet', href: './.vitepress/styles/custom.css' }]
   ],
   title: 'Front-End Foxes Workshops',
   description: 'Workshops to teach web and mobile development to beginners',
